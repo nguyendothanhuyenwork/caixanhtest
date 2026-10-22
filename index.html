@@ -3051,45 +3051,42 @@ Hãy tìm hệ số tương quan mẫu (sample correlation coefficient - r).
 - **BƯỚC 5: Kết luận:**
   - Đáp án chính xác: **-0.5** (Chọn phương án **C**).
 
-
-
 # PHẦN 7: CHƯƠNG 8 - ƯỚC LƯỢNG KHOẢNG TIN CẬY (CONFIDENCE INTERVAL ESTIMATION)
 
 > [!NOTE]
-> **TỔNG QUAN BẢN CHẤT CHƯƠNG 8:**  
-> Trong thực tế kinh doanh và nghiên cứu, chúng ta hầu như không bao giờ biết được giá trị chính xác của tham số tổng thể (như trung bình thực tế $\mu$ hay tỷ lệ thực tế $\pi$). Thay vì chỉ đưa ra một con số duy nhất (Ước lượng điểm - Point Estimate) tiềm ẩn nhiều sai số ngẫu nhiên, ta xây dựng một **Khoảng tin cậy (Confidence Interval)** kèm theo một xác suất tin cậy $(1 - \alpha) \times 100\%$ rằng khoảng đó sẽ bao trùm tham số tổng thể cần ước lượng.
+> **TỔNG QUAN BẢN CHẤT CHƯƠNG 8 (CHAPTER 8 OVERVIEW):**  
+> In business statistics, we almost never know the exact value of a population parameter (such as population mean $\mu$ or population proportion $\pi$). Instead of relying only on a single number (Point Estimate), we construct a **Confidence Interval (Khoảng tin cậy)** with a specified level of confidence $(1 - \alpha) \times 100\%$ that the interval will contain the true unknown population parameter.
 
 ---
 
 ## 8.1. Bản chất Ước lượng Điểm & Khoảng Tin Cậy (Point vs Interval Estimate)
 
-### 1. Định nghĩa và So sánh cốt lõi:
-- **Ước lượng điểm (Point Estimate):** Là một giá trị số đơn lẻ được tính từ dữ liệu mẫu để ước lượng tham số tổng thể.
-  - Trung bình mẫu $\bar{X}$ là ước lượng điểm không chệch cho trung bình tổng thể $\mu$.
-  - Tỷ lệ mẫu $p = \frac{X}{n}$ là ước lượng điểm không chệch cho tỷ lệ tổng thể $\pi$.
-  - Độ lệch chuẩn mẫu $S$ là ước lượng điểm cho độ lệch chuẩn tổng thể $\sigma$.
-  - *Nhược điểm:* Không cung cấp bất kỳ thông tin nào về độ phân tán hay mức độ sai lệch của ước lượng do biến động lấy mẫu.
-- **Ước lượng khoảng tin cậy (Confidence Interval - CI):** Cung cấp một khoảng giá trị $[L, U]$ được tính từ dữ liệu mẫu, có tính đến sự biến động từ mẫu này sang mẫu khác:
+### 1. Định nghĩa và So sánh cốt lõi (Core Concepts):
+- **Ước lượng điểm (Point Estimate):** A single number calculated from a sample to estimate a population parameter.
+  - Trung bình mẫu $\bar{X}$ (Sample mean) ước lượng trung bình tổng thể $\mu$.
+  - Tỷ lệ mẫu $p = \frac{X}{n}$ (Sample proportion) ước lượng tỷ lệ tổng thể $\pi$.
+  - Độ lệch chuẩn mẫu $S$ (Sample standard deviation) ước lượng độ lệch chuẩn tổng thể $\sigma$.
+- **Ước lượng khoảng tin cậy (Confidence Interval - CI):** Provides a range of values that takes into consideration variation in sample statistics from sample to sample:
   $$\text{Confidence Interval} = \text{Point Estimate} \pm \text{Margin of Error} = \text{Point Estimate} \pm (\text{Critical Value}) \times (\text{Standard Error})$$
   - **Giới hạn tin cậy dưới (Lower Confidence Limit - LCL):** $\text{Point Estimate} - e$
   - **Giới hạn tin cậy trên (Upper Confidence Limit - UCL):** $\text{Point Estimate} + e$
-  - **Sai số cho phép / Biên độ sai số (Margin of Error / Sampling Error - $e$):** Độ rộng của nửa khoảng tin cậy. Độ rộng toàn khoảng bằng $2e = UCL - LCL$.
+  - **Sai số cho phép / Biên độ sai số (Margin of Error / Sampling Error - $e$):** Độ rộng của nửa khoảng tin cậy: $e = (\text{Critical Value}) \times (\text{Standard Error})$. Chiều rộng toàn khoảng là $2e = UCL - LCL$.
 
-### 2. Ý nghĩa sống còn của Độ tin cậy $(1 - \alpha)$:
+### 2. Ý nghĩa sống còn của Độ tin cậy $(1 - \alpha)$ (Interpretation of Confidence Level):
 > [!CAUTION]
-> **BẪY THI TRẮC NGHIỆM VỀ Ý NGHĨA KHOẢNG TIN CẬY:**  
-> - **KHÔNG ĐƯỢC NÓI:** *"Xác suất để $\mu$ rơi vào khoảng $[10, 20]$ là 95%"*. (SAI HOÀN TOÀN! Vì $\mu$ là một hằng số cố định, khoảng $[10, 20]$ cũng đã cố định, nên $\mu$ hoặc đã nằm trong khoảng đó hoặc không, xác suất chỉ là 0 hoặc 1!).  
-> - **CÁCH PHÁT BIỂU ĐÚNG 100%:** *"Nếu ta lặp lại việc lấy mẫu cỡ $n$ rất nhiều lần và xây dựng các khoảng tin cậy 95% theo cùng phương pháp, thì sẽ có khoảng 95% số khoảng được tạo ra chứa giá trị trung bình thực sự $\mu$, và 5% số khoảng không chứa $\mu$"*.
+> **BẪY THI TRẮC NGHIỆM VỀ Ý NGHĨA KHOẢNG TIN CẬY (CRITICAL EXAM TRAP):**  
+> - **KHÔNG ĐƯỢC NÓI (NEVER SAY):** *"There is a 95% probability that $\mu$ is between 10 and 20"* (SAI! Because $\mu$ is a fixed constant, not a random variable. A specific interval either contains $\mu$ or it does not; the probability is either 1 or 0!).  
+> - **CÁCH PHÁT BIỂU ĐÚNG 100% (CORRECT STATEMENT):** *"We are 95% confident that the true population mean $\mu$ is between 10 and 20. If all possible samples of size $n$ were taken, 95% of the constructed intervals would contain $\mu$"*.
 
 ```mermaid
 flowchart TD
-    A["BÀI TOÁN ƯỚC LƯỢNG KHOẢNG TIN CẬY"] --> B["Ước lượng Trung bình μ"]
-    A --> C["Ước lượng Tỷ lệ π"]
-    B --> D["Đã biết σ (σ Known)"]
-    B --> E["CHƯA BIẾT σ (σ Unknown)"]
-    D --> F["Dùng Phân phối Chuẩn Z<br/>Z = ±1.96 (95%)"]
-    E --> G["Dùng Phân phối Student t<br/>df = n - 1 (Fatter tails)"]
-    C --> H["Dùng Phân phối Chuẩn Z<br/>Điều kiện: np ≥ 5 và n(1-p) ≥ 5"]
+    A["CONFIDENCE INTERVAL ESTIMATION"] --> B["Population Mean μ"]
+    A --> C["Population Proportion π"]
+    B --> D["σ Known"]
+    B --> E["σ UNKNOWN"]
+    D --> F["Standard Normal Z Distribution<br/>Critical Value: Z_α/2"]
+    E --> G["Student's t Distribution<br/>df = n - 1 (Fatter tails)"]
+    C --> H["Standard Normal Z Distribution<br/>Condition: np ≥ 5 and n(1-p) ≥ 5"]
 ```
 
 ---
@@ -3097,21 +3094,18 @@ flowchart TD
 ## 8.2. Khoảng Tin Cậy cho Trung Bình $\mu$ Khi ĐÃ BIẾT $\sigma$ ($\sigma$ Known)
 
 ### 1. Điều kiện áp dụng:
-1. Đã biết độ lệch chuẩn tổng thể $\sigma$.
-2. Tổng thể có phân phối chuẩn $X \sim N(\mu, \sigma^2)$ (hoặc nếu tổng thể không chuẩn thì cỡ mẫu phải đủ lớn $n > 30$ theo Định lý Giới hạn Trung tâm).
+1. Population standard deviation $\sigma$ is known.
+2. Population is normally distributed. (If population is not normal, sample size must be large: $n > 30$ by Central Limit Theorem).
 
-### 2. Công thức chuẩn:
-$$\bar{X} - Z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \le \mu \le \bar{X} + Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$
-Hay viết gọn:
+### 2. Công thức chuẩn (Formula):
 $$\mu \in \left[ \bar{X} \pm Z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \right]$$
-Trong đó:
 - $\bar{X}$: Trung bình mẫu (Point estimate).
-- $\sigma / \sqrt{n}$: Sai số chuẩn của trung bình (Standard Error - $\sigma_{\bar{X}}$).
-- $Z_{\alpha/2}$: Giá trị tới hạn từ phân phối chuẩn chuẩn tắc $N(0, 1)$ sao cho diện tích mỗi phần đuôi bằng $\alpha / 2$.
-- $e = Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$: Sai số biên (Sampling error).
+- $\frac{\sigma}{\sqrt{n}}$: Sai số chuẩn của trung bình (Standard error $\sigma_{\bar{X}}$).
+- $Z_{\alpha/2}$: Giá trị tới hạn (Critical value) từ phân phối chuẩn tắc $N(0, 1)$ sao cho diện tích mỗi phần đuôi bằng $\alpha / 2$.
+- $e = Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$: Biên độ sai số (Margin of error).
 
-### 3. Bảng các giá trị tới hạn $Z_{\alpha/2}$ kinh điển (Bắt buộc thuộc lòng):
-| Độ tin cậy $(1 - \alpha)$ | Mức ý nghĩa $\alpha$ | Diện tích đuôi $\alpha/2$ | Giá trị tới hạn $Z_{\alpha/2}$ |
+### 3. Bảng các giá trị tới hạn $Z_{\alpha/2}$ kinh điển (Common Critical Values):
+| Confidence Level $(1 - \alpha)$ | Significance Level $\alpha$ | Tail Area $\alpha/2$ | Critical Value $Z_{\alpha/2}$ |
 | :---: | :---: | :---: | :---: |
 | **80%** | $0.20$ | $0.10$ | **$1.28$** |
 | **90%** | $0.10$ | $0.05$ | **$1.645$** |
@@ -3119,336 +3113,429 @@ Trong đó:
 | **98%** | $0.02$ | $0.01$ | **$2.33$** |
 | **99%** | $0.01$ | $0.005$ | **$2.576 \approx 2.58$** |
 
-### 4. Hướng dẫn bấm máy tính Casio fx-580VN X tìm $Z_{\alpha/2}$:
-- Muốn tìm $Z_{0.025}$ (ứng với khoảng tin cậy 95%):
-  - Bấm: `[MENU]` `[7]` `[3]` (Inverse Normal).
-  - Nhập: `Area = 0.025` (đuôi trái) $\implies$ Màn hình hiển thị: `-1.95996...` $\implies |Z_{\alpha/2}| = 1.96$.
-  - Nhập: `Area = 0.975` (tính từ cực trái đến cận trên) $\implies$ Màn hình hiển thị: `1.95996...`.
-
 ---
 
-## 8.3. Khoảng Tin Cậy cho Trung Bình $\mu$ Khi CHƯA BIẾT $\sigma$ (Phân phối Student $t$)
+## 8.3. Khoảng Tin Cậy cho Trung Bình $\mu$ Khi CHƯA BIẾT $\sigma$ (Student's $t$ Distribution)
 
-### 1. Tại sao phải dùng Phân phối Student $t$?
-- Trong đời thực, ta **hầu như không bao giờ biết $\sigma$**. Vì để tính $\sigma$, ta phải biết $\mu$. Mà nếu đã biết $\mu$ thì không ai cần ước lượng nữa!
-- Khi thay thế $\sigma$ bằng độ lệch chuẩn mẫu $S$, ta đưa thêm một nguồn bất định mới vào phép tính vì bản thân $S$ cũng thay đổi theo từng mẫu ngẫu nhiên.
-- Để bù đắp cho sự không chắc chắn này, ta sử dụng **Phân phối Student $t$** (do nhà thống kê William S. Gosset phát minh dưới bút danh *Student* năm 1908).
+### 1. Bản chất Phân phối Student $t$:
+- In virtually all real-world business situations, $\sigma$ is unknown. We substitute the sample standard deviation $S$ for $\sigma$.
+- This introduces extra uncertainty because $S$ varies from sample to sample $\implies$ We use **Student's $t$ distribution** instead of $Z$.
+- **Đặc trưng của phân phối $t$:**
+  1. Hình quả chuông và đối xứng quanh 0 (Bell-shaped and symmetric about 0).
+  2. Đuôi dày hơn phân phối chuẩn Z (*"fatter tails"*), nghĩa là diện tích ở hai đuôi lớn hơn.
+  3. Phụ thuộc vào Bậc tự do (Degrees of Freedom): $df = n - 1$.
+  4. Khi $n$ tăng ($df \to \infty$), phân phối $t$ tiến dần về phân phối chuẩn chuẩn tắc $Z$ ($t \to Z$).
 
-### 2. Đặc trưng của Phân phối Student $t$:
-1. **Hình quả chuông đối xứng:** Đồ thị đối xứng qua trục $t = 0$, có trung bình bằng 0 giống hệt phân phối chuẩn $Z$.
-2. **Đuôi dày hơn ("Fatter Tails"):** Đỉnh thấp hơn $Z$, nhưng hai bên đuôi dày hơn, phản ánh xác suất xuất hiện các giá trị xa trung tâm lớn hơn.
-3. **Phụ thuộc Bậc Tự Do (Degrees of Freedom - $df$):**
-   $$df = n - 1$$
-   - *Bản chất df:* Số quan sát được tự do biến thiên sau khi trung bình mẫu $\bar{X}$ đã được cố định. Ví dụ: Nếu tổng của 3 số bằng 24, ta được tự do chọn 2 số đầu tiên; số thứ ba bắt buộc bị cố định để tổng bằng 24 $\implies df = 3 - 1 = 2$.
-4. **Hội tụ về phân phối chuẩn $Z$:** Khi cỡ mẫu $n$ tăng dần ($df \to \infty$), phân phối $t$ tiến dần và trùng khít hoàn toàn với phân phối chuẩn $Z$ ($t \to Z$).
-
-### 3. Công thức Khoảng tin cậy:
+### 2. Công thức chuẩn (Formula):
 $$\mu \in \left[ \bar{X} \pm t_{\alpha/2, df} \frac{S}{\sqrt{n}} \right]$$
-Trong đó:
-- $S$: Độ lệch chuẩn của mẫu: $S = \sqrt{\frac{\sum (X_i - \bar{X})^2}{n - 1}}$.
-- $t_{\alpha/2, df}$: Giá trị tới hạn từ bảng phân phối Student $t$ với bậc tự do $df = n - 1$ và diện tích đuôi trên bằng $\alpha/2$.
-- Sai số biên: $e = t_{\alpha/2} \frac{S}{\sqrt{n}}$.
-
-### 4. So sánh giá trị $t$ với $Z$ qua các bậc tự do:
-| Độ tin cậy | $t$ ($df = 10$) | $t$ ($df = 20$) | $t$ ($df = 30$) | $Z$ ($df = \infty$) |
-| :---: | :---: | :---: | :---: | :---: |
-| **80%** | $1.372$ | $1.325$ | $1.310$ | **$1.280$** |
-| **90%** | $1.812$ | $1.725$ | $1.697$ | **$1.645$** |
-| **95%** | $2.228$ | $2.086$ | $2.042$ | **$1.960$** |
-| **99%** | $3.169$ | $2.845$ | $2.750$ | **$2.576$** |
-
-> [!TIP]
-> Nhận xét: Với cùng một độ tin cậy, giá trị $t$ luôn lớn hơn $Z$ tương ứng. Do đó khoảng tin cậy khi chưa biết $\sigma$ luôn **RỘNG HƠN** khoảng tin cậy khi đã biết $\sigma$.
+- $S$: Độ lệch chuẩn mẫu: $S = \sqrt{\frac{\sum (X_i - \bar{X})^2}{n - 1}}$.
+- $df = n - 1$: Bậc tự do (Degrees of freedom).
+- $t_{\alpha/2}$: Giá trị tới hạn tra từ bảng Student $t$ tại hàng $df$ và cột $\alpha/2$.
 
 ---
 
 ## 8.4. Khoảng Tin Cậy cho Tỷ Lệ Tổng Thể $\pi$ (Population Proportion)
 
 ### 1. Điều kiện áp dụng:
-- Dữ liệu thuộc dạng định tính nhị phân (có hoặc không có đặc tính quan tâm).
-- Cỡ mẫu phải đủ lớn để xấp xỉ chuẩn:
-  $$np \ge 5 \quad \text{và} \quad n(1 - p) \ge 5$$
-  (Trong đó $p = \frac{X}{n}$ là tỷ lệ mẫu, $X$ là số phần tử có đặc tính).
+$$np \ge 5 \quad \text{và} \quad n(1 - p) \ge 5$$
+Trong đó $p = \frac{X}{n}$ là tỷ lệ mẫu (Sample proportion), $X$ là số phần tử mang đặc tính quan tâm.
 
-### 2. Công thức chuẩn:
-$$p - Z_{\alpha/2} \sqrt{\frac{p(1 - p)}{n}} \le \pi \le p + Z_{\alpha/2} \sqrt{\frac{p(1 - p)}{n}}$$
-Hay viết gọn:
+### 2. Công thức chuẩn (Formula):
 $$\pi \in \left[ p \pm Z_{\alpha/2} \sqrt{\frac{p(1 - p)}{n}} \right]$$
-Trong đó:
-- Sai số chuẩn của tỷ lệ mẫu: $S_p = \sqrt{\frac{p(1 - p)}{n}}$.
+- Sai số chuẩn của tỷ lệ: $\sigma_p \approx \sqrt{\frac{p(1 - p)}{n}}$.
 - Biên độ sai số: $e = Z_{\alpha/2} \sqrt{\frac{p(1 - p)}{n}}$.
 
 ---
 
-## 8.5. Xác Định Cỡ Mẫu Tối Thiểu Cần Thiết ($n$)
+## 8.5. Xác Định Cỡ Mẫu Tối Thiểu Cần Thiết ($n$) (Determining Sample Size)
 
-### 1. Cỡ mẫu cho Trung bình tổng thể $\mu$:
-Xuất phát từ công thức sai số biên $e = Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$, giải phương trình tìm $n$:
+### 1. Cỡ mẫu cho Trung bình (Sample Size for the Mean):
 $$n = \left( \frac{Z_{\alpha/2} \cdot \sigma}{e} \right)^2$$
 > [!IMPORTANT]
-> **QUY TẮC BẮT BUỘC: LUÔN LÀM TRÒN LÊN SỐ NGUYÊN TIẾP THEO (CEILING)!**  
-> Dù phần thập phân có nhỏ đến đâu (ví dụ: $n = 311.02$), bạn vẫn bắt buộc phải làm tròn lên **$n = 312$**. Nếu làm tròn xuống 311, sai số biên sẽ vượt quá mức cho phép $e$!
+> **QUY TẮC BẮT BUỘC (ROUNDING RULE): LUÔN LÀM TRÒN LÊN (ALWAYS ROUND UP TO THE NEXT INTEGER)!**  
+> Ví dụ: $n = 311.16 \implies$ Phải chọn **$n = 312$**.
 
-- **Khi chưa biết $\sigma$ thì lấy ở đâu để tính $n$?**
-  1. Dùng kết quả từ một nghiên cứu sơ bộ trước đó (Pilot sample) để lấy $S \approx \sigma$.
-  2. Dùng quy tắc khoảng biến thiên thực nghiệm: $\sigma \approx \frac{\text{Range}}{6}$ (vì $99.73\%$ dữ liệu nằm trong $6\sigma$).
-
-### 2. Cỡ mẫu cho Tỷ lệ tổng thể $\pi$:
-Xuất phát từ công thức sai số biên $e = Z_{\alpha/2} \sqrt{\frac{\pi(1 - \pi)}{n}}$, giải tìm $n$:
+### 2. Cỡ mẫu cho Tỷ lệ (Sample Size for the Proportion):
 $$n = \left( \frac{Z_{\alpha/2}}{e} \right)^2 \pi(1 - \pi)$$
-- **Chiến lược chọn $\pi$:**
-  1. Nếu đã có ước lượng trước về tỷ lệ: Dùng giá trị $\pi$ từ mẫu thử nghiệm (hoặc dữ liệu năm trước).
-  2. Nếu hoàn toàn **chưa có bất kỳ thông tin nào về $\pi$**: Dùng trường hợp xấu nhất (bảo thủ nhất - Conservative scenario) là **$\pi = 0.5$**.
-     - Vì tích số $\pi(1 - \pi)$ đạt giá trị cực đại khi $\pi = 0.5$: $0.5 \times (1 - 0.5) = 0.25$.
-     - Chọn $\pi = 0.5$ đảm bảo cỡ mẫu thu được sẽ lớn nhất và luôn an toàn trong mọi tình huống!
+- Nếu chưa có thông tin về $\pi$: Dùng kịch bản bảo thủ nhất **$\pi = 0.5$** $\implies \pi(1 - \pi) = 0.25$ để đảm bảo cỡ mẫu lớn nhất và an toàn nhất.
 
 ---
 
-## 8.6. Bài Tập Thực Chiến Kinh Điển Chương 8 (Chuẩn 5 Bước Quốc Tế)
+## 8.6. Bài Tập SGK Berenson Thực Chiến Chương 8 (Chuẩn Anh - Việt - 5 Bước - Casio 580)
 
-### Bài tập 8.1: Khoảng tin cậy cho Trung bình khi $\sigma$ chưa biết
-**Đề bài:** Một chuỗi khách sạn tại New York muốn ước lượng giá phòng trung bình mỗi đêm. Khảo sát ngẫu nhiên $n = 25$ khách sạn thu được giá trung bình là $\bar{X} = \$172.50$ với độ lệch chuẩn mẫu $S = \$15.40$. Giả định giá phòng có phân phối chuẩn. Hãy lập khoảng tin cậy 95% cho giá phòng trung bình của toàn bộ các khách sạn tại New York.
+### Bài tập 8.1 (Textbook Problem 8.6, p. 314) - Mean Quiz Score (Student $t$)
 
-**Giải 5 bước chuẩn:**
-- **BƯỚC 1: Trích xuất thông tin:**
-  - $n = 25 \implies df = 25 - 1 = 24$.
-  - $\bar{X} = 172.50$, $S = 15.40$.
+#### 1. Nguyên văn đề thi tiếng Anh (Original English):
+> **Problem 8.6 (Berenson 14th Edition, p. 314):**  
+> The dean of a management school wants to check the knowledge of the students at his school about day to day international affairs. The dean arranged a quiz with 50 participants. Assume that the average score is 67 with the sample standard deviation $S$ of 15.  
+> a. Construct the 95% confidence interval in which the score of all the students in the college will lie.  
+> b. Interpret the interval constructed in (a).
+
+#### 2. Dịch nghĩa tiếng Việt & Thuật ngữ then chốt:
+- **Dịch nghĩa:** Trưởng khoa của một trường quản lý muốn kiểm tra kiến thức của sinh viên về các vấn đề thời sự quốc tế hàng ngày. Ông tổ chức một bài kiểm tra trắc nghiệm với 50 sinh viên tham gia. Giả sử điểm số trung bình của mẫu là 67 với độ lệch chuẩn mẫu $S = 15$.  
+  a. Hãy lập khoảng tin cậy 95% cho điểm số trung bình của toàn bộ sinh viên trong trường.  
+  b. Nêu ý nghĩa của khoảng tin cậy vừa tìm được ở câu (a).
+- **Thuật ngữ tiếng Anh cần nhớ:**
+  - *Dean of a management school*: Trưởng khoa trường quản lý
+  - *Sample mean*: $\bar{X} = 67$
+  - *Sample standard deviation*: $S = 15$
+  - *Confidence interval*: Khoảng tin cậy
+
+#### 3. Phương pháp giải chuẩn 5 bước & Công thức đại số:
+- **BƯỚC 1: Trích xuất thông tin đề bài:**
+  - Cỡ mẫu: $n = 50 \implies df = n - 1 = 50 - 1 = 49$.
+  - Trung bình mẫu: $\bar{X} = 67$.
+  - Độ lệch chuẩn mẫu: $S = 15$ (Chưa biết $\sigma \implies$ Dùng phân phối Student $t$).
   - Độ tin cậy: $1 - \alpha = 0.95 \implies \alpha = 0.05 \implies \alpha/2 = 0.025$.
-  - Đề bài cho độ lệch chuẩn mẫu $S$, chưa biết $\sigma \implies$ Dùng phân phối Student $t$.
-- **BƯỚC 2: Xác định giá trị tới hạn:**
-  - Tra bảng phân phối $t$ với $df = 24$ và đuôi trên $0.025$:
-    $$t_{0.025, 24} = 2.0639$$
-- **BƯỚC 3: Tính sai số biên (Margin of Error):**
-  $$e = t_{\alpha/2} \frac{S}{\sqrt{n}} = 2.0639 \times \frac{15.40}{\sqrt{25}} = 2.0639 \times 3.08 \approx 6.3568$$
-- **BƯỚC 4: Tính các cận khoảng tin cậy:**
-  $$\text{LCL} = \bar{X} - e = 172.50 - 6.3568 = 166.1432 \approx 166.14$$
-  $$\text{UCL} = \bar{X} + e = 172.50 + 6.3568 = 178.8568 \approx 178.86$$
-- **BƯỚC 5: Kết luận & Bấm Casio kiểm tra:**
-  - **Kết luận:** Chúng ta tin tưởng 95% rằng giá phòng khách sạn trung bình thực tế tại New York nằm trong khoảng từ **\$166.14 đến \$178.86**.
-  - **Bấm Casio 580:** `[172.5] [-] [2.0639] [x] [15.4] [/] [5] [=]` $\implies 166.143$. Bấm mũi tên lên đổi dấu trừ thành cộng `[+]` $\implies 178.857$.
+- **BƯỚC 2: Nhận diện công thức & Tra giá trị tới hạn:**
+  - Công thức: $\mu \in \left[ \bar{X} \pm t_{\alpha/2, df} \frac{S}{\sqrt{n}} \right]$
+  - Tra bảng $t$ tại $df = 49$ (hoặc lấy xấp xỉ theo $df = 50$ trong bảng Berenson):
+    $$t_{0.025, 49} \approx 2.0096 \approx 2.010$$
+- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
+  - Sai số chuẩn: $\sigma_{\bar{X}} = \frac{S}{\sqrt{n}} = \frac{15}{\sqrt{50}} = \frac{15}{7.071068} \approx 2.1213$
+  - Sai số biên (Margin of Error):
+    $$e = t_{\alpha/2} \frac{S}{\sqrt{n}} = 2.0096 \times 2.1213 \approx 4.263$$
+  - Giới hạn dưới: $\text{LCL} = 67 - 4.263 = 62.737 \approx 62.74$
+  - Giới hạn trên: $\text{UCL} = 67 + 4.263 = 71.263 \approx 71.26$
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - Tính sai số biên: `[2.0096] [x] [15] [/] [√] [50] [=]` $\implies$ Hiển thị: `4.2628...`
+  - Giới hạn dưới: `[67] [-] [Ans] [=]` $\implies$ `62.737`
+  - Giới hạn trên: `[67] [+] [4.2628] [=]` $\implies$ `71.263`
+- **BƯỚC 5: Kết luận & Diễn giải ý nghĩa:**
+  - **Kết luận:** Khoảng tin cậy 95% cho điểm trung bình là **$[62.74, 71.26]$**.
+  - **Ý nghĩa câu (b):** Chúng ta tin tưởng 95% rằng điểm bài kiểm tra thời sự quốc tế trung bình thực tế của toàn bộ sinh viên trong trường nằm trong khoảng từ **$62.74$ đến $71.26$ điểm**.
 
 ---
 
-### Bài tập 8.2: Khoảng tin cậy cho Tỷ lệ
-**Đề bài:** Khảo sát ngẫu nhiên $n = 100$ người dân thì thấy có $25$ người thuận tay trái. Hãy lập khoảng tin cậy 95% cho tỷ lệ người thuận tay trái trong toàn bộ dân số.
+### Bài tập 8.2 (Textbook Problem 8.56, p. 333) - Media Viewing Time & HD TVs (Mean & Proportion)
 
-**Giải 5 bước chuẩn:**
-- **BƯỚC 1: Trích xuất thông tin:**
-  - $n = 100$, $X = 25 \implies p = \frac{25}{100} = 0.25$.
-  - Kiểm tra điều kiện: $np = 25 \ge 5$ và $n(1-p) = 75 \ge 5$ (Thỏa mãn xấp xỉ chuẩn).
-  - Độ tin cậy $95\% \implies Z_{\alpha/2} = 1.96$.
-- **BƯỚC 2: Tính sai số chuẩn:**
-  $$\sigma_p = \sqrt{\frac{p(1 - p)}{n}} = \sqrt{\frac{0.25 \times 0.75}{100}} = \sqrt{0.001875} \approx 0.0433$$
-- **BƯỚC 3: Tính sai số biên:**
-  $$e = 1.96 \times 0.043301 \approx 0.08487 \text{ (tức } 8.49\%\text{)}$$
-- **BƯỚC 4: Tính các giới hạn:**
-  $$\text{LCL} = 0.25 - 0.0849 = 0.1651 \text{ (16.51\%) }$$
-  $$\text{UCL} = 0.25 + 0.0849 = 0.3349 \text{ (33.49\%) }$$
-- **BƯỚC 5: Kết luận:**
-  - Ta có độ tin cậy 95% rằng tỷ lệ người thuận tay trái trong dân số nằm trong khoảng từ **$16.51\%$ đến $33.49\%$**.
+#### 1. Nguyên văn đề thi tiếng Anh (Original English):
+> **Problem 8.56 (Berenson 14th Edition, p. 333):**  
+> A market researcher for a consumer electronics company wants to study the media viewing behavior of residents of a particular area. A random sample of 40 respondents is selected, and each respondent is instructed to keep a detailed record of time spent engaged viewing content across all screens (traditional TV, DVD/Blu-ray, game console, Internet on a computer, video on a smartphone) in a particular week. The results are as follows:  
+> Content viewing time per week: $\bar{X} = 51$ hours, $S = 3.5$ hours.  
+> 32 respondents have high definition (HD) on at least one television set.  
+> a. Construct a 95% confidence interval estimate for the mean content viewing time per week.  
+> b. Construct a 95% confidence interval estimate for the population proportion of residents who have HD on at least one television set.
+
+#### 2. Dịch nghĩa tiếng Việt & Thuật ngữ then chốt:
+- **Dịch nghĩa:** Một chuyên viên nghiên cứu thị trường cho một công ty điện tử tiêu dùng muốn nghiên cứu hành vi xem truyền thông của cư dân tại một khu vực. Mẫu ngẫu nhiên 40 người được chọn theo dõi trong một tuần. Kết quả thu được:  
+  Thời gian xem nội dung mỗi tuần: $\bar{X} = 51$ giờ, $S = 3.5$ giờ.  
+  Có 32 người sở hữu TV độ nét cao (HD) trên ít nhất một chiếc TV trong nhà.  
+  a. Hãy lập khoảng tin cậy 95% cho thời gian xem nội dung trung bình mỗi tuần của cư dân.  
+  b. Hãy lập khoảng tin cậy 95% cho tỷ lệ cư dân có TV HD trên ít nhất một chiếc TV.
+- **Thuật ngữ tiếng Anh cần nhớ:**
+  - *Consumer electronics*: Điện tử tiêu dùng
+  - *Viewing behavior*: Hành vi theo dõi/xem nội dung
+  - *High definition (HD)*: Độ nét cao
+
+#### 3. Phương pháp giải chuẩn 5 bước & Công thức đại số:
+- **CÂU A: ƯỚC LƯỢNG TRUNG BÌNH $\mu$ (Mean Time):**
+  - **B1**: $n = 40 \implies df = 39$. $\bar{X} = 51$, $S = 3.5$. $1 - \alpha = 0.95$.
+  - **B2**: Tra bảng $t$ với $df = 39, \alpha/2 = 0.025 \implies t_{0.025, 39} \approx 2.0227$.
+  - **B3**: Sai số biên:
+    $$e = t_{\alpha/2} \frac{S}{\sqrt{n}} = 2.0227 \times \frac{3.5}{\sqrt{40}} = 2.0227 \times 0.5534 \approx 1.1194 \text{ giờ}$$
+    $$\text{LCL} = 51 - 1.1194 = 49.8806 \approx 49.88 \text{ giờ}$$
+    $$\text{UCL} = 51 + 1.1194 = 52.1194 \approx 52.12 \text{ giờ}$$
+  - **B4 (Casio)**: `[2.0227] [x] [3.5] [/] [√] [40] [=]` $\to 1.1194$. Lấy `51 - Ans` và `51 + Ans`.
+  - **B5**: Khoảng tin cậy 95% cho thời gian xem trung bình là **$[49.88, 52.12]$ giờ/tuần**.
+
+- **CÂU B: ƯỚC LƯỢNG TỶ LỆ $\pi$ (Proportion with HD):**
+  - **B1**: $n = 40$, $X = 32 \implies p = \frac{32}{40} = 0.80$ (tức 80%).
+  - Kiểm tra điều kiện: $np = 40(0.8) = 32 \ge 5$ và $n(1-p) = 40(0.2) = 8 \ge 5$ (Hợp lệ).
+  - Độ tin cậy 95% $\implies Z_{\alpha/2} = 1.96$.
+  - **B2**: Sai số chuẩn tỷ lệ:
+    $$\sigma_p = \sqrt{\frac{p(1 - p)}{n}} = \sqrt{\frac{0.80 \times 0.20}{40}} = \sqrt{0.004} \approx 0.063246$$
+  - **B3**: Sai số biên:
+    $$e = Z_{\alpha/2} \sigma_p = 1.96 \times 0.063246 \approx 0.12396 \approx 0.1240 \text{ (12.40\%) }$$
+    $$\text{LCL} = 0.80 - 0.1240 = 0.6760 \text{ (67.60\%) }$$
+    $$\text{UCL} = 0.80 + 0.1240 = 0.9240 \text{ (92.40\%) }$$
+  - **B4 (Casio)**: `[1.96] [x] [√] [(] [0.8] [x] [0.2] [/] [40] [)] [=]` $\to 0.12396$.
+  - **B5**: Ta tin tưởng 95% rằng tỷ lệ cư dân sở hữu TV HD nằm trong khoảng từ **$67.60\%$ đến $92.40\%$**.
 
 ---
 
+### Bài tập 8.3 (Textbook Problem 8.57, p. 333) - Ransomware Attacks (99% CI)
 
+#### 1. Nguyên văn đề thi tiếng Anh (Original English):
+> **Problem 8.57 (Berenson 14th Edition, p. 333):**  
+> An information technology (IT) provider of cloud backup and restore solutions for small to midsize businesses wants to study the consequences of ransomware attacks. A random sample of 50 small to midsized companies in the United States that have experienced a ransomware attack reveals the following:  
+> Time spent dealing with and containing a ransomware incident: $\bar{X} = 42$ hours, $S = 8$ hours.  
+> Thirteen small to midsize companies lost customers as a result of a ransomware incident.  
+> a. Construct a 99% confidence interval estimate for the population mean time spent dealing with and containing a ransomware incident.  
+> b. Construct a 99% confidence interval estimate for the population proportion of small to midsized companies that lost customers as a result of a ransomware incident.
+
+#### 2. Dịch nghĩa tiếng Việt & Thuật ngữ then chốt:
+- **Dịch nghĩa:** Một nhà cung cấp giải pháp sao lưu và phục hồi đám mây IT cho các doanh nghiệp vừa và nhỏ muốn nghiên cứu hậu quả của các cuộc tấn công mã độc tống tiền (ransomware). Mẫu ngẫu nhiên 50 công ty đã từng bị ransomware tấn công cho kết quả:  
+  Thời gian xử lý và khống chế sự cố ransomware: $\bar{X} = 42$ giờ, $S = 8$ giờ.  
+  Có 13 công ty bị mất khách hàng do hậu quả của vụ tấn công.  
+  a. Hãy lập khoảng tin cậy 99% cho thời gian trung bình xử lý sự cố ransomware.  
+  b. Hãy lập khoảng tin cậy 99% cho tỷ lệ các công ty bị mất khách hàng.
+- **Thuật ngữ tiếng Anh cần nhớ:**
+  - *Ransomware incident*: Sự cố mã độc tống tiền
+  - *Cloud backup and restore*: Sao lưu và khôi phục dữ liệu đám mây
+  - *Containing an incident*: Khống chế/cô lập sự cố
+
+#### 3. Phương pháp giải chuẩn 5 bước & Công thức đại số:
+- **CÂU A: KHOẢNG TIN CẬY 99% CHO TRUNG BÌNH THỜI GIAN:**
+  - **B1**: $n = 50 \implies df = 49$. $\bar{X} = 42$, $S = 8$. $1 - \alpha = 0.99 \implies \alpha = 0.01 \implies \alpha/2 = 0.005$.
+  - **B2**: Tra bảng $t$ với $df = 49, \alpha/2 = 0.005 \implies t_{0.005, 49} \approx 2.680$.
+  - **B3**: Sai số biên:
+    $$e = 2.680 \times \frac{8}{\sqrt{50}} = 2.680 \times 1.13137 \approx 3.032 \text{ giờ}$$
+    $$\text{LCL} = 42 - 3.032 = 38.968 \approx 38.97 \text{ giờ}$$
+    $$\text{UCL} = 42 + 3.032 = 45.032 \approx 45.03 \text{ giờ}$$
+  - **B4 (Casio)**: `[2.680] [x] [8] [/] [√] [50] [=]` $\to 3.032$. Lấy `42 - Ans` và `42 + Ans`.
+  - **B5**: Với độ tin cậy 99%, thời gian xử lý sự cố ransomware trung bình nằm trong khoảng từ **$38.97$ đến $45.03$ giờ**.
+
+- **CÂU B: KHOẢNG TIN CẬY 99% CHO TỶ LỆ MẤT KHÁCH HÀNG:**
+  - **B1**: $n = 50$, $X = 13 \implies p = \frac{13}{50} = 0.26$.
+  - Kiểm tra điều kiện: $np = 50(0.26) = 13 \ge 5$ và $n(1-p) = 50(0.74) = 37 \ge 5$ (Hợp lệ).
+  - Độ tin cậy 99% $\implies Z_{\alpha/2} = 2.576$ (hoặc $2.58$).
+  - **B2**: Sai số chuẩn:
+    $$\sigma_p = \sqrt{\frac{0.26 \times 0.74}{50}} = \sqrt{\frac{0.1924}{50}} = \sqrt{0.003848} \approx 0.06203$$
+  - **B3**: Sai số biên:
+    $$e = 2.576 \times 0.06203 \approx 0.1598 \text{ (15.98\%) }$$
+    $$\text{LCL} = 0.26 - 0.1598 = 0.1002 \text{ (10.02\%) }$$
+    $$\text{UCL} = 0.26 + 0.1598 = 0.4198 \text{ (41.98\%) }$$
+  - **B4 (Casio)**: `[2.576] [x] [√] [(] [0.26] [x] [0.74] [/] [50] [)] [=]` $\to 0.15979$.
+  - **B5**: Ta có độ tin cậy 99% rằng tỷ lệ các công ty bị mất khách hàng sau sự cố ransomware nằm trong khoảng từ **$10.02\%$ đến $41.98\%$**.
+
+---
 
 # PHẦN 8: CHƯƠNG 9 - KIỂM ĐỊNH GIẢ THUYẾT 1 MẪU (ONE-SAMPLE HYPOTHESIS TESTING)
 
 > [!NOTE]
-> **TỔNG QUAN BẢN CHẤT CHƯƠNG 9:**  
-> Nếu Chương 8 là bài toán "Ước lượng" (đi tìm một khoảng chứa giá trị thật của tham số), thì Chương 9 là bài toán "Kiểm định" (kiểm tra xem một khẳng định, lời tuyên bố hay giả thuyết đưa ra là ĐÚNG hay SAI dựa trên bằng chứng dữ liệu thu thập được từ mẫu).
+> **TỔNG QUAN BẢN CHẤT CHƯƠNG 9 (CHAPTER 9 OVERVIEW):**  
+> While Chapter 8 estimates the value of an unknown population parameter, Chapter 9 tests a specific claim or hypothesis about a parameter using sample evidence. We begin by assuming the status quo hypothesis ($H_0$) is true, and only reject it if the sample evidence strongly contradicts it.
 
 ---
 
 ## 9.1. Bản Chất & Cặp Giả Thuyết Thống Kê ($H_0$ & $H_1$)
 
-### 1. Khái niệm Giả thuyết Thống kê:
-- Một giả thuyết thống kê là một phát biểu hoặc tuyên bố về một tham số của tổng thể (như $\mu$ hay $\pi$).
-- Ví dụ:
-  - *"Hóa đơn điện thoại trung bình hàng tháng của cư dân thành phố là $\mu = \$42$"*.
-  - *"Tỷ lệ người dùng điện thoại thông minh tại thành phố là $\pi = 0.88$"*.
+### 1. Khái niệm Giả thuyết Thống kê (Statistical Hypotheses):
+- **Giả thuyết Không (Null Hypothesis - $H_0$):**
+  - States the claim or assertion to be tested (e.g., $H_0: \mu = 30$ mm).
+  - Represents the current belief or status quo.
+  - Always contains the equality sign: "$=$", "$\le$", or "$\ge$".
+  - Assumed to be true until proven false ("innocent until proven guilty").
+- **Giả thuyết Đối (Alternative Hypothesis - $H_1$ hoặc $H_a$):**
+  - Opposite of the null hypothesis (e.g., $H_1: \mu \ne 30$ mm).
+  - Challenges the status quo. Never contains an equality sign; always uses "$\ne$", "$>$", or "$<$".
+  - Represents the conclusion the researcher wants to support with statistical evidence.
 
-### 2. Cặp Giả thuyết Thống kê:
 ```mermaid
 flowchart LR
-    A["TỔNG THỂ CẦN KIỂM ĐỊNH"] --> B["Giả thuyết Không H0<br/>(Status Quo - Hiện trạng)"]
-    A --> C["Giả thuyết Đối H1<br/>(Research Hypothesis - Kỳ vọng chứng minh)"]
-    B --> D["Luôn chứa dấu bằng: =, ≤, ≥<br/>Mặc định xem là ĐÚNG"]
-    C --> E["Không bao giờ chứa dấu bằng: ≠, >, <<br/>Cần bằng chứng để công nhận"]
+    A["HYPOTHESIS TESTING PROCESS"] --> B["Null Hypothesis H0<br/>Contains =, ≤, ≥<br/>Default: Innocent"]
+    A --> C["Alternative Hypothesis H1<br/>Contains ≠, >, <<br/>Requires Evidence"]
+    B --> D["Z Test: σ is Known"]
+    B --> E["t Test: σ is UNKNOWN (df = n - 1)"]
+    B --> F["Z Test for Proportion: π"]
 ```
-
-- **Giả thuyết Không (Null Hypothesis - $H_0$):**
-  - Đại diện cho quan điểm hiện tại, trạng thái bình thường (status quo) hoặc không có sự khác biệt.
-  - Luôn chứa dấu bằng: $=$, $\le$, hoặc $\ge$.
-  - Mặc định được giả định là ĐÚNG cho đến khi có đủ bằng chứng mẫu để bác bỏ (Tương tự nguyên tắc *"Vô tội cho đến khi bị chứng minh có tội"* trong tòa án).
-- **Giả thuyết Đối / Giả thuyết Thay thế (Alternative Hypothesis - $H_1$ hoặc $H_a$):**
-  - Là tuyên bố trái ngược hoàn toàn với $H_0$.
-  - Đại diện cho điều mà nhà nghiên cứu đang muốn tìm bằng chứng để chứng minh hoặc kiểm tra xem có sự thay đổi hay không.
-  - Không bao giờ chứa dấu bằng, chỉ chứa các dấu: $\ne$ (khác), $>$ (lớn hơn), hoặc $<$ (nhỏ hơn).
-
-> [!WARNING]
-> **BẪY THI TRẮC NGHIỆM VỀ CÁCH VIẾT $H_0$ VÀ $H_1$:**  
-> 1. Giả thuyết luôn phát biểu về **tham số tổng thể** ($\mu, \pi, \sigma$), TUYỆT ĐỐI KHÔNG BAO GIỜ phát biểu về thống kê mẫu ($\bar{X}, p, S$). Nếu thấy đề thi viết $H_0: \bar{X} = 50 \implies$ **CHẮC CHẮN SAI!**  
-> 2. Dấu bằng ($=, \le, \ge$) luôn thuộc về $H_0$. Dấu bất đẳng thức thuần túy ($\ne, >, <$) luôn thuộc về $H_1$.
 
 ---
 
 ## 9.2. Hai Loại Sai Lầm Sống Còn & Công Suất Kiểm Định
 
-Khi đưa ra quyết định dựa trên mẫu, ta luôn đứng trước nguy cơ mắc sai lầm do biến động ngẫu nhiên:
-
-| Thực tế khách quan \ Quyết định mẫu | **KHÔNG BÁC BỎ $H_0$** (Do not reject $H_0$) | **BÁC BỎ $H_0$** (Reject $H_0$) |
+| True State of Nature \ Statistical Decision | **DO NOT REJECT $H_0$** | **REJECT $H_0$** |
 | :---: | :---: | :---: |
-| **$H_0$ ĐÚNG trong thực tế** | **Quyết định đúng**<br/>Xác suất $= 1 - \alpha$ (Confidence Level) | **SAI LẦM LOẠI I (Type I Error)**<br/>Xác suất $= \alpha$ (Significance Level) |
-| **$H_0$ SAI trong thực tế** | **SAI LẦM LOẠI II (Type II Error)**<br/>Xác suất $= \beta$ | **Quyết định đúng**<br/>Xác suất $= 1 - \beta$ (Power of the Test) |
+| **$H_0$ is TRUE** | **Correct Decision**<br/>Confidence Level $= 1 - \alpha$ | **TYPE I ERROR (Sai lầm Loại I)**<br/>Probability $= \alpha$ (Level of Significance) |
+| **$H_0$ is FALSE** | **TYPE II ERROR (Sai lầm Loại II)**<br/>Probability $= \beta$ | **Correct Decision**<br/>Power of the Test $= 1 - \beta$ |
 
-### 1. Phân biệt Sai lầm Loại I và Loại II:
-- **Sai lầm Loại I (Type I Error):**
-  - Định nghĩa: Bác bỏ $H_0$ khi thực chất $H_0$ đang ĐÚNG.
-  - Hình tượng: **"Báo động giả"** (False Alarm) hoặc kết án một người vô tội.
-  - Xác suất xảy ra ký hiệu là **$\alpha$**, được gọi là **Mức ý nghĩa (Level of Significance)** của phép kiểm định. Giá trị này do người làm nghiên cứu chủ động ấn định trước (thường là $0.05, 0.01$, hoặc $0.10$).
-- **Sai lầm Loại II (Type II Error):**
-  - Định nghĩa: Không bác bỏ $H_0$ khi thực chất $H_0$ đang SAI.
-  - Hình tượng: **"Bỏ lỡ cơ hội"** (Missed Opportunity) hoặc tha bổng kẻ có tội.
-  - Xác suất xảy ra ký hiệu là **$\beta$**.
-- **Công suất kiểm định (Power of the Test - $1 - \beta$):**
-  - Khả năng phát hiện và bác bỏ thành công một giả thuyết $H_0$ sai. Một kiểm định tốt là kiểm định có công suất cao (tiến gần 1).
-
-### 2. Mối quan hệ đánh đổi:
-- Hai loại sai lầm không thể xảy ra cùng một lúc.
-- Với một cỡ mẫu $n$ cố định: Nếu giảm $\alpha$ thì $\beta$ sẽ tăng lên, và ngược lại.
-- **Biện pháp duy nhất để giảm đồng thời cả $\alpha$ và $\beta$:** **TĂNG CỠ MẪU $n$!**
+- **Sai lầm Loại I (Type I Error - $\alpha$):** Bác bỏ $H_0$ khi thực chất $H_0$ đúng (*"Báo động giả" - False alarm*).
+- **Sai lầm Loại II (Type II Error - $\beta$):** Không bác bỏ $H_0$ khi thực chất $H_0$ sai (*"Bỏ lọt tội phạm" - Missed opportunity*).
+- **Công suất kiểm định (Power of the test - $1 - \beta$):** Xác suất bác bỏ thành công một giả thuyết $H_0$ sai.
+- **Biện pháp giảm đồng thời $\alpha$ và $\beta$:** **TĂNG CỠ MẪU $n$**.
 
 ---
 
 ## 9.3. Hai Cách Tiếp Cận Ra Quyết Định: Critical Value vs $p$-Value
 
-```mermaid
-flowchart TD
-    A["DỮ LIỆU MẪU & TEST STATISTIC"] --> B["CÁCH 1: GIÁ TRỊ TỚI HẠN (Critical Value)"]
-    A --> C["CÁCH 2: GIÁ TRỊ p-VALUE (Hiện đại)"]
-    B --> D["So sánh Test Statistic với Critical Value<br/>Nếu rơi vào Miền Bác Bỏ: Reject H0"]
-    C --> E["So sánh p-value với mức ý nghĩa α<br/>Nếu p-value ≤ α: Reject H0!"]
-```
+### 1. Cách 1: Tiếp cận Giá trị Tới hạn (Critical Value Approach):
+- Tra giá trị tới hạn ($Z_{crit}$ hoặc $t_{crit}$) để xác định **Miền Bác Bỏ (Rejection Region)**.
+- Nếu $Z_{STAT}$ hoặc $t_{STAT}$ rơi vào Miền Bác Bỏ $\implies$ **Bác bỏ $H_0$ (Reject $H_0$)**.
 
-### 1. Cách 1: Tiếp cận Giá trị tới hạn (Critical Value Approach):
-- Xác định giá trị tới hạn chia trục số thành 2 miền:
-  - **Miền Bác Bỏ (Rejection Region):** Vùng ở các đuôi phân phối.
-  - **Miền Không Bác Bỏ (Non-rejection Region):** Vùng ở trung tâm phân phối.
-- Quy tắc: Nếu thống kê kiểm định ($Z_{STAT}$ hoặc $t_{STAT}$) rơi vào Miền Bác Bỏ $\implies$ **Bác bỏ $H_0$**.
-
-### 2. Cách 2: Tiếp cận $p$-Value ($p$-Value Approach - Chuẩn thống kê quốc tế):
-- **Định nghĩa $p$-value:** Là xác suất thu được một giá trị thống kê mẫu lệch ít nhất bằng giá trị quan sát được từ mẫu hiện tại, với giả định rằng $H_0$ là đúng.
-- $p$-value còn được gọi là mức ý nghĩa quan sát (observed significance level).
-- **Quy tắc quyết định vàng (Golden Rule):**
-  $$\text{Nếu } p\text{-value} \le \alpha \implies \text{Bác bỏ } H_0 \text{ (Reject } H_0 \text{)}$$
-  $$\text{Nếu } p\text{-value} > \alpha \implies \text{Không bác bỏ } H_0 \text{ (Do not reject } H_0 \text{)}$$
-
-> [!TIP]
-> **CÂU THẦN CHÚ TIẾNG ANH KINH ĐIỂN CẦN NHỚ:**  
-> *"If the p-value is low, the null must go!"*  
-> (Nếu $p$-value nhỏ hơn hoặc bằng $\alpha$, $H_0$ buộc phải ra đi - Bác bỏ $H_0$!).
+### 2. Cách 2: Tiếp cận $p$-Value ($p$-Value Approach - Chuẩn quốc tế):
+- **$p$-value:** Probability of obtaining a test statistic equal to or more extreme than the observed sample value, given that $H_0$ is true.
+- **Quy tắc vàng (Golden Rule):**
+  $$\text{Nếu } p\text{-value} \le \alpha \implies \text{Reject } H_0$$
+  $$\text{Nếu } p\text{-value} > \alpha \implies \text{Do NOT reject } H_0$$
+- *"If the p-value is low, the null must go!"*
 
 ---
 
-## 9.4. Kiểm Định Giả Thuyết Cho Trung Bình $\mu$ (Đầy Đủ $Z$-test & $t$-test)
+## 9.4. Bảng Tổng Hợp 3 Dạng Kiểm Định Giả Thuyết
 
-### 1. Phân loại kiểm định:
-- **Đã biết $\sigma$:** Dùng kiểm định $Z$ (Z-test for Mean):
-  $$Z_{STAT} = \frac{\bar{X} - \mu_0}{\sigma / \sqrt{n}}$$
-- **Chưa biết $\sigma$:** Dùng kiểm định Student $t$ ($t$-test for Mean) với bậc tự do $df = n - 1$:
-  $$t_{STAT} = \frac{\bar{X} - \mu_0}{S / \sqrt{n}}$$
-
-### 2. Ba dạng kiểm định giả thuyết (2 phía, Đuôi trên, Đuôi dưới):
-
-| Dạng kiểm định | Cặp giả thuyết | Miền Bác Bỏ ($Z$-test) | Miền Bác Bỏ ($t$-test) | Cách tính $p$-value |
+| Loại kiểm định | Cặp giả thuyết | Miền Bác Bỏ ($Z$-test) | Miền Bác Bỏ ($t$-test) | Cách tính $p$-value |
 | :---: | :---: | :---: | :---: | :---: |
-| **Hai phía (Two-Tail)** | $H_0: \mu = \mu_0$<br/>$H_1: \mu \ne \mu_0$ | $Z_{STAT} < -Z_{\alpha/2}$<br/>hoặc $Z_{STAT} > Z_{\alpha/2}$ | $t_{STAT} < -t_{\alpha/2}$<br/>hoặc $t_{STAT} > t_{\alpha/2}$ | $2 \times P(Z > \|Z_{STAT}\|)$<br/>(nhân đôi xác suất đuôi) |
-| **Đuôi trên (Upper-Tail)** | $H_0: \mu \le \mu_0$<br/>$H_1: \mu > \mu_0$ | $Z_{STAT} > Z_{\alpha}$ | $t_{STAT} > t_{\alpha}$ | $P(Z > Z_{STAT})$ |
-| **Đuôi dưới (Lower-Tail)** | $H_0: \mu \ge \mu_0$<br/>$H_1: \mu < \mu_0$ | $Z_{STAT} < -Z_{\alpha}$ | $t_{STAT} < -t_{\alpha}$ | $P(Z < Z_{STAT})$ |
-
-> [!NOTE]
-> **DẤU HIỆU NHẬN DIỆN CỰC NHANH TRONG ĐỀ THI TIẾNG ANH:**  
-> - Thấy các cụm từ: *"has changed"*, *"is different from"*, *"is not equal to"* $\implies$ **Kiểm định 2 phía ($\ne$)**.  
-> - Thấy các cụm từ: *"has increased"*, *"more than"*, *"greater than"*, *"exceeds"*, *"improved"* $\implies$ **Kiểm định đuôi trên ($>$)**.  
-> - Thấy các cụm từ: *"has decreased"*, *"less than"*, *"fewer than"*, *"under"*, *"reduced"* $\implies$ **Kiểm định đuôi dưới ($<$)**.
+| **Hai phía (Two-Tail)** | $H_0: \mu = \mu_0$<br/>$H_1: \mu \ne \mu_0$ | $\|Z_{STAT}\| > Z_{\alpha/2}$ | $\|t_{STAT}\| > t_{\alpha/2, df}$ | $2 \times P(Z > \|Z_{STAT}\|)$ |
+| **Đuôi trên (Upper-Tail)** | $H_0: \mu \le \mu_0$<br/>$H_1: \mu > \mu_0$ | $Z_{STAT} > Z_{\alpha}$ | $t_{STAT} > t_{\alpha, df}$ | $P(Z > Z_{STAT})$ |
+| **Đuôi dưới (Lower-Tail)** | $H_0: \mu \ge \mu_0$<br/>$H_1: \mu < \mu_0$ | $Z_{STAT} < -Z_{\alpha}$ | $t_{STAT} < -t_{\alpha, df}$ | $P(Z < Z_{STAT})$ |
 
 ---
 
-## 9.5. Mối Liên Hệ Giữa Kiểm Định 2 Phía Và Khoảng Tin Cậy
+## 9.5. Bài Tập SGK Berenson Thực Chiến Chương 9 (Chuẩn Anh - Việt - 5 Bước - Casio 580)
 
-Có một sự tương đương toán học hoàn hảo giữa Kiểm định hai phía ở mức ý nghĩa $\alpha$ và Khoảng tin cậy $(1 - \alpha)$:
-1. Nếu giá trị giả thuyết $\mu_0$ **nằm bên trong** khoảng tin cậy $(1 - \alpha) \implies$ **Không bác bỏ $H_0$** tại mức ý nghĩa $\alpha$.
-2. Nếu giá trị giả thuyết $\mu_0$ **nằm ngoài** khoảng tin cậy $(1 - \alpha) \implies$ **Bác bỏ $H_0$** tại mức ý nghĩa $\alpha$.
+### Bài tập 9.1 (Textbook Problem 9.17 & Example 9.1, p. 343 & 356) - Oxford Cereals (Two-Tail $t$-Test)
 
-**Ví dụ:** Với $\bar{X} = 29.84$, $\sigma = 0.8$, $n = 100$, khoảng tin cậy 95% là $[29.6832, 29.9968]$.  
-Nếu ta kiểm định $H_0: \mu = 30$ ở $\alpha = 0.05$: Vì số $30$ nằm ngoài khoảng $[29.6832, 29.9968]$, ta **BÁC BỎ $H_0$** ngay lập tức mà không cần tính lại $Z_{STAT}$!
+#### 1. Nguyên văn đề thi tiếng Anh (Original English):
+> **Problem 9.17 / Example 9.1 (Berenson 14th Edition, p. 343 & 356):**  
+> The Oxford Cereals company produces boxes of cereal with a labeled weight of 368 grams. The quality manager wishes to test whether the filling machine is working properly. A random sample of 25 boxes has a sample mean $\bar{X} = 372.5$ grams and a sample standard deviation $S = 15.4$ grams. At the 0.05 level of significance, is there evidence that the mean weight is different from 368 grams? (Assume the population distribution is normal).
 
----
+#### 2. Dịch nghĩa tiếng Việt & Thuật ngữ then chốt:
+- **Dịch nghĩa:** Công ty ngũ cốc Oxford Cereals sản xuất các hộp ngũ cốc có trọng lượng in trên nhãn là 368 gam. Giám đốc quản lý chất lượng muốn kiểm tra xem máy đóng gói có hoạt động đúng quy chuẩn hay không. Một mẫu ngẫu nhiên gồm 25 hộp cho kết quả trọng lượng trung bình mẫu là $\bar{X} = 372.5$ gam và độ lệch chuẩn mẫu $S = 15.4$ gam. Với mức ý nghĩa $\alpha = 0.05$, có bằng chứng cho thấy trọng lượng trung bình khác 368 gam hay không? (Giả định phân phối tổng thể là chuẩn).
+- **Thuật ngữ tiếng Anh cần nhớ:**
+  - *Labeled weight*: Trọng lượng ghi trên nhãn bao bì ($\mu_0 = 368$)
+  - *Quality manager*: Giám đốc chất lượng
+  - *Different from*: Khác với ($\implies$ Kiểm định hai phía Two-tail $\ne$)
+  - *Level of significance*: Mức ý nghĩa $\alpha = 0.05$
 
-## 9.6. Kiểm Định Giả Thuyết Cho Tỷ Lệ Tổng Thể $\pi$ ($Z$-test for Proportion)
-
-### 1. Điều kiện áp dụng:
-$$n\pi_0 \ge 5 \quad \text{và} \quad n(1 - \pi_0) \ge 5$$
-*(Lưu ý: Dưới mẫu số kiểm tra điều kiện bằng $\pi_0$ theo giả thuyết $H_0$, không dùng $p$ mẫu).*
-
-### 2. Tiêu chuẩn kiểm định:
-$$Z_{STAT} = \frac{p - \pi_0}{\sqrt{\frac{\pi_0(1 - \pi_0)}{n}}}$$
-Trong đó:
-- $p = \frac{X}{n}$: Tỷ lệ mẫu thực tế.
-- $\pi_0$: Tỷ lệ tổng thể giả định trong $H_0$.
-- Sai số chuẩn lý thuyết: $\sigma_p = \sqrt{\frac{\pi_0(1 - \pi_0)}{n}}$.
-
----
-
-## 9.7. Bài Tập Thực Chiến Kinh Điển Chương 9 (Chuẩn 5 Bước Quốc Tế)
-
-### Bài tập 9.1: Kiểm định 2 phía cho trung bình khi $\sigma$ chưa biết
-**Đề bài:** Một công ty sản xuất bóng đèn tuyên bố rằng tuổi thọ trung bình của bóng đèn là $\mu = 1500$ giờ. Một tổ chức bảo vệ người tiêu dùng nghi ngờ tuyên bố này và lấy mẫu ngẫu nhiên $n = 25$ bóng đèn để đo thử, thu được trung bình $\bar{X} = 1450$ giờ và độ lệch chuẩn mẫu $S = 120$ giờ. Với mức ý nghĩa $\alpha = 0.05$, hãy kiểm định xem tuyên bố của công ty có đúng hay không. Giả định tuổi thọ có phân phối chuẩn.
-
-**Giải 5 bước chuẩn:**
-- **BƯỚC 1: Thiết lập cặp giả thuyết:**
-  - $H_0: \mu = 1500$ (Tuổi thọ đúng bằng 1500 giờ).
-  - $H_1: \mu \ne 1500$ (Tuổi thọ khác 1500 giờ $\implies$ Kiểm định 2 phía).
+#### 3. Phương pháp giải chuẩn 5 bước & Công thức đại số:
+- **BƯỚC 1: Thiết lập cặp giả thuyết thống kê:**
+  - $H_0: \mu = 368$ (Máy hoạt động bình thường, trọng lượng trung bình bằng 368 g).
+  - $H_1: \mu \ne 368$ (Trọng lượng trung bình khác 368 g $\implies$ Kiểm định hai phía).
 - **BƯỚC 2: Mức ý nghĩa & Giá trị tới hạn:**
   - $\alpha = 0.05 \implies \alpha/2 = 0.025$.
   - Cỡ mẫu $n = 25 \implies df = 25 - 1 = 24$.
-  - Chưa biết $\sigma$, dùng phân phối Student $t$:
+  - Vì $\sigma$ chưa biết, ta dùng kiểm định Student $t$:
     $$t_{crit} = \pm t_{0.025, 24} = \pm 2.0639$$
-  - Miền bác bỏ: Bác bỏ $H_0$ nếu $t_{STAT} < -2.0639$ hoặc $t_{STAT} > 2.0639$.
-- **BƯỚC 3: Tính giá trị kiểm định $t_{STAT}$:**
-  $$t_{STAT} = \frac{\bar{X} - \mu_0}{S / \sqrt{n}} = \frac{1450 - 1500}{120 / \sqrt{25}} = \frac{-50}{120 / 5} = \frac{-50}{24} \approx -2.0833$$
-- **BƯỚC 4: So sánh và ra quyết định:**
-  - Ta thấy: $t_{STAT} = -2.0833 < -2.0639$.
-  - Giá trị kiểm định rơi vào **Miền Bác Bỏ** (Rejection Region)!
-  - Tính $p$-value: $p\text{-value} = 2 \times P(t_{24} < -2.0833) \approx 0.0480 < 0.05$.
-- **BƯỚC 5: Kết luận thực tiễn:**
-  - **Quyết định:** Bác bỏ $H_0$ ở mức ý nghĩa $5\%$.
-  - **Kết luận:** Có đủ bằng chứng thống kê để kết luận rằng tuổi thọ trung bình thực tế của bóng đèn khác 1500 giờ (cụ thể là thấp hơn mức công ty tuyên bố).
+  - Quy tắc quyết định: Bác bỏ $H_0$ nếu $t_{STAT} < -2.0639$ hoặc $t_{STAT} > 2.0639$.
+- **BƯỚC 3: Tính toán giá trị kiểm định $t_{STAT}$:**
+  $$t_{STAT} = \frac{\bar{X} - \mu_0}{S / \sqrt{n}} = \frac{372.5 - 368}{15.4 / \sqrt{25}} = \frac{4.5}{15.4 / 5} = \frac{4.5}{3.08} \approx 1.4610 \approx 1.46$$
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X & Tính $p$-value:**
+  - Tính $t_{STAT}$: `[(] [372.5] [-] [368] [)] [/] [(] [15.4] [/] [5] [)] [=]` $\implies$ `1.4610...`
+  - So sánh: Vì $-2.0639 \le t_{STAT} = 1.4610 \le +2.0639$, giá trị kiểm định nằm trong **Miền Không Bác Bỏ (Non-rejection Region)**.
+  - Tính $p$-value:
+    - Bấm: `[MENU]` `[7]` `[2]` (Normal CD xấp xỉ): Lower = `1.461`, Upper = `9999`, $\sigma = 1, \mu = 0 \implies 0.072$.
+    - Vì là kiểm định 2 phía: $p\text{-value} = 2 \times P(t_{24} > 1.461) \approx 0.157 > 0.05$.
+- **BƯỚC 5: Kết luận thực tiễn & Ý nghĩa quản trị:**
+  - **Quyết định:** Không bác bỏ $H_0$ (Do not reject $H_0$).
+  - **Kết luận:** Ở mức ý nghĩa 5%, chưa có đủ bằng chứng thống kê để kết luận trọng lượng trung bình của hộp ngũ cốc khác 368 gam. Máy đóng gói vẫn đang hoạt động trong giới hạn sai số chấp nhận được.
 
 ---
 
-### Bài tập 9.2: Kiểm định 1 phía cho tỷ lệ tổng thể
-**Đề bài:** Một công ty tiếp thị tuyên bố rằng chiến dịch gửi thư điện tử của họ đạt tỷ lệ phản hồi là $8\%$ ($\pi = 0.08$). Để kiểm tra tuyên bố này, một cuộc khảo sát ngẫu nhiên trên $n = 500$ khách hàng cho thấy chỉ có $25$ người phản hồi ($p = \frac{25}{500} = 0.05$). Với mức ý nghĩa $\alpha = 0.05$, hãy kiểm định tuyên bố của công ty.
+### Bài tập 9.2 (Textbook Problem 9.46, p. 366) - Bus Breakdown Mileage (Upper-Tail $t$-Test)
 
-**Giải 5 bước chuẩn:**
+#### 1. Nguyên văn đề thi tiếng Anh (Original English):
+> **Problem 9.46 (Berenson 14th Edition, p. 366):**  
+> A transit authority measures the performance of its bus fleet, measured specifically as the number of bus miles traveled before a mechanical breakdown that requires the bus to be removed from service or deviate from the schedule. Suppose a sample of 64 buses resulted in a sample mean of 8,210 bus miles and a sample standard deviation of 625 bus miles.  
+> a. Is there evidence that the population mean bus miles is greater than 8,000 bus miles? (Use a 0.05 level of significance).  
+> b. Determine the p-value and interpret its meaning.
+
+#### 2. Dịch nghĩa tiếng Việt & Thuật ngữ then chốt:
+- **Dịch nghĩa:** Một cơ quan quản lý giao thông đo lường hiệu suất hoạt động của đội xe buýt bằng số dặm xe chạy được trước khi gặp sự cố cơ học phải bảo trì hoặc hủy chuyến. Một mẫu gồm 64 xe buýt cho kết quả trung bình là 8,210 dặm và độ lệch chuẩn mẫu là 625 dặm.  
+  a. Có bằng chứng cho thấy số dặm trung bình của toàn đội xe buýt lớn hơn 8,000 dặm hay không? (Sử dụng mức ý nghĩa $\alpha = 0.05$).  
+  b. Hãy xác định giá trị $p$-value và giải thích ý nghĩa của nó.
+- **Thuật ngữ tiếng Anh cần nhớ:**
+  - *Mechanical breakdown*: Sự cố cơ học / hỏng hóc
+  - *Greater than*: Lớn hơn ($\implies$ Kiểm định 1 phía đuôi trên Upper-tail $>$)
+  - *Transit authority*: Cơ quan giao thông công cộng
+
+#### 3. Phương pháp giải chuẩn 5 bước & Công thức đại số:
 - **BƯỚC 1: Thiết lập cặp giả thuyết:**
-  - $H_0: \pi = 0.08$
-  - $H_1: \pi \ne 0.08$ (Kiểm định hai phía ở $\alpha = 0.05$).
-- **BƯỚC 2: Kiểm tra điều kiện & Giá trị tới hạn:**
-  - $n\pi_0 = 500 \times 0.08 = 40 \ge 5$.
-  - $n(1 - \pi_0) = 500 \times 0.92 = 460 \ge 5$.
-  - Điều kiện xấp xỉ chuẩn thỏa mãn.
-  - Giá trị tới hạn $Z_{\alpha/2} = \pm 1.96$. Miền bác bỏ: $|Z_{STAT}| > 1.96$.
-- **BƯỚC 3: Tính giá trị kiểm định $Z_{STAT}$:**
-  $$Z_{STAT} = \frac{p - \pi_0}{\sqrt{\frac{\pi_0(1 - \pi_0)}{n}}} = \frac{0.05 - 0.08}{\sqrt{\frac{0.08 \times 0.92}{500}}} = \frac{-0.03}{\sqrt{0.0001472}} = \frac{-0.03}{0.012132} \approx -2.4727 \approx -2.47$$
-- **BƯỚC 4: So sánh và ra quyết định:**
-  - $Z_{STAT} = -2.47 < -1.96 \implies$ Rơi vào Miền Bác Bỏ!
+  - $H_0: \mu \le 8000$ (Số dặm trung bình không vượt quá 8,000 dặm).
+  - $H_1: \mu > 8000$ (Số dặm trung bình lớn hơn 8,000 dặm $\implies$ Kiểm định đuôi trên).
+- **BƯỚC 2: Mức ý nghĩa & Giá trị tới hạn:**
+  - $\alpha = 0.05$.
+  - Cỡ mẫu $n = 64 \implies df = 64 - 1 = 63$.
+  - Vì kiểm định đuôi trên (Upper-tail), toàn bộ diện tích $\alpha = 0.05$ nằm ở đuôi phải:
+    $$t_{crit} = +t_{0.05, 63} \approx 1.6694$$
+  - Quy tắc quyết định: Bác bỏ $H_0$ nếu $t_{STAT} > 1.6694$.
+- **BƯỚC 3: Tính giá trị kiểm định $t_{STAT}$:**
+  $$t_{STAT} = \frac{\bar{X} - \mu_0}{S / \sqrt{n}} = \frac{8210 - 8000}{625 / \sqrt{64}} = \frac{210}{625 / 8} = \frac{210}{78.125} = 2.688$$
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X & Tính $p$-value:**
+  - Bấm: `[(] [8210] [-] [8000] [)] [/] [(] [625] [/] [8] [)] [=]` $\implies$ `2.688`.
+  - So sánh: $t_{STAT} = 2.688 > 1.6694 \implies$ Rơi sâu vào **Miền Bác Bỏ (Rejection Region)**!
   - Tính $p$-value bằng Casio:
-    - Vào `[MENU] [7] [2]` (Normal CD), nhập: Lower = `-9999`, Upper = `-2.47`, $\sigma = 1, \mu = 0 \implies 0.00675$.
-    - Vì là kiểm định 2 phía: $p\text{-value} = 2 \times 0.00675 = 0.0135$.
-    - Vì $p\text{-value} = 0.0135 < \alpha = 0.05 \implies$ Bác bỏ $H_0$.
+    - Bấm: `[MENU]` `[7]` `[2]` (Normal CD xấp xỉ): Lower = `2.688`, Upper = `9999`, $\sigma = 1, \mu = 0 \implies 0.00359$.
+    - $p\text{-value} = P(t_{63} > 2.688) \approx 0.0046 < \alpha = 0.05$.
 - **BƯỚC 5: Kết luận thực tiễn:**
-  - Bác bỏ $H_0$. Có đủ bằng chứng thống kê để bác bỏ tuyên bố của công ty rằng tỷ lệ phản hồi đạt 8% (thực tế thấp hơn đáng kể).
+  - **Quyết định:** Bác bỏ $H_0$ (Reject $H_0$) vì $t_{STAT} = 2.688 > 1.6694$ và $p\text{-value} \approx 0.0046 < 0.05$.
+  - **Kết luận:** Có đủ bằng chứng thống kê ở mức ý nghĩa 5% để khẳng định rằng số dặm trung bình trước khi hỏng của đội xe buýt lớn hơn 8,000 dặm (đội xe đạt hiệu suất rất tốt).
+
+---
+
+### Bài tập 9.3 (Textbook Problem 9.55, p. 370) - Unpaid Internships Job Offers (Proportion Test)
+
+#### 1. Nguyên văn đề thi tiếng Anh (Original English):
+> **Problem 9.55 (Berenson 14th Edition, p. 370):**  
+> According to a recent National Association of Colleges and Employers (NACE) report, 44% of college students who had unpaid internships received full-time job offers post-graduation compared to 72% of college students who had paid internships. A recent survey of 60 college unpaid interns at a local university found that 30 received full-time job offers post-graduation.  
+> a. Use the five-step p-value approach to hypothesis testing and a 0.05 level of significance to determine whether the proportion of college unpaid interns that received full-time job offers post-graduation is different from 0.44.  
+> b. What is your statistical decision and conclusion?
+
+#### 2. Dịch nghĩa tiếng Việt & Thuật ngữ then chốt:
+- **Dịch nghĩa:** Theo một báo cáo gần đây của Hiệp hội các trường đại học và nhà tuyển dụng quốc gia (NACE), có 44% sinh viên thực tập không lương nhận được lời mời làm việc toàn thời gian sau khi tốt nghiệp. Một khảo sát gần đây trên 60 sinh viên thực tập không lương tại một trường đại học địa phương cho thấy có 30 người nhận được lời mời làm việc toàn thời gian.  
+  a. Hãy sử dụng phương pháp $p$-value 5 bước và mức ý nghĩa $\alpha = 0.05$ để kiểm định xem tỷ lệ sinh viên thực tập không lương nhận được lời mời làm việc tại trường này có khác mức 0.44 hay không.  
+  b. Quyết định thống kê và kết luận của bạn là gì?
+- **Thuật ngữ tiếng Anh cần nhớ:**
+  - *Unpaid internship*: Thực tập không lương
+  - *Full-time job offer*: Lời mời làm việc chính thức toàn thời gian
+  - *Post-graduation*: Sau khi tốt nghiệp
+  - *Different from 0.44*: Khác với 0.44 ($\implies$ Kiểm định 2 phía)
+
+#### 3. Phương pháp giải chuẩn 5 bước & Công thức đại số:
+- **BƯỚC 1: Thiết lập cặp giả thuyết:**
+  - $H_0: \pi = 0.44$ (Tỷ lệ bằng 0.44).
+  - $H_1: \pi \ne 0.44$ (Tỷ lệ khác 0.44 $\implies$ Kiểm định hai phía).
+- **BƯỚC 2: Kiểm tra điều kiện xấp xỉ chuẩn:**
+  - $n = 60$, $\pi_0 = 0.44$.
+  - $n\pi_0 = 60 \times 0.44 = 26.4 \ge 5$.
+  - $n(1 - \pi_0) = 60 \times 0.56 = 33.6 \ge 5$.
+  - Thỏa mãn điều kiện xấp xỉ chuẩn để dùng kiểm định $Z$.
+- **BƯỚC 3: Tính toán giá trị kiểm định $Z_{STAT}$:**
+  - Tỷ lệ mẫu: $p = \frac{X}{n} = \frac{30}{60} = 0.50$.
+  - Sai số chuẩn lý thuyết theo $H_0$:
+    $$\sigma_p = \sqrt{\frac{\pi_0(1 - \pi_0)}{n}} = \sqrt{\frac{0.44 \times 0.56}{60}} = \sqrt{\frac{0.2464}{60}} = \sqrt{0.0041067} \approx 0.06408$$
+  - Giá trị kiểm định:
+    $$Z_{STAT} = \frac{p - \pi_0}{\sigma_p} = \frac{0.50 - 0.44}{0.06408} = \frac{0.06}{0.06408} \approx 0.9363 \approx 0.94$$
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X & Tính $p$-value:**
+  - Tính $Z_{STAT}$: `[(] [0.5] [-] [0.44] [)] [/] [√] [(] [0.44] [x] [0.56] [/] [60] [)] [=]` $\implies$ `0.93629...`
+  - Tính $p$-value bằng Normal CD:
+    - Bấm: `[MENU]` `[7]` `[2]`: Lower = `0.9363`, Upper = `9999`, $\sigma = 1, \mu = 0 \implies 0.17456$.
+    - Vì là kiểm định 2 phía: $p\text{-value} = 2 \times P(Z > 0.9363) = 2 \times 0.17456 = 0.3491 \approx 0.349$.
+- **BƯỚC 5: Quyết định thống kê & Kết luận:**
+  - **Quyết định:** Vì $p\text{-value} = 0.349 > \alpha = 0.05 \implies$ **Không bác bỏ $H_0$ (Do not reject $H_0$)**.
+  - **Kết luận:** Ở mức ý nghĩa 5%, chưa có đủ bằng chứng thống kê để khẳng định tỷ lệ sinh viên thực tập không lương nhận được lời mời làm việc tại trường đại học này khác với mức chung toàn quốc là 44%.
+
+---
+
+### Bài tập 9.4 (Textbook Problem 9.73, p. 375) - Medical Reimbursement Audit (Mean & Proportion)
+
+#### 1. Nguyên văn đề thi tiếng Anh (Original English):
+> **Problem 9.73 (Berenson 14th Edition, p. 375):**  
+> A medical insurance audit team examines reimbursement amounts: In a sample of 50 office visits, the amount of reimbursement was $\bar{X} = \$93.70$, $S = \$34.55$.  
+> a. At the 0.05 level of significance, is there evidence that the population mean reimbursement was less than \$100?  
+> b. In 12 of the 50 office visits, there was an incorrect amount of reimbursement. At the 0.05 level of significance, is there evidence that the proportion of incorrect reimbursements in the population was greater than 0.10?
+
+#### 2. Dịch nghĩa tiếng Việt & Thuật ngữ then chốt:
+- **Dịch nghĩa:** Một đội kiểm toán bảo hiểm y tế kiểm tra số tiền hoàn trả cho bệnh nhân: Trong mẫu ngẫu nhiên gồm 50 lượt khám bệnh, số tiền hoàn trả trung bình là $\bar{X} = \$93.70$, độ lệch chuẩn mẫu là $S = \$34.55$.  
+  a. Ở mức ý nghĩa $\alpha = 0.05$, có bằng chứng cho thấy số tiền hoàn trả trung bình của toàn bộ các lượt khám ít hơn \$100 hay không?  
+  b. Trong số 50 lượt khám được kiểm tra, có 12 lượt bị tính sai số tiền hoàn trả. Ở mức ý nghĩa $\alpha = 0.05$, có bằng chứng cho thấy tỷ lệ hoàn trả sai trong tổng thể lớn hơn 0.10 hay không?
+- **Thuật ngữ tiếng Anh cần nhớ:**
+  - *Reimbursement amount*: Số tiền hoàn trả bảo hiểm
+  - *Audit team*: Đội kiểm toán
+  - *Office visits*: Lượt khám tại phòng khám
+  - *Incorrect reimbursement*: Hoàn trả sai số tiền
+
+#### 3. Phương pháp giải chuẩn 5 bước & Công thức đại số:
+- **CÂU A: KIỂM ĐỊNH TRUNG BÌNH $\mu < 100$ (Lower-Tail $t$-Test):**
+  - **B1**: Thiết lập giả thuyết:
+    $$H_0: \mu \ge 100 \quad \text{vs} \quad H_1: \mu < 100 \text{ (Kiểm định đuôi dưới)}$$
+  - **B2**: $n = 50 \implies df = 49$. $\alpha = 0.05 \implies t_{crit} = -t_{0.05, 49} \approx -1.6766$. Miền bác bỏ: $t_{STAT} < -1.6766$.
+  - **B3**: Giá trị kiểm định:
+    $$t_{STAT} = \frac{\bar{X} - \mu_0}{S / \sqrt{n}} = \frac{93.70 - 100}{34.55 / \sqrt{50}} = \frac{-6.30}{4.8861} \approx -1.2894 \approx -1.29$$
+  - **B4 (Casio)**: `[(] [93.7] [-] [100] [)] [/] [(] [34.55] [/] [√] [50] [)] [=]` $\to -1.28936$.
+    - $p\text{-value} = P(t_{49} < -1.2894) \approx 0.1016 > 0.05$.
+  - **B5**: Vì $t_{STAT} = -1.289 > -1.677$ (hoặc $p\text{-value} = 0.1016 > 0.05$), ta **Không bác bỏ $H_0$**. Chưa đủ bằng chứng cho thấy số tiền hoàn trả trung bình ít hơn \$100.
+
+- **CÂU B: KIỂM ĐỊNH TỶ LỆ HOÀN TRẢ SAI $\pi > 0.10$ (Upper-Tail Proportion Test):**
+  - **B1**: Thiết lập giả thuyết:
+    $$H_0: \pi \le 0.10 \quad \text{vs} \quad H_1: \pi > 0.10 \text{ (Kiểm định đuôi trên)}$$
+  - **B2**: Kiểm tra: $n\pi_0 = 50(0.10) = 5 \ge 5$ và $n(1-\pi_0) = 50(0.90) = 45 \ge 5$. Hợp lệ.
+    - Với $\alpha = 0.05$, giá trị tới hạn $Z_{\alpha} = +1.645$. Miền bác bỏ: $Z_{STAT} > 1.645$.
+  - **B3**: Tỷ lệ mẫu: $p = \frac{12}{50} = 0.24$.
+    $$Z_{STAT} = \frac{p - \pi_0}{\sqrt{\frac{\pi_0(1 - \pi_0)}{n}}} = \frac{0.24 - 0.10}{\sqrt{\frac{0.10 \times 0.90}{50}}} = \frac{0.14}{\sqrt{0.0018}} = \frac{0.14}{0.042426} \approx 3.2998 \approx 3.30$$
+  - **B4 (Casio)**: `[(] [0.24] [-] [0.10] [)] [/] [√] [(] [0.10] [x] [0.90] [/] [50] [)] [=]` $\to 3.2998$.
+    - Tính $p$-value bằng Normal CD: Lower = `3.30`, Upper = `9999` $\implies p\text{-value} = 0.00048 < 0.05$.
+  - **B5**: Vì $Z_{STAT} = 3.30 > 1.645$ (và $p\text{-value} = 0.0005 < 0.05$), ta **BÁC BỎ $H_0$**. Có bằng chứng thống kê áp đảo kết luận rằng tỷ lệ hoàn trả bảo hiểm sai trong tổng thể lớn hơn 10% (cần chấn chỉnh ngay công tác thanh toán).
 
 ---
 </script>
