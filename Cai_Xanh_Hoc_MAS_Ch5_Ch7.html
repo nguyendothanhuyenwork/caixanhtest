@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>🥬 Cải Xanh Học MAS - Bí Kíp Chinh Phục Chương 5, 6, 7 (MAS202)</title>
+  <title>🥬 Cải Xanh Học MAS - Bí Kíp Chinh Phục Chương 5 Đến 9 (MAS202)</title>
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥬</text></svg>">
   
   <!-- KaTeX CSS & JS -->
@@ -372,8 +372,8 @@
 
     .calc-body {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 14px;
       align-items: flex-end;
     }
 
@@ -652,7 +652,7 @@
       border-radius: 8px;
     }
 
-    /* FLOATING ACTION BUTTON (FAB) */
+    /* FLOATING ACTION BUTTON (FAB) FOR NOTES */
     .floating-notes-container {
       position: fixed;
       bottom: 28px;
@@ -1107,7 +1107,7 @@
       <div class="brand-logo">🥬</div>
       <div class="brand-title">
         Cải Xanh Học MAS
-        <span class="brand-badge">MAS202 Ch5 - Ch7</span>
+        <span class="brand-badge">MAS202 Ch5 - Ch9 PRO</span>
       </div>
     </a>
 
@@ -1140,7 +1140,7 @@
         <input type="text" class="search-input" id="search-input" placeholder="Tìm công thức, phím Casio..." onkeyup="filterTOC()">
       </div>
 
-      <div class="toc-title">MỤC LỤC ÔN TẬP</div>
+      <div class="toc-title">MỤC LỤC ÔN TẬP (CH 5 - 9)</div>
       <ul class="toc-list" id="toc-list">
         <!-- Generated dynamically via JS -->
       </ul>
@@ -1155,18 +1155,97 @@
           <div class="calc-title">
             <span>⚡ Máy Tính Kiểm Tra Nhanh MAS202</span>
           </div>
-          <span style="font-size:0.8rem; color:var(--text-muted);">Nhập số liệu để kiểm tra đáp số bài thi ngay lập tức</span>
+          <span style="font-size:0.8rem; color:var(--text-muted);">Hỗ trợ tính nhanh Xác suất, Cỡ mẫu, Khoảng tin cậy (CI) & Kiểm định giả thuyết</span>
         </div>
 
         <div class="calc-tabs">
-          <button class="calc-tab active" onclick="switchCalc('normal')">Phân phối Chuẩn (Z-score)</button>
-          <button class="calc-tab" onclick="switchCalc('sample')">Cỡ mẫu cần thiết (n)</button>
-          <button class="calc-tab" onclick="switchCalc('binomial')">Nhị thức (Binomial)</button>
-          <button class="calc-tab" onclick="switchCalc('poisson')">Poisson</button>
+          <button class="calc-tab active" onclick="switchCalc('ci')">Khoảng Tin Cậy (Ch8)</button>
+          <button class="calc-tab" onclick="switchCalc('hypo')">Kiểm Định Giả Thuyết (Ch9)</button>
+          <button class="calc-tab" onclick="switchCalc('normal')">Chuẩn Z-score (Ch6)</button>
+          <button class="calc-tab" onclick="switchCalc('sample')">Cỡ mẫu n (Ch7 & 8)</button>
+          <button class="calc-tab" onclick="switchCalc('binomial')">Nhị thức (Ch5)</button>
+          <button class="calc-tab" onclick="switchCalc('poisson')">Poisson (Ch5)</button>
+        </div>
+
+        <!-- Confidence Interval Calc (Chapter 8) -->
+        <div id="calc-ci" class="calc-panel">
+          <div class="calc-body">
+            <div class="form-group">
+              <label>Trung bình mẫu (X̄):</label>
+              <input type="number" id="ci-xbar" class="form-control" value="172.50" step="any">
+            </div>
+            <div class="form-group">
+              <label>Độ lệch chuẩn (S hoặc σ):</label>
+              <input type="number" id="ci-sd" class="form-control" value="15.40" step="any">
+            </div>
+            <div class="form-group">
+              <label>Cỡ mẫu (n):</label>
+              <input type="number" id="ci-n" class="form-control" value="25" min="2">
+            </div>
+            <div class="form-group">
+              <label>Độ tin cậy (1 - α):</label>
+              <select id="ci-cl" class="form-control">
+                <option value="0.90">90%</option>
+                <option value="0.95" selected>95%</option>
+                <option value="0.98">98%</option>
+                <option value="0.99">99%</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" onclick="computeCI()">⚡ Tính Khoảng Tin Cậy</button>
+          </div>
+          <div class="calc-result-box">
+            <div>
+              <div style="font-size:0.8rem; color:var(--text-muted); font-weight:700;">KHOẢNG TIN CẬY CHO μ (Student t, df = n-1)</div>
+              <div class="calc-result-val" id="res-ci-main">[166.14, 178.86]</div>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.9rem;">
+              Giá trị tới hạn: <span id="res-ci-tcrit">t = 2.0639</span> | Sai số biên: <span id="res-ci-e">e = 6.3568</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hypothesis Testing Calc (Chapter 9) -->
+        <div id="calc-hypo" class="calc-panel" style="display:none;">
+          <div class="calc-body">
+            <div class="form-group">
+              <label>Trung bình mẫu (X̄):</label>
+              <input type="number" id="hypo-xbar" class="form-control" value="1450" step="any">
+            </div>
+            <div class="form-group">
+              <label>Giá trị giả thuyết (μ0):</label>
+              <input type="number" id="hypo-mu0" class="form-control" value="1500" step="any">
+            </div>
+            <div class="form-group">
+              <label>Độ lệch chuẩn mẫu (S):</label>
+              <input type="number" id="hypo-sd" class="form-control" value="120" step="any">
+            </div>
+            <div class="form-group">
+              <label>Cỡ mẫu (n):</label>
+              <input type="number" id="hypo-n" class="form-control" value="25" min="2">
+            </div>
+            <div class="form-group">
+              <label>Dạng kiểm định:</label>
+              <select id="hypo-type" class="form-control">
+                <option value="two" selected>Hai phía (≠)</option>
+                <option value="upper">Đuôi trên (>)</option>
+                <option value="lower">Đuôi dưới (<)</option>
+              </select>
+            </div>
+            <button class="btn btn-primary" onclick="computeHypothesis()">⚡ Kiểm Định</button>
+          </div>
+          <div class="calc-result-box">
+            <div>
+              <div style="font-size:0.8rem; color:var(--text-muted); font-weight:700;">KẾT QUẢ KIỂM ĐỊNH T-TEST (α = 0.05)</div>
+              <div class="calc-result-val" id="res-hypo-main">Bác bỏ H0 (Reject H0)</div>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.9rem;">
+              <span id="res-hypo-tstat">t_STAT = -2.0833</span> | <span id="res-hypo-pval">p-value = 0.0480</span>
+            </div>
+          </div>
         </div>
 
         <!-- Normal Dist Calc -->
-        <div id="calc-normal" class="calc-panel">
+        <div id="calc-normal" class="calc-panel" style="display:none;">
           <div class="calc-body">
             <div class="form-group">
               <label>Giá trị X cần tính:</label>
@@ -1321,7 +1400,7 @@
       <input type="hidden" id="note-target-id" value="">
       
       <div>
-        <input type="text" id="note-topic-input" class="form-control" style="font-size:0.86rem; padding:7px 10px;" placeholder="📌 Chủ đề / Vị trí (VD: Câu 8, Casio 580, Mẹo thi...)" />
+        <input type="text" id="note-topic-input" class="form-control" style="font-size:0.86rem; padding:7px 10px;" placeholder="📌 Chủ đề / Vị trí (VD: Câu 8, Chương 8, Casio 580...)" />
       </div>
       
       <div>
@@ -1349,6 +1428,8 @@
         <button class="filter-tag" onclick="setFilterTag('ch5', this)">Chương 5</button>
         <button class="filter-tag" onclick="setFilterTag('ch6', this)">Chương 6</button>
         <button class="filter-tag" onclick="setFilterTag('ch7', this)">Chương 7</button>
+        <button class="filter-tag" onclick="setFilterTag('ch8', this)">Chương 8</button>
+        <button class="filter-tag" onclick="setFilterTag('ch9', this)">Chương 9</button>
       </div>
     </div>
 
@@ -1368,7 +1449,7 @@
   <div class="toast-msg" id="toast-msg">✅ Đã lưu ghi chú thành công!</div>
 
   <!-- EMBEDDED MASTER MARKDOWN DATA -->
-  <script id="markdown-source" type="text/plain"># GIÁO TRÌNH ÔN TẬP TOÀN DIỆN MAS202 (CHƯƠNG 5, 6, 7)
+  <script id="markdown-source" type="text/plain"># GIÁO TRÌNH ÔN TẬP TOÀN DIỆN MAS202 (CHƯƠNG 5, 6, 7, 8, 9)
 ### Phương pháp Giải chuẩn 5 Bước $\bullet$ Hướng dẫn Casio fx-580VN X Chi tiết Từng Phím Bấm
 *Dành riêng cho sinh viên Đại học FPT $\bullet$ Bám sát Giáo trình Basic Business Statistics (Berenson 14th Global Edition)*
 
@@ -2969,6 +3050,407 @@ Hãy tìm hệ số tương quan mẫu (sample correlation coefficient - r).
     - Dòng $r = -0.5$ (hệ số tương quan cần tìm) $\implies$ Chọn ngay **-0.5**!
 - **BƯỚC 5: Kết luận:**
   - Đáp án chính xác: **-0.5** (Chọn phương án **C**).
+
+
+
+# PHẦN 7: CHƯƠNG 8 - ƯỚC LƯỢNG KHOẢNG TIN CẬY (CONFIDENCE INTERVAL ESTIMATION)
+
+> [!NOTE]
+> **TỔNG QUAN BẢN CHẤT CHƯƠNG 8:**  
+> Trong thực tế kinh doanh và nghiên cứu, chúng ta hầu như không bao giờ biết được giá trị chính xác của tham số tổng thể (như trung bình thực tế $\mu$ hay tỷ lệ thực tế $\pi$). Thay vì chỉ đưa ra một con số duy nhất (Ước lượng điểm - Point Estimate) tiềm ẩn nhiều sai số ngẫu nhiên, ta xây dựng một **Khoảng tin cậy (Confidence Interval)** kèm theo một xác suất tin cậy $(1 - \alpha) \times 100\%$ rằng khoảng đó sẽ bao trùm tham số tổng thể cần ước lượng.
+
+---
+
+## 8.1. Bản chất Ước lượng Điểm & Khoảng Tin Cậy (Point vs Interval Estimate)
+
+### 1. Định nghĩa và So sánh cốt lõi:
+- **Ước lượng điểm (Point Estimate):** Là một giá trị số đơn lẻ được tính từ dữ liệu mẫu để ước lượng tham số tổng thể.
+  - Trung bình mẫu $\bar{X}$ là ước lượng điểm không chệch cho trung bình tổng thể $\mu$.
+  - Tỷ lệ mẫu $p = \frac{X}{n}$ là ước lượng điểm không chệch cho tỷ lệ tổng thể $\pi$.
+  - Độ lệch chuẩn mẫu $S$ là ước lượng điểm cho độ lệch chuẩn tổng thể $\sigma$.
+  - *Nhược điểm:* Không cung cấp bất kỳ thông tin nào về độ phân tán hay mức độ sai lệch của ước lượng do biến động lấy mẫu.
+- **Ước lượng khoảng tin cậy (Confidence Interval - CI):** Cung cấp một khoảng giá trị $[L, U]$ được tính từ dữ liệu mẫu, có tính đến sự biến động từ mẫu này sang mẫu khác:
+  $$\text{Confidence Interval} = \text{Point Estimate} \pm \text{Margin of Error} = \text{Point Estimate} \pm (\text{Critical Value}) \times (\text{Standard Error})$$
+  - **Giới hạn tin cậy dưới (Lower Confidence Limit - LCL):** $\text{Point Estimate} - e$
+  - **Giới hạn tin cậy trên (Upper Confidence Limit - UCL):** $\text{Point Estimate} + e$
+  - **Sai số cho phép / Biên độ sai số (Margin of Error / Sampling Error - $e$):** Độ rộng của nửa khoảng tin cậy. Độ rộng toàn khoảng bằng $2e = UCL - LCL$.
+
+### 2. Ý nghĩa sống còn của Độ tin cậy $(1 - \alpha)$:
+> [!CAUTION]
+> **BẪY THI TRẮC NGHIỆM VỀ Ý NGHĨA KHOẢNG TIN CẬY:**  
+> - **KHÔNG ĐƯỢC NÓI:** *"Xác suất để $\mu$ rơi vào khoảng $[10, 20]$ là 95%"*. (SAI HOÀN TOÀN! Vì $\mu$ là một hằng số cố định, khoảng $[10, 20]$ cũng đã cố định, nên $\mu$ hoặc đã nằm trong khoảng đó hoặc không, xác suất chỉ là 0 hoặc 1!).  
+> - **CÁCH PHÁT BIỂU ĐÚNG 100%:** *"Nếu ta lặp lại việc lấy mẫu cỡ $n$ rất nhiều lần và xây dựng các khoảng tin cậy 95% theo cùng phương pháp, thì sẽ có khoảng 95% số khoảng được tạo ra chứa giá trị trung bình thực sự $\mu$, và 5% số khoảng không chứa $\mu$"*.
+
+```mermaid
+flowchart TD
+    A["BÀI TOÁN ƯỚC LƯỢNG KHOẢNG TIN CẬY"] --> B["Ước lượng Trung bình μ"]
+    A --> C["Ước lượng Tỷ lệ π"]
+    B --> D["Đã biết σ (σ Known)"]
+    B --> E["CHƯA BIẾT σ (σ Unknown)"]
+    D --> F["Dùng Phân phối Chuẩn Z<br/>Z = ±1.96 (95%)"]
+    E --> G["Dùng Phân phối Student t<br/>df = n - 1 (Fatter tails)"]
+    C --> H["Dùng Phân phối Chuẩn Z<br/>Điều kiện: np ≥ 5 và n(1-p) ≥ 5"]
+```
+
+---
+
+## 8.2. Khoảng Tin Cậy cho Trung Bình $\mu$ Khi ĐÃ BIẾT $\sigma$ ($\sigma$ Known)
+
+### 1. Điều kiện áp dụng:
+1. Đã biết độ lệch chuẩn tổng thể $\sigma$.
+2. Tổng thể có phân phối chuẩn $X \sim N(\mu, \sigma^2)$ (hoặc nếu tổng thể không chuẩn thì cỡ mẫu phải đủ lớn $n > 30$ theo Định lý Giới hạn Trung tâm).
+
+### 2. Công thức chuẩn:
+$$\bar{X} - Z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \le \mu \le \bar{X} + Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$$
+Hay viết gọn:
+$$\mu \in \left[ \bar{X} \pm Z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \right]$$
+Trong đó:
+- $\bar{X}$: Trung bình mẫu (Point estimate).
+- $\sigma / \sqrt{n}$: Sai số chuẩn của trung bình (Standard Error - $\sigma_{\bar{X}}$).
+- $Z_{\alpha/2}$: Giá trị tới hạn từ phân phối chuẩn chuẩn tắc $N(0, 1)$ sao cho diện tích mỗi phần đuôi bằng $\alpha / 2$.
+- $e = Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$: Sai số biên (Sampling error).
+
+### 3. Bảng các giá trị tới hạn $Z_{\alpha/2}$ kinh điển (Bắt buộc thuộc lòng):
+| Độ tin cậy $(1 - \alpha)$ | Mức ý nghĩa $\alpha$ | Diện tích đuôi $\alpha/2$ | Giá trị tới hạn $Z_{\alpha/2}$ |
+| :---: | :---: | :---: | :---: |
+| **80%** | $0.20$ | $0.10$ | **$1.28$** |
+| **90%** | $0.10$ | $0.05$ | **$1.645$** |
+| **95%** | $0.05$ | $0.025$ | **$1.96$** |
+| **98%** | $0.02$ | $0.01$ | **$2.33$** |
+| **99%** | $0.01$ | $0.005$ | **$2.576 \approx 2.58$** |
+
+### 4. Hướng dẫn bấm máy tính Casio fx-580VN X tìm $Z_{\alpha/2}$:
+- Muốn tìm $Z_{0.025}$ (ứng với khoảng tin cậy 95%):
+  - Bấm: `[MENU]` `[7]` `[3]` (Inverse Normal).
+  - Nhập: `Area = 0.025` (đuôi trái) $\implies$ Màn hình hiển thị: `-1.95996...` $\implies |Z_{\alpha/2}| = 1.96$.
+  - Nhập: `Area = 0.975` (tính từ cực trái đến cận trên) $\implies$ Màn hình hiển thị: `1.95996...`.
+
+---
+
+## 8.3. Khoảng Tin Cậy cho Trung Bình $\mu$ Khi CHƯA BIẾT $\sigma$ (Phân phối Student $t$)
+
+### 1. Tại sao phải dùng Phân phối Student $t$?
+- Trong đời thực, ta **hầu như không bao giờ biết $\sigma$**. Vì để tính $\sigma$, ta phải biết $\mu$. Mà nếu đã biết $\mu$ thì không ai cần ước lượng nữa!
+- Khi thay thế $\sigma$ bằng độ lệch chuẩn mẫu $S$, ta đưa thêm một nguồn bất định mới vào phép tính vì bản thân $S$ cũng thay đổi theo từng mẫu ngẫu nhiên.
+- Để bù đắp cho sự không chắc chắn này, ta sử dụng **Phân phối Student $t$** (do nhà thống kê William S. Gosset phát minh dưới bút danh *Student* năm 1908).
+
+### 2. Đặc trưng của Phân phối Student $t$:
+1. **Hình quả chuông đối xứng:** Đồ thị đối xứng qua trục $t = 0$, có trung bình bằng 0 giống hệt phân phối chuẩn $Z$.
+2. **Đuôi dày hơn ("Fatter Tails"):** Đỉnh thấp hơn $Z$, nhưng hai bên đuôi dày hơn, phản ánh xác suất xuất hiện các giá trị xa trung tâm lớn hơn.
+3. **Phụ thuộc Bậc Tự Do (Degrees of Freedom - $df$):**
+   $$df = n - 1$$
+   - *Bản chất df:* Số quan sát được tự do biến thiên sau khi trung bình mẫu $\bar{X}$ đã được cố định. Ví dụ: Nếu tổng của 3 số bằng 24, ta được tự do chọn 2 số đầu tiên; số thứ ba bắt buộc bị cố định để tổng bằng 24 $\implies df = 3 - 1 = 2$.
+4. **Hội tụ về phân phối chuẩn $Z$:** Khi cỡ mẫu $n$ tăng dần ($df \to \infty$), phân phối $t$ tiến dần và trùng khít hoàn toàn với phân phối chuẩn $Z$ ($t \to Z$).
+
+### 3. Công thức Khoảng tin cậy:
+$$\mu \in \left[ \bar{X} \pm t_{\alpha/2, df} \frac{S}{\sqrt{n}} \right]$$
+Trong đó:
+- $S$: Độ lệch chuẩn của mẫu: $S = \sqrt{\frac{\sum (X_i - \bar{X})^2}{n - 1}}$.
+- $t_{\alpha/2, df}$: Giá trị tới hạn từ bảng phân phối Student $t$ với bậc tự do $df = n - 1$ và diện tích đuôi trên bằng $\alpha/2$.
+- Sai số biên: $e = t_{\alpha/2} \frac{S}{\sqrt{n}}$.
+
+### 4. So sánh giá trị $t$ với $Z$ qua các bậc tự do:
+| Độ tin cậy | $t$ ($df = 10$) | $t$ ($df = 20$) | $t$ ($df = 30$) | $Z$ ($df = \infty$) |
+| :---: | :---: | :---: | :---: | :---: |
+| **80%** | $1.372$ | $1.325$ | $1.310$ | **$1.280$** |
+| **90%** | $1.812$ | $1.725$ | $1.697$ | **$1.645$** |
+| **95%** | $2.228$ | $2.086$ | $2.042$ | **$1.960$** |
+| **99%** | $3.169$ | $2.845$ | $2.750$ | **$2.576$** |
+
+> [!TIP]
+> Nhận xét: Với cùng một độ tin cậy, giá trị $t$ luôn lớn hơn $Z$ tương ứng. Do đó khoảng tin cậy khi chưa biết $\sigma$ luôn **RỘNG HƠN** khoảng tin cậy khi đã biết $\sigma$.
+
+---
+
+## 8.4. Khoảng Tin Cậy cho Tỷ Lệ Tổng Thể $\pi$ (Population Proportion)
+
+### 1. Điều kiện áp dụng:
+- Dữ liệu thuộc dạng định tính nhị phân (có hoặc không có đặc tính quan tâm).
+- Cỡ mẫu phải đủ lớn để xấp xỉ chuẩn:
+  $$np \ge 5 \quad \text{và} \quad n(1 - p) \ge 5$$
+  (Trong đó $p = \frac{X}{n}$ là tỷ lệ mẫu, $X$ là số phần tử có đặc tính).
+
+### 2. Công thức chuẩn:
+$$p - Z_{\alpha/2} \sqrt{\frac{p(1 - p)}{n}} \le \pi \le p + Z_{\alpha/2} \sqrt{\frac{p(1 - p)}{n}}$$
+Hay viết gọn:
+$$\pi \in \left[ p \pm Z_{\alpha/2} \sqrt{\frac{p(1 - p)}{n}} \right]$$
+Trong đó:
+- Sai số chuẩn của tỷ lệ mẫu: $S_p = \sqrt{\frac{p(1 - p)}{n}}$.
+- Biên độ sai số: $e = Z_{\alpha/2} \sqrt{\frac{p(1 - p)}{n}}$.
+
+---
+
+## 8.5. Xác Định Cỡ Mẫu Tối Thiểu Cần Thiết ($n$)
+
+### 1. Cỡ mẫu cho Trung bình tổng thể $\mu$:
+Xuất phát từ công thức sai số biên $e = Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$, giải phương trình tìm $n$:
+$$n = \left( \frac{Z_{\alpha/2} \cdot \sigma}{e} \right)^2$$
+> [!IMPORTANT]
+> **QUY TẮC BẮT BUỘC: LUÔN LÀM TRÒN LÊN SỐ NGUYÊN TIẾP THEO (CEILING)!**  
+> Dù phần thập phân có nhỏ đến đâu (ví dụ: $n = 311.02$), bạn vẫn bắt buộc phải làm tròn lên **$n = 312$**. Nếu làm tròn xuống 311, sai số biên sẽ vượt quá mức cho phép $e$!
+
+- **Khi chưa biết $\sigma$ thì lấy ở đâu để tính $n$?**
+  1. Dùng kết quả từ một nghiên cứu sơ bộ trước đó (Pilot sample) để lấy $S \approx \sigma$.
+  2. Dùng quy tắc khoảng biến thiên thực nghiệm: $\sigma \approx \frac{\text{Range}}{6}$ (vì $99.73\%$ dữ liệu nằm trong $6\sigma$).
+
+### 2. Cỡ mẫu cho Tỷ lệ tổng thể $\pi$:
+Xuất phát từ công thức sai số biên $e = Z_{\alpha/2} \sqrt{\frac{\pi(1 - \pi)}{n}}$, giải tìm $n$:
+$$n = \left( \frac{Z_{\alpha/2}}{e} \right)^2 \pi(1 - \pi)$$
+- **Chiến lược chọn $\pi$:**
+  1. Nếu đã có ước lượng trước về tỷ lệ: Dùng giá trị $\pi$ từ mẫu thử nghiệm (hoặc dữ liệu năm trước).
+  2. Nếu hoàn toàn **chưa có bất kỳ thông tin nào về $\pi$**: Dùng trường hợp xấu nhất (bảo thủ nhất - Conservative scenario) là **$\pi = 0.5$**.
+     - Vì tích số $\pi(1 - \pi)$ đạt giá trị cực đại khi $\pi = 0.5$: $0.5 \times (1 - 0.5) = 0.25$.
+     - Chọn $\pi = 0.5$ đảm bảo cỡ mẫu thu được sẽ lớn nhất và luôn an toàn trong mọi tình huống!
+
+---
+
+## 8.6. Bài Tập Thực Chiến Kinh Điển Chương 8 (Chuẩn 5 Bước Quốc Tế)
+
+### Bài tập 8.1: Khoảng tin cậy cho Trung bình khi $\sigma$ chưa biết
+**Đề bài:** Một chuỗi khách sạn tại New York muốn ước lượng giá phòng trung bình mỗi đêm. Khảo sát ngẫu nhiên $n = 25$ khách sạn thu được giá trung bình là $\bar{X} = \$172.50$ với độ lệch chuẩn mẫu $S = \$15.40$. Giả định giá phòng có phân phối chuẩn. Hãy lập khoảng tin cậy 95% cho giá phòng trung bình của toàn bộ các khách sạn tại New York.
+
+**Giải 5 bước chuẩn:**
+- **BƯỚC 1: Trích xuất thông tin:**
+  - $n = 25 \implies df = 25 - 1 = 24$.
+  - $\bar{X} = 172.50$, $S = 15.40$.
+  - Độ tin cậy: $1 - \alpha = 0.95 \implies \alpha = 0.05 \implies \alpha/2 = 0.025$.
+  - Đề bài cho độ lệch chuẩn mẫu $S$, chưa biết $\sigma \implies$ Dùng phân phối Student $t$.
+- **BƯỚC 2: Xác định giá trị tới hạn:**
+  - Tra bảng phân phối $t$ với $df = 24$ và đuôi trên $0.025$:
+    $$t_{0.025, 24} = 2.0639$$
+- **BƯỚC 3: Tính sai số biên (Margin of Error):**
+  $$e = t_{\alpha/2} \frac{S}{\sqrt{n}} = 2.0639 \times \frac{15.40}{\sqrt{25}} = 2.0639 \times 3.08 \approx 6.3568$$
+- **BƯỚC 4: Tính các cận khoảng tin cậy:**
+  $$\text{LCL} = \bar{X} - e = 172.50 - 6.3568 = 166.1432 \approx 166.14$$
+  $$\text{UCL} = \bar{X} + e = 172.50 + 6.3568 = 178.8568 \approx 178.86$$
+- **BƯỚC 5: Kết luận & Bấm Casio kiểm tra:**
+  - **Kết luận:** Chúng ta tin tưởng 95% rằng giá phòng khách sạn trung bình thực tế tại New York nằm trong khoảng từ **\$166.14 đến \$178.86**.
+  - **Bấm Casio 580:** `[172.5] [-] [2.0639] [x] [15.4] [/] [5] [=]` $\implies 166.143$. Bấm mũi tên lên đổi dấu trừ thành cộng `[+]` $\implies 178.857$.
+
+---
+
+### Bài tập 8.2: Khoảng tin cậy cho Tỷ lệ
+**Đề bài:** Khảo sát ngẫu nhiên $n = 100$ người dân thì thấy có $25$ người thuận tay trái. Hãy lập khoảng tin cậy 95% cho tỷ lệ người thuận tay trái trong toàn bộ dân số.
+
+**Giải 5 bước chuẩn:**
+- **BƯỚC 1: Trích xuất thông tin:**
+  - $n = 100$, $X = 25 \implies p = \frac{25}{100} = 0.25$.
+  - Kiểm tra điều kiện: $np = 25 \ge 5$ và $n(1-p) = 75 \ge 5$ (Thỏa mãn xấp xỉ chuẩn).
+  - Độ tin cậy $95\% \implies Z_{\alpha/2} = 1.96$.
+- **BƯỚC 2: Tính sai số chuẩn:**
+  $$\sigma_p = \sqrt{\frac{p(1 - p)}{n}} = \sqrt{\frac{0.25 \times 0.75}{100}} = \sqrt{0.001875} \approx 0.0433$$
+- **BƯỚC 3: Tính sai số biên:**
+  $$e = 1.96 \times 0.043301 \approx 0.08487 \text{ (tức } 8.49\%\text{)}$$
+- **BƯỚC 4: Tính các giới hạn:**
+  $$\text{LCL} = 0.25 - 0.0849 = 0.1651 \text{ (16.51\%) }$$
+  $$\text{UCL} = 0.25 + 0.0849 = 0.3349 \text{ (33.49\%) }$$
+- **BƯỚC 5: Kết luận:**
+  - Ta có độ tin cậy 95% rằng tỷ lệ người thuận tay trái trong dân số nằm trong khoảng từ **$16.51\%$ đến $33.49\%$**.
+
+---
+
+
+
+# PHẦN 8: CHƯƠNG 9 - KIỂM ĐỊNH GIẢ THUYẾT 1 MẪU (ONE-SAMPLE HYPOTHESIS TESTING)
+
+> [!NOTE]
+> **TỔNG QUAN BẢN CHẤT CHƯƠNG 9:**  
+> Nếu Chương 8 là bài toán "Ước lượng" (đi tìm một khoảng chứa giá trị thật của tham số), thì Chương 9 là bài toán "Kiểm định" (kiểm tra xem một khẳng định, lời tuyên bố hay giả thuyết đưa ra là ĐÚNG hay SAI dựa trên bằng chứng dữ liệu thu thập được từ mẫu).
+
+---
+
+## 9.1. Bản Chất & Cặp Giả Thuyết Thống Kê ($H_0$ & $H_1$)
+
+### 1. Khái niệm Giả thuyết Thống kê:
+- Một giả thuyết thống kê là một phát biểu hoặc tuyên bố về một tham số của tổng thể (như $\mu$ hay $\pi$).
+- Ví dụ:
+  - *"Hóa đơn điện thoại trung bình hàng tháng của cư dân thành phố là $\mu = \$42$"*.
+  - *"Tỷ lệ người dùng điện thoại thông minh tại thành phố là $\pi = 0.88$"*.
+
+### 2. Cặp Giả thuyết Thống kê:
+```mermaid
+flowchart LR
+    A["TỔNG THỂ CẦN KIỂM ĐỊNH"] --> B["Giả thuyết Không H0<br/>(Status Quo - Hiện trạng)"]
+    A --> C["Giả thuyết Đối H1<br/>(Research Hypothesis - Kỳ vọng chứng minh)"]
+    B --> D["Luôn chứa dấu bằng: =, ≤, ≥<br/>Mặc định xem là ĐÚNG"]
+    C --> E["Không bao giờ chứa dấu bằng: ≠, >, <<br/>Cần bằng chứng để công nhận"]
+```
+
+- **Giả thuyết Không (Null Hypothesis - $H_0$):**
+  - Đại diện cho quan điểm hiện tại, trạng thái bình thường (status quo) hoặc không có sự khác biệt.
+  - Luôn chứa dấu bằng: $=$, $\le$, hoặc $\ge$.
+  - Mặc định được giả định là ĐÚNG cho đến khi có đủ bằng chứng mẫu để bác bỏ (Tương tự nguyên tắc *"Vô tội cho đến khi bị chứng minh có tội"* trong tòa án).
+- **Giả thuyết Đối / Giả thuyết Thay thế (Alternative Hypothesis - $H_1$ hoặc $H_a$):**
+  - Là tuyên bố trái ngược hoàn toàn với $H_0$.
+  - Đại diện cho điều mà nhà nghiên cứu đang muốn tìm bằng chứng để chứng minh hoặc kiểm tra xem có sự thay đổi hay không.
+  - Không bao giờ chứa dấu bằng, chỉ chứa các dấu: $\ne$ (khác), $>$ (lớn hơn), hoặc $<$ (nhỏ hơn).
+
+> [!WARNING]
+> **BẪY THI TRẮC NGHIỆM VỀ CÁCH VIẾT $H_0$ VÀ $H_1$:**  
+> 1. Giả thuyết luôn phát biểu về **tham số tổng thể** ($\mu, \pi, \sigma$), TUYỆT ĐỐI KHÔNG BAO GIỜ phát biểu về thống kê mẫu ($\bar{X}, p, S$). Nếu thấy đề thi viết $H_0: \bar{X} = 50 \implies$ **CHẮC CHẮN SAI!**  
+> 2. Dấu bằng ($=, \le, \ge$) luôn thuộc về $H_0$. Dấu bất đẳng thức thuần túy ($\ne, >, <$) luôn thuộc về $H_1$.
+
+---
+
+## 9.2. Hai Loại Sai Lầm Sống Còn & Công Suất Kiểm Định
+
+Khi đưa ra quyết định dựa trên mẫu, ta luôn đứng trước nguy cơ mắc sai lầm do biến động ngẫu nhiên:
+
+| Thực tế khách quan \ Quyết định mẫu | **KHÔNG BÁC BỎ $H_0$** (Do not reject $H_0$) | **BÁC BỎ $H_0$** (Reject $H_0$) |
+| :---: | :---: | :---: |
+| **$H_0$ ĐÚNG trong thực tế** | **Quyết định đúng**<br/>Xác suất $= 1 - \alpha$ (Confidence Level) | **SAI LẦM LOẠI I (Type I Error)**<br/>Xác suất $= \alpha$ (Significance Level) |
+| **$H_0$ SAI trong thực tế** | **SAI LẦM LOẠI II (Type II Error)**<br/>Xác suất $= \beta$ | **Quyết định đúng**<br/>Xác suất $= 1 - \beta$ (Power of the Test) |
+
+### 1. Phân biệt Sai lầm Loại I và Loại II:
+- **Sai lầm Loại I (Type I Error):**
+  - Định nghĩa: Bác bỏ $H_0$ khi thực chất $H_0$ đang ĐÚNG.
+  - Hình tượng: **"Báo động giả"** (False Alarm) hoặc kết án một người vô tội.
+  - Xác suất xảy ra ký hiệu là **$\alpha$**, được gọi là **Mức ý nghĩa (Level of Significance)** của phép kiểm định. Giá trị này do người làm nghiên cứu chủ động ấn định trước (thường là $0.05, 0.01$, hoặc $0.10$).
+- **Sai lầm Loại II (Type II Error):**
+  - Định nghĩa: Không bác bỏ $H_0$ khi thực chất $H_0$ đang SAI.
+  - Hình tượng: **"Bỏ lỡ cơ hội"** (Missed Opportunity) hoặc tha bổng kẻ có tội.
+  - Xác suất xảy ra ký hiệu là **$\beta$**.
+- **Công suất kiểm định (Power of the Test - $1 - \beta$):**
+  - Khả năng phát hiện và bác bỏ thành công một giả thuyết $H_0$ sai. Một kiểm định tốt là kiểm định có công suất cao (tiến gần 1).
+
+### 2. Mối quan hệ đánh đổi:
+- Hai loại sai lầm không thể xảy ra cùng một lúc.
+- Với một cỡ mẫu $n$ cố định: Nếu giảm $\alpha$ thì $\beta$ sẽ tăng lên, và ngược lại.
+- **Biện pháp duy nhất để giảm đồng thời cả $\alpha$ và $\beta$:** **TĂNG CỠ MẪU $n$!**
+
+---
+
+## 9.3. Hai Cách Tiếp Cận Ra Quyết Định: Critical Value vs $p$-Value
+
+```mermaid
+flowchart TD
+    A["DỮ LIỆU MẪU & TEST STATISTIC"] --> B["CÁCH 1: GIÁ TRỊ TỚI HẠN (Critical Value)"]
+    A --> C["CÁCH 2: GIÁ TRỊ p-VALUE (Hiện đại)"]
+    B --> D["So sánh Test Statistic với Critical Value<br/>Nếu rơi vào Miền Bác Bỏ: Reject H0"]
+    C --> E["So sánh p-value với mức ý nghĩa α<br/>Nếu p-value ≤ α: Reject H0!"]
+```
+
+### 1. Cách 1: Tiếp cận Giá trị tới hạn (Critical Value Approach):
+- Xác định giá trị tới hạn chia trục số thành 2 miền:
+  - **Miền Bác Bỏ (Rejection Region):** Vùng ở các đuôi phân phối.
+  - **Miền Không Bác Bỏ (Non-rejection Region):** Vùng ở trung tâm phân phối.
+- Quy tắc: Nếu thống kê kiểm định ($Z_{STAT}$ hoặc $t_{STAT}$) rơi vào Miền Bác Bỏ $\implies$ **Bác bỏ $H_0$**.
+
+### 2. Cách 2: Tiếp cận $p$-Value ($p$-Value Approach - Chuẩn thống kê quốc tế):
+- **Định nghĩa $p$-value:** Là xác suất thu được một giá trị thống kê mẫu lệch ít nhất bằng giá trị quan sát được từ mẫu hiện tại, với giả định rằng $H_0$ là đúng.
+- $p$-value còn được gọi là mức ý nghĩa quan sát (observed significance level).
+- **Quy tắc quyết định vàng (Golden Rule):**
+  $$\text{Nếu } p\text{-value} \le \alpha \implies \text{Bác bỏ } H_0 \text{ (Reject } H_0 \text{)}$$
+  $$\text{Nếu } p\text{-value} > \alpha \implies \text{Không bác bỏ } H_0 \text{ (Do not reject } H_0 \text{)}$$
+
+> [!TIP]
+> **CÂU THẦN CHÚ TIẾNG ANH KINH ĐIỂN CẦN NHỚ:**  
+> *"If the p-value is low, the null must go!"*  
+> (Nếu $p$-value nhỏ hơn hoặc bằng $\alpha$, $H_0$ buộc phải ra đi - Bác bỏ $H_0$!).
+
+---
+
+## 9.4. Kiểm Định Giả Thuyết Cho Trung Bình $\mu$ (Đầy Đủ $Z$-test & $t$-test)
+
+### 1. Phân loại kiểm định:
+- **Đã biết $\sigma$:** Dùng kiểm định $Z$ (Z-test for Mean):
+  $$Z_{STAT} = \frac{\bar{X} - \mu_0}{\sigma / \sqrt{n}}$$
+- **Chưa biết $\sigma$:** Dùng kiểm định Student $t$ ($t$-test for Mean) với bậc tự do $df = n - 1$:
+  $$t_{STAT} = \frac{\bar{X} - \mu_0}{S / \sqrt{n}}$$
+
+### 2. Ba dạng kiểm định giả thuyết (2 phía, Đuôi trên, Đuôi dưới):
+
+| Dạng kiểm định | Cặp giả thuyết | Miền Bác Bỏ ($Z$-test) | Miền Bác Bỏ ($t$-test) | Cách tính $p$-value |
+| :---: | :---: | :---: | :---: | :---: |
+| **Hai phía (Two-Tail)** | $H_0: \mu = \mu_0$<br/>$H_1: \mu \ne \mu_0$ | $Z_{STAT} < -Z_{\alpha/2}$<br/>hoặc $Z_{STAT} > Z_{\alpha/2}$ | $t_{STAT} < -t_{\alpha/2}$<br/>hoặc $t_{STAT} > t_{\alpha/2}$ | $2 \times P(Z > \|Z_{STAT}\|)$<br/>(nhân đôi xác suất đuôi) |
+| **Đuôi trên (Upper-Tail)** | $H_0: \mu \le \mu_0$<br/>$H_1: \mu > \mu_0$ | $Z_{STAT} > Z_{\alpha}$ | $t_{STAT} > t_{\alpha}$ | $P(Z > Z_{STAT})$ |
+| **Đuôi dưới (Lower-Tail)** | $H_0: \mu \ge \mu_0$<br/>$H_1: \mu < \mu_0$ | $Z_{STAT} < -Z_{\alpha}$ | $t_{STAT} < -t_{\alpha}$ | $P(Z < Z_{STAT})$ |
+
+> [!NOTE]
+> **DẤU HIỆU NHẬN DIỆN CỰC NHANH TRONG ĐỀ THI TIẾNG ANH:**  
+> - Thấy các cụm từ: *"has changed"*, *"is different from"*, *"is not equal to"* $\implies$ **Kiểm định 2 phía ($\ne$)**.  
+> - Thấy các cụm từ: *"has increased"*, *"more than"*, *"greater than"*, *"exceeds"*, *"improved"* $\implies$ **Kiểm định đuôi trên ($>$)**.  
+> - Thấy các cụm từ: *"has decreased"*, *"less than"*, *"fewer than"*, *"under"*, *"reduced"* $\implies$ **Kiểm định đuôi dưới ($<$)**.
+
+---
+
+## 9.5. Mối Liên Hệ Giữa Kiểm Định 2 Phía Và Khoảng Tin Cậy
+
+Có một sự tương đương toán học hoàn hảo giữa Kiểm định hai phía ở mức ý nghĩa $\alpha$ và Khoảng tin cậy $(1 - \alpha)$:
+1. Nếu giá trị giả thuyết $\mu_0$ **nằm bên trong** khoảng tin cậy $(1 - \alpha) \implies$ **Không bác bỏ $H_0$** tại mức ý nghĩa $\alpha$.
+2. Nếu giá trị giả thuyết $\mu_0$ **nằm ngoài** khoảng tin cậy $(1 - \alpha) \implies$ **Bác bỏ $H_0$** tại mức ý nghĩa $\alpha$.
+
+**Ví dụ:** Với $\bar{X} = 29.84$, $\sigma = 0.8$, $n = 100$, khoảng tin cậy 95% là $[29.6832, 29.9968]$.  
+Nếu ta kiểm định $H_0: \mu = 30$ ở $\alpha = 0.05$: Vì số $30$ nằm ngoài khoảng $[29.6832, 29.9968]$, ta **BÁC BỎ $H_0$** ngay lập tức mà không cần tính lại $Z_{STAT}$!
+
+---
+
+## 9.6. Kiểm Định Giả Thuyết Cho Tỷ Lệ Tổng Thể $\pi$ ($Z$-test for Proportion)
+
+### 1. Điều kiện áp dụng:
+$$n\pi_0 \ge 5 \quad \text{và} \quad n(1 - \pi_0) \ge 5$$
+*(Lưu ý: Dưới mẫu số kiểm tra điều kiện bằng $\pi_0$ theo giả thuyết $H_0$, không dùng $p$ mẫu).*
+
+### 2. Tiêu chuẩn kiểm định:
+$$Z_{STAT} = \frac{p - \pi_0}{\sqrt{\frac{\pi_0(1 - \pi_0)}{n}}}$$
+Trong đó:
+- $p = \frac{X}{n}$: Tỷ lệ mẫu thực tế.
+- $\pi_0$: Tỷ lệ tổng thể giả định trong $H_0$.
+- Sai số chuẩn lý thuyết: $\sigma_p = \sqrt{\frac{\pi_0(1 - \pi_0)}{n}}$.
+
+---
+
+## 9.7. Bài Tập Thực Chiến Kinh Điển Chương 9 (Chuẩn 5 Bước Quốc Tế)
+
+### Bài tập 9.1: Kiểm định 2 phía cho trung bình khi $\sigma$ chưa biết
+**Đề bài:** Một công ty sản xuất bóng đèn tuyên bố rằng tuổi thọ trung bình của bóng đèn là $\mu = 1500$ giờ. Một tổ chức bảo vệ người tiêu dùng nghi ngờ tuyên bố này và lấy mẫu ngẫu nhiên $n = 25$ bóng đèn để đo thử, thu được trung bình $\bar{X} = 1450$ giờ và độ lệch chuẩn mẫu $S = 120$ giờ. Với mức ý nghĩa $\alpha = 0.05$, hãy kiểm định xem tuyên bố của công ty có đúng hay không. Giả định tuổi thọ có phân phối chuẩn.
+
+**Giải 5 bước chuẩn:**
+- **BƯỚC 1: Thiết lập cặp giả thuyết:**
+  - $H_0: \mu = 1500$ (Tuổi thọ đúng bằng 1500 giờ).
+  - $H_1: \mu \ne 1500$ (Tuổi thọ khác 1500 giờ $\implies$ Kiểm định 2 phía).
+- **BƯỚC 2: Mức ý nghĩa & Giá trị tới hạn:**
+  - $\alpha = 0.05 \implies \alpha/2 = 0.025$.
+  - Cỡ mẫu $n = 25 \implies df = 25 - 1 = 24$.
+  - Chưa biết $\sigma$, dùng phân phối Student $t$:
+    $$t_{crit} = \pm t_{0.025, 24} = \pm 2.0639$$
+  - Miền bác bỏ: Bác bỏ $H_0$ nếu $t_{STAT} < -2.0639$ hoặc $t_{STAT} > 2.0639$.
+- **BƯỚC 3: Tính giá trị kiểm định $t_{STAT}$:**
+  $$t_{STAT} = \frac{\bar{X} - \mu_0}{S / \sqrt{n}} = \frac{1450 - 1500}{120 / \sqrt{25}} = \frac{-50}{120 / 5} = \frac{-50}{24} \approx -2.0833$$
+- **BƯỚC 4: So sánh và ra quyết định:**
+  - Ta thấy: $t_{STAT} = -2.0833 < -2.0639$.
+  - Giá trị kiểm định rơi vào **Miền Bác Bỏ** (Rejection Region)!
+  - Tính $p$-value: $p\text{-value} = 2 \times P(t_{24} < -2.0833) \approx 0.0480 < 0.05$.
+- **BƯỚC 5: Kết luận thực tiễn:**
+  - **Quyết định:** Bác bỏ $H_0$ ở mức ý nghĩa $5\%$.
+  - **Kết luận:** Có đủ bằng chứng thống kê để kết luận rằng tuổi thọ trung bình thực tế của bóng đèn khác 1500 giờ (cụ thể là thấp hơn mức công ty tuyên bố).
+
+---
+
+### Bài tập 9.2: Kiểm định 1 phía cho tỷ lệ tổng thể
+**Đề bài:** Một công ty tiếp thị tuyên bố rằng chiến dịch gửi thư điện tử của họ đạt tỷ lệ phản hồi là $8\%$ ($\pi = 0.08$). Để kiểm tra tuyên bố này, một cuộc khảo sát ngẫu nhiên trên $n = 500$ khách hàng cho thấy chỉ có $25$ người phản hồi ($p = \frac{25}{500} = 0.05$). Với mức ý nghĩa $\alpha = 0.05$, hãy kiểm định tuyên bố của công ty.
+
+**Giải 5 bước chuẩn:**
+- **BƯỚC 1: Thiết lập cặp giả thuyết:**
+  - $H_0: \pi = 0.08$
+  - $H_1: \pi \ne 0.08$ (Kiểm định hai phía ở $\alpha = 0.05$).
+- **BƯỚC 2: Kiểm tra điều kiện & Giá trị tới hạn:**
+  - $n\pi_0 = 500 \times 0.08 = 40 \ge 5$.
+  - $n(1 - \pi_0) = 500 \times 0.92 = 460 \ge 5$.
+  - Điều kiện xấp xỉ chuẩn thỏa mãn.
+  - Giá trị tới hạn $Z_{\alpha/2} = \pm 1.96$. Miền bác bỏ: $|Z_{STAT}| > 1.96$.
+- **BƯỚC 3: Tính giá trị kiểm định $Z_{STAT}$:**
+  $$Z_{STAT} = \frac{p - \pi_0}{\sqrt{\frac{\pi_0(1 - \pi_0)}{n}}} = \frac{0.05 - 0.08}{\sqrt{\frac{0.08 \times 0.92}{500}}} = \frac{-0.03}{\sqrt{0.0001472}} = \frac{-0.03}{0.012132} \approx -2.4727 \approx -2.47$$
+- **BƯỚC 4: So sánh và ra quyết định:**
+  - $Z_{STAT} = -2.47 < -1.96 \implies$ Rơi vào Miền Bác Bỏ!
+  - Tính $p$-value bằng Casio:
+    - Vào `[MENU] [7] [2]` (Normal CD), nhập: Lower = `-9999`, Upper = `-2.47`, $\sigma = 1, \mu = 0 \implies 0.00675$.
+    - Vì là kiểm định 2 phía: $p\text{-value} = 2 \times 0.00675 = 0.0135$.
+    - Vì $p\text{-value} = 0.0135 < \alpha = 0.05 \implies$ Bác bỏ $H_0$.
+- **BƯỚC 5: Kết luận thực tiễn:**
+  - Bác bỏ $H_0$. Có đủ bằng chứng thống kê để bác bỏ tuyên bố của công ty rằng tỷ lệ phản hồi đạt 8% (thực tế thấp hơn đáng kể).
+
+---
 </script>
 
   <script>
@@ -3171,7 +3653,6 @@ Hãy tìm hệ số tương quan mẫu (sample correlation coefficient - r).
       updateNotesBadges();
       renderNotesList();
 
-      // Keyboard shortcuts for textarea
       const textarea = document.getElementById('note-text-input');
       textarea.addEventListener('keydown', (e) => {
         if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
@@ -3180,7 +3661,6 @@ Hãy tìm hệ số tương quan mẫu (sample correlation coefficient - r).
         }
       });
 
-      // Escape key to close drawer
       document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape') {
           toggleNotesDrawer(false);
@@ -3208,8 +3688,6 @@ Hãy tìm hệ số tương quan mẫu (sample correlation coefficient - r).
 
     function openNoteDrawerForHeading(targetId, headingText) {
       toggleNotesDrawer(true);
-
-      // Clean heading text (remove note button text if captured)
       const cleanText = headingText.replace(/📝\s*Ghi chú.*$/g, '').trim();
 
       document.getElementById('note-target-id').value = targetId;
@@ -3233,7 +3711,6 @@ Hãy tìm hệ số tương quan mẫu (sample correlation coefficient - r).
       const topicInput = document.getElementById('note-topic-input');
       const textInput = document.getElementById('note-text-input');
       const targetIdInput = document.getElementById('note-target-id');
-      const editIdInput = document.getElementById('note-edit-id') || { value: '' };
 
       const content = textInput.value.trim();
       if (!content) {
@@ -3248,7 +3725,6 @@ Hãy tìm hệ số tương quan mẫu (sample correlation coefficient - r).
       const editId = document.getElementById('note-id-input').value;
 
       if (editId) {
-        // Update existing note
         const idx = notes.findIndex(n => n.id === editId);
         if (idx !== -1) {
           notes[idx].topic = topic;
@@ -3258,7 +3734,6 @@ Hãy tìm hệ số tương quan mẫu (sample correlation coefficient - r).
           showToast("✅ Đã cập nhật ghi chú!");
         }
       } else {
-        // Create new note
         const newNote = {
           id: 'note_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5),
           targetId: targetId,
@@ -3376,7 +3851,6 @@ Hãy tìm hệ số tương quan mẫu (sample correlation coefficient - r).
       const searchQuery = (document.getElementById('notes-search-box').value || '').toLowerCase().trim();
       let notes = getStoredNotes();
 
-      // Filter by search query
       if (searchQuery) {
         notes = notes.filter(n => 
           (n.topic && n.topic.toLowerCase().includes(searchQuery)) ||
@@ -3384,7 +3858,6 @@ Hãy tìm hệ số tương quan mẫu (sample correlation coefficient - r).
         );
       }
 
-      // Filter by tag
       if (currentFilterTag !== 'all') {
         notes = notes.filter(n => {
           const t = (n.topic + ' ' + (n.targetId || '')).toLowerCase();
@@ -3392,6 +3865,8 @@ Hãy tìm hệ số tương quan mẫu (sample correlation coefficient - r).
           if (currentFilterTag === 'ch5') return t.includes('chương 5') || t.includes('ch5') || t.includes('nhị thức') || t.includes('poisson') || t.includes('rời rạc');
           if (currentFilterTag === 'ch6') return t.includes('chương 6') || t.includes('ch6') || t.includes('chuẩn') || t.includes('normal') || t.includes('z-score');
           if (currentFilterTag === 'ch7') return t.includes('chương 7') || t.includes('ch7') || t.includes('cỡ mẫu') || t.includes('sample') || t.includes('trung tâm');
+          if (currentFilterTag === 'ch8') return t.includes('chương 8') || t.includes('ch8') || t.includes('khoảng tin cậy') || t.includes('confidence') || t.includes('bậc tự do') || t.includes('student');
+          if (currentFilterTag === 'ch9') return t.includes('chương 9') || t.includes('ch9') || t.includes('kiểm định') || t.includes('hypothesis') || t.includes('p-value') || t.includes('h0') || t.includes('h1');
           return true;
         });
       }
@@ -3402,7 +3877,7 @@ Hãy tìm hệ số tương quan mẫu (sample correlation coefficient - r).
             <div class="empty-notes-icon">🥬</div>
             <div class="empty-notes-text">
               <strong>Chưa có ghi chú nào phù hợp!</strong><br>
-              Hãy bấm <em>"📝 Ghi chú"</em> tại các câu hỏi trắc nghiệm hoặc nhập ghi chú ở form trên để lưu lại bí kíp nhé!
+              Hãy bấm <em>"📝 Ghi chú"</em> tại các đề mục học tập hoặc nhập ghi chú ở form trên để lưu lại bí kíp nhé!
             </div>
           </div>
         `;
@@ -3441,12 +3916,10 @@ Hãy tìm hệ số tương quan mẫu (sample correlation coefficient - r).
       const notes = getStoredNotes();
       const count = notes.length;
 
-      // Update header badge and fab badge
       document.getElementById('notes-badge').textContent = count;
       document.getElementById('notes-fab-badge').textContent = count;
       document.getElementById('notes-count-subtitle').textContent = `${count} ghi chú đã lưu`;
 
-      // Count notes per targetId
       const targetCounts = {};
       notes.forEach(n => {
         if (n.targetId) {
@@ -3454,7 +3927,6 @@ Hãy tìm hệ số tương quan mẫu (sample correlation coefficient - r).
         }
       });
 
-      // Update inline heading badges
       document.querySelectorAll('.heading-note-badge').forEach(badge => {
         const headingId = badge.id.replace('badge-', '');
         const btn = document.getElementById('note-btn-' + headingId);
@@ -3479,7 +3951,7 @@ Hãy tìm hệ số tương quan mẫu (sample correlation coefficient - r).
       }
 
       let content = "========================================================================\n";
-      content += "🥬 CẢI XANH HỌC MAS - SỔ TAY GHI CHÚ ÔN TẬP MAS202 (CHƯƠNG 5, 6, 7)\n";
+      content += "🥬 CẢI XANH HỌC MAS - SỔ TAY GHI CHÚ ÔN TẬP MAS202 (CHƯƠNG 5 - 9)\n";
       content += `Thời gian xuất: ${new Date().toLocaleString('vi-VN')}\n`;
       content += `Tổng số ghi chú: ${notes.length}\n`;
       content += "========================================================================\n\n";
@@ -3525,7 +3997,7 @@ Hãy tìm hệ số tương quan mẫu (sample correlation coefficient - r).
     }
 
     // =========================================================================
-    // 7. Interactive Calculator Logic
+    // 7. Interactive Calculator Logic (Ch5, 6, 7, 8, 9)
     // =========================================================================
     function switchCalc(panelId) {
       document.querySelectorAll('.calc-panel').forEach(p => p.style.display = 'none');
@@ -3554,6 +4026,83 @@ Hãy tìm hệ số tương quan mẫu (sample correlation coefficient - r).
 
     function normalCDF(z) {
       return 0.5 * (1.0 + erf(z / Math.sqrt(2.0)));
+    }
+
+    // Student's t critical values table for df=1..35, tail areas 0.05, 0.025, 0.01, 0.005
+    const tTable = {
+      0.05: [6.314, 2.920, 2.353, 2.132, 2.015, 1.943, 1.895, 1.860, 1.833, 1.812, 1.796, 1.782, 1.771, 1.761, 1.753, 1.746, 1.740, 1.734, 1.729, 1.725, 1.721, 1.717, 1.714, 1.711, 1.708, 1.706, 1.703, 1.701, 1.699, 1.697, 1.696, 1.694, 1.692, 1.691, 1.690],
+      0.025: [12.706, 4.303, 3.182, 2.776, 2.571, 2.447, 2.365, 2.306, 2.262, 2.228, 2.201, 2.179, 2.160, 2.145, 2.131, 2.120, 2.110, 2.101, 2.093, 2.086, 2.080, 2.074, 2.069, 2.064, 2.060, 2.056, 2.052, 2.048, 2.045, 2.042, 2.040, 2.037, 2.035, 2.032, 2.030],
+      0.01: [31.821, 6.965, 4.541, 3.747, 3.365, 3.143, 2.998, 2.896, 2.821, 2.764, 2.718, 2.681, 2.650, 2.624, 2.602, 2.583, 2.567, 2.552, 2.539, 2.528, 2.518, 2.508, 2.500, 2.492, 2.485, 2.479, 2.473, 2.467, 2.462, 2.457, 2.453, 2.449, 2.445, 2.441, 2.438],
+      0.005: [63.657, 9.925, 5.841, 4.604, 4.032, 3.707, 3.499, 3.355, 3.250, 3.169, 3.106, 3.055, 3.012, 2.977, 2.947, 2.921, 2.898, 2.878, 2.861, 2.845, 2.831, 2.819, 2.807, 2.797, 2.787, 2.779, 2.771, 2.763, 2.756, 2.750, 2.744, 2.738, 2.733, 2.728, 2.724]
+    };
+
+    function getTCritical(alphaTail, df) {
+      const zValues = { 0.05: 1.645, 0.025: 1.960, 0.01: 2.326, 0.005: 2.576 };
+      if (!tTable[alphaTail]) return zValues[alphaTail] || 1.960;
+      if (df >= 1 && df <= 35) {
+        return tTable[alphaTail][df - 1];
+      }
+      return zValues[alphaTail] || 1.960;
+    }
+
+    function computeCI() {
+      const xbar = parseFloat(document.getElementById('ci-xbar').value);
+      const sd = parseFloat(document.getElementById('ci-sd').value);
+      const n = parseInt(document.getElementById('ci-n').value);
+      const cl = parseFloat(document.getElementById('ci-cl').value);
+
+      if (isNaN(xbar) || isNaN(sd) || isNaN(n) || n < 2 || sd <= 0) {
+        alert("Vui lòng nhập cỡ mẫu n ≥ 2 và độ lệch chuẩn > 0!");
+        return;
+      }
+
+      const df = n - 1;
+      const alphaTail = parseFloat(((1 - cl) / 2).toFixed(4));
+      const tVal = getTCritical(alphaTail, df);
+      const se = sd / Math.sqrt(n);
+      const e = tVal * se;
+      const lcl = xbar - e;
+      const ucl = xbar + e;
+
+      document.getElementById('res-ci-tcrit').textContent = `t = ${tVal.toFixed(4)} (df = ${df})`;
+      document.getElementById('res-ci-e').textContent = `e = ${e.toFixed(4)}`;
+      document.getElementById('res-ci-main').textContent = `[${lcl.toFixed(2)}, ${ucl.toFixed(2)}]`;
+    }
+
+    function computeHypothesis() {
+      const xbar = parseFloat(document.getElementById('hypo-xbar').value);
+      const mu0 = parseFloat(document.getElementById('hypo-mu0').value);
+      const sd = parseFloat(document.getElementById('hypo-sd').value);
+      const n = parseInt(document.getElementById('hypo-n').value);
+      const type = document.getElementById('hypo-type').value;
+
+      if (isNaN(xbar) || isNaN(mu0) || isNaN(sd) || isNaN(n) || n < 2 || sd <= 0) {
+        alert("Vui lòng nhập số liệu hợp lệ!");
+        return;
+      }
+
+      const se = sd / Math.sqrt(n);
+      const tStat = (xbar - mu0) / se;
+
+      // Calculate approximate p-value using normal distribution approximation
+      let pVal = 0;
+      const zProb = normalCDF(Math.abs(tStat));
+      const tailProb = 1 - zProb;
+
+      if (type === 'two') {
+        pVal = 2 * tailProb;
+      } else if (type === 'upper') {
+        pVal = 1 - normalCDF(tStat);
+      } else {
+        pVal = normalCDF(tStat);
+      }
+
+      const isReject = pVal <= 0.05;
+
+      document.getElementById('res-hypo-tstat').textContent = `t_STAT = ${tStat.toFixed(4)}`;
+      document.getElementById('res-hypo-pval').textContent = `p-value ≈ ${pVal.toFixed(4)}`;
+      document.getElementById('res-hypo-main').textContent = isReject ? "BÁC BỎ H0 (Reject H0) ⭐" : "CHƯA ĐỦ BẰNG CHỨNG (Do Not Reject H0)";
+      document.getElementById('res-hypo-main').style.color = isReject ? "#DC2626" : "var(--primary)";
     }
 
     function computeNormal() {
