@@ -1,0 +1,3645 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🥬 Cải Xanh Học MAS - Bí Kíp Chinh Phục Chương 5, 6, 7 (MAS202)</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥬</text></svg>">
+  
+  <!-- KaTeX CSS & JS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
+  
+  <!-- Marked.js Markdown parser -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@4.3.0/marked.min.js"></script>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --primary: #15803D; /* Fresh Cabbage Emerald Green */
+      --primary-light: #22C55E;
+      --primary-soft: #DCFCE7;
+      --accent: #2563EB;
+      --bg: #F8FAFC;
+      --surface: #FFFFFF;
+      --surface-sidebar: #F1F5F9;
+      --text: #0F172A;
+      --text-muted: #64748B;
+      --border: #E2E8F0;
+      --card-bg: #FFFFFF;
+      --code-bg: #F1F5F9;
+      --sidebar-width: 320px;
+      --header-height: 68px;
+      --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    [data-theme="dark"] {
+      --primary: #22C55E;
+      --primary-light: #4ADE80;
+      --primary-soft: #064E3B;
+      --accent: #60A5FA;
+      --bg: #0B0F19;
+      --surface: #111827;
+      --surface-sidebar: #0F172A;
+      --text: #F3F4F6;
+      --text-muted: #9CA3AF;
+      --border: #1F2937;
+      --card-bg: #1F2937;
+      --code-bg: #1E293B;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-main);
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      overflow-x: hidden;
+      transition: background-color 0.25s ease, color 0.25s ease;
+    }
+
+    /* TOP HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: var(--header-height);
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      z-index: 1000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 24px;
+      box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.04);
+    }
+    [data-theme="dark"] header {
+      background: rgba(17, 24, 39, 0.92);
+    }
+
+    .brand-container {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    .brand-logo {
+      font-size: 1.95rem;
+      line-height: 1;
+      filter: drop-shadow(0 2px 4px rgba(0,0,0,0.1));
+      animation: wiggle 3s ease-in-out infinite;
+    }
+
+    @keyframes wiggle {
+      0%, 100% { transform: rotate(0deg); }
+      20% { transform: rotate(-8deg); }
+      40% { transform: rotate(8deg); }
+      60% { transform: rotate(-4deg); }
+      80% { transform: rotate(4deg); }
+    }
+
+    .brand-title {
+      font-size: 1.25rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .brand-badge {
+      background: var(--primary-soft);
+      color: var(--primary);
+      padding: 3px 9px;
+      border-radius: 999px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      border: 1px solid rgba(34, 197, 94, 0.3);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      transition: all 0.2s ease;
+      font-family: var(--font-main);
+    }
+
+    .btn:hover {
+      background: var(--primary-soft);
+      color: var(--primary);
+      border-color: var(--primary-light);
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+    .btn-primary:hover {
+      background: var(--primary-light);
+      color: white;
+    }
+
+    .btn-sm {
+      padding: 5px 10px;
+      font-size: 0.8rem;
+      border-radius: 7px;
+    }
+
+    .notes-count-badge {
+      background: var(--primary);
+      color: white;
+      padding: 2px 7px;
+      border-radius: 999px;
+      font-size: 0.74rem;
+      font-weight: 800;
+      line-height: 1;
+      margin-left: 3px;
+    }
+    [data-theme="dark"] .notes-count-badge {
+      background: var(--primary-light);
+      color: #0F172A;
+    }
+
+    /* APP LAYOUT */
+    .app-layout {
+      display: flex;
+      margin-top: var(--header-height);
+      min-height: calc(100vh - var(--header-height));
+    }
+
+    /* SIDEBAR */
+    .sidebar {
+      width: var(--sidebar-width);
+      position: fixed;
+      top: var(--header-height);
+      bottom: 0;
+      left: 0;
+      background: var(--surface-sidebar);
+      border-right: 1px solid var(--border);
+      overflow-y: auto;
+      padding: 20px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      z-index: 900;
+      scrollbar-width: thin;
+    }
+
+    .search-box {
+      position: relative;
+    }
+    .search-input {
+      width: 100%;
+      padding: 9px 12px 9px 36px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 0.88rem;
+      outline: none;
+      transition: border-color 0.2s ease;
+      font-family: var(--font-main);
+    }
+    .search-input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
+    }
+    .search-icon {
+      position: absolute;
+      left: 11px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      pointer-events: none;
+    }
+
+    .toc-title {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-muted);
+      padding: 0 8px;
+    }
+
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .toc-item a {
+      display: block;
+      padding: 8px 12px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text);
+      text-decoration: none;
+      transition: all 0.15s ease;
+      line-height: 1.4;
+    }
+
+    .toc-item a:hover {
+      background: var(--border);
+      color: var(--primary);
+    }
+
+    .toc-item.active a {
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .toc-sublist {
+      list-style: none;
+      padding-left: 14px;
+      margin-top: 4px;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .toc-sublist a {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-muted);
+      padding: 5px 10px;
+    }
+    .toc-sublist a:hover {
+      color: var(--text);
+    }
+
+    /* MAIN CONTENT */
+    .main-container {
+      margin-left: var(--sidebar-width);
+      flex: 1;
+      padding: 40px 60px 100px;
+      max-width: calc(100vw - var(--sidebar-width));
+    }
+
+    /* INTERACTIVE CALCULATOR WIDGET */
+    .calc-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 40px;
+      box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .calc-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 14px;
+      margin-bottom: 16px;
+    }
+
+    .calc-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .calc-tabs {
+      display: flex;
+      gap: 6px;
+      background: var(--bg);
+      padding: 4px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      flex-wrap: wrap;
+    }
+
+    .calc-tab {
+      padding: 6px 14px;
+      border-radius: 7px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      transition: all 0.2s ease;
+    }
+
+    .calc-tab.active {
+      background: var(--surface);
+      color: var(--primary);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+    }
+
+    .calc-body {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      align-items: flex-end;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .form-group label {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+
+    .form-control {
+      padding: 9px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-mono);
+      font-size: 0.95rem;
+      font-weight: 600;
+      outline: none;
+      transition: all 0.2s ease;
+    }
+    .form-control:focus {
+      border-color: var(--primary);
+      background: var(--surface);
+      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
+    }
+
+    .calc-result-box {
+      background: var(--primary-soft);
+      border: 1px solid rgba(34, 197, 94, 0.3);
+      padding: 16px 20px;
+      border-radius: 12px;
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .calc-result-val {
+      font-family: var(--font-mono);
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    /* ALERT BOXES (GitHub Style Replaced) */
+    .custom-alert {
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin: 24px 0;
+      border-left: 5px solid;
+      background: var(--surface);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .alert-title {
+      font-weight: 800;
+      font-size: 0.92rem;
+      letter-spacing: 0.04em;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .alert-note {
+      border-left-color: #3B82F6;
+      background: rgba(59, 130, 246, 0.05);
+    }
+    .alert-note .alert-title { color: #2563EB; }
+    
+    .alert-tip {
+      border-left-color: #10B981;
+      background: rgba(16, 185, 129, 0.05);
+    }
+    .alert-tip .alert-title { color: #059669; }
+
+    .alert-important {
+      border-left-color: #8B5CF6;
+      background: rgba(139, 92, 246, 0.05);
+    }
+    .alert-important .alert-title { color: #7C3AED; }
+
+    .alert-warning {
+      border-left-color: #F59E0B;
+      background: rgba(245, 158, 11, 0.05);
+    }
+    .alert-warning .alert-title { color: #D97706; }
+
+    .alert-caution {
+      border-left-color: #EF4444;
+      background: rgba(239, 68, 68, 0.05);
+    }
+    .alert-caution .alert-title { color: #DC2626; }
+
+    /* CONTENT TYPOGRAPHY */
+    .content h1 {
+      font-size: 2.1rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--primary);
+      margin: 48px 0 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--border);
+    }
+    .content h1:first-child {
+      margin-top: 0;
+    }
+
+    .content h2 {
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin: 38px 0 16px;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      padding-top: 10px;
+    }
+
+    .content h3 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 26px 0 12px;
+      color: var(--text);
+    }
+
+    .content p {
+      margin-bottom: 16px;
+    }
+
+    .content ul, .content ol {
+      margin: 14px 0 18px 24px;
+    }
+
+    .content li {
+      margin-bottom: 8px;
+    }
+
+    .content img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+      margin: 20px 0;
+      border: 1px solid var(--border);
+      display: block;
+    }
+
+    /* 3D CASIO KEY STYLING */
+    .casio-key {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(180deg, #F8FAFC 0%, #E2E8F0 100%);
+      border: 1px solid #CBD5E1;
+      border-bottom: 3px solid #94A3B8;
+      border-radius: 6px;
+      padding: 2px 7px;
+      margin: 1px 3px;
+      font-family: var(--font-mono);
+      font-size: 0.84rem;
+      font-weight: 700;
+      color: #0F172A;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.06);
+      white-space: nowrap;
+      vertical-align: middle;
+      text-decoration: none;
+    }
+    [data-theme="dark"] .casio-key {
+      background: linear-gradient(180deg, #334155 0%, #1E293B 100%);
+      border: 1px solid #475569;
+      border-bottom: 3px solid #0F172A;
+      color: #F8FAFC;
+    }
+
+    /* CURRENCY SYMBOL */
+    .currency-symbol {
+      font-family: inherit;
+      font-weight: inherit;
+      color: inherit;
+    }
+
+    /* TABLES */
+    .content table {
+      width: 100%;
+      border-collapse: separate;
+      border-spacing: 0;
+      margin: 24px 0;
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      font-size: 0.92rem;
+    }
+
+    .content th {
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 700;
+      text-align: left;
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .content td {
+      padding: 11px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text);
+    }
+
+    .content tr:last-child td {
+      border-bottom: none;
+    }
+
+    .content tr:nth-child(even) td {
+      background: rgba(0,0,0,0.015);
+    }
+    [data-theme="dark"] .content tr:nth-child(even) td {
+      background: rgba(255,255,255,0.02);
+    }
+
+    /* INLINE HEADING NOTE BUTTON */
+    .btn-heading-note {
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      transition: all 0.2s ease;
+      font-family: var(--font-main);
+    }
+    .btn-heading-note:hover {
+      background: var(--primary-soft);
+      color: var(--primary);
+      border-color: var(--primary-light);
+      transform: translateY(-1px);
+    }
+    .btn-heading-note.has-notes {
+      background: var(--primary-soft);
+      color: var(--primary);
+      border-color: rgba(34, 197, 94, 0.4);
+    }
+    .heading-note-badge {
+      background: var(--primary);
+      color: white;
+      padding: 1px 6px;
+      border-radius: 999px;
+      font-size: 0.7rem;
+      font-weight: 800;
+    }
+
+    /* TARGET HIGHLIGHT PULSE */
+    @keyframes highlightPulse {
+      0% { background-color: rgba(34, 197, 94, 0.35); box-shadow: 0 0 0 6px rgba(34, 197, 94, 0.2); }
+      70% { background-color: rgba(34, 197, 94, 0.1); box-shadow: 0 0 0 10px rgba(34, 197, 94, 0.05); }
+      100% { background-color: transparent; box-shadow: none; }
+    }
+    .highlight-target {
+      animation: highlightPulse 2.4s ease-out;
+      border-radius: 8px;
+    }
+
+    /* FLOATING ACTION BUTTON (FAB) */
+    .floating-notes-container {
+      position: fixed;
+      bottom: 28px;
+      right: 28px;
+      z-index: 1050;
+    }
+    .floating-notes-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 20px;
+      background: var(--primary);
+      color: white;
+      border: none;
+      border-radius: 999px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(21, 128, 61, 0.35);
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+      font-family: var(--font-main);
+    }
+    .floating-notes-btn:hover {
+      background: var(--primary-light);
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 12px 30px rgba(34, 197, 94, 0.45);
+    }
+
+    /* NOTES DRAWER & BACKDROP */
+    .notes-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+      z-index: 1100;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.25s ease;
+    }
+    .notes-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .notes-drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 440px;
+      max-width: 92vw;
+      background: var(--surface);
+      border-left: 1px solid var(--border);
+      box-shadow: -8px 0 32px rgba(0, 0, 0, 0.15);
+      z-index: 1150;
+      transform: translateX(100%);
+      transition: transform 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      flex-direction: column;
+    }
+    .notes-drawer.open {
+      transform: translateX(0);
+    }
+
+    .notes-header {
+      padding: 18px 20px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--surface-sidebar);
+    }
+    .notes-header-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .notes-icon {
+      font-size: 1.4rem;
+    }
+    .notes-drawer-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+    .notes-subtitle {
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+    .notes-header-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .notes-close-btn {
+      background: transparent;
+      border: none;
+      font-size: 1.2rem;
+      cursor: pointer;
+      color: var(--text-muted);
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .notes-close-btn:hover {
+      background: var(--border);
+      color: var(--text);
+    }
+
+    .notes-editor-card {
+      padding: 16px 20px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .editor-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .editor-title {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--text);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .btn-clear-target {
+      font-size: 0.72rem;
+      padding: 2px 8px;
+      border-radius: 6px;
+      border: 1px dashed var(--border);
+      background: var(--bg);
+      color: var(--text-muted);
+      cursor: pointer;
+    }
+    .btn-clear-target:hover {
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+    .note-textarea {
+      min-height: 80px;
+      resize: vertical;
+      line-height: 1.5;
+      font-family: var(--font-main);
+      font-size: 0.88rem;
+    }
+    .editor-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-top: 2px;
+    }
+    .editor-tip {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+    .editor-tip kbd {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 1px 5px;
+      border-radius: 4px;
+      font-family: var(--font-mono);
+      font-size: 0.7rem;
+    }
+    .editor-btns {
+      display: flex;
+      gap: 6px;
+    }
+
+    .notes-filter-bar {
+      padding: 12px 20px 8px;
+      background: var(--surface-sidebar);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .notes-search-wrapper {
+      position: relative;
+    }
+    .notes-search-icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+    .notes-search-box {
+      width: 100%;
+      padding: 7px 10px 7px 32px;
+      font-size: 0.84rem;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      outline: none;
+      font-family: var(--font-main);
+    }
+    .notes-filter-tags {
+      display: flex;
+      gap: 6px;
+      overflow-x: auto;
+      scrollbar-width: none;
+    }
+    .filter-tag {
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text-muted);
+      cursor: pointer;
+      white-space: nowrap;
+      transition: all 0.15s ease;
+      font-family: var(--font-main);
+    }
+    .filter-tag:hover {
+      border-color: var(--primary-light);
+      color: var(--primary);
+    }
+    .filter-tag.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+    }
+
+    .notes-cards-container {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      scrollbar-width: thin;
+    }
+
+    .note-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      position: relative;
+    }
+    .note-card:hover {
+      border-color: rgba(34, 197, 94, 0.4);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .note-card-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+    }
+    .note-card-topic {
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: var(--primary);
+      background: var(--primary-soft);
+      padding: 2px 8px;
+      border-radius: 6px;
+      max-width: 220px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+    .note-card-topic:hover {
+      text-decoration: underline;
+    }
+    .note-card-date {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+    }
+    .note-card-content {
+      font-size: 0.88rem;
+      color: var(--text);
+      white-space: pre-wrap;
+      word-break: break-word;
+      line-height: 1.55;
+    }
+    .note-card-actions {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 6px;
+      margin-top: 4px;
+      border-top: 1px solid var(--border);
+      padding-top: 8px;
+    }
+    .btn-note-act {
+      background: transparent;
+      border: none;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      padding: 3px 8px;
+      border-radius: 6px;
+      transition: background 0.15s, color 0.15s;
+      font-family: var(--font-main);
+    }
+    .btn-note-act:hover {
+      background: var(--bg);
+      color: var(--text);
+    }
+    .btn-note-act.btn-delete:hover {
+      background: #FEE2E2;
+      color: #DC2626;
+    }
+
+    .empty-notes-state {
+      text-align: center;
+      padding: 40px 20px;
+      color: var(--text-muted);
+    }
+    .empty-notes-icon {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+      opacity: 0.8;
+    }
+    .empty-notes-text {
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+
+    .notes-drawer-footer {
+      padding: 12px 20px;
+      background: var(--surface-sidebar);
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.74rem;
+      color: var(--text-muted);
+    }
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid transparent;
+      color: var(--text-muted);
+      padding: 4px 8px;
+      font-size: 0.75rem;
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    .btn-ghost:hover {
+      background: #FEE2E2;
+      color: #DC2626;
+    }
+
+    /* TOAST NOTIFICATION */
+    .toast-msg {
+      position: fixed;
+      bottom: 84px;
+      right: 28px;
+      background: #0F172A;
+      color: white;
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-size: 0.86rem;
+      font-weight: 600;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      z-index: 1200;
+      opacity: 0;
+      transform: translateY(12px);
+      pointer-events: none;
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    [data-theme="dark"] .toast-msg {
+      background: #F8FAFC;
+      color: #0F172A;
+    }
+    .toast-msg.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* RESPONSIVE & MOBILE */
+    .mobile-menu-btn {
+      display: none;
+    }
+
+    @media (max-width: 1024px) {
+      .sidebar {
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+      }
+      .sidebar.open {
+        transform: translateX(0);
+      }
+      .main-container {
+        margin-left: 0;
+        max-width: 100vw;
+        padding: 30px 20px;
+      }
+      .mobile-menu-btn {
+        display: inline-flex;
+      }
+      .floating-notes-btn .notes-fab-label {
+        display: none;
+      }
+    }
+
+    /* PRINT STYLES */
+    @media print {
+      header, .sidebar, .calc-card, .nav-actions, .mobile-menu-btn, .floating-notes-container, .notes-drawer, .notes-backdrop, .btn-heading-note {
+        display: none !important;
+      }
+      .main-container {
+        margin: 0 !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+      }
+      body {
+        background: white !important;
+        color: black !important;
+        font-size: 10.5pt;
+      }
+      .content h1 {
+        page-break-before: always;
+      }
+      .content img {
+        max-width: 80% !important;
+        page-break-inside: avoid;
+      }
+      .content table {
+        page-break-inside: avoid;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP HEADER -->
+  <header>
+    <a href="#" class="brand-container">
+      <div class="brand-logo">🥬</div>
+      <div class="brand-title">
+        Cải Xanh Học MAS
+        <span class="brand-badge">MAS202 Ch5 - Ch7</span>
+      </div>
+    </a>
+
+    <div class="nav-actions">
+      <button class="btn" onclick="scrollToCalc()" title="Mở máy tính thống kê">
+        🧮 Máy Tính Mini
+      </button>
+      <button class="btn" id="notes-header-btn" onclick="toggleNotesDrawer(true)" title="Sổ tay ghi chú học tập">
+        📝 Ghi Chú <span id="notes-badge" class="notes-count-badge">0</span>
+      </button>
+      <button class="btn" id="theme-btn" onclick="toggleTheme()" title="Đổi giao diện">
+        🌓 Giao Diện
+      </button>
+      <button class="btn btn-primary" onclick="window.print()" title="In ra PDF hoặc giấy">
+        🖨️ In / Lưu PDF
+      </button>
+      <button class="btn mobile-menu-btn" onclick="toggleSidebar()" title="Mục lục">
+        ☰
+      </button>
+    </div>
+  </header>
+
+  <!-- APP LAYOUT -->
+  <div class="app-layout">
+    
+    <!-- LEFT SIDEBAR TOC -->
+    <aside class="sidebar" id="sidebar">
+      <div class="search-box">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="search-input" id="search-input" placeholder="Tìm công thức, phím Casio..." onkeyup="filterTOC()">
+      </div>
+
+      <div class="toc-title">MỤC LỤC ÔN TẬP</div>
+      <ul class="toc-list" id="toc-list">
+        <!-- Generated dynamically via JS -->
+      </ul>
+    </aside>
+
+    <!-- MAIN CONTENT AREA -->
+    <main class="main-container">
+
+      <!-- INTERACTIVE CALCULATOR WIDGET -->
+      <div class="calc-card" id="mini-calculator">
+        <div class="calc-header">
+          <div class="calc-title">
+            <span>⚡ Máy Tính Kiểm Tra Nhanh MAS202</span>
+          </div>
+          <span style="font-size:0.8rem; color:var(--text-muted);">Nhập số liệu để kiểm tra đáp số bài thi ngay lập tức</span>
+        </div>
+
+        <div class="calc-tabs">
+          <button class="calc-tab active" onclick="switchCalc('normal')">Phân phối Chuẩn (Z-score)</button>
+          <button class="calc-tab" onclick="switchCalc('sample')">Cỡ mẫu cần thiết (n)</button>
+          <button class="calc-tab" onclick="switchCalc('binomial')">Nhị thức (Binomial)</button>
+          <button class="calc-tab" onclick="switchCalc('poisson')">Poisson</button>
+        </div>
+
+        <!-- Normal Dist Calc -->
+        <div id="calc-normal" class="calc-panel">
+          <div class="calc-body">
+            <div class="form-group">
+              <label>Giá trị X cần tính:</label>
+              <input type="number" id="norm-x" class="form-control" value="50" step="any">
+            </div>
+            <div class="form-group">
+              <label>Trung bình (Mean &mu;):</label>
+              <input type="number" id="norm-mu" class="form-control" value="60" step="any">
+            </div>
+            <div class="form-group">
+              <label>Độ lệch chuẩn (Std Dev &sigma;):</label>
+              <input type="number" id="norm-sigma" class="form-control" value="8" step="any">
+            </div>
+            <button class="btn btn-primary" onclick="computeNormal()">⚡ Tính Ngay</button>
+          </div>
+          <div class="calc-result-box">
+            <div>
+              <div style="font-size:0.8rem; color:var(--text-muted); font-weight:700;">KẾT QUẢ TÍNH TOÁN</div>
+              <div class="calc-result-val" id="res-norm-main">P(X < 50) = 10.56%</div>
+            </div>
+            <div style="text-align: right; font-family: var(--font-mono); font-size: 0.9rem;">
+              <span id="res-z">Z = -1.2500</span> | <span id="res-prob-less">0.1056</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sample Size Calc -->
+        <div id="calc-sample" class="calc-panel" style="display:none;">
+          <div class="calc-body">
+            <div class="form-group">
+              <label>Độ lệch chuẩn (&sigma;):</label>
+              <input type="number" id="samp-sigma" class="form-control" value="45" step="any">
+            </div>
+            <div class="form-group">
+              <label>Sai số cho phép (e):</label>
+              <input type="number" id="samp-e" class="form-control" value="5" step="any">
+            </div>
+            <div class="form-group">
+              <label>Hệ số tin cậy (Z<sub>&alpha;/2</sub>):</label>
+              <input type="number" id="samp-z" class="form-control" value="1.96" step="any">
+            </div>
+            <button class="btn btn-primary" onclick="computeSampleSize()">⚡ Tính Cỡ Mẫu</button>
+          </div>
+          <div class="calc-result-box">
+            <div>
+              <div style="font-size:0.8rem; color:var(--text-muted); font-weight:700;">CỠ MẪU TỐI THIỂU CẦN THIẾT</div>
+              <div class="calc-result-val" id="res-samp-main">n = 312 mẫu</div>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.9rem;">
+              Giá trị thô: <span id="res-n-raw">311.1696</span> (luôn làm tròn LÊN)
+            </div>
+          </div>
+        </div>
+
+        <!-- Binomial Calc -->
+        <div id="calc-binomial" class="calc-panel" style="display:none;">
+          <div class="calc-body">
+            <div class="form-group">
+              <label>Số phép thử (n):</label>
+              <input type="number" id="binom-n" class="form-control" value="5">
+            </div>
+            <div class="form-group">
+              <label>Xác suất thành công (p):</label>
+              <input type="number" id="binom-p" class="form-control" value="0.1" step="any">
+            </div>
+            <div class="form-group">
+              <label>Số thành công (X):</label>
+              <input type="number" id="binom-x" class="form-control" value="2">
+            </div>
+            <button class="btn btn-primary" onclick="computeBinomial()">⚡ Tính Nhị Thức</button>
+          </div>
+          <div class="calc-result-box">
+            <div>
+              <div style="font-size:0.8rem; color:var(--text-muted); font-weight:700;">XÁC SUẤT TẠI X</div>
+              <div class="calc-result-val" id="res-binom-main">P(X = 2) = 7.29%</div>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.9rem;">
+              &mu; = <span id="res-binom-mu">0.50</span> | &sigma; = <span id="res-binom-sigma">0.6708</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Poisson Calc -->
+        <div id="calc-poisson" class="calc-panel" style="display:none;">
+          <div class="calc-body">
+            <div class="form-group">
+              <label>Tốc độ trung bình (&lambda;):</label>
+              <input type="number" id="pois-lam" class="form-control" value="3" step="any">
+            </div>
+            <div class="form-group">
+              <label>Số biến cố (X):</label>
+              <input type="number" id="pois-x" class="form-control" value="2">
+            </div>
+            <button class="btn btn-primary" onclick="computePoisson()">⚡ Tính Poisson</button>
+          </div>
+          <div class="calc-result-box">
+            <div>
+              <div style="font-size:0.8rem; color:var(--text-muted); font-weight:700;">XÁC SUẤT POISSON</div>
+              <div class="calc-result-val" id="res-pois-main">P(X = 2) = 22.40%</div>
+            </div>
+            <div style="font-family: var(--font-mono); font-size: 0.9rem;">
+              &mu; = <span id="res-pois-mu">3.00</span> | &sigma; = <span id="res-pois-sigma">1.7321</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- MAIN PARSED CONTENT -->
+      <article class="content" id="article-content">
+        <!-- Rendered by Marked.js & KaTeX -->
+      </article>
+
+    </main>
+  </div>
+
+  <!-- FLOATING ACTION BUTTON (FAB) FOR NOTES -->
+  <div class="floating-notes-container">
+    <button class="floating-notes-btn" onclick="toggleNotesDrawer(true)" title="Mở Sổ Tay Ghi Chú">
+      <span>📝</span>
+      <span class="notes-fab-label">Ghi Chú</span>
+      <span id="notes-fab-badge" class="notes-count-badge">0</span>
+    </button>
+  </div>
+
+  <!-- NOTES BACKDROP -->
+  <div class="notes-backdrop" id="notes-backdrop" onclick="toggleNotesDrawer(false)"></div>
+
+  <!-- SLIDE-IN NOTES DRAWER -->
+  <aside class="notes-drawer" id="notes-drawer">
+    <div class="notes-header">
+      <div class="notes-header-left">
+        <span class="notes-icon">📝</span>
+        <div>
+          <div class="notes-drawer-title">Sổ Tay Ghi Chú MAS202</div>
+          <div class="notes-subtitle" id="notes-count-subtitle">0 ghi chú đã lưu</div>
+        </div>
+      </div>
+      <div class="notes-header-actions">
+        <button class="btn btn-sm" onclick="exportNotes()" title="Xuất ghi chú ra file .txt">📥 Xuất File</button>
+        <button class="notes-close-btn" onclick="toggleNotesDrawer(false)" title="Đóng">✕</button>
+      </div>
+    </div>
+
+    <!-- Note Editor Box -->
+    <div class="notes-editor-card">
+      <div class="editor-header">
+        <span class="editor-title" id="editor-title">➕ Thêm Ghi Chú Mới</span>
+        <button class="btn-clear-target" id="btn-clear-target" onclick="resetNoteTarget()" style="display:none;" title="Đặt thành ghi chú chung toàn bài">Ghi chú toàn bài</button>
+      </div>
+      <input type="hidden" id="note-id-input" value="">
+      <input type="hidden" id="note-target-id" value="">
+      
+      <div>
+        <input type="text" id="note-topic-input" class="form-control" style="font-size:0.86rem; padding:7px 10px;" placeholder="📌 Chủ đề / Vị trí (VD: Câu 8, Casio 580, Mẹo thi...)" />
+      </div>
+      
+      <div>
+        <textarea id="note-text-input" class="form-control note-textarea" placeholder="✍️ Ghi chép mẹo thi, công thức hay quên, phím bấm máy tính..."></textarea>
+      </div>
+
+      <div class="editor-footer">
+        <div class="editor-tip">💡 Nhấn <kbd>Ctrl</kbd> + <kbd>Enter</kbd> để lưu nhanh</div>
+        <div class="editor-btns">
+          <button class="btn btn-sm" id="btn-cancel-edit" onclick="cancelEditNote()" style="display:none;">Hủy</button>
+          <button class="btn btn-primary btn-sm" onclick="saveNote()">💾 Lưu Ghi Chú</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Search & Filter Bar -->
+    <div class="notes-filter-bar">
+      <div class="notes-search-wrapper">
+        <span class="notes-search-icon">🔍</span>
+        <input type="text" id="notes-search-box" class="notes-search-box" placeholder="Tìm kiếm ghi chú..." oninput="renderNotesList()">
+      </div>
+      <div class="notes-filter-tags">
+        <button class="filter-tag active" onclick="setFilterTag('all', this)">Tất cả</button>
+        <button class="filter-tag" onclick="setFilterTag('quiz2', this)">Mas Quiz 2</button>
+        <button class="filter-tag" onclick="setFilterTag('ch5', this)">Chương 5</button>
+        <button class="filter-tag" onclick="setFilterTag('ch6', this)">Chương 6</button>
+        <button class="filter-tag" onclick="setFilterTag('ch7', this)">Chương 7</button>
+      </div>
+    </div>
+
+    <!-- Notes Cards Scroll Container -->
+    <div class="notes-cards-container" id="notes-cards-container">
+      <!-- Generated via JS -->
+    </div>
+
+    <!-- Drawer Footer -->
+    <div class="notes-drawer-footer">
+      <button class="btn-ghost" onclick="clearAllNotes()" title="Xóa toàn bộ ghi chú">🗑️ Xóa tất cả</button>
+      <span>💾 Lưu tự động trên trình duyệt</span>
+    </div>
+  </aside>
+
+  <!-- TOAST NOTIFICATION -->
+  <div class="toast-msg" id="toast-msg">✅ Đã lưu ghi chú thành công!</div>
+
+  <!-- EMBEDDED MASTER MARKDOWN DATA -->
+  <script id="markdown-source" type="text/plain"># GIÁO TRÌNH ÔN TẬP TOÀN DIỆN MAS202 (CHƯƠNG 5, 6, 7)
+### Phương pháp Giải chuẩn 5 Bước $\bullet$ Hướng dẫn Casio fx-580VN X Chi tiết Từng Phím Bấm
+*Dành riêng cho sinh viên Đại học FPT $\bullet$ Bám sát Giáo trình Basic Business Statistics (Berenson 14th Global Edition)*
+
+---
+
+## LỜI NÓI ĐẦU & PHƯƠNG PHÁP HỌC ĐỘT PHÁ
+
+Chào bạn, tài liệu này được thiết kế như một **người gia sư đồng hành 1-1** dành riêng cho bạn. Dù bạn chưa từng học hoặc đang cảm thấy rối bời trước rừng công thức của Xác suất Thống kê (**MAS202**), bạn hoàn toàn có thể đạt điểm số xuất sắc (9.0 - 10.0) nếu nắm vững **bản chất trực quan** và **quy trình giải 5 bước chuẩn mực**:
+
+> [!IMPORTANT]
+> ### QUY CHUẨN GIẢI 5 BƯỚC CHO MỌI DẠNG TOÁN MAS202
+> 1. **Bước 1: Đọc đề & Trích xuất thông tin (Given Data & Notation)**: Đề bài cho số liệu gì? Đổi câu chữ tiếng Anh trong đề thành ký hiệu thống kê ($\mu, \sigma, n, p, \lambda, \pi$). Cần tính đại lượng nào?
+> 2. **Bước 2: Bản chất & Nhận diện công thức (Method Identification & Why)**: Tại sao lại dùng công thức này mà không dùng công thức khác? Dấu hiệu nhận biết đặc trưng trong đề thi là gì?
+> 3. **Bước 3: Thay số & Tính toán đại số chi tiết (Manual Calculation)**: Viết công thức tổng quát $\to$ thế số cụ thể $\to$ giải từng bước đại số không nhảy cóc.
+> 4. **Bước 4: Hướng dẫn bấm máy tính Casio fx-580VN X chi tiết từng nút (Casio Keystrokes)**: Mô phỏng từng phím bấm `[MENU]`, `[7]`, `[=]`, `[OPTN]`... giúp bạn bấm ra đáp án chính xác trong 5 giây khi thi trắc nghiệm!
+> 5. **Bước 5: Kết luận & Diễn giải ý nghĩa thực tiễn (Conclusion & Practical Meaning)**: Trả lời câu hỏi của đề bài bằng ngôn ngữ đời thường kèm đơn vị đo.
+
+---
+
+# PHẦN 1: CHƯƠNG 5 - PHÂN PHỐI XÁC SUẤT RỜI RẠC (DISCRETE PROBABILITY DISTRIBUTIONS)
+
+## 1.1. Bản chất Biến ngẫu nhiên rời rạc & Bảng phân phối xác suất
+
+> [!NOTE]
+> ### Biến ngẫu nhiên rời rạc là gì?
+> - **Biến ngẫu nhiên ($X$)**: Đại lượng có kết quả phụ thuộc vào yếu tố ngẫu nhiên nhưng ta biết trước tập hợp các khả năng có thể xảy ra.
+> - **Rời rạc (Discrete)**: Giá trị của nó là các **con số riêng biệt, đếm được** ($0, 1, 2, 3,\dots$). Ví dụ: số hợp đồng bán được, số cuộc gọi đến tổng đài, số sản phẩm lỗi trong thùng.
+
+### Công thức nền tảng:
+Một bảng phân phối xác suất hợp lệ phải thỏa mãn:
+$$0 \le P(X) \le 1 \quad \text{và} \quad \sum P(X) = 1$$
+
+- **Kỳ vọng (Expected Value - Mean $\mu$)**:
+  $$\mu = E(X) = \sum X \cdot P(X)$$
+  *Bản chất*: Mức bình quân thu được nếu lặp lại thí nghiệm vô số lần trong dài hạn (tương tự tính GPA tích lũy nhân theo số tín chỉ).
+
+- **Phương sai ($\sigma^2$) & Độ lệch chuẩn ($\sigma$)**:
+  $$\sigma^2 = \text{Var}(X) = \sum (X - \mu)^2 P(X) = \sum X^2 P(X) - \mu^2$$
+  $$\sigma = \sqrt{\sigma^2}$$
+  *Bản chất*: Đại diện cho **mức độ rủi ro, phân tán** của các kết quả quanh giá trị trung bình $\mu$.
+
+---
+
+### VÍ DỤ MẪU 5.1: BÁN HỢP ĐỒNG BẢO HIỂM (ÁP DỤNG TRỌN VẸN 5 BƯỚC)
+**Đề bài**: Một nhân viên kinh doanh ghi nhận số hợp đồng ký được trong ngày ($X$) có bảng xác suất:
+| Số hợp đồng ($X$) | 0 | 1 | 2 | 3 |
+| :--- | :---: | :---: | :---: | :---: |
+| **Xác suất $P(X)$** | 0.10 | 0.40 | 0.30 | 0.20 |
+
+Hãy tính: a) Số hợp đồng kỳ vọng bán được mỗi ngày $E(X)$. b) Phương sai $\sigma^2$ và Độ lệch chuẩn $\sigma$.
+
+#### BƯỚC 1: Phân tích & Trích xuất thông tin đề bài
+- Biến ngẫu nhiên rời rạc $X \in \{0, 1, 2, 3\}$.
+- Xác suất tương ứng: $P(X=0)=0.10, P(X=1)=0.40, P(X=2)=0.30, P(X=3)=0.20$.
+- Kiểm tra điều kiện: $0.10 + 0.40 + 0.30 + 0.20 = 1.00$ (Hợp lệ).
+- Cần tìm: $\mu = E(X)$, $\sigma^2$, $\sigma$.
+
+#### BƯỚC 2: Bản chất & Nhận diện công thức
+- Đề bài cho sẵn từng cặp giá trị rời rạc $(X, P(X))$.
+- Áp dụng công thức trung bình có trọng số: $\mu = E(X) = \sum X P(X)$.
+- Áp dụng công thức phương sai: $\sigma^2 = \sum X^2 P(X) - \mu^2$ và $\sigma = \sqrt{\sigma^2}$.
+
+#### BƯỚC 3: Thay số & Tính toán đại số chi tiết
+- **Tính Kỳ vọng $E(X)$**:
+  $$\mu = (0 \times 0.10) + (1 \times 0.40) + (2 \times 0.30) + (3 \times 0.20) = 0 + 0.40 + 0.60 + 0.60 = 1.60\text{ (hợp đồng)}$$
+- **Tính $\sum X^2 P(X)$**:
+  $$\sum X^2 P(X) = (0^2 \times 0.10) + (1^2 \times 0.40) + (2^2 \times 0.30) + (3^2 \times 0.20) = 0 + 0.40 + 1.20 + 1.80 = 3.40$$
+- **Tính Phương sai $\sigma^2$ & Độ lệch chuẩn $\sigma$**:
+  $$\sigma^2 = 3.40 - (1.60)^2 = 3.40 - 2.56 = 0.84$$
+  $$\sigma = \sqrt{0.84} \approx 0.9165\text{ (hợp đồng)}$$
+
+#### BƯỚC 4: Hướng dẫn bấm máy Casio fx-580VN X chi tiết từng nút
+1. **Bước chuẩn bị (Bật cột tần số FREQ - chỉ làm 1 lần)**:
+   Bấm `[SHIFT]` $\to$ `[MENU]` $\to$ Bấm mũi tên xuống `[▼]` $\to$ Nhấn `[3]` (Thống kê / Statistics) $\to$ Nhấn `[1]` (Mở / ON).
+2. **Vào chức năng Thống kê 1 biến**:
+   Bấm `[MENU]` $\to$ Nhấn `[6]` (Statistics) $\to$ Nhấn `[1]` (1-Variable).
+3. **Nhập dữ liệu vào 2 cột**:
+   - Cột $x$: Nhập `0` `[=]` `1` `[=]` `2` `[=]` `3` `[=]`.
+   - Cột $FREQ$: Dùng mũi tên sang phải và lên trên cùng, nhập `0.1` `[=]` `0.4` `[=]` `0.3` `[=]` `0.2` `[=]`.
+4. **Xuất kết quả**:
+   Nhấn phím `[OPTN]` $\to$ Nhấn phím `[2]` (Tính 1-Biến / 1-Variable Calc).
+5. **Đọc màn hình**:
+   - Dòng $\bar{x} = 1.6 \implies E(X) = 1.6$.
+   - Dòng $\sigma_x = 0.916515... \implies \sigma \approx 0.9165$.
+   - Dòng $\sigma_x^2 = 0.84 \implies \sigma^2 = 0.84$.
+
+#### BƯỚC 5: Kết luận & Diễn giải ý nghĩa thực tiễn
+- Trung bình mỗi ngày làm việc, nhân viên này bán được $1.6$ hợp đồng.
+- Độ phân tán rủi ro dao động quanh mức trung bình là $0.9165$ hợp đồng/ngày.
+
+---
+
+## 1.2. Hiệp phương sai & Danh mục đầu tư 2 tài sản (Covariance & Portfolio)
+
+> [!TIP]
+> ### Bản chất: "Không bao giờ bỏ tất cả trứng vào một giỏ"
+> Khi phân bổ vốn vào 2 tài sản $X$ và $Y$ với tỷ trọng $w_X + w_Y = 1$:
+> - **Hiệp phương sai ($\sigma_{XY} = \text{Cov}(X,Y)$)**: Đo lường xem 2 tài sản biến động cùng chiều hay ngược chiều.
+> - **Nếu $\sigma_{XY} < 0$**: Khi tài sản này giảm thì tài sản kia tăng bù lại $\implies$ **Triệt tiêu rủi ro cực tốt**!
+
+### Công thức:
+$$\sigma_{XY} = \text{Cov}(X, Y) = \sum [X - E(X)][Y - E(Y)] P(XY)$$
+$$E(P) = w_X E(X) + w_Y E(Y)$$
+$$\sigma_P = \sqrt{w_X^2 \sigma_X^2 + w_Y^2 \sigma_Y^2 + 2 w_X w_Y \sigma_{XY}}$$
+
+---
+
+### VÍ DỤ MẪU 5.2: ĐẦU TƯ DANH MỤC 2 CỔ PHIẾU A VÀ B (5 BƯỚC CHUẨN)
+**Đề bài**: Một nhà đầu tư chia $60\%$ vốn vào Cổ phiếu A ($w_A = 0.6$) và $40\%$ vào Cổ phiếu B ($w_B = 0.4$). Lợi nhuận dự kiến (\%) trong 3 kịch bản:
+| Trạng thái kinh tế | Xác suất ($P$) | Cổ phiếu A ($X$) | Cổ phiếu B ($Y$) |
+| :--- | :---: | :---: | :---: |
+| Suy thoái (Recession) | 0.20 | -10% | +20% |
+| Bình thường (Normal) | 0.50 | +15% | +10% |
+| Tăng trưởng (Boom) | 0.30 | +30% | -5% |
+
+Tính: a) $E(X), E(Y), \sigma_X, \sigma_Y$. b) Hiệp phương sai $\sigma_{XY}$. c) Lợi nhuận kỳ vọng $E(P)$ và rủi ro danh mục $\sigma_P$.
+
+#### BƯỚC 1: Phân tích & Trích xuất thông tin
+- Tỷ trọng vốn: $w_X = 0.6, w_Y = 0.4$.
+- Xác suất: $P = (0.2, 0.5, 0.3)$. Lợi nhuận $X = (-10, 15, 30)$, lợi nhuận $Y = (20, 10, -5)$.
+
+#### BƯỚC 2: Bản chất & Nhận diện công thức
+- Tính riêng từng tài sản: $E = \sum R \cdot P$, $\sigma^2 = \sum R^2 P - E^2$.
+- Tính kết hợp: $E(P) = w_X E(X) + w_Y E(Y)$ và $\sigma_P = \sqrt{w_X^2 \sigma_X^2 + w_Y^2 \sigma_Y^2 + 2 w_X w_Y \sigma_{XY}}$.
+
+#### BƯỚC 3: Thay số & Tính toán đại số chi tiết
+- **Tài sản X**:
+  $$E(X) = (-10 \times 0.2) + (15 \times 0.5) + (30 \times 0.3) = -2 + 7.5 + 9 = 14.5\%$$
+  $$\sigma_X^2 = [(-10)^2(0.2) + 15^2(0.5) + 30^2(0.3)] - (14.5)^2 = 402.5 - 210.25 = 192.25 \implies \sigma_X \approx 13.865\%$$
+- **Tài sản Y**:
+  $$E(Y) = (20 \times 0.2) + (10 \times 0.5) + (-5 \times 0.3) = 4 + 5 - 1.5 = 7.5\%$$
+  $$\sigma_Y^2 = [20^2(0.2) + 10^2(0.5) + (-5)^2(0.3)] - (7.5)^2 = 137.5 - 56.25 = 81.25 \implies \sigma_Y \approx 9.014\%$$
+- **Hiệp phương sai $\sigma_{XY}$**:
+  $$\sigma_{XY} = [(-10 - 14.5)(20 - 7.5)(0.2)] + [(15 - 14.5)(10 - 7.5)(0.5)] + [(30 - 14.5)(-5 - 7.5)(0.3)]$$
+  $$\sigma_{XY} = [-24.5 \times 12.5 \times 0.2] + [0.5 \times 2.5 \times 0.5] + [15.5 \times (-12.5) \times 0.3] = -61.25 + 0.625 - 58.125 = -118.75$$
+- **Lợi nhuận và rủi ro danh mục**:
+  $$E(P) = (0.6 \times 14.5\%) + (0.4 \times 7.5\%) = 8.7\% + 3.0\% = 11.7\%$$
+  $$\sigma_P^2 = (0.6)^2(192.25) + (0.4)^2(81.25) + 2(0.6)(0.4)(-118.75) = 69.21 + 13.00 - 57.00 = 25.21$$
+  $$\sigma_P = \sqrt{25.21} \approx 5.021\%$$
+
+#### BƯỚC 4: Hướng dẫn bấm máy Casio fx-580VN X (Bấm trực tiếp ra $\sigma_{XY}$ siêu nhanh)
+
+> [!TIP]
+> ### TUYỆT KỸ BẤM MÁY CASIO 580: TÍNH HIỆP PHƯƠNG SAI $\sigma_{XY}$ TRONG 10 GIÂY
+> Rất nhiều sinh viên nghĩ Casio 580 không bấm được $\sigma_{XY}$, nhưng thực chất máy có sẵn một mẹo thần thánh dựa trên định nghĩa Hệ số tương quan:
+> $$r = \frac{\sigma_{XY}}{\sigma_X \cdot \sigma_Y} \implies \sigma_{XY} = \text{Cov}(X, Y) = r \cdot \sigma_X \cdot \sigma_Y$$
+> Bạn chỉ cần nhập bảng 2 biến một lần duy nhất, máy sẽ tính sẵn cả $r, \sigma_X, \sigma_Y$ vào bộ nhớ!
+
+1. **Bước 1: Bật cột tần số FREQ** (nếu chưa bật):
+   Nhấn `[SHIFT]` `[MENU]` $\to$ `[▼]` $\to$ `[3]` (Statistics) $\to$ `[1]` (ON).
+2. **Bước 2: Vào bảng thống kê 2 biến**:
+   Nhấn `[MENU]` `[6]` (Statistics) $\to$ Chọn `[2]` (y = a + bx).
+3. **Bước 3: Nhập dữ liệu 3 cột**:
+   - Cột $x$ (Cổ phiếu A): Nhập `-10` `[=]`, `15` `[=]`, `30` `[=]`.
+   - Cột $y$ (Cổ phiếu B): Dùng mũi tên sang phải, nhập `20` `[=]`, `10` `[=]`, `-5` `[=]`.
+   - Cột $FREQ$ (Xác suất): Nhập `0.2` `[=]`, `0.5` `[=]`, `0.3` `[=]` (hoặc nhập `2`, `5`, `3`).
+4. **Bước 4: Nhấn `[AC]` để lưu dữ liệu vào bộ nhớ**.
+5. **Bước 5: Bấm công thức gọi biến $r \times \sigma_x \times \sigma_y$**:
+   - Lấy $r$: Bấm `[OPTN]` $\to$ `[▼]` $\to$ `[4]` (Hồi quy / Regression) $\to$ chọn `[3]` (r).
+   - Bấm dấu nhân `[×]`.
+   - Lấy $\sigma_x$: Bấm `[OPTN]` $\to$ `[▼]` $\to$ `[2]` (Biến số / Variable) $\to$ chọn `[3]` ($\sigma_x$).
+   - Bấm dấu nhân `[×]`.
+   - Lấy $\sigma_y$: Bấm `[OPTN]` $\to$ `[▼]` $\to$ `[2]` $\to$ `[▼]` $\to$ chọn `[3]` ($\sigma_y$).
+   - Bấm `[=]` $\implies$ **Màn hình xuất ngay lập tức: `-118.75`**!
+6. **Bước 6: Tính Rủi ro danh mục $\sigma_P$ (Có 2 cách: Cách bấm phép tính hoặc Cách tạo biến siêu tốc)**:
+   - **Cách A (Bấm phép tính trực tiếp)**: Nhấn `[MENU]` `[1]`, bấm:
+     `[√]` `(` `0.6` `[x²]` `×` `192.25` `+` `0.4` `[x²]` `×` `81.25` `+` `2` `×` `0.6` `×` `0.4` `×` `(` `-118.75` `)` `)` `[=]` $\implies 5.020955...$
+   - **Cách B (TUYỆT KỸ BÁ ĐẠO NHẤT: Tạo biến Danh mục $P$ vào `MENU 6 1` không cần công thức rườm rà)**:
+     * Tính nhanh lợi nhuận danh mục $P = 0.6A + 0.4B$ ở 3 kịch bản:
+       - Suy thoái: $0.6(-10) + 0.4(20) = 2\%$
+       - Bình thường: $0.6(15) + 0.4(10) = 13\%$
+       - Tăng trưởng: $0.6(30) + 0.4(-5) = 16\%$
+     * Vào `[MENU]` `[6]` `[1]` (Thống kê 1 biến):
+       - Cột $x$: Nhập `2` `[=]`, `13` `[=]`, `16` `[=]`.
+       - Cột $FREQ$: Nhập `0.2` `[=]`, `0.5` `[=]`, `0.3` `[=]`.
+     * Bấm `[OPTN]` `[2]` (1-Variable Calc):
+       - Màn hình xuất hiện đồng thời CẢ HAI:
+         + $\bar{x} = 11.7\% \implies E(P) = 11.7\%$
+         + $\sigma_x = 5.020955...\% \implies \sigma_P = 5.021\%$
+         + $\sigma_x^2 = 25.21 \implies \sigma_P^2 = 25.21$!
+       *(Không cần tính $\sigma_A, \sigma_B, \sigma_{AB}$ hay bấm căn bậc hai dài dòng nữa!)*
+
+#### BƯỚC 5: Kết luận & Diễn giải ý nghĩa thực tiễn
+- Cổ phiếu A có rủi ro cao ($13.865\%$), B có rủi ro vừa phải ($9.014\%$).
+- Khi kết hợp thành danh mục, nhờ $\sigma_{XY} = -118.75$ âm rất mạnh, rủi ro danh mục giảm chỉ còn **$5.021\%$**!
+
+---
+
+## 1.3. Phân phối Nhị thức (Binomial Distribution $X \sim B(n, p)$)
+
+![Binomial Formula](slides_ch5_6_7_images/ch05_slide18.png)
+
+> [!NOTE]
+> ### Dấu hiệu nhận biết: Quy tắc 4 chữ vàng B-I-N-S
+> 1. **B (Binary)**: Mỗi phép thử chỉ có ĐÚNG 2 kết quả (Thành công $S$ hoặc Thất bại $F$).
+> 2. **I (Independent)**: Các lần thử hoàn toàn độc lập với nhau.
+> 3. **N (Number of trials)**: Số lần thử $n$ được xác định CỐ ĐỊNH từ trước.
+> 4. **S (Same probability)**: Xác suất thành công $p$ là KHÔNG ĐỔI qua các lần thử.
+
+### Công thức:
+- **Xác suất đúng $x$ thành công**:
+  $$P(X = x) = C_n^x \cdot p^x \cdot (1 - p)^{n - x} \quad (x = 0, 1, 2,\dots, n)$$
+- **Kỳ vọng & Độ lệch chuẩn**:
+  $$\mu = E(X) = n \cdot p \quad \text{và} \quad \sigma = \sqrt{n \cdot p \cdot (1 - p)}$$
+- **Quy tắc tích lũy**:
+  - Dạng "Tối đa $k$": $P(X \le k) = \sum_{i=0}^k P(X = i)$.
+  - Dạng "Ít nhất 1": $P(X \ge 1) = 1 - P(X = 0)$.
+  - Dạng "Ít nhất $k$": $P(X \ge k) = 1 - P(X \le k - 1)$.
+
+---
+
+### VÍ DỤ MẪU 5.3: KIỂM SOÁT LINH KIỆN ĐIỆN TỬ (5 BƯỚC CHUẨN)
+**Đề bài**: Tỷ lệ linh kiện lỗi của nhà máy là 10% ($p = 0.10$). Lấy ngẫu nhiên $n = 5$ linh kiện độc lập.
+a) Tính xác suất có đúng 2 linh kiện lỗi ($P(X = 2)$).
+b) Tính xác suất có tối đa 1 linh kiện lỗi ($P(X \le 1)$).
+c) Tính xác suất có ít nhất 1 linh kiện lỗi ($P(X \ge 1)$).
+d) Tính số linh kiện lỗi trung bình $\mu$ và độ lệch chuẩn $\sigma$.
+
+#### BƯỚC 1: Phân tích & Trích xuất thông tin
+- Cỡ mẫu $n = 5$. Xác suất linh kiện lỗi: $p = 0.10 \implies 1 - p = 0.90$.
+- Biến ngẫu nhiên $X$: Số linh kiện lỗi trong 5 linh kiện.
+
+#### BƯỚC 2: Bản chất & Nhận diện công thức
+- 5 lần thử độc lập, mỗi linh kiện chỉ có lỗi hoặc không $\implies X \sim B(n=5, p=0.10)$.
+- Câu a: Dùng công thức $P(X = x)$.
+- Câu b: Tích lũy $P(X \le 1) = P(X = 0) + P(X = 1)$.
+- Câu c: Biến cố đối $P(X \ge 1) = 1 - P(X = 0)$.
+- Câu d: $\mu = np, \sigma = \sqrt{np(1-p)}$.
+
+#### BƯỚC 3: Thay số & Tính toán đại số chi tiết
+- **Câu a**: $P(X = 2) = C_5^2 (0.10)^2 (0.90)^3 = 10 \times 0.01 \times 0.729 = 0.0729$.
+- **Câu b**:
+  $P(X = 0) = C_5^0 (0.10)^0 (0.90)^5 = 0.59049$.
+  $P(X = 1) = C_5^1 (0.10)^1 (0.90)^4 = 5 \times 0.10 \times 0.6561 = 0.32805$.
+  $P(X \le 1) = 0.59049 + 0.32805 = 0.91854 \approx 0.9185$.
+- **Câu c**: $P(X \ge 1) = 1 - 0.59049 = 0.40951 \approx 0.4095$.
+- **Câu d**: $\mu = 5 \times 0.10 = 0.5$; $\sigma = \sqrt{5 \times 0.10 \times 0.90} = \sqrt{0.45} \approx 0.6708$.
+
+#### BƯỚC 4: Hướng dẫn bấm máy Casio fx-580VN X
+- **Bấm Câu a (Dấu bằng - Binomial PD)**:
+  `[MENU]` $\to$ `[7]` $\to$ `[▼]` $\to$ `[1]` (Binomial PD) $\to$ `[2]` (Variable) $\to$ Nhập $x=2$ `[=]`, $N=5$ `[=]`, $p=0.1$ `[=]` `[=]` $\implies 0.0729$.
+- **Bấm Câu b (Dấu $\le$ - Binomial CD)**:
+  `[MENU]` $\to$ `[7]` $\to$ `[▼]` $\to$ `[2]` (Binomial CD) $\to$ `[2]` (Variable) $\to$ Nhập $x=1$ `[=]`, $N=5$ `[=]`, $p=0.1$ `[=]` `[=]` $\implies 0.91854$.
+- **Bấm Câu c ($X \ge 1 = 1 - P(X \le 0)$)**:
+  Trong Binomial CD nhập $x=0 \implies 0.59049$. Lấy $1 - 0.59049 = 0.40951$.
+
+#### BƯỚC 5: Kết luận & Diễn giải ý nghĩa thực tiễn
+- Xác suất có đúng 2 linh kiện lỗi là $7.29\%$.
+- Khả năng lô hàng đạt chuẩn (tối đa 1 lỗi) là $91.85\%$.
+- Trung bình mỗi kiện 5 chiếc chỉ có $0.5$ linh kiện lỗi với độ biến động là $0.6708$.
+
+---
+
+## 1.4. Phân phối Poisson ($X \sim \text{Poisson}(\lambda)$)
+
+![Poisson Formula](slides_ch5_6_7_images/ch05_slide27.png)
+
+> [!NOTE]
+> ### Dấu hiệu nhận biết: Đếm số biến cố trong một khoảng thời gian/không gian
+> - Từ khóa: "per minute", "per hour", "per day", "mỗi mét vuông", "mỗi trang".
+> - Chỉ cho DUY NHẤT một tham số trung bình: $\lambda$ (Lambda)!
+
+### Công thức:
+- **Xác suất có đúng $x$ biến cố**:
+  $$P(X = x) = \frac{e^{-\lambda} \cdot \lambda^x}{x!} \quad (x = 0, 1, 2,\dots)$$
+- **Tính chất vàng**: $\mu = \lambda$ và $\sigma^2 = \lambda \implies \sigma = \sqrt{\lambda}$.
+- **Quy tắc co giãn $\lambda$ theo thời gian**: $\lambda_{mới} = \lambda_{cũ} \times \frac{T_{mới}}{T_{cũ}}$.
+
+---
+
+### VÍ DỤ MẪU 5.4: CUỘC GỌI ĐẾN TỔNG ĐÀI (5 BƯỚC CHUẨN)
+**Đề bài**: Tổng đài tiếp nhận trung bình 3 cuộc gọi mỗi phút ($\lambda = 3$).
+a) Tính xác suất trong 1 phút tới nhận đúng 2 cuộc gọi ($P(X = 2)$).
+b) Tính xác suất trong 1 phút tới nhận ít nhất 1 cuộc gọi ($P(X \ge 1)$).
+c) Tính xác suất trong vòng 2 phút tới nhận đúng 5 cuộc gọi.
+
+#### BƯỚC 1: Phân tích & Trích xuất thông tin
+- Tốc độ: $\lambda = 3$ cuộc gọi/phút.
+- Câu a, b: Thời gian $T = 1$ phút $\implies \lambda = 3$.
+- Câu c: Thời gian $T = 2$ phút $\implies$ Phải co giãn $\lambda$!
+
+#### BƯỚC 2: Bản chất & Nhận diện công thức
+- Đếm biến cố trên khoảng thời gian liên tục $\implies$ Phân phối Poisson.
+- Áp dụng $P(X=x) = \frac{e^{-\lambda}\lambda^x}{x!}$ và $P(X \ge 1) = 1 - P(X = 0)$.
+
+#### BƯỚC 3: Thay số & Tính toán đại số chi tiết
+- **Câu a**: $P(X = 2) = \frac{e^{-3} \cdot 3^2}{2!} = \frac{0.049787 \times 9}{2} \approx 0.2240$.
+- **Câu b**: $P(X = 0) = \frac{e^{-3} \cdot 3^0}{0!} = 0.049787 \implies P(X \ge 1) = 1 - 0.049787 = 0.9502$.
+- **Câu c**: Trong 2 phút, $\lambda = 3 \times 2 = 6$ cuộc gọi.
+  $$P(X = 5) = \frac{e^{-6} \cdot 6^5}{5!} = \frac{0.002479 \times 7776}{120} \approx 0.1606$$
+
+#### BƯỚC 4: Hướng dẫn bấm máy Casio fx-580VN X
+- **Câu a**: `[MENU]` $\to$ `[7]` $\to$ `[▼]` `[▼]` $\to$ `[2]` (Poisson PD) $\to$ `[2]` (Variable) $\to$ Nhập $x=2$ `[=]`, $\lambda=3$ `[=]` `[=]` $\implies 0.22404$.
+- **Câu b**: Nhập $x=0, \lambda=3 \implies 0.049787$. Thoát ra lấy $1 - 0.049787 = 0.9502$.
+- **Câu c**: Sửa $x=5, \lambda=6$ `[=]` `[=]` $\implies 0.16062$.
+
+#### BƯỚC 5: Kết luận & Diễn giải ý nghĩa thực tiễn
+- Xác suất có đúng 2 cuộc gọi trong 1 phút tới là $22.40\%$.
+- Khả năng có ít nhất 1 cuộc gọi là cực cao: $95.02\%$.
+- Xác suất có 5 cuộc gọi trong 2 phút là $16.06\%$.
+
+---
+
+## 1.5. Phân phối Siêu bội (Hypergeometric Distribution)
+
+![Hypergeometric Formula](slides_ch5_6_7_images/ch05_slide32.png)
+
+> [!NOTE]
+> ### Dấu hiệu nhận biết: Chọn KHÔNG HOÀN LẠI từ tổng thể hữu hạn $N$
+> - Khi $n / N > 0.05$ và chọn không hoàn lại, xác suất $p$ bị thay đổi sau mỗi lần rút $\implies$ Bắt buộc dùng Siêu bội!
+
+### Công thức:
+$$P(X = x) = \frac{C_A^x \cdot C_{N - A}^{n - x}}{C_N^n}$$
+
+---
+
+### VÍ DỤ MẪU 5.5: CHỌN NHÂN VIÊN ĐI DỰ ÁN (5 BƯỚC CHUẨN)
+**Đề bài**: Phòng ban có $N = 10$ nhân viên, gồm $A = 4$ Backend và 6 Frontend. Chọn ngẫu nhiên không hoàn lại $n = 3$ người đi công tác. Tính xác suất chọn được đúng 2 Backend ($P(X = 2)$).
+
+#### BƯỚC 1: Phân tích & Trích xuất thông tin
+- Tổng thể $N = 10$. Nhóm Backend (loại 1): $A = 4$. Nhóm Frontend (loại 2): $N - A = 6$.
+- Mẫu chọn ra: $n = 3$. Cần tính xác suất có $x = 2$ Backend.
+
+#### BƯỚC 2: Bản chất & Nhận diện công thức
+- Chọn mẫu không hoàn lại từ tập hữu hạn ($n/N = 3/10 = 30\% > 5\%$) $\implies$ Phân phối Siêu bội.
+
+#### BƯỚC 3: Thay số & Tính toán đại số chi tiết
+$$P(X = 2) = \frac{C_4^2 \cdot C_6^{3 - 2}}{C_{10}^3} = \frac{C_4^2 \cdot C_6^1}{C_{10}^3} = \frac{6 \times 6}{120} = \frac{36}{120} = 0.3000\text{ (tức }30\%\text{)}$$
+
+#### BƯỚC 4: Hướng dẫn bấm máy Casio fx-580VN X
+- Nhấn `[MENU]` `[1]`.
+- Bấm phân số: `[4]` `[SHIFT]` `[÷]` `[2]` `[×]` `[6]` `[SHIFT]` `[÷]` `[1]` chia cho `[10]` `[SHIFT]` `[÷]` `[3]` `[=]` $\implies 3/10 = 0.3$.
+
+#### BƯỚC 5: Kết luận & Diễn giải ý nghĩa thực tiễn
+- Có đúng $30\%$ khả năng đoàn công tác gồm chính xác 2 kỹ sư Backend và 1 Frontend.
+
+---
+
+# PHẦN 2: CHƯƠNG 6 - PHÂN PHỐI XÁC SUẤT LIÊN TỤC \& PHÂN PHỐI CHUẨN
+
+## 2.1. Phân phối Đều liên tục (Continuous Uniform Distribution $U(a, b)$)
+
+![Uniform Properties](slides_ch5_6_7_images/ch06_slide07.png)
+
+### Công thức:
+- Hàm mật độ: $f(X) = \frac{1}{b - a}$ với $a \le X \le b$.
+- Xác suất (Diện tích hình chữ nhật): $P(c \le X \le d) = \frac{d - c}{b - a}$. *(Lưu ý: $P(X = c) = 0$)*.
+- Kỳ vọng & Độ lệch chuẩn: $\mu = \frac{a+b}{2}$, $\sigma = \frac{b-a}{\sqrt{12}}$.
+
+---
+
+### VÍ DỤ MẪU 6.1: THỜI GIAN CHỜ XE BUÝT (5 BƯỚC CHUẨN)
+**Đề bài**: Thời gian chờ xe buýt phân phối đều trong khoảng từ 0 đến 20 phút ($U(0, 20)$).
+a) Tính xác suất chờ từ 5 đến 12 phút ($P(5 \le X \le 12)$).
+b) Tính thời gian chờ trung bình $\mu$ và độ lệch chuẩn $\sigma$.
+
+#### BƯỚC 1: Phân tích & Trích xuất thông tin
+- $a = 0, b = 20$. Khoảng quan tâm: $c = 5, d = 12$.
+
+#### BƯỚC 2: Bản chất & Nhận diện công thức
+- Biến liên tục phân bố đều $\implies U(a, b)$. Xác suất $P = \frac{d-c}{b-a}$, $\mu = \frac{a+b}{2}$, $\sigma = \frac{b-a}{\sqrt{12}}$.
+
+#### BƯỚC 3: Thay số & Tính toán đại số chi tiết
+- **Câu a**: $P(5 \le X \le 12) = \frac{12 - 5}{20 - 0} = \frac{7}{20} = 0.3500\text{ (35\%)}$.
+- **Câu b**: $\mu = \frac{0 + 20}{2} = 10\text{ phút}$; $\sigma = \frac{20 - 0}{\sqrt{12}} = \frac{10}{\sqrt{3}} \approx 5.7735\text{ phút}$.
+
+#### BƯỚC 4: Hướng dẫn bấm máy Casio fx-580VN X
+- `[MENU]` `[1]`: Bấm `(12 - 5) ÷ 20 = 0.35`. Bấm `20 ÷ √12 = 5.7735`.
+
+#### BƯỚC 5: Kết luận
+- Xác suất sinh viên chờ từ 5 đến 12 phút là $35\%$. Thời gian chờ trung bình là 10 phút với độ lệch chuẩn 5.77 phút.
+
+---
+
+## 2.2. Phân phối Chuẩn (The Normal Distribution $X \sim N(\mu, \sigma^2)$)
+
+![Normal Curve Properties](slides_ch5_6_7_images/ch06_slide11.png)
+![Standardizing Z](slides_ch5_6_7_images/ch06_slide20.png)
+![Finding Probabilities](slides_ch5_6_7_images/ch06_slide26.png)
+
+> [!NOTE]
+> ### Chuẩn hóa Z-score là gì?
+> $$Z = \frac{X - \mu}{\sigma}$$
+> Cho biết điểm $X$ đang đứng **cách giá trị trung bình $\mu$ bao nhiêu lần độ lệch chuẩn $\sigma$**.
+> - Quy tắc thực nghiệm: $68.26\%$ dữ liệu nằm trong $\mu \pm 1\sigma$, $95.44\%$ trong $\mu \pm 2\sigma$, $99.73\%$ trong $\mu \pm 3\sigma$.
+
+---
+
+### VÍ DỤ MẪU 6.2: THỜI GIAN SẠC PIN XE ĐIỆN (5 BƯỚC CHUẨN \& 2 CÁCH CASIO)
+**Đề bài**: Thời gian sạc pin có phân phối chuẩn với $\mu = 60$ phút, $\sigma = 8$ phút.
+a) Tính xác suất sạc đầy dưới 50 phút ($P(X < 50)$).
+b) Tính xác suất sạc đầy trên 72 phút ($P(X > 72)$).
+c) Tính xác suất sạc đầy từ 55 đến 68 phút ($P(55 < X < 68)$).
+
+#### BƯỚC 1: Phân tích & Trích xuất thông tin
+- Phân phối chuẩn: $\mu = 60, \sigma = 8$. Các mốc: $X < 50$, $X > 72$, $55 < X < 68$.
+
+#### BƯỚC 2: Bản chất & Nhận diện công thức
+- Chuẩn hóa: $Z = \frac{X - \mu}{\sigma}$. Tra diện tích dưới đường cong chuẩn $N(0, 1)$.
+
+#### BƯỚC 3: Thay số & Tính toán đại số chi tiết
+- **Câu a**: $Z = \frac{50 - 60}{8} = -1.25 \implies P(X < 50) = P(Z < -1.25) = 0.1056\text{ (10.56\%)}$.
+- **Câu b**: $Z = \frac{72 - 60}{8} = +1.50 \implies P(X > 72) = 1 - P(Z \le 1.50) = 1 - 0.9332 = 0.0668\text{ (6.68\%)}$.
+- **Câu c**: $Z_1 = \frac{55 - 60}{8} = -0.625$, $Z_2 = \frac{68 - 60}{8} = +1.00$.
+  $$P(55 < X < 68) = P(Z < 1.00) - P(Z < -0.625) = 0.8413 - 0.2660 = 0.5754\text{ (57.54\%)}$$
+
+#### BƯỚC 4: Hướng dẫn bấm máy Casio fx-580VN X chi tiết từng nút
+> [!TIP]
+> **CÁCH 1: BẤM TRỰC TIẾP SỐ LIỆU GỐC (SIÊU NHANH TRẮC NGHIỆM)**:
+> 1. Nhấn `[MENU]` $\to$ `[7]` $\to$ `[2]` (Normal CD).
+> 2. **Câu a ($X < 50$)**: Lower = `-9999`, Upper = `50`, $\sigma = 8$, $\mu = 60$ `[=]` $\implies p = 0.1056$.
+> 3. **Câu b ($X > 72$)**: Lower = `72`, Upper = `9999`, $\sigma = 8$, $\mu = 60$ `[=]` $\implies p = 0.0668$.
+> 4. **Câu c ($55 < X < 68$)**: Lower = `55`, Upper = `68`, $\sigma = 8$, $\mu = 60$ `[=]` $\implies p = 0.5754$.
+
+#### BƯỚC 5: Kết luận & Diễn giải ý nghĩa thực tiễn
+- Khả năng sạc siêu nhanh (dưới 50 phút) là $10.56\%$.
+- Khả năng sạc quá chậm (trên 72 phút) là $6.68\%$.
+- Đa phần ($57.54\%$) sẽ sạc xong trong khoảng 55 đến 68 phút.
+
+---
+
+## 2.3. Bài toán ngược phân phối Chuẩn (Inverse Normal)
+
+![Inverse Normal](slides_ch5_6_7_images/ch06_slide32.png)
+
+> [!IMPORTANT]
+> ### Công thức: $X = \mu + Z \cdot \sigma$
+> **Quy tắc diện tích bên trái (Area)**:
+> - Dạng Top $k\%$ cao nhất: $\text{Area} = 1 - k\%$.
+> - Dạng Bottom $k\%$ thấp nhất: $\text{Area} = k\%$.
+
+---
+
+### VÍ DỤ MẪU 6.3: XÁC ĐỊNH ĐIỂM HỌC BỔNG VÀ THI LẠI (5 BƯỚC CHUẨN)
+**Đề bài**: Điểm thi MAS202 có $\mu = 70, \sigma = 10$.
+a) Tìm điểm tối thiểu để lọt vào Top 10% cao nhất (nhận học bổng).
+b) Tìm điểm cắt của 5% thấp nhất (phải thi lại).
+
+#### BƯỚC 1: Phân tích & Trích xuất thông tin
+- $\mu = 70, \sigma = 10$. Top 10% (Upper tail $0.10$), Bottom 5% (Lower tail $0.05$).
+
+#### BƯỚC 2: Bản chất & Nhận diện công thức
+- Đã có tỷ lệ phần trăm, cần tìm giá trị điểm $X \implies$ Bài toán ngược (Inverse Normal) $X = \mu + Z\sigma$.
+- Top 10%: $\text{Area} = 1 - 0.10 = 0.90$. Bottom 5%: $\text{Area} = 0.05$.
+
+#### BƯỚC 3: Thay số & Tính toán đại số chi tiết
+- **Câu a**: Tra $Z_{0.90} \approx +1.28155 \implies X_{top} = 70 + (1.28155 \times 10) = 82.82\text{ điểm}$.
+- **Câu b**: Tra $Z_{0.05} \approx -1.64485 \implies X_{bottom} = 70 + (-1.64485 \times 10) = 53.55\text{ điểm}$.
+
+#### BƯỚC 4: Hướng dẫn bấm máy Casio fx-580VN X
+1. Nhấn `[MENU]` $\to$ `[7]` $\to$ `[3]` (Inverse Normal).
+2. **Câu a**: Area = `0.9` `[=]`, $\sigma = 10$ `[=]`, $\mu = 70$ `[=]` `[=]` $\implies x = 82.8155 \approx 82.82$.
+3. **Câu b**: Area = `0.05` `[=]`, $\sigma = 10$ `[=]`, $\mu = 70$ `[=]` `[=]` $\implies x = 53.5514 \approx 53.55$.
+
+#### BƯỚC 5: Kết luận
+- Sinh viên cần đạt từ **$82.82$ điểm** trở lên để nhận học bổng.
+- Sinh viên có điểm dưới **$53.55$ điểm** sẽ phải tham gia kỳ thi lại.
+
+---
+
+## 2.4. Đánh giá tính chuẩn của bộ dữ liệu (Assessing Normality)
+
+![Assessing Normality](slides_ch5_6_7_images/ch06_slide41.png)
+
+> [!NOTE]
+> ### 3 Quy tắc thực nghiệm kiểm tra tính chuẩn:
+> 1. $IQR = Q_3 - Q_1 \approx 1.33 \times S$.
+> 2. $\text{Range} = \text{Max} - \text{Min} \approx 6 \times S$.
+> 3. Biểu đồ Q-Q plot các điểm thẳng hàng dọc theo đường 45 độ.
+
+---
+
+### VÍ DỤ MẪU 6.4: KIỂM TRA TÍNH CHUẨN CỦA DỮ LIỆU LƯƠNG (5 BƯỚC CHUẨN)
+**Đề bài**: Mẫu điều tra tiền lương có $S = 15, Q_1 = 40, Q_3 = 60, \text{Min} = 15, \text{Max} = 105$. Đánh giá xem dữ liệu có xấp xỉ chuẩn không?
+
+#### BƯỚC 1: Phân tích thông tin
+- $S = 15$. $IQR = 60 - 40 = 20$. $\text{Range} = 105 - 15 = 90$.
+
+#### BƯỚC 2: Nhận diện công thức
+- So sánh $IQR$ với $1.33S$ và $\text{Range}$ với $6S$.
+
+#### BƯỚC 3: Thay số chi tiết
+- $IQR = 20 \approx 1.33 \times 15 = 19.95$ (Thỏa mãn!).
+- $\text{Range} = 90 = 6 \times 15 = 90$ (Hoàn hảo!).
+
+#### BƯỚC 4: Bấm máy tính
+- $20 / 15 \approx 1.333$; $90 / 15 = 6.00$.
+
+#### BƯỚC 5: Kết luận
+- Cả hai tiêu chí đều khớp với phân phối chuẩn $\implies$ **Bộ dữ liệu xấp xỉ phân phối chuẩn**.
+
+---
+
+# PHẦN 3: CHƯƠNG 7 - PHÂN PHỐI CHỌN MẪU (SAMPLING DISTRIBUTIONS)
+
+## 3.1. Phân phối chọn mẫu của Trung bình mẫu $\bar{X}$
+
+![Sampling Mean](slides_ch5_6_7_images/ch07_slide10.png)
+![Standard Error](slides_ch5_6_7_images/ch07_slide11.png)
+![CLT](slides_ch5_6_7_images/ch07_slide13.png)
+![Z for Mean](slides_ch5_6_7_images/ch07_slide19.png)
+
+> [!CAUTION]
+> ### PHÂN BIỆT SỐNG CÒN GIỮA CHƯƠNG 6 VÀ CHƯƠNG 7
+> - **Chương 6**: Hỏi về **1 CÁ THỂ ($X$)** $\implies$ Dùng độ lệch chuẩn $\sigma$.
+> - **Chương 7**: Hỏi về **TRUNG BÌNH CỦA MẪU $n$ CÁ THỂ ($\bar{X}$)** $\implies$ Dùng **Sai số chuẩn**:
+>   $$\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}$$
+> - **Định lý Giới hạn Trung tâm (CLT)**: Chỉ cần $n \ge 30$, $\bar{X}$ luôn tự động có phân phối xấp xỉ chuẩn!
+> - **Công thức chuẩn hóa Z của $\bar{X}$**:
+>   $$Z = \frac{\bar{X} - \mu}{\frac{\sigma}{\sqrt{n}}}$$
+
+---
+
+### VÍ DỤ MẪU 7.1: TRỌNG LƯỢNG BAO BỘT MÌ (5 BƯỚC CHUẨN)
+**Đề bài**: Trọng lượng các bao bột mì có $\mu = 50\text{ kg}, \sigma = 6\text{ kg}$. Lấy ngẫu nhiên mẫu $n = 36$ bao.
+a) Tính sai số chuẩn $\sigma_{\bar{X}}$.
+b) Tính xác suất để trọng lượng trung bình của 36 bao vượt quá $51.5\text{ kg}$ ($P(\bar{X} > 51.5)$).
+c) So sánh với xác suất nếu chỉ lấy ngẫu nhiên 1 bao duy nhất nặng hơn $51.5\text{ kg}$ ($P(X > 51.5)$).
+
+#### BƯỚC 1: Phân tích & Trích xuất thông tin
+- $\mu = 50, \sigma = 6, n = 36$.
+- Câu a, b: Xét **trung bình mẫu $\bar{X}$**. Câu c: Xét **1 bao đơn lẻ $X$**.
+
+#### BƯỚC 2: Bản chất & Nhận diện công thức
+- Trung bình nhóm 36 bao: $\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}$, $Z = \frac{\bar{X} - \mu}{\sigma/\sqrt{n}}$.
+- 1 bao đơn lẻ: $Z = \frac{X - \mu}{\sigma}$.
+
+#### BƯỚC 3: Thay số & Tính toán đại số chi tiết
+- **Câu a**: $\sigma_{\bar{X}} = \frac{6}{\sqrt{36}} = \frac{6}{6} = 1.0\text{ kg}$.
+- **Câu b ($P(\bar{X} > 51.5)$)**:
+  $$Z = \frac{51.5 - 50}{1.0} = +1.50 \implies P(\bar{X} > 51.5) = 1 - P(Z \le 1.50) = 1 - 0.9332 = 0.0668\text{ (6.68\%)}$$
+- **Câu c ($P(X > 51.5)$)**:
+  $$Z = \frac{51.5 - 50}{6} = +0.25 \implies P(X > 51.5) = 1 - P(Z \le 0.25) = 1 - 0.5987 = 0.4013\text{ (40.13\%)}$$
+
+#### BƯỚC 4: Hướng dẫn bấm máy Casio fx-580VN X
+- `[MENU]` $\to$ `[7]` $\to$ `[2]` (Normal CD).
+  - Cho Câu b: Lower = `51.5`, Upper = `9999`, $\sigma = 1$, $\mu = 50$ `[=]` $\implies p = 0.0668$.
+  - Cho Câu c: Đổi $\sigma = 6$ `[=]` $\implies p = 0.4013$.
+
+#### BƯỚC 5: Kết luận & Diễn giải ý nghĩa thực tiễn
+- 1 bao đơn lẻ nặng hơn 51.5 kg xảy ra rất thường xuyên ($40.13\%$).
+- Nhưng cả lô 36 bao có cân nặng trung bình trên 51.5 kg là rất hiếm ($6.68\%$). Mẫu càng lớn, trung bình mẫu càng ít dao động!
+
+---
+
+## 3.2. Xác định Cỡ mẫu cần thiết (Sample Size Determination)
+
+> [!IMPORTANT]
+> ### Công thức:
+> $$n = \left(\frac{Z \cdot \sigma}{e}\right)^2$$
+> **QUY TẮC SỐNG CÒN**: Luôn luôn làm tròn LÊN số nguyên tiếp theo!
+
+---
+
+### VÍ DỤ MẪU 7.2: KHẢO SÁT THỜI LƯỢNG PIN LAPTOP (5 BƯỚC CHUẨN)
+**Đề bài**: Độ lệch chuẩn pin là $\sigma = 2.4$ giờ. Cần khảo sát bao nhiêu máy để sai số không quá $e = 0.5$ giờ với độ tin cậy 95% ($Z = 1.96$)?
+
+#### BƯỚC 1: Phân tích
+- $\sigma = 2.4, e = 0.5, Z = 1.96$.
+
+#### BƯỚC 2: Nhận diện công thức
+- $n = (\frac{Z\sigma}{e})^2$.
+
+#### BƯỚC 3: Thay số chi tiết
+$$n = \left(\frac{1.96 \times 2.4}{0.5}\right)^2 = (9.408)^2 = 88.5105 \implies n = 89\text{ máy}$$
+
+#### BƯỚC 4: Bấm máy
+- `(1.96 × 2.4 ÷ 0.5)^2 = 88.5105` $\to$ làm tròn lên 89.
+
+#### BƯỚC 5: Kết luận
+- Công ty cần khảo sát tối thiểu **89 chiếc laptop**.
+
+---
+
+## 3.3. Phân phối chọn mẫu của Tỷ lệ mẫu $p$ (Proportion $p$)
+
+![Sampling Proportion](slides_ch5_6_7_images/ch07_slide26.png)
+![Z for Proportion](slides_ch5_6_7_images/ch07_slide27.png)
+
+### Điều kiện xấp xỉ chuẩn:
+$$n\pi \ge 5 \quad \text{và} \quad n(1-\pi) \ge 5$$
+
+### Công thức:
+$$\mu_p = \pi \quad \text{và} \quad \sigma_p = \sqrt{\frac{\pi(1-\pi)}{n}}$$
+$$Z = \frac{p - \pi}{\sigma_p}$$
+
+---
+
+### VÍ DỤ MẪU 7.3: TỶ LỆ THANH TOÁN SỐ (5 BƯỚC CHUẨN)
+**Đề bài**: Tỷ lệ người dân dùng app thanh toán là $\pi = 0.30$. Khảo sát mẫu $n = 400$ người.
+a) Kiểm tra điều kiện xấp xỉ chuẩn.
+b) Tính sai số chuẩn $\sigma_p$.
+c) Tính xác suất tỷ lệ trong mẫu từ 27% đến 34% ($P(0.27 \le p \le 0.34)$).
+
+#### BƯỚC 1: Phân tích
+- $\pi = 0.30, n = 400, p \in [0.27, 0.34]$.
+
+#### BƯỚC 2: Nhận diện công thức
+- $\sigma_p = \sqrt{\frac{\pi(1-\pi)}{n}}$, $Z = \frac{p - \pi}{\sigma_p}$.
+
+#### BƯỚC 3: Thay số chi tiết
+- $n\pi = 120 \ge 5$, $n(1-\pi) = 280 \ge 5$ (Thỏa mãn!).
+- $\sigma_p = \sqrt{\frac{0.30 \times 0.70}{400}} = \sqrt{0.000525} \approx 0.02291$.
+- $Z_1 = \frac{0.27 - 0.30}{0.02291} \approx -1.31$, $Z_2 = \frac{0.34 - 0.30}{0.02291} \approx +1.75$.
+  $$P(0.27 \le p \le 0.34) = P(Z \le 1.75) - P(Z \le -1.31) = 0.9599 - 0.0951 = 0.8648\text{ (86.48\%)}$$
+
+#### BƯỚC 4: Hướng dẫn bấm máy Casio fx-580VN X
+- Vào `Normal CD` (`MENU 7 2`), nhập Lower = `0.27`, Upper = `0.34`, ô $\sigma$ bấm `√(0.3 × 0.7 ÷ 400)`, $\mu = 0.3$ `[=]` $\implies 0.8640$ (hoặc qua Z là $0.8648$).
+
+#### BƯỚC 5: Kết luận
+- Có $86.48\%$ khả năng tỷ lệ người dùng trong mẫu rơi vào khoảng từ 27% đến 34%.
+
+---
+
+## 3.4. Hệ số hiệu chỉnh Tổng thể hữu hạn (Finite Population Correction - FPC)
+
+> [!NOTE]
+> ### Khi nào dùng FPC?
+> Khi lấy mẫu **không hoàn lại** và cỡ mẫu chiếm hơn 5% tổng thể ($n/N > 0.05$):
+> $$\text{FPC} = \sqrt{\frac{N - n}{N - 1}}$$
+> Sai số chuẩn mới: $\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}} \sqrt{\frac{N - n}{N - 1}}$.
+
+---
+
+### VÍ DỤ MẪU 7.4: KHẢO SÁT DOANH NGHIỆP ĐỊA PHƯƠNG (5 BƯỚC CHUẨN)
+**Đề bài**: Doanh nghiệp có $N = 250$ nhân viên, lương trung bình $\mu = 12$ triệu, $\sigma = 2.4$ triệu. Lấy mẫu không hoàn lại $n = 50$ người. Tính sai số chuẩn $\sigma_{\bar{X}}$ có FPC.
+
+#### BƯỚC 1: Phân tích
+- $N = 250, n = 50 \implies n/N = 50/250 = 20\% > 5\%$.
+
+#### BƯỚC 2: Nhận diện công thức
+- Dùng FPC: $\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}} \sqrt{\frac{N-n}{N-1}}$.
+
+#### BƯỚC 3: Thay số chi tiết
+$$\sigma_{\bar{X}} = \frac{2.4}{\sqrt{50}} \sqrt{\frac{250 - 50}{250 - 1}} = 0.33941 \times 0.89622 \approx 0.3042\text{ triệu đồng}$$
+
+#### BƯỚC 4: Bấm máy
+- `2.4 ÷ √50 × √(200 ÷ 249) = 0.304185...`
+
+#### BƯỚC 5: Kết luận
+- Nhờ FPC, sai số chuẩn giảm từ $0.3394$ xuống còn **$0.3042$ triệu đồng**.
+
+---
+
+# PHẦN 4: BÀI TẬP SGK BERENSON 14TH EDITION (KÈM ĐỀ ANH - VIỆT & GIẢI 5 BƯỚC)
+
+### Problem 5.2 (Textbook p. 235) - Discrete Distribution
+**Original English**:
+*Given the following probability distribution:*
+|$X$|0|1|2|3|4|
+|:---:|:---:|:---:|:---:|:---:|:---:|
+|$P(X)$|0.10|0.20|0.45|0.15|0.10|
+*a. Compute $E(X)$. b. Compute $\sigma^2$ and $\sigma$.*
+
+**Dịch tiếng Việt**: Cho bảng xác suất như trên. Tính kỳ vọng $E(X)$, phương sai $\sigma^2$ và độ lệch chuẩn $\sigma$.
+
+**Lời giải 5 bước**:
+- **B1**: $X \in \{0, 1, 2, 3, 4\}$, $\sum P(X) = 1.0$.
+- **B2**: $\mu = \sum X P(X)$, $\sigma^2 = \sum X^2 P(X) - \mu^2$, $\sigma = \sqrt{\sigma^2}$.
+- **B3**:
+  $$E(X) = (0)(0.1) + (1)(0.2) + (2)(0.45) + (3)(0.15) + (4)(0.1) = 1.95$$
+  $$\sum X^2 P = 0 + 0.2 + 1.8 + 1.35 + 1.6 = 4.95 \implies \sigma^2 = 4.95 - (1.95)^2 = 1.1475 \implies \sigma = 1.0712$$
+- **B4 (Casio)**: `MENU 6 1` (Bật FREQ), nhập bảng $\to$ `OPTN 2` $\implies \bar{x} = 1.95, \sigma_x = 1.0712$.
+- **B5**: $E(X) = 1.95, \sigma^2 = 1.1475, \sigma = 1.0712$ *(Khớp đáp án SGK tr. 874)*.
+
+---
+
+### Problem 5.12 (Textbook p. 242) - Binomial Distribution
+**Original English**:
+*If $n = 5$ and $\pi = 0.10$, determine: a. $P(X = 0)$ b. $P(X = 1)$ c. $P(X \ge 1)$ d. Mean and standard deviation.*
+
+**Dịch tiếng Việt**: Cho nhị thức $n = 5, p = 0.10$. Tính các xác suất và $\mu, \sigma$.
+
+**Lời giải 5 bước**:
+- **B1**: $n = 5, p = 0.10$.
+- **B2**: $P(X = x) = C_n^x p^x (1-p)^{n-x}$, $P(X \ge 1) = 1 - P(X = 0)$, $\mu = np, \sigma = \sqrt{np(1-p)}$.
+- **B3**:
+  - a. $P(X = 0) = C_5^0 (0.1)^0 (0.9)^5 = 0.5905$.
+  - b. $P(X = 1) = C_5^1 (0.1)^1 (0.9)^4 = 0.3281$.
+  - c. $P(X \ge 1) = 1 - 0.5905 = 0.4095$.
+  - d. $\mu = 5 \times 0.1 = 0.5$; $\sigma = \sqrt{5 \times 0.1 \times 0.9} = 0.6708$.
+- **B4 (Casio)**: `MENU 7 ▼ 1` (Binomial PD), nhập $N=5, p=0.1$.
+- **B5**: a. $0.5905$ | b. $0.3281$ | c. $0.4095$ | d. $\mu = 0.5, \sigma = 0.6708$ *(Khớp đáp án SGK)*.
+
+---
+
+### Problem 5.22 (Textbook p. 248) - Poisson Distribution
+**Original English**:
+*LAN errors: Poisson with mean 2.5 errors/day. Probability that in any given day: a. 0 errors? b. exactly 1 error? c. 2 or more errors?*
+
+**Dịch tiếng Việt**: Lỗi mạng LAN tuân theo Poisson với $\lambda = 2.5$ lỗi/ngày. Tính xác suất: a. 0 lỗi | b. Đúng 1 lỗi | c. Từ 2 lỗi trở lên.
+
+**Lời giải 5 bước**:
+- **B1**: $\lambda = 2.5$.
+- **B2**: $P(X = x) = \frac{e^{-\lambda}\lambda^x}{x!}$, $P(X \ge 2) = 1 - P(X \le 1)$.
+- **B3**:
+  - a. $P(X = 0) = e^{-2.5} = 0.0821$.
+  - b. $P(X = 1) = e^{-2.5}(2.5) = 0.2052$.
+  - c. $P(X \ge 2) = 1 - (0.0821 + 0.2052) = 1 - 0.2873 = 0.7127$.
+- **B4 (Casio)**: `MENU 7 ▼ ▼ 2` (Poisson PD) $\lambda = 2.5$.
+- **B5**: a. $0.0821$ | b. $0.2052$ | c. $0.7127$ *(Khớp đáp án SGK tr. 875)*.
+
+---
+
+### Problem 6.7 (Textbook p. 275) - Normal Distribution
+**Original English**:
+*Normal distribution with $\mu = 100, \sigma = 10$. Probability that: a. $X > 105$? b. $X < 85$? c. Between 90 and 110? d. Value of $X$ for which only 10% are larger?*
+
+**Dịch tiếng Việt**: Phân phối chuẩn $\mu = 100, \sigma = 10$. Tính xác suất: a. $X > 105$ | b. $X < 85$ | c. $90 < X < 110$ | d. Tìm $X$ để chỉ có 10% lớn hơn nó (Top 10%).
+
+**Lời giải 5 bước**:
+- **B1**: $\mu = 100, \sigma = 10$.
+- **B2**: Chuẩn hóa $Z = (X-\mu)/\sigma$. Câu d: Inverse Normal với $\text{Area} = 0.90$.
+- **B3**:
+  - a. $Z = (105-100)/10 = 0.50 \implies P(Z > 0.50) = 0.3085$.
+  - b. $Z = (85-100)/10 = -1.50 \implies P(Z < -1.50) = 0.0668$.
+  - c. $Z_1 = -1, Z_2 = +1 \implies P(-1 < Z < 1) = 0.6827$.
+  - d. $Z_{0.90} = 1.28 \implies X = 100 + (1.28 \times 10) = 112.8$.
+- **B4 (Casio)**: `MENU 7 2` (Normal CD) cho a, b, c; `MENU 7 3` (Inverse Normal) cho d $\implies x = 112.82$.
+- **B5**: a. $0.3085$ | b. $0.0668$ | c. $0.6827$ | d. $112.82$ *(Khớp đáp án SGK tr. 876)*.
+
+---
+
+### Problem 7.5 (Textbook p. 297) - Sampling Mean
+**Original English**:
+*Normal distribution $\mu = 100, \sigma = 10, n = 25$. Probability that: a. $\bar{X} < 95$? b. $95 < \bar{X} < 97.5$? c. $\bar{X} > 102.2$?*
+
+**Dịch tiếng Việt**: Tổng thể $\mu = 100, \sigma = 10$. Mẫu $n = 25$. Tính xác suất của trung bình mẫu $\bar{X}$.
+
+**Lời giải 5 bước**:
+- **B1**: $\mu = 100, \sigma = 10, n = 25 \implies \sigma_{\bar{X}} = \frac{10}{\sqrt{25}} = 2.0$.
+- **B2**: $Z = \frac{\bar{X} - \mu}{\sigma/\sqrt{n}} = \frac{\bar{X} - 100}{2}$.
+- **B3**:
+  - a. $Z = (95-100)/2 = -2.50 \implies P(Z < -2.50) = 0.0062$.
+  - b. $Z_1 = -2.50, Z_2 = -1.25 \implies P(-2.50 < Z < -1.25) = 0.1056 - 0.0062 = 0.0994$.
+  - c. $Z = (102.2-100)/2 = +1.10 \implies P(Z > 1.10) = 1 - 0.8643 = 0.1357$.
+- **B4 (Casio)**: `MENU 7 2` với $\mu = 100, \sigma = 2$.
+- **B5**: a. $0.0062$ | b. $0.0994$ | c. $0.1357$ *(Khớp đáp án SGK tr. 877)*.
+
+---
+
+# PHẦN 5: BẢNG TỔNG KẾT PHÍM TẮT CASIO FX-580VN X & NHẬN DIỆN DẠNG BÀI
+
+| Dạng bài thi | Dấu hiệu nhận biết trong đề | Công thức cốt lõi | Phím tắt bấm Casio fx-580VN X |
+| :--- | :--- | :--- | :--- |
+| **Bảng xác suất rời rạc** | Cho bảng các cặp $(X, P(X))$ | $\mu = \sum XP(X)$, $\sigma^2 = \sum X^2 P - \mu^2$ | `MENU 6 1` (Bật FREQ ON) $\to$ Nhập bảng $\to$ `OPTN 2` |
+| **Nhị thức (Đúng $x$)** | $n$ phép thử độc lập, $p$ không đổi, $P(X = x)$ | $P(X = x) = C_n^x p^x (1-p)^{n-x}$ | `MENU 7 ▼ 1` (Binomial PD) $\to$ `2: Variable` |
+| **Nhị thức (Tối đa $x$)** | Đề hỏi "at most", "tối đa", $P(X \le x)$ | $P(X \le x) = \sum_{k=0}^x P(X=k)$ | `MENU 7 ▼ 2` (Binomial CD) $\to$ `2: Variable` |
+| **Poisson** | "per minute/hour/day", cho duy nhất $\lambda$ | $P(X = x) = \frac{e^{-\lambda} \lambda^x}{x!}$ | `MENU 7 ▼ ▼ 2` (Poisson PD) $\to$ `2: Variable` |
+| **Siêu bội** | Rút không hoàn lại từ $N$ vật có $A$ vật loại 1 | $P(X = x) = \frac{C_A^x C_{N-A}^{n-x}}{C_N^n}$ | `MENU 1` dùng phím tổ hợp `nCr` (`SHIFT ÷`) |
+| **Phân phối Đều** | Biến liên tục trong $[a, b]$, $U(a, b)$ | $P(c \le X \le d) = \frac{d - c}{b - a}$ | `MENU 1` tính đại số trực tiếp |
+| **Chuẩn (Thuận)** | Phân phối chuẩn, tính xác suất $X$ | $Z = \frac{X - \mu}{\sigma}$ | `MENU 7 2` (Normal CD) nhập trực tiếp $X, \mu, \sigma$ |
+| **Chuẩn (Ngược)** | Cho Top $k\%$, Bottom $k\%$, tìm $X$ | $X = \mu + Z \sigma$ | `MENU 7 3` (Inverse Normal) nhập Area bên trái |
+| **Chọn mẫu $\bar{X}$** | Cho mẫu $n$, hỏi **trung bình mẫu** $\bar{X}$ | $Z = \frac{\bar{X} - \mu}{\sigma / \sqrt{n}}$ | `MENU 7 2` (Normal CD) với $\sigma = \sigma/\sqrt{n}$ |
+| **Chọn mẫu Tỷ lệ $p$** | Cho mẫu $n$, hỏi **tỷ lệ mẫu** $p$ | $Z = \frac{p - \pi}{\sqrt{\pi(1-\pi)/n}}$ | `MENU 7 2` (Normal CD) với $\sigma = \sqrt{\frac{\pi(1-\pi)}{n}}$ |
+| **Cỡ mẫu cần thiết** | Hỏi cần khảo sát bao nhiêu người ($n$) | $n = \lceil (Z\sigma / e)^2 \rceil$ | Tính đại số, LUÔN LÀM TRÒN LÊN SỐ NGUYÊN! |
+
+# PHẦN 6: BỘ ĐỀ THỰC CHIẾN MAS QUIZ 2 (20 CÂU HỎI TRẮC NGHIỆM ĐẦY ĐỦ ANH - VIỆT - 5 BƯỚC - CASIO 580)
+
+> [!NOTE]
+> **TỔNG QUAN BỘ ĐỀ MAS QUIZ 2**
+> Tuyển tập 20 câu hỏi trắc nghiệm thực tế lấy trực tiếp từ đề thi trực tuyến kiểm tra tiến độ môn Thống kê Ứng dụng (MAS202). Toàn bộ 20 câu hỏi đã được số hóa dạng văn bản chuẩn (100% không dùng ảnh chụp), dịch nghĩa chuyên ngành mượt mà, phân tích bằng phương pháp chuẩn 5 bước và hướng dẫn bấm máy tính Casio fx-580VN X chi tiết đến từng phím bấm.
+
+---
+
+## Câu 1: Xác Suất Phân Phối Đều Liên Tục (Continuous Uniform Distribution)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 1 (Single Choice):**
+> A study of the time spent by visitors to finish the viewing of a marine life aquarium is uniformly distributed between 100 and 180 minutes. What is the probability that the viewing time will be less than 160 minutes.
+> - A. 0.25
+> - B. 0
+> - C. 0.5
+> - D. 0.75
+
+### 2. Dịch nghĩa tiếng Việt:
+Một nghiên cứu về thời gian khách tham quan hoàn thành chuyến xem thủy cung sinh vật biển cho thấy thời gian này tuân theo phân phối đều từ 100 đến 180 phút. Xác suất để thời gian tham quan ít hơn 160 phút là bao nhiêu?
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Biến ngẫu nhiên $X$: Thời gian tham quan thủy cung (phút).
+  - Dạng phân phối: Phân phối đều liên tục $X \sim U(a, b)$ với $a = 100$, $b = 180$.
+  - Yêu cầu: Tính xác suất $P(X < 160)$.
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - Đối với phân phối đều trên đoạn $[a, b]$, hàm mật độ xác suất là hằng số:
+    $$f(x) = \frac{1}{b - a} = \frac{1}{180 - 100} = \frac{1}{80} \quad (100 \le x \le 180)$$
+  - Xác suất $P(X < x_0)$ chính là diện tích hình chữ nhật từ cận dưới $a$ đến $x_0$:
+    $$P(X < x_0) = \frac{x_0 - a}{b - a}$$
+- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
+  $$P(X < 160) = \frac{160 - 100}{180 - 100} = \frac{60}{80} = \frac{3}{4} = 0.75$$
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - Bấm: `[MENU]` `[1]` (Màn hình tính toán thông thường).
+  - Nhập biểu thức phân số: `[(■/□)]` `160 - 100` `[▼]` `180 - 100` `[=]`
+  - Kết quả hiện phân số `3/4`, bấm phím `[S<=>D]` để chuyển sang số thập phân $\to$ `0.75`.
+- **BƯỚC 5: Kết luận:**
+  - Đáp án chính xác: **0.75** (Chọn phương án **D**).
+
+---
+
+## Câu 2: Xác Định Quần Thể Mục Tiêu (Target Population)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 2 (Single Choice):**
+> Most analysts focus on the cost of tuition as the way to measure the cost of a college education. But incidentals, such as textbook costs, are rarely considered. A researcher at Drummond University wishes to estimate the textbook costs of first-year students at Drummond. To do so, she monitored the textbook cost of 250 first-year students and found that their average textbook cost was \$300 per semester. Identify the population of interest to the researcher.
+> - A. The 250 students that were monitored
+> - B. All college students
+> - C. All Drummond University students
+> - D. All first-year Drummond University students
+
+### 2. Dịch nghĩa tiếng Việt:
+Hầu hết các nhà phân tích chỉ tập trung vào học phí để đo lường chi phí giáo dục đại học, nhưng các chi phí phụ như sách giáo khoa hiếm khi được tính đến. Một nhà nghiên cứu tại Đại học Drummond muốn ước lượng chi phí sách giáo khoa của sinh viên năm nhất tại Drummond. Để làm điều đó, cô đã theo dõi chi phí sách giáo khoa của 250 sinh viên năm nhất và thấy chi phí trung bình là \$300 mỗi học kỳ. Hãy xác định quần thể mục tiêu (population of interest) của nhà nghiên cứu.
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Đối tượng khảo sát: Sinh viên năm nhất (first-year students) tại Đại học Drummond.
+  - Cỡ mẫu thu thập thực tế: $n = 250$ sinh viên năm nhất.
+  - Mục tiêu nghiên cứu: Ước lượng chi phí sách giáo khoa của sinh viên năm nhất trường Drummond.
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện khái niệm:**
+  - **Mẫu (Sample):** Là tập hợp con các phần tử được chọn ra để thu thập dữ liệu (ở đây là 250 bạn sinh viên năm nhất được quan sát).
+  - **Quần thể mục tiêu (Population of Interest / Target Population):** Là toàn bộ tập hợp các đối tượng mà nhà nghiên cứu muốn rút ra kết luận suy diễn thống kê. Vì đề bài nêu rõ mục đích là *"estimate the textbook costs of first-year students at Drummond"*, quần thể phải là **tất cả sinh viên năm nhất tại Đại học Drummond**.
+- **BƯỚC 3: Loại trừ bẫy trắc nghiệm:**
+  - Phương án A (*The 250 students...*): Sai, đây chỉ là mẫu (sample).
+  - Phương án B (*All college students*): Sai, quá rộng (tất cả sinh viên đại học nói chung).
+  - Phương án C (*All Drummond University students*): Sai, bao gồm cả sinh viên năm 2, 3, 4 trong khi nghiên cứu chỉ nhắm vào sinh viên năm nhất.
+  - Phương án D (*All first-year Drummond University students*): Đúng hoàn toàn và chính xác phạm vi.
+- **BƯỚC 4: Hướng dẫn Casio fx-580VN X:**
+  - Câu hỏi lý thuyết định tính, không cần bấm máy tính.
+- **BƯỚC 5: Kết luận:**
+  - Đáp án chính xác: **All first-year Drummond University students** (Chọn phương án **D**).
+
+---
+
+## Câu 3: Xác Suất Phân Phối Nhị Thức (Binomial Distribution)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 3 (Single Choice):**
+> The phone lines to an airline reservation system are occupied 40% of the time. Assume that the events that the lines are occupied on successive calls are independent. Assume that 10 calls are placed to the airline. What is the probability that for exactly three calls the lines are occupied
+> - A. 0.1640
+> - B. 0.2410
+> - C. 0.2149
+> - D. 0.6142
+
+### 2. Dịch nghĩa tiếng Việt:
+Các đường dây điện thoại đến hệ thống đặt vé của một hãng hàng không bị bận 40% thời gian. Giả sử biến cố các đường dây bị bận ở các cuộc gọi liên tiếp là độc lập với nhau. Giả sử có 10 cuộc gọi được gọi tới hãng hàng không. Xác suất để có đúng 3 cuộc gọi gặp đường dây bận là bao nhiêu?
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Mỗi cuộc gọi là một phép thử Bernoulli độc lập có 2 kết cục: Bận hoặc Rỗi.
+  - Tổng số cuộc gọi (số phép thử): $n = 10$.
+  - Xác suất thành công (đường dây bị bận): $p = 40\% = 0.40$.
+  - Số lần thành công cần tính xác suất: $x = 3$.
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - Biến ngẫu nhiên $X \sim B(n = 10, p = 0.40)$.
+  - Công thức hàm xác suất nhị thức (Binomial Probability Mass Function):
+    $$P(X = x) = C_n^x \cdot p^x \cdot (1 - p)^{n - x}$$
+- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
+  $$P(X = 3) = C_{10}^3 \cdot (0.40)^3 \cdot (1 - 0.40)^{10 - 3} = C_{10}^3 \cdot (0.40)^3 \cdot (0.60)^7$$
+  - Ta có: $C_{10}^3 = \frac{10 \times 9 \times 8}{3 \times 2 \times 1} = 120$.
+  - $(0.40)^3 = 0.064$.
+  - $(0.60)^7 \approx 0.0279936$.
+  - Nhân lại: $P(X = 3) = 120 \times 0.064 \times 0.0279936 \approx 0.21499... \approx 0.2149$.
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - **Cách 1: Sử dụng bảng phân phối nhị thức (Binomial PD):**
+    - Bấm: `[MENU]` `[7]` (Phân phối Distribution).
+    - Bấm mũi tên xuống: `[▼]` `[1]` (Binomial PD - Xác suất tại 1 điểm).
+    - Chọn `[1]` (Variable - Biến số).
+    - Nhập: $x$: `3` `[=]`, $N$: `10` `[=]`, $p$: `0.4` `[=]`.
+    - Bấm `[=]` $\to$ Kết quả hiển thị: `0.214990848` $\approx 0.2149$.
+  - **Cách 2: Bấm tổ hợp tại Menu 1:**
+    - Bấm: `[MENU]` `[1]`
+    - Nhập: `10` `[SHIFT]` `[÷]` (ra chữ C) `3` `[×]` `0.4` `[x■]` `3` `[×]` `0.6` `[x■]` `7` `[=]`
+    - Kết quả: `0.21499...` $\approx 0.2149$.
+- **BƯỚC 5: Kết luận:**
+  - Đáp án chính xác: **0.2149** (Chọn phương án **C**).
+
+---
+
+## Câu 4: Phân Phối Chuẩn - Tính Xác Suất Trong Khoảng (Normal Distribution)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 4 (Single Choice):**
+> A supermarket manager has determined that the amount of time customers spend in the supermarket is approximately normally distributed with a mean of 45 minutes and a standard deviation of 6 minutes. Find the probability that a customer spends between 39 and 43 minutes in the supermarket.
+> Let P(Z < -1) = 0.159, P(Z < -0.33) = 0.371, P(Z < 0.02) = 0.508, and P(Z < 0.85) = 0.802.
+> - A. 0.345
+> - B. 0.646
+> - C. 0.212
+> - D. 0.823
+
+### 2. Dịch nghĩa tiếng Việt:
+Người quản lý siêu thị xác định rằng thời gian khách hàng mua sắm trong siêu thị có phân phối xấp xỉ chuẩn với trung bình là 45 phút và độ lệch chuẩn là 6 phút. Tìm xác suất để một khách hàng dành từ 39 đến 43 phút trong siêu thị.
+Cho biết: P(Z < -1) = 0.159; P(Z < -0.33) = 0.371; P(Z < 0.02) = 0.508; P(Z < 0.85) = 0.802.
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Biến ngẫu nhiên $X \sim N(\mu = 45, \sigma = 6)$.
+  - Khoảng thời gian cần tính xác suất: $39 \le X \le 43$.
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - Chuẩn hóa các giá trị biên về điểm chuẩn hóa Z (Z-score):
+    $$Z = \frac{X - \mu}{\sigma}$$
+  - Xác suất trong khoảng:
+    $$P(x_1 \le X \le x_2) = P(Z_1 \le Z \le Z_2) = P(Z \le Z_2) - P(Z \le Z_1)$$
+- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
+  - Với $x_1 = 39$:
+    $$Z_1 = \frac{39 - 45}{6} = \frac{-6}{6} = -1.00$$
+  - Với $x_2 = 43$:
+    $$Z_2 = \frac{43 - 45}{6} = \frac{-2}{6} = -\frac{1}{3} \approx -0.33$$
+  - Biểu thức xác suất chuyển thành:
+    $$P(39 \le X \le 43) = P(-1.00 \le Z \le -0.33) = P(Z < -0.33) - P(Z < -1.00)$$
+  - Thay số liệu đã cho trong đề bài:
+    $$P(39 \le X \le 43) = 0.371 - 0.159 = 0.212$$
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - **Cách 1: Tính nhanh theo dữ kiện đề bài:**
+    - Bấm `[MENU]` `[1]`, nhập `0.371 - 0.159 =` $\to$ ra `0.212`.
+  - **Cách 2: Kiểm chứng trực tiếp bằng hàm Normal CD:**
+    - Bấm: `[MENU]` `[7]` `[2]` (Normal CD).
+    - Lower: nhập `39` `[=]`.
+    - Upper: nhập `43` `[=]`.
+    - $\sigma$: nhập `6` `[=]`.
+    - $\mu$: nhập `45` `[=]`.
+    - Bấm `[=]` $\to$ Kết quả hiển thị: `0.2119...` $\approx 0.212$.
+- **BƯỚC 5: Kết luận:**
+  - Đáp án chính xác: **0.212** (Chọn phương án **C**).
+
+---
+
+## Câu 5: Phân Phối Chuẩn - Tính Xác Suất Từ Trung Bình Đến Cận Trên
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 5 (Single Choice):**
+> A bank's loan officer rates applicants for credit. The ratings are normally distributed with a mean of 200 and a standard deviation of 50. If an applicant is randomly selected, find the probability of a rating that is between 200 and 275.
+> Let P(Z < -0.17) = 0.4332, P(Z < 0) = 0.5, P(Z < 1.5) = 0.9332.
+> - A. 0.9332
+> - B. 0.5
+> - C. 0.4332
+> - D. 0.0668
+
+### 2. Dịch nghĩa tiếng Việt:
+Một chuyên viên tín dụng ngân hàng chấm điểm các khách hàng nộp đơn xin vay vốn. Điểm đánh giá có phân phối chuẩn với giá trị trung bình là 200 và độ lệch chuẩn là 50. Nếu chọn ngẫu nhiên một người nộp đơn, hãy tìm xác suất để điểm đánh giá của người đó nằm trong khoảng từ 200 đến 275.
+Cho biết: P(Z < -0.17) = 0.4332; P(Z < 0) = 0.5; P(Z < 1.5) = 0.9332.
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Biến ngẫu nhiên $X$: Điểm xếp hạng tín dụng, $X \sim N(\mu = 200, \sigma = 50)$.
+  - Cần tính: $P(200 \le X \le 275)$.
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - Chuẩn hóa Z hai mốc:
+    $$Z_1 = \frac{200 - 200}{50} = 0$$
+    $$Z_2 = \frac{275 - 200}{50} = \frac{75}{50} = 1.50$$
+  - Công thức xác suất:
+    $$P(200 \le X \le 275) = P(0 \le Z \le 1.50) = P(Z < 1.50) - P(Z < 0)$$
+- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
+  - Thay số liệu đề bài cho:
+    $$P(0 \le Z \le 1.50) = 0.9332 - 0.5000 = 0.4332$$
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - **Cách 1: Trừ trực tiếp dữ kiện đề:**
+    - Bấm `[MENU]` `[1]`, nhập `0.9332 - 0.5 =` $\to$ ra `0.4332`.
+  - **Cách 2: Bấm Normal CD:**
+    - Bấm: `[MENU]` `[7]` `[2]`.
+    - Lower: `200` `[=]`.
+    - Upper: `275` `[=]`.
+    - $\sigma$: `50` `[=]`.
+    - $\mu$: `200` `[=]`.
+    - Bấm `[=]` $\to$ Kết quả: `0.43319...` $\approx 0.4332$.
+- **BƯỚC 5: Kết luận:**
+  - Đáp án chính xác: **0.4332** (Chọn phương án **C**).
+
+---
+
+## Câu 6: Phân Phối Poisson - Xác Suất "Ít Nhất 1 Lần" (At Least One)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 6 (Single Choice):**
+> The number of power outages at a nuclear power plant has a Poisson distribution with a mean of 6 outages per year. The probability that there will be at least 1 power outages in a year is__
+> - A. 0.1274
+> - B. 0.9975
+> - C. 0.8735
+> - D. 0.0021
+
+### 2. Dịch nghĩa tiếng Việt:
+Số lần mất điện tại một nhà máy điện hạt nhân tuân theo phân phối Poisson với trung bình là 6 lần mất điện mỗi năm. Xác suất để có ít nhất 1 lần mất điện trong một năm là:
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Biến ngẫu nhiên $X$: Số lần mất điện trong 1 năm.
+  - Phân phối: $X \sim \text{Poisson}(\lambda = 6)$.
+  - Cần tính: $P(X \ge 1)$ ("at least 1 power outages").
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - Quy tắc biến cố đối (Complement Rule): Biến cố đối của "có ít nhất 1 lần" là "không có lần nào" ($X = 0$):
+    $$P(X \ge 1) = 1 - P(X = 0)$$
+  - Công thức xác suất Poisson:
+    $$P(X = k) = \frac{e^{-\lambda} \cdot \lambda^k}{k!} \implies P(X = 0) = \frac{e^{-6} \cdot 6^0}{0!} = e^{-6}$$
+- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
+  $$P(X \ge 1) = 1 - e^{-6}$$
+  - Ta có: $e^{-6} \approx 0.00247875$.
+  - Do đó:
+    $$P(X \ge 1) = 1 - 0.00247875 = 0.997521... \approx 0.9975$$
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - Bấm: `[MENU]` `[1]`
+  - Nhập: `1` `[-]` `[SHIFT]` `[ln]` (ra ký hiệu $e^{\square}$) `[-]` `6` `[=]`
+  - Màn hình hiển thị: `0.9975212478` $\implies$ Làm tròn 4 chữ số thập phân là `0.9975`.
+- **BƯỚC 5: Kết luận:**
+  - Đáp án chính xác: **0.9975** (Chọn phương án **B**).
+
+---
+
+## Câu 7: Sai Số Chuẩn Của Trung Bình Mẫu (Standard Error of the Mean)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 7 (Single Choice):**
+> A random sample of 121 bottles of cologne showed an average content of 4 ounces. It is known that the standard deviation of the contents (i.e., of the population) is 0.22 ounces. The standard error of the mean equals
+> - A. 0.0200
+> - B. 0.0331
+> - C. 4.000
+> - D. 0.3636
+
+### 2. Dịch nghĩa tiếng Việt:
+Một mẫu ngẫu nhiên gồm 121 chai nước hoa cho thấy dung tích trung bình là 4 ounce. Biết rằng độ lệch chuẩn của dung tích toàn thể (tức của tổng thể) là 0.22 ounce. Sai số chuẩn của giá trị trung bình (standard error of the mean) bằng:
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Cỡ mẫu: $n = 121$.
+  - Trung bình mẫu: $\bar{x} = 4$ ounces (đây là dữ liệu làm xao nhãng, không dùng để tính sai số chuẩn).
+  - Độ lệch chuẩn tổng thể: $\sigma = 0.22$ ounces.
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - Sai số chuẩn của trung bình mẫu (Standard Error of the Mean, ký hiệu $\sigma_{\bar{x}}$) phản ánh độ biến thiên của các trung bình mẫu quanh trung bình tổng thể:
+    $$\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}}$$
+- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
+  $$\sigma_{\bar{x}} = \frac{0.22}{\sqrt{121}} = \frac{0.22}{11} = 0.0200$$
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - Bấm: `[MENU]` `[1]`
+  - Nhập: `0.22` `[÷]` `[√]` `121` `[=]`
+  - Máy hiện phân số `1/50`, bấm phím `[S<=>D]` để chuyển sang số thập phân $\to$ `0.02` (tức `0.0200`).
+- **BƯỚC 5: Kết luận:**
+  - Đáp án chính xác: **0.0200** (Chọn phương án **A**).
+
+---
+
+## Câu 8: Phân Phối Chuẩn - Xác Suất Vượt Mức Cho Trước (Upper Tail Probability)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 8 (Single Choice):**
+> The weekly salaries of teachers in one state are normally distributed with a mean of \$490 and a standard deviation of \$45. What is the probability that a randomly selected teacher earns more than \$525 a week? Let P(Z < 0.778) = 0.7817 and P(Z < 0.163) = 0.5646.
+> - A. 0.7823
+> - B. 0.2183
+> - C. 0.2823
+> - D. 0.4354
+
+### 2. Dịch nghĩa tiếng Việt:
+Tiền lương hàng tuần của giáo viên ở một bang có phân phối chuẩn với mức trung bình là \$490 và độ lệch chuẩn là \$45. Xác suất để một giáo viên được chọn ngẫu nhiên có thu nhập nhiều hơn \$525 một tuần là bao nhiêu?
+Cho biết: P(Z < 0.778) = 0.7817 và P(Z < 0.163) = 0.5646.
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Biến ngẫu nhiên $X$: Lương tuần của giáo viên, $X \sim N(\mu = 490, \sigma = 45)$.
+  - Cần tính: $P(X > 525)$ (kiếm được nhiều hơn \$525/tuần).
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - Chuẩn hóa Z:
+    $$Z = \frac{X - \mu}{\sigma} = \frac{525 - 490}{45} = \frac{35}{45} = \frac{7}{9} \approx 0.7778 \approx 0.778$$
+  - Xác suất đuôi trên (Upper Tail):
+    $$P(X > 525) = P(Z > 0.778) = 1 - P(Z < 0.778)$$
+- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
+  - Thay số liệu đề bài cho: $P(Z < 0.778) = 0.7817$:
+    $$P(X > 525) = 1 - 0.7817 = 0.2183$$
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - Bấm: `[MENU]` `[1]`
+  - Nhập: `1 - 0.7817 =` $\to$ ra `0.2183`.
+  - Hoặc kiểm tra bằng Normal CD: `[MENU]` `[7]` `[2]`, Lower: `525`, Upper: `999999`, $\sigma = 45$, $\mu = 490$ $\to$ `0.21835...` $\approx 0.2183$.
+- **BƯỚC 5: Kết luận:**
+  - Đáp án chính xác: **0.2183** (Chọn phương án **B**).
+
+---
+
+## Câu 9: Tỷ Lệ Phần Trăm Nằm Giữa Các Mốc Độ Lệch Chuẩn Z
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 9 (Single Choice):**
+> For a standard normal distribution, find the percentage of the data that are between 3 standard deviations below the mean and 1 standard deviation above the mean.
+> Let P(Z < -3) = 0.0013, P(Z < -2) = 0.0228, P(Z < 0) = 0.5, P(Z < 1) = 0.8413, P(Z < 3) = 0.9987.
+> - A. 16%
+> - B. 99.74%
+> - C. 84%
+> - D. 15.74%
+
+### 2. Dịch nghĩa tiếng Việt:
+Đối với phân phối chuẩn chuẩn hóa, hãy tìm tỷ lệ phần trăm dữ liệu nằm giữa 3 độ lệch chuẩn dưới mức trung bình và 1 độ lệch chuẩn trên mức trung bình.
+Cho biết: P(Z < -3) = 0.0013; P(Z < -2) = 0.0228; P(Z < 0) = 0.5; P(Z < 1) = 0.8413; P(Z < 3) = 0.9987.
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Phân phối chuẩn chuẩn hóa $Z \sim N(0, 1)$.
+  - "3 standard deviations below the mean" $\implies Z = -3$.
+  - "1 standard deviation above the mean" $\implies Z = +1$.
+  - Cần tính: $P(-3 \le Z \le 1)$.
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  $$P(-3 \le Z \le 1) = P(Z < 1) - P(Z < -3)$$
+- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
+  - Thay số liệu đã cho:
+    $$P(-3 \le Z \le 1) = 0.8413 - 0.0013 = 0.8400$$
+  - Đổi sang tỷ lệ phần trăm:
+    $$0.8400 \times 100\% = 84\%$$
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - Bấm: `[MENU]` `[1]`
+  - Nhập: `0.8413 - 0.0013 =` $\to$ ra `0.84`, nhân 100 ra `84%`.
+- **BƯỚC 5: Kết luận:**
+  - Đáp án chính xác: **84%** (Chọn phương án **C**).
+
+---
+
+## Câu 10: Độ Lệch Chuẩn Của Bảng Phân Phối Rời Rạc (Discrete Standard Deviation)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 10 (Single Choice):**
+> The following table contains the probability distribution for X = the number of retransmissions necessary to successfully transmit a 1024K data package through a network.
+> 
+> | X | 0 | 1 | 2 | 3 |
+> | :---: | :---: | :---: | :---: | :---: |
+> | **P(X)** | 0.35 | 0.35 | 0.25 | 0.05 |
+> 
+> The standard deviation of the number of retransmissions is __
+> - A. 0.647
+> - B. 1.438
+> - C. 0.894
+> - D. 1.290
+
+### 2. Dịch nghĩa tiếng Việt:
+Bảng dưới đây chứa phân phối xác suất của X = số lần truyền lại cần thiết để truyền thành công một gói dữ liệu 1024K qua mạng.
+Độ lệch chuẩn (standard deviation) của số lần truyền lại là:
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Biến ngẫu nhiên rời rạc $X$ nhận các giá trị $\{0, 1, 2, 3\}$.
+  - Xác suất tương ứng: $P(0) = 0.35, P(1) = 0.35, P(2) = 0.25, P(3) = 0.05$.
+  - Tổng xác suất: $0.35 + 0.35 + 0.25 + 0.05 = 1.00$ (hợp lệ).
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - Kỳ vọng: $E(X) = \sum x \cdot P(x)$
+  - Kỳ vọng bậc 2: $E(X^2) = \sum x^2 \cdot P(x)$
+  - Phương sai: $Var(X) = \sigma^2 = E(X^2) - [E(X)]^2$
+  - Độ lệch chuẩn: $\sigma = \sqrt{Var(X)}$
+- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
+  - Tính $E(X)$:
+    $$E(X) = 0(0.35) + 1(0.35) + 2(0.25) + 3(0.05) = 0 + 0.35 + 0.50 + 0.15 = 1.00$$
+  - Tính $E(X^2)$:
+    $$E(X^2) = 0^2(0.35) + 1^2(0.35) + 2^2(0.25) + 3^2(0.05) = 0 + 0.35 + 4(0.25) + 9(0.05) = 0.35 + 1.00 + 0.45 = 1.80$$
+  - Tính phương sai $Var(X)$:
+    $$Var(X) = E(X^2) - [E(X)]^2 = 1.80 - (1.00)^2 = 0.80$$
+  - Tính độ lệch chuẩn $\sigma$:
+    $$\sigma = \sqrt{0.80} \approx 0.894427... \approx 0.894$$
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X (Tuyệt chiêu Thống kê 1 biến kèm xác suất):**
+  - **Bước A (Bật cột tần số nếu chưa bật):**
+    - Bấm: `[SHIFT]` `[MENU]` (Setup) $\to$ Bấm `[▼]` $\to$ Chọn `[3]` (Statistics) $\to$ Chọn `[1]` (On).
+  - **Bước B (Nhập bảng dữ liệu):**
+    - Bấm: `[MENU]` `[6]` (Statistics) $\to$ Chọn `[1]` (1-Variable).
+    - Cột `x`: Bấm `0` `[=]`, `1` `[=]`, `2` `[=]`, `3` `[=]`.
+    - Dùng phím điều hướng sang cột `FREQ`: Bấm `0.35` `[=]`, `0.35` `[=]`, `0.25` `[=]`, `0.05` `[=]`.
+  - **Bước C (Xuất kết quả):**
+    - Bấm phím `[AC]`.
+    - Bấm `[OPTN]` $\to$ Chọn `[2]` (1-Variable Calc).
+  - **Bước D (Đọc kết quả):**
+    - Máy hiện $\bar{x} = 1$ (Kỳ vọng $E(X)$).
+    - Máy hiện $\sigma_x = 0.894427191$ (Độ lệch chuẩn) $\implies$ Khớp hoàn hảo với phương án **0.894**!
+- **BƯỚC 5: Kết luận:**
+  - Đáp án chính xác: **0.894** (Chọn phương án **C**).
+
+---
+
+## Câu 11: Phân Phối Chọn Mẫu Của Trung Bình Mẫu (Sampling Distribution of Mean)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 11 (Single Choice):**
+> The mean and the standard deviation of a population are 113.9 and 32.1, respectively. Find the mean and standard deviation of the sampling distribution of the sample mean of size 64.
+> - A. Mean = 113.9; standard deviation = 2.3
+> - B. Mean = 113.9; standard deviation = 4.0125
+> - C. Mean = 4.0; standard deviation = 113.9
+> - D. Mean = 113.9; standard deviation = 32.1
+
+### 2. Dịch nghĩa tiếng Việt:
+Giá trị trung bình và độ lệch chuẩn của một tổng thể lần lượt là 113.9 và 32.1. Hãy tìm trung bình và độ lệch chuẩn của phân phối mẫu của trung bình mẫu với kích thước mẫu là 64.
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Tổng thể: $\mu = 113.9$, $\sigma = 32.1$.
+  - Cỡ mẫu: $n = 64$.
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - Theo Định lý Giới hạn Trung tâm (CLT) và tính chất của phân phối chọn mẫu:
+    - Trung bình của phân phối mẫu bằng đúng trung bình tổng thể:
+      $$\mu_{\bar{x}} = \mu = 113.9$$
+    - Độ lệch chuẩn của phân phối mẫu (sai số chuẩn):
+      $$\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}}$$
+- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
+  $$\mu_{\bar{x}} = 113.9$$
+  $$\sigma_{\bar{x}} = \frac{32.1}{\sqrt{64}} = \frac{32.1}{8} = 4.0125$$
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - Bấm: `[MENU]` `[1]`
+  - Nhập: `32.1` `[÷]` `[√]` `64` `[=]`
+  - Bấm `[S<=>D]` $\to$ Kết quả hiển thị: `4.0125`.
+- **BƯỚC 5: Kết luận:**
+  - Đáp án chính xác: **Mean = 113.9; standard deviation = 4.0125** (Chọn phương án **B**).
+
+---
+
+## Câu 12: Kỳ Vọng Số Vụ Tai Nạn Hàng Ngày (Expected Value from Distribution)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 12 (Single Choice):**
+> The following table contains the probability distribution for the number of traffic accidents daily in a small town.
+> 
+> | Number of Accidents Daily (X) | P(X = x_i) |
+> | :---: | :---: |
+> | 0 | 0.31 |
+> | 1 | 0.36 |
+> | 2 | 0.15 |
+> | 3 | 0.08 |
+> | 4 | 0.06 |
+> | 5 | 0.03 |
+> | 6 | 0.01 |
+> 
+> Compute the mean number of accidents per day.
+> - A. 3.12
+> - B. 3.48
+> - C. 1.35
+> - D. 2.53
+
+### 2. Dịch nghĩa tiếng Việt:
+Bảng sau đây thể hiện phân phối xác suất của số vụ tai nạn giao thông xảy ra hàng ngày tại một thị trấn nhỏ. Hãy tính số vụ tai nạn trung bình mỗi ngày (mean number of accidents).
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Bảng phân phối xác suất của biến ngẫu nhiên rời rạc $X$ nhận các giá trị $0, 1, 2, 3, 4, 5, 6$.
+  - Yêu cầu: Tính giá trị trung bình $E(X)$ (tức $\mu$).
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  $$E(X) = \mu = \sum_{i=1}^k x_i \cdot P(X = x_i)$$
+- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
+  $$E(X) = 0(0.31) + 1(0.36) + 2(0.15) + 3(0.08) + 4(0.06) + 5(0.03) + 6(0.01)$$
+  $$E(X) = 0 + 0.36 + 0.30 + 0.24 + 0.24 + 0.15 + 0.06 = 1.35$$
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - **Cách 1: Tính tổng tích nhanh ở Menu 1:**
+    - Bấm: `[MENU]` `[1]`
+    - Nhập: `1*0.36 + 2*0.15 + 3*0.08 + 4*0.06 + 5*0.03 + 6*0.01 =` $\to$ ra `1.35`.
+  - **Cách 2: Menu Thống kê 6:**
+    - Nhập cột $x$ và cột tần số xác suất `FREQ`, bấm `[OPTN]` `[2]` $\implies$ Đọc ngay dòng đầu $\bar{x} = 1.35$.
+- **BƯỚC 5: Kết luận:**
+  - Đáp án chính xác: **1.35** (Chọn phương án **C**).
+
+---
+
+## Câu 13: Xác Suất "Ít Nhất Hai Vụ Tai Nạn" (At Least Two Accidents)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 13 (Single Choice):**
+> The following probability distribution has been assessed for the number of accidents that occur in a mid western city each day.
+> 
+> | Accidents | Probability |
+> | :---: | :---: |
+> | 0 | 0.25 |
+> | 1 | 0.20 |
+> | 2 | 0.30 |
+> | 3 | 0.15 |
+> | 4 | 0.10 |
+> 
+> Based on the data given below, find the probability that there are at least two accidents per day.
+> - A. 0.55
+> - B. None of the others
+> - C. 0.75
+> - D. 0.45
+
+### 2. Dịch nghĩa tiếng Việt:
+Phân phối xác suất sau đây được đánh giá cho số vụ tai nạn xảy ra tại một thành phố miền Trung Tây mỗi ngày. Dựa trên dữ liệu dưới đây, hãy tìm xác suất để có ít nhất hai vụ tai nạn mỗi ngày.
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Biến ngẫu nhiên $X$ nhận các giá trị $\{0, 1, 2, 3, 4\}$.
+  - Cần tính xác suất: "at least two accidents", nghĩa là $X \ge 2$.
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - Các giá trị thỏa mãn $X \ge 2$ gồm: $X = 2, X = 3, X = 4$.
+  - Công thức cộng trực tiếp:
+    $$P(X \ge 2) = P(X = 2) + P(X = 3) + P(X = 4)$$
+  - Hoặc công thức biến cố đối:
+    $$P(X \ge 2) = 1 - [P(X = 0) + P(X = 1)]$$
+- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
+  - Theo cách cộng trực tiếp:
+    $$P(X \ge 2) = 0.30 + 0.15 + 0.10 = 0.55$$
+  - Theo biến cố đối:
+    $$P(X \ge 2) = 1 - (0.25 + 0.20) = 1 - 0.45 = 0.55$$
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - Bấm: `[MENU]` `[1]`
+  - Nhập: `0.30 + 0.15 + 0.10 =` $\to$ ra `0.55`.
+- **BƯỚC 5: Kết luận:**
+  - Đáp án chính xác: **0.55** (Nếu đề thi có phương án 0.55 thì chọn **0.55**; nếu các phương án số không có 0.55 thì chọn **None of the others**).
+
+---
+
+## Câu 14: Phân Phối Poisson - Xác Suất "Ít Hơn 3" (Poisson Less Than 3)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 14 (Single Choice):**
+> The local police department must write, on average, 5 tickets a day to keep department revenues at budgeted levels. Suppose the number of tickets written per day follows a Poisson distribution with a mean of 6.4 tickets per day. Find the probability that less than 3 tickets are written on a randomly selected day from this population.
+> - A. 0.5423
+> - B. 0.1189
+> - C. 0.0463
+> - D. 0.3834
+
+### 2. Dịch nghĩa tiếng Việt:
+Cục cảnh sát địa phương trung bình phải ghi 5 vé phạt mỗi ngày để duy trì ngân sách dự toán của cơ quan. Giả sử số lượng vé phạt được ghi mỗi ngày tuân theo phân phối Poisson với trung bình là 6.4 vé mỗi ngày. Tìm xác suất để có ít hơn 3 vé phạt được ghi trong một ngày được chọn ngẫu nhiên từ tổng thể này.
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Nhận diện bẫy đề bài: Con số "5 tickets" là mục tiêu ngân sách mang tính chất gây nhiễu.
+  - Tham số phân phối Poisson thực tế của biến ngẫu nhiên $X$ (số vé ghi mỗi ngày) là: $\lambda = 6.4$.
+  - Yêu cầu: Tính xác suất "ít hơn 3 vé", tức $P(X < 3)$.
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - Vì phân phối Poisson là phân phối rời rạc nhận các giá trị nguyên không âm $0, 1, 2, ...$, biến cố $X < 3$ tương đương với $X \le 2$:
+    $$P(X < 3) = P(X \le 2) = P(X = 0) + P(X = 1) + P(X = 2)$$
+  - Công thức Poisson: $P(X = k) = \frac{e^{-\lambda} \cdot \lambda^k}{k!}$
+- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
+  $$P(X \le 2) = e^{-6.4} \left( \frac{6.4^0}{0!} + \frac{6.4^1}{1!} + \frac{6.4^2}{2!} \right)$$
+  $$= e^{-6.4} \left( 1 + 6.4 + \frac{40.96}{2} \right) = e^{-6.4} (1 + 6.4 + 20.48) = 27.88 \cdot e^{-6.4}$$
+  - Ta có $e^{-6.4} \approx 0.001661557$.
+  - Tính tích:
+    $$P(X < 3) \approx 27.88 \times 0.001661557 \approx 0.046324 \approx 0.0463$$
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - **Cách 1: Sử dụng chức năng Poisson tích lũy (Poisson CD) - Cực đỉnh:**
+    - Bấm: `[MENU]` `[7]` (Phân phối Distribution).
+    - Bấm: `[▼]` `[3]` (Poisson CD).
+    - Chọn `[1]` (Variable).
+    - Nhập: $x$: bấm `2` `[=]` (vì $X < 3 \iff X \le 2$).
+    - Nhập: $\lambda$: bấm `6.4` `[=]`.
+    - Bấm `[=]` $\to$ Máy hiện ngay: `0.046324...` $\approx 0.0463$!
+  - **Cách 2: Bấm công thức ở Menu 1:**
+    - Nhập: `27.88 * [SHIFT] [ln] ( - 6.4 ) =` $\to$ ra `0.046324...`
+- **BƯỚC 5: Kết luận:**
+  - Đáp án chính xác: **0.0463** (Chọn phương án **C**).
+
+---
+
+## Câu 15: Xác Suất Trung Bình Mẫu Smartphone Apps
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 15 (Single Choice):**
+> According to a report by App Annie, a business intelligence company that produces tools and reports for the apps and digital goods industry, smartphone owners are using an average of 30 apps per month. Assume that number of apps used per month by smartphone owners is normally distributed and that the standard deviation is 5. If you select a random sample of 25 smartphone owners. What is the probability that the sample mean is between 29 and 31?
+> Let P(Z < -1) = 0.1587, P(Z < 1) = 0.8413, P(Z < -2) = 0.0228, P(Z < 2) = 0.9772.
+> - A. 0.9544
+> - B. 0.8413
+> - C. 0.9772
+> - D. 0.6826
+
+### 2. Dịch nghĩa tiếng Việt:
+Theo báo cáo của App Annie, chủ sở hữu điện thoại thông minh sử dụng trung bình 30 ứng dụng mỗi tháng. Giả sử số ứng dụng được sử dụng mỗi tháng tuân theo phân phối chuẩn với độ lệch chuẩn là 5. Nếu bạn chọn ngẫu nhiên một mẫu gồm 25 chủ điện thoại thông minh, xác suất để giá trị trung bình mẫu nằm trong khoảng từ 29 đến 31 là bao nhiêu?
+Cho biết: P(Z < -1) = 0.1587; P(Z < 1) = 0.8413; P(Z < -2) = 0.0228; P(Z < 2) = 0.9772.
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Tổng thể: $\mu = 30$, $\sigma = 5$.
+  - Cỡ mẫu: $n = 25$.
+  - Cần tính xác suất đối với trung bình mẫu: $P(29 \le \bar{X} \le 31)$.
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - Sai số chuẩn của trung bình mẫu:
+    $$\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}} = \frac{5}{\sqrt{25}} = \frac{5}{5} = 1$$
+  - Chuẩn hóa Z cho hai giá trị biên:
+    $$Z_1 = \frac{\bar{x}_1 - \mu}{\sigma_{\bar{x}}} = \frac{29 - 30}{1} = -1.00$$
+    $$Z_2 = \frac{\bar{x}_2 - \mu}{\sigma_{\bar{x}}} = \frac{31 - 30}{1} = +1.00$$
+  - Xác suất:
+    $$P(29 \le \bar{X} \le 31) = P(-1 \le Z \le 1) = P(Z < 1) - P(Z < -1)$$
+- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
+  - Thay số liệu từ đề bài:
+    $$P(-1 \le Z \le 1) = 0.8413 - 0.1587 = 0.6826$$
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - Bấm: `[MENU]` `[1]`
+  - Nhập: `0.8413 - 0.1587 =` $\to$ ra `0.6826`.
+  - Hoặc kiểm tra bằng Normal CD: `[MENU]` `[7]` `[2]`, Lower: `29`, Upper: `31`, $\sigma = 1$, $\mu = 30$ $\to$ ra `0.682689...` $\approx 0.6826$.
+- **BƯỚC 5: Kết luận:**
+  - Đáp án chính xác: **0.6826** (Chọn phương án **D**).
+
+---
+
+## Câu 16: Tỷ Lệ Mẫu Điện Thoại Di Động Có Internet (Sample Proportion)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 16 (Single Choice):**
+> A random sample of 120 households was selected for a telephone survey. The key question asked was, "Do you or any member of your household own a cellular telephone that you can use to access the internet?" Of the 120 respondents, 75 said yes and 45 said no. Determine the sample proportion of households with cellular telephones that can be used to access the internet
+> - A. 0.5
+> - B. 0.625
+> - C. 0.125
+> - D. 0.75
+
+### 2. Dịch nghĩa tiếng Việt:
+Một mẫu ngẫu nhiên gồm 120 hộ gia đình được chọn cho một cuộc khảo sát qua điện thoại. Câu hỏi then chốt là: "Bạn hoặc bất kỳ thành viên nào trong gia đình bạn có sở hữu điện thoại di động có thể sử dụng để truy cập internet không?" Trong số 120 người trả lời, 75 người trả lời có và 45 người trả lời không. Xác định tỷ lệ mẫu (sample proportion) của các hộ gia đình có điện thoại di động có thể truy cập internet.
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Cỡ mẫu khảo sát: $n = 120$ hộ gia đình.
+  - Số hộ trả lời "Có" (sở hữu điện thoại có internet): $X = 75$.
+  - Số hộ trả lời "Không": $45$.
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - Tỷ lệ mẫu (ký hiệu là $\bar{p}$ hoặc $\hat{p}$):
+    $$\bar{p} = \frac{X}{n}$$
+- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
+  $$\bar{p} = \frac{75}{120} = \frac{5}{8} = 0.625$$
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - Bấm: `[MENU]` `[1]`
+  - Nhập: `75` `[÷]` `120` `[=]`
+  - Máy hiện phân số `5/8`, bấm phím `[S<=>D]` để chuyển sang số thập phân $\to$ `0.625`.
+- **BƯỚC 5: Kết luận:**
+  - Đáp án chính xác: **0.625** (Chọn phương án **B**).
+
+---
+
+## Câu 17: Độ Lệch Chuẩn Của Phân Phối Nhị Thức (Binomial Standard Deviation)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 17 (Single Choice):**
+> If n=10 and p=0.70, then the standard deviation of the binomial distribution is __
+> - A. 14.29
+> - B. 1.45
+> - C. 7
+> - D. 0.07
+
+### 2. Dịch nghĩa tiếng Việt:
+Nếu $n = 10$ và $p = 0.70$, thì độ lệch chuẩn của phân phối nhị thức là:
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Phân phối nhị thức với các tham số: $n = 10$, $p = 0.70$.
+  - Xác suất thất bại: $q = 1 - p = 1 - 0.70 = 0.30$.
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - Phương sai của biến ngẫu nhiên nhị thức $X$:
+    $$\sigma^2 = Var(X) = n \cdot p \cdot (1 - p)$$
+  - Độ lệch chuẩn là căn bậc hai của phương sai:
+    $$\sigma = \sqrt{n \cdot p \cdot (1 - p)}$$
+- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
+  $$\sigma = \sqrt{10 \times 0.70 \times (1 - 0.70)} = \sqrt{10 \times 0.70 \times 0.30} = \sqrt{2.1}$$
+  $$\sigma \approx 1.4491376... \approx 1.45$$
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - Bấm: `[MENU]` `[1]`
+  - Nhập: `[√]` `10` `[×]` `0.7` `[×]` `0.3` `[=]`
+  - Màn hình hiển thị: `1.449137675` $\implies$ Làm tròn đến 2 chữ số thập phân là `1.45`.
+- **BƯỚC 5: Kết luận:**
+  - Đáp án chính xác: **1.45** (Chọn phương án **B**).
+
+---
+
+## Câu 18: Bài Toán Ngược Phân Phối Chuẩn Tìm Giá Trị Tới Hạn c (Inverse Normal)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 18 (Single Choice):**
+> Assume that Z scores are normally distributed with a mean of 0 and a standard deviation of 1. If P(Z > c) = 0.2090, find c.
+> Let P(Z < 0.81) = 0.791, P(Z < 0.27) = 0.6064, P(Z < 0.45) = 0.6736, P(Z < -0.81) = 0.2090.
+> - A. 0.27
+> - B. 0.81
+> - C. 0.45
+> - D. -0.81
+
+### 2. Dịch nghĩa tiếng Việt:
+Giả sử điểm Z tuân theo phân phối chuẩn với trung bình bằng 0 và độ lệch chuẩn bằng 1. Nếu P(Z > c) = 0.2090, hãy tìm c.
+Cho biết: P(Z < 0.81) = 0.791; P(Z < 0.27) = 0.6064; P(Z < 0.45) = 0.6736; P(Z < -0.81) = 0.2090.
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Phân phối chuẩn hóa $Z \sim N(0, 1)$.
+  - Phương trình xác suất: $P(Z > c) = 0.2090$.
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - **Cách suy luận 1 (Qua diện tích tích lũy bên trái):**
+    $$P(Z \le c) = 1 - P(Z > c) = 1 - 0.2090 = 0.7910$$
+  - **Cách suy luận 2 (Tính chất đối xứng của đường cong Gauss):**
+    Vì phân phối chuẩn đối xứng hoàn hảo qua $Z = 0$, diện tích phần đuôi bên phải vượt quá $+c$ bằng đúng diện tích phần đuôi bên trái nhỏ hơn $-c$:
+    $$P(Z > c) = P(Z < -c)$$
+- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
+  - Theo Cách 1: Đề bài cho $P(Z < 0.81) = 0.791$, do đó $c = 0.81$.
+  - Theo Cách 2: Đề bài cho $P(Z < -0.81) = 0.2090 \implies -c = -0.81 \implies c = 0.81$.
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - **Cách 1: Sử dụng chức năng Phân phối chuẩn ngược (Inverse Normal):**
+    - Bấm: `[MENU]` `[7]` (Phân phối Distribution).
+    - Chọn: `[3]` (Inverse Normal).
+    - Diện tích tích lũy bên trái (Area): nhập `1 - 0.2090` (hoặc `0.791`) `[=]`.
+    - $\sigma$: nhập `1` `[=]`.
+    - $\mu$: nhập `0` `[=]`.
+    - Bấm `[=]` $\to$ Màn hình hiển thị: `0.80989...` $\approx 0.81$!
+  - **Cách 2: Tính tay ở Menu 1:**
+    - Nhập: `1 - 0.2090 =` $\to$ ra `0.791`, nhìn vào dữ kiện đề cho ứng với Z = `0.81`.
+- **BƯỚC 5: Kết luận:**
+  - Đáp án chính xác: **0.81** (Chọn phương án **B**).
+
+---
+
+## Câu 19: Xác Suất Tỷ Lệ Mẫu Thế Hệ Millennials (Proportion Sampling Distribution)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 19 (Single Choice):**
+> What do millennials around the world want in a job? A Deloitte survey of millennials on work-life challenges found that millennials are looking for stability in an uncertain world, with 65% of millennials preferring a permanent, full-time job rather than working freelance or as a consultant on a flexible or short-term basis. Suppose you select a sample of 100 millennials. What is the probability that in the sample fewer than 70% prefer a permanent, full-time job?
+> Let P(Z < 1.048) = 0.8527, P(Z < -0.6569) = 0.2556, P(Z < 0.5035) = 0.6927.
+> - A. 0.2556
+> - B. 0.6927
+> - C. 0.3448
+> - D. 0.8527
+
+### 2. Dịch nghĩa tiếng Việt:
+Thế hệ millennials trên thế giới mong muốn điều gì trong công việc? Một cuộc khảo sát của Deloitte về những thách thức cân bằng công việc - cuộc sống cho thấy thế hệ millennial đang tìm kiếm sự ổn định trong một thế giới bất định, với 65% số người thuộc thế hệ millennial thích một công việc cố định, toàn thời gian hơn là làm việc tự do (freelance) hoặc làm cố vấn linh hoạt/ngắn hạn. Giả sử bạn chọn một mẫu gồm 100 người thuộc thế hệ millennial. Xác suất để trong mẫu có ít hơn 70% thích công việc cố định, toàn thời gian là bao nhiêu?
+Cho biết: P(Z < 1.048) = 0.8527; P(Z < -0.6569) = 0.2556; P(Z < 0.5035) = 0.6927.
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Tỷ lệ tổng thể (population proportion): $p = 65\% = 0.65$.
+  - Kích thước mẫu: $n = 100$.
+  - Cần tính xác suất tỷ lệ mẫu ít hơn 70%: $P(\bar{p} < 0.70)$.
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - Kiểm tra điều kiện xấp xỉ chuẩn:
+    $$np = 100 \times 0.65 = 65 \ge 5$$
+    $$n(1 - p) = 100 \times 0.35 = 35 \ge 5$$
+    (Thỏa mãn điều kiện định lý CLT đối với tỷ lệ).
+  - Sai số chuẩn của phân phối chọn mẫu tỷ lệ:
+    $$\sigma_{\bar{p}} = \sqrt{\frac{p(1 - p)}{n}}$$
+  - Chuẩn hóa Z-score:
+    $$Z = \frac{\bar{p} - p}{\sigma_{\bar{p}}} = \frac{\bar{p} - p}{\sqrt{\frac{p(1 - p)}{n}}}$$
+- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
+  - Tính sai số chuẩn:
+    $$\sigma_{\bar{p}} = \sqrt{\frac{0.65 \times (1 - 0.65)}{100}} = \sqrt{\frac{0.65 \times 0.35}{100}} = \sqrt{\frac{0.2275}{100}} = \sqrt{0.002275} \approx 0.047697$$
+  - Tính điểm Z:
+    $$Z = \frac{0.70 - 0.65}{0.047697} = \frac{0.05}{0.047697} \approx 1.04828... \approx 1.048$$
+  - Xác suất cần tìm:
+    $$P(\bar{p} < 0.70) = P(Z < 1.048)$$
+  - Tra giá trị đề bài cung cấp: $P(Z < 1.048) = 0.8527$.
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - **Cách 1: Tính Z tại Menu 1:**
+    - Bấm: `[MENU]` `[1]`
+    - Nhập biểu thức: `[(■/□)]` `0.70 - 0.65` `[▼]` `[√]` `[(■/□)]` `0.65 * 0.35` `[▼]` `100` `[=]`
+    - Màn hình hiển thị: `1.04828...` $\implies$ Khớp với mốc $Z = 1.048$, từ đó đối chiếu với đề bài chọn ngay số liệu $0.8527$.
+  - **Cách 2: Bấm Normal CD trực tiếp:**
+    - Bấm: `[MENU]` `[7]` `[2]`
+    - Lower: `-9999` `[=]`
+    - Upper: `0.70` `[=]`
+    - $\sigma$: `[√]` `( 0.65 * 0.35 / 100 )` `[=]`
+    - $\mu$: `0.65` `[=]`
+    - Bấm `[=]` $\to$ Ra kết quả: `0.85275...` $\approx 0.8527$.
+- **BƯỚC 5: Kết luận:**
+  - Đáp án chính xác: **0.8527** (Chọn phương án **D**).
+
+---
+
+## Câu 20: Hệ Số Tương Quan Mẫu r (Sample Correlation Coefficient)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 20 (Single Choice):**
+> FPT Retail sells IT products in their shops and wanted to examine the relationship between price and demand. The price of a smart phone was adjusted each week and the weekly sales were recorded in the table.
+> 
+> | Price (\$) | \$120 | \$110 | \$100 |
+> | :---: | :---: | :---: | :---: |
+> | **Sales** | 7 | 4 | 10 |
+> 
+> Find the sample correlation coefficient.
+> - A. 0.5
+> - B. -0.92
+> - C. -0.5
+> - D. 0.92
+
+### 2. Dịch nghĩa tiếng Việt:
+FPT Retail bán các sản phẩm công nghệ thông tin tại các cửa hàng của họ và muốn kiểm tra mối quan hệ giữa giá cả và nhu cầu. Giá của một chiếc điện thoại thông minh được điều chỉnh mỗi tuần và doanh số bán hàng hàng tuần được ghi lại trong bảng:
+| Giá bán (Price - X) | \$120 | \$110 | \$100 |
+| :---: | :---: | :---: | :---: |
+| **Doanh số (Sales - Y)** | 7 | 4 | 10 |
+Hãy tìm hệ số tương quan mẫu (sample correlation coefficient - r).
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Cỡ mẫu: $n = 3$ tuần quan sát.
+  - Biến $X$ (Giá): $\{120, 110, 100\}$
+  - Biến $Y$ (Doanh số): $\{7, 4, 10\}$
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - Hệ số tương quan Pearson $r$:
+    $$r = \frac{\text{Cov}(X, Y)}{S_X \cdot S_Y} = \frac{\sum (X - \bar{X})(Y - \bar{Y})}{\sqrt{\sum (X - \bar{X})^2 \cdot \sum (Y - \bar{Y})^2}}$$
+- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
+  - **Tính giá trị trung bình:**
+    $$\bar{X} = \frac{120 + 110 + 100}{3} = \frac{330}{3} = 110$$
+    $$\bar{Y} = \frac{7 + 4 + 10}{3} = \frac{21}{3} = 7$$
+  - **Lập bảng tính độ lệch:**
+    - Điểm 1: $(120 - 110 = 10)$, $(7 - 7 = 0) \implies (X-\bar{X})(Y-\bar{Y}) = 0$
+    - Điểm 2: $(110 - 110 = 0)$, $(4 - 7 = -3) \implies (X-\bar{X})(Y-\bar{Y}) = 0$
+    - Điểm 3: $(100 - 110 = -10)$, $(10 - 7 = 3) \implies (X-\bar{X})(Y-\bar{Y}) = -30$
+  - **Tổng tích sai lệch (Tử số):**
+    $$\sum (X - \bar{X})(Y - \bar{Y}) = 0 + 0 + (-30) = -30$$
+  - **Tổng bình phương sai lệch (Mẫu số):**
+    $$\sum (X - \bar{X})^2 = 10^2 + 0^2 + (-10)^2 = 100 + 0 + 100 = 200$$
+    $$\sum (Y - \bar{Y})^2 = 0^2 + (-3)^2 + 3^2 = 0 + 9 + 9 = 18$$
+  - **Tính hệ số tương quan $r$:**
+    $$r = \frac{-30}{\sqrt{200 \times 18}} = \frac{-30}{\sqrt{3600}} = \frac{-30}{60} = -0.5$$
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X (Ra ngay kết quả trong 5 giây):**
+  - **Bước A (Chọn mô hình hồi quy 2 biến):**
+    - Bấm: `[MENU]` `[6]` (Statistics).
+    - Chọn: `[2]` ($y = a + bx$).
+  - **Bước B (Nhập dữ liệu 2 cột X và Y):**
+    - Cột `x`: Bấm `120` `[=]`, `110` `[=]`, `100` `[=]`.
+    - Dùng phím mũi tên điều hướng sang cột `y` lên trên cùng:
+    - Cột `y`: Bấm `7` `[=]`, `4` `[=]`, `10` `[=]`.
+  - **Bước C (Xuất kết quả hệ số r):**
+    - Bấm phím `[OPTN]`.
+    - Chọn `[3]` (Regression Calc - Phân tích hồi quy).
+  - **Bước D (Đọc màn hình):**
+    - Dòng $a = 62$ (hệ số chặn)
+    - Dòng $b = -0.5$ (hệ số góc)
+    - Dòng $r = -0.5$ (hệ số tương quan cần tìm) $\implies$ Chọn ngay **-0.5**!
+- **BƯỚC 5: Kết luận:**
+  - Đáp án chính xác: **-0.5** (Chọn phương án **C**).
+</script>
+
+  <script>
+    // 1. Theme Management
+    function initTheme() {
+      const savedTheme = localStorage.getItem('cai_xanh_theme') || 'light';
+      document.documentElement.setAttribute('data-theme', savedTheme);
+    }
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme');
+      const next = current === 'dark' ? 'light' : 'dark';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('cai_xanh_theme', next);
+    }
+    initTheme();
+
+    // 2. Mobile Sidebar Toggle & Scroll
+    function toggleSidebar() {
+      document.getElementById('sidebar').classList.toggle('open');
+    }
+    function scrollToCalc() {
+      document.getElementById('mini-calculator').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    // 3. Render Markdown & KaTeX with MATH & CURRENCY PROTECTION
+    window.addEventListener('DOMContentLoaded', () => {
+      let rawText = document.getElementById('markdown-source').textContent;
+
+      // STEP 0: Protect escaped currency \$ from being captured by KaTeX inline math regex
+      rawText = rawText.replace(/\\(\$)/g, '___LITERAL_DOLLAR___');
+
+      // STEP A: Transform GitHub alerts into custom alert divs BEFORE Marked
+      rawText = rawText.replace(/^>\s*\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\s*\n((?:>.*(?:\n|$))*)/gmi, function(match, type, content) {
+        const cleanContent = content.replace(/^>\s?/gm, '');
+        const alertConfig = {
+          NOTE: { title: 'BẢN CHẤT TRỌNG TÂM', icon: '💡', cls: 'alert-note' },
+          TIP: { title: 'MẸO THI & KINH NGHIỆM', icon: '⭐', cls: 'alert-tip' },
+          IMPORTANT: { title: 'QUY CHUẨN BẮT BUỘC', icon: '🔥', cls: 'alert-important' },
+          WARNING: { title: 'LƯU Ý TRÁNH BẪY', icon: '⚠️', cls: 'alert-warning' },
+          CAUTION: { title: 'PHÂN BIỆT SỐNG CÒN', icon: '🚨', cls: 'alert-caution' }
+        };
+        const cfg = alertConfig[type.toUpperCase()] || { title: type, icon: '📌', cls: 'alert-note' };
+        return `\n\n<div class="custom-alert ${cfg.cls}">\n<div class="alert-title"><span class="alert-icon">${cfg.icon}</span> ${cfg.title}</div>\n\n${cleanContent}\n\n</div>\n\n`;
+      });
+
+      // STEP B: Protect Math formulas so Marked.js never corrupts underscores or brackets
+      const mathStore = [];
+      // Protect Display Math $$ ... $$
+      let processedText = rawText.replace(/\$\$([\s\S]*?)\$\$/g, function(match) {
+        mathStore.push(match);
+        return `<!--MATH_BLOCK_${mathStore.length - 1}-->`;
+      });
+      // Protect Inline Math $ ... $
+      processedText = processedText.replace(/\$([^\$\n\r]+?)\$/g, function(match) {
+        mathStore.push(match);
+        return `<!--MATH_BLOCK_${mathStore.length - 1}-->`;
+      });
+
+      // STEP C: Parse Markdown
+      marked.setOptions({
+        gfm: true,
+        breaks: false,
+        headerIds: true
+      });
+
+      let html = marked.parse(processedText);
+
+      // STEP D: Restore Math formulas exactly as original
+      html = html.replace(/(?:<code>)?(?:\&lt;!--|<!--)MATH_BLOCK_(\d+)(?:--\&gt;|-->)(?:<\/code>)?/g, function(match, idx) {
+        return mathStore[parseInt(idx)];
+      });
+
+      // STEP D2: Restore Dollar Currency as span to prevent KaTeX from parsing them
+      html = html.replace(/___LITERAL_DOLLAR___/g, '<span class="currency-symbol">$</span>');
+
+      const articleEl = document.getElementById('article-content');
+      articleEl.innerHTML = html;
+
+      // STEP E: Transform Casio keys into 3D buttons
+      const codeElements = articleEl.querySelectorAll('code');
+      codeElements.forEach(el => {
+        const txt = el.textContent.trim();
+        if (txt.startsWith('[') && txt.endsWith(']')) {
+          el.className = 'casio-key';
+        }
+      });
+
+      // STEP F: Render KaTeX with STRICT delimiters ($ and $$ only!)
+      renderMathInElement(articleEl, {
+        delimiters: [
+          {left: '$$', right: '$$', display: true},
+          {left: '$', right: '$', display: false}
+        ],
+        throwOnError: false
+      });
+
+      // STEP G: Build Table of Contents & Inject Heading Note Triggers
+      buildTOC();
+
+      // STEP H: Initialize Notes System
+      initNotesSystem();
+    });
+
+    // 4. Build Table of Contents & Inline Note Triggers
+    function buildTOC() {
+      const article = document.getElementById('article-content');
+      const headings = article.querySelectorAll('h1, h2, h3');
+      const tocList = document.getElementById('toc-list');
+      tocList.innerHTML = '';
+
+      let currentH1Li = null;
+      let currentSubUl = null;
+
+      headings.forEach((h, index) => {
+        const id = 'heading-' + index;
+        h.id = id;
+        const text = h.textContent.replace(/^#+\s*/, '').trim();
+
+        if (h.tagName === 'H1') {
+          currentH1Li = document.createElement('li');
+          currentH1Li.className = 'toc-item';
+          currentH1Li.innerHTML = `<a href="#${id}">${text}</a>`;
+          currentSubUl = document.createElement('ul');
+          currentSubUl.className = 'toc-sublist';
+          currentH1Li.appendChild(currentSubUl);
+          tocList.appendChild(currentH1Li);
+        } else if (h.tagName === 'H2') {
+          if (currentSubUl) {
+            const subLi = document.createElement('li');
+            subLi.innerHTML = `<a href="#${id}">${text}</a>`;
+            currentSubUl.appendChild(subLi);
+          }
+
+          // Inject Inline Note Button for H2 Headings
+          const noteBtn = document.createElement('button');
+          noteBtn.className = 'btn-heading-note';
+          noteBtn.id = 'note-btn-' + id;
+          noteBtn.innerHTML = `📝 Ghi chú <span class="heading-note-badge" id="badge-${id}" style="display:none;">0</span>`;
+          noteBtn.onclick = () => openNoteDrawerForHeading(id, text);
+          h.appendChild(noteBtn);
+        }
+      });
+
+      // Setup Scrollspy
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const id = entry.target.id;
+            document.querySelectorAll('.toc-item, .toc-sublist li').forEach(el => el.classList.remove('active'));
+            const activeLink = document.querySelector(`.sidebar a[href="#${id}"]`);
+            if (activeLink) {
+              activeLink.parentElement.classList.add('active');
+            }
+          }
+        });
+      }, { rootMargin: '-20% 0px -70% 0px' });
+
+      headings.forEach(h => observer.observe(h));
+    }
+
+    // 5. Search Filter in TOC
+    function filterTOC() {
+      const query = document.getElementById('search-input').value.toLowerCase();
+      const items = document.querySelectorAll('.toc-item');
+      items.forEach(item => {
+        const text = item.textContent.toLowerCase();
+        if (text.includes(query)) {
+          item.style.display = 'block';
+        } else {
+          item.style.display = 'none';
+        }
+      });
+    }
+
+    // =========================================================================
+    // 6. NOTE-TAKING SYSTEM (SỔ TAY GHI CHÚ MAS202)
+    // =========================================================================
+    const NOTES_STORAGE_KEY = 'cai_xanh_notes_mas202_v2';
+    let currentFilterTag = 'all';
+
+    function getStoredNotes() {
+      try {
+        const raw = localStorage.getItem(NOTES_STORAGE_KEY);
+        return raw ? JSON.parse(raw) : [];
+      } catch (e) {
+        console.error("Error reading notes from localStorage:", e);
+        return [];
+      }
+    }
+
+    function setStoredNotes(notes) {
+      try {
+        localStorage.setItem(NOTES_STORAGE_KEY, JSON.stringify(notes));
+      } catch (e) {
+        console.error("Error writing notes to localStorage:", e);
+      }
+    }
+
+    function initNotesSystem() {
+      updateNotesBadges();
+      renderNotesList();
+
+      // Keyboard shortcuts for textarea
+      const textarea = document.getElementById('note-text-input');
+      textarea.addEventListener('keydown', (e) => {
+        if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+          e.preventDefault();
+          saveNote();
+        }
+      });
+
+      // Escape key to close drawer
+      document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') {
+          toggleNotesDrawer(false);
+        }
+      });
+    }
+
+    function toggleNotesDrawer(forceState) {
+      const drawer = document.getElementById('notes-drawer');
+      const backdrop = document.getElementById('notes-backdrop');
+      const isOpen = drawer.classList.contains('open');
+      const newState = (forceState !== undefined) ? forceState : !isOpen;
+
+      if (newState) {
+        drawer.classList.add('open');
+        backdrop.classList.add('open');
+        document.body.style.overflow = 'hidden';
+        renderNotesList();
+      } else {
+        drawer.classList.remove('open');
+        backdrop.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+    }
+
+    function openNoteDrawerForHeading(targetId, headingText) {
+      toggleNotesDrawer(true);
+
+      // Clean heading text (remove note button text if captured)
+      const cleanText = headingText.replace(/📝\s*Ghi chú.*$/g, '').trim();
+
+      document.getElementById('note-target-id').value = targetId;
+      document.getElementById('note-topic-input').value = cleanText;
+      document.getElementById('btn-clear-target').style.display = 'inline-block';
+      document.getElementById('editor-title').textContent = '➕ Thêm Note: ' + (cleanText.length > 25 ? cleanText.substring(0, 25) + '...' : cleanText);
+      
+      const textarea = document.getElementById('note-text-input');
+      textarea.focus();
+      textarea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function resetNoteTarget() {
+      document.getElementById('note-target-id').value = '';
+      document.getElementById('note-topic-input').value = '';
+      document.getElementById('btn-clear-target').style.display = 'none';
+      document.getElementById('editor-title').textContent = '➕ Thêm Ghi Chú Mới';
+    }
+
+    function saveNote() {
+      const topicInput = document.getElementById('note-topic-input');
+      const textInput = document.getElementById('note-text-input');
+      const targetIdInput = document.getElementById('note-target-id');
+      const editIdInput = document.getElementById('note-edit-id') || { value: '' };
+
+      const content = textInput.value.trim();
+      if (!content) {
+        showToast("⚠️ Vui lòng nhập nội dung ghi chú!");
+        textInput.focus();
+        return;
+      }
+
+      const topic = topicInput.value.trim() || 'Ghi chú chung';
+      const targetId = targetIdInput.value.trim();
+      const notes = getStoredNotes();
+      const editId = document.getElementById('note-id-input').value;
+
+      if (editId) {
+        // Update existing note
+        const idx = notes.findIndex(n => n.id === editId);
+        if (idx !== -1) {
+          notes[idx].topic = topic;
+          notes[idx].content = content;
+          notes[idx].targetId = targetId;
+          notes[idx].updatedAt = Date.now();
+          showToast("✅ Đã cập nhật ghi chú!");
+        }
+      } else {
+        // Create new note
+        const newNote = {
+          id: 'note_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5),
+          targetId: targetId,
+          topic: topic,
+          content: content,
+          createdAt: Date.now(),
+          updatedAt: Date.now()
+        };
+        notes.unshift(newNote);
+        showToast("✅ Đã lưu ghi chú mới!");
+      }
+
+      setStoredNotes(notes);
+      cancelEditNote();
+      updateNotesBadges();
+      renderNotesList();
+    }
+
+    function editNote(id) {
+      const notes = getStoredNotes();
+      const note = notes.find(n => n.id === id);
+      if (!note) return;
+
+      document.getElementById('note-id-input').value = note.id;
+      document.getElementById('note-target-id').value = note.targetId || '';
+      document.getElementById('note-topic-input').value = note.topic || '';
+      document.getElementById('note-text-input').value = note.content || '';
+
+      document.getElementById('editor-title').textContent = '✏️ Chỉnh Sửa Ghi Chú';
+      document.getElementById('btn-cancel-edit').style.display = 'inline-block';
+      if (note.targetId) {
+        document.getElementById('btn-clear-target').style.display = 'inline-block';
+      }
+
+      const textarea = document.getElementById('note-text-input');
+      textarea.focus();
+      textarea.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+
+    function cancelEditNote() {
+      document.getElementById('note-id-input').value = '';
+      document.getElementById('note-text-input').value = '';
+      document.getElementById('btn-cancel-edit').style.display = 'none';
+      resetNoteTarget();
+    }
+
+    function deleteNote(id) {
+      if (!confirm("Bạn có chắc chắn muốn xóa ghi chú này?")) return;
+
+      let notes = getStoredNotes();
+      notes = notes.filter(n => n.id !== id);
+      setStoredNotes(notes);
+
+      if (document.getElementById('note-id-input').value === id) {
+        cancelEditNote();
+      }
+
+      updateNotesBadges();
+      renderNotesList();
+      showToast("🗑️ Đã xóa ghi chú!");
+    }
+
+    function clearAllNotes() {
+      const notes = getStoredNotes();
+      if (notes.length === 0) {
+        showToast("🌿 Chưa có ghi chú nào để xóa!");
+        return;
+      }
+      if (!confirm(`Bạn có chắc chắn muốn xóa TOÀN BỘ ${notes.length} ghi chú không? Thao tác này không thể hoàn tác!`)) {
+        return;
+      }
+
+      setStoredNotes([]);
+      cancelEditNote();
+      updateNotesBadges();
+      renderNotesList();
+      showToast("🧹 Đã xóa toàn bộ ghi chú!");
+    }
+
+    function copyNoteContent(id) {
+      const notes = getStoredNotes();
+      const note = notes.find(n => n.id === id);
+      if (!note) return;
+
+      const text = `[${note.topic}]\n${note.content}`;
+      navigator.clipboard.writeText(text).then(() => {
+        showToast("📋 Đã sao chép nội dung!");
+      }).catch(() => {
+        showToast("⚠️ Không thể sao chép tự động!");
+      });
+    }
+
+    function jumpToHeadingFromNote(targetId) {
+      if (!targetId) return;
+      const el = document.getElementById(targetId);
+      if (el) {
+        toggleNotesDrawer(false);
+        el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        el.classList.add('highlight-target');
+        setTimeout(() => el.classList.remove('highlight-target'), 2600);
+      } else {
+        showToast("⚠️ Không tìm thấy vị trí câu hỏi trên trang!");
+      }
+    }
+
+    function setFilterTag(tag, btn) {
+      currentFilterTag = tag;
+      document.querySelectorAll('.filter-tag').forEach(b => b.classList.remove('active'));
+      if (btn) btn.classList.add('active');
+      renderNotesList();
+    }
+
+    function renderNotesList() {
+      const container = document.getElementById('notes-cards-container');
+      const searchQuery = (document.getElementById('notes-search-box').value || '').toLowerCase().trim();
+      let notes = getStoredNotes();
+
+      // Filter by search query
+      if (searchQuery) {
+        notes = notes.filter(n => 
+          (n.topic && n.topic.toLowerCase().includes(searchQuery)) ||
+          (n.content && n.content.toLowerCase().includes(searchQuery))
+        );
+      }
+
+      // Filter by tag
+      if (currentFilterTag !== 'all') {
+        notes = notes.filter(n => {
+          const t = (n.topic + ' ' + (n.targetId || '')).toLowerCase();
+          if (currentFilterTag === 'quiz2') return t.includes('câu ') || t.includes('quiz') || t.includes('question');
+          if (currentFilterTag === 'ch5') return t.includes('chương 5') || t.includes('ch5') || t.includes('nhị thức') || t.includes('poisson') || t.includes('rời rạc');
+          if (currentFilterTag === 'ch6') return t.includes('chương 6') || t.includes('ch6') || t.includes('chuẩn') || t.includes('normal') || t.includes('z-score');
+          if (currentFilterTag === 'ch7') return t.includes('chương 7') || t.includes('ch7') || t.includes('cỡ mẫu') || t.includes('sample') || t.includes('trung tâm');
+          return true;
+        });
+      }
+
+      if (notes.length === 0) {
+        container.innerHTML = `
+          <div class="empty-notes-state">
+            <div class="empty-notes-icon">🥬</div>
+            <div class="empty-notes-text">
+              <strong>Chưa có ghi chú nào phù hợp!</strong><br>
+              Hãy bấm <em>"📝 Ghi chú"</em> tại các câu hỏi trắc nghiệm hoặc nhập ghi chú ở form trên để lưu lại bí kíp nhé!
+            </div>
+          </div>
+        `;
+        return;
+      }
+
+      let html = '';
+      notes.forEach(note => {
+        const d = new Date(note.createdAt);
+        const dateStr = `${d.getDate()}/${d.getMonth()+1} ${String(d.getHours()).padStart(2,'0')}:${String(d.getMinutes()).padStart(2,'0')}`;
+        const hasTarget = !!note.targetId;
+
+        html += `
+          <div class="note-card" id="card-${note.id}">
+            <div class="note-card-header">
+              <span class="note-card-topic" ${hasTarget ? `onclick="jumpToHeadingFromNote('${note.targetId}')" title="Bấm để nhảy tới vị trí này trên bài học"` : ''}>
+                ${hasTarget ? '🔗 ' : '📌 '}${escapeHtml(note.topic)}
+              </span>
+              <span class="note-card-date">${dateStr}</span>
+            </div>
+            <div class="note-card-content">${escapeHtml(note.content)}</div>
+            <div class="note-card-actions">
+              ${hasTarget ? `<button class="btn-note-act" onclick="jumpToHeadingFromNote('${note.targetId}')" title="Xem đề mục này">📍 Đi tới</button>` : ''}
+              <button class="btn-note-act" onclick="copyNoteContent('${note.id}')" title="Sao chép ghi chú">📋 Chép</button>
+              <button class="btn-note-act" onclick="editNote('${note.id}')" title="Chỉnh sửa ghi chú">✏️ Sửa</button>
+              <button class="btn-note-act btn-delete" onclick="deleteNote('${note.id}')" title="Xóa ghi chú">🗑️ Xóa</button>
+            </div>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    function updateNotesBadges() {
+      const notes = getStoredNotes();
+      const count = notes.length;
+
+      // Update header badge and fab badge
+      document.getElementById('notes-badge').textContent = count;
+      document.getElementById('notes-fab-badge').textContent = count;
+      document.getElementById('notes-count-subtitle').textContent = `${count} ghi chú đã lưu`;
+
+      // Count notes per targetId
+      const targetCounts = {};
+      notes.forEach(n => {
+        if (n.targetId) {
+          targetCounts[n.targetId] = (targetCounts[n.targetId] || 0) + 1;
+        }
+      });
+
+      // Update inline heading badges
+      document.querySelectorAll('.heading-note-badge').forEach(badge => {
+        const headingId = badge.id.replace('badge-', '');
+        const btn = document.getElementById('note-btn-' + headingId);
+        const c = targetCounts[headingId] || 0;
+
+        if (c > 0) {
+          badge.textContent = c;
+          badge.style.display = 'inline-block';
+          if (btn) btn.classList.add('has-notes');
+        } else {
+          badge.style.display = 'none';
+          if (btn) btn.classList.remove('has-notes');
+        }
+      });
+    }
+
+    function exportNotes() {
+      const notes = getStoredNotes();
+      if (notes.length === 0) {
+        showToast("⚠️ Bạn chưa có ghi chú nào để xuất file!");
+        return;
+      }
+
+      let content = "========================================================================\n";
+      content += "🥬 CẢI XANH HỌC MAS - SỔ TAY GHI CHÚ ÔN TẬP MAS202 (CHƯƠNG 5, 6, 7)\n";
+      content += `Thời gian xuất: ${new Date().toLocaleString('vi-VN')}\n`;
+      content += `Tổng số ghi chú: ${notes.length}\n`;
+      content += "========================================================================\n\n";
+
+      notes.forEach((note, idx) => {
+        const d = new Date(note.createdAt).toLocaleString('vi-VN');
+        content += `[GHI CHÚ #${idx + 1}]\n`;
+        content += `📌 Chủ đề: ${note.topic}\n`;
+        content += `⏰ Thời gian: ${d}\n`;
+        content += `✍️ Nội dung:\n${note.content}\n`;
+        content += "------------------------------------------------------------------------\n\n";
+      });
+
+      const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = `Cai_Xanh_Ghi_Chu_MAS202_${new Date().toISOString().slice(0,10)}.txt`;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+      showToast("📥 Đã xuất file ghi chú thành công!");
+    }
+
+    function showToast(msg) {
+      const toast = document.getElementById('toast-msg');
+      toast.textContent = msg;
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+      }, 2600);
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return str
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    // =========================================================================
+    // 7. Interactive Calculator Logic
+    // =========================================================================
+    function switchCalc(panelId) {
+      document.querySelectorAll('.calc-panel').forEach(p => p.style.display = 'none');
+      document.querySelectorAll('.calc-tab').forEach(t => t.classList.remove('active'));
+      document.getElementById('calc-' + panelId).style.display = 'block';
+      event.target.classList.add('active');
+    }
+
+    // Error function for Normal CDF
+    function erf(x) {
+      const a1 =  0.254829592;
+      const a2 = -0.284496736;
+      const a3 =  1.421413741;
+      const a4 = -1.453152027;
+      const a5 =  1.061405429;
+      const p  =  0.3275911;
+
+      const sign = (x >= 0) ? 1 : -1;
+      x = Math.abs(x);
+
+      const t = 1.0 / (1.0 + p * x);
+      const y = 1.0 - (((((a5 * t + a4) * t) + a3) * t + a2) * t + a1) * t * Math.exp(-x * x);
+
+      return sign * y;
+    }
+
+    function normalCDF(z) {
+      return 0.5 * (1.0 + erf(z / Math.sqrt(2.0)));
+    }
+
+    function computeNormal() {
+      const x = parseFloat(document.getElementById('norm-x').value);
+      const mu = parseFloat(document.getElementById('norm-mu').value);
+      const sigma = parseFloat(document.getElementById('norm-sigma').value);
+
+      if (isNaN(x) || isNaN(mu) || isNaN(sigma) || sigma <= 0) {
+        alert("Vui lòng nhập độ lệch chuẩn lớn hơn 0!");
+        return;
+      }
+
+      const z = (x - mu) / sigma;
+      const probLess = normalCDF(z);
+      const pct = (probLess * 100).toFixed(2);
+
+      document.getElementById('res-z').textContent = "Z = " + z.toFixed(4);
+      document.getElementById('res-prob-less').textContent = probLess.toFixed(4);
+      document.getElementById('res-norm-main').textContent = `P(X < ${x}) = ${pct}%`;
+    }
+
+    function computeSampleSize() {
+      const sigma = parseFloat(document.getElementById('samp-sigma').value);
+      const e = parseFloat(document.getElementById('samp-e').value);
+      const z = parseFloat(document.getElementById('samp-z').value);
+
+      if (isNaN(sigma) || isNaN(e) || e <= 0 || sigma <= 0) {
+        alert("Vui lòng nhập sai số và độ lệch chuẩn hợp lệ!");
+        return;
+      }
+
+      const nRaw = Math.pow((z * sigma) / e, 2);
+      const nCeil = Math.ceil(nRaw);
+
+      document.getElementById('res-n-raw').textContent = nRaw.toFixed(4);
+      document.getElementById('res-samp-main').textContent = `n = ${nCeil} mẫu`;
+    }
+
+    function factorial(n) {
+      if (n <= 1) return 1;
+      let res = 1;
+      for (let i = 2; i <= n; i++) res *= i;
+      return res;
+    }
+
+    function nCr(n, r) {
+      if (r < 0 || r > n) return 0;
+      return factorial(n) / (factorial(r) * factorial(n - r));
+    }
+
+    function computeBinomial() {
+      const n = parseInt(document.getElementById('binom-n').value);
+      const p = parseFloat(document.getElementById('binom-p').value);
+      const x = parseInt(document.getElementById('binom-x').value);
+
+      if (isNaN(n) || isNaN(p) || isNaN(x) || p < 0 || p > 1 || x > n || x < 0) {
+        alert("Thông số không hợp lệ!");
+        return;
+      }
+
+      const mu = n * p;
+      const sigma = Math.sqrt(n * p * (1 - p));
+      const prob = nCr(n, x) * Math.pow(p, x) * Math.pow(1 - p, n - x);
+
+      document.getElementById('res-binom-mu').textContent = mu.toFixed(2);
+      document.getElementById('res-binom-sigma').textContent = sigma.toFixed(4);
+      document.getElementById('res-binom-main').textContent = `P(X = ${x}) = ${(prob * 100).toFixed(2)}%`;
+    }
+
+    function computePoisson() {
+      const lam = parseFloat(document.getElementById('pois-lam').value);
+      const x = parseInt(document.getElementById('pois-x').value);
+
+      if (isNaN(lam) || isNaN(x) || lam <= 0 || x < 0) {
+        alert("Thông số không hợp lệ!");
+        return;
+      }
+
+      const mu = lam;
+      const sigma = Math.sqrt(lam);
+      const prob = (Math.exp(-lam) * Math.pow(lam, x)) / factorial(x);
+
+      document.getElementById('res-pois-mu').textContent = mu.toFixed(2);
+      document.getElementById('res-pois-sigma').textContent = sigma.toFixed(4);
+      document.getElementById('res-pois-main').textContent = `P(X = ${x}) = ${(prob * 100).toFixed(2)}%`;
+    }
+  </script>
+</body>
+</html>
