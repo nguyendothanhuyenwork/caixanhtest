@@ -1097,6 +1097,802 @@
         page-break-inside: avoid;
       }
     }
+  
+    /* ==========================================================================
+       INTERACTIVE HIGHLIGHT & HOVER NOTE SYSTEM (CẢI XANH MAS202)
+       ========================================================================== */
+    .user-inline-highlight {
+      background-color: var(--hl-bg, #FEF08A);
+      color: #0F172A !important;
+      padding: 2px 5px;
+      border-radius: 4px;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.25);
+      cursor: help;
+      display: inline;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+      transition: all 0.18s ease;
+      position: relative;
+    }
+    .user-inline-highlight:hover {
+      filter: brightness(0.92);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+    }
+    .user-inline-highlight.hl-pulse-active {
+      animation: hlPulse 1.8s ease;
+    }
+    @keyframes hlPulse {
+      0% { box-shadow: 0 0 0 0 rgba(21, 128, 61, 0.8); }
+      40% { box-shadow: 0 0 0 12px rgba(21, 128, 61, 0); }
+      80% { box-shadow: 0 0 0 16px rgba(21, 128, 61, 0); }
+      100% { box-shadow: none; }
+    }
+
+    /* Floating Pill when Text is Selected */
+    .selection-highlight-pill {
+      position: absolute;
+      display: none;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: linear-gradient(135deg, #15803D 0%, #166534 100%);
+      color: #FFFFFF;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(21, 128, 61, 0.4);
+      cursor: pointer;
+      z-index: 1250;
+      transform: translateY(-6px);
+      transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+      user-select: none;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      white-space: nowrap;
+    }
+    .selection-highlight-pill:hover {
+      transform: translateY(-8px) scale(1.05);
+      background: linear-gradient(135deg, #16A34A 0%, #15803D 100%);
+      box-shadow: 0 12px 28px rgba(22, 163, 74, 0.45);
+    }
+    .selection-highlight-pill::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 6px 6px 0 6px;
+      border-style: solid;
+      border-color: #166534 transparent transparent transparent;
+    }
+
+    /* Hover Tooltip for Highlights */
+    .highlight-hover-tooltip {
+      position: absolute;
+      display: none;
+      z-index: 1260;
+      width: 320px;
+      max-width: 90vw;
+      background: #0F172A;
+      color: #F8FAFC;
+      padding: 12px 14px;
+      border-radius: 12px;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
+      font-size: 0.86rem;
+      line-height: 1.5;
+      pointer-events: auto;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      transition: opacity 0.15s ease, transform 0.15s ease;
+      animation: tooltipPop 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes tooltipPop {
+      0% { opacity: 0; transform: translateY(6px) scale(0.96); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .hl-tooltip-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .hl-tooltip-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #4ADE80;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .hl-tooltip-actions {
+      display: flex;
+      gap: 6px;
+    }
+    .hl-tooltip-btn {
+      background: rgba(255, 255, 255, 0.12);
+      border: none;
+      color: #E2E8F0;
+      font-size: 0.74rem;
+      padding: 3px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .hl-tooltip-btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+      color: #FFFFFF;
+    }
+    .hl-tooltip-btn.btn-delete:hover {
+      background: #EF4444;
+      color: #FFFFFF;
+    }
+    .hl-tooltip-content {
+      color: #F1F5F9;
+      word-break: break-word;
+      white-space: pre-wrap;
+    }
+    .hl-tooltip-arrow {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #0F172A;
+      transform: rotate(45deg);
+      border-right: 1px solid rgba(255, 255, 255, 0.12);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    /* Modal for Creating & Editing Highlight Note */
+    .highlight-modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(4px);
+      z-index: 1290;
+      display: none;
+    }
+    .highlight-note-modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 480px;
+      max-width: 92vw;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.25);
+      z-index: 1300;
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      animation: modalFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes modalFadeIn {
+      0% { opacity: 0; transform: translate(-50%, -46%) scale(0.96); }
+      100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    }
+    .hl-modal-header {
+      padding: 16px 20px;
+      background: var(--surface-sidebar);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .hl-modal-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hl-modal-close {
+      background: none;
+      border: none;
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px;
+      border-radius: 6px;
+    }
+    .hl-modal-close:hover {
+      color: var(--text);
+      background: var(--border);
+    }
+    .hl-modal-body {
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .hl-preview-box {
+      background: var(--surface-sidebar);
+      border-left: 4px solid var(--primary);
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-style: italic;
+      color: var(--text);
+      max-height: 90px;
+      overflow-y: auto;
+      line-height: 1.4;
+    }
+    .hl-color-picker-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+    .hl-color-palette {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .hl-color-chip {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .hl-color-chip:hover {
+      transform: scale(1.15);
+    }
+    .hl-color-chip.active {
+      border-color: var(--text);
+      transform: scale(1.18);
+      box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--primary);
+    }
+    .hl-textarea {
+      width: 100%;
+      min-height: 95px;
+      padding: 10px 12px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: var(--text);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      resize: vertical;
+    }
+    .hl-textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-soft);
+    }
+    .hl-modal-footer {
+      padding: 14px 20px;
+      background: var(--surface-sidebar);
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .hl-modal-tip {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Tab Switcher inside Notes Drawer */
+    .notes-tabs-bar {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .notes-tab-btn {
+      flex: 1;
+      padding: 11px 14px;
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .notes-tab-btn:hover {
+      color: var(--text);
+      background: var(--surface-sidebar);
+    }
+    .notes-tab-btn.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+      background: var(--primary-soft);
+    }
+    .tab-badge {
+      font-size: 0.72rem;
+      padding: 1px 6px;
+      border-radius: 9999px;
+      background: var(--border);
+      color: var(--text);
+    }
+    .notes-tab-btn.active .tab-badge {
+      background: var(--primary);
+      color: #FFFFFF;
+    }
+
+    /* Highlight Items in Drawer */
+    .hl-drawer-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+      transition: box-shadow 0.15s ease;
+    }
+    .hl-drawer-item:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .hl-drawer-quote {
+      font-size: 0.84rem;
+      font-style: italic;
+      color: var(--text);
+      padding: 6px 10px;
+      border-left: 3px solid var(--primary);
+      background: var(--surface-sidebar);
+      border-radius: 4px;
+      margin-bottom: 8px;
+      word-break: break-word;
+    }
+    .hl-drawer-note {
+      font-size: 0.88rem;
+      color: var(--text);
+      white-space: pre-wrap;
+      margin-bottom: 8px;
+    }
+    .hl-drawer-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+    .hl-drawer-actions {
+      display: flex;
+      gap: 6px;
+    }
+    .btn-hl-jump {
+      background: var(--primary-soft);
+      color: var(--primary);
+      border: none;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .btn-hl-jump:hover {
+      background: var(--primary);
+      color: #FFFFFF;
+    }
+    .btn-hl-del {
+      background: none;
+      color: #EF4444;
+      border: none;
+      padding: 3px 6px;
+      border-radius: 6px;
+      font-size: 0.74rem;
+      cursor: pointer;
+    }
+    .btn-hl-del:hover {
+      background: #FEE2E2;
+    }
+
+  
+    /* ==========================================================================
+       INTERACTIVE HIGHLIGHT & HOVER NOTE SYSTEM (CẢI XANH MAS202)
+       ========================================================================== */
+    .user-inline-highlight {
+      background-color: var(--hl-bg, #FEF08A);
+      color: #0F172A !important;
+      padding: 2px 5px;
+      border-radius: 4px;
+      border-bottom: 2px solid rgba(0, 0, 0, 0.25);
+      cursor: help;
+      display: inline;
+      box-decoration-break: clone;
+      -webkit-box-decoration-break: clone;
+      transition: all 0.18s ease;
+      position: relative;
+    }
+    .user-inline-highlight:hover {
+      filter: brightness(0.92);
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
+    }
+    .user-inline-highlight.hl-pulse-active {
+      animation: hlPulse 1.8s ease;
+    }
+    @keyframes hlPulse {
+      0% { box-shadow: 0 0 0 0 rgba(21, 128, 61, 0.8); }
+      40% { box-shadow: 0 0 0 12px rgba(21, 128, 61, 0); }
+      80% { box-shadow: 0 0 0 16px rgba(21, 128, 61, 0); }
+      100% { box-shadow: none; }
+    }
+
+    /* Floating Pill when Text is Selected */
+    .selection-highlight-pill {
+      position: absolute;
+      display: none;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      background: linear-gradient(135deg, #15803D 0%, #166534 100%);
+      color: #FFFFFF;
+      border-radius: 9999px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      box-shadow: 0 8px 24px rgba(21, 128, 61, 0.4);
+      cursor: pointer;
+      z-index: 1250;
+      transform: translateY(-6px);
+      transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+      user-select: none;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      white-space: nowrap;
+    }
+    .selection-highlight-pill:hover {
+      transform: translateY(-8px) scale(1.05);
+      background: linear-gradient(135deg, #16A34A 0%, #15803D 100%);
+      box-shadow: 0 12px 28px rgba(22, 163, 74, 0.45);
+    }
+    .selection-highlight-pill::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 50%;
+      transform: translateX(-50%);
+      border-width: 6px 6px 0 6px;
+      border-style: solid;
+      border-color: #166534 transparent transparent transparent;
+    }
+
+    /* Hover Tooltip for Highlights */
+    .highlight-hover-tooltip {
+      position: absolute;
+      display: none;
+      z-index: 1260;
+      width: 320px;
+      max-width: 90vw;
+      background: #0F172A;
+      color: #F8FAFC;
+      padding: 12px 14px;
+      border-radius: 12px;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
+      font-size: 0.86rem;
+      line-height: 1.5;
+      pointer-events: auto;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      transition: opacity 0.15s ease, transform 0.15s ease;
+      animation: tooltipPop 0.18s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes tooltipPop {
+      0% { opacity: 0; transform: translateY(6px) scale(0.96); }
+      100% { opacity: 1; transform: translateY(0) scale(1); }
+    }
+    .hl-tooltip-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+      padding-bottom: 6px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+    }
+    .hl-tooltip-badge {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #4ADE80;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .hl-tooltip-actions {
+      display: flex;
+      gap: 6px;
+    }
+    .hl-tooltip-btn {
+      background: rgba(255, 255, 255, 0.12);
+      border: none;
+      color: #E2E8F0;
+      font-size: 0.74rem;
+      padding: 3px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .hl-tooltip-btn:hover {
+      background: rgba(255, 255, 255, 0.25);
+      color: #FFFFFF;
+    }
+    .hl-tooltip-btn.btn-delete:hover {
+      background: #EF4444;
+      color: #FFFFFF;
+    }
+    .hl-tooltip-content {
+      color: #F1F5F9;
+      word-break: break-word;
+      white-space: pre-wrap;
+    }
+    .hl-tooltip-arrow {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background: #0F172A;
+      transform: rotate(45deg);
+      border-right: 1px solid rgba(255, 255, 255, 0.12);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    /* Modal for Creating & Editing Highlight Note */
+    .highlight-modal-backdrop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(4px);
+      z-index: 1290;
+      display: none;
+    }
+    .highlight-note-modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 480px;
+      max-width: 92vw;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.25);
+      z-index: 1300;
+      display: none;
+      flex-direction: column;
+      overflow: hidden;
+      animation: modalFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    @keyframes modalFadeIn {
+      0% { opacity: 0; transform: translate(-50%, -46%) scale(0.96); }
+      100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+    }
+    .hl-modal-header {
+      padding: 16px 20px;
+      background: var(--surface-sidebar);
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .hl-modal-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hl-modal-close {
+      background: none;
+      border: none;
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      cursor: pointer;
+      line-height: 1;
+      padding: 4px;
+      border-radius: 6px;
+    }
+    .hl-modal-close:hover {
+      color: var(--text);
+      background: var(--border);
+    }
+    .hl-modal-body {
+      padding: 18px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .hl-preview-box {
+      background: var(--surface-sidebar);
+      border-left: 4px solid var(--primary);
+      padding: 10px 14px;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      font-style: italic;
+      color: var(--text);
+      max-height: 90px;
+      overflow-y: auto;
+      line-height: 1.4;
+    }
+    .hl-color-picker-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }
+    .hl-color-palette {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+    .hl-color-chip {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      border: 2px solid transparent;
+      cursor: pointer;
+      transition: transform 0.15s ease, border-color 0.15s ease;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .hl-color-chip:hover {
+      transform: scale(1.15);
+    }
+    .hl-color-chip.active {
+      border-color: var(--text);
+      transform: scale(1.18);
+      box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--primary);
+    }
+    .hl-textarea {
+      width: 100%;
+      min-height: 95px;
+      padding: 10px 12px;
+      font-family: inherit;
+      font-size: 0.9rem;
+      color: var(--text);
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      resize: vertical;
+    }
+    .hl-textarea:focus {
+      outline: none;
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px var(--primary-soft);
+    }
+    .hl-modal-footer {
+      padding: 14px 20px;
+      background: var(--surface-sidebar);
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .hl-modal-tip {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+    }
+
+    /* Tab Switcher inside Notes Drawer */
+    .notes-tabs-bar {
+      display: flex;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .notes-tab-btn {
+      flex: 1;
+      padding: 11px 14px;
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+    }
+    .notes-tab-btn:hover {
+      color: var(--text);
+      background: var(--surface-sidebar);
+    }
+    .notes-tab-btn.active {
+      color: var(--primary);
+      border-bottom-color: var(--primary);
+      background: var(--primary-soft);
+    }
+    .tab-badge {
+      font-size: 0.72rem;
+      padding: 1px 6px;
+      border-radius: 9999px;
+      background: var(--border);
+      color: var(--text);
+    }
+    .notes-tab-btn.active .tab-badge {
+      background: var(--primary);
+      color: #FFFFFF;
+    }
+
+    /* Highlight Items in Drawer */
+    .hl-drawer-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 14px;
+      margin-bottom: 10px;
+      transition: box-shadow 0.15s ease;
+    }
+    .hl-drawer-item:hover {
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+    }
+    .hl-drawer-quote {
+      font-size: 0.84rem;
+      font-style: italic;
+      color: var(--text);
+      padding: 6px 10px;
+      border-left: 3px solid var(--primary);
+      background: var(--surface-sidebar);
+      border-radius: 4px;
+      margin-bottom: 8px;
+      word-break: break-word;
+    }
+    .hl-drawer-note {
+      font-size: 0.88rem;
+      color: var(--text);
+      white-space: pre-wrap;
+      margin-bottom: 8px;
+    }
+    .hl-drawer-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 0.76rem;
+      color: var(--text-muted);
+    }
+    .hl-drawer-actions {
+      display: flex;
+      gap: 6px;
+    }
+    .btn-hl-jump {
+      background: var(--primary-soft);
+      color: var(--primary);
+      border: none;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .btn-hl-jump:hover {
+      background: var(--primary);
+      color: #FFFFFF;
+    }
+    .btn-hl-del {
+      background: none;
+      color: #EF4444;
+      border: none;
+      padding: 3px 6px;
+      border-radius: 6px;
+      font-size: 0.74rem;
+      cursor: pointer;
+    }
+    .btn-hl-del:hover {
+      background: #FEE2E2;
+    }
+
   </style>
 </head>
 <body>
@@ -1389,6 +2185,16 @@
         <button class="notes-close-btn" onclick="toggleNotesDrawer(false)" title="Đóng">✕</button>
       </div>
     </div>
+    <!-- Tabs Switcher: Đề Mục vs Highlight Đề Bài -->
+    <div class="notes-tabs-bar">
+      <button class="notes-tab-btn active" id="tab-btn-headings" onclick="switchNotesTab('headings')">
+        📋 Ghi Chú Đề Mục <span class="tab-badge" id="tab-badge-headings">0</span>
+      </button>
+      <button class="notes-tab-btn" id="tab-btn-highlights" onclick="switchNotesTab('highlights')">
+        🖍️ Highlight Đề Bài <span class="tab-badge" id="tab-badge-highlights">0</span>
+      </button>
+    </div>
+
 
     <!-- Note Editor Box -->
     <div class="notes-editor-card">
@@ -4299,6 +5105,7 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
 
       // STEP H: Initialize Notes System
       initNotesSystem();
+      initHighlightSystem();
     });
 
     // 4. Build Table of Contents & Inline Note Triggers
@@ -4690,6 +5497,457 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
       });
     }
 
+    
+    /* ==========================================================================
+       HIGHLIGHT & HOVER NOTE LOGIC (PERSISTENCE & TOOLTIPS)
+       ========================================================================== */
+    const HIGHLIGHT_STORAGE_KEY = 'cai_xanh_highlights_mas202';
+    let currentSelectedText = '';
+    let currentActiveColor = '#FEF08A';
+    let activeEditingHlId = null;
+    let hideTooltipTimer = null;
+    let activeDrawerTab = 'headings'; // 'headings' or 'highlights'
+
+    function getStoredHighlights() {
+      try {
+        const raw = localStorage.getItem(HIGHLIGHT_STORAGE_KEY);
+        return raw ? JSON.parse(raw) : [];
+      } catch (e) {
+        return [];
+      }
+    }
+
+    function setStoredHighlights(list) {
+      localStorage.setItem(HIGHLIGHT_STORAGE_KEY, JSON.stringify(list));
+      updateHighlightBadges();
+      if (activeDrawerTab === 'highlights') {
+        renderHighlightsDrawerList();
+      }
+    }
+
+    function initHighlightSystem() {
+      // 1. Setup color palette buttons
+      document.querySelectorAll('.hl-color-chip').forEach(chip => {
+        chip.addEventListener('click', () => {
+          document.querySelectorAll('.hl-color-chip').forEach(c => c.classList.remove('active'));
+          chip.classList.add('active');
+          currentActiveColor = chip.getAttribute('data-color') || '#FEF08A';
+        });
+      });
+
+      // 2. Setup Selection detection on Article Content
+      const article = document.getElementById('article-content');
+      if (article) {
+        document.addEventListener('selectionchange', handleSelectionChange);
+        article.addEventListener('mouseup', handleMouseUpSelection);
+        article.addEventListener('touchend', handleMouseUpSelection);
+      }
+
+      // 3. Setup Hover Tooltip persistence
+      const tooltip = document.getElementById('highlight-hover-tooltip');
+      if (tooltip) {
+        tooltip.addEventListener('mouseenter', () => {
+          if (hideTooltipTimer) clearTimeout(hideTooltipTimer);
+        });
+        tooltip.addEventListener('mouseleave', () => {
+          scheduleHideTooltip(180);
+        });
+      }
+
+      // 4. Modal Ctrl+Enter listener
+      const hlTextarea = document.getElementById('hl-note-textarea');
+      if (hlTextarea) {
+        hlTextarea.addEventListener('keydown', (e) => {
+          if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+            e.preventDefault();
+            saveHighlightNote();
+          } else if (e.key === 'Escape') {
+            closeHighlightModal();
+          }
+        });
+      }
+
+      // 5. Restore saved highlights into DOM
+      restoreAllHighlights();
+      updateHighlightBadges();
+    }
+
+    // Handle Text Selection
+    function handleSelectionChange() {
+      const sel = window.getSelection();
+      if (!sel || sel.isCollapsed || sel.toString().trim().length < 2) {
+        const pill = document.getElementById('selection-highlight-pill');
+        if (pill && pill.style.display !== 'none' && !pill.matches(':hover')) {
+          pill.style.display = 'none';
+        }
+      }
+    }
+
+    function handleMouseUpSelection(e) {
+      // Wait for selection to settle
+      setTimeout(() => {
+        const sel = window.getSelection();
+        if (!sel || sel.isCollapsed) return;
+
+        const text = sel.toString().trim();
+        if (text.length < 2) return;
+
+        const article = document.getElementById('article-content');
+        if (!article) return;
+
+        try {
+          const range = sel.getRangeAt(0);
+          if (!article.contains(range.commonAncestorContainer)) return;
+
+          currentSelectedText = text;
+          const rect = range.getBoundingClientRect();
+          const pill = document.getElementById('selection-highlight-pill');
+          if (pill) {
+            pill.style.display = 'flex';
+            const pillWidth = pill.offsetWidth || 155;
+            const top = rect.top + window.scrollY - 44;
+            const left = rect.left + window.scrollX + (rect.width / 2) - (pillWidth / 2);
+            pill.style.top = Math.max(10, top) + 'px';
+            pill.style.left = Math.max(10, Math.min(window.innerWidth - pillWidth - 10, left)) + 'px';
+          }
+        } catch (err) {}
+      }, 10);
+    }
+
+    function openHighlightModalFromSelection() {
+      const pill = document.getElementById('selection-highlight-pill');
+      if (pill) pill.style.display = 'none';
+
+      if (!currentSelectedText) {
+        const sel = window.getSelection();
+        if (sel) currentSelectedText = sel.toString().trim();
+      }
+      if (!currentSelectedText) return;
+
+      activeEditingHlId = null;
+      document.getElementById('hl-selected-preview').textContent = `“${currentSelectedText}”`;
+      document.getElementById('hl-note-textarea').value = '';
+      
+      // Select yellow by default
+      currentActiveColor = '#FEF08A';
+      document.querySelectorAll('.hl-color-chip').forEach(c => {
+        c.classList.toggle('active', c.getAttribute('data-color') === '#FEF08A');
+      });
+
+      document.getElementById('highlight-modal-backdrop').style.display = 'block';
+      const modal = document.getElementById('highlight-note-modal');
+      modal.style.display = 'flex';
+      setTimeout(() => document.getElementById('hl-note-textarea').focus(), 60);
+    }
+
+    function closeHighlightModal() {
+      document.getElementById('highlight-modal-backdrop').style.display = 'none';
+      document.getElementById('highlight-note-modal').style.display = 'none';
+      activeEditingHlId = null;
+    }
+
+    function saveHighlightNote() {
+      const noteInput = document.getElementById('hl-note-textarea');
+      const noteContent = noteInput.value.trim();
+      if (!noteContent) {
+        showToast("⚠️ Vui lòng nhập nội dung ghi chú cho đoạn highlight!");
+        noteInput.focus();
+        return;
+      }
+
+      const highlights = getStoredHighlights();
+
+      if (activeEditingHlId) {
+        // Editing existing highlight
+        const hl = highlights.find(h => h.id === activeEditingHlId);
+        if (hl) {
+          hl.note = noteContent;
+          hl.color = currentActiveColor;
+          hl.updatedAt = Date.now();
+          setStoredHighlights(highlights);
+
+          // Update DOM mark element
+          const mark = document.querySelector(`.user-inline-highlight[data-hl-id="${activeEditingHlId}"]`);
+          if (mark) {
+            mark.style.backgroundColor = currentActiveColor;
+          }
+          showToast("✅ Đã cập nhật ghi chú highlight!");
+        }
+      } else {
+        // Creating new highlight
+        if (!currentSelectedText) return;
+
+        const newHl = {
+          id: 'hl_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5),
+          text: currentSelectedText,
+          note: noteContent,
+          color: currentActiveColor,
+          createdAt: Date.now()
+        };
+
+        highlights.unshift(newHl);
+        setStoredHighlights(highlights);
+
+        // Apply highlight mark into DOM
+        applyHighlightInDOM(newHl);
+        showToast("🖍️ Đã tạo highlight & ghi chú thành công!");
+      }
+
+      closeHighlightModal();
+      window.getSelection()?.removeAllRanges();
+    }
+
+    // DOM Highlight TreeWalker Restoration
+    function applyHighlightInDOM(hl) {
+      if (document.querySelector(`.user-inline-highlight[data-hl-id="${hl.id}"]`)) return;
+
+      const article = document.getElementById('article-content');
+      if (!article) return;
+
+      const walker = document.createTreeWalker(article, NodeFilter.SHOW_TEXT, {
+        acceptNode: function(node) {
+          if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+          const parent = node.parentElement;
+          if (!parent) return NodeFilter.FILTER_REJECT;
+          if (parent.closest('.user-inline-highlight, script, style, button, .custom-alert .alert-title')) {
+            return NodeFilter.FILTER_REJECT;
+          }
+          return NodeFilter.FILTER_ACCEPT;
+        }
+      });
+
+      let currentNode;
+      while ((currentNode = walker.nextNode())) {
+        const textVal = currentNode.nodeValue;
+        const idx = textVal.indexOf(hl.text);
+        if (idx !== -1) {
+          const matchNode = currentNode.splitText(idx);
+          matchNode.splitText(hl.text.length);
+
+          const mark = document.createElement('mark');
+          mark.className = 'user-inline-highlight';
+          mark.setAttribute('data-hl-id', hl.id);
+          mark.style.backgroundColor = hl.color || '#FEF08A';
+          mark.textContent = matchNode.nodeValue;
+
+          matchNode.parentNode.replaceChild(mark, matchNode);
+          attachHighlightEvents(mark);
+          break;
+        }
+      }
+    }
+
+    function restoreAllHighlights() {
+      const highlights = getStoredHighlights();
+      highlights.forEach(hl => {
+        applyHighlightInDOM(hl);
+      });
+    }
+
+    function attachHighlightEvents(mark) {
+      mark.addEventListener('mouseenter', () => {
+        if (hideTooltipTimer) clearTimeout(hideTooltipTimer);
+        const id = mark.getAttribute('data-hl-id');
+        showHighlightTooltip(mark, id);
+      });
+      mark.addEventListener('mouseleave', () => {
+        scheduleHideTooltip(220);
+      });
+      mark.addEventListener('click', (e) => {
+        e.stopPropagation();
+        if (hideTooltipTimer) clearTimeout(hideTooltipTimer);
+        const id = mark.getAttribute('data-hl-id');
+        showHighlightTooltip(mark, id);
+      });
+    }
+
+    function showHighlightTooltip(mark, hlId) {
+      const highlights = getStoredHighlights();
+      const hl = highlights.find(h => h.id === hlId);
+      if (!hl) return;
+
+      const tooltip = document.getElementById('highlight-hover-tooltip');
+      const contentEl = document.getElementById('hl-tooltip-content');
+      const btnEdit = document.getElementById('btn-tooltip-edit');
+      const btnDel = document.getElementById('btn-tooltip-delete');
+
+      contentEl.textContent = hl.note;
+
+      btnEdit.onclick = () => openEditHighlightModal(hlId);
+      btnDel.onclick = () => deleteHighlight(hlId);
+
+      tooltip.style.display = 'block';
+
+      // Position tooltip right above the mark
+      const markRect = mark.getBoundingClientRect();
+      const tooltipRect = tooltip.getBoundingClientRect();
+      const arrow = document.getElementById('hl-tooltip-arrow');
+
+      let top = markRect.top + window.scrollY - tooltipRect.height - 10;
+      let left = markRect.left + window.scrollX + (markRect.width / 2) - (tooltipRect.width / 2);
+
+      // Boundary guards
+      if (left < 10) left = 10;
+      if (left + tooltipRect.width > window.innerWidth - 10) {
+        left = window.innerWidth - tooltipRect.width - 10;
+      }
+
+      // If too close to viewport top, flip below
+      if (top < window.scrollY + 10) {
+        top = markRect.bottom + window.scrollY + 10;
+        if (arrow) {
+          arrow.style.top = '-5px';
+          arrow.style.bottom = 'auto';
+        }
+      } else {
+        if (arrow) {
+          arrow.style.bottom = '-5px';
+          arrow.style.top = 'auto';
+        }
+      }
+
+      if (arrow) {
+        const arrowLeft = (markRect.left + window.scrollX + (markRect.width / 2)) - left - 5;
+        arrow.style.left = Math.max(12, Math.min(tooltipRect.width - 20, arrowLeft)) + 'px';
+      }
+
+      tooltip.style.top = top + 'px';
+      tooltip.style.left = left + 'px';
+    }
+
+    function scheduleHideTooltip(ms = 200) {
+      if (hideTooltipTimer) clearTimeout(hideTooltipTimer);
+      hideTooltipTimer = setTimeout(() => {
+        const tooltip = document.getElementById('highlight-hover-tooltip');
+        if (tooltip) tooltip.style.display = 'none';
+      }, ms);
+    }
+
+    function openEditHighlightModal(hlId) {
+      scheduleHideTooltip(0);
+      const highlights = getStoredHighlights();
+      const hl = highlights.find(h => h.id === hlId);
+      if (!hl) return;
+
+      activeEditingHlId = hlId;
+      document.getElementById('hl-selected-preview').textContent = `“${hl.text}”`;
+      document.getElementById('hl-note-textarea').value = hl.note;
+
+      currentActiveColor = hl.color || '#FEF08A';
+      document.querySelectorAll('.hl-color-chip').forEach(c => {
+        c.classList.toggle('active', c.getAttribute('data-color') === currentActiveColor);
+      });
+
+      document.getElementById('highlight-modal-backdrop').style.display = 'block';
+      const modal = document.getElementById('highlight-note-modal');
+      modal.style.display = 'flex';
+      setTimeout(() => document.getElementById('hl-note-textarea').focus(), 60);
+    }
+
+    function deleteHighlight(hlId) {
+      scheduleHideTooltip(0);
+      let highlights = getStoredHighlights();
+      highlights = highlights.filter(h => h.id !== hlId);
+      setStoredHighlights(highlights);
+
+      // Unwrap mark elements
+      document.querySelectorAll(`.user-inline-highlight[data-hl-id="${hlId}"]`).forEach(mark => {
+        const parent = mark.parentNode;
+        while (mark.firstChild) {
+          parent.insertBefore(mark.firstChild, mark);
+        }
+        parent.removeChild(mark);
+      });
+
+      showToast("🗑️ Đã xóa highlight!");
+    }
+
+    // Update Badges & Tabs in Drawer
+    function updateHighlightBadges() {
+      const highlights = getStoredHighlights();
+      const badgeHl = document.getElementById('tab-badge-highlights');
+      if (badgeHl) badgeHl.textContent = highlights.length;
+    }
+
+    function switchNotesTab(tabName) {
+      activeDrawerTab = tabName;
+      const btnHeadings = document.getElementById('tab-btn-headings');
+      const btnHl = document.getElementById('tab-btn-highlights');
+      const editorBox = document.querySelector('.notes-editor-card');
+      const filterBar = document.querySelector('.notes-filter-bar');
+
+      if (tabName === 'headings') {
+        if (btnHeadings) btnHeadings.classList.add('active');
+        if (btnHl) btnHl.classList.remove('active');
+        if (editorBox) editorBox.style.display = 'block';
+        if (filterBar) filterBar.style.display = 'block';
+        renderNotesList();
+      } else {
+        if (btnHeadings) btnHeadings.classList.remove('active');
+        if (btnHl) btnHl.classList.add('active');
+        if (editorBox) editorBox.style.display = 'none';
+        if (filterBar) filterBar.style.display = 'none';
+        renderHighlightsDrawerList();
+      }
+    }
+
+    function renderHighlightsDrawerList() {
+      const container = document.getElementById('notes-cards-container');
+      if (!container) return;
+
+      const highlights = getStoredHighlights();
+      if (highlights.length === 0) {
+        container.innerHTML = `
+          <div class="notes-empty-state">
+            <span class="empty-icon">🖍️</span>
+            <div>Chưa có câu hỏi nào được highlight!</div>
+            <p style="font-size:0.8rem; margin-top:6px; color:var(--text-muted);">
+              Hãy bôi đen (chọn) bất kỳ câu tiếng Anh hoặc công thức nào trên bài giảng để tạo ghi chú nhé!
+            </p>
+          </div>
+        `;
+        return;
+      }
+
+      let html = '';
+      highlights.forEach((hl, idx) => {
+        const dateStr = new Date(hl.createdAt).toLocaleDateString('vi-VN', {
+          month: 'numeric', day: 'numeric', hour: '2-digit', minute: '2-digit'
+        });
+        html += `
+          <div class="hl-drawer-item">
+            <div class="hl-drawer-quote" style="border-left-color: ${hl.color || '#FEF08A'};">
+              “${escapeHtml(hl.text)}”
+            </div>
+            <div class="hl-drawer-note">${escapeHtml(hl.note)}</div>
+            <div class="hl-drawer-footer">
+              <span>🕒 ${dateStr}</span>
+              <div class="hl-drawer-actions">
+                <button class="btn-hl-jump" onclick="jumpToHighlight('${hl.id}')" title="Cuộn tới vị trí câu này trong bài giảng">🔍 Vị trí</button>
+                <button class="btn-hl-del" onclick="deleteHighlight('${hl.id}')" title="Xóa highlight">🗑️ Xóa</button>
+              </div>
+            </div>
+          </div>
+        `;
+      });
+
+      container.innerHTML = html;
+    }
+
+    function jumpToHighlight(hlId) {
+      toggleNotesDrawer(false);
+      const mark = document.querySelector(`.user-inline-highlight[data-hl-id="${hlId}"]`);
+      if (mark) {
+        mark.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        mark.classList.remove('hl-pulse-active');
+        void mark.offsetWidth; // trigger reflow
+        mark.classList.add('hl-pulse-active');
+        setTimeout(() => showHighlightTooltip(mark, hlId), 500);
+      } else {
+        showToast("⚠️ Không tìm thấy vị trí highlight trên trang này!");
+      }
+    }
+
     function exportNotes() {
       const notes = getStoredNotes();
       if (notes.length === 0) {
@@ -4711,6 +5969,25 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
         content += `✍️ Nội dung:\n${note.content}\n`;
         content += "------------------------------------------------------------------------\n\n";
       });
+
+      
+      // Export Highlights if any
+      const highlights = getStoredHighlights();
+      if (highlights.length > 0) {
+        content += "\n========================================================================\n";
+        content += "🖍️ DANH SÁCH CÁC CÂU ĐỀ BÀI ĐÃ HIGHLIGHT & GHI CHÚ RIÊNG\n";
+        content += `Tổng số câu highlight: ${highlights.length}\n`;
+        content += "========================================================================\n\n";
+
+        highlights.forEach((hl, idx) => {
+          const d = new Date(hl.createdAt).toLocaleString('vi-VN');
+          content += `[HIGHLIGHT #${idx + 1}]\n`;
+          content += `📖 Đoạn đề bài: "${hl.text}"\n`;
+          content += `🕒 Thời gian: ${d}\n`;
+          content += `✍️ Ghi chú của bạn:\n${hl.note}\n`;
+          content += "------------------------------------------------------------------------\n\n";
+        });
+      }
 
       const blob = new Blob([content], { type: 'text/plain;charset=utf-8' });
       const url = URL.createObjectURL(blob);
@@ -4937,5 +6214,58 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
       document.getElementById('res-pois-main').textContent = `P(X = ${x}) = ${(prob * 100).toFixed(2)}%`;
     }
   </script>
+
+  <!-- FLOATING SELECTION HIGHLIGHT PILL -->
+  <div id="selection-highlight-pill" class="selection-highlight-pill" onclick="openHighlightModalFromSelection()">
+    <span>🖍️</span> <span>Ghi chú highlight</span>
+  </div>
+
+  <!-- HIGHLIGHT HOVER TOOLTIP -->
+  <div id="highlight-hover-tooltip" class="highlight-hover-tooltip">
+    <div class="hl-tooltip-arrow" id="hl-tooltip-arrow"></div>
+    <div class="hl-tooltip-header">
+      <span class="hl-tooltip-badge">📌 Ghi Chú Của Bạn</span>
+      <div class="hl-tooltip-actions">
+        <button class="hl-tooltip-btn" id="btn-tooltip-edit" title="Chỉnh sửa ghi chú">✏️ Sửa</button>
+        <button class="hl-tooltip-btn btn-delete" id="btn-tooltip-delete" title="Xóa highlight">🗑️ Xóa</button>
+      </div>
+    </div>
+    <div class="hl-tooltip-content" id="hl-tooltip-content"></div>
+  </div>
+
+  <!-- HIGHLIGHT NOTE MODAL BACKDROP & DIALOG -->
+  <div id="highlight-modal-backdrop" class="highlight-modal-backdrop" onclick="closeHighlightModal()"></div>
+  <div id="highlight-note-modal" class="highlight-note-modal">
+    <div class="hl-modal-header">
+      <div class="hl-modal-title"><span>🖍️</span> Tạo Ghi Chú Cho Đoạn Đề Bài</div>
+      <button class="hl-modal-close" onclick="closeHighlightModal()" title="Đóng">✕</button>
+    </div>
+    <div class="hl-modal-body">
+      <div class="hl-preview-box" id="hl-selected-preview">“...”</div>
+      
+      <div>
+        <div class="hl-color-picker-label">Màu sắc highlight:</div>
+        <div class="hl-color-palette">
+          <button type="button" class="hl-color-chip active" data-color="#FEF08A" style="background:#FEF08A;" title="Vàng chanh"></button>
+          <button type="button" class="hl-color-chip" data-color="#BBF7D0" style="background:#BBF7D0;" title="Xanh bắp cải"></button>
+          <button type="button" class="hl-color-chip" data-color="#BAE6FD" style="background:#BAE6FD;" title="Lam tuyết"></button>
+          <button type="button" class="hl-color-chip" data-color="#FED7AA" style="background:#FED7AA;" title="Cam đào"></button>
+          <button type="button" class="hl-color-chip" data-color="#E9D5FF" style="background:#E9D5FF;" title="Tím pastel"></button>
+        </div>
+      </div>
+
+      <div>
+        <textarea id="hl-note-textarea" class="hl-textarea" placeholder="✍️ Nhập lời dịch, công thức biện luận hoặc lưu ý cho câu hỏi này..."></textarea>
+      </div>
+    </div>
+    <div class="hl-modal-footer">
+      <span class="hl-modal-tip">💡 Nhấn <kbd>Ctrl</kbd> + <kbd>Enter</kbd> để lưu nhanh</span>
+      <div style="display:flex; gap:8px;">
+        <button type="button" class="btn btn-sm btn-ghost" onclick="closeHighlightModal()">Hủy</button>
+        <button type="button" class="btn btn-primary btn-sm" onclick="saveHighlightNote()">💾 Lưu Highlight</button>
+      </div>
+    </div>
+  </div>
+
 </body>
 </html>
