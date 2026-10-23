@@ -14,6 +14,12 @@
   <!-- Marked.js Markdown parser -->
   <script src="https://cdn.jsdelivr.net/npm/marked@4.3.0/marked.min.js"></script>
 
+  
+  <!-- Firebase SDKs (Compat version for zero-config single page integration) -->
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.0/firebase-firestore-compat.js"></script>
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -1893,6 +1899,147 @@
       background: #FEE2E2;
     }
 
+  
+    /* ==========================================================================
+       GOOGLE AUTHENTICATION & CLOUD SYNC STYLES
+       ========================================================================== */
+    .auth-nav-container {
+      display: inline-flex;
+      align-items: center;
+    }
+    .btn-google-login {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      background: #FFFFFF;
+      color: #374151;
+      font-weight: 600;
+      font-size: 0.82rem;
+      border: 1px solid #D1D5DB;
+      border-radius: 8px;
+      padding: 6px 12px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      cursor: pointer;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+    }
+    .btn-google-login:hover {
+      background: #F9FAFB;
+      border-color: #9CA3AF;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+      transform: translateY(-1px);
+    }
+    [data-theme="dark"] .btn-google-login {
+      background: #1F2937;
+      color: #F3F4F6;
+      border-color: #374151;
+    }
+    [data-theme="dark"] .btn-google-login:hover {
+      background: #374151;
+      border-color: #4B5563;
+    }
+    .google-icon-svg {
+      flex-shrink: 0;
+    }
+    .user-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--surface-sidebar);
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      padding: 3px 10px 3px 4px;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+    .user-avatar {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 1.5px solid var(--primary);
+    }
+    .user-name {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+      max-width: 110px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .btn-logout {
+      background: none;
+      border: none;
+      font-size: 0.74rem;
+      font-weight: 600;
+      color: #EF4444;
+      cursor: pointer;
+      padding: 2px 6px;
+      border-radius: 4px;
+      transition: background 0.15s ease;
+    }
+    .btn-logout:hover {
+      background: #FEE2E2;
+    }
+    [data-theme="dark"] .btn-logout:hover {
+      background: #7F1D1D;
+      color: #FCA5A5;
+    }
+
+    /* Drawer Cloud Bar */
+    .drawer-cloud-bar {
+      padding: 10px 18px;
+      background: var(--surface-sidebar);
+      border-bottom: 1px solid var(--border);
+      font-size: 0.8rem;
+    }
+    .drawer-cloud-status {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      color: var(--text-muted);
+    }
+    .btn-drawer-login {
+      background: var(--primary);
+      color: #FFFFFF;
+      border: none;
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-size: 0.76rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s ease;
+      white-space: nowrap;
+    }
+    .btn-drawer-login:hover {
+      background: var(--primary-light);
+    }
+    .btn-drawer-sync {
+      background: var(--primary-soft);
+      color: var(--primary);
+      border: none;
+      padding: 3px 8px;
+      border-radius: 6px;
+      font-size: 0.74rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    .btn-drawer-sync:hover {
+      background: var(--primary);
+      color: #FFFFFF;
+    }
+    .cloud-synced-indicator {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      color: var(--text);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
   </style>
 </head>
 <body>
@@ -1908,6 +2055,25 @@
     </a>
 
     <div class="nav-actions">
+      
+      <!-- GOOGLE AUTHENTICATION BADGE -->
+      <div id="auth-nav-container" class="auth-nav-container">
+        <button id="btn-google-login" class="btn btn-google-login" onclick="loginWithGoogle()" title="Đăng nhập tài khoản Google để đồng bộ ghi chú đám mây">
+          <svg class="google-icon-svg" viewBox="0 0 24 24" width="16" height="16">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+          </svg>
+          <span class="auth-btn-text">Đăng nhập</span>
+        </button>
+        <div id="user-badge" class="user-badge" style="display:none;">
+          <img id="user-avatar" class="user-avatar" src="" alt="Avatar" />
+          <span id="user-name" class="user-name">User</span>
+          <button class="btn-logout" onclick="logoutGoogle()" title="Đăng xuất tài khoản">Đăng xuất</button>
+        </div>
+      </div>
+
       <button class="btn" onclick="scrollToCalc()" title="Mở máy tính thống kê">
         🧮 Máy Tính Mini
       </button>
@@ -2185,6 +2351,19 @@
         <button class="notes-close-btn" onclick="toggleNotesDrawer(false)" title="Đóng">✕</button>
       </div>
     </div>
+    
+    <!-- Cloud Sync Status Bar in Drawer -->
+    <div id="drawer-cloud-bar" class="drawer-cloud-bar">
+      <div id="drawer-cloud-logged-out" class="drawer-cloud-status">
+        <span>☁️ Đang lưu cục bộ trên máy này.</span>
+        <button class="btn-drawer-login" onclick="loginWithGoogle()">Đăng nhập Google</button>
+      </div>
+      <div id="drawer-cloud-logged-in" class="drawer-cloud-status" style="display:none;">
+        <span class="cloud-synced-indicator">🟢 Đã kết nối: <strong id="drawer-user-email"></strong></span>
+        <button class="btn-drawer-sync" onclick="forceSyncCloud()" title="Đồng bộ dữ liệu ngay">🔄 Đồng bộ</button>
+      </div>
+    </div>
+
     <!-- Tabs Switcher: Đề Mục vs Highlight Đề Bài -->
     <div class="notes-tabs-bar">
       <button class="notes-tab-btn active" id="tab-btn-headings" onclick="switchNotesTab('headings')">
@@ -5106,6 +5285,7 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
       // STEP H: Initialize Notes System
       initNotesSystem();
       initHighlightSystem();
+      initAuthSystem();
     });
 
     // 4. Build Table of Contents & Inline Note Triggers
@@ -5201,6 +5381,190 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
       } catch (e) {
         console.error("Error writing notes to localStorage:", e);
       }
+    }
+
+    
+    /* ==========================================================================
+       FIREBASE AUTHENTICATION (GOOGLE LOGIN) & FIRESTORE CLOUD SYNC
+       ========================================================================== */
+    const firebaseConfig = {
+      apiKey: "AIzaSyDX51NNNEB-x58wtlHPAmmYhrYje03p3EA",
+      authDomain: "caixanhtest.firebaseapp.com",
+      projectId: "caixanhtest",
+      storageBucket: "caixanhtest.firebasestorage.app",
+      messagingSenderId: "921742017319",
+      appId: "1:921742017319:web:1b968ef60048aa1e8f1f02"
+    };
+
+    let currentUser = null;
+    let firebaseAuth = null;
+    let firebaseDb = null;
+
+    try {
+      if (typeof firebase !== 'undefined') {
+        firebase.initializeApp(firebaseConfig);
+        firebaseAuth = firebase.auth();
+        firebaseDb = firebase.firestore();
+      }
+    } catch (err) {
+      console.warn("Firebase initialization warning:", err);
+    }
+
+    function initAuthSystem() {
+      if (!firebaseAuth) return;
+
+      firebaseAuth.onAuthStateChanged((user) => {
+        currentUser = user;
+        updateAuthUI(user);
+        if (user) {
+          syncFromCloud(user);
+        }
+      });
+    }
+
+    function updateAuthUI(user) {
+      const btnLogin = document.getElementById('btn-google-login');
+      const userBadge = document.getElementById('user-badge');
+      const userAvatar = document.getElementById('user-avatar');
+      const userName = document.getElementById('user-name');
+      const drawerLoggedOut = document.getElementById('drawer-cloud-logged-out');
+      const drawerLoggedIn = document.getElementById('drawer-cloud-logged-in');
+      const drawerEmail = document.getElementById('drawer-user-email');
+
+      if (user) {
+        if (btnLogin) btnLogin.style.display = 'none';
+        if (userBadge) userBadge.style.display = 'inline-flex';
+        if (userAvatar) userAvatar.src = user.photoURL || 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle cx="12" cy="8" r="4" fill="%2315803D"/><path d="M4 20c0-4 4-6 8-6s8 2 8 6" fill="%2315803D"/></svg>';
+        if (userName) userName.textContent = user.displayName ? user.displayName.split(' ').pop() : 'User';
+
+        if (drawerLoggedOut) drawerLoggedOut.style.display = 'none';
+        if (drawerLoggedIn) drawerLoggedIn.style.display = 'flex';
+        if (drawerEmail) drawerEmail.textContent = user.email || user.displayName || 'Tài khoản Google';
+      } else {
+        if (btnLogin) btnLogin.style.display = 'inline-flex';
+        if (userBadge) userBadge.style.display = 'none';
+
+        if (drawerLoggedOut) drawerLoggedOut.style.display = 'flex';
+        if (drawerLoggedIn) drawerLoggedIn.style.display = 'none';
+      }
+    }
+
+    function loginWithGoogle() {
+      if (!firebaseAuth) {
+        showToast("⚠️ Firebase chưa tải xong. Vui lòng kiểm tra lại mạng!");
+        return;
+      }
+      const provider = new firebase.auth.GoogleAuthProvider();
+      provider.addScope('email');
+      provider.addScope('profile');
+
+      firebaseAuth.signInWithPopup(provider)
+        .then((result) => {
+          showToast(`🎉 Xin chào ${result.user.displayName || 'bạn'}! Đang đồng bộ Cloud...`);
+        })
+        .catch((error) => {
+          console.error("Google Auth error:", error);
+          if (error.code === 'auth/unauthorized-domain') {
+            alert("Lưu ý: Domain " + window.location.hostname + " cần được thêm vào danh sách 'Authorized domains' trong Firebase Console (Authentication -> Settings -> Authorized domains).");
+          } else if (error.code !== 'auth/popup-closed-by-user') {
+            showToast("❌ Lỗi đăng nhập: " + (error.message || error.code));
+          }
+        });
+    }
+
+    function logoutGoogle() {
+      if (!firebaseAuth) return;
+      firebaseAuth.signOut().then(() => {
+        currentUser = null;
+        updateAuthUI(null);
+        showToast("👋 Đã đăng xuất tài khoản Google!");
+      });
+    }
+
+    // Cloud Synchronization via Firestore
+    function syncFromCloud(user) {
+      if (!firebaseDb || !user) return;
+
+      const docRef = firebaseDb.collection('users').doc(user.uid);
+      docRef.get().then((doc) => {
+        if (doc.exists) {
+          const cloudData = doc.data();
+          const cloudNotes = cloudData.notes || [];
+          const cloudHighlights = cloudData.highlights || [];
+
+          // Merge with local data (preserve everything)
+          const mergedNotes = mergeRecordsById(getStoredNotes(), cloudNotes);
+          const mergedHighlights = mergeRecordsById(getStoredHighlights(), cloudHighlights);
+
+          setStoredNotes(mergedNotes);
+          setStoredHighlights(mergedHighlights);
+
+          restoreAllHighlights();
+          updateNotesBadges();
+          renderNotesList();
+
+          showToast(`☁️ Đã đồng bộ ${mergedNotes.length} ghi chú & ${mergedHighlights.length} highlight từ Cloud!`);
+
+          // Write merged result back to cloud
+          syncToCloud();
+        } else {
+          // New user in Firestore: upload local notes to cloud
+          syncToCloud();
+        }
+      }).catch((err) => {
+        console.warn("Firestore read notice (check Security Rules):", err);
+      });
+    }
+
+    function syncToCloud() {
+      if (!firebaseDb || !currentUser) return;
+
+      const notes = getStoredNotes();
+      const highlights = getStoredHighlights();
+
+      const docRef = firebaseDb.collection('users').doc(currentUser.uid);
+      docRef.set({
+        email: currentUser.email,
+        displayName: currentUser.displayName,
+        photoURL: currentUser.photoURL,
+        notes: notes,
+        highlights: highlights,
+        lastSyncedAt: new Date().toISOString()
+      }, { merge: true }).then(() => {
+        console.log("Synced to Cloud successfully!");
+      }).catch((err) => {
+        console.warn("Firestore write notice (check Security Rules):", err);
+      });
+    }
+
+    function forceSyncCloud() {
+      if (!currentUser) {
+        loginWithGoogle();
+        return;
+      }
+      showToast("🔄 Đang đồng bộ với Cloud...");
+      syncFromCloud(currentUser);
+    }
+
+    function mergeRecordsById(localList, cloudList) {
+      const map = new Map();
+      localList.forEach(item => {
+        if (item && item.id) map.set(item.id, item);
+      });
+      cloudList.forEach(item => {
+        if (!item || !item.id) return;
+        if (!map.has(item.id)) {
+          map.set(item.id, item);
+        } else {
+          const localItem = map.get(item.id);
+          const localTime = localItem.updatedAt || localItem.createdAt || 0;
+          const cloudTime = item.updatedAt || item.createdAt || 0;
+          if (cloudTime > localTime) {
+            map.set(item.id, item);
+          }
+        }
+      });
+      return Array.from(map.values());
     }
 
     function initNotesSystem() {
