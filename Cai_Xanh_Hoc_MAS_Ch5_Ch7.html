@@ -1484,6 +1484,17 @@
       }
     }
 
+    
+    .toc-item.toc-vip-sec6 a {
+      color: #D97706;
+      font-weight: 700;
+      background: rgba(251, 191, 36, 0.1);
+      border-radius: 8px;
+    }
+    .toc-item.toc-vip-sec6 a:hover {
+      background: rgba(251, 191, 36, 0.2);
+    }
+    
     /* PRINT STYLES */
     @media print {
       header, .sidebar, .calc-card, .nav-actions, .mobile-menu-btn, .floating-notes-container, .notes-drawer, .notes-backdrop, .btn-heading-note {
@@ -5846,8 +5857,9 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
         throwOnError: false
       });
 
-      // STEP G: Build Table of Contents & Inject Heading Note Triggers
-      buildTOC();
+      // STEP G: Wrap Section 6 & Control Visibility based on Auth
+      wrapSection6();
+      updateSection6Visibility(currentUser);
 
       // STEP H: Initialize Notes System
       initNotesSystem();
@@ -5855,8 +5867,80 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
       initAuthSystem();
     });
 
+
+    /* ==========================================================================
+       SECTION 6 VIP ACCESS CONTROL (CHỈ HIỆN KHI ĐĂNG NHẬP CHÍNH CHỦ)
+       ========================================================================== */
+    const AUTHORIZED_SECTION6_EMAILS = [
+      'nguyendothanhuyen.work@gmail.com',
+      'nguyendothanhuyenwork@gmail.com',
+      'nguyendothanhhuyen.work@gmail.com',
+      'nguyendothanhhuyenwork@gmail.com'
+    ];
+
+    function isAuthorizedForSection6(user) {
+      if (!user || !user.email) return false;
+      const email = user.email.toLowerCase().trim();
+      const userNorm = email.replace(/@gmail\.com$/, '').replace(/\./g, '') + '@gmail.com';
+      const targetNorm = 'nguyendothanhuyenwork@gmail.com';
+      return AUTHORIZED_SECTION6_EMAILS.includes(email) || userNorm === targetNorm;
+    }
+
+    function wrapSection6() {
+      const article = document.getElementById('article-content');
+      if (!article) return;
+      if (document.getElementById('section-6-wrapper')) return;
+
+      const headings = article.querySelectorAll('h1');
+      let h1Sec6 = null;
+      let h1Sec7 = null;
+
+      headings.forEach(h => {
+        const txt = h.textContent;
+        if (txt.includes('PHẦN 6') || txt.includes('MAS QUIZ 2')) {
+          h1Sec6 = h;
+        } else if (txt.includes('PHẦN 7') || txt.includes('CHƯƠNG 8')) {
+          if (!h1Sec7 && h1Sec6) h1Sec7 = h;
+        }
+      });
+
+      if (!h1Sec6) return;
+
+      const wrapper = document.createElement('div');
+      wrapper.id = 'section-6-wrapper';
+      wrapper.className = 'section-6-wrapper';
+
+      const nodes = [];
+      let curr = h1Sec6;
+      while (curr && curr !== h1Sec7) {
+        const next = curr.nextSibling;
+        nodes.push(curr);
+        curr = next;
+      }
+
+      if (h1Sec7) {
+        h1Sec7.parentNode.insertBefore(wrapper, h1Sec7);
+      } else {
+        article.appendChild(wrapper);
+      }
+
+      nodes.forEach(n => wrapper.appendChild(n));
+    }
+
+    function updateSection6Visibility(user) {
+      const isAuth = isAuthorizedForSection6(user);
+      const wrapper = document.getElementById('section-6-wrapper');
+      
+      if (wrapper) {
+        wrapper.style.display = isAuth ? 'block' : 'none';
+      }
+
+      // Cập nhật Mục lục: Chỉ hiện Phần 6 nếu đăng nhập chính chủ
+      buildTOC(isAuth);
+    }
+
     // 4. Build Table of Contents & Inline Note Triggers
-    function buildTOC() {
+    function buildTOC(showSection6) {
       const article = document.getElementById('article-content');
       if (!article) return;
       const headings = article.querySelectorAll('h1, h2');
@@ -5876,22 +5960,30 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
         h.querySelectorAll('.btn-heading-note').forEach(b => b.remove());
         const text = h.textContent.replace(/^#+\s*/, '').trim();
 
-        // ẨN MỤC LỤC PHẦN 6 (MAS QUIZ 2): Bỏ qua Phần 6 và 20 câu hỏi của nó trong mục lục sidebar
+        // Kiểm tra Phần 6
         if (text.includes('PHẦN 6') || text.includes('MAS QUIZ 2')) {
           isSection6 = true;
-          currentH1Li = null;
-          currentSubUl = null;
+          if (!showSection6) {
+            currentH1Li = null;
+            currentSubUl = null;
+            return;
+          }
+        } else if (h.tagName === 'H1') {
+          isSection6 = false;
+        }
+
+        // Bỏ qua câu hỏi thuộc Phần 6 nếu không được cấp quyền
+        if (isSection6 && !showSection6) {
           return;
         }
 
         if (h.tagName === 'H1') {
-          isSection6 = false;
           currentH1Li = document.createElement('li');
-          currentH1Li.className = 'toc-item';
+          currentH1Li.className = 'toc-item' + (isSection6 ? ' toc-vip-sec6' : '');
           
           const a = document.createElement('a');
           a.href = `#${id}`;
-          a.textContent = text;
+          a.innerHTML = isSection6 ? `👑 ${text}` : text;
           a.onclick = () => {
             if (window.innerWidth <= 1024) toggleSidebar(false);
           };
@@ -5902,9 +5994,6 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
           currentH1Li.appendChild(currentSubUl);
           tocList.appendChild(currentH1Li);
         } else if (h.tagName === 'H2') {
-          // Bỏ qua nếu là câu hỏi thuộc Phần 6
-          if (isSection6) return;
-
           if (!currentSubUl) {
             currentH1Li = document.createElement('li');
             currentH1Li.className = 'toc-item';
@@ -6026,6 +6115,7 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
       firebaseAuth.onAuthStateChanged((user) => {
         currentUser = user;
         updateAuthUI(user);
+        updateSection6Visibility(user);
         if (user) {
           syncFromCloud(user);
         }
@@ -6036,6 +6126,7 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
         if (result && result.user) {
           currentUser = result.user;
           updateAuthUI(currentUser);
+          updateSection6Visibility(currentUser);
           syncFromCloud(currentUser);
           showToast(`🎉 Xin chào ${currentUser.displayName}! Đã đăng nhập thành công.`);
         }
@@ -6093,7 +6184,12 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
         .then((result) => {
           currentUser = result.user;
           updateAuthUI(currentUser);
-          showToast(`🎉 Xin chào ${result.user.displayName || 'bạn'}! Đang đồng bộ Cloud...`);
+          updateSection6Visibility(currentUser);
+          if (isAuthorizedForSection6(currentUser)) {
+            showToast(`👑 Xin chào Huyền! Đã mở khóa thành công PHẦN 6 & Mục lục Quiz 2.`);
+          } else {
+            showToast(`🎉 Xin chào ${result.user.displayName || 'bạn'}! Đang đồng bộ Cloud...`);
+          }
         })
         .catch((error) => {
           handleAuthError(error, provider);
@@ -6151,6 +6247,7 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
       firebaseAuth.signOut().then(() => {
         currentUser = null;
         updateAuthUI(null);
+        updateSection6Visibility(null);
         showToast("👋 Đã đăng xuất tài khoản Google!");
       });
     }
