@@ -1,0 +1,11 @@
+# Dependencies
+node_modules/
+
+# Environment variables (contains secrets - never commit)
+.env
+.env.*
+!.env.example
+
+# OS / editor
+.DS_Store
+Thumbs.db

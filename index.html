@@ -5385,7 +5385,7 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
 
     
     /* ==========================================================================
-       FIREBASE AUTHENTICATION (GOOGLE LOGIN) & FIRESTORE CLOUD SYNC
+       FIREBASE AUTHENTICATION (GOOGLE LOGIN) & FIRESTORE CLOUD SYNC (ENHANCED)
        ========================================================================== */
     const firebaseConfig = {
       apiKey: "AIzaSyDX51NNNEB-x58wtlHPAmmYhrYje03p3EA",
@@ -5413,12 +5413,25 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
     function initAuthSystem() {
       if (!firebaseAuth) return;
 
+      // Listen to auth state changes
       firebaseAuth.onAuthStateChanged((user) => {
         currentUser = user;
         updateAuthUI(user);
         if (user) {
           syncFromCloud(user);
         }
+      });
+
+      // Handle redirect result (useful when popups are blocked or on mobile)
+      firebaseAuth.getRedirectResult().then((result) => {
+        if (result && result.user) {
+          currentUser = result.user;
+          updateAuthUI(currentUser);
+          syncFromCloud(currentUser);
+          showToast(`🎉 Xin chào ${currentUser.displayName}! Đã đăng nhập thành công.`);
+        }
+      }).catch((err) => {
+        handleAuthError(err);
       });
     }
 
@@ -5450,26 +5463,76 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
     }
 
     function loginWithGoogle() {
-      if (!firebaseAuth) {
-        showToast("⚠️ Firebase chưa tải xong. Vui lòng kiểm tra lại mạng!");
+      // 1. Check protocol
+      if (window.location.protocol === 'file:') {
+        alert("⚠️ Bạn đang mở file trực tiếp từ máy (file://). Google OAuth yêu cầu chạy trên web server (https://caixanhtest.vercel.app hoặc http://localhost). Vui lòng mở trang web trên Vercel nhé!");
         return;
       }
+
+      if (!firebaseAuth) {
+        showToast("⚠️ Firebase chưa tải xong. Vui lòng kiểm tra lại kết nối mạng!");
+        return;
+      }
+
       const provider = new firebase.auth.GoogleAuthProvider();
       provider.addScope('email');
       provider.addScope('profile');
+      provider.setCustomParameters({ prompt: 'select_account' });
 
+      // Try popup first
       firebaseAuth.signInWithPopup(provider)
         .then((result) => {
           showToast(`🎉 Xin chào ${result.user.displayName || 'bạn'}! Đang đồng bộ Cloud...`);
         })
         .catch((error) => {
-          console.error("Google Auth error:", error);
-          if (error.code === 'auth/unauthorized-domain') {
-            alert("Lưu ý: Domain " + window.location.hostname + " cần được thêm vào danh sách 'Authorized domains' trong Firebase Console (Authentication -> Settings -> Authorized domains).");
-          } else if (error.code !== 'auth/popup-closed-by-user') {
-            showToast("❌ Lỗi đăng nhập: " + (error.message || error.code));
-          }
+          handleAuthError(error, provider);
         });
+    }
+
+    function handleAuthError(error, provider) {
+      console.error("Google Auth error:", error);
+
+      if (error.code === 'auth/unauthorized-domain') {
+        openAuthDiagnosticModal();
+      } else if (error.code === 'auth/popup-blocked') {
+        if (confirm("Trình duyệt đã chặn cửa sổ Popup. Bạn có muốn chuyển sang đăng nhập bằng trang chuyển hướng (Redirect) không?")) {
+          if (provider && firebaseAuth) {
+            firebaseAuth.signInWithRedirect(provider);
+          }
+        }
+      } else if (error.code === 'auth/operation-not-allowed') {
+        alert("⚠️ Nhà cung cấp Google chưa được kích hoạt trong Firebase Console. Bạn vui lòng vào Firebase Console -> Authentication -> Sign-in method -> Bật 'Google' nhé!");
+      } else if (error.code !== 'auth/popup-closed-by-user' && error.code !== 'auth/cancelled-popup-request') {
+        showToast("❌ Lỗi đăng nhập: " + (error.message || error.code));
+      }
+    }
+
+    function openAuthDiagnosticModal() {
+      const modal = document.getElementById('auth-diagnostic-modal');
+      const backdrop = document.getElementById('auth-diagnostic-backdrop');
+      const domainCode = document.getElementById('current-domain-code');
+
+      const hostname = window.location.hostname || 'caixanhtest.vercel.app';
+      if (domainCode) domainCode.textContent = hostname;
+
+      if (modal) modal.style.display = 'flex';
+      if (backdrop) backdrop.style.display = 'block';
+    }
+
+    function closeAuthDiagnosticModal() {
+      const modal = document.getElementById('auth-diagnostic-modal');
+      const backdrop = document.getElementById('auth-diagnostic-backdrop');
+      if (modal) modal.style.display = 'none';
+      if (backdrop) backdrop.style.display = 'none';
+    }
+
+    function copyDomainToClipboard() {
+      const hostname = window.location.hostname || 'caixanhtest.vercel.app';
+      navigator.clipboard.writeText(hostname).then(() => {
+        showToast(`📋 Đã sao chép "${hostname}" vào bộ nhớ tạm!`);
+      }).catch(() => {
+        showToast(`Tên miền: ${hostname}`);
+      });
     }
 
     function logoutGoogle() {
@@ -5512,7 +5575,12 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
           syncToCloud();
         }
       }).catch((err) => {
-        console.warn("Firestore read notice (check Security Rules):", err);
+        if (err.code === 'permission-denied') {
+          console.warn("Firestore permission-denied. Security rules need to allow authenticated user write.");
+          showToast("⚠️ Lưu ý: Cần mở quyền Firestore Rules để lưu lên Cloud. Ghi chú vẫn được lưu an toàn trên máy bạn!");
+        } else {
+          console.warn("Firestore read notice:", err);
+        }
       });
     }
 
@@ -5533,7 +5601,11 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
       }, { merge: true }).then(() => {
         console.log("Synced to Cloud successfully!");
       }).catch((err) => {
-        console.warn("Firestore write notice (check Security Rules):", err);
+        if (err.code === 'permission-denied') {
+          console.warn("Firestore write permission denied. Please allow authenticated users in Firestore rules.");
+        } else {
+          console.warn("Firestore write notice:", err);
+        }
       });
     }
 
@@ -6627,6 +6699,46 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
       <div style="display:flex; gap:8px;">
         <button type="button" class="btn btn-sm btn-ghost" onclick="closeHighlightModal()">Hủy</button>
         <button type="button" class="btn btn-primary btn-sm" onclick="saveHighlightNote()">💾 Lưu Highlight</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- AUTH DIAGNOSTIC & GUIDED DOMAIN MODAL -->
+  <div id="auth-diagnostic-backdrop" class="highlight-modal-backdrop" onclick="closeAuthDiagnosticModal()" style="display:none;"></div>
+  <div id="auth-diagnostic-modal" class="highlight-note-modal" style="display:none; max-width: 520px;">
+    <div class="hl-modal-header" style="background: #FEF3C7; border-bottom: 1px solid #FDE68A;">
+      <div class="hl-modal-title" style="color: #92400E;">
+        <span>⚠️</span> Cần Cấp Quyền Domain Firebase (10 Giây)
+      </div>
+      <button class="hl-modal-close" onclick="closeAuthDiagnosticModal()" title="Đóng">✕</button>
+    </div>
+    <div class="hl-modal-body" style="gap: 14px;">
+      <div style="font-size: 0.88rem; color: var(--text); line-height: 1.5;">
+        Google yêu cầu tên miền trang web phải nằm trong danh sách <strong>Authorized domains</strong> (Miền được ủy quyền) của dự án Firebase <code>caixanhtest</code> để kích hoạt đăng nhập:
+      </div>
+
+      <div style="background: var(--surface-sidebar); border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; display: flex; align-items: center; justify-content: space-between; gap: 8px;">
+        <code id="current-domain-code" style="font-weight: 700; color: var(--primary); font-size: 0.95rem;">caixanhtest.vercel.app</code>
+        <button type="button" class="btn btn-sm btn-primary" onclick="copyDomainToClipboard()">📋 Sao Chép</button>
+      </div>
+
+      <div style="font-size: 0.85rem; color: var(--text); line-height: 1.6; background: var(--bg); padding: 12px; border-radius: 8px; border: 1px solid var(--border);">
+        <strong>3 bước thao tác cực dễ:</strong>
+        <ol style="margin: 6px 0 0 18px; padding: 0;">
+          <li>Bấm nút <strong>"Mở Cài Đặt Firebase"</strong> màu xanh bên dưới.</li>
+          <li>Cuộn xuống mục <strong>Authorized domains</strong> &rarr; Bấm <strong>Add domain</strong>.</li>
+          <li>Dán tên miền vừa sao chép vào rồi bấm <strong>Save</strong>!</li>
+          <li>Quay lại trang này và bấm nút <strong>Đăng nhập Google</strong> là xong!</li>
+        </ol>
+      </div>
+    </div>
+    <div class="hl-modal-footer">
+      <button type="button" class="btn btn-sm btn-ghost" onclick="closeAuthDiagnosticModal()">Để sau</button>
+      <div style="display:flex; gap: 8px;">
+        <a href="https://console.firebase.google.com/project/caixanhtest/authentication/settings" target="_blank" class="btn btn-sm btn-primary" style="text-decoration:none; display:inline-flex; align-items:center; gap:6px;">
+          🔗 Mở Cài Đặt Firebase
+        </a>
       </div>
     </div>
   </div>
