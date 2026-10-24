@@ -4939,6 +4939,22 @@ Hãy tìm hệ số tương quan mẫu (sample correlation coefficient - r).
 
 ## 8.2. Khoảng Tin Cậy cho Trung Bình $\mu$ Khi ĐÃ BIẾT $\sigma$ ($\sigma$ Known)
 
+![Mô hình trực quan giá trị tới hạn Z_alpha/2 trên đường cong chuẩn](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/slides/ch08_slide18.png)
+
+> [!NOTE]
+> **PHÂN TÍCH & BẢN CHẤT LÝ THUYẾT TỪ HÌNH 8.1 (SLIDE 18 - BERENSON):**
+> 1. **Cấu trúc hình học của Khoảng tin cậy đối xứng:**
+>    - Trọng tâm của đồ thị là điểm ước lượng trung bình mẫu $\bar{X}$ (tương ứng với giá trị $Z = 0$ trên thang đo chuẩn hóa).
+>    - Vùng trung tâm có diện tích bằng độ tin cậy $(1 - \alpha) = 0.95$ ($95\%$). Vì hàm mật độ chuẩn đối xứng hoàn hảo qua $0$, phần rủi ro sai sót $\alpha = 0.05$ ($5\%$) bị chia đều sang hai bên đuôi (mỗi đuôi có diện tích $\alpha/2 = 0.025$).
+> 2. **Xác định giá trị tới hạn $Z_{\alpha/2}$:**
+>    - Vị trí biên phân cách giữa vùng chấp nhận và vùng đuôi $2.5\%$ chính là $Z_{0.025} = 1.96$ và $-Z_{0.025} = -1.96$.
+>    - Khoảng cách từ tâm $\bar{X}$ đến mỗi biên chính là **Biên độ sai số (Margin of Error - $e$):**
+>      $$e = Z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}} = 1.96 \cdot \frac{\sigma}{\sqrt{n}}$$
+> 3. **Ý nghĩa diễn giải chuẩn Berenson (Tránh bẫy thi trắc nghiệm):**
+>    - **KHÔNG ĐƯỢC NÓI:** *"Xác suất để $\mu$ rơi vào khoảng này là $95\%$"* (vì tham số $\mu$ là một hằng số cố định của tổng thể, nó không ngẫu nhiên).
+>    - **PHÁT BIỂU CHÍNH XÁC:** *"Nếu ta lặp lại việc lấy mẫu ngẫu nhiên cùng cỡ $n$ vô số lần, thì $95\%$ các khoảng tin cậy được tính toán sẽ thực sự bao phủ được giá trị trung bình thực $\mu$ của tổng thể."*
+
+
 ### 1. Điều kiện áp dụng:
 - Tổng thể có phân phối chuẩn HOẶC cỡ mẫu đủ lớn ($n \ge 30$).
 - **Đã biết độ lệch chuẩn của tổng thể $\sigma$**.
@@ -4990,6 +5006,20 @@ $$\bar{X} \pm Z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \iff \left[ \bar{X} - Z_{\alp
 ---
 
 ## 8.3. Khoảng Tin Cậy cho Trung Bình $\mu$ Khi CHƯA BIẾT $\sigma$ (Student's $t$ Distribution)
+
+![So sánh hình học giữa phân phối Chuẩn Z và họ phân phối Student t](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/slides/ch08_slide30.png)
+
+> [!TIP]
+> **PHÂN TÍCH & BẢN CHẤT LÝ THUYẾT TỪ HÌNH 8.2 (SLIDE 30 - BERENSON):**
+> 1. **Tại sao phân phối $t$ có đuôi dày hơn ("Fatter Tails")?**
+>    - Khi chưa biết $\sigma$, ta buộc phải thay thế bằng độ lệch chuẩn mẫu $S$. Vì $S$ cũng là một biến ngẫu nhiên dao động theo từng mẫu, việc này bổ sung thêm một tầng độ bất định (extra uncertainty) vào phép tính.
+>    - Hệ quả hình học: Đỉnh của phân phối $t$ thấp hơn so với chuẩn tắc $Z$, và diện tích dồn về hai đuôi nhiều hơn (đuôi dày hơn). Do đó, với cùng một độ tin cậy $95\%$, giá trị tới hạn $t_{\alpha/2}$ luôn **lớn hơn** $Z_{\alpha/2} = 1.96$ (ví dụ: với $df=5$, $t_{0.025} = 2.571 > 1.96$), dẫn đến khoảng tin cậy với $t$ luôn **rộng hơn** so với $Z$.
+> 2. **Định lý tiệm cận (Asymptotic Property):**
+>    - Khi cỡ mẫu $n$ tăng dần ($df = n - 1 \to \infty$), thông tin về $\sigma$ thông qua $S$ ngày càng chuẩn xác, phân phối $t$ sẽ tiệm cận hoàn toàn về phân phối chuẩn tắc $Z$ ($t \to Z$).
+> 3. **Quy tắc nhận diện dạng bài sống còn:**
+>    - Đề thi cho chữ **"population standard deviation $\sigma$"** $\implies$ Dùng $Z$.
+>    - Đề thi cho chữ **"sample standard deviation $S$"** hoặc chỉ cho danh sách dữ liệu mẫu $\implies$ Bắt buộc dùng $t$ với $df = n - 1$.
+
 
 ### 1. Bản chất Phân phối Student $t$:
 - Trong thực tế sản xuất và kinh doanh, hầu như không bao giờ ta biết trước độ lệch chuẩn tổng thể $\sigma$.
@@ -5438,6 +5468,20 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
 
 ## 9.2. Hai Loại Sai Lầm Sống Còn & Công Suất Kiểm Định
 
+![Ma trận quyết định và 2 loại sai lầm trong kiểm định giả thuyết](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/slides/ch09_slide15.png)
+
+> [!IMPORTANT]
+> **PHÂN TÍCH & BẢN CHẤT LÝ THUYẾT TỪ HÌNH 9.1 (SLIDE 15 - BERENSON):**
+> 1. **Ma trận 4 trạng thái quyết định:**
+>    - **Sai lầm Loại I (Type I Error - Xác suất $\alpha$):** Bác bỏ $H_0$ trong khi thực tế $H_0$ đang ĐÚNG (False Positive / Kết án oan người vô tội). Mức ý nghĩa $\alpha$ chính là xác suất tối đa mà nhà nghiên cứu chấp nhận rủi ro này.
+>    - **Quyết định đúng (Độ tin cậy $1 - \alpha$):** Không bác bỏ $H_0$ khi $H_0$ thực sự đúng.
+>    - **Sai lầm Loại II (Type II Error - Xác suất $\beta$):** Không bác bỏ $H_0$ trong khi thực tế $H_0$ đã SAI (False Negative / Tha bổng kẻ có tội).
+>    - **Công suất kiểm định (Power of Test - $1 - \beta$):** Khả năng bác bỏ thành công $H_0$ khi $H_0$ thực tế sai (tóm đúng tội phạm).
+> 2. **Mối quan hệ đánh đổi sống còn (Trade-off):**
+>    - Với cùng một cỡ mẫu $n$ cố định, nếu ta siết chặt quy chuẩn để giảm $\alpha$, thì $\beta$ sẽ tự động tăng lên (và ngược lại).
+>    - Cách duy nhất để **giảm đồng thời cả $\alpha$ và $\beta$** (vừa không oan sai, vừa không bỏ lọt tội phạm) là **bắt buộc phải tăng cỡ mẫu $n$**.
+
+
 | Thực tế tổng thể \ Quyết định kiểm định | **Không bác bỏ $H_0$ (Do Not Reject $H_0$)** | **Bác bỏ $H_0$ (Reject $H_0$)** |
 | :--- | :---: | :---: |
 | **$H_0$ ĐÚNG trong thực tế** | **QUYẾT ĐỊNH ĐÚNG**<br>Xác suất $= 1 - \alpha$ (Độ tin cậy) | **SAI LẦM LOẠI I (Type I Error)**<br>Bác bỏ nhầm $H_0$ khi nó đúng!<br>Xác suất $= \alpha$ (Mức ý nghĩa) |
@@ -5452,11 +5496,34 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
 ## 9.3. Hai Cách Tiếp Cận Ra Quyết Định: Critical Value vs $p$-Value
 
 ### 1. Cách 1: Tiếp cận Giá trị Tới hạn (Critical Value Approach):
+
+![Biểu đồ miền bác bỏ hai phía trên đường cong chuẩn](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/slides/ch09_slide18.png)
+
+> [!NOTE]
+> **PHÂN TÍCH & BẢN CHẤT LÝ THUYẾT TỪ HÌNH 9.2 (SLIDE 18 - BERENSON):**
+> 1. **Cơ chế phân bổ miền bác bỏ trong kiểm định 2 phía (Two-Tail Test):**
+>    - Khi cặp giả thuyết mang dấu bằng và khác ($H_0: \mu = \mu_0$ vs $H_1: \mu \neq \mu_0$), sự sai lệch có thể xảy ra ở cả hai hướng (quá lớn hoặc quá nhỏ).
+>    - Do đó, toàn bộ diện tích rủi ro $\alpha$ bị chia đều thành 2 miền bác bỏ ở hai cực trị: Miền cực âm có diện tích $\alpha/2$ (ngăn cách bởi $-Z_{\alpha/2}$) và Miền cực dương có diện tích $\alpha/2$ (ngăn cách bởi $+Z_{\alpha/2}$).
+> 2. **Quy tắc quyết định theo Critical Value:**
+>    - Nếu thống kê kiểm định $Z_{STAT} < -Z_{\alpha/2}$ HOẶC $Z_{STAT} > +Z_{\alpha/2}$ (rơi vào vùng tô màu) $\implies$ **Bác bỏ $H_0$ (Reject $H_0$)**.
+>    - Nếu $-Z_{\alpha/2} \le Z_{STAT} \le +Z_{\alpha/2}$ (rơi vào vùng trung tâm) $\implies$ **Không bác bỏ $H_0$ (Do Not Reject $H_0$)**.
 - Tra bảng thống kê tìm giá trị tới hạn (Critical Value $Z_{crit}$ hoặc $t_{crit}$) dựa trên mức ý nghĩa $\alpha$.
 - Nếu giá trị thống kê kiểm định ($Z_{STAT}$ hoặc $t_{STAT}$) rơi vào **Miền bác bỏ (Rejection Region)** $\implies$ **Bác bỏ $H_0$**.
 - Ngược lại $\implies$ **Không đủ bằng chứng để bác bỏ $H_0$**.
 
 ### 2. Cách 2: Tiếp cận $p$-Value ($p$-Value Approach - Chuẩn quốc tế):
+
+![Quy tắc so sánh p-value và mức ý nghĩa alpha](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/slides/ch09_slide30.png)
+
+> [!TIP]
+> **PHÂN TÍCH & BẢN CHẤT LÝ THUYẾT TỪ HÌNH 9.3 (SLIDE 30 - BERENSON):**
+> 1. **Định nghĩa chuẩn của $p$-value:**
+>    - $p$-value là xác suất thu được một mẫu có giá trị bằng hoặc cực đoan hơn giá trị mẫu đang quan sát, giả định rằng giả thuyết $H_0$ đang đúng.
+> 2. **Câu khẩu quyết kinh điển khi làm bài thi MAS:**
+>    - *"If the $p$-value is low, then $H_0$ must go!"* (Nếu $p$-value thấp hơn $\alpha$ thì $H_0$ phải bị bác bỏ).
+>    - Tiêu chí so sánh:
+>      $$\text{Nếu } p\text{-value} < \alpha \implies \text{Bác bỏ } H_0 \text{ (Kết quả có ý nghĩa thống kê)}$$
+>      $$\text{Nếu } p\text{-value} \ge \alpha \implies \text{Không bác bỏ } H_0 \text{ (Chưa đủ bằng chứng bác bỏ)}$$
 - $p\text{-value}$ là xác suất nhận được giá trị thống kê mẫu cực đoan như hoặc cực đoan hơn giá trị quan sát được, với điều kiện $H_0$ đúng.
 - **QUY TẮC VÀNG QUYẾT ĐỊNH:**
   $$\text{Nếu } p\text{-value} < \alpha \implies \text{BÁC BỎ } H_0 \text{ (Reject } H_0\text{)}$$
