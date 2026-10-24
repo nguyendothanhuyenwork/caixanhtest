@@ -5848,7 +5848,23 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
       // STEP D2: Restore Dollar Currency as span to prevent KaTeX from parsing them
       html = html.replace(/___LITERAL_DOLLAR___/g, '<span class="currency-symbol">$</span>');
 
+      // STEP E: Inject HTML into article container
+      const articleEl = document.getElementById('article-content');
+      articleEl.innerHTML = html;
 
+      // STEP F: Transform Casio keys into 3D buttons
+      const codeElements = articleEl.querySelectorAll('code');
+      codeElements.forEach(el => {
+        const txt = el.textContent.trim();
+        if (txt.startsWith('[') && txt.endsWith(']')) {
+          el.className = 'casio-key';
+        }
+      });
+
+      // STEP G: Wrap Section 6 into container
+      wrapSection6();
+
+      // STEP H: Render KaTeX with STRICT delimiters ($ and $$ only!)
       renderMathInElement(articleEl, {
         delimiters: [
           {left: '$$', right: '$$', display: true},
@@ -5857,11 +5873,10 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
         throwOnError: false
       });
 
-      // STEP G: Wrap Section 6 & Control Visibility based on Auth
-      wrapSection6();
+      // STEP I: Control Section 6 visibility & Build TOC based on currentUser
       updateSection6Visibility(currentUser);
 
-      // STEP H: Initialize Notes System
+      // STEP J: Initialize Notes System, Highlights, and Auth
       initNotesSystem();
       initHighlightSystem();
       initAuthSystem();
