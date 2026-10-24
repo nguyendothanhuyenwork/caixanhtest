@@ -4939,11 +4939,6 @@ Hãy tìm hệ số tương quan mẫu (sample correlation coefficient - r).
 
 ## 8.2. Khoảng Tin Cậy cho Trung Bình $\mu$ Khi ĐÃ BIẾT $\sigma$ ($\sigma$ Known)
 
-![Khoảng tin cậy cho trung bình khi đã biết độ lệch chuẩn](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/slides/ch08_slide17.png)
-
-![Cách tra bảng và tìm giá trị tới hạn Z_alpha/2](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/slides/ch08_slide18.png)
-
-
 ### 1. Điều kiện áp dụng:
 - Tổng thể có phân phối chuẩn HOẶC cỡ mẫu đủ lớn ($n \ge 30$).
 - **Đã biết độ lệch chuẩn của tổng thể $\sigma$**.
@@ -4995,11 +4990,6 @@ $$\bar{X} \pm Z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \iff \left[ \bar{X} - Z_{\alp
 ---
 
 ## 8.3. Khoảng Tin Cậy cho Trung Bình $\mu$ Khi CHƯA BIẾT $\sigma$ (Student's $t$ Distribution)
-
-![Đặc tính phân phối Student t và bậc tự do](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/slides/ch08_slide28.png)
-
-![Công thức khoảng tin cậy dùng phân phối t](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/slides/ch08_slide30.png)
-
 
 ### 1. Bản chất Phân phối Student $t$:
 - Trong thực tế sản xuất và kinh doanh, hầu như không bao giờ ta biết trước độ lệch chuẩn tổng thể $\sigma$.
@@ -5056,9 +5046,6 @@ $$\bar{X} \pm t_{\alpha/2, n-1} \frac{S}{\sqrt{n}} \iff \left[ \bar{X} - t_{\alp
 
 ## 8.4. Khoảng Tin Cậy cho Tỷ Lệ Tổng Thể $\pi$ (Population Proportion)"
 
-![Khoảng tin cậy cho tỷ lệ tổng thể pi](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/slides/ch08_slide37.png)
-
-
 ### 1. Điều kiện áp dụng:
 - Cỡ mẫu phải thỏa mãn đồng thời:
   $$X \ge 5 \quad \text{và} \quad n - X \ge 5 \iff np \ge 5 \quad \text{và} \quad n(1 - p) \ge 5$$
@@ -5107,11 +5094,6 @@ $$p \pm Z_{\alpha/2} \sqrt{\frac{p(1 - p)}{n}} \iff \left[ p - Z_{\alpha/2}\sqrt
 ---
 
 ## 8.5. Xác Định Cỡ Mẫu Tối Thiểu Cần Thiết ($n$) (Determining Sample Size)
-
-![Công thức xác định cỡ mẫu cho trung bình](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/slides/ch08_slide46.png)
-
-![Công thức xác định cỡ mẫu cho tỷ lệ pi](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/slides/ch08_slide52.png)
-
 
 ### 1. Cỡ mẫu cho Trung bình (Sample Size for the Mean):
 Xuất phát từ công thức sai số biên $e = Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$, giải phương trình tìm $n$:
@@ -5438,9 +5420,6 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
 
 ## 9.1. Bản Chất & Cặp Giả Thuyết Thống Kê ($H_0$ & $H_1$)
 
-![Quy trình kiểm định giả thuyết thống kê tổng thể](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/slides/ch09_slide08.png)
-
-
 ### 1. Khái niệm Giả thuyết Thống kê (Statistical Hypotheses):
 - **Giả thuyết Không ($H_0$ - Null Hypothesis):**
   - Luôn đại diện cho trạng thái hiện tại (Status quo), sự không thay đổi, không có hiệu ứng mới hoặc lời khẳng định ban đầu của nhà sản xuất.
@@ -5459,9 +5438,6 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
 
 ## 9.2. Hai Loại Sai Lầm Sống Còn & Công Suất Kiểm Định
 
-![Bảng ma trận 2 loại sai lầm Type I và Type II Error](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/slides/ch09_slide15.png)
-
-
 | Thực tế tổng thể \ Quyết định kiểm định | **Không bác bỏ $H_0$ (Do Not Reject $H_0$)** | **Bác bỏ $H_0$ (Reject $H_0$)** |
 | :--- | :---: | :---: |
 | **$H_0$ ĐÚNG trong thực tế** | **QUYẾT ĐỊNH ĐÚNG**<br>Xác suất $= 1 - \alpha$ (Độ tin cậy) | **SAI LẦM LOẠI I (Type I Error)**<br>Bác bỏ nhầm $H_0$ khi nó đúng!<br>Xác suất $= \alpha$ (Mức ý nghĩa) |
@@ -5474,11 +5450,6 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
 ---
 
 ## 9.3. Hai Cách Tiếp Cận Ra Quyết Định: Critical Value vs $p$-Value
-
-![Mức ý nghĩa alpha và miền bác bỏ giả thuyết H0](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/slides/ch09_slide18.png)
-
-![Quy trình 5 bước tiếp cận theo p-value](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/slides/ch09_slide31.png)
-
 
 ### 1. Cách 1: Tiếp cận Giá trị Tới hạn (Critical Value Approach):
 - Tra bảng thống kê tìm giá trị tới hạn (Critical Value $Z_{crit}$ hoặc $t_{crit}$) dựa trên mức ý nghĩa $\alpha$.
