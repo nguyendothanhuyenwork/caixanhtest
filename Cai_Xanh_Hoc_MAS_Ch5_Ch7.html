@@ -3642,6 +3642,8 @@ b) Tìm điểm cắt của 5% thấp nhất (phải thi lại).
 | **Chọn mẫu Tỷ lệ $p$** | Cho mẫu $n$, hỏi **tỷ lệ mẫu** $p$ | $Z = \frac{p - \pi}{\sqrt{\pi(1-\pi)/n}}$ | `MENU 7 2` (Normal CD) với $\sigma = \sqrt{\frac{\pi(1-\pi)}{n}}$ |
 | **Cỡ mẫu cần thiết** | Hỏi cần khảo sát bao nhiêu người ($n$) | $n = \lceil (Z\sigma / e)^2 \rceil$ | Tính đại số, LUÔN LÀM TRÒN LÊN SỐ NGUYÊN! |
 
+<div id="section-6-mount-point"></div>
+
 <!-- SECTION_6_PLACEHOLDER -->
 
 # PHẦN 7: CHƯƠNG 8 - ƯỚC LƯỢNG KHOẢNG TIN CẬY (CONFIDENCE INTERVAL ESTIMATION)
@@ -4568,6 +4570,12 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
       // STEP D2: Restore Dollar Currency as span to prevent KaTeX from parsing them
       html = html.replace(/___LITERAL_DOLLAR___/g, '<span class="currency-symbol">$</span>');
 
+            // STEP D3: Ensure Section 6 mount point exists in DOM
+      html = html.replace(/<!--\s*SECTION_6_PLACEHOLDER\s*-->/g, '<div id="section-6-mount-point"></div>');
+      if (!html.includes('id="section-6-mount-point"')) {
+        html = html.replace(/<h1 id="heading-[^"]*">.*?CHƯƠNG 8/i, '<div id="section-6-mount-point"></div>\n$&');
+      }
+
       const articleEl = document.getElementById('article-content');
       articleEl.innerHTML = html;
 
@@ -4740,6 +4748,7 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
         if (result && result.user) {
           currentUser = result.user;
           updateAuthUI(currentUser);
+          updateSection6Access(currentUser);
           syncFromCloud(currentUser);
           showToast(`🎉 Xin chào ${currentUser.displayName}! Đã đăng nhập thành công.`);
         }
@@ -4795,6 +4804,9 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
       // Try popup first
       firebaseAuth.signInWithPopup(provider)
         .then((result) => {
+          currentUser = result.user;
+          updateAuthUI(currentUser);
+          updateSection6Access(currentUser);
           showToast(`🎉 Xin chào ${result.user.displayName || 'bạn'}! Đang đồng bộ Cloud...`);
         })
         .catch((error) => {
@@ -4957,11 +4969,21 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
     /* ==========================================================================
        SECTION 6 VIP ACCESS CONTROL FUNCTIONS
        ========================================================================== */
-    const AUTHORIZED_SECTION6_EMAIL = 'nguyendothanhuyen.work@gmail.com';
+    const AUTHORIZED_SECTION6_EMAILS = [
+      'nguyendothanhuyen.work@gmail.com',
+      'nguyendothanhuyenwork@gmail.com'
+    ];
 
     function isAuthorizedForSection6(user) {
       if (!user || !user.email) return false;
-      return user.email.toLowerCase().trim() === AUTHORIZED_SECTION6_EMAIL.toLowerCase().trim();
+      const email = user.email.toLowerCase().trim();
+      // Remove all dots before @gmail.com (Gmail dot-insensitivity rule)
+      const userNorm = email.replace(/@gmail\.com$/, '').replace(/\./g, '') + '@gmail.com';
+      const targetNorm = 'nguyendothanhuyenwork@gmail.com';
+
+      const isMatch = AUTHORIZED_SECTION6_EMAILS.includes(email) || userNorm === targetNorm;
+      console.log("[Section 6 Auth Check]", { email, userNorm, isMatch });
+      return isMatch;
     }
 
     function updateSection6Access(user) {
@@ -5087,7 +5109,7 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
             <div class="vip-unlocked-header">
               <span class="vip-unlocked-icon">🔓</span>
               <span>ĐÃ XÁC THỰC BẢN QUYỀN CHÍNH CHỦ</span>
-              <span class="vip-unlocked-email">${escapeHtml(currentUser.email)}</span>
+              <span class="vip-unlocked-email">${escapeHtml((currentUser && currentUser.email) ? currentUser.email : 'nguyendothanhuyen.work@gmail.com')}</span>
             </div>
             <div class="vip-unlocked-sub">
               Toàn bộ 20 câu hỏi trắc nghiệm thực chiến MAS Quiz 2 đã được mở khóa đầy đủ. Chúc bạn ôn tập đạt điểm 10 tuyệt đối!
