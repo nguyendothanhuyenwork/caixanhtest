@@ -2040,6 +2040,159 @@
       white-space: nowrap;
     }
 
+  
+    /* ==========================================================================
+       SECTION 6 VIP ACCESS CONTROL (AUTHORIZED: nguyendothanhuyen.work@gmail.com)
+       ========================================================================== */
+    .vip-section6-card {
+      margin: 36px 0;
+      padding: 38px 28px;
+      border-radius: 20px;
+      background: linear-gradient(135deg, rgba(21, 128, 61, 0.08) 0%, rgba(15, 23, 42, 0.04) 100%);
+      border: 2px dashed rgba(21, 128, 61, 0.35);
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.06);
+      backdrop-filter: blur(8px);
+    }
+    [data-theme="dark"] .vip-section6-card {
+      background: linear-gradient(135deg, rgba(34, 197, 94, 0.09) 0%, rgba(30, 41, 59, 0.6) 100%);
+      border-color: rgba(34, 197, 94, 0.3);
+      box-shadow: 0 12px 32px rgba(0, 0, 0, 0.25);
+    }
+    .vip-lock-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 14px;
+      border-radius: 9999px;
+      background: #FEF3C7;
+      color: #92400E;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      margin-bottom: 14px;
+      border: 1px solid #FDE68A;
+      box-shadow: 0 2px 8px rgba(245, 158, 11, 0.15);
+    }
+    [data-theme="dark"] .vip-lock-badge {
+      background: #78350F;
+      color: #FDE68A;
+      border-color: #92400E;
+    }
+    .vip-lock-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 8px;
+      line-height: 1.35;
+    }
+    .vip-lock-subtitle {
+      font-size: 0.92rem;
+      color: var(--text-muted);
+      margin-bottom: 22px;
+      max-width: 680px;
+      margin-left: auto;
+      margin-right: auto;
+      line-height: 1.5;
+    }
+    .vip-lock-content-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+      max-width: 580px;
+      margin: 0 auto;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+    }
+    .vip-lock-text {
+      font-size: 0.92rem;
+      color: var(--text);
+      line-height: 1.55;
+      margin-bottom: 12px;
+    }
+    .vip-auth-required-box {
+      background: var(--surface-sidebar);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    .auth-required-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .auth-required-email {
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+    .vip-wrong-user-box {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-align: left;
+      background: #FEF2F2;
+      border: 1px solid #FECACA;
+      border-radius: 10px;
+      padding: 12px 16px;
+      color: #991B1B;
+      font-size: 0.9rem;
+    }
+    [data-theme="dark"] .vip-wrong-user-box {
+      background: #450A0A;
+      border-color: #7F1D1D;
+      color: #FCA5A5;
+    }
+    .wrong-user-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+    
+    /* Unlocked Banner when authorized */
+    .vip-unlocked-banner {
+      margin: 28px 0 20px 0;
+      padding: 16px 20px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, rgba(21, 128, 61, 0.12) 0%, rgba(34, 197, 94, 0.08) 100%);
+      border: 1px solid rgba(34, 197, 94, 0.35);
+      border-left: 5px solid var(--primary);
+      box-shadow: 0 4px 16px rgba(21, 128, 61, 0.08);
+      animation: unlockFadeIn 0.3s ease;
+    }
+    @keyframes unlockFadeIn {
+      0% { opacity: 0; transform: translateY(-8px); }
+      100% { opacity: 1; transform: translateY(0); }
+    }
+    .vip-unlocked-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: var(--primary);
+      margin-bottom: 4px;
+    }
+    .vip-unlocked-email {
+      font-size: 0.8rem;
+      padding: 2px 8px;
+      border-radius: 9999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 600;
+      margin-left: 6px;
+    }
+    .vip-unlocked-sub {
+      font-size: 0.86rem;
+      color: var(--text);
+      line-height: 1.45;
+    }
+
   </style>
 </head>
 <body>
@@ -2625,7 +2778,7 @@ Tính: a) $E(X), E(Y), \sigma_X, \sigma_Y$. b) Hiệp phương sai $\sigma_{XY}$
 
 ## 1.3. Phân phối Nhị thức (Binomial Distribution $X \sim B(n, p)$)
 
-![Binomial Formula](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/slides/ch05_slide18.png)
+![Binomial Formula](slides_ch5_6_7_images/ch05_slide18.png)
 
 > [!NOTE]
 > ### Dấu hiệu nhận biết: Quy tắc 4 chữ vàng B-I-N-S
@@ -2690,7 +2843,7 @@ d) Tính số linh kiện lỗi trung bình $\mu$ và độ lệch chuẩn $\sig
 
 ## 1.4. Phân phối Poisson ($X \sim \text{Poisson}(\lambda)$)
 
-![Poisson Formula](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/slides/ch05_slide27.png)
+![Poisson Formula](slides_ch5_6_7_images/ch05_slide27.png)
 
 > [!NOTE]
 > ### Dấu hiệu nhận biết: Đếm số biến cố trong một khoảng thời gian/không gian
@@ -2740,7 +2893,7 @@ c) Tính xác suất trong vòng 2 phút tới nhận đúng 5 cuộc gọi.
 
 ## 1.5. Phân phối Siêu bội (Hypergeometric Distribution)
 
-![Hypergeometric Formula](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/slides/ch05_slide32.png)
+![Hypergeometric Formula](slides_ch5_6_7_images/ch05_slide32.png)
 
 > [!NOTE]
 > ### Dấu hiệu nhận biết: Chọn KHÔNG HOÀN LẠI từ tổng thể hữu hạn $N$
@@ -2777,7 +2930,7 @@ $$P(X = 2) = \frac{C_4^2 \cdot C_6^{3 - 2}}{C_{10}^3} = \frac{C_4^2 \cdot C_6^1}
 
 ## 2.1. Phân phối Đều liên tục (Continuous Uniform Distribution $U(a, b)$)
 
-![Uniform Properties](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/slides/ch06_slide07.png)
+![Uniform Properties](slides_ch5_6_7_images/ch06_slide07.png)
 
 ### Công thức:
 - Hàm mật độ: $f(X) = \frac{1}{b - a}$ với $a \le X \le b$.
@@ -2811,9 +2964,9 @@ b) Tính thời gian chờ trung bình $\mu$ và độ lệch chuẩn $\sigma$.
 
 ## 2.2. Phân phối Chuẩn (The Normal Distribution $X \sim N(\mu, \sigma^2)$)
 
-![Normal Curve Properties](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/slides/ch06_slide11.png)
-![Standardizing Z](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/slides/ch06_slide20.png)
-![Finding Probabilities](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/slides/ch06_slide26.png)
+![Normal Curve Properties](slides_ch5_6_7_images/ch06_slide11.png)
+![Standardizing Z](slides_ch5_6_7_images/ch06_slide20.png)
+![Finding Probabilities](slides_ch5_6_7_images/ch06_slide26.png)
 
 > [!NOTE]
 > ### Chuẩn hóa Z-score là gì?
@@ -2858,7 +3011,7 @@ c) Tính xác suất sạc đầy từ 55 đến 68 phút ($P(55 < X < 68)$).
 
 ## 2.3. Bài toán ngược phân phối Chuẩn (Inverse Normal)
 
-![Inverse Normal](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/slides/ch06_slide32.png)
+![Inverse Normal](slides_ch5_6_7_images/ch06_slide32.png)
 
 > [!IMPORTANT]
 > ### Công thức: $X = \mu + Z \cdot \sigma$
@@ -2897,7 +3050,7 @@ b) Tìm điểm cắt của 5% thấp nhất (phải thi lại).
 
 ## 2.4. Đánh giá tính chuẩn của bộ dữ liệu (Assessing Normality)
 
-![Assessing Normality](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/slides/ch06_slide41.png)
+![Assessing Normality](slides_ch5_6_7_images/ch06_slide41.png)
 
 > [!NOTE]
 > ### 3 Quy tắc thực nghiệm kiểm tra tính chuẩn:
@@ -2936,10 +3089,10 @@ b) Tìm điểm cắt của 5% thấp nhất (phải thi lại).
 > 
 > **Key Insight:** As sample size $n$ increases, the variation of the sample mean decreases ($\sigma_{\bar{X}} = \sigma / \sqrt{n}$), making sample estimates increasingly reliable!
 
-![Sampling Mean](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/slides/ch07_slide10.png)
-![Standard Error](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/slides/ch07_slide11.png)
-![CLT](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/slides/ch07_slide13.png)
-![Z for Mean](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/slides/ch07_slide19.png)
+![Sampling Mean](slides_ch5_6_7_images/ch07_slide10.png)
+![Standard Error](slides_ch5_6_7_images/ch07_slide11.png)
+![CLT](slides_ch5_6_7_images/ch07_slide13.png)
+![Z for Mean](slides_ch5_6_7_images/ch07_slide19.png)
 
 ---
 
@@ -3489,851 +3642,7 @@ b) Tìm điểm cắt của 5% thấp nhất (phải thi lại).
 | **Chọn mẫu Tỷ lệ $p$** | Cho mẫu $n$, hỏi **tỷ lệ mẫu** $p$ | $Z = \frac{p - \pi}{\sqrt{\pi(1-\pi)/n}}$ | `MENU 7 2` (Normal CD) với $\sigma = \sqrt{\frac{\pi(1-\pi)}{n}}$ |
 | **Cỡ mẫu cần thiết** | Hỏi cần khảo sát bao nhiêu người ($n$) | $n = \lceil (Z\sigma / e)^2 \rceil$ | Tính đại số, LUÔN LÀM TRÒN LÊN SỐ NGUYÊN! |
 
-# PHẦN 6: BỘ ĐỀ THỰC CHIẾN MAS QUIZ 2 (20 CÂU HỎI TRẮC NGHIỆM ĐẦY ĐỦ ANH - VIỆT - 5 BƯỚC - CASIO 580)
-
-> [!NOTE]
-> **TỔNG QUAN BỘ ĐỀ MAS QUIZ 2**
-> Tuyển tập 20 câu hỏi trắc nghiệm thực tế lấy trực tiếp từ đề thi trực tuyến kiểm tra tiến độ môn Thống kê Ứng dụng (MAS202). Toàn bộ 20 câu hỏi đã được số hóa dạng văn bản chuẩn (100% không dùng ảnh chụp), dịch nghĩa chuyên ngành mượt mà, phân tích bằng phương pháp chuẩn 5 bước và hướng dẫn bấm máy tính Casio fx-580VN X chi tiết đến từng phím bấm.
-
----
-
-## Câu 1: Xác Suất Phân Phối Đều Liên Tục (Continuous Uniform Distribution)
-
-### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
-> **Question 1 (Single Choice):**
-> A study of the time spent by visitors to finish the viewing of a marine life aquarium is uniformly distributed between 100 and 180 minutes. What is the probability that the viewing time will be less than 160 minutes.
-> - A. 0.25
-> - B. 0
-> - C. 0.5
-> - D. 0.75
-
-### 2. Dịch nghĩa tiếng Việt:
-Một nghiên cứu về thời gian khách tham quan hoàn thành chuyến xem thủy cung sinh vật biển cho thấy thời gian này tuân theo phân phối đều từ 100 đến 180 phút. Xác suất để thời gian tham quan ít hơn 160 phút là bao nhiêu?
-
-### 3. Phương pháp giải chuẩn 5 bước:
-- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
-  - Biến ngẫu nhiên $X$: Thời gian tham quan thủy cung (phút).
-  - Dạng phân phối: Phân phối đều liên tục $X \sim U(a, b)$ với $a = 100$, $b = 180$.
-  - Yêu cầu: Tính xác suất $P(X < 160)$.
-- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
-  - Đối với phân phối đều trên đoạn $[a, b]$, hàm mật độ xác suất là hằng số:
-    $$f(x) = \frac{1}{b - a} = \frac{1}{180 - 100} = \frac{1}{80} \quad (100 \le x \le 180)$$
-  - Xác suất $P(X < x_0)$ chính là diện tích hình chữ nhật từ cận dưới $a$ đến $x_0$:
-    $$P(X < x_0) = \frac{x_0 - a}{b - a}$$
-- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
-  $$P(X < 160) = \frac{160 - 100}{180 - 100} = \frac{60}{80} = \frac{3}{4} = 0.75$$
-- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
-  - Bấm: `[MENU]` `[1]` (Màn hình tính toán thông thường).
-  - Nhập biểu thức phân số: `[(■/□)]` `160 - 100` `[▼]` `180 - 100` `[=]`
-  - Kết quả hiện phân số `3/4`, bấm phím `[S<=>D]` để chuyển sang số thập phân $\to$ `0.75`.
-- **BƯỚC 5: Kết luận:**
-  - Đáp án chính xác: **0.75** (Chọn phương án **D**).
-
----
-
-## Câu 2: Xác Định Quần Thể Mục Tiêu (Target Population)
-
-### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
-> **Question 2 (Single Choice):**
-> Most analysts focus on the cost of tuition as the way to measure the cost of a college education. But incidentals, such as textbook costs, are rarely considered. A researcher at Drummond University wishes to estimate the textbook costs of first-year students at Drummond. To do so, she monitored the textbook cost of 250 first-year students and found that their average textbook cost was \$300 per semester. Identify the population of interest to the researcher.
-> - A. The 250 students that were monitored
-> - B. All college students
-> - C. All Drummond University students
-> - D. All first-year Drummond University students
-
-### 2. Dịch nghĩa tiếng Việt:
-Hầu hết các nhà phân tích chỉ tập trung vào học phí để đo lường chi phí giáo dục đại học, nhưng các chi phí phụ như sách giáo khoa hiếm khi được tính đến. Một nhà nghiên cứu tại Đại học Drummond muốn ước lượng chi phí sách giáo khoa của sinh viên năm nhất tại Drummond. Để làm điều đó, cô đã theo dõi chi phí sách giáo khoa của 250 sinh viên năm nhất và thấy chi phí trung bình là \$300 mỗi học kỳ. Hãy xác định quần thể mục tiêu (population of interest) của nhà nghiên cứu.
-
-### 3. Phương pháp giải chuẩn 5 bước:
-- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
-  - Đối tượng khảo sát: Sinh viên năm nhất (first-year students) tại Đại học Drummond.
-  - Cỡ mẫu thu thập thực tế: $n = 250$ sinh viên năm nhất.
-  - Mục tiêu nghiên cứu: Ước lượng chi phí sách giáo khoa của sinh viên năm nhất trường Drummond.
-- **BƯỚC 2: Bản chất lý thuyết & Nhận diện khái niệm:**
-  - **Mẫu (Sample):** Là tập hợp con các phần tử được chọn ra để thu thập dữ liệu (ở đây là 250 bạn sinh viên năm nhất được quan sát).
-  - **Quần thể mục tiêu (Population of Interest / Target Population):** Là toàn bộ tập hợp các đối tượng mà nhà nghiên cứu muốn rút ra kết luận suy diễn thống kê. Vì đề bài nêu rõ mục đích là *"estimate the textbook costs of first-year students at Drummond"*, quần thể phải là **tất cả sinh viên năm nhất tại Đại học Drummond**.
-- **BƯỚC 3: Loại trừ bẫy trắc nghiệm:**
-  - Phương án A (*The 250 students...*): Sai, đây chỉ là mẫu (sample).
-  - Phương án B (*All college students*): Sai, quá rộng (tất cả sinh viên đại học nói chung).
-  - Phương án C (*All Drummond University students*): Sai, bao gồm cả sinh viên năm 2, 3, 4 trong khi nghiên cứu chỉ nhắm vào sinh viên năm nhất.
-  - Phương án D (*All first-year Drummond University students*): Đúng hoàn toàn và chính xác phạm vi.
-- **BƯỚC 4: Hướng dẫn Casio fx-580VN X:**
-  - Câu hỏi lý thuyết định tính, không cần bấm máy tính.
-- **BƯỚC 5: Kết luận:**
-  - Đáp án chính xác: **All first-year Drummond University students** (Chọn phương án **D**).
-
----
-
-## Câu 3: Xác Suất Phân Phối Nhị Thức (Binomial Distribution)
-
-### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
-> **Question 3 (Single Choice):**
-> The phone lines to an airline reservation system are occupied 40% of the time. Assume that the events that the lines are occupied on successive calls are independent. Assume that 10 calls are placed to the airline. What is the probability that for exactly three calls the lines are occupied
-> - A. 0.1640
-> - B. 0.2410
-> - C. 0.2149
-> - D. 0.6142
-
-### 2. Dịch nghĩa tiếng Việt:
-Các đường dây điện thoại đến hệ thống đặt vé của một hãng hàng không bị bận 40% thời gian. Giả sử biến cố các đường dây bị bận ở các cuộc gọi liên tiếp là độc lập với nhau. Giả sử có 10 cuộc gọi được gọi tới hãng hàng không. Xác suất để có đúng 3 cuộc gọi gặp đường dây bận là bao nhiêu?
-
-### 3. Phương pháp giải chuẩn 5 bước:
-- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
-  - Mỗi cuộc gọi là một phép thử Bernoulli độc lập có 2 kết cục: Bận hoặc Rỗi.
-  - Tổng số cuộc gọi (số phép thử): $n = 10$.
-  - Xác suất thành công (đường dây bị bận): $p = 40\% = 0.40$.
-  - Số lần thành công cần tính xác suất: $x = 3$.
-- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
-  - Biến ngẫu nhiên $X \sim B(n = 10, p = 0.40)$.
-  - Công thức hàm xác suất nhị thức (Binomial Probability Mass Function):
-    $$P(X = x) = C_n^x \cdot p^x \cdot (1 - p)^{n - x}$$
-- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
-  $$P(X = 3) = C_{10}^3 \cdot (0.40)^3 \cdot (1 - 0.40)^{10 - 3} = C_{10}^3 \cdot (0.40)^3 \cdot (0.60)^7$$
-  - Ta có: $C_{10}^3 = \frac{10 \times 9 \times 8}{3 \times 2 \times 1} = 120$.
-  - $(0.40)^3 = 0.064$.
-  - $(0.60)^7 \approx 0.0279936$.
-  - Nhân lại: $P(X = 3) = 120 \times 0.064 \times 0.0279936 \approx 0.21499... \approx 0.2149$.
-- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
-  - **Cách 1: Sử dụng bảng phân phối nhị thức (Binomial PD):**
-    - Bấm: `[MENU]` `[7]` (Phân phối Distribution).
-    - Bấm mũi tên xuống: `[▼]` `[1]` (Binomial PD - Xác suất tại 1 điểm).
-    - Chọn `[1]` (Variable - Biến số).
-    - Nhập: $x$: `3` `[=]`, $N$: `10` `[=]`, $p$: `0.4` `[=]`.
-    - Bấm `[=]` $\to$ Kết quả hiển thị: `0.214990848` $\approx 0.2149$.
-  - **Cách 2: Bấm tổ hợp tại Menu 1:**
-    - Bấm: `[MENU]` `[1]`
-    - Nhập: `10` `[SHIFT]` `[÷]` (ra chữ C) `3` `[×]` `0.4` `[x■]` `3` `[×]` `0.6` `[x■]` `7` `[=]`
-    - Kết quả: `0.21499...` $\approx 0.2149$.
-- **BƯỚC 5: Kết luận:**
-  - Đáp án chính xác: **0.2149** (Chọn phương án **C**).
-
----
-
-## Câu 4: Phân Phối Chuẩn - Tính Xác Suất Trong Khoảng (Normal Distribution)
-
-### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
-> **Question 4 (Single Choice):**
-> A supermarket manager has determined that the amount of time customers spend in the supermarket is approximately normally distributed with a mean of 45 minutes and a standard deviation of 6 minutes. Find the probability that a customer spends between 39 and 43 minutes in the supermarket.
-> Let P(Z < -1) = 0.159, P(Z < -0.33) = 0.371, P(Z < 0.02) = 0.508, and P(Z < 0.85) = 0.802.
-> - A. 0.345
-> - B. 0.646
-> - C. 0.212
-> - D. 0.823
-
-### 2. Dịch nghĩa tiếng Việt:
-Người quản lý siêu thị xác định rằng thời gian khách hàng mua sắm trong siêu thị có phân phối xấp xỉ chuẩn với trung bình là 45 phút và độ lệch chuẩn là 6 phút. Tìm xác suất để một khách hàng dành từ 39 đến 43 phút trong siêu thị.
-Cho biết: P(Z < -1) = 0.159; P(Z < -0.33) = 0.371; P(Z < 0.02) = 0.508; P(Z < 0.85) = 0.802.
-
-### 3. Phương pháp giải chuẩn 5 bước:
-- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
-  - Biến ngẫu nhiên $X \sim N(\mu = 45, \sigma = 6)$.
-  - Khoảng thời gian cần tính xác suất: $39 \le X \le 43$.
-- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
-  - Chuẩn hóa các giá trị biên về điểm chuẩn hóa Z (Z-score):
-    $$Z = \frac{X - \mu}{\sigma}$$
-  - Xác suất trong khoảng:
-    $$P(x_1 \le X \le x_2) = P(Z_1 \le Z \le Z_2) = P(Z \le Z_2) - P(Z \le Z_1)$$
-- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
-  - Với $x_1 = 39$:
-    $$Z_1 = \frac{39 - 45}{6} = \frac{-6}{6} = -1.00$$
-  - Với $x_2 = 43$:
-    $$Z_2 = \frac{43 - 45}{6} = \frac{-2}{6} = -\frac{1}{3} \approx -0.33$$
-  - Biểu thức xác suất chuyển thành:
-    $$P(39 \le X \le 43) = P(-1.00 \le Z \le -0.33) = P(Z < -0.33) - P(Z < -1.00)$$
-  - Thay số liệu đã cho trong đề bài:
-    $$P(39 \le X \le 43) = 0.371 - 0.159 = 0.212$$
-- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
-  - **Cách 1: Tính nhanh theo dữ kiện đề bài:**
-    - Bấm `[MENU]` `[1]`, nhập `0.371 - 0.159 =` $\to$ ra `0.212`.
-  - **Cách 2: Kiểm chứng trực tiếp bằng hàm Normal CD:**
-    - Bấm: `[MENU]` `[7]` `[2]` (Normal CD).
-    - Lower: nhập `39` `[=]`.
-    - Upper: nhập `43` `[=]`.
-    - $\sigma$: nhập `6` `[=]`.
-    - $\mu$: nhập `45` `[=]`.
-    - Bấm `[=]` $\to$ Kết quả hiển thị: `0.2119...` $\approx 0.212$.
-- **BƯỚC 5: Kết luận:**
-  - Đáp án chính xác: **0.212** (Chọn phương án **C**).
-
----
-
-## Câu 5: Phân Phối Chuẩn - Tính Xác Suất Từ Trung Bình Đến Cận Trên
-
-### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
-> **Question 5 (Single Choice):**
-> A bank's loan officer rates applicants for credit. The ratings are normally distributed with a mean of 200 and a standard deviation of 50. If an applicant is randomly selected, find the probability of a rating that is between 200 and 275.
-> Let P(Z < -0.17) = 0.4332, P(Z < 0) = 0.5, P(Z < 1.5) = 0.9332.
-> - A. 0.9332
-> - B. 0.5
-> - C. 0.4332
-> - D. 0.0668
-
-### 2. Dịch nghĩa tiếng Việt:
-Một chuyên viên tín dụng ngân hàng chấm điểm các khách hàng nộp đơn xin vay vốn. Điểm đánh giá có phân phối chuẩn với giá trị trung bình là 200 và độ lệch chuẩn là 50. Nếu chọn ngẫu nhiên một người nộp đơn, hãy tìm xác suất để điểm đánh giá của người đó nằm trong khoảng từ 200 đến 275.
-Cho biết: P(Z < -0.17) = 0.4332; P(Z < 0) = 0.5; P(Z < 1.5) = 0.9332.
-
-### 3. Phương pháp giải chuẩn 5 bước:
-- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
-  - Biến ngẫu nhiên $X$: Điểm xếp hạng tín dụng, $X \sim N(\mu = 200, \sigma = 50)$.
-  - Cần tính: $P(200 \le X \le 275)$.
-- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
-  - Chuẩn hóa Z hai mốc:
-    $$Z_1 = \frac{200 - 200}{50} = 0$$
-    $$Z_2 = \frac{275 - 200}{50} = \frac{75}{50} = 1.50$$
-  - Công thức xác suất:
-    $$P(200 \le X \le 275) = P(0 \le Z \le 1.50) = P(Z < 1.50) - P(Z < 0)$$
-- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
-  - Thay số liệu đề bài cho:
-    $$P(0 \le Z \le 1.50) = 0.9332 - 0.5000 = 0.4332$$
-- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
-  - **Cách 1: Trừ trực tiếp dữ kiện đề:**
-    - Bấm `[MENU]` `[1]`, nhập `0.9332 - 0.5 =` $\to$ ra `0.4332`.
-  - **Cách 2: Bấm Normal CD:**
-    - Bấm: `[MENU]` `[7]` `[2]`.
-    - Lower: `200` `[=]`.
-    - Upper: `275` `[=]`.
-    - $\sigma$: `50` `[=]`.
-    - $\mu$: `200` `[=]`.
-    - Bấm `[=]` $\to$ Kết quả: `0.43319...` $\approx 0.4332$.
-- **BƯỚC 5: Kết luận:**
-  - Đáp án chính xác: **0.4332** (Chọn phương án **C**).
-
----
-
-## Câu 6: Phân Phối Poisson - Xác Suất "Ít Nhất 1 Lần" (At Least One)
-
-### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
-> **Question 6 (Single Choice):**
-> The number of power outages at a nuclear power plant has a Poisson distribution with a mean of 6 outages per year. The probability that there will be at least 1 power outages in a year is__
-> - A. 0.1274
-> - B. 0.9975
-> - C. 0.8735
-> - D. 0.0021
-
-### 2. Dịch nghĩa tiếng Việt:
-Số lần mất điện tại một nhà máy điện hạt nhân tuân theo phân phối Poisson với trung bình là 6 lần mất điện mỗi năm. Xác suất để có ít nhất 1 lần mất điện trong một năm là:
-
-### 3. Phương pháp giải chuẩn 5 bước:
-- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
-  - Biến ngẫu nhiên $X$: Số lần mất điện trong 1 năm.
-  - Phân phối: $X \sim \text{Poisson}(\lambda = 6)$.
-  - Cần tính: $P(X \ge 1)$ ("at least 1 power outages").
-- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
-  - Quy tắc biến cố đối (Complement Rule): Biến cố đối của "có ít nhất 1 lần" là "không có lần nào" ($X = 0$):
-    $$P(X \ge 1) = 1 - P(X = 0)$$
-  - Công thức xác suất Poisson:
-    $$P(X = k) = \frac{e^{-\lambda} \cdot \lambda^k}{k!} \implies P(X = 0) = \frac{e^{-6} \cdot 6^0}{0!} = e^{-6}$$
-- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
-  $$P(X \ge 1) = 1 - e^{-6}$$
-  - Ta có: $e^{-6} \approx 0.00247875$.
-  - Do đó:
-    $$P(X \ge 1) = 1 - 0.00247875 = 0.997521... \approx 0.9975$$
-- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
-  - Bấm: `[MENU]` `[1]`
-  - Nhập: `1` `[-]` `[SHIFT]` `[ln]` (ra ký hiệu $e^{\square}$) `[-]` `6` `[=]`
-  - Màn hình hiển thị: `0.9975212478` $\implies$ Làm tròn 4 chữ số thập phân là `0.9975`.
-- **BƯỚC 5: Kết luận:**
-  - Đáp án chính xác: **0.9975** (Chọn phương án **B**).
-
----
-
-## Câu 7: Sai Số Chuẩn Của Trung Bình Mẫu (Standard Error of the Mean)
-
-### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
-> **Question 7 (Single Choice):**
-> A random sample of 121 bottles of cologne showed an average content of 4 ounces. It is known that the standard deviation of the contents (i.e., of the population) is 0.22 ounces. The standard error of the mean equals
-> - A. 0.0200
-> - B. 0.0331
-> - C. 4.000
-> - D. 0.3636
-
-### 2. Dịch nghĩa tiếng Việt:
-Một mẫu ngẫu nhiên gồm 121 chai nước hoa cho thấy dung tích trung bình là 4 ounce. Biết rằng độ lệch chuẩn của dung tích toàn thể (tức của tổng thể) là 0.22 ounce. Sai số chuẩn của giá trị trung bình (standard error of the mean) bằng:
-
-### 3. Phương pháp giải chuẩn 5 bước:
-- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
-  - Cỡ mẫu: $n = 121$.
-  - Trung bình mẫu: $\bar{x} = 4$ ounces (đây là dữ liệu làm xao nhãng, không dùng để tính sai số chuẩn).
-  - Độ lệch chuẩn tổng thể: $\sigma = 0.22$ ounces.
-- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
-  - Sai số chuẩn của trung bình mẫu (Standard Error of the Mean, ký hiệu $\sigma_{\bar{x}}$) phản ánh độ biến thiên của các trung bình mẫu quanh trung bình tổng thể:
-    $$\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}}$$
-- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
-  $$\sigma_{\bar{x}} = \frac{0.22}{\sqrt{121}} = \frac{0.22}{11} = 0.0200$$
-- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
-  - Bấm: `[MENU]` `[1]`
-  - Nhập: `0.22` `[÷]` `[√]` `121` `[=]`
-  - Máy hiện phân số `1/50`, bấm phím `[S<=>D]` để chuyển sang số thập phân $\to$ `0.02` (tức `0.0200`).
-- **BƯỚC 5: Kết luận:**
-  - Đáp án chính xác: **0.0200** (Chọn phương án **A**).
-
----
-
-## Câu 8: Phân Phối Chuẩn - Xác Suất Vượt Mức Cho Trước (Upper Tail Probability)
-
-### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
-> **Question 8 (Single Choice):**
-> The weekly salaries of teachers in one state are normally distributed with a mean of \$490 and a standard deviation of \$45. What is the probability that a randomly selected teacher earns more than \$525 a week? Let P(Z < 0.778) = 0.7817 and P(Z < 0.163) = 0.5646.
-> - A. 0.7823
-> - B. 0.2183
-> - C. 0.2823
-> - D. 0.4354
-
-### 2. Dịch nghĩa tiếng Việt:
-Tiền lương hàng tuần của giáo viên ở một bang có phân phối chuẩn với mức trung bình là \$490 và độ lệch chuẩn là \$45. Xác suất để một giáo viên được chọn ngẫu nhiên có thu nhập nhiều hơn \$525 một tuần là bao nhiêu?
-Cho biết: P(Z < 0.778) = 0.7817 và P(Z < 0.163) = 0.5646.
-
-### 3. Phương pháp giải chuẩn 5 bước:
-- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
-  - Biến ngẫu nhiên $X$: Lương tuần của giáo viên, $X \sim N(\mu = 490, \sigma = 45)$.
-  - Cần tính: $P(X > 525)$ (kiếm được nhiều hơn \$525/tuần).
-- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
-  - Chuẩn hóa Z:
-    $$Z = \frac{X - \mu}{\sigma} = \frac{525 - 490}{45} = \frac{35}{45} = \frac{7}{9} \approx 0.7778 \approx 0.778$$
-  - Xác suất đuôi trên (Upper Tail):
-    $$P(X > 525) = P(Z > 0.778) = 1 - P(Z < 0.778)$$
-- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
-  - Thay số liệu đề bài cho: $P(Z < 0.778) = 0.7817$:
-    $$P(X > 525) = 1 - 0.7817 = 0.2183$$
-- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
-  - Bấm: `[MENU]` `[1]`
-  - Nhập: `1 - 0.7817 =` $\to$ ra `0.2183`.
-  - Hoặc kiểm tra bằng Normal CD: `[MENU]` `[7]` `[2]`, Lower: `525`, Upper: `999999`, $\sigma = 45$, $\mu = 490$ $\to$ `0.21835...` $\approx 0.2183$.
-- **BƯỚC 5: Kết luận:**
-  - Đáp án chính xác: **0.2183** (Chọn phương án **B**).
-
----
-
-## Câu 9: Tỷ Lệ Phần Trăm Nằm Giữa Các Mốc Độ Lệch Chuẩn Z
-
-### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
-> **Question 9 (Single Choice):**
-> For a standard normal distribution, find the percentage of the data that are between 3 standard deviations below the mean and 1 standard deviation above the mean.
-> Let P(Z < -3) = 0.0013, P(Z < -2) = 0.0228, P(Z < 0) = 0.5, P(Z < 1) = 0.8413, P(Z < 3) = 0.9987.
-> - A. 16%
-> - B. 99.74%
-> - C. 84%
-> - D. 15.74%
-
-### 2. Dịch nghĩa tiếng Việt:
-Đối với phân phối chuẩn chuẩn hóa, hãy tìm tỷ lệ phần trăm dữ liệu nằm giữa 3 độ lệch chuẩn dưới mức trung bình và 1 độ lệch chuẩn trên mức trung bình.
-Cho biết: P(Z < -3) = 0.0013; P(Z < -2) = 0.0228; P(Z < 0) = 0.5; P(Z < 1) = 0.8413; P(Z < 3) = 0.9987.
-
-### 3. Phương pháp giải chuẩn 5 bước:
-- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
-  - Phân phối chuẩn chuẩn hóa $Z \sim N(0, 1)$.
-  - "3 standard deviations below the mean" $\implies Z = -3$.
-  - "1 standard deviation above the mean" $\implies Z = +1$.
-  - Cần tính: $P(-3 \le Z \le 1)$.
-- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
-  $$P(-3 \le Z \le 1) = P(Z < 1) - P(Z < -3)$$
-- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
-  - Thay số liệu đã cho:
-    $$P(-3 \le Z \le 1) = 0.8413 - 0.0013 = 0.8400$$
-  - Đổi sang tỷ lệ phần trăm:
-    $$0.8400 \times 100\% = 84\%$$
-- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
-  - Bấm: `[MENU]` `[1]`
-  - Nhập: `0.8413 - 0.0013 =` $\to$ ra `0.84`, nhân 100 ra `84%`.
-- **BƯỚC 5: Kết luận:**
-  - Đáp án chính xác: **84%** (Chọn phương án **C**).
-
----
-
-## Câu 10: Độ Lệch Chuẩn Của Bảng Phân Phối Rời Rạc (Discrete Standard Deviation)
-
-### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
-> **Question 10 (Single Choice):**
-> The following table contains the probability distribution for X = the number of retransmissions necessary to successfully transmit a 1024K data package through a network.
-> 
-> | X | 0 | 1 | 2 | 3 |
-> | :---: | :---: | :---: | :---: | :---: |
-> | **P(X)** | 0.35 | 0.35 | 0.25 | 0.05 |
-> 
-> The standard deviation of the number of retransmissions is __
-> - A. 0.647
-> - B. 1.438
-> - C. 0.894
-> - D. 1.290
-
-### 2. Dịch nghĩa tiếng Việt:
-Bảng dưới đây chứa phân phối xác suất của X = số lần truyền lại cần thiết để truyền thành công một gói dữ liệu 1024K qua mạng.
-Độ lệch chuẩn (standard deviation) của số lần truyền lại là:
-
-### 3. Phương pháp giải chuẩn 5 bước:
-- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
-  - Biến ngẫu nhiên rời rạc $X$ nhận các giá trị $\{0, 1, 2, 3\}$.
-  - Xác suất tương ứng: $P(0) = 0.35, P(1) = 0.35, P(2) = 0.25, P(3) = 0.05$.
-  - Tổng xác suất: $0.35 + 0.35 + 0.25 + 0.05 = 1.00$ (hợp lệ).
-- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
-  - Kỳ vọng: $E(X) = \sum x \cdot P(x)$
-  - Kỳ vọng bậc 2: $E(X^2) = \sum x^2 \cdot P(x)$
-  - Phương sai: $Var(X) = \sigma^2 = E(X^2) - [E(X)]^2$
-  - Độ lệch chuẩn: $\sigma = \sqrt{Var(X)}$
-- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
-  - Tính $E(X)$:
-    $$E(X) = 0(0.35) + 1(0.35) + 2(0.25) + 3(0.05) = 0 + 0.35 + 0.50 + 0.15 = 1.00$$
-  - Tính $E(X^2)$:
-    $$E(X^2) = 0^2(0.35) + 1^2(0.35) + 2^2(0.25) + 3^2(0.05) = 0 + 0.35 + 4(0.25) + 9(0.05) = 0.35 + 1.00 + 0.45 = 1.80$$
-  - Tính phương sai $Var(X)$:
-    $$Var(X) = E(X^2) - [E(X)]^2 = 1.80 - (1.00)^2 = 0.80$$
-  - Tính độ lệch chuẩn $\sigma$:
-    $$\sigma = \sqrt{0.80} \approx 0.894427... \approx 0.894$$
-- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X (Tuyệt chiêu Thống kê 1 biến kèm xác suất):**
-  - **Bước A (Bật cột tần số nếu chưa bật):**
-    - Bấm: `[SHIFT]` `[MENU]` (Setup) $\to$ Bấm `[▼]` $\to$ Chọn `[3]` (Statistics) $\to$ Chọn `[1]` (On).
-  - **Bước B (Nhập bảng dữ liệu):**
-    - Bấm: `[MENU]` `[6]` (Statistics) $\to$ Chọn `[1]` (1-Variable).
-    - Cột `x`: Bấm `0` `[=]`, `1` `[=]`, `2` `[=]`, `3` `[=]`.
-    - Dùng phím điều hướng sang cột `FREQ`: Bấm `0.35` `[=]`, `0.35` `[=]`, `0.25` `[=]`, `0.05` `[=]`.
-  - **Bước C (Xuất kết quả):**
-    - Bấm phím `[AC]`.
-    - Bấm `[OPTN]` $\to$ Chọn `[2]` (1-Variable Calc).
-  - **Bước D (Đọc kết quả):**
-    - Máy hiện $\bar{x} = 1$ (Kỳ vọng $E(X)$).
-    - Máy hiện $\sigma_x = 0.894427191$ (Độ lệch chuẩn) $\implies$ Khớp hoàn hảo với phương án **0.894**!
-- **BƯỚC 5: Kết luận:**
-  - Đáp án chính xác: **0.894** (Chọn phương án **C**).
-
----
-
-## Câu 11: Phân Phối Chọn Mẫu Của Trung Bình Mẫu (Sampling Distribution of Mean)
-
-### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
-> **Question 11 (Single Choice):**
-> The mean and the standard deviation of a population are 113.9 and 32.1, respectively. Find the mean and standard deviation of the sampling distribution of the sample mean of size 64.
-> - A. Mean = 113.9; standard deviation = 2.3
-> - B. Mean = 113.9; standard deviation = 4.0125
-> - C. Mean = 4.0; standard deviation = 113.9
-> - D. Mean = 113.9; standard deviation = 32.1
-
-### 2. Dịch nghĩa tiếng Việt:
-Giá trị trung bình và độ lệch chuẩn của một tổng thể lần lượt là 113.9 và 32.1. Hãy tìm trung bình và độ lệch chuẩn của phân phối mẫu của trung bình mẫu với kích thước mẫu là 64.
-
-### 3. Phương pháp giải chuẩn 5 bước:
-- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
-  - Tổng thể: $\mu = 113.9$, $\sigma = 32.1$.
-  - Cỡ mẫu: $n = 64$.
-- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
-  - Theo Định lý Giới hạn Trung tâm (CLT) và tính chất của phân phối chọn mẫu:
-    - Trung bình của phân phối mẫu bằng đúng trung bình tổng thể:
-      $$\mu_{\bar{x}} = \mu = 113.9$$
-    - Độ lệch chuẩn của phân phối mẫu (sai số chuẩn):
-      $$\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}}$$
-- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
-  $$\mu_{\bar{x}} = 113.9$$
-  $$\sigma_{\bar{x}} = \frac{32.1}{\sqrt{64}} = \frac{32.1}{8} = 4.0125$$
-- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
-  - Bấm: `[MENU]` `[1]`
-  - Nhập: `32.1` `[÷]` `[√]` `64` `[=]`
-  - Bấm `[S<=>D]` $\to$ Kết quả hiển thị: `4.0125`.
-- **BƯỚC 5: Kết luận:**
-  - Đáp án chính xác: **Mean = 113.9; standard deviation = 4.0125** (Chọn phương án **B**).
-
----
-
-## Câu 12: Kỳ Vọng Số Vụ Tai Nạn Hàng Ngày (Expected Value from Distribution)
-
-### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
-> **Question 12 (Single Choice):**
-> The following table contains the probability distribution for the number of traffic accidents daily in a small town.
-> 
-> | Number of Accidents Daily (X) | P(X = x_i) |
-> | :---: | :---: |
-> | 0 | 0.31 |
-> | 1 | 0.36 |
-> | 2 | 0.15 |
-> | 3 | 0.08 |
-> | 4 | 0.06 |
-> | 5 | 0.03 |
-> | 6 | 0.01 |
-> 
-> Compute the mean number of accidents per day.
-> - A. 3.12
-> - B. 3.48
-> - C. 1.35
-> - D. 2.53
-
-### 2. Dịch nghĩa tiếng Việt:
-Bảng sau đây thể hiện phân phối xác suất của số vụ tai nạn giao thông xảy ra hàng ngày tại một thị trấn nhỏ. Hãy tính số vụ tai nạn trung bình mỗi ngày (mean number of accidents).
-
-### 3. Phương pháp giải chuẩn 5 bước:
-- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
-  - Bảng phân phối xác suất của biến ngẫu nhiên rời rạc $X$ nhận các giá trị $0, 1, 2, 3, 4, 5, 6$.
-  - Yêu cầu: Tính giá trị trung bình $E(X)$ (tức $\mu$).
-- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
-  $$E(X) = \mu = \sum_{i=1}^k x_i \cdot P(X = x_i)$$
-- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
-  $$E(X) = 0(0.31) + 1(0.36) + 2(0.15) + 3(0.08) + 4(0.06) + 5(0.03) + 6(0.01)$$
-  $$E(X) = 0 + 0.36 + 0.30 + 0.24 + 0.24 + 0.15 + 0.06 = 1.35$$
-- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
-  - **Cách 1: Tính tổng tích nhanh ở Menu 1:**
-    - Bấm: `[MENU]` `[1]`
-    - Nhập: `1*0.36 + 2*0.15 + 3*0.08 + 4*0.06 + 5*0.03 + 6*0.01 =` $\to$ ra `1.35`.
-  - **Cách 2: Menu Thống kê 6:**
-    - Nhập cột $x$ và cột tần số xác suất `FREQ`, bấm `[OPTN]` `[2]` $\implies$ Đọc ngay dòng đầu $\bar{x} = 1.35$.
-- **BƯỚC 5: Kết luận:**
-  - Đáp án chính xác: **1.35** (Chọn phương án **C**).
-
----
-
-## Câu 13: Xác Suất "Ít Nhất Hai Vụ Tai Nạn" (At Least Two Accidents)
-
-### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
-> **Question 13 (Single Choice):**
-> The following probability distribution has been assessed for the number of accidents that occur in a mid western city each day.
-> 
-> | Accidents | Probability |
-> | :---: | :---: |
-> | 0 | 0.25 |
-> | 1 | 0.20 |
-> | 2 | 0.30 |
-> | 3 | 0.15 |
-> | 4 | 0.10 |
-> 
-> Based on the data given below, find the probability that there are at least two accidents per day.
-> - A. 0.55
-> - B. None of the others
-> - C. 0.75
-> - D. 0.45
-
-### 2. Dịch nghĩa tiếng Việt:
-Phân phối xác suất sau đây được đánh giá cho số vụ tai nạn xảy ra tại một thành phố miền Trung Tây mỗi ngày. Dựa trên dữ liệu dưới đây, hãy tìm xác suất để có ít nhất hai vụ tai nạn mỗi ngày.
-
-### 3. Phương pháp giải chuẩn 5 bước:
-- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
-  - Biến ngẫu nhiên $X$ nhận các giá trị $\{0, 1, 2, 3, 4\}$.
-  - Cần tính xác suất: "at least two accidents", nghĩa là $X \ge 2$.
-- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
-  - Các giá trị thỏa mãn $X \ge 2$ gồm: $X = 2, X = 3, X = 4$.
-  - Công thức cộng trực tiếp:
-    $$P(X \ge 2) = P(X = 2) + P(X = 3) + P(X = 4)$$
-  - Hoặc công thức biến cố đối:
-    $$P(X \ge 2) = 1 - [P(X = 0) + P(X = 1)]$$
-- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
-  - Theo cách cộng trực tiếp:
-    $$P(X \ge 2) = 0.30 + 0.15 + 0.10 = 0.55$$
-  - Theo biến cố đối:
-    $$P(X \ge 2) = 1 - (0.25 + 0.20) = 1 - 0.45 = 0.55$$
-- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
-  - Bấm: `[MENU]` `[1]`
-  - Nhập: `0.30 + 0.15 + 0.10 =` $\to$ ra `0.55`.
-- **BƯỚC 5: Kết luận:**
-  - Đáp án chính xác: **0.55** (Nếu đề thi có phương án 0.55 thì chọn **0.55**; nếu các phương án số không có 0.55 thì chọn **None of the others**).
-
----
-
-## Câu 14: Phân Phối Poisson - Xác Suất "Ít Hơn 3" (Poisson Less Than 3)
-
-### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
-> **Question 14 (Single Choice):**
-> The local police department must write, on average, 5 tickets a day to keep department revenues at budgeted levels. Suppose the number of tickets written per day follows a Poisson distribution with a mean of 6.4 tickets per day. Find the probability that less than 3 tickets are written on a randomly selected day from this population.
-> - A. 0.5423
-> - B. 0.1189
-> - C. 0.0463
-> - D. 0.3834
-
-### 2. Dịch nghĩa tiếng Việt:
-Cục cảnh sát địa phương trung bình phải ghi 5 vé phạt mỗi ngày để duy trì ngân sách dự toán của cơ quan. Giả sử số lượng vé phạt được ghi mỗi ngày tuân theo phân phối Poisson với trung bình là 6.4 vé mỗi ngày. Tìm xác suất để có ít hơn 3 vé phạt được ghi trong một ngày được chọn ngẫu nhiên từ tổng thể này.
-
-### 3. Phương pháp giải chuẩn 5 bước:
-- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
-  - Nhận diện bẫy đề bài: Con số "5 tickets" là mục tiêu ngân sách mang tính chất gây nhiễu.
-  - Tham số phân phối Poisson thực tế của biến ngẫu nhiên $X$ (số vé ghi mỗi ngày) là: $\lambda = 6.4$.
-  - Yêu cầu: Tính xác suất "ít hơn 3 vé", tức $P(X < 3)$.
-- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
-  - Vì phân phối Poisson là phân phối rời rạc nhận các giá trị nguyên không âm $0, 1, 2, ...$, biến cố $X < 3$ tương đương với $X \le 2$:
-    $$P(X < 3) = P(X \le 2) = P(X = 0) + P(X = 1) + P(X = 2)$$
-  - Công thức Poisson: $P(X = k) = \frac{e^{-\lambda} \cdot \lambda^k}{k!}$
-- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
-  $$P(X \le 2) = e^{-6.4} \left( \frac{6.4^0}{0!} + \frac{6.4^1}{1!} + \frac{6.4^2}{2!} \right)$$
-  $$= e^{-6.4} \left( 1 + 6.4 + \frac{40.96}{2} \right) = e^{-6.4} (1 + 6.4 + 20.48) = 27.88 \cdot e^{-6.4}$$
-  - Ta có $e^{-6.4} \approx 0.001661557$.
-  - Tính tích:
-    $$P(X < 3) \approx 27.88 \times 0.001661557 \approx 0.046324 \approx 0.0463$$
-- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
-  - **Cách 1: Sử dụng chức năng Poisson tích lũy (Poisson CD) - Cực đỉnh:**
-    - Bấm: `[MENU]` `[7]` (Phân phối Distribution).
-    - Bấm: `[▼]` `[3]` (Poisson CD).
-    - Chọn `[1]` (Variable).
-    - Nhập: $x$: bấm `2` `[=]` (vì $X < 3 \iff X \le 2$).
-    - Nhập: $\lambda$: bấm `6.4` `[=]`.
-    - Bấm `[=]` $\to$ Máy hiện ngay: `0.046324...` $\approx 0.0463$!
-  - **Cách 2: Bấm công thức ở Menu 1:**
-    - Nhập: `27.88 * [SHIFT] [ln] ( - 6.4 ) =` $\to$ ra `0.046324...`
-- **BƯỚC 5: Kết luận:**
-  - Đáp án chính xác: **0.0463** (Chọn phương án **C**).
-
----
-
-## Câu 15: Xác Suất Trung Bình Mẫu Smartphone Apps
-
-### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
-> **Question 15 (Single Choice):**
-> According to a report by App Annie, a business intelligence company that produces tools and reports for the apps and digital goods industry, smartphone owners are using an average of 30 apps per month. Assume that number of apps used per month by smartphone owners is normally distributed and that the standard deviation is 5. If you select a random sample of 25 smartphone owners. What is the probability that the sample mean is between 29 and 31?
-> Let P(Z < -1) = 0.1587, P(Z < 1) = 0.8413, P(Z < -2) = 0.0228, P(Z < 2) = 0.9772.
-> - A. 0.9544
-> - B. 0.8413
-> - C. 0.9772
-> - D. 0.6826
-
-### 2. Dịch nghĩa tiếng Việt:
-Theo báo cáo của App Annie, chủ sở hữu điện thoại thông minh sử dụng trung bình 30 ứng dụng mỗi tháng. Giả sử số ứng dụng được sử dụng mỗi tháng tuân theo phân phối chuẩn với độ lệch chuẩn là 5. Nếu bạn chọn ngẫu nhiên một mẫu gồm 25 chủ điện thoại thông minh, xác suất để giá trị trung bình mẫu nằm trong khoảng từ 29 đến 31 là bao nhiêu?
-Cho biết: P(Z < -1) = 0.1587; P(Z < 1) = 0.8413; P(Z < -2) = 0.0228; P(Z < 2) = 0.9772.
-
-### 3. Phương pháp giải chuẩn 5 bước:
-- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
-  - Tổng thể: $\mu = 30$, $\sigma = 5$.
-  - Cỡ mẫu: $n = 25$.
-  - Cần tính xác suất đối với trung bình mẫu: $P(29 \le \bar{X} \le 31)$.
-- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
-  - Sai số chuẩn của trung bình mẫu:
-    $$\sigma_{\bar{x}} = \frac{\sigma}{\sqrt{n}} = \frac{5}{\sqrt{25}} = \frac{5}{5} = 1$$
-  - Chuẩn hóa Z cho hai giá trị biên:
-    $$Z_1 = \frac{\bar{x}_1 - \mu}{\sigma_{\bar{x}}} = \frac{29 - 30}{1} = -1.00$$
-    $$Z_2 = \frac{\bar{x}_2 - \mu}{\sigma_{\bar{x}}} = \frac{31 - 30}{1} = +1.00$$
-  - Xác suất:
-    $$P(29 \le \bar{X} \le 31) = P(-1 \le Z \le 1) = P(Z < 1) - P(Z < -1)$$
-- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
-  - Thay số liệu từ đề bài:
-    $$P(-1 \le Z \le 1) = 0.8413 - 0.1587 = 0.6826$$
-- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
-  - Bấm: `[MENU]` `[1]`
-  - Nhập: `0.8413 - 0.1587 =` $\to$ ra `0.6826`.
-  - Hoặc kiểm tra bằng Normal CD: `[MENU]` `[7]` `[2]`, Lower: `29`, Upper: `31`, $\sigma = 1$, $\mu = 30$ $\to$ ra `0.682689...` $\approx 0.6826$.
-- **BƯỚC 5: Kết luận:**
-  - Đáp án chính xác: **0.6826** (Chọn phương án **D**).
-
----
-
-## Câu 16: Tỷ Lệ Mẫu Điện Thoại Di Động Có Internet (Sample Proportion)
-
-### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
-> **Question 16 (Single Choice):**
-> A random sample of 120 households was selected for a telephone survey. The key question asked was, "Do you or any member of your household own a cellular telephone that you can use to access the internet?" Of the 120 respondents, 75 said yes and 45 said no. Determine the sample proportion of households with cellular telephones that can be used to access the internet
-> - A. 0.5
-> - B. 0.625
-> - C. 0.125
-> - D. 0.75
-
-### 2. Dịch nghĩa tiếng Việt:
-Một mẫu ngẫu nhiên gồm 120 hộ gia đình được chọn cho một cuộc khảo sát qua điện thoại. Câu hỏi then chốt là: "Bạn hoặc bất kỳ thành viên nào trong gia đình bạn có sở hữu điện thoại di động có thể sử dụng để truy cập internet không?" Trong số 120 người trả lời, 75 người trả lời có và 45 người trả lời không. Xác định tỷ lệ mẫu (sample proportion) của các hộ gia đình có điện thoại di động có thể truy cập internet.
-
-### 3. Phương pháp giải chuẩn 5 bước:
-- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
-  - Cỡ mẫu khảo sát: $n = 120$ hộ gia đình.
-  - Số hộ trả lời "Có" (sở hữu điện thoại có internet): $X = 75$.
-  - Số hộ trả lời "Không": $45$.
-- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
-  - Tỷ lệ mẫu (ký hiệu là $\bar{p}$ hoặc $\hat{p}$):
-    $$\bar{p} = \frac{X}{n}$$
-- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
-  $$\bar{p} = \frac{75}{120} = \frac{5}{8} = 0.625$$
-- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
-  - Bấm: `[MENU]` `[1]`
-  - Nhập: `75` `[÷]` `120` `[=]`
-  - Máy hiện phân số `5/8`, bấm phím `[S<=>D]` để chuyển sang số thập phân $\to$ `0.625`.
-- **BƯỚC 5: Kết luận:**
-  - Đáp án chính xác: **0.625** (Chọn phương án **B**).
-
----
-
-## Câu 17: Độ Lệch Chuẩn Của Phân Phối Nhị Thức (Binomial Standard Deviation)
-
-### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
-> **Question 17 (Single Choice):**
-> If n=10 and p=0.70, then the standard deviation of the binomial distribution is __
-> - A. 14.29
-> - B. 1.45
-> - C. 7
-> - D. 0.07
-
-### 2. Dịch nghĩa tiếng Việt:
-Nếu $n = 10$ và $p = 0.70$, thì độ lệch chuẩn của phân phối nhị thức là:
-
-### 3. Phương pháp giải chuẩn 5 bước:
-- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
-  - Phân phối nhị thức với các tham số: $n = 10$, $p = 0.70$.
-  - Xác suất thất bại: $q = 1 - p = 1 - 0.70 = 0.30$.
-- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
-  - Phương sai của biến ngẫu nhiên nhị thức $X$:
-    $$\sigma^2 = Var(X) = n \cdot p \cdot (1 - p)$$
-  - Độ lệch chuẩn là căn bậc hai của phương sai:
-    $$\sigma = \sqrt{n \cdot p \cdot (1 - p)}$$
-- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
-  $$\sigma = \sqrt{10 \times 0.70 \times (1 - 0.70)} = \sqrt{10 \times 0.70 \times 0.30} = \sqrt{2.1}$$
-  $$\sigma \approx 1.4491376... \approx 1.45$$
-- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
-  - Bấm: `[MENU]` `[1]`
-  - Nhập: `[√]` `10` `[×]` `0.7` `[×]` `0.3` `[=]`
-  - Màn hình hiển thị: `1.449137675` $\implies$ Làm tròn đến 2 chữ số thập phân là `1.45`.
-- **BƯỚC 5: Kết luận:**
-  - Đáp án chính xác: **1.45** (Chọn phương án **B**).
-
----
-
-## Câu 18: Bài Toán Ngược Phân Phối Chuẩn Tìm Giá Trị Tới Hạn c (Inverse Normal)
-
-### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
-> **Question 18 (Single Choice):**
-> Assume that Z scores are normally distributed with a mean of 0 and a standard deviation of 1. If P(Z > c) = 0.2090, find c.
-> Let P(Z < 0.81) = 0.791, P(Z < 0.27) = 0.6064, P(Z < 0.45) = 0.6736, P(Z < -0.81) = 0.2090.
-> - A. 0.27
-> - B. 0.81
-> - C. 0.45
-> - D. -0.81
-
-### 2. Dịch nghĩa tiếng Việt:
-Giả sử điểm Z tuân theo phân phối chuẩn với trung bình bằng 0 và độ lệch chuẩn bằng 1. Nếu P(Z > c) = 0.2090, hãy tìm c.
-Cho biết: P(Z < 0.81) = 0.791; P(Z < 0.27) = 0.6064; P(Z < 0.45) = 0.6736; P(Z < -0.81) = 0.2090.
-
-### 3. Phương pháp giải chuẩn 5 bước:
-- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
-  - Phân phối chuẩn hóa $Z \sim N(0, 1)$.
-  - Phương trình xác suất: $P(Z > c) = 0.2090$.
-- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
-  - **Cách suy luận 1 (Qua diện tích tích lũy bên trái):**
-    $$P(Z \le c) = 1 - P(Z > c) = 1 - 0.2090 = 0.7910$$
-  - **Cách suy luận 2 (Tính chất đối xứng của đường cong Gauss):**
-    Vì phân phối chuẩn đối xứng hoàn hảo qua $Z = 0$, diện tích phần đuôi bên phải vượt quá $+c$ bằng đúng diện tích phần đuôi bên trái nhỏ hơn $-c$:
-    $$P(Z > c) = P(Z < -c)$$
-- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
-  - Theo Cách 1: Đề bài cho $P(Z < 0.81) = 0.791$, do đó $c = 0.81$.
-  - Theo Cách 2: Đề bài cho $P(Z < -0.81) = 0.2090 \implies -c = -0.81 \implies c = 0.81$.
-- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
-  - **Cách 1: Sử dụng chức năng Phân phối chuẩn ngược (Inverse Normal):**
-    - Bấm: `[MENU]` `[7]` (Phân phối Distribution).
-    - Chọn: `[3]` (Inverse Normal).
-    - Diện tích tích lũy bên trái (Area): nhập `1 - 0.2090` (hoặc `0.791`) `[=]`.
-    - $\sigma$: nhập `1` `[=]`.
-    - $\mu$: nhập `0` `[=]`.
-    - Bấm `[=]` $\to$ Màn hình hiển thị: `0.80989...` $\approx 0.81$!
-  - **Cách 2: Tính tay ở Menu 1:**
-    - Nhập: `1 - 0.2090 =` $\to$ ra `0.791`, nhìn vào dữ kiện đề cho ứng với Z = `0.81`.
-- **BƯỚC 5: Kết luận:**
-  - Đáp án chính xác: **0.81** (Chọn phương án **B**).
-
----
-
-## Câu 19: Xác Suất Tỷ Lệ Mẫu Thế Hệ Millennials (Proportion Sampling Distribution)
-
-### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
-> **Question 19 (Single Choice):**
-> What do millennials around the world want in a job? A Deloitte survey of millennials on work-life challenges found that millennials are looking for stability in an uncertain world, with 65% of millennials preferring a permanent, full-time job rather than working freelance or as a consultant on a flexible or short-term basis. Suppose you select a sample of 100 millennials. What is the probability that in the sample fewer than 70% prefer a permanent, full-time job?
-> Let P(Z < 1.048) = 0.8527, P(Z < -0.6569) = 0.2556, P(Z < 0.5035) = 0.6927.
-> - A. 0.2556
-> - B. 0.6927
-> - C. 0.3448
-> - D. 0.8527
-
-### 2. Dịch nghĩa tiếng Việt:
-Thế hệ millennials trên thế giới mong muốn điều gì trong công việc? Một cuộc khảo sát của Deloitte về những thách thức cân bằng công việc - cuộc sống cho thấy thế hệ millennial đang tìm kiếm sự ổn định trong một thế giới bất định, với 65% số người thuộc thế hệ millennial thích một công việc cố định, toàn thời gian hơn là làm việc tự do (freelance) hoặc làm cố vấn linh hoạt/ngắn hạn. Giả sử bạn chọn một mẫu gồm 100 người thuộc thế hệ millennial. Xác suất để trong mẫu có ít hơn 70% thích công việc cố định, toàn thời gian là bao nhiêu?
-Cho biết: P(Z < 1.048) = 0.8527; P(Z < -0.6569) = 0.2556; P(Z < 0.5035) = 0.6927.
-
-### 3. Phương pháp giải chuẩn 5 bước:
-- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
-  - Tỷ lệ tổng thể (population proportion): $p = 65\% = 0.65$.
-  - Kích thước mẫu: $n = 100$.
-  - Cần tính xác suất tỷ lệ mẫu ít hơn 70%: $P(\bar{p} < 0.70)$.
-- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
-  - Kiểm tra điều kiện xấp xỉ chuẩn:
-    $$np = 100 \times 0.65 = 65 \ge 5$$
-    $$n(1 - p) = 100 \times 0.35 = 35 \ge 5$$
-    (Thỏa mãn điều kiện định lý CLT đối với tỷ lệ).
-  - Sai số chuẩn của phân phối chọn mẫu tỷ lệ:
-    $$\sigma_{\bar{p}} = \sqrt{\frac{p(1 - p)}{n}}$$
-  - Chuẩn hóa Z-score:
-    $$Z = \frac{\bar{p} - p}{\sigma_{\bar{p}}} = \frac{\bar{p} - p}{\sqrt{\frac{p(1 - p)}{n}}}$$
-- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
-  - Tính sai số chuẩn:
-    $$\sigma_{\bar{p}} = \sqrt{\frac{0.65 \times (1 - 0.65)}{100}} = \sqrt{\frac{0.65 \times 0.35}{100}} = \sqrt{\frac{0.2275}{100}} = \sqrt{0.002275} \approx 0.047697$$
-  - Tính điểm Z:
-    $$Z = \frac{0.70 - 0.65}{0.047697} = \frac{0.05}{0.047697} \approx 1.04828... \approx 1.048$$
-  - Xác suất cần tìm:
-    $$P(\bar{p} < 0.70) = P(Z < 1.048)$$
-  - Tra giá trị đề bài cung cấp: $P(Z < 1.048) = 0.8527$.
-- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
-  - **Cách 1: Tính Z tại Menu 1:**
-    - Bấm: `[MENU]` `[1]`
-    - Nhập biểu thức: `[(■/□)]` `0.70 - 0.65` `[▼]` `[√]` `[(■/□)]` `0.65 * 0.35` `[▼]` `100` `[=]`
-    - Màn hình hiển thị: `1.04828...` $\implies$ Khớp với mốc $Z = 1.048$, từ đó đối chiếu với đề bài chọn ngay số liệu $0.8527$.
-  - **Cách 2: Bấm Normal CD trực tiếp:**
-    - Bấm: `[MENU]` `[7]` `[2]`
-    - Lower: `-9999` `[=]`
-    - Upper: `0.70` `[=]`
-    - $\sigma$: `[√]` `( 0.65 * 0.35 / 100 )` `[=]`
-    - $\mu$: `0.65` `[=]`
-    - Bấm `[=]` $\to$ Ra kết quả: `0.85275...` $\approx 0.8527$.
-- **BƯỚC 5: Kết luận:**
-  - Đáp án chính xác: **0.8527** (Chọn phương án **D**).
-
----
-
-## Câu 20: Hệ Số Tương Quan Mẫu r (Sample Correlation Coefficient)
-
-### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
-> **Question 20 (Single Choice):**
-> FPT Retail sells IT products in their shops and wanted to examine the relationship between price and demand. The price of a smart phone was adjusted each week and the weekly sales were recorded in the table.
-> 
-> | Price (\$) | \$120 | \$110 | \$100 |
-> | :---: | :---: | :---: | :---: |
-> | **Sales** | 7 | 4 | 10 |
-> 
-> Find the sample correlation coefficient.
-> - A. 0.5
-> - B. -0.92
-> - C. -0.5
-> - D. 0.92
-
-### 2. Dịch nghĩa tiếng Việt:
-FPT Retail bán các sản phẩm công nghệ thông tin tại các cửa hàng của họ và muốn kiểm tra mối quan hệ giữa giá cả và nhu cầu. Giá của một chiếc điện thoại thông minh được điều chỉnh mỗi tuần và doanh số bán hàng hàng tuần được ghi lại trong bảng:
-| Giá bán (Price - X) | \$120 | \$110 | \$100 |
-| :---: | :---: | :---: | :---: |
-| **Doanh số (Sales - Y)** | 7 | 4 | 10 |
-Hãy tìm hệ số tương quan mẫu (sample correlation coefficient - r).
-
-### 3. Phương pháp giải chuẩn 5 bước:
-- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
-  - Cỡ mẫu: $n = 3$ tuần quan sát.
-  - Biến $X$ (Giá): $\{120, 110, 100\}$
-  - Biến $Y$ (Doanh số): $\{7, 4, 10\}$
-- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
-  - Hệ số tương quan Pearson $r$:
-    $$r = \frac{\text{Cov}(X, Y)}{S_X \cdot S_Y} = \frac{\sum (X - \bar{X})(Y - \bar{Y})}{\sqrt{\sum (X - \bar{X})^2 \cdot \sum (Y - \bar{Y})^2}}$$
-- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
-  - **Tính giá trị trung bình:**
-    $$\bar{X} = \frac{120 + 110 + 100}{3} = \frac{330}{3} = 110$$
-    $$\bar{Y} = \frac{7 + 4 + 10}{3} = \frac{21}{3} = 7$$
-  - **Lập bảng tính độ lệch:**
-    - Điểm 1: $(120 - 110 = 10)$, $(7 - 7 = 0) \implies (X-\bar{X})(Y-\bar{Y}) = 0$
-    - Điểm 2: $(110 - 110 = 0)$, $(4 - 7 = -3) \implies (X-\bar{X})(Y-\bar{Y}) = 0$
-    - Điểm 3: $(100 - 110 = -10)$, $(10 - 7 = 3) \implies (X-\bar{X})(Y-\bar{Y}) = -30$
-  - **Tổng tích sai lệch (Tử số):**
-    $$\sum (X - \bar{X})(Y - \bar{Y}) = 0 + 0 + (-30) = -30$$
-  - **Tổng bình phương sai lệch (Mẫu số):**
-    $$\sum (X - \bar{X})^2 = 10^2 + 0^2 + (-10)^2 = 100 + 0 + 100 = 200$$
-    $$\sum (Y - \bar{Y})^2 = 0^2 + (-3)^2 + 3^2 = 0 + 9 + 9 = 18$$
-  - **Tính hệ số tương quan $r$:**
-    $$r = \frac{-30}{\sqrt{200 \times 18}} = \frac{-30}{\sqrt{3600}} = \frac{-30}{60} = -0.5$$
-- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X (Ra ngay kết quả trong 5 giây):**
-  - **Bước A (Chọn mô hình hồi quy 2 biến):**
-    - Bấm: `[MENU]` `[6]` (Statistics).
-    - Chọn: `[2]` ($y = a + bx$).
-  - **Bước B (Nhập dữ liệu 2 cột X và Y):**
-    - Cột `x`: Bấm `120` `[=]`, `110` `[=]`, `100` `[=]`.
-    - Dùng phím mũi tên điều hướng sang cột `y` lên trên cùng:
-    - Cột `y`: Bấm `7` `[=]`, `4` `[=]`, `10` `[=]`.
-  - **Bước C (Xuất kết quả hệ số r):**
-    - Bấm phím `[OPTN]`.
-    - Chọn `[3]` (Regression Calc - Phân tích hồi quy).
-  - **Bước D (Đọc màn hình):**
-    - Dòng $a = 62$ (hệ số chặn)
-    - Dòng $b = -0.5$ (hệ số góc)
-    - Dòng $r = -0.5$ (hệ số tương quan cần tìm) $\implies$ Chọn ngay **-0.5**!
-- **BƯỚC 5: Kết luận:**
-  - Đáp án chính xác: **-0.5** (Chọn phương án **C**).
-
----
+<!-- SECTION_6_PLACEHOLDER -->
 
 # PHẦN 7: CHƯƠNG 8 - ƯỚC LƯỢNG KHOẢNG TIN CẬY (CONFIDENCE INTERVAL ESTIMATION)
 
@@ -5184,6 +4493,7 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
 
 ---
 </script>
+  <script id="section-6-b64" type="text/plain">IyBQSOG6pk4gNjogQuG7mCDEkOG7gCBUSOG7sEMgQ0hJ4bq+TiBNQVMgUVVJWiAyICgyMCBDw4JVIEjhu45JIFRS4bquQyBOR0hJ4buGTSDEkOG6plkgxJDhu6YgQU5IIC0gVknhu4ZUIC0gNSBCxq/hu5pDIC0gQ0FTSU8gNTgwKQoKPiBbIU5PVEVdCj4gKipU4buUTkcgUVVBTiBC4buYIMSQ4buAIE1BUyBRVUlaIDIqKgo+IFR1eeG7g24gdOG6rXAgMjAgY8OidSBo4buPaSB0cuG6r2MgbmdoaeG7h20gdGjhu7FjIHThur8gbOG6pXkgdHLhu7FjIHRp4bq/cCB04burIMSR4buBIHRoaSB0cuG7sWMgdHV54bq/biBraeG7g20gdHJhIHRp4bq/biDEkeG7mSBtw7RuIFRo4buRbmcga8OqIOG7qG5nIGThu6VuZyAoTUFTMjAyKS4gVG/DoG4gYuG7mSAyMCBjw6J1IGjhu49pIMSRw6MgxJHGsOG7o2Mgc+G7kSBow7NhIGThuqFuZyB2xINuIGLhuqNuIGNodeG6qW4gKDEwMCUga2jDtG5nIGTDuW5nIOG6o25oIGNo4bulcCksIGThu4tjaCBuZ2jEqWEgY2h1ecOqbiBuZ8Ogbmggbcaw4bujdCBtw6AsIHBow6JuIHTDrWNoIGLhurFuZyBwaMawxqFuZyBwaMOhcCBjaHXhuqluIDUgYsaw4bubYyB2w6AgaMaw4bubbmcgZOG6q24gYuG6pW0gbcOheSB0w61uaCBDYXNpbyBmeC01ODBWTiBYIGNoaSB0aeG6v3QgxJHhur9uIHThu6tuZyBwaMOtbSBi4bqlbS4KCi0tLQoKIyMgQ8OidSAxOiBYw6FjIFN14bqldCBQaMOibiBQaOG7kWkgxJDhu4F1IExpw6puIFThu6VjIChDb250aW51b3VzIFVuaWZvcm0gRGlzdHJpYnV0aW9uKQoKIyMjIDEuIE5ndXnDqm4gdsSDbiDEkeG7gSB0aGkgdGnhur9uZyBBbmggJiBDw6FjIHBoxrDGoW5nIMOhbiBs4buxYSBjaOG7jW46Cj4gKipRdWVzdGlvbiAxIChTaW5nbGUgQ2hvaWNlKToqKgo+IEEgc3R1ZHkgb2YgdGhlIHRpbWUgc3BlbnQgYnkgdmlzaXRvcnMgdG8gZmluaXNoIHRoZSB2aWV3aW5nIG9mIGEgbWFyaW5lIGxpZmUgYXF1YXJpdW0gaXMgdW5pZm9ybWx5IGRpc3RyaWJ1dGVkIGJldHdlZW4gMTAwIGFuZCAxODAgbWludXRlcy4gV2hhdCBpcyB0aGUgcHJvYmFiaWxpdHkgdGhhdCB0aGUgdmlld2luZyB0aW1lIHdpbGwgYmUgbGVzcyB0aGFuIDE2MCBtaW51dGVzLgo+IC0gQS4gMC4yNQo+IC0gQi4gMAo+IC0gQy4gMC41Cj4gLSBELiAwLjc1CgojIyMgMi4gROG7i2NoIG5naMSpYSB0aeG6v25nIFZp4buHdDoKTeG7mXQgbmdoacOqbiBj4bupdSB24buBIHRo4budaSBnaWFuIGtow6FjaCB0aGFtIHF1YW4gaG/DoG4gdGjDoG5oIGNodXnhur9uIHhlbSB0aOG7p3kgY3VuZyBzaW5oIHbhuq10IGJp4buDbiBjaG8gdGjhuqV5IHRo4budaSBnaWFuIG7DoHkgdHXDom4gdGhlbyBwaMOibiBwaOG7kWkgxJHhu4F1IHThu6sgMTAwIMSR4bq/biAxODAgcGjDunQuIFjDoWMgc3XhuqV0IMSR4buDIHRo4budaSBnaWFuIHRoYW0gcXVhbiDDrXQgaMahbiAxNjAgcGjDunQgbMOgIGJhbyBuaGnDqnU/CgojIyMgMy4gUGjGsMahbmcgcGjDoXAgZ2nhuqNpIGNodeG6qW4gNSBixrDhu5tjOgotICoqQsav4buaQyAxOiBQaMOibiB0w61jaCAmIFRyw61jaCB4deG6pXQgdGjDtG5nIHRpbjoqKgogIC0gQmnhur9uIG5n4bqrdSBuaGnDqm4gJFgkOiBUaOG7nWkgZ2lhbiB0aGFtIHF1YW4gdGjhu6d5IGN1bmcgKHBow7p0KS4KICAtIEThuqFuZyBwaMOibiBwaOG7kWk6IFBow6JuIHBo4buRaSDEkeG7gXUgbGnDqm4gdOG7pWMgJFggXHNpbSBVKGEsIGIpJCB24bubaSAkYSA9IDEwMCQsICRiID0gMTgwJC4KICAtIFnDqnUgY+G6p3U6IFTDrW5oIHjDoWMgc3XhuqV0ICRQKFggPCAxNjApJC4KLSAqKkLGr+G7mkMgMjogQuG6o24gY2jhuqV0IGzDvSB0aHV54bq/dCAmIE5o4bqtbiBkaeG7h24gY8O0bmcgdGjhu6ljOioqCiAgLSDEkOG7kWkgduG7m2kgcGjDom4gcGjhu5FpIMSR4buBdSB0csOqbiDEkW/huqFuICRbYSwgYl0kLCBow6BtIG3huq10IMSR4buZIHjDoWMgc3XhuqV0IGzDoCBo4bqxbmcgc+G7kToKICAgICQkZih4KSA9IFxmcmFjezF9e2IgLSBhfSA9IFxmcmFjezF9ezE4MCAtIDEwMH0gPSBcZnJhY3sxfXs4MH0gXHF1YWQgKDEwMCBcbGUgeCBcbGUgMTgwKSQkCiAgLSBYw6FjIHN14bqldCAkUChYIDwgeF8wKSQgY2jDrW5oIGzDoCBkaeG7h24gdMOtY2ggaMOsbmggY2jhu68gbmjhuq10IHThu6sgY+G6rW4gZMaw4bubaSAkYSQgxJHhur9uICR4XzAkOgogICAgJCRQKFggPCB4XzApID0gXGZyYWN7eF8wIC0gYX17YiAtIGF9JCQKLSAqKkLGr+G7mkMgMzogVGhheSBz4buRICYgVMOtbmggdG/DoW4gxJHhuqFpIHPhu5EgY2hpIHRp4bq/dDoqKgogICQkUChYIDwgMTYwKSA9IFxmcmFjezE2MCAtIDEwMH17MTgwIC0gMTAwfSA9IFxmcmFjezYwfXs4MH0gPSBcZnJhY3szfXs0fSA9IDAuNzUkJAotICoqQsav4buaQyA0OiBIxrDhu5tuZyBk4bqrbiBi4bqlbSBtw6F5IHTDrW5oIENhc2lvIGZ4LTU4MFZOIFg6KioKICAtIELhuqVtOiBgW01FTlVdYCBgWzFdYCAoTcOgbiBow6xuaCB0w61uaCB0b8OhbiB0aMO0bmcgdGjGsOG7nW5nKS4KICAtIE5o4bqtcCBiaeG7g3UgdGjhu6ljIHBow6JuIHPhu5E6IGBbKOKWoC/ilqEpXWAgYDE2MCAtIDEwMGAgYFvilrxdYCBgMTgwIC0gMTAwYCBgWz1dYAogIC0gS+G6v3QgcXXhuqMgaGnhu4duIHBow6JuIHPhu5EgYDMvNGAsIGLhuqVtIHBow61tIGBbUzw9PkRdYCDEkeG7gyBjaHV54buDbiBzYW5nIHPhu5EgdGjhuq1wIHBow6JuICRcdG8kIGAwLjc1YC4KLSAqKkLGr+G7mkMgNTogS+G6v3QgbHXhuq1uOioqCiAgLSDEkMOhcCDDoW4gY2jDrW5oIHjDoWM6ICoqMC43NSoqIChDaOG7jW4gcGjGsMahbmcgw6FuICoqRCoqKS4KCi0tLQoKIyMgQ8OidSAyOiBYw6FjIMSQ4buLbmggUXXhuqduIFRo4buDIE3hu6VjIFRpw6p1IChUYXJnZXQgUG9wdWxhdGlvbikKCiMjIyAxLiBOZ3V5w6puIHbEg24gxJHhu4EgdGhpIHRp4bq/bmcgQW5oICYgQ8OhYyBwaMawxqFuZyDDoW4gbOG7sWEgY2jhu41uOgo+ICoqUXVlc3Rpb24gMiAoU2luZ2xlIENob2ljZSk6KioKPiBNb3N0IGFuYWx5c3RzIGZvY3VzIG9uIHRoZSBjb3N0IG9mIHR1aXRpb24gYXMgdGhlIHdheSB0byBtZWFzdXJlIHRoZSBjb3N0IG9mIGEgY29sbGVnZSBlZHVjYXRpb24uIEJ1dCBpbmNpZGVudGFscywgc3VjaCBhcyB0ZXh0Ym9vayBjb3N0cywgYXJlIHJhcmVseSBjb25zaWRlcmVkLiBBIHJlc2VhcmNoZXIgYXQgRHJ1bW1vbmQgVW5pdmVyc2l0eSB3aXNoZXMgdG8gZXN0aW1hdGUgdGhlIHRleHRib29rIGNvc3RzIG9mIGZpcnN0LXllYXIgc3R1ZGVudHMgYXQgRHJ1bW1vbmQuIFRvIGRvIHNvLCBzaGUgbW9uaXRvcmVkIHRoZSB0ZXh0Ym9vayBjb3N0IG9mIDI1MCBmaXJzdC15ZWFyIHN0dWRlbnRzIGFuZCBmb3VuZCB0aGF0IHRoZWlyIGF2ZXJhZ2UgdGV4dGJvb2sgY29zdCB3YXMgXCQzMDAgcGVyIHNlbWVzdGVyLiBJZGVudGlmeSB0aGUgcG9wdWxhdGlvbiBvZiBpbnRlcmVzdCB0byB0aGUgcmVzZWFyY2hlci4KPiAtIEEuIFRoZSAyNTAgc3R1ZGVudHMgdGhhdCB3ZXJlIG1vbml0b3JlZAo+IC0gQi4gQWxsIGNvbGxlZ2Ugc3R1ZGVudHMKPiAtIEMuIEFsbCBEcnVtbW9uZCBVbml2ZXJzaXR5IHN0dWRlbnRzCj4gLSBELiBBbGwgZmlyc3QteWVhciBEcnVtbW9uZCBVbml2ZXJzaXR5IHN0dWRlbnRzCgojIyMgMi4gROG7i2NoIG5naMSpYSB0aeG6v25nIFZp4buHdDoKSOG6p3UgaOG6v3QgY8OhYyBuaMOgIHBow6JuIHTDrWNoIGNo4buJIHThuq1wIHRydW5nIHbDoG8gaOG7jWMgcGjDrSDEkeG7gyDEkW8gbMaw4budbmcgY2hpIHBow60gZ2nDoW8gZOG7pWMgxJHhuqFpIGjhu41jLCBuaMawbmcgY8OhYyBjaGkgcGjDrSBwaOG7pSBuaMawIHPDoWNoIGdpw6FvIGtob2EgaGnhur9tIGtoaSDEkcaw4bujYyB0w61uaCDEkeG6v24uIE3hu5l0IG5ow6AgbmdoacOqbiBj4bupdSB04bqhaSDEkOG6oWkgaOG7jWMgRHJ1bW1vbmQgbXXhu5FuIMaw4bubYyBsxrDhu6NuZyBjaGkgcGjDrSBzw6FjaCBnacOhbyBraG9hIGPhu6dhIHNpbmggdmnDqm4gbsSDbSBuaOG6pXQgdOG6oWkgRHJ1bW1vbmQuIMSQ4buDIGzDoG0gxJFp4buBdSDEkcOzLCBjw7QgxJHDoyB0aGVvIGTDtWkgY2hpIHBow60gc8OhY2ggZ2nDoW8ga2hvYSBj4bunYSAyNTAgc2luaCB2acOqbiBuxINtIG5o4bqldCB2w6AgdGjhuqV5IGNoaSBwaMOtIHRydW5nIGLDrG5oIGzDoCBcJDMwMCBt4buXaSBo4buNYyBr4buzLiBIw6N5IHjDoWMgxJHhu4tuaCBxdeG6p24gdGjhu4MgbeG7pWMgdGnDqnUgKHBvcHVsYXRpb24gb2YgaW50ZXJlc3QpIGPhu6dhIG5ow6AgbmdoacOqbiBj4bupdS4KCiMjIyAzLiBQaMawxqFuZyBwaMOhcCBnaeG6o2kgY2h14bqpbiA1IGLGsOG7m2M6Ci0gKipCxq/hu5pDIDE6IFBow6JuIHTDrWNoICYgVHLDrWNoIHh14bqldCB0aMO0bmcgdGluOioqCiAgLSDEkOG7kWkgdMaw4bujbmcga2jhuqNvIHPDoXQ6IFNpbmggdmnDqm4gbsSDbSBuaOG6pXQgKGZpcnN0LXllYXIgc3R1ZGVudHMpIHThuqFpIMSQ4bqhaSBo4buNYyBEcnVtbW9uZC4KICAtIEPhu6EgbeG6q3UgdGh1IHRo4bqtcCB0aOG7sWMgdOG6vzogJG4gPSAyNTAkIHNpbmggdmnDqm4gbsSDbSBuaOG6pXQuCiAgLSBN4bulYyB0acOqdSBuZ2hpw6puIGPhu6l1OiDGr+G7m2MgbMaw4bujbmcgY2hpIHBow60gc8OhY2ggZ2nDoW8ga2hvYSBj4bunYSBzaW5oIHZpw6puIG7Eg20gbmjhuqV0IHRyxrDhu51uZyBEcnVtbW9uZC4KLSAqKkLGr+G7mkMgMjogQuG6o24gY2jhuqV0IGzDvSB0aHV54bq/dCAmIE5o4bqtbiBkaeG7h24ga2jDoWkgbmnhu4dtOioqCiAgLSAqKk3huqt1IChTYW1wbGUpOioqIEzDoCB04bqtcCBo4bujcCBjb24gY8OhYyBwaOG6p24gdOG7rSDEkcaw4bujYyBjaOG7jW4gcmEgxJHhu4MgdGh1IHRo4bqtcCBk4buvIGxp4buHdSAo4bufIMSRw6J5IGzDoCAyNTAgYuG6oW4gc2luaCB2acOqbiBuxINtIG5o4bqldCDEkcaw4bujYyBxdWFuIHPDoXQpLgogIC0gKipRdeG6p24gdGjhu4MgbeG7pWMgdGnDqnUgKFBvcHVsYXRpb24gb2YgSW50ZXJlc3QgLyBUYXJnZXQgUG9wdWxhdGlvbik6KiogTMOgIHRvw6BuIGLhu5kgdOG6rXAgaOG7o3AgY8OhYyDEkeG7kWkgdMaw4bujbmcgbcOgIG5ow6AgbmdoacOqbiBj4bupdSBtdeG7kW4gcsO6dCByYSBr4bq/dCBsdeG6rW4gc3V5IGRp4buFbiB0aOG7kW5nIGvDqi4gVsOsIMSR4buBIGLDoGkgbsOqdSByw7UgbeG7pWMgxJHDrWNoIGzDoCAqImVzdGltYXRlIHRoZSB0ZXh0Ym9vayBjb3N0cyBvZiBmaXJzdC15ZWFyIHN0dWRlbnRzIGF0IERydW1tb25kIiosIHF14bqnbiB0aOG7gyBwaOG6o2kgbMOgICoqdOG6pXQgY+G6oyBzaW5oIHZpw6puIG7Eg20gbmjhuqV0IHThuqFpIMSQ4bqhaSBo4buNYyBEcnVtbW9uZCoqLgotICoqQsav4buaQyAzOiBMb+G6oWkgdHLhu6sgYuG6q3kgdHLhuq9jIG5naGnhu4dtOioqCiAgLSBQaMawxqFuZyDDoW4gQSAoKlRoZSAyNTAgc3R1ZGVudHMuLi4qKTogU2FpLCDEkcOieSBjaOG7iSBsw6AgbeG6q3UgKHNhbXBsZSkuCiAgLSBQaMawxqFuZyDDoW4gQiAoKkFsbCBjb2xsZWdlIHN0dWRlbnRzKik6IFNhaSwgcXXDoSBy4buZbmcgKHThuqV0IGPhuqMgc2luaCB2acOqbiDEkeG6oWkgaOG7jWMgbsOzaSBjaHVuZykuCiAgLSBQaMawxqFuZyDDoW4gQyAoKkFsbCBEcnVtbW9uZCBVbml2ZXJzaXR5IHN0dWRlbnRzKik6IFNhaSwgYmFvIGfhu5NtIGPhuqMgc2luaCB2acOqbiBuxINtIDIsIDMsIDQgdHJvbmcga2hpIG5naGnDqm4gY+G7qXUgY2jhu4kgbmjhuq9tIHbDoG8gc2luaCB2acOqbiBuxINtIG5o4bqldC4KICAtIFBoxrDGoW5nIMOhbiBEICgqQWxsIGZpcnN0LXllYXIgRHJ1bW1vbmQgVW5pdmVyc2l0eSBzdHVkZW50cyopOiDEkMO6bmcgaG/DoG4gdG/DoG4gdsOgIGNow61uaCB4w6FjIHBo4bqhbSB2aS4KLSAqKkLGr+G7mkMgNDogSMaw4bubbmcgZOG6q24gQ2FzaW8gZngtNTgwVk4gWDoqKgogIC0gQ8OidSBo4buPaSBsw70gdGh1eeG6v3QgxJHhu4tuaCB0w61uaCwga2jDtG5nIGPhuqduIGLhuqVtIG3DoXkgdMOtbmguCi0gKipCxq/hu5pDIDU6IEvhur90IGx14bqtbjoqKgogIC0gxJDDoXAgw6FuIGNow61uaCB4w6FjOiAqKkFsbCBmaXJzdC15ZWFyIERydW1tb25kIFVuaXZlcnNpdHkgc3R1ZGVudHMqKiAoQ2jhu41uIHBoxrDGoW5nIMOhbiAqKkQqKikuCgotLS0KCiMjIEPDonUgMzogWMOhYyBTdeG6pXQgUGjDom4gUGjhu5FpIE5o4buLIFRo4bupYyAoQmlub21pYWwgRGlzdHJpYnV0aW9uKQoKIyMjIDEuIE5ndXnDqm4gdsSDbiDEkeG7gSB0aGkgdGnhur9uZyBBbmggJiBDw6FjIHBoxrDGoW5nIMOhbiBs4buxYSBjaOG7jW46Cj4gKipRdWVzdGlvbiAzIChTaW5nbGUgQ2hvaWNlKToqKgo+IFRoZSBwaG9uZSBsaW5lcyB0byBhbiBhaXJsaW5lIHJlc2VydmF0aW9uIHN5c3RlbSBhcmUgb2NjdXBpZWQgNDAlIG9mIHRoZSB0aW1lLiBBc3N1bWUgdGhhdCB0aGUgZXZlbnRzIHRoYXQgdGhlIGxpbmVzIGFyZSBvY2N1cGllZCBvbiBzdWNjZXNzaXZlIGNhbGxzIGFyZSBpbmRlcGVuZGVudC4gQXNzdW1lIHRoYXQgMTAgY2FsbHMgYXJlIHBsYWNlZCB0byB0aGUgYWlybGluZS4gV2hhdCBpcyB0aGUgcHJvYmFiaWxpdHkgdGhhdCBmb3IgZXhhY3RseSB0aHJlZSBjYWxscyB0aGUgbGluZXMgYXJlIG9jY3VwaWVkCj4gLSBBLiAwLjE2NDAKPiAtIEIuIDAuMjQxMAo+IC0gQy4gMC4yMTQ5Cj4gLSBELiAwLjYxNDIKCiMjIyAyLiBE4buLY2ggbmdoxKlhIHRp4bq/bmcgVmnhu4d0OgpDw6FjIMSRxrDhu51uZyBkw6J5IMSRaeG7h24gdGhv4bqhaSDEkeG6v24gaOG7hyB0aOG7kW5nIMSR4bq3dCB2w6kgY+G7p2EgbeG7mXQgaMOjbmcgaMOgbmcga2jDtG5nIGLhu4sgYuG6rW4gNDAlIHRo4budaSBnaWFuLiBHaeG6oyBz4butIGJp4bq/biBj4buRIGPDoWMgxJHGsOG7nW5nIGTDonkgYuG7iyBi4bqtbiDhu58gY8OhYyBjdeG7mWMgZ+G7jWkgbGnDqm4gdGnhur9wIGzDoCDEkeG7mWMgbOG6rXAgduG7m2kgbmhhdS4gR2nhuqMgc+G7rSBjw7MgMTAgY3Xhu5ljIGfhu41pIMSRxrDhu6NjIGfhu41pIHThu5tpIGjDo25nIGjDoG5nIGtow7RuZy4gWMOhYyBzdeG6pXQgxJHhu4MgY8OzIMSRw7puZyAzIGN14buZYyBn4buNaSBn4bq3cCDEkcaw4budbmcgZMOieSBi4bqtbiBsw6AgYmFvIG5oacOqdT8KCiMjIyAzLiBQaMawxqFuZyBwaMOhcCBnaeG6o2kgY2h14bqpbiA1IGLGsOG7m2M6Ci0gKipCxq/hu5pDIDE6IFBow6JuIHTDrWNoICYgVHLDrWNoIHh14bqldCB0aMO0bmcgdGluOioqCiAgLSBN4buXaSBjdeG7mWMgZ+G7jWkgbMOgIG3hu5l0IHBow6lwIHRo4butIEJlcm5vdWxsaSDEkeG7mWMgbOG6rXAgY8OzIDIga+G6v3QgY+G7pWM6IELhuq1uIGhv4bq3YyBS4buXaS4KICAtIFThu5VuZyBz4buRIGN14buZYyBn4buNaSAoc+G7kSBwaMOpcCB0aOG7rSk6ICRuID0gMTAkLgogIC0gWMOhYyBzdeG6pXQgdGjDoG5oIGPDtG5nICjEkcaw4budbmcgZMOieSBi4buLIGLhuq1uKTogJHAgPSA0MFwlID0gMC40MCQuCiAgLSBT4buRIGzhuqduIHRow6BuaCBjw7RuZyBj4bqnbiB0w61uaCB4w6FjIHN14bqldDogJHggPSAzJC4KLSAqKkLGr+G7mkMgMjogQuG6o24gY2jhuqV0IGzDvSB0aHV54bq/dCAmIE5o4bqtbiBkaeG7h24gY8O0bmcgdGjhu6ljOioqCiAgLSBCaeG6v24gbmfhuqt1IG5oacOqbiAkWCBcc2ltIEIobiA9IDEwLCBwID0gMC40MCkkLgogIC0gQ8O0bmcgdGjhu6ljIGjDoG0geMOhYyBzdeG6pXQgbmjhu4sgdGjhu6ljIChCaW5vbWlhbCBQcm9iYWJpbGl0eSBNYXNzIEZ1bmN0aW9uKToKICAgICQkUChYID0geCkgPSBDX25eeCBcY2RvdCBwXnggXGNkb3QgKDEgLSBwKV57biAtIHh9JCQKLSAqKkLGr+G7mkMgMzogVGhheSBz4buRICYgVMOtbmggdG/DoW4gxJHhuqFpIHPhu5EgY2hpIHRp4bq/dDoqKgogICQkUChYID0gMykgPSBDX3sxMH1eMyBcY2RvdCAoMC40MCleMyBcY2RvdCAoMSAtIDAuNDApXnsxMCAtIDN9ID0gQ197MTB9XjMgXGNkb3QgKDAuNDApXjMgXGNkb3QgKDAuNjApXjckJAogIC0gVGEgY8OzOiAkQ197MTB9XjMgPSBcZnJhY3sxMCBcdGltZXMgOSBcdGltZXMgOH17MyBcdGltZXMgMiBcdGltZXMgMX0gPSAxMjAkLgogIC0gJCgwLjQwKV4zID0gMC4wNjQkLgogIC0gJCgwLjYwKV43IFxhcHByb3ggMC4wMjc5OTM2JC4KICAtIE5ow6JuIGzhuqFpOiAkUChYID0gMykgPSAxMjAgXHRpbWVzIDAuMDY0IFx0aW1lcyAwLjAyNzk5MzYgXGFwcHJveCAwLjIxNDk5Li4uIFxhcHByb3ggMC4yMTQ5JC4KLSAqKkLGr+G7mkMgNDogSMaw4bubbmcgZOG6q24gYuG6pW0gbcOheSB0w61uaCBDYXNpbyBmeC01ODBWTiBYOioqCiAgLSAqKkPDoWNoIDE6IFPhu60gZOG7pW5nIGLhuqNuZyBwaMOibiBwaOG7kWkgbmjhu4sgdGjhu6ljIChCaW5vbWlhbCBQRCk6KioKICAgIC0gQuG6pW06IGBbTUVOVV1gIGBbN11gIChQaMOibiBwaOG7kWkgRGlzdHJpYnV0aW9uKS4KICAgIC0gQuG6pW0gbcWpaSB0w6puIHh14buRbmc6IGBb4pa8XWAgYFsxXWAgKEJpbm9taWFsIFBEIC0gWMOhYyBzdeG6pXQgdOG6oWkgMSDEkWnhu4NtKS4KICAgIC0gQ2jhu41uIGBbMV1gIChWYXJpYWJsZSAtIEJp4bq/biBz4buRKS4KICAgIC0gTmjhuq1wOiAkeCQ6IGAzYCBgWz1dYCwgJE4kOiBgMTBgIGBbPV1gLCAkcCQ6IGAwLjRgIGBbPV1gLgogICAgLSBC4bqlbSBgWz1dYCAkXHRvJCBL4bq/dCBxdeG6oyBoaeG7g24gdGjhu4s6IGAwLjIxNDk5MDg0OGAgJFxhcHByb3ggMC4yMTQ5JC4KICAtICoqQ8OhY2ggMjogQuG6pW0gdOG7lSBo4bujcCB04bqhaSBNZW51IDE6KioKICAgIC0gQuG6pW06IGBbTUVOVV1gIGBbMV1gCiAgICAtIE5o4bqtcDogYDEwYCBgW1NISUZUXWAgYFvDt11gIChyYSBjaOG7ryBDKSBgM2AgYFvDl11gIGAwLjRgIGBbeOKWoF1gIGAzYCBgW8OXXWAgYDAuNmAgYFt44pagXWAgYDdgIGBbPV1gCiAgICAtIEvhur90IHF14bqjOiBgMC4yMTQ5OS4uLmAgJFxhcHByb3ggMC4yMTQ5JC4KLSAqKkLGr+G7mkMgNTogS+G6v3QgbHXhuq1uOioqCiAgLSDEkMOhcCDDoW4gY2jDrW5oIHjDoWM6ICoqMC4yMTQ5KiogKENo4buNbiBwaMawxqFuZyDDoW4gKipDKiopLgoKLS0tCgojIyBDw6J1IDQ6IFBow6JuIFBo4buRaSBDaHXhuqluIC0gVMOtbmggWMOhYyBTdeG6pXQgVHJvbmcgS2hv4bqjbmcgKE5vcm1hbCBEaXN0cmlidXRpb24pCgojIyMgMS4gTmd1ecOqbiB2xINuIMSR4buBIHRoaSB0aeG6v25nIEFuaCAmIEPDoWMgcGjGsMahbmcgw6FuIGzhu7FhIGNo4buNbjoKPiAqKlF1ZXN0aW9uIDQgKFNpbmdsZSBDaG9pY2UpOioqCj4gQSBzdXBlcm1hcmtldCBtYW5hZ2VyIGhhcyBkZXRlcm1pbmVkIHRoYXQgdGhlIGFtb3VudCBvZiB0aW1lIGN1c3RvbWVycyBzcGVuZCBpbiB0aGUgc3VwZXJtYXJrZXQgaXMgYXBwcm94aW1hdGVseSBub3JtYWxseSBkaXN0cmlidXRlZCB3aXRoIGEgbWVhbiBvZiA0NSBtaW51dGVzIGFuZCBhIHN0YW5kYXJkIGRldmlhdGlvbiBvZiA2IG1pbnV0ZXMuIEZpbmQgdGhlIHByb2JhYmlsaXR5IHRoYXQgYSBjdXN0b21lciBzcGVuZHMgYmV0d2VlbiAzOSBhbmQgNDMgbWludXRlcyBpbiB0aGUgc3VwZXJtYXJrZXQuCj4gTGV0IFAoWiA8IC0xKSA9IDAuMTU5LCBQKFogPCAtMC4zMykgPSAwLjM3MSwgUChaIDwgMC4wMikgPSAwLjUwOCwgYW5kIFAoWiA8IDAuODUpID0gMC44MDIuCj4gLSBBLiAwLjM0NQo+IC0gQi4gMC42NDYKPiAtIEMuIDAuMjEyCj4gLSBELiAwLjgyMwoKIyMjIDIuIEThu4tjaCBuZ2jEqWEgdGnhur9uZyBWaeG7h3Q6Ck5nxrDhu51pIHF14bqjbiBsw70gc2nDqnUgdGjhu4sgeMOhYyDEkeG7i25oIHLhurFuZyB0aOG7nWkgZ2lhbiBraMOhY2ggaMOgbmcgbXVhIHPhuq9tIHRyb25nIHNpw6p1IHRo4buLIGPDsyBwaMOibiBwaOG7kWkgeOG6pXAgeOG7iSBjaHXhuqluIHbhu5tpIHRydW5nIGLDrG5oIGzDoCA0NSBwaMO6dCB2w6AgxJHhu5kgbOG7h2NoIGNodeG6qW4gbMOgIDYgcGjDunQuIFTDrG0geMOhYyBzdeG6pXQgxJHhu4MgbeG7mXQga2jDoWNoIGjDoG5nIGTDoG5oIHThu6sgMzkgxJHhur9uIDQzIHBow7p0IHRyb25nIHNpw6p1IHRo4buLLgpDaG8gYmnhur90OiBQKFogPCAtMSkgPSAwLjE1OTsgUChaIDwgLTAuMzMpID0gMC4zNzE7IFAoWiA8IDAuMDIpID0gMC41MDg7IFAoWiA8IDAuODUpID0gMC44MDIuCgojIyMgMy4gUGjGsMahbmcgcGjDoXAgZ2nhuqNpIGNodeG6qW4gNSBixrDhu5tjOgotICoqQsav4buaQyAxOiBQaMOibiB0w61jaCAmIFRyw61jaCB4deG6pXQgdGjDtG5nIHRpbjoqKgogIC0gQmnhur9uIG5n4bqrdSBuaGnDqm4gJFggXHNpbSBOKFxtdSA9IDQ1LCBcc2lnbWEgPSA2KSQuCiAgLSBLaG/huqNuZyB0aOG7nWkgZ2lhbiBj4bqnbiB0w61uaCB4w6FjIHN14bqldDogJDM5IFxsZSBYIFxsZSA0MyQuCi0gKipCxq/hu5pDIDI6IELhuqNuIGNo4bqldCBsw70gdGh1eeG6v3QgJiBOaOG6rW4gZGnhu4duIGPDtG5nIHRo4bupYzoqKgogIC0gQ2h14bqpbiBow7NhIGPDoWMgZ2nDoSB0cuG7iyBiacOqbiB24buBIMSRaeG7g20gY2h14bqpbiBow7NhIFogKFotc2NvcmUpOgogICAgJCRaID0gXGZyYWN7WCAtIFxtdX17XHNpZ21hfSQkCiAgLSBYw6FjIHN14bqldCB0cm9uZyBraG/huqNuZzoKICAgICQkUCh4XzEgXGxlIFggXGxlIHhfMikgPSBQKFpfMSBcbGUgWiBcbGUgWl8yKSA9IFAoWiBcbGUgWl8yKSAtIFAoWiBcbGUgWl8xKSQkCi0gKipCxq/hu5pDIDM6IFRoYXkgc+G7kSAmIFTDrW5oIHRvw6FuIMSR4bqhaSBz4buRIGNoaSB0aeG6v3Q6KioKICAtIFbhu5tpICR4XzEgPSAzOSQ6CiAgICAkJFpfMSA9IFxmcmFjezM5IC0gNDV9ezZ9ID0gXGZyYWN7LTZ9ezZ9ID0gLTEuMDAkJAogIC0gVuG7m2kgJHhfMiA9IDQzJDoKICAgICQkWl8yID0gXGZyYWN7NDMgLSA0NX17Nn0gPSBcZnJhY3stMn17Nn0gPSAtXGZyYWN7MX17M30gXGFwcHJveCAtMC4zMyQkCiAgLSBCaeG7g3UgdGjhu6ljIHjDoWMgc3XhuqV0IGNodXnhu4NuIHRow6BuaDoKICAgICQkUCgzOSBcbGUgWCBcbGUgNDMpID0gUCgtMS4wMCBcbGUgWiBcbGUgLTAuMzMpID0gUChaIDwgLTAuMzMpIC0gUChaIDwgLTEuMDApJCQKICAtIFRoYXkgc+G7kSBsaeG7h3UgxJHDoyBjaG8gdHJvbmcgxJHhu4EgYsOgaToKICAgICQkUCgzOSBcbGUgWCBcbGUgNDMpID0gMC4zNzEgLSAwLjE1OSA9IDAuMjEyJCQKLSAqKkLGr+G7mkMgNDogSMaw4bubbmcgZOG6q24gYuG6pW0gbcOheSB0w61uaCBDYXNpbyBmeC01ODBWTiBYOioqCiAgLSAqKkPDoWNoIDE6IFTDrW5oIG5oYW5oIHRoZW8gZOG7ryBraeG7h24gxJHhu4EgYsOgaToqKgogICAgLSBC4bqlbSBgW01FTlVdYCBgWzFdYCwgbmjhuq1wIGAwLjM3MSAtIDAuMTU5ID1gICRcdG8kIHJhIGAwLjIxMmAuCiAgLSAqKkPDoWNoIDI6IEtp4buDbSBjaOG7qW5nIHRy4buxYyB0aeG6v3AgYuG6sW5nIGjDoG0gTm9ybWFsIENEOioqCiAgICAtIELhuqVtOiBgW01FTlVdYCBgWzddYCBgWzJdYCAoTm9ybWFsIENEKS4KICAgIC0gTG93ZXI6IG5o4bqtcCBgMzlgIGBbPV1gLgogICAgLSBVcHBlcjogbmjhuq1wIGA0M2AgYFs9XWAuCiAgICAtICRcc2lnbWEkOiBuaOG6rXAgYDZgIGBbPV1gLgogICAgLSAkXG11JDogbmjhuq1wIGA0NWAgYFs9XWAuCiAgICAtIELhuqVtIGBbPV1gICRcdG8kIEvhur90IHF14bqjIGhp4buDbiB0aOG7izogYDAuMjExOS4uLmAgJFxhcHByb3ggMC4yMTIkLgotICoqQsav4buaQyA1OiBL4bq/dCBsdeG6rW46KioKICAtIMSQw6FwIMOhbiBjaMOtbmggeMOhYzogKiowLjIxMioqIChDaOG7jW4gcGjGsMahbmcgw6FuICoqQyoqKS4KCi0tLQoKIyMgQ8OidSA1OiBQaMOibiBQaOG7kWkgQ2h14bqpbiAtIFTDrW5oIFjDoWMgU3XhuqV0IFThu6sgVHJ1bmcgQsOsbmggxJDhur9uIEPhuq1uIFRyw6puCgojIyMgMS4gTmd1ecOqbiB2xINuIMSR4buBIHRoaSB0aeG6v25nIEFuaCAmIEPDoWMgcGjGsMahbmcgw6FuIGzhu7FhIGNo4buNbjoKPiAqKlF1ZXN0aW9uIDUgKFNpbmdsZSBDaG9pY2UpOioqCj4gQSBiYW5rJ3MgbG9hbiBvZmZpY2VyIHJhdGVzIGFwcGxpY2FudHMgZm9yIGNyZWRpdC4gVGhlIHJhdGluZ3MgYXJlIG5vcm1hbGx5IGRpc3RyaWJ1dGVkIHdpdGggYSBtZWFuIG9mIDIwMCBhbmQgYSBzdGFuZGFyZCBkZXZpYXRpb24gb2YgNTAuIElmIGFuIGFwcGxpY2FudCBpcyByYW5kb21seSBzZWxlY3RlZCwgZmluZCB0aGUgcHJvYmFiaWxpdHkgb2YgYSByYXRpbmcgdGhhdCBpcyBiZXR3ZWVuIDIwMCBhbmQgMjc1Lgo+IExldCBQKFogPCAtMC4xNykgPSAwLjQzMzIsIFAoWiA8IDApID0gMC41LCBQKFogPCAxLjUpID0gMC45MzMyLgo+IC0gQS4gMC45MzMyCj4gLSBCLiAwLjUKPiAtIEMuIDAuNDMzMgo+IC0gRC4gMC4wNjY4CgojIyMgMi4gROG7i2NoIG5naMSpYSB0aeG6v25nIFZp4buHdDoKTeG7mXQgY2h1ecOqbiB2acOqbiB0w61uIGThu6VuZyBuZ8OibiBow6BuZyBjaOG6pW0gxJFp4buDbSBjw6FjIGtow6FjaCBow6BuZyBu4buZcCDEkcahbiB4aW4gdmF5IHbhu5FuLiDEkGnhu4NtIMSRw6FuaCBnacOhIGPDsyBwaMOibiBwaOG7kWkgY2h14bqpbiB24bubaSBnacOhIHRy4buLIHRydW5nIGLDrG5oIGzDoCAyMDAgdsOgIMSR4buZIGzhu4djaCBjaHXhuqluIGzDoCA1MC4gTuG6v3UgY2jhu41uIG5n4bqrdSBuaGnDqm4gbeG7mXQgbmfGsOG7nWkgbuG7mXAgxJHGoW4sIGjDo3kgdMOsbSB4w6FjIHN14bqldCDEkeG7gyDEkWnhu4NtIMSRw6FuaCBnacOhIGPhu6dhIG5nxrDhu51pIMSRw7MgbuG6sW0gdHJvbmcga2hv4bqjbmcgdOG7qyAyMDAgxJHhur9uIDI3NS4KQ2hvIGJp4bq/dDogUChaIDwgLTAuMTcpID0gMC40MzMyOyBQKFogPCAwKSA9IDAuNTsgUChaIDwgMS41KSA9IDAuOTMzMi4KCiMjIyAzLiBQaMawxqFuZyBwaMOhcCBnaeG6o2kgY2h14bqpbiA1IGLGsOG7m2M6Ci0gKipCxq/hu5pDIDE6IFBow6JuIHTDrWNoICYgVHLDrWNoIHh14bqldCB0aMO0bmcgdGluOioqCiAgLSBCaeG6v24gbmfhuqt1IG5oacOqbiAkWCQ6IMSQaeG7g20geOG6v3AgaOG6oW5nIHTDrW4gZOG7pW5nLCAkWCBcc2ltIE4oXG11ID0gMjAwLCBcc2lnbWEgPSA1MCkkLgogIC0gQ+G6p24gdMOtbmg6ICRQKDIwMCBcbGUgWCBcbGUgMjc1KSQuCi0gKipCxq/hu5pDIDI6IELhuqNuIGNo4bqldCBsw70gdGh1eeG6v3QgJiBOaOG6rW4gZGnhu4duIGPDtG5nIHRo4bupYzoqKgogIC0gQ2h14bqpbiBow7NhIFogaGFpIG3hu5FjOgogICAgJCRaXzEgPSBcZnJhY3syMDAgLSAyMDB9ezUwfSA9IDAkJAogICAgJCRaXzIgPSBcZnJhY3syNzUgLSAyMDB9ezUwfSA9IFxmcmFjezc1fXs1MH0gPSAxLjUwJCQKICAtIEPDtG5nIHRo4bupYyB4w6FjIHN14bqldDoKICAgICQkUCgyMDAgXGxlIFggXGxlIDI3NSkgPSBQKDAgXGxlIFogXGxlIDEuNTApID0gUChaIDwgMS41MCkgLSBQKFogPCAwKSQkCi0gKipCxq/hu5pDIDM6IFRoYXkgc+G7kSAmIFTDrW5oIHRvw6FuIMSR4bqhaSBz4buRIGNoaSB0aeG6v3Q6KioKICAtIFRoYXkgc+G7kSBsaeG7h3UgxJHhu4EgYsOgaSBjaG86CiAgICAkJFAoMCBcbGUgWiBcbGUgMS41MCkgPSAwLjkzMzIgLSAwLjUwMDAgPSAwLjQzMzIkJAotICoqQsav4buaQyA0OiBIxrDhu5tuZyBk4bqrbiBi4bqlbSBtw6F5IHTDrW5oIENhc2lvIGZ4LTU4MFZOIFg6KioKICAtICoqQ8OhY2ggMTogVHLhu6sgdHLhu7FjIHRp4bq/cCBk4buvIGtp4buHbiDEkeG7gToqKgogICAgLSBC4bqlbSBgW01FTlVdYCBgWzFdYCwgbmjhuq1wIGAwLjkzMzIgLSAwLjUgPWAgJFx0byQgcmEgYDAuNDMzMmAuCiAgLSAqKkPDoWNoIDI6IELhuqVtIE5vcm1hbCBDRDoqKgogICAgLSBC4bqlbTogYFtNRU5VXWAgYFs3XWAgYFsyXWAuCiAgICAtIExvd2VyOiBgMjAwYCBgWz1dYC4KICAgIC0gVXBwZXI6IGAyNzVgIGBbPV1gLgogICAgLSAkXHNpZ21hJDogYDUwYCBgWz1dYC4KICAgIC0gJFxtdSQ6IGAyMDBgIGBbPV1gLgogICAgLSBC4bqlbSBgWz1dYCAkXHRvJCBL4bq/dCBxdeG6ozogYDAuNDMzMTkuLi5gICRcYXBwcm94IDAuNDMzMiQuCi0gKipCxq/hu5pDIDU6IEvhur90IGx14bqtbjoqKgogIC0gxJDDoXAgw6FuIGNow61uaCB4w6FjOiAqKjAuNDMzMioqIChDaOG7jW4gcGjGsMahbmcgw6FuICoqQyoqKS4KCi0tLQoKIyMgQ8OidSA2OiBQaMOibiBQaOG7kWkgUG9pc3NvbiAtIFjDoWMgU3XhuqV0ICLDjXQgTmjhuqV0IDEgTOG6p24iIChBdCBMZWFzdCBPbmUpCgojIyMgMS4gTmd1ecOqbiB2xINuIMSR4buBIHRoaSB0aeG6v25nIEFuaCAmIEPDoWMgcGjGsMahbmcgw6FuIGzhu7FhIGNo4buNbjoKPiAqKlF1ZXN0aW9uIDYgKFNpbmdsZSBDaG9pY2UpOioqCj4gVGhlIG51bWJlciBvZiBwb3dlciBvdXRhZ2VzIGF0IGEgbnVjbGVhciBwb3dlciBwbGFudCBoYXMgYSBQb2lzc29uIGRpc3RyaWJ1dGlvbiB3aXRoIGEgbWVhbiBvZiA2IG91dGFnZXMgcGVyIHllYXIuIFRoZSBwcm9iYWJpbGl0eSB0aGF0IHRoZXJlIHdpbGwgYmUgYXQgbGVhc3QgMSBwb3dlciBvdXRhZ2VzIGluIGEgeWVhciBpc19fCj4gLSBBLiAwLjEyNzQKPiAtIEIuIDAuOTk3NQo+IC0gQy4gMC44NzM1Cj4gLSBELiAwLjAwMjEKCiMjIyAyLiBE4buLY2ggbmdoxKlhIHRp4bq/bmcgVmnhu4d0OgpT4buRIGzhuqduIG3huqV0IMSRaeG7h24gdOG6oWkgbeG7mXQgbmjDoCBtw6F5IMSRaeG7h24gaOG6oXQgbmjDom4gdHXDom4gdGhlbyBwaMOibiBwaOG7kWkgUG9pc3NvbiB24bubaSB0cnVuZyBiw6xuaCBsw6AgNiBs4bqnbiBt4bqldCDEkWnhu4duIG3hu5dpIG7Eg20uIFjDoWMgc3XhuqV0IMSR4buDIGPDsyDDrXQgbmjhuqV0IDEgbOG6p24gbeG6pXQgxJFp4buHbiB0cm9uZyBt4buZdCBuxINtIGzDoDoKCiMjIyAzLiBQaMawxqFuZyBwaMOhcCBnaeG6o2kgY2h14bqpbiA1IGLGsOG7m2M6Ci0gKipCxq/hu5pDIDE6IFBow6JuIHTDrWNoICYgVHLDrWNoIHh14bqldCB0aMO0bmcgdGluOioqCiAgLSBCaeG6v24gbmfhuqt1IG5oacOqbiAkWCQ6IFPhu5EgbOG6p24gbeG6pXQgxJFp4buHbiB0cm9uZyAxIG7Eg20uCiAgLSBQaMOibiBwaOG7kWk6ICRYIFxzaW0gXHRleHR7UG9pc3Nvbn0oXGxhbWJkYSA9IDYpJC4KICAtIEPhuqduIHTDrW5oOiAkUChYIFxnZSAxKSQgKCJhdCBsZWFzdCAxIHBvd2VyIG91dGFnZXMiKS4KLSAqKkLGr+G7mkMgMjogQuG6o24gY2jhuqV0IGzDvSB0aHV54bq/dCAmIE5o4bqtbiBkaeG7h24gY8O0bmcgdGjhu6ljOioqCiAgLSBRdXkgdOG6r2MgYmnhur9uIGPhu5EgxJHhu5FpIChDb21wbGVtZW50IFJ1bGUpOiBCaeG6v24gY+G7kSDEkeG7kWkgY+G7p2EgImPDsyDDrXQgbmjhuqV0IDEgbOG6p24iIGzDoCAia2jDtG5nIGPDsyBs4bqnbiBuw6BvIiAoJFggPSAwJCk6CiAgICAkJFAoWCBcZ2UgMSkgPSAxIC0gUChYID0gMCkkJAogIC0gQ8O0bmcgdGjhu6ljIHjDoWMgc3XhuqV0IFBvaXNzb246CiAgICAkJFAoWCA9IGspID0gXGZyYWN7ZV57LVxsYW1iZGF9IFxjZG90IFxsYW1iZGFea317ayF9IFxpbXBsaWVzIFAoWCA9IDApID0gXGZyYWN7ZV57LTZ9IFxjZG90IDZeMH17MCF9ID0gZV57LTZ9JCQKLSAqKkLGr+G7mkMgMzogVGhheSBz4buRICYgVMOtbmggdG/DoW4gxJHhuqFpIHPhu5EgY2hpIHRp4bq/dDoqKgogICQkUChYIFxnZSAxKSA9IDEgLSBlXnstNn0kJAogIC0gVGEgY8OzOiAkZV57LTZ9IFxhcHByb3ggMC4wMDI0Nzg3NSQuCiAgLSBEbyDEkcOzOgogICAgJCRQKFggXGdlIDEpID0gMSAtIDAuMDAyNDc4NzUgPSAwLjk5NzUyMS4uLiBcYXBwcm94IDAuOTk3NSQkCi0gKipCxq/hu5pDIDQ6IEjGsOG7m25nIGThuqtuIGLhuqVtIG3DoXkgdMOtbmggQ2FzaW8gZngtNTgwVk4gWDoqKgogIC0gQuG6pW06IGBbTUVOVV1gIGBbMV1gCiAgLSBOaOG6rXA6IGAxYCBgWy1dYCBgW1NISUZUXWAgYFtsbl1gIChyYSBrw70gaGnhu4d1ICRlXntcc3F1YXJlfSQpIGBbLV1gIGA2YCBgWz1dYAogIC0gTcOgbiBow6xuaCBoaeG7g24gdGjhu4s6IGAwLjk5NzUyMTI0NzhgICRcaW1wbGllcyQgTMOgbSB0csOybiA0IGNo4buvIHPhu5EgdGjhuq1wIHBow6JuIGzDoCBgMC45OTc1YC4KLSAqKkLGr+G7mkMgNTogS+G6v3QgbHXhuq1uOioqCiAgLSDEkMOhcCDDoW4gY2jDrW5oIHjDoWM6ICoqMC45OTc1KiogKENo4buNbiBwaMawxqFuZyDDoW4gKipCKiopLgoKLS0tCgojIyBDw6J1IDc6IFNhaSBT4buRIENodeG6qW4gQ+G7p2EgVHJ1bmcgQsOsbmggTeG6q3UgKFN0YW5kYXJkIEVycm9yIG9mIHRoZSBNZWFuKQoKIyMjIDEuIE5ndXnDqm4gdsSDbiDEkeG7gSB0aGkgdGnhur9uZyBBbmggJiBDw6FjIHBoxrDGoW5nIMOhbiBs4buxYSBjaOG7jW46Cj4gKipRdWVzdGlvbiA3IChTaW5nbGUgQ2hvaWNlKToqKgo+IEEgcmFuZG9tIHNhbXBsZSBvZiAxMjEgYm90dGxlcyBvZiBjb2xvZ25lIHNob3dlZCBhbiBhdmVyYWdlIGNvbnRlbnQgb2YgNCBvdW5jZXMuIEl0IGlzIGtub3duIHRoYXQgdGhlIHN0YW5kYXJkIGRldmlhdGlvbiBvZiB0aGUgY29udGVudHMgKGkuZS4sIG9mIHRoZSBwb3B1bGF0aW9uKSBpcyAwLjIyIG91bmNlcy4gVGhlIHN0YW5kYXJkIGVycm9yIG9mIHRoZSBtZWFuIGVxdWFscwo+IC0gQS4gMC4wMjAwCj4gLSBCLiAwLjAzMzEKPiAtIEMuIDQuMDAwCj4gLSBELiAwLjM2MzYKCiMjIyAyLiBE4buLY2ggbmdoxKlhIHRp4bq/bmcgVmnhu4d0OgpN4buZdCBt4bqrdSBuZ+G6q3Ugbmhpw6puIGfhu5NtIDEyMSBjaGFpIG7GsOG7m2MgaG9hIGNobyB0aOG6pXkgZHVuZyB0w61jaCB0cnVuZyBiw6xuaCBsw6AgNCBvdW5jZS4gQmnhur90IHLhurFuZyDEkeG7mSBs4buHY2ggY2h14bqpbiBj4bunYSBkdW5nIHTDrWNoIHRvw6BuIHRo4buDICh04bupYyBj4bunYSB04buVbmcgdGjhu4MpIGzDoCAwLjIyIG91bmNlLiBTYWkgc+G7kSBjaHXhuqluIGPhu6dhIGdpw6EgdHLhu4sgdHJ1bmcgYsOsbmggKHN0YW5kYXJkIGVycm9yIG9mIHRoZSBtZWFuKSBi4bqxbmc6CgojIyMgMy4gUGjGsMahbmcgcGjDoXAgZ2nhuqNpIGNodeG6qW4gNSBixrDhu5tjOgotICoqQsav4buaQyAxOiBQaMOibiB0w61jaCAmIFRyw61jaCB4deG6pXQgdGjDtG5nIHRpbjoqKgogIC0gQ+G7oSBt4bqrdTogJG4gPSAxMjEkLgogIC0gVHJ1bmcgYsOsbmggbeG6q3U6ICRcYmFye3h9ID0gNCQgb3VuY2VzICjEkcOieSBsw6AgZOG7ryBsaeG7h3UgbMOgbSB4YW8gbmjDo25nLCBraMO0bmcgZMO5bmcgxJHhu4MgdMOtbmggc2FpIHPhu5EgY2h14bqpbikuCiAgLSDEkOG7mSBs4buHY2ggY2h14bqpbiB04buVbmcgdGjhu4M6ICRcc2lnbWEgPSAwLjIyJCBvdW5jZXMuCi0gKipCxq/hu5pDIDI6IELhuqNuIGNo4bqldCBsw70gdGh1eeG6v3QgJiBOaOG6rW4gZGnhu4duIGPDtG5nIHRo4bupYzoqKgogIC0gU2FpIHPhu5EgY2h14bqpbiBj4bunYSB0cnVuZyBiw6xuaCBt4bqrdSAoU3RhbmRhcmQgRXJyb3Igb2YgdGhlIE1lYW4sIGvDvSBoaeG7h3UgJFxzaWdtYV97XGJhcnt4fX0kKSBwaOG6o24gw6FuaCDEkeG7mSBiaeG6v24gdGhpw6puIGPhu6dhIGPDoWMgdHJ1bmcgYsOsbmggbeG6q3UgcXVhbmggdHJ1bmcgYsOsbmggdOG7lW5nIHRo4buDOgogICAgJCRcc2lnbWFfe1xiYXJ7eH19ID0gXGZyYWN7XHNpZ21hfXtcc3FydHtufX0kJAotICoqQsav4buaQyAzOiBUaGF5IHPhu5EgJiBUw61uaCB0b8OhbiDEkeG6oWkgc+G7kSBjaGkgdGnhur90OioqCiAgJCRcc2lnbWFfe1xiYXJ7eH19ID0gXGZyYWN7MC4yMn17XHNxcnR7MTIxfX0gPSBcZnJhY3swLjIyfXsxMX0gPSAwLjAyMDAkJAotICoqQsav4buaQyA0OiBIxrDhu5tuZyBk4bqrbiBi4bqlbSBtw6F5IHTDrW5oIENhc2lvIGZ4LTU4MFZOIFg6KioKICAtIELhuqVtOiBgW01FTlVdYCBgWzFdYAogIC0gTmjhuq1wOiBgMC4yMmAgYFvDt11gIGBb4oiaXWAgYDEyMWAgYFs9XWAKICAtIE3DoXkgaGnhu4duIHBow6JuIHPhu5EgYDEvNTBgLCBi4bqlbSBwaMOtbSBgW1M8PT5EXWAgxJHhu4MgY2h1eeG7g24gc2FuZyBz4buRIHRo4bqtcCBwaMOibiAkXHRvJCBgMC4wMmAgKHThu6ljIGAwLjAyMDBgKS4KLSAqKkLGr+G7mkMgNTogS+G6v3QgbHXhuq1uOioqCiAgLSDEkMOhcCDDoW4gY2jDrW5oIHjDoWM6ICoqMC4wMjAwKiogKENo4buNbiBwaMawxqFuZyDDoW4gKipBKiopLgoKLS0tCgojIyBDw6J1IDg6IFBow6JuIFBo4buRaSBDaHXhuqluIC0gWMOhYyBTdeG6pXQgVsaw4bujdCBN4bupYyBDaG8gVHLGsOG7m2MgKFVwcGVyIFRhaWwgUHJvYmFiaWxpdHkpCgojIyMgMS4gTmd1ecOqbiB2xINuIMSR4buBIHRoaSB0aeG6v25nIEFuaCAmIEPDoWMgcGjGsMahbmcgw6FuIGzhu7FhIGNo4buNbjoKPiAqKlF1ZXN0aW9uIDggKFNpbmdsZSBDaG9pY2UpOioqCj4gVGhlIHdlZWtseSBzYWxhcmllcyBvZiB0ZWFjaGVycyBpbiBvbmUgc3RhdGUgYXJlIG5vcm1hbGx5IGRpc3RyaWJ1dGVkIHdpdGggYSBtZWFuIG9mIFwkNDkwIGFuZCBhIHN0YW5kYXJkIGRldmlhdGlvbiBvZiBcJDQ1LiBXaGF0IGlzIHRoZSBwcm9iYWJpbGl0eSB0aGF0IGEgcmFuZG9tbHkgc2VsZWN0ZWQgdGVhY2hlciBlYXJucyBtb3JlIHRoYW4gXCQ1MjUgYSB3ZWVrPyBMZXQgUChaIDwgMC43NzgpID0gMC43ODE3IGFuZCBQKFogPCAwLjE2MykgPSAwLjU2NDYuCj4gLSBBLiAwLjc4MjMKPiAtIEIuIDAuMjE4Mwo+IC0gQy4gMC4yODIzCj4gLSBELiAwLjQzNTQKCiMjIyAyLiBE4buLY2ggbmdoxKlhIHRp4bq/bmcgVmnhu4d0OgpUaeG7gW4gbMawxqFuZyBow6BuZyB0deG6p24gY+G7p2EgZ2nDoW8gdmnDqm4g4bufIG3hu5l0IGJhbmcgY8OzIHBow6JuIHBo4buRaSBjaHXhuqluIHbhu5tpIG3hu6ljIHRydW5nIGLDrG5oIGzDoCBcJDQ5MCB2w6AgxJHhu5kgbOG7h2NoIGNodeG6qW4gbMOgIFwkNDUuIFjDoWMgc3XhuqV0IMSR4buDIG3hu5l0IGdpw6FvIHZpw6puIMSRxrDhu6NjIGNo4buNbiBuZ+G6q3Ugbmhpw6puIGPDsyB0aHUgbmjhuq1wIG5oaeG7gXUgaMahbiBcJDUyNSBt4buZdCB0deG6p24gbMOgIGJhbyBuaGnDqnU/CkNobyBiaeG6v3Q6IFAoWiA8IDAuNzc4KSA9IDAuNzgxNyB2w6AgUChaIDwgMC4xNjMpID0gMC41NjQ2LgoKIyMjIDMuIFBoxrDGoW5nIHBow6FwIGdp4bqjaSBjaHXhuqluIDUgYsaw4bubYzoKLSAqKkLGr+G7mkMgMTogUGjDom4gdMOtY2ggJiBUcsOtY2ggeHXhuqV0IHRow7RuZyB0aW46KioKICAtIEJp4bq/biBuZ+G6q3Ugbmhpw6puICRYJDogTMawxqFuZyB0deG6p24gY+G7p2EgZ2nDoW8gdmnDqm4sICRYIFxzaW0gTihcbXUgPSA0OTAsIFxzaWdtYSA9IDQ1KSQuCiAgLSBD4bqnbiB0w61uaDogJFAoWCA+IDUyNSkkIChraeG6v20gxJHGsOG7o2Mgbmhp4buBdSBoxqFuIFwkNTI1L3R14bqnbikuCi0gKipCxq/hu5pDIDI6IELhuqNuIGNo4bqldCBsw70gdGh1eeG6v3QgJiBOaOG6rW4gZGnhu4duIGPDtG5nIHRo4bupYzoqKgogIC0gQ2h14bqpbiBow7NhIFo6CiAgICAkJFogPSBcZnJhY3tYIC0gXG11fXtcc2lnbWF9ID0gXGZyYWN7NTI1IC0gNDkwfXs0NX0gPSBcZnJhY3szNX17NDV9ID0gXGZyYWN7N317OX0gXGFwcHJveCAwLjc3NzggXGFwcHJveCAwLjc3OCQkCiAgLSBYw6FjIHN14bqldCDEkXXDtGkgdHLDqm4gKFVwcGVyIFRhaWwpOgogICAgJCRQKFggPiA1MjUpID0gUChaID4gMC43NzgpID0gMSAtIFAoWiA8IDAuNzc4KSQkCi0gKipCxq/hu5pDIDM6IFRoYXkgc+G7kSAmIFTDrW5oIHRvw6FuIMSR4bqhaSBz4buRIGNoaSB0aeG6v3Q6KioKICAtIFRoYXkgc+G7kSBsaeG7h3UgxJHhu4EgYsOgaSBjaG86ICRQKFogPCAwLjc3OCkgPSAwLjc4MTckOgogICAgJCRQKFggPiA1MjUpID0gMSAtIDAuNzgxNyA9IDAuMjE4MyQkCi0gKipCxq/hu5pDIDQ6IEjGsOG7m25nIGThuqtuIGLhuqVtIG3DoXkgdMOtbmggQ2FzaW8gZngtNTgwVk4gWDoqKgogIC0gQuG6pW06IGBbTUVOVV1gIGBbMV1gCiAgLSBOaOG6rXA6IGAxIC0gMC43ODE3ID1gICRcdG8kIHJhIGAwLjIxODNgLgogIC0gSG/hurdjIGtp4buDbSB0cmEgYuG6sW5nIE5vcm1hbCBDRDogYFtNRU5VXWAgYFs3XWAgYFsyXWAsIExvd2VyOiBgNTI1YCwgVXBwZXI6IGA5OTk5OTlgLCAkXHNpZ21hID0gNDUkLCAkXG11ID0gNDkwJCAkXHRvJCBgMC4yMTgzNS4uLmAgJFxhcHByb3ggMC4yMTgzJC4KLSAqKkLGr+G7mkMgNTogS+G6v3QgbHXhuq1uOioqCiAgLSDEkMOhcCDDoW4gY2jDrW5oIHjDoWM6ICoqMC4yMTgzKiogKENo4buNbiBwaMawxqFuZyDDoW4gKipCKiopLgoKLS0tCgojIyBDw6J1IDk6IFThu7cgTOG7hyBQaOG6p24gVHLEg20gTuG6sW0gR2nhu69hIEPDoWMgTeG7kWMgxJDhu5kgTOG7h2NoIENodeG6qW4gWgoKIyMjIDEuIE5ndXnDqm4gdsSDbiDEkeG7gSB0aGkgdGnhur9uZyBBbmggJiBDw6FjIHBoxrDGoW5nIMOhbiBs4buxYSBjaOG7jW46Cj4gKipRdWVzdGlvbiA5IChTaW5nbGUgQ2hvaWNlKToqKgo+IEZvciBhIHN0YW5kYXJkIG5vcm1hbCBkaXN0cmlidXRpb24sIGZpbmQgdGhlIHBlcmNlbnRhZ2Ugb2YgdGhlIGRhdGEgdGhhdCBhcmUgYmV0d2VlbiAzIHN0YW5kYXJkIGRldmlhdGlvbnMgYmVsb3cgdGhlIG1lYW4gYW5kIDEgc3RhbmRhcmQgZGV2aWF0aW9uIGFib3ZlIHRoZSBtZWFuLgo+IExldCBQKFogPCAtMykgPSAwLjAwMTMsIFAoWiA8IC0yKSA9IDAuMDIyOCwgUChaIDwgMCkgPSAwLjUsIFAoWiA8IDEpID0gMC44NDEzLCBQKFogPCAzKSA9IDAuOTk4Ny4KPiAtIEEuIDE2JQo+IC0gQi4gOTkuNzQlCj4gLSBDLiA4NCUKPiAtIEQuIDE1Ljc0JQoKIyMjIDIuIEThu4tjaCBuZ2jEqWEgdGnhur9uZyBWaeG7h3Q6CsSQ4buRaSB24bubaSBwaMOibiBwaOG7kWkgY2h14bqpbiBjaHXhuqluIGjDs2EsIGjDo3kgdMOsbSB04bu3IGzhu4cgcGjhuqduIHRyxINtIGThu68gbGnhu4d1IG7hurFtIGdp4buvYSAzIMSR4buZIGzhu4djaCBjaHXhuqluIGTGsOG7m2kgbeG7qWMgdHJ1bmcgYsOsbmggdsOgIDEgxJHhu5kgbOG7h2NoIGNodeG6qW4gdHLDqm4gbeG7qWMgdHJ1bmcgYsOsbmguCkNobyBiaeG6v3Q6IFAoWiA8IC0zKSA9IDAuMDAxMzsgUChaIDwgLTIpID0gMC4wMjI4OyBQKFogPCAwKSA9IDAuNTsgUChaIDwgMSkgPSAwLjg0MTM7IFAoWiA8IDMpID0gMC45OTg3LgoKIyMjIDMuIFBoxrDGoW5nIHBow6FwIGdp4bqjaSBjaHXhuqluIDUgYsaw4bubYzoKLSAqKkLGr+G7mkMgMTogUGjDom4gdMOtY2ggJiBUcsOtY2ggeHXhuqV0IHRow7RuZyB0aW46KioKICAtIFBow6JuIHBo4buRaSBjaHXhuqluIGNodeG6qW4gaMOzYSAkWiBcc2ltIE4oMCwgMSkkLgogIC0gIjMgc3RhbmRhcmQgZGV2aWF0aW9ucyBiZWxvdyB0aGUgbWVhbiIgJFxpbXBsaWVzIFogPSAtMyQuCiAgLSAiMSBzdGFuZGFyZCBkZXZpYXRpb24gYWJvdmUgdGhlIG1lYW4iICRcaW1wbGllcyBaID0gKzEkLgogIC0gQ+G6p24gdMOtbmg6ICRQKC0zIFxsZSBaIFxsZSAxKSQuCi0gKipCxq/hu5pDIDI6IELhuqNuIGNo4bqldCBsw70gdGh1eeG6v3QgJiBOaOG6rW4gZGnhu4duIGPDtG5nIHRo4bupYzoqKgogICQkUCgtMyBcbGUgWiBcbGUgMSkgPSBQKFogPCAxKSAtIFAoWiA8IC0zKSQkCi0gKipCxq/hu5pDIDM6IFRoYXkgc+G7kSAmIFTDrW5oIHRvw6FuIMSR4bqhaSBz4buRIGNoaSB0aeG6v3Q6KioKICAtIFRoYXkgc+G7kSBsaeG7h3UgxJHDoyBjaG86CiAgICAkJFAoLTMgXGxlIFogXGxlIDEpID0gMC44NDEzIC0gMC4wMDEzID0gMC44NDAwJCQKICAtIMSQ4buVaSBzYW5nIHThu7cgbOG7hyBwaOG6p24gdHLEg206CiAgICAkJDAuODQwMCBcdGltZXMgMTAwXCUgPSA4NFwlJCQKLSAqKkLGr+G7mkMgNDogSMaw4bubbmcgZOG6q24gYuG6pW0gbcOheSB0w61uaCBDYXNpbyBmeC01ODBWTiBYOioqCiAgLSBC4bqlbTogYFtNRU5VXWAgYFsxXWAKICAtIE5o4bqtcDogYDAuODQxMyAtIDAuMDAxMyA9YCAkXHRvJCByYSBgMC44NGAsIG5ow6JuIDEwMCByYSBgODQlYC4KLSAqKkLGr+G7mkMgNTogS+G6v3QgbHXhuq1uOioqCiAgLSDEkMOhcCDDoW4gY2jDrW5oIHjDoWM6ICoqODQlKiogKENo4buNbiBwaMawxqFuZyDDoW4gKipDKiopLgoKLS0tCgojIyBDw6J1IDEwOiDEkOG7mSBM4buHY2ggQ2h14bqpbiBD4bunYSBC4bqjbmcgUGjDom4gUGjhu5FpIFLhu51pIFLhuqFjIChEaXNjcmV0ZSBTdGFuZGFyZCBEZXZpYXRpb24pCgojIyMgMS4gTmd1ecOqbiB2xINuIMSR4buBIHRoaSB0aeG6v25nIEFuaCAmIEPDoWMgcGjGsMahbmcgw6FuIGzhu7FhIGNo4buNbjoKPiAqKlF1ZXN0aW9uIDEwIChTaW5nbGUgQ2hvaWNlKToqKgo+IFRoZSBmb2xsb3dpbmcgdGFibGUgY29udGFpbnMgdGhlIHByb2JhYmlsaXR5IGRpc3RyaWJ1dGlvbiBmb3IgWCA9IHRoZSBudW1iZXIgb2YgcmV0cmFuc21pc3Npb25zIG5lY2Vzc2FyeSB0byBzdWNjZXNzZnVsbHkgdHJhbnNtaXQgYSAxMDI0SyBkYXRhIHBhY2thZ2UgdGhyb3VnaCBhIG5ldHdvcmsuCj4gCj4gfCBYIHwgMCB8IDEgfCAyIHwgMyB8Cj4gfCA6LS0tOiB8IDotLS06IHwgOi0tLTogfCA6LS0tOiB8IDotLS06IHwKPiB8ICoqUChYKSoqIHwgMC4zNSB8IDAuMzUgfCAwLjI1IHwgMC4wNSB8Cj4gCj4gVGhlIHN0YW5kYXJkIGRldmlhdGlvbiBvZiB0aGUgbnVtYmVyIG9mIHJldHJhbnNtaXNzaW9ucyBpcyBfXwo+IC0gQS4gMC42NDcKPiAtIEIuIDEuNDM4Cj4gLSBDLiAwLjg5NAo+IC0gRC4gMS4yOTAKCiMjIyAyLiBE4buLY2ggbmdoxKlhIHRp4bq/bmcgVmnhu4d0OgpC4bqjbmcgZMaw4bubaSDEkcOieSBjaOG7qWEgcGjDom4gcGjhu5FpIHjDoWMgc3XhuqV0IGPhu6dhIFggPSBz4buRIGzhuqduIHRydXnhu4FuIGzhuqFpIGPhuqduIHRoaeG6v3QgxJHhu4MgdHJ1eeG7gW4gdGjDoG5oIGPDtG5nIG3hu5l0IGfDs2kgZOG7ryBsaeG7h3UgMTAyNEsgcXVhIG3huqFuZy4KxJDhu5kgbOG7h2NoIGNodeG6qW4gKHN0YW5kYXJkIGRldmlhdGlvbikgY+G7p2Egc+G7kSBs4bqnbiB0cnV54buBbiBs4bqhaSBsw6A6CgojIyMgMy4gUGjGsMahbmcgcGjDoXAgZ2nhuqNpIGNodeG6qW4gNSBixrDhu5tjOgotICoqQsav4buaQyAxOiBQaMOibiB0w61jaCAmIFRyw61jaCB4deG6pXQgdGjDtG5nIHRpbjoqKgogIC0gQmnhur9uIG5n4bqrdSBuaGnDqm4gcuG7nWkgcuG6oWMgJFgkIG5o4bqtbiBjw6FjIGdpw6EgdHLhu4sgJFx7MCwgMSwgMiwgM1x9JC4KICAtIFjDoWMgc3XhuqV0IHTGsMahbmcg4bupbmc6ICRQKDApID0gMC4zNSwgUCgxKSA9IDAuMzUsIFAoMikgPSAwLjI1LCBQKDMpID0gMC4wNSQuCiAgLSBU4buVbmcgeMOhYyBzdeG6pXQ6ICQwLjM1ICsgMC4zNSArIDAuMjUgKyAwLjA1ID0gMS4wMCQgKGjhu6NwIGzhu4cpLgotICoqQsav4buaQyAyOiBC4bqjbiBjaOG6pXQgbMO9IHRodXnhur90ICYgTmjhuq1uIGRp4buHbiBjw7RuZyB0aOG7qWM6KioKICAtIEvhu7MgduG7jW5nOiAkRShYKSA9IFxzdW0geCBcY2RvdCBQKHgpJAogIC0gS+G7syB24buNbmcgYuG6rWMgMjogJEUoWF4yKSA9IFxzdW0geF4yIFxjZG90IFAoeCkkCiAgLSBQaMawxqFuZyBzYWk6ICRWYXIoWCkgPSBcc2lnbWFeMiA9IEUoWF4yKSAtIFtFKFgpXV4yJAogIC0gxJDhu5kgbOG7h2NoIGNodeG6qW46ICRcc2lnbWEgPSBcc3FydHtWYXIoWCl9JAotICoqQsav4buaQyAzOiBUaGF5IHPhu5EgJiBUw61uaCB0b8OhbiDEkeG6oWkgc+G7kSBjaGkgdGnhur90OioqCiAgLSBUw61uaCAkRShYKSQ6CiAgICAkJEUoWCkgPSAwKDAuMzUpICsgMSgwLjM1KSArIDIoMC4yNSkgKyAzKDAuMDUpID0gMCArIDAuMzUgKyAwLjUwICsgMC4xNSA9IDEuMDAkJAogIC0gVMOtbmggJEUoWF4yKSQ6CiAgICAkJEUoWF4yKSA9IDBeMigwLjM1KSArIDFeMigwLjM1KSArIDJeMigwLjI1KSArIDNeMigwLjA1KSA9IDAgKyAwLjM1ICsgNCgwLjI1KSArIDkoMC4wNSkgPSAwLjM1ICsgMS4wMCArIDAuNDUgPSAxLjgwJCQKICAtIFTDrW5oIHBoxrDGoW5nIHNhaSAkVmFyKFgpJDoKICAgICQkVmFyKFgpID0gRShYXjIpIC0gW0UoWCldXjIgPSAxLjgwIC0gKDEuMDApXjIgPSAwLjgwJCQKICAtIFTDrW5oIMSR4buZIGzhu4djaCBjaHXhuqluICRcc2lnbWEkOgogICAgJCRcc2lnbWEgPSBcc3FydHswLjgwfSBcYXBwcm94IDAuODk0NDI3Li4uIFxhcHByb3ggMC44OTQkJAotICoqQsav4buaQyA0OiBIxrDhu5tuZyBk4bqrbiBi4bqlbSBtw6F5IHTDrW5oIENhc2lvIGZ4LTU4MFZOIFggKFR1eeG7h3QgY2hpw6p1IFRo4buRbmcga8OqIDEgYmnhur9uIGvDqG0geMOhYyBzdeG6pXQpOioqCiAgLSAqKkLGsOG7m2MgQSAoQuG6rXQgY+G7mXQgdOG6p24gc+G7kSBu4bq/dSBjaMawYSBi4bqtdCk6KioKICAgIC0gQuG6pW06IGBbU0hJRlRdYCBgW01FTlVdYCAoU2V0dXApICRcdG8kIELhuqVtIGBb4pa8XWAgJFx0byQgQ2jhu41uIGBbM11gIChTdGF0aXN0aWNzKSAkXHRvJCBDaOG7jW4gYFsxXWAgKE9uKS4KICAtICoqQsaw4bubYyBCIChOaOG6rXAgYuG6o25nIGThu68gbGnhu4d1KToqKgogICAgLSBC4bqlbTogYFtNRU5VXWAgYFs2XWAgKFN0YXRpc3RpY3MpICRcdG8kIENo4buNbiBgWzFdYCAoMS1WYXJpYWJsZSkuCiAgICAtIEPhu5l0IGB4YDogQuG6pW0gYDBgIGBbPV1gLCBgMWAgYFs9XWAsIGAyYCBgWz1dYCwgYDNgIGBbPV1gLgogICAgLSBEw7luZyBwaMOtbSDEkWnhu4F1IGjGsOG7m25nIHNhbmcgY+G7mXQgYEZSRVFgOiBC4bqlbSBgMC4zNWAgYFs9XWAsIGAwLjM1YCBgWz1dYCwgYDAuMjVgIGBbPV1gLCBgMC4wNWAgYFs9XWAuCiAgLSAqKkLGsOG7m2MgQyAoWHXhuqV0IGvhur90IHF14bqjKToqKgogICAgLSBC4bqlbSBwaMOtbSBgW0FDXWAuCiAgICAtIELhuqVtIGBbT1BUTl1gICRcdG8kIENo4buNbiBgWzJdYCAoMS1WYXJpYWJsZSBDYWxjKS4KICAtICoqQsaw4bubYyBEICjEkOG7jWMga+G6v3QgcXXhuqMpOioqCiAgICAtIE3DoXkgaGnhu4duICRcYmFye3h9ID0gMSQgKEvhu7MgduG7jW5nICRFKFgpJCkuCiAgICAtIE3DoXkgaGnhu4duICRcc2lnbWFfeCA9IDAuODk0NDI3MTkxJCAoxJDhu5kgbOG7h2NoIGNodeG6qW4pICRcaW1wbGllcyQgS2jhu5twIGhvw6BuIGjhuqNvIHbhu5tpIHBoxrDGoW5nIMOhbiAqKjAuODk0KiohCi0gKipCxq/hu5pDIDU6IEvhur90IGx14bqtbjoqKgogIC0gxJDDoXAgw6FuIGNow61uaCB4w6FjOiAqKjAuODk0KiogKENo4buNbiBwaMawxqFuZyDDoW4gKipDKiopLgoKLS0tCgojIyBDw6J1IDExOiBQaMOibiBQaOG7kWkgQ2jhu41uIE3huqt1IEPhu6dhIFRydW5nIELDrG5oIE3huqt1IChTYW1wbGluZyBEaXN0cmlidXRpb24gb2YgTWVhbikKCiMjIyAxLiBOZ3V5w6puIHbEg24gxJHhu4EgdGhpIHRp4bq/bmcgQW5oICYgQ8OhYyBwaMawxqFuZyDDoW4gbOG7sWEgY2jhu41uOgo+ICoqUXVlc3Rpb24gMTEgKFNpbmdsZSBDaG9pY2UpOioqCj4gVGhlIG1lYW4gYW5kIHRoZSBzdGFuZGFyZCBkZXZpYXRpb24gb2YgYSBwb3B1bGF0aW9uIGFyZSAxMTMuOSBhbmQgMzIuMSwgcmVzcGVjdGl2ZWx5LiBGaW5kIHRoZSBtZWFuIGFuZCBzdGFuZGFyZCBkZXZpYXRpb24gb2YgdGhlIHNhbXBsaW5nIGRpc3RyaWJ1dGlvbiBvZiB0aGUgc2FtcGxlIG1lYW4gb2Ygc2l6ZSA2NC4KPiAtIEEuIE1lYW4gPSAxMTMuOTsgc3RhbmRhcmQgZGV2aWF0aW9uID0gMi4zCj4gLSBCLiBNZWFuID0gMTEzLjk7IHN0YW5kYXJkIGRldmlhdGlvbiA9IDQuMDEyNQo+IC0gQy4gTWVhbiA9IDQuMDsgc3RhbmRhcmQgZGV2aWF0aW9uID0gMTEzLjkKPiAtIEQuIE1lYW4gPSAxMTMuOTsgc3RhbmRhcmQgZGV2aWF0aW9uID0gMzIuMQoKIyMjIDIuIEThu4tjaCBuZ2jEqWEgdGnhur9uZyBWaeG7h3Q6Ckdpw6EgdHLhu4sgdHJ1bmcgYsOsbmggdsOgIMSR4buZIGzhu4djaCBjaHXhuqluIGPhu6dhIG3hu5l0IHThu5VuZyB0aOG7gyBs4bqnbiBsxrDhu6N0IGzDoCAxMTMuOSB2w6AgMzIuMS4gSMOjeSB0w6xtIHRydW5nIGLDrG5oIHbDoCDEkeG7mSBs4buHY2ggY2h14bqpbiBj4bunYSBwaMOibiBwaOG7kWkgbeG6q3UgY+G7p2EgdHJ1bmcgYsOsbmggbeG6q3UgduG7m2kga8OtY2ggdGjGsOG7m2MgbeG6q3UgbMOgIDY0LgoKIyMjIDMuIFBoxrDGoW5nIHBow6FwIGdp4bqjaSBjaHXhuqluIDUgYsaw4bubYzoKLSAqKkLGr+G7mkMgMTogUGjDom4gdMOtY2ggJiBUcsOtY2ggeHXhuqV0IHRow7RuZyB0aW46KioKICAtIFThu5VuZyB0aOG7gzogJFxtdSA9IDExMy45JCwgJFxzaWdtYSA9IDMyLjEkLgogIC0gQ+G7oSBt4bqrdTogJG4gPSA2NCQuCi0gKipCxq/hu5pDIDI6IELhuqNuIGNo4bqldCBsw70gdGh1eeG6v3QgJiBOaOG6rW4gZGnhu4duIGPDtG5nIHRo4bupYzoqKgogIC0gVGhlbyDEkOG7i25oIGzDvSBHaeG7m2kgaOG6oW4gVHJ1bmcgdMOibSAoQ0xUKSB2w6AgdMOtbmggY2jhuqV0IGPhu6dhIHBow6JuIHBo4buRaSBjaOG7jW4gbeG6q3U6CiAgICAtIFRydW5nIGLDrG5oIGPhu6dhIHBow6JuIHBo4buRaSBt4bqrdSBi4bqxbmcgxJHDum5nIHRydW5nIGLDrG5oIHThu5VuZyB0aOG7gzoKICAgICAgJCRcbXVfe1xiYXJ7eH19ID0gXG11ID0gMTEzLjkkJAogICAgLSDEkOG7mSBs4buHY2ggY2h14bqpbiBj4bunYSBwaMOibiBwaOG7kWkgbeG6q3UgKHNhaSBz4buRIGNodeG6qW4pOgogICAgICAkJFxzaWdtYV97XGJhcnt4fX0gPSBcZnJhY3tcc2lnbWF9e1xzcXJ0e259fSQkCi0gKipCxq/hu5pDIDM6IFRoYXkgc+G7kSAmIFTDrW5oIHRvw6FuIMSR4bqhaSBz4buRIGNoaSB0aeG6v3Q6KioKICAkJFxtdV97XGJhcnt4fX0gPSAxMTMuOSQkCiAgJCRcc2lnbWFfe1xiYXJ7eH19ID0gXGZyYWN7MzIuMX17XHNxcnR7NjR9fSA9IFxmcmFjezMyLjF9ezh9ID0gNC4wMTI1JCQKLSAqKkLGr+G7mkMgNDogSMaw4bubbmcgZOG6q24gYuG6pW0gbcOheSB0w61uaCBDYXNpbyBmeC01ODBWTiBYOioqCiAgLSBC4bqlbTogYFtNRU5VXWAgYFsxXWAKICAtIE5o4bqtcDogYDMyLjFgIGBbw7ddYCBgW+KIml1gIGA2NGAgYFs9XWAKICAtIELhuqVtIGBbUzw9PkRdYCAkXHRvJCBL4bq/dCBxdeG6oyBoaeG7g24gdGjhu4s6IGA0LjAxMjVgLgotICoqQsav4buaQyA1OiBL4bq/dCBsdeG6rW46KioKICAtIMSQw6FwIMOhbiBjaMOtbmggeMOhYzogKipNZWFuID0gMTEzLjk7IHN0YW5kYXJkIGRldmlhdGlvbiA9IDQuMDEyNSoqIChDaOG7jW4gcGjGsMahbmcgw6FuICoqQioqKS4KCi0tLQoKIyMgQ8OidSAxMjogS+G7syBW4buNbmcgU+G7kSBW4bulIFRhaSBO4bqhbiBIw6BuZyBOZ8OgeSAoRXhwZWN0ZWQgVmFsdWUgZnJvbSBEaXN0cmlidXRpb24pCgojIyMgMS4gTmd1ecOqbiB2xINuIMSR4buBIHRoaSB0aeG6v25nIEFuaCAmIEPDoWMgcGjGsMahbmcgw6FuIGzhu7FhIGNo4buNbjoKPiAqKlF1ZXN0aW9uIDEyIChTaW5nbGUgQ2hvaWNlKToqKgo+IFRoZSBmb2xsb3dpbmcgdGFibGUgY29udGFpbnMgdGhlIHByb2JhYmlsaXR5IGRpc3RyaWJ1dGlvbiBmb3IgdGhlIG51bWJlciBvZiB0cmFmZmljIGFjY2lkZW50cyBkYWlseSBpbiBhIHNtYWxsIHRvd24uCj4gCj4gfCBOdW1iZXIgb2YgQWNjaWRlbnRzIERhaWx5IChYKSB8IFAoWCA9IHhfaSkgfAo+IHwgOi0tLTogfCA6LS0tOiB8Cj4gfCAwIHwgMC4zMSB8Cj4gfCAxIHwgMC4zNiB8Cj4gfCAyIHwgMC4xNSB8Cj4gfCAzIHwgMC4wOCB8Cj4gfCA0IHwgMC4wNiB8Cj4gfCA1IHwgMC4wMyB8Cj4gfCA2IHwgMC4wMSB8Cj4gCj4gQ29tcHV0ZSB0aGUgbWVhbiBudW1iZXIgb2YgYWNjaWRlbnRzIHBlciBkYXkuCj4gLSBBLiAzLjEyCj4gLSBCLiAzLjQ4Cj4gLSBDLiAxLjM1Cj4gLSBELiAyLjUzCgojIyMgMi4gROG7i2NoIG5naMSpYSB0aeG6v25nIFZp4buHdDoKQuG6o25nIHNhdSDEkcOieSB0aOG7gyBoaeG7h24gcGjDom4gcGjhu5FpIHjDoWMgc3XhuqV0IGPhu6dhIHPhu5EgduG7pSB0YWkgbuG6oW4gZ2lhbyB0aMO0bmcgeOG6o3kgcmEgaMOgbmcgbmfDoHkgdOG6oWkgbeG7mXQgdGjhu4sgdHLhuqVuIG5o4buPLiBIw6N5IHTDrW5oIHPhu5EgduG7pSB0YWkgbuG6oW4gdHJ1bmcgYsOsbmggbeG7l2kgbmfDoHkgKG1lYW4gbnVtYmVyIG9mIGFjY2lkZW50cykuCgojIyMgMy4gUGjGsMahbmcgcGjDoXAgZ2nhuqNpIGNodeG6qW4gNSBixrDhu5tjOgotICoqQsav4buaQyAxOiBQaMOibiB0w61jaCAmIFRyw61jaCB4deG6pXQgdGjDtG5nIHRpbjoqKgogIC0gQuG6o25nIHBow6JuIHBo4buRaSB4w6FjIHN14bqldCBj4bunYSBiaeG6v24gbmfhuqt1IG5oacOqbiBy4budaSBy4bqhYyAkWCQgbmjhuq1uIGPDoWMgZ2nDoSB0cuG7iyAkMCwgMSwgMiwgMywgNCwgNSwgNiQuCiAgLSBZw6p1IGPhuqd1OiBUw61uaCBnacOhIHRy4buLIHRydW5nIGLDrG5oICRFKFgpJCAodOG7qWMgJFxtdSQpLgotICoqQsav4buaQyAyOiBC4bqjbiBjaOG6pXQgbMO9IHRodXnhur90ICYgTmjhuq1uIGRp4buHbiBjw7RuZyB0aOG7qWM6KioKICAkJEUoWCkgPSBcbXUgPSBcc3VtX3tpPTF9XmsgeF9pIFxjZG90IFAoWCA9IHhfaSkkJAotICoqQsav4buaQyAzOiBUaGF5IHPhu5EgJiBUw61uaCB0b8OhbiDEkeG6oWkgc+G7kSBjaGkgdGnhur90OioqCiAgJCRFKFgpID0gMCgwLjMxKSArIDEoMC4zNikgKyAyKDAuMTUpICsgMygwLjA4KSArIDQoMC4wNikgKyA1KDAuMDMpICsgNigwLjAxKSQkCiAgJCRFKFgpID0gMCArIDAuMzYgKyAwLjMwICsgMC4yNCArIDAuMjQgKyAwLjE1ICsgMC4wNiA9IDEuMzUkJAotICoqQsav4buaQyA0OiBIxrDhu5tuZyBk4bqrbiBi4bqlbSBtw6F5IHTDrW5oIENhc2lvIGZ4LTU4MFZOIFg6KioKICAtICoqQ8OhY2ggMTogVMOtbmggdOG7lW5nIHTDrWNoIG5oYW5oIOG7nyBNZW51IDE6KioKICAgIC0gQuG6pW06IGBbTUVOVV1gIGBbMV1gCiAgICAtIE5o4bqtcDogYDEqMC4zNiArIDIqMC4xNSArIDMqMC4wOCArIDQqMC4wNiArIDUqMC4wMyArIDYqMC4wMSA9YCAkXHRvJCByYSBgMS4zNWAuCiAgLSAqKkPDoWNoIDI6IE1lbnUgVGjhu5FuZyBrw6ogNjoqKgogICAgLSBOaOG6rXAgY+G7mXQgJHgkIHbDoCBj4buZdCB04bqnbiBz4buRIHjDoWMgc3XhuqV0IGBGUkVRYCwgYuG6pW0gYFtPUFROXWAgYFsyXWAgJFxpbXBsaWVzJCDEkOG7jWMgbmdheSBkw7JuZyDEkeG6p3UgJFxiYXJ7eH0gPSAxLjM1JC4KLSAqKkLGr+G7mkMgNTogS+G6v3QgbHXhuq1uOioqCiAgLSDEkMOhcCDDoW4gY2jDrW5oIHjDoWM6ICoqMS4zNSoqIChDaOG7jW4gcGjGsMahbmcgw6FuICoqQyoqKS4KCi0tLQoKIyMgQ8OidSAxMzogWMOhYyBTdeG6pXQgIsONdCBOaOG6pXQgSGFpIFbhu6UgVGFpIE7huqFuIiAoQXQgTGVhc3QgVHdvIEFjY2lkZW50cykKCiMjIyAxLiBOZ3V5w6puIHbEg24gxJHhu4EgdGhpIHRp4bq/bmcgQW5oICYgQ8OhYyBwaMawxqFuZyDDoW4gbOG7sWEgY2jhu41uOgo+ICoqUXVlc3Rpb24gMTMgKFNpbmdsZSBDaG9pY2UpOioqCj4gVGhlIGZvbGxvd2luZyBwcm9iYWJpbGl0eSBkaXN0cmlidXRpb24gaGFzIGJlZW4gYXNzZXNzZWQgZm9yIHRoZSBudW1iZXIgb2YgYWNjaWRlbnRzIHRoYXQgb2NjdXIgaW4gYSBtaWQgd2VzdGVybiBjaXR5IGVhY2ggZGF5Lgo+IAo+IHwgQWNjaWRlbnRzIHwgUHJvYmFiaWxpdHkgfAo+IHwgOi0tLTogfCA6LS0tOiB8Cj4gfCAwIHwgMC4yNSB8Cj4gfCAxIHwgMC4yMCB8Cj4gfCAyIHwgMC4zMCB8Cj4gfCAzIHwgMC4xNSB8Cj4gfCA0IHwgMC4xMCB8Cj4gCj4gQmFzZWQgb24gdGhlIGRhdGEgZ2l2ZW4gYmVsb3csIGZpbmQgdGhlIHByb2JhYmlsaXR5IHRoYXQgdGhlcmUgYXJlIGF0IGxlYXN0IHR3byBhY2NpZGVudHMgcGVyIGRheS4KPiAtIEEuIDAuNTUKPiAtIEIuIE5vbmUgb2YgdGhlIG90aGVycwo+IC0gQy4gMC43NQo+IC0gRC4gMC40NQoKIyMjIDIuIEThu4tjaCBuZ2jEqWEgdGnhur9uZyBWaeG7h3Q6ClBow6JuIHBo4buRaSB4w6FjIHN14bqldCBzYXUgxJHDonkgxJHGsOG7o2MgxJHDoW5oIGdpw6EgY2hvIHPhu5EgduG7pSB0YWkgbuG6oW4geOG6o3kgcmEgdOG6oWkgbeG7mXQgdGjDoG5oIHBo4buRIG1p4buBbiBUcnVuZyBUw6J5IG3hu5dpIG5nw6B5LiBE4buxYSB0csOqbiBk4buvIGxp4buHdSBkxrDhu5tpIMSRw6J5LCBow6N5IHTDrG0geMOhYyBzdeG6pXQgxJHhu4MgY8OzIMOtdCBuaOG6pXQgaGFpIHbhu6UgdGFpIG7huqFuIG3hu5dpIG5nw6B5LgoKIyMjIDMuIFBoxrDGoW5nIHBow6FwIGdp4bqjaSBjaHXhuqluIDUgYsaw4bubYzoKLSAqKkLGr+G7mkMgMTogUGjDom4gdMOtY2ggJiBUcsOtY2ggeHXhuqV0IHRow7RuZyB0aW46KioKICAtIEJp4bq/biBuZ+G6q3Ugbmhpw6puICRYJCBuaOG6rW4gY8OhYyBnacOhIHRy4buLICRcezAsIDEsIDIsIDMsIDRcfSQuCiAgLSBD4bqnbiB0w61uaCB4w6FjIHN14bqldDogImF0IGxlYXN0IHR3byBhY2NpZGVudHMiLCBuZ2jEqWEgbMOgICRYIFxnZSAyJC4KLSAqKkLGr+G7mkMgMjogQuG6o24gY2jhuqV0IGzDvSB0aHV54bq/dCAmIE5o4bqtbiBkaeG7h24gY8O0bmcgdGjhu6ljOioqCiAgLSBDw6FjIGdpw6EgdHLhu4sgdGjhu49hIG3Do24gJFggXGdlIDIkIGfhu5NtOiAkWCA9IDIsIFggPSAzLCBYID0gNCQuCiAgLSBDw7RuZyB0aOG7qWMgY+G7mW5nIHRy4buxYyB0aeG6v3A6CiAgICAkJFAoWCBcZ2UgMikgPSBQKFggPSAyKSArIFAoWCA9IDMpICsgUChYID0gNCkkJAogIC0gSG/hurdjIGPDtG5nIHRo4bupYyBiaeG6v24gY+G7kSDEkeG7kWk6CiAgICAkJFAoWCBcZ2UgMikgPSAxIC0gW1AoWCA9IDApICsgUChYID0gMSldJCQKLSAqKkLGr+G7mkMgMzogVGhheSBz4buRICYgVMOtbmggdG/DoW4gxJHhuqFpIHPhu5EgY2hpIHRp4bq/dDoqKgogIC0gVGhlbyBjw6FjaCBj4buZbmcgdHLhu7FjIHRp4bq/cDoKICAgICQkUChYIFxnZSAyKSA9IDAuMzAgKyAwLjE1ICsgMC4xMCA9IDAuNTUkJAogIC0gVGhlbyBiaeG6v24gY+G7kSDEkeG7kWk6CiAgICAkJFAoWCBcZ2UgMikgPSAxIC0gKDAuMjUgKyAwLjIwKSA9IDEgLSAwLjQ1ID0gMC41NSQkCi0gKipCxq/hu5pDIDQ6IEjGsOG7m25nIGThuqtuIGLhuqVtIG3DoXkgdMOtbmggQ2FzaW8gZngtNTgwVk4gWDoqKgogIC0gQuG6pW06IGBbTUVOVV1gIGBbMV1gCiAgLSBOaOG6rXA6IGAwLjMwICsgMC4xNSArIDAuMTAgPWAgJFx0byQgcmEgYDAuNTVgLgotICoqQsav4buaQyA1OiBL4bq/dCBsdeG6rW46KioKICAtIMSQw6FwIMOhbiBjaMOtbmggeMOhYzogKiowLjU1KiogKE7hur91IMSR4buBIHRoaSBjw7MgcGjGsMahbmcgw6FuIDAuNTUgdGjDrCBjaOG7jW4gKiowLjU1Kio7IG7hur91IGPDoWMgcGjGsMahbmcgw6FuIHPhu5Ega2jDtG5nIGPDsyAwLjU1IHRow6wgY2jhu41uICoqTm9uZSBvZiB0aGUgb3RoZXJzKiopLgoKLS0tCgojIyBDw6J1IDE0OiBQaMOibiBQaOG7kWkgUG9pc3NvbiAtIFjDoWMgU3XhuqV0ICLDjXQgSMahbiAzIiAoUG9pc3NvbiBMZXNzIFRoYW4gMykKCiMjIyAxLiBOZ3V5w6puIHbEg24gxJHhu4EgdGhpIHRp4bq/bmcgQW5oICYgQ8OhYyBwaMawxqFuZyDDoW4gbOG7sWEgY2jhu41uOgo+ICoqUXVlc3Rpb24gMTQgKFNpbmdsZSBDaG9pY2UpOioqCj4gVGhlIGxvY2FsIHBvbGljZSBkZXBhcnRtZW50IG11c3Qgd3JpdGUsIG9uIGF2ZXJhZ2UsIDUgdGlja2V0cyBhIGRheSB0byBrZWVwIGRlcGFydG1lbnQgcmV2ZW51ZXMgYXQgYnVkZ2V0ZWQgbGV2ZWxzLiBTdXBwb3NlIHRoZSBudW1iZXIgb2YgdGlja2V0cyB3cml0dGVuIHBlciBkYXkgZm9sbG93cyBhIFBvaXNzb24gZGlzdHJpYnV0aW9uIHdpdGggYSBtZWFuIG9mIDYuNCB0aWNrZXRzIHBlciBkYXkuIEZpbmQgdGhlIHByb2JhYmlsaXR5IHRoYXQgbGVzcyB0aGFuIDMgdGlja2V0cyBhcmUgd3JpdHRlbiBvbiBhIHJhbmRvbWx5IHNlbGVjdGVkIGRheSBmcm9tIHRoaXMgcG9wdWxhdGlvbi4KPiAtIEEuIDAuNTQyMwo+IC0gQi4gMC4xMTg5Cj4gLSBDLiAwLjA0NjMKPiAtIEQuIDAuMzgzNAoKIyMjIDIuIEThu4tjaCBuZ2jEqWEgdGnhur9uZyBWaeG7h3Q6CkPhu6VjIGPhuqNuaCBzw6F0IMSR4buLYSBwaMawxqFuZyB0cnVuZyBiw6xuaCBwaOG6o2kgZ2hpIDUgdsOpIHBo4bqhdCBt4buXaSBuZ8OgeSDEkeG7gyBkdXkgdHLDrCBuZ8OibiBzw6FjaCBk4buxIHRvw6FuIGPhu6dhIGPGoSBxdWFuLiBHaeG6oyBz4butIHPhu5EgbMaw4bujbmcgdsOpIHBo4bqhdCDEkcaw4bujYyBnaGkgbeG7l2kgbmfDoHkgdHXDom4gdGhlbyBwaMOibiBwaOG7kWkgUG9pc3NvbiB24bubaSB0cnVuZyBiw6xuaCBsw6AgNi40IHbDqSBt4buXaSBuZ8OgeS4gVMOsbSB4w6FjIHN14bqldCDEkeG7gyBjw7Mgw610IGjGoW4gMyB2w6kgcGjhuqF0IMSRxrDhu6NjIGdoaSB0cm9uZyBt4buZdCBuZ8OgeSDEkcaw4bujYyBjaOG7jW4gbmfhuqt1IG5oacOqbiB04burIHThu5VuZyB0aOG7gyBuw6B5LgoKIyMjIDMuIFBoxrDGoW5nIHBow6FwIGdp4bqjaSBjaHXhuqluIDUgYsaw4bubYzoKLSAqKkLGr+G7mkMgMTogUGjDom4gdMOtY2ggJiBUcsOtY2ggeHXhuqV0IHRow7RuZyB0aW46KioKICAtIE5o4bqtbiBkaeG7h24gYuG6q3kgxJHhu4EgYsOgaTogQ29uIHPhu5EgIjUgdGlja2V0cyIgbMOgIG3hu6VjIHRpw6p1IG5nw6JuIHPDoWNoIG1hbmcgdMOtbmggY2jhuqV0IGfDonkgbmhp4buFdS4KICAtIFRoYW0gc+G7kSBwaMOibiBwaOG7kWkgUG9pc3NvbiB0aOG7sWMgdOG6vyBj4bunYSBiaeG6v24gbmfhuqt1IG5oacOqbiAkWCQgKHPhu5EgdsOpIGdoaSBt4buXaSBuZ8OgeSkgbMOgOiAkXGxhbWJkYSA9IDYuNCQuCiAgLSBZw6p1IGPhuqd1OiBUw61uaCB4w6FjIHN14bqldCAiw610IGjGoW4gMyB2w6kiLCB04bupYyAkUChYIDwgMykkLgotICoqQsav4buaQyAyOiBC4bqjbiBjaOG6pXQgbMO9IHRodXnhur90ICYgTmjhuq1uIGRp4buHbiBjw7RuZyB0aOG7qWM6KioKICAtIFbDrCBwaMOibiBwaOG7kWkgUG9pc3NvbiBsw6AgcGjDom4gcGjhu5FpIHLhu51pIHLhuqFjIG5o4bqtbiBjw6FjIGdpw6EgdHLhu4sgbmd1ecOqbiBraMO0bmcgw6JtICQwLCAxLCAyLCAuLi4kLCBiaeG6v24gY+G7kSAkWCA8IDMkIHTGsMahbmcgxJHGsMahbmcgduG7m2kgJFggXGxlIDIkOgogICAgJCRQKFggPCAzKSA9IFAoWCBcbGUgMikgPSBQKFggPSAwKSArIFAoWCA9IDEpICsgUChYID0gMikkJAogIC0gQ8O0bmcgdGjhu6ljIFBvaXNzb246ICRQKFggPSBrKSA9IFxmcmFje2Veey1cbGFtYmRhfSBcY2RvdCBcbGFtYmRhXmt9e2shfSQKLSAqKkLGr+G7mkMgMzogVGhheSBz4buRICYgVMOtbmggdG/DoW4gxJHhuqFpIHPhu5EgY2hpIHRp4bq/dDoqKgogICQkUChYIFxsZSAyKSA9IGVeey02LjR9IFxsZWZ0KCBcZnJhY3s2LjReMH17MCF9ICsgXGZyYWN7Ni40XjF9ezEhfSArIFxmcmFjezYuNF4yfXsyIX0gXHJpZ2h0KSQkCiAgJCQ9IGVeey02LjR9IFxsZWZ0KCAxICsgNi40ICsgXGZyYWN7NDAuOTZ9ezJ9IFxyaWdodCkgPSBlXnstNi40fSAoMSArIDYuNCArIDIwLjQ4KSA9IDI3Ljg4IFxjZG90IGVeey02LjR9JCQKICAtIFRhIGPDsyAkZV57LTYuNH0gXGFwcHJveCAwLjAwMTY2MTU1NyQuCiAgLSBUw61uaCB0w61jaDoKICAgICQkUChYIDwgMykgXGFwcHJveCAyNy44OCBcdGltZXMgMC4wMDE2NjE1NTcgXGFwcHJveCAwLjA0NjMyNCBcYXBwcm94IDAuMDQ2MyQkCi0gKipCxq/hu5pDIDQ6IEjGsOG7m25nIGThuqtuIGLhuqVtIG3DoXkgdMOtbmggQ2FzaW8gZngtNTgwVk4gWDoqKgogIC0gKipDw6FjaCAxOiBT4butIGThu6VuZyBjaOG7qWMgbsSDbmcgUG9pc3NvbiB0w61jaCBsxal5IChQb2lzc29uIENEKSAtIEPhu7FjIMSR4buJbmg6KioKICAgIC0gQuG6pW06IGBbTUVOVV1gIGBbN11gIChQaMOibiBwaOG7kWkgRGlzdHJpYnV0aW9uKS4KICAgIC0gQuG6pW06IGBb4pa8XWAgYFszXWAgKFBvaXNzb24gQ0QpLgogICAgLSBDaOG7jW4gYFsxXWAgKFZhcmlhYmxlKS4KICAgIC0gTmjhuq1wOiAkeCQ6IGLhuqVtIGAyYCBgWz1dYCAodsOsICRYIDwgMyBcaWZmIFggXGxlIDIkKS4KICAgIC0gTmjhuq1wOiAkXGxhbWJkYSQ6IGLhuqVtIGA2LjRgIGBbPV1gLgogICAgLSBC4bqlbSBgWz1dYCAkXHRvJCBNw6F5IGhp4buHbiBuZ2F5OiBgMC4wNDYzMjQuLi5gICRcYXBwcm94IDAuMDQ2MyQhCiAgLSAqKkPDoWNoIDI6IELhuqVtIGPDtG5nIHRo4bupYyDhu58gTWVudSAxOioqCiAgICAtIE5o4bqtcDogYDI3Ljg4ICogW1NISUZUXSBbbG5dICggLSA2LjQgKSA9YCAkXHRvJCByYSBgMC4wNDYzMjQuLi5gCi0gKipCxq/hu5pDIDU6IEvhur90IGx14bqtbjoqKgogIC0gxJDDoXAgw6FuIGNow61uaCB4w6FjOiAqKjAuMDQ2MyoqIChDaOG7jW4gcGjGsMahbmcgw6FuICoqQyoqKS4KCi0tLQoKIyMgQ8OidSAxNTogWMOhYyBTdeG6pXQgVHJ1bmcgQsOsbmggTeG6q3UgU21hcnRwaG9uZSBBcHBzCgojIyMgMS4gTmd1ecOqbiB2xINuIMSR4buBIHRoaSB0aeG6v25nIEFuaCAmIEPDoWMgcGjGsMahbmcgw6FuIGzhu7FhIGNo4buNbjoKPiAqKlF1ZXN0aW9uIDE1IChTaW5nbGUgQ2hvaWNlKToqKgo+IEFjY29yZGluZyB0byBhIHJlcG9ydCBieSBBcHAgQW5uaWUsIGEgYnVzaW5lc3MgaW50ZWxsaWdlbmNlIGNvbXBhbnkgdGhhdCBwcm9kdWNlcyB0b29scyBhbmQgcmVwb3J0cyBmb3IgdGhlIGFwcHMgYW5kIGRpZ2l0YWwgZ29vZHMgaW5kdXN0cnksIHNtYXJ0cGhvbmUgb3duZXJzIGFyZSB1c2luZyBhbiBhdmVyYWdlIG9mIDMwIGFwcHMgcGVyIG1vbnRoLiBBc3N1bWUgdGhhdCBudW1iZXIgb2YgYXBwcyB1c2VkIHBlciBtb250aCBieSBzbWFydHBob25lIG93bmVycyBpcyBub3JtYWxseSBkaXN0cmlidXRlZCBhbmQgdGhhdCB0aGUgc3RhbmRhcmQgZGV2aWF0aW9uIGlzIDUuIElmIHlvdSBzZWxlY3QgYSByYW5kb20gc2FtcGxlIG9mIDI1IHNtYXJ0cGhvbmUgb3duZXJzLiBXaGF0IGlzIHRoZSBwcm9iYWJpbGl0eSB0aGF0IHRoZSBzYW1wbGUgbWVhbiBpcyBiZXR3ZWVuIDI5IGFuZCAzMT8KPiBMZXQgUChaIDwgLTEpID0gMC4xNTg3LCBQKFogPCAxKSA9IDAuODQxMywgUChaIDwgLTIpID0gMC4wMjI4LCBQKFogPCAyKSA9IDAuOTc3Mi4KPiAtIEEuIDAuOTU0NAo+IC0gQi4gMC44NDEzCj4gLSBDLiAwLjk3NzIKPiAtIEQuIDAuNjgyNgoKIyMjIDIuIEThu4tjaCBuZ2jEqWEgdGnhur9uZyBWaeG7h3Q6ClRoZW8gYsOhbyBjw6FvIGPhu6dhIEFwcCBBbm5pZSwgY2jhu6cgc+G7nyBo4buvdSDEkWnhu4duIHRob+G6oWkgdGjDtG5nIG1pbmggc+G7rSBk4bulbmcgdHJ1bmcgYsOsbmggMzAg4bupbmcgZOG7pW5nIG3hu5dpIHRow6FuZy4gR2nhuqMgc+G7rSBz4buRIOG7qW5nIGThu6VuZyDEkcaw4bujYyBz4butIGThu6VuZyBt4buXaSB0aMOhbmcgdHXDom4gdGhlbyBwaMOibiBwaOG7kWkgY2h14bqpbiB24bubaSDEkeG7mSBs4buHY2ggY2h14bqpbiBsw6AgNS4gTuG6v3UgYuG6oW4gY2jhu41uIG5n4bqrdSBuaGnDqm4gbeG7mXQgbeG6q3UgZ+G7k20gMjUgY2jhu6cgxJFp4buHbiB0aG/huqFpIHRow7RuZyBtaW5oLCB4w6FjIHN14bqldCDEkeG7gyBnacOhIHRy4buLIHRydW5nIGLDrG5oIG3huqt1IG7hurFtIHRyb25nIGtob+G6o25nIHThu6sgMjkgxJHhur9uIDMxIGzDoCBiYW8gbmhpw6p1PwpDaG8gYmnhur90OiBQKFogPCAtMSkgPSAwLjE1ODc7IFAoWiA8IDEpID0gMC44NDEzOyBQKFogPCAtMikgPSAwLjAyMjg7IFAoWiA8IDIpID0gMC45NzcyLgoKIyMjIDMuIFBoxrDGoW5nIHBow6FwIGdp4bqjaSBjaHXhuqluIDUgYsaw4bubYzoKLSAqKkLGr+G7mkMgMTogUGjDom4gdMOtY2ggJiBUcsOtY2ggeHXhuqV0IHRow7RuZyB0aW46KioKICAtIFThu5VuZyB0aOG7gzogJFxtdSA9IDMwJCwgJFxzaWdtYSA9IDUkLgogIC0gQ+G7oSBt4bqrdTogJG4gPSAyNSQuCiAgLSBD4bqnbiB0w61uaCB4w6FjIHN14bqldCDEkeG7kWkgduG7m2kgdHJ1bmcgYsOsbmggbeG6q3U6ICRQKDI5IFxsZSBcYmFye1h9IFxsZSAzMSkkLgotICoqQsav4buaQyAyOiBC4bqjbiBjaOG6pXQgbMO9IHRodXnhur90ICYgTmjhuq1uIGRp4buHbiBjw7RuZyB0aOG7qWM6KioKICAtIFNhaSBz4buRIGNodeG6qW4gY+G7p2EgdHJ1bmcgYsOsbmggbeG6q3U6CiAgICAkJFxzaWdtYV97XGJhcnt4fX0gPSBcZnJhY3tcc2lnbWF9e1xzcXJ0e259fSA9IFxmcmFjezV9e1xzcXJ0ezI1fX0gPSBcZnJhY3s1fXs1fSA9IDEkJAogIC0gQ2h14bqpbiBow7NhIFogY2hvIGhhaSBnacOhIHRy4buLIGJpw6puOgogICAgJCRaXzEgPSBcZnJhY3tcYmFye3h9XzEgLSBcbXV9e1xzaWdtYV97XGJhcnt4fX19ID0gXGZyYWN7MjkgLSAzMH17MX0gPSAtMS4wMCQkCiAgICAkJFpfMiA9IFxmcmFje1xiYXJ7eH1fMiAtIFxtdX17XHNpZ21hX3tcYmFye3h9fX0gPSBcZnJhY3szMSAtIDMwfXsxfSA9ICsxLjAwJCQKICAtIFjDoWMgc3XhuqV0OgogICAgJCRQKDI5IFxsZSBcYmFye1h9IFxsZSAzMSkgPSBQKC0xIFxsZSBaIFxsZSAxKSA9IFAoWiA8IDEpIC0gUChaIDwgLTEpJCQKLSAqKkLGr+G7mkMgMzogVGhheSBz4buRICYgVMOtbmggdG/DoW4gxJHhuqFpIHPhu5EgY2hpIHRp4bq/dDoqKgogIC0gVGhheSBz4buRIGxp4buHdSB04burIMSR4buBIGLDoGk6CiAgICAkJFAoLTEgXGxlIFogXGxlIDEpID0gMC44NDEzIC0gMC4xNTg3ID0gMC42ODI2JCQKLSAqKkLGr+G7mkMgNDogSMaw4bubbmcgZOG6q24gYuG6pW0gbcOheSB0w61uaCBDYXNpbyBmeC01ODBWTiBYOioqCiAgLSBC4bqlbTogYFtNRU5VXWAgYFsxXWAKICAtIE5o4bqtcDogYDAuODQxMyAtIDAuMTU4NyA9YCAkXHRvJCByYSBgMC42ODI2YC4KICAtIEhv4bq3YyBraeG7g20gdHJhIGLhurFuZyBOb3JtYWwgQ0Q6IGBbTUVOVV1gIGBbN11gIGBbMl1gLCBMb3dlcjogYDI5YCwgVXBwZXI6IGAzMWAsICRcc2lnbWEgPSAxJCwgJFxtdSA9IDMwJCAkXHRvJCByYSBgMC42ODI2ODkuLi5gICRcYXBwcm94IDAuNjgyNiQuCi0gKipCxq/hu5pDIDU6IEvhur90IGx14bqtbjoqKgogIC0gxJDDoXAgw6FuIGNow61uaCB4w6FjOiAqKjAuNjgyNioqIChDaOG7jW4gcGjGsMahbmcgw6FuICoqRCoqKS4KCi0tLQoKIyMgQ8OidSAxNjogVOG7tyBM4buHIE3huqt1IMSQaeG7h24gVGhv4bqhaSBEaSDEkOG7mW5nIEPDsyBJbnRlcm5ldCAoU2FtcGxlIFByb3BvcnRpb24pCgojIyMgMS4gTmd1ecOqbiB2xINuIMSR4buBIHRoaSB0aeG6v25nIEFuaCAmIEPDoWMgcGjGsMahbmcgw6FuIGzhu7FhIGNo4buNbjoKPiAqKlF1ZXN0aW9uIDE2IChTaW5nbGUgQ2hvaWNlKToqKgo+IEEgcmFuZG9tIHNhbXBsZSBvZiAxMjAgaG91c2Vob2xkcyB3YXMgc2VsZWN0ZWQgZm9yIGEgdGVsZXBob25lIHN1cnZleS4gVGhlIGtleSBxdWVzdGlvbiBhc2tlZCB3YXMsICJEbyB5b3Ugb3IgYW55IG1lbWJlciBvZiB5b3VyIGhvdXNlaG9sZCBvd24gYSBjZWxsdWxhciB0ZWxlcGhvbmUgdGhhdCB5b3UgY2FuIHVzZSB0byBhY2Nlc3MgdGhlIGludGVybmV0PyIgT2YgdGhlIDEyMCByZXNwb25kZW50cywgNzUgc2FpZCB5ZXMgYW5kIDQ1IHNhaWQgbm8uIERldGVybWluZSB0aGUgc2FtcGxlIHByb3BvcnRpb24gb2YgaG91c2Vob2xkcyB3aXRoIGNlbGx1bGFyIHRlbGVwaG9uZXMgdGhhdCBjYW4gYmUgdXNlZCB0byBhY2Nlc3MgdGhlIGludGVybmV0Cj4gLSBBLiAwLjUKPiAtIEIuIDAuNjI1Cj4gLSBDLiAwLjEyNQo+IC0gRC4gMC43NQoKIyMjIDIuIEThu4tjaCBuZ2jEqWEgdGnhur9uZyBWaeG7h3Q6Ck3hu5l0IG3huqt1IG5n4bqrdSBuaGnDqm4gZ+G7k20gMTIwIGjhu5kgZ2lhIMSRw6xuaCDEkcaw4bujYyBjaOG7jW4gY2hvIG3hu5l0IGN14buZYyBraOG6o28gc8OhdCBxdWEgxJFp4buHbiB0aG/huqFpLiBDw6J1IGjhu49pIHRoZW4gY2jhu5F0IGzDoDogIkLhuqFuIGhv4bq3YyBi4bqldCBr4buzIHRow6BuaCB2acOqbiBuw6BvIHRyb25nIGdpYSDEkcOsbmggYuG6oW4gY8OzIHPhu58gaOG7r3UgxJFp4buHbiB0aG/huqFpIGRpIMSR4buZbmcgY8OzIHRo4buDIHPhu60gZOG7pW5nIMSR4buDIHRydXkgY+G6rXAgaW50ZXJuZXQga2jDtG5nPyIgVHJvbmcgc+G7kSAxMjAgbmfGsOG7nWkgdHLhuqMgbOG7nWksIDc1IG5nxrDhu51pIHRy4bqjIGzhu51pIGPDsyB2w6AgNDUgbmfGsOG7nWkgdHLhuqMgbOG7nWkga2jDtG5nLiBYw6FjIMSR4buLbmggdOG7tyBs4buHIG3huqt1IChzYW1wbGUgcHJvcG9ydGlvbikgY+G7p2EgY8OhYyBo4buZIGdpYSDEkcOsbmggY8OzIMSRaeG7h24gdGhv4bqhaSBkaSDEkeG7mW5nIGPDsyB0aOG7gyB0cnV5IGPhuq1wIGludGVybmV0LgoKIyMjIDMuIFBoxrDGoW5nIHBow6FwIGdp4bqjaSBjaHXhuqluIDUgYsaw4bubYzoKLSAqKkLGr+G7mkMgMTogUGjDom4gdMOtY2ggJiBUcsOtY2ggeHXhuqV0IHRow7RuZyB0aW46KioKICAtIEPhu6EgbeG6q3Uga2jhuqNvIHPDoXQ6ICRuID0gMTIwJCBo4buZIGdpYSDEkcOsbmguCiAgLSBT4buRIGjhu5kgdHLhuqMgbOG7nWkgIkPDsyIgKHPhu58gaOG7r3UgxJFp4buHbiB0aG/huqFpIGPDsyBpbnRlcm5ldCk6ICRYID0gNzUkLgogIC0gU+G7kSBo4buZIHRy4bqjIGzhu51pICJLaMO0bmciOiAkNDUkLgotICoqQsav4buaQyAyOiBC4bqjbiBjaOG6pXQgbMO9IHRodXnhur90ICYgTmjhuq1uIGRp4buHbiBjw7RuZyB0aOG7qWM6KioKICAtIFThu7cgbOG7hyBt4bqrdSAoa8O9IGhp4buHdSBsw6AgJFxiYXJ7cH0kIGhv4bq3YyAkXGhhdHtwfSQpOgogICAgJCRcYmFye3B9ID0gXGZyYWN7WH17bn0kJAotICoqQsav4buaQyAzOiBUaGF5IHPhu5EgJiBUw61uaCB0b8OhbiDEkeG6oWkgc+G7kSBjaGkgdGnhur90OioqCiAgJCRcYmFye3B9ID0gXGZyYWN7NzV9ezEyMH0gPSBcZnJhY3s1fXs4fSA9IDAuNjI1JCQKLSAqKkLGr+G7mkMgNDogSMaw4bubbmcgZOG6q24gYuG6pW0gbcOheSB0w61uaCBDYXNpbyBmeC01ODBWTiBYOioqCiAgLSBC4bqlbTogYFtNRU5VXWAgYFsxXWAKICAtIE5o4bqtcDogYDc1YCBgW8O3XWAgYDEyMGAgYFs9XWAKICAtIE3DoXkgaGnhu4duIHBow6JuIHPhu5EgYDUvOGAsIGLhuqVtIHBow61tIGBbUzw9PkRdYCDEkeG7gyBjaHV54buDbiBzYW5nIHPhu5EgdGjhuq1wIHBow6JuICRcdG8kIGAwLjYyNWAuCi0gKipCxq/hu5pDIDU6IEvhur90IGx14bqtbjoqKgogIC0gxJDDoXAgw6FuIGNow61uaCB4w6FjOiAqKjAuNjI1KiogKENo4buNbiBwaMawxqFuZyDDoW4gKipCKiopLgoKLS0tCgojIyBDw6J1IDE3OiDEkOG7mSBM4buHY2ggQ2h14bqpbiBD4bunYSBQaMOibiBQaOG7kWkgTmjhu4sgVGjhu6ljIChCaW5vbWlhbCBTdGFuZGFyZCBEZXZpYXRpb24pCgojIyMgMS4gTmd1ecOqbiB2xINuIMSR4buBIHRoaSB0aeG6v25nIEFuaCAmIEPDoWMgcGjGsMahbmcgw6FuIGzhu7FhIGNo4buNbjoKPiAqKlF1ZXN0aW9uIDE3IChTaW5nbGUgQ2hvaWNlKToqKgo+IElmIG49MTAgYW5kIHA9MC43MCwgdGhlbiB0aGUgc3RhbmRhcmQgZGV2aWF0aW9uIG9mIHRoZSBiaW5vbWlhbCBkaXN0cmlidXRpb24gaXMgX18KPiAtIEEuIDE0LjI5Cj4gLSBCLiAxLjQ1Cj4gLSBDLiA3Cj4gLSBELiAwLjA3CgojIyMgMi4gROG7i2NoIG5naMSpYSB0aeG6v25nIFZp4buHdDoKTuG6v3UgJG4gPSAxMCQgdsOgICRwID0gMC43MCQsIHRow6wgxJHhu5kgbOG7h2NoIGNodeG6qW4gY+G7p2EgcGjDom4gcGjhu5FpIG5o4buLIHRo4bupYyBsw6A6CgojIyMgMy4gUGjGsMahbmcgcGjDoXAgZ2nhuqNpIGNodeG6qW4gNSBixrDhu5tjOgotICoqQsav4buaQyAxOiBQaMOibiB0w61jaCAmIFRyw61jaCB4deG6pXQgdGjDtG5nIHRpbjoqKgogIC0gUGjDom4gcGjhu5FpIG5o4buLIHRo4bupYyB24bubaSBjw6FjIHRoYW0gc+G7kTogJG4gPSAxMCQsICRwID0gMC43MCQuCiAgLSBYw6FjIHN14bqldCB0aOG6pXQgYuG6oWk6ICRxID0gMSAtIHAgPSAxIC0gMC43MCA9IDAuMzAkLgotICoqQsav4buaQyAyOiBC4bqjbiBjaOG6pXQgbMO9IHRodXnhur90ICYgTmjhuq1uIGRp4buHbiBjw7RuZyB0aOG7qWM6KioKICAtIFBoxrDGoW5nIHNhaSBj4bunYSBiaeG6v24gbmfhuqt1IG5oacOqbiBuaOG7iyB0aOG7qWMgJFgkOgogICAgJCRcc2lnbWFeMiA9IFZhcihYKSA9IG4gXGNkb3QgcCBcY2RvdCAoMSAtIHApJCQKICAtIMSQ4buZIGzhu4djaCBjaHXhuqluIGzDoCBjxINuIGLhuq1jIGhhaSBj4bunYSBwaMawxqFuZyBzYWk6CiAgICAkJFxzaWdtYSA9IFxzcXJ0e24gXGNkb3QgcCBcY2RvdCAoMSAtIHApfSQkCi0gKipCxq/hu5pDIDM6IFRoYXkgc+G7kSAmIFTDrW5oIHRvw6FuIMSR4bqhaSBz4buRIGNoaSB0aeG6v3Q6KioKICAkJFxzaWdtYSA9IFxzcXJ0ezEwIFx0aW1lcyAwLjcwIFx0aW1lcyAoMSAtIDAuNzApfSA9IFxzcXJ0ezEwIFx0aW1lcyAwLjcwIFx0aW1lcyAwLjMwfSA9IFxzcXJ0ezIuMX0kJAogICQkXHNpZ21hIFxhcHByb3ggMS40NDkxMzc2Li4uIFxhcHByb3ggMS40NSQkCi0gKipCxq/hu5pDIDQ6IEjGsOG7m25nIGThuqtuIGLhuqVtIG3DoXkgdMOtbmggQ2FzaW8gZngtNTgwVk4gWDoqKgogIC0gQuG6pW06IGBbTUVOVV1gIGBbMV1gCiAgLSBOaOG6rXA6IGBb4oiaXWAgYDEwYCBgW8OXXWAgYDAuN2AgYFvDl11gIGAwLjNgIGBbPV1gCiAgLSBNw6BuIGjDrG5oIGhp4buDbiB0aOG7izogYDEuNDQ5MTM3Njc1YCAkXGltcGxpZXMkIEzDoG0gdHLDsm4gxJHhur9uIDIgY2jhu68gc+G7kSB0aOG6rXAgcGjDom4gbMOgIGAxLjQ1YC4KLSAqKkLGr+G7mkMgNTogS+G6v3QgbHXhuq1uOioqCiAgLSDEkMOhcCDDoW4gY2jDrW5oIHjDoWM6ICoqMS40NSoqIChDaOG7jW4gcGjGsMahbmcgw6FuICoqQioqKS4KCi0tLQoKIyMgQ8OidSAxODogQsOgaSBUb8OhbiBOZ8aw4bujYyBQaMOibiBQaOG7kWkgQ2h14bqpbiBUw6xtIEdpw6EgVHLhu4sgVOG7m2kgSOG6oW4gYyAoSW52ZXJzZSBOb3JtYWwpCgojIyMgMS4gTmd1ecOqbiB2xINuIMSR4buBIHRoaSB0aeG6v25nIEFuaCAmIEPDoWMgcGjGsMahbmcgw6FuIGzhu7FhIGNo4buNbjoKPiAqKlF1ZXN0aW9uIDE4IChTaW5nbGUgQ2hvaWNlKToqKgo+IEFzc3VtZSB0aGF0IFogc2NvcmVzIGFyZSBub3JtYWxseSBkaXN0cmlidXRlZCB3aXRoIGEgbWVhbiBvZiAwIGFuZCBhIHN0YW5kYXJkIGRldmlhdGlvbiBvZiAxLiBJZiBQKFogPiBjKSA9IDAuMjA5MCwgZmluZCBjLgo+IExldCBQKFogPCAwLjgxKSA9IDAuNzkxLCBQKFogPCAwLjI3KSA9IDAuNjA2NCwgUChaIDwgMC40NSkgPSAwLjY3MzYsIFAoWiA8IC0wLjgxKSA9IDAuMjA5MC4KPiAtIEEuIDAuMjcKPiAtIEIuIDAuODEKPiAtIEMuIDAuNDUKPiAtIEQuIC0wLjgxCgojIyMgMi4gROG7i2NoIG5naMSpYSB0aeG6v25nIFZp4buHdDoKR2nhuqMgc+G7rSDEkWnhu4NtIFogdHXDom4gdGhlbyBwaMOibiBwaOG7kWkgY2h14bqpbiB24bubaSB0cnVuZyBiw6xuaCBi4bqxbmcgMCB2w6AgxJHhu5kgbOG7h2NoIGNodeG6qW4gYuG6sW5nIDEuIE7hur91IFAoWiA+IGMpID0gMC4yMDkwLCBow6N5IHTDrG0gYy4KQ2hvIGJp4bq/dDogUChaIDwgMC44MSkgPSAwLjc5MTsgUChaIDwgMC4yNykgPSAwLjYwNjQ7IFAoWiA8IDAuNDUpID0gMC42NzM2OyBQKFogPCAtMC44MSkgPSAwLjIwOTAuCgojIyMgMy4gUGjGsMahbmcgcGjDoXAgZ2nhuqNpIGNodeG6qW4gNSBixrDhu5tjOgotICoqQsav4buaQyAxOiBQaMOibiB0w61jaCAmIFRyw61jaCB4deG6pXQgdGjDtG5nIHRpbjoqKgogIC0gUGjDom4gcGjhu5FpIGNodeG6qW4gaMOzYSAkWiBcc2ltIE4oMCwgMSkkLgogIC0gUGjGsMahbmcgdHLDrG5oIHjDoWMgc3XhuqV0OiAkUChaID4gYykgPSAwLjIwOTAkLgotICoqQsav4buaQyAyOiBC4bqjbiBjaOG6pXQgbMO9IHRodXnhur90ICYgTmjhuq1uIGRp4buHbiBjw7RuZyB0aOG7qWM6KioKICAtICoqQ8OhY2ggc3V5IGx14bqtbiAxIChRdWEgZGnhu4duIHTDrWNoIHTDrWNoIGzFqXkgYsOqbiB0csOhaSk6KioKICAgICQkUChaIFxsZSBjKSA9IDEgLSBQKFogPiBjKSA9IDEgLSAwLjIwOTAgPSAwLjc5MTAkJAogIC0gKipDw6FjaCBzdXkgbHXhuq1uIDIgKFTDrW5oIGNo4bqldCDEkeG7kWkgeOG7qW5nIGPhu6dhIMSRxrDhu51uZyBjb25nIEdhdXNzKToqKgogICAgVsOsIHBow6JuIHBo4buRaSBjaHXhuqluIMSR4buRaSB44bupbmcgaG/DoG4gaOG6o28gcXVhICRaID0gMCQsIGRp4buHbiB0w61jaCBwaOG6p24gxJF1w7RpIGLDqm4gcGjhuqNpIHbGsOG7o3QgcXXDoSAkK2MkIGLhurFuZyDEkcO6bmcgZGnhu4duIHTDrWNoIHBo4bqnbiDEkXXDtGkgYsOqbiB0csOhaSBuaOG7jyBoxqFuICQtYyQ6CiAgICAkJFAoWiA+IGMpID0gUChaIDwgLWMpJCQKLSAqKkLGr+G7mkMgMzogVGhheSBz4buRICYgVMOtbmggdG/DoW4gxJHhuqFpIHPhu5EgY2hpIHRp4bq/dDoqKgogIC0gVGhlbyBDw6FjaCAxOiDEkOG7gSBiw6BpIGNobyAkUChaIDwgMC44MSkgPSAwLjc5MSQsIGRvIMSRw7MgJGMgPSAwLjgxJC4KICAtIFRoZW8gQ8OhY2ggMjogxJDhu4EgYsOgaSBjaG8gJFAoWiA8IC0wLjgxKSA9IDAuMjA5MCBcaW1wbGllcyAtYyA9IC0wLjgxIFxpbXBsaWVzIGMgPSAwLjgxJC4KLSAqKkLGr+G7mkMgNDogSMaw4bubbmcgZOG6q24gYuG6pW0gbcOheSB0w61uaCBDYXNpbyBmeC01ODBWTiBYOioqCiAgLSAqKkPDoWNoIDE6IFPhu60gZOG7pW5nIGNo4bupYyBuxINuZyBQaMOibiBwaOG7kWkgY2h14bqpbiBuZ8aw4bujYyAoSW52ZXJzZSBOb3JtYWwpOioqCiAgICAtIELhuqVtOiBgW01FTlVdYCBgWzddYCAoUGjDom4gcGjhu5FpIERpc3RyaWJ1dGlvbikuCiAgICAtIENo4buNbjogYFszXWAgKEludmVyc2UgTm9ybWFsKS4KICAgIC0gRGnhu4duIHTDrWNoIHTDrWNoIGzFqXkgYsOqbiB0csOhaSAoQXJlYSk6IG5o4bqtcCBgMSAtIDAuMjA5MGAgKGhv4bq3YyBgMC43OTFgKSBgWz1dYC4KICAgIC0gJFxzaWdtYSQ6IG5o4bqtcCBgMWAgYFs9XWAuCiAgICAtICRcbXUkOiBuaOG6rXAgYDBgIGBbPV1gLgogICAgLSBC4bqlbSBgWz1dYCAkXHRvJCBNw6BuIGjDrG5oIGhp4buDbiB0aOG7izogYDAuODA5ODkuLi5gICRcYXBwcm94IDAuODEkIQogIC0gKipDw6FjaCAyOiBUw61uaCB0YXkg4bufIE1lbnUgMToqKgogICAgLSBOaOG6rXA6IGAxIC0gMC4yMDkwID1gICRcdG8kIHJhIGAwLjc5MWAsIG5ow6xuIHbDoG8gZOG7ryBraeG7h24gxJHhu4EgY2hvIOG7qW5nIHbhu5tpIFogPSBgMC44MWAuCi0gKipCxq/hu5pDIDU6IEvhur90IGx14bqtbjoqKgogIC0gxJDDoXAgw6FuIGNow61uaCB4w6FjOiAqKjAuODEqKiAoQ2jhu41uIHBoxrDGoW5nIMOhbiAqKkIqKikuCgotLS0KCiMjIEPDonUgMTk6IFjDoWMgU3XhuqV0IFThu7cgTOG7hyBN4bqrdSBUaOG6vyBI4buHIE1pbGxlbm5pYWxzIChQcm9wb3J0aW9uIFNhbXBsaW5nIERpc3RyaWJ1dGlvbikKCiMjIyAxLiBOZ3V5w6puIHbEg24gxJHhu4EgdGhpIHRp4bq/bmcgQW5oICYgQ8OhYyBwaMawxqFuZyDDoW4gbOG7sWEgY2jhu41uOgo+ICoqUXVlc3Rpb24gMTkgKFNpbmdsZSBDaG9pY2UpOioqCj4gV2hhdCBkbyBtaWxsZW5uaWFscyBhcm91bmQgdGhlIHdvcmxkIHdhbnQgaW4gYSBqb2I/IEEgRGVsb2l0dGUgc3VydmV5IG9mIG1pbGxlbm5pYWxzIG9uIHdvcmstbGlmZSBjaGFsbGVuZ2VzIGZvdW5kIHRoYXQgbWlsbGVubmlhbHMgYXJlIGxvb2tpbmcgZm9yIHN0YWJpbGl0eSBpbiBhbiB1bmNlcnRhaW4gd29ybGQsIHdpdGggNjUlIG9mIG1pbGxlbm5pYWxzIHByZWZlcnJpbmcgYSBwZXJtYW5lbnQsIGZ1bGwtdGltZSBqb2IgcmF0aGVyIHRoYW4gd29ya2luZyBmcmVlbGFuY2Ugb3IgYXMgYSBjb25zdWx0YW50IG9uIGEgZmxleGlibGUgb3Igc2hvcnQtdGVybSBiYXNpcy4gU3VwcG9zZSB5b3Ugc2VsZWN0IGEgc2FtcGxlIG9mIDEwMCBtaWxsZW5uaWFscy4gV2hhdCBpcyB0aGUgcHJvYmFiaWxpdHkgdGhhdCBpbiB0aGUgc2FtcGxlIGZld2VyIHRoYW4gNzAlIHByZWZlciBhIHBlcm1hbmVudCwgZnVsbC10aW1lIGpvYj8KPiBMZXQgUChaIDwgMS4wNDgpID0gMC44NTI3LCBQKFogPCAtMC42NTY5KSA9IDAuMjU1NiwgUChaIDwgMC41MDM1KSA9IDAuNjkyNy4KPiAtIEEuIDAuMjU1Ngo+IC0gQi4gMC42OTI3Cj4gLSBDLiAwLjM0NDgKPiAtIEQuIDAuODUyNwoKIyMjIDIuIEThu4tjaCBuZ2jEqWEgdGnhur9uZyBWaeG7h3Q6ClRo4bq/IGjhu4cgbWlsbGVubmlhbHMgdHLDqm4gdGjhur8gZ2nhu5tpIG1vbmcgbXXhu5FuIMSRaeG7gXUgZ8OsIHRyb25nIGPDtG5nIHZp4buHYz8gTeG7mXQgY3Xhu5ljIGto4bqjbyBzw6F0IGPhu6dhIERlbG9pdHRlIHbhu4Egbmjhu69uZyB0aMOhY2ggdGjhu6ljIGPDom4gYuG6sW5nIGPDtG5nIHZp4buHYyAtIGN14buZYyBz4buRbmcgY2hvIHRo4bqleSB0aOG6vyBo4buHIG1pbGxlbm5pYWwgxJFhbmcgdMOsbSBraeG6v20gc+G7sSDhu5VuIMSR4buLbmggdHJvbmcgbeG7mXQgdGjhur8gZ2nhu5tpIGLhuqV0IMSR4buLbmgsIHbhu5tpIDY1JSBz4buRIG5nxrDhu51pIHRodeG7mWMgdGjhur8gaOG7hyBtaWxsZW5uaWFsIHRow61jaCBt4buZdCBjw7RuZyB2aeG7h2MgY+G7kSDEkeG7i25oLCB0b8OgbiB0aOG7nWkgZ2lhbiBoxqFuIGzDoCBsw6BtIHZp4buHYyB04buxIGRvIChmcmVlbGFuY2UpIGhv4bq3YyBsw6BtIGPhu5EgduG6pW4gbGluaCBob+G6oXQvbmfhuq9uIGjhuqFuLiBHaeG6oyBz4butIGLhuqFuIGNo4buNbiBt4buZdCBt4bqrdSBn4buTbSAxMDAgbmfGsOG7nWkgdGh14buZYyB0aOG6vyBo4buHIG1pbGxlbm5pYWwuIFjDoWMgc3XhuqV0IMSR4buDIHRyb25nIG3huqt1IGPDsyDDrXQgaMahbiA3MCUgdGjDrWNoIGPDtG5nIHZp4buHYyBj4buRIMSR4buLbmgsIHRvw6BuIHRo4budaSBnaWFuIGzDoCBiYW8gbmhpw6p1PwpDaG8gYmnhur90OiBQKFogPCAxLjA0OCkgPSAwLjg1Mjc7IFAoWiA8IC0wLjY1NjkpID0gMC4yNTU2OyBQKFogPCAwLjUwMzUpID0gMC42OTI3LgoKIyMjIDMuIFBoxrDGoW5nIHBow6FwIGdp4bqjaSBjaHXhuqluIDUgYsaw4bubYzoKLSAqKkLGr+G7mkMgMTogUGjDom4gdMOtY2ggJiBUcsOtY2ggeHXhuqV0IHRow7RuZyB0aW46KioKICAtIFThu7cgbOG7hyB04buVbmcgdGjhu4MgKHBvcHVsYXRpb24gcHJvcG9ydGlvbik6ICRwID0gNjVcJSA9IDAuNjUkLgogIC0gS8OtY2ggdGjGsOG7m2MgbeG6q3U6ICRuID0gMTAwJC4KICAtIEPhuqduIHTDrW5oIHjDoWMgc3XhuqV0IHThu7cgbOG7hyBt4bqrdSDDrXQgaMahbiA3MCU6ICRQKFxiYXJ7cH0gPCAwLjcwKSQuCi0gKipCxq/hu5pDIDI6IELhuqNuIGNo4bqldCBsw70gdGh1eeG6v3QgJiBOaOG6rW4gZGnhu4duIGPDtG5nIHRo4bupYzoqKgogIC0gS2nhu4NtIHRyYSDEkWnhu4F1IGtp4buHbiB44bqlcCB44buJIGNodeG6qW46CiAgICAkJG5wID0gMTAwIFx0aW1lcyAwLjY1ID0gNjUgXGdlIDUkJAogICAgJCRuKDEgLSBwKSA9IDEwMCBcdGltZXMgMC4zNSA9IDM1IFxnZSA1JCQKICAgIChUaOG7j2EgbcOjbiDEkWnhu4F1IGtp4buHbiDEkeG7i25oIGzDvSBDTFQgxJHhu5FpIHbhu5tpIHThu7cgbOG7hykuCiAgLSBTYWkgc+G7kSBjaHXhuqluIGPhu6dhIHBow6JuIHBo4buRaSBjaOG7jW4gbeG6q3UgdOG7tyBs4buHOgogICAgJCRcc2lnbWFfe1xiYXJ7cH19ID0gXHNxcnR7XGZyYWN7cCgxIC0gcCl9e259fSQkCiAgLSBDaHXhuqluIGjDs2EgWi1zY29yZToKICAgICQkWiA9IFxmcmFje1xiYXJ7cH0gLSBwfXtcc2lnbWFfe1xiYXJ7cH19fSA9IFxmcmFje1xiYXJ7cH0gLSBwfXtcc3FydHtcZnJhY3twKDEgLSBwKX17bn19fSQkCi0gKipCxq/hu5pDIDM6IFRoYXkgc+G7kSAmIFTDrW5oIHRvw6FuIMSR4bqhaSBz4buRIGNoaSB0aeG6v3Q6KioKICAtIFTDrW5oIHNhaSBz4buRIGNodeG6qW46CiAgICAkJFxzaWdtYV97XGJhcntwfX0gPSBcc3FydHtcZnJhY3swLjY1IFx0aW1lcyAoMSAtIDAuNjUpfXsxMDB9fSA9IFxzcXJ0e1xmcmFjezAuNjUgXHRpbWVzIDAuMzV9ezEwMH19ID0gXHNxcnR7XGZyYWN7MC4yMjc1fXsxMDB9fSA9IFxzcXJ0ezAuMDAyMjc1fSBcYXBwcm94IDAuMDQ3Njk3JCQKICAtIFTDrW5oIMSRaeG7g20gWjoKICAgICQkWiA9IFxmcmFjezAuNzAgLSAwLjY1fXswLjA0NzY5N30gPSBcZnJhY3swLjA1fXswLjA0NzY5N30gXGFwcHJveCAxLjA0ODI4Li4uIFxhcHByb3ggMS4wNDgkJAogIC0gWMOhYyBzdeG6pXQgY+G6p24gdMOsbToKICAgICQkUChcYmFye3B9IDwgMC43MCkgPSBQKFogPCAxLjA0OCkkJAogIC0gVHJhIGdpw6EgdHLhu4sgxJHhu4EgYsOgaSBjdW5nIGPhuqVwOiAkUChaIDwgMS4wNDgpID0gMC44NTI3JC4KLSAqKkLGr+G7mkMgNDogSMaw4bubbmcgZOG6q24gYuG6pW0gbcOheSB0w61uaCBDYXNpbyBmeC01ODBWTiBYOioqCiAgLSAqKkPDoWNoIDE6IFTDrW5oIFogdOG6oWkgTWVudSAxOioqCiAgICAtIELhuqVtOiBgW01FTlVdYCBgWzFdYAogICAgLSBOaOG6rXAgYmnhu4N1IHRo4bupYzogYFso4pagL+KWoSldYCBgMC43MCAtIDAuNjVgIGBb4pa8XWAgYFviiJpdYCBgWyjilqAv4pahKV1gIGAwLjY1ICogMC4zNWAgYFvilrxdYCBgMTAwYCBgWz1dYAogICAgLSBNw6BuIGjDrG5oIGhp4buDbiB0aOG7izogYDEuMDQ4MjguLi5gICRcaW1wbGllcyQgS2jhu5twIHbhu5tpIG3hu5FjICRaID0gMS4wNDgkLCB04burIMSRw7MgxJHhu5FpIGNoaeG6v3UgduG7m2kgxJHhu4EgYsOgaSBjaOG7jW4gbmdheSBz4buRIGxp4buHdSAkMC44NTI3JC4KICAtICoqQ8OhY2ggMjogQuG6pW0gTm9ybWFsIENEIHRy4buxYyB0aeG6v3A6KioKICAgIC0gQuG6pW06IGBbTUVOVV1gIGBbN11gIGBbMl1gCiAgICAtIExvd2VyOiBgLTk5OTlgIGBbPV1gCiAgICAtIFVwcGVyOiBgMC43MGAgYFs9XWAKICAgIC0gJFxzaWdtYSQ6IGBb4oiaXWAgYCggMC42NSAqIDAuMzUgLyAxMDAgKWAgYFs9XWAKICAgIC0gJFxtdSQ6IGAwLjY1YCBgWz1dYAogICAgLSBC4bqlbSBgWz1dYCAkXHRvJCBSYSBr4bq/dCBxdeG6ozogYDAuODUyNzUuLi5gICRcYXBwcm94IDAuODUyNyQuCi0gKipCxq/hu5pDIDU6IEvhur90IGx14bqtbjoqKgogIC0gxJDDoXAgw6FuIGNow61uaCB4w6FjOiAqKjAuODUyNyoqIChDaOG7jW4gcGjGsMahbmcgw6FuICoqRCoqKS4KCi0tLQoKIyMgQ8OidSAyMDogSOG7hyBT4buRIFTGsMahbmcgUXVhbiBN4bqrdSByIChTYW1wbGUgQ29ycmVsYXRpb24gQ29lZmZpY2llbnQpCgojIyMgMS4gTmd1ecOqbiB2xINuIMSR4buBIHRoaSB0aeG6v25nIEFuaCAmIEPDoWMgcGjGsMahbmcgw6FuIGzhu7FhIGNo4buNbjoKPiAqKlF1ZXN0aW9uIDIwIChTaW5nbGUgQ2hvaWNlKToqKgo+IEZQVCBSZXRhaWwgc2VsbHMgSVQgcHJvZHVjdHMgaW4gdGhlaXIgc2hvcHMgYW5kIHdhbnRlZCB0byBleGFtaW5lIHRoZSByZWxhdGlvbnNoaXAgYmV0d2VlbiBwcmljZSBhbmQgZGVtYW5kLiBUaGUgcHJpY2Ugb2YgYSBzbWFydCBwaG9uZSB3YXMgYWRqdXN0ZWQgZWFjaCB3ZWVrIGFuZCB0aGUgd2Vla2x5IHNhbGVzIHdlcmUgcmVjb3JkZWQgaW4gdGhlIHRhYmxlLgo+IAo+IHwgUHJpY2UgKFwkKSB8IFwkMTIwIHwgXCQxMTAgfCBcJDEwMCB8Cj4gfCA6LS0tOiB8IDotLS06IHwgOi0tLTogfCA6LS0tOiB8Cj4gfCAqKlNhbGVzKiogfCA3IHwgNCB8IDEwIHwKPiAKPiBGaW5kIHRoZSBzYW1wbGUgY29ycmVsYXRpb24gY29lZmZpY2llbnQuCj4gLSBBLiAwLjUKPiAtIEIuIC0wLjkyCj4gLSBDLiAtMC41Cj4gLSBELiAwLjkyCgojIyMgMi4gROG7i2NoIG5naMSpYSB0aeG6v25nIFZp4buHdDoKRlBUIFJldGFpbCBiw6FuIGPDoWMgc+G6o24gcGjhuqltIGPDtG5nIG5naOG7hyB0aMO0bmcgdGluIHThuqFpIGPDoWMgY+G7rWEgaMOgbmcgY+G7p2EgaOG7jSB2w6AgbXXhu5FuIGtp4buDbSB0cmEgbeG7kWkgcXVhbiBo4buHIGdp4buvYSBnacOhIGPhuqMgdsOgIG5odSBj4bqndS4gR2nDoSBj4bunYSBt4buZdCBjaGnhur9jIMSRaeG7h24gdGhv4bqhaSB0aMO0bmcgbWluaCDEkcaw4bujYyDEkWnhu4F1IGNo4buJbmggbeG7l2kgdHXhuqduIHbDoCBkb2FuaCBz4buRIGLDoW4gaMOgbmcgaMOgbmcgdHXhuqduIMSRxrDhu6NjIGdoaSBs4bqhaSB0cm9uZyBi4bqjbmc6CnwgR2nDoSBiw6FuIChQcmljZSAtIFgpIHwgXCQxMjAgfCBcJDExMCB8IFwkMTAwIHwKfCA6LS0tOiB8IDotLS06IHwgOi0tLTogfCA6LS0tOiB8CnwgKipEb2FuaCBz4buRIChTYWxlcyAtIFkpKiogfCA3IHwgNCB8IDEwIHwKSMOjeSB0w6xtIGjhu4cgc+G7kSB0xrDGoW5nIHF1YW4gbeG6q3UgKHNhbXBsZSBjb3JyZWxhdGlvbiBjb2VmZmljaWVudCAtIHIpLgoKIyMjIDMuIFBoxrDGoW5nIHBow6FwIGdp4bqjaSBjaHXhuqluIDUgYsaw4bubYzoKLSAqKkLGr+G7mkMgMTogUGjDom4gdMOtY2ggJiBUcsOtY2ggeHXhuqV0IHRow7RuZyB0aW46KioKICAtIEPhu6EgbeG6q3U6ICRuID0gMyQgdHXhuqduIHF1YW4gc8OhdC4KICAtIEJp4bq/biAkWCQgKEdpw6EpOiAkXHsxMjAsIDExMCwgMTAwXH0kCiAgLSBCaeG6v24gJFkkIChEb2FuaCBz4buRKTogJFx7NywgNCwgMTBcfSQKLSAqKkLGr+G7mkMgMjogQuG6o24gY2jhuqV0IGzDvSB0aHV54bq/dCAmIE5o4bqtbiBkaeG7h24gY8O0bmcgdGjhu6ljOioqCiAgLSBI4buHIHPhu5EgdMawxqFuZyBxdWFuIFBlYXJzb24gJHIkOgogICAgJCRyID0gXGZyYWN7XHRleHR7Q292fShYLCBZKX17U19YIFxjZG90IFNfWX0gPSBcZnJhY3tcc3VtIChYIC0gXGJhcntYfSkoWSAtIFxiYXJ7WX0pfXtcc3FydHtcc3VtIChYIC0gXGJhcntYfSleMiBcY2RvdCBcc3VtIChZIC0gXGJhcntZfSleMn19JCQKLSAqKkLGr+G7mkMgMzogVGhheSBz4buRICYgVMOtbmggdG/DoW4gxJHhuqFpIHPhu5EgY2hpIHRp4bq/dDoqKgogIC0gKipUw61uaCBnacOhIHRy4buLIHRydW5nIGLDrG5oOioqCiAgICAkJFxiYXJ7WH0gPSBcZnJhY3sxMjAgKyAxMTAgKyAxMDB9ezN9ID0gXGZyYWN7MzMwfXszfSA9IDExMCQkCiAgICAkJFxiYXJ7WX0gPSBcZnJhY3s3ICsgNCArIDEwfXszfSA9IFxmcmFjezIxfXszfSA9IDckJAogIC0gKipM4bqtcCBi4bqjbmcgdMOtbmggxJHhu5kgbOG7h2NoOioqCiAgICAtIMSQaeG7g20gMTogJCgxMjAgLSAxMTAgPSAxMCkkLCAkKDcgLSA3ID0gMCkgXGltcGxpZXMgKFgtXGJhcntYfSkoWS1cYmFye1l9KSA9IDAkCiAgICAtIMSQaeG7g20gMjogJCgxMTAgLSAxMTAgPSAwKSQsICQoNCAtIDcgPSAtMykgXGltcGxpZXMgKFgtXGJhcntYfSkoWS1cYmFye1l9KSA9IDAkCiAgICAtIMSQaeG7g20gMzogJCgxMDAgLSAxMTAgPSAtMTApJCwgJCgxMCAtIDcgPSAzKSBcaW1wbGllcyAoWC1cYmFye1h9KShZLVxiYXJ7WX0pID0gLTMwJAogIC0gKipU4buVbmcgdMOtY2ggc2FpIGzhu4djaCAoVOG7rSBz4buRKToqKgogICAgJCRcc3VtIChYIC0gXGJhcntYfSkoWSAtIFxiYXJ7WX0pID0gMCArIDAgKyAoLTMwKSA9IC0zMCQkCiAgLSAqKlThu5VuZyBiw6xuaCBwaMawxqFuZyBzYWkgbOG7h2NoIChN4bqrdSBz4buRKToqKgogICAgJCRcc3VtIChYIC0gXGJhcntYfSleMiA9IDEwXjIgKyAwXjIgKyAoLTEwKV4yID0gMTAwICsgMCArIDEwMCA9IDIwMCQkCiAgICAkJFxzdW0gKFkgLSBcYmFye1l9KV4yID0gMF4yICsgKC0zKV4yICsgM14yID0gMCArIDkgKyA5ID0gMTgkJAogIC0gKipUw61uaCBo4buHIHPhu5EgdMawxqFuZyBxdWFuICRyJDoqKgogICAgJCRyID0gXGZyYWN7LTMwfXtcc3FydHsyMDAgXHRpbWVzIDE4fX0gPSBcZnJhY3stMzB9e1xzcXJ0ezM2MDB9fSA9IFxmcmFjey0zMH17NjB9ID0gLTAuNSQkCi0gKipCxq/hu5pDIDQ6IEjGsOG7m25nIGThuqtuIGLhuqVtIG3DoXkgdMOtbmggQ2FzaW8gZngtNTgwVk4gWCAoUmEgbmdheSBr4bq/dCBxdeG6oyB0cm9uZyA1IGdpw6J5KToqKgogIC0gKipCxrDhu5tjIEEgKENo4buNbiBtw7QgaMOsbmggaOG7k2kgcXV5IDIgYmnhur9uKToqKgogICAgLSBC4bqlbTogYFtNRU5VXWAgYFs2XWAgKFN0YXRpc3RpY3MpLgogICAgLSBDaOG7jW46IGBbMl1gICgkeSA9IGEgKyBieCQpLgogIC0gKipCxrDhu5tjIEIgKE5o4bqtcCBk4buvIGxp4buHdSAyIGPhu5l0IFggdsOgIFkpOioqCiAgICAtIEPhu5l0IGB4YDogQuG6pW0gYDEyMGAgYFs9XWAsIGAxMTBgIGBbPV1gLCBgMTAwYCBgWz1dYC4KICAgIC0gRMO5bmcgcGjDrW0gbcWpaSB0w6puIMSRaeG7gXUgaMaw4bubbmcgc2FuZyBj4buZdCBgeWAgbMOqbiB0csOqbiBjw7luZzoKICAgIC0gQ+G7mXQgYHlgOiBC4bqlbSBgN2AgYFs9XWAsIGA0YCBgWz1dYCwgYDEwYCBgWz1dYC4KICAtICoqQsaw4bubYyBDIChYdeG6pXQga+G6v3QgcXXhuqMgaOG7hyBz4buRIHIpOioqCiAgICAtIELhuqVtIHBow61tIGBbT1BUTl1gLgogICAgLSBDaOG7jW4gYFszXWAgKFJlZ3Jlc3Npb24gQ2FsYyAtIFBow6JuIHTDrWNoIGjhu5NpIHF1eSkuCiAgLSAqKkLGsOG7m2MgRCAoxJDhu41jIG3DoG4gaMOsbmgpOioqCiAgICAtIETDsm5nICRhID0gNjIkICho4buHIHPhu5EgY2jhurduKQogICAgLSBEw7JuZyAkYiA9IC0wLjUkICho4buHIHPhu5EgZ8OzYykKICAgIC0gRMOybmcgJHIgPSAtMC41JCAoaOG7hyBz4buRIHTGsMahbmcgcXVhbiBj4bqnbiB0w6xtKSAkXGltcGxpZXMkIENo4buNbiBuZ2F5ICoqLTAuNSoqIQotICoqQsav4buaQyA1OiBL4bq/dCBsdeG6rW46KioKICAtIMSQw6FwIMOhbiBjaMOtbmggeMOhYzogKiotMC41KiogKENo4buNbiBwaMawxqFuZyDDoW4gKipDKiopLgoKLS0tCgo=</script>
 
   <script>
     // 1. Theme Management
@@ -5271,6 +4581,8 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
       });
 
       // STEP F: Render KaTeX with STRICT delimiters ($ and $$ only!)
+      updateSection6Access(currentUser);
+
       renderMathInElement(articleEl, {
         delimiters: [
           {left: '$$', right: '$$', display: true},
@@ -5417,6 +4729,7 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
       firebaseAuth.onAuthStateChanged((user) => {
         currentUser = user;
         updateAuthUI(user);
+        updateSection6Access(user);
         if (user) {
           syncFromCloud(user);
         }
@@ -5540,6 +4853,7 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
       firebaseAuth.signOut().then(() => {
         currentUser = null;
         updateAuthUI(null);
+        updateSection6Access(null);
         showToast("👋 Đã đăng xuất tài khoản Google!");
       });
     }
@@ -5637,6 +4951,175 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
         }
       });
       return Array.from(map.values());
+    }
+
+    
+    /* ==========================================================================
+       SECTION 6 VIP ACCESS CONTROL FUNCTIONS
+       ========================================================================== */
+    const AUTHORIZED_SECTION6_EMAIL = 'nguyendothanhuyen.work@gmail.com';
+
+    function isAuthorizedForSection6(user) {
+      if (!user || !user.email) return false;
+      return user.email.toLowerCase().trim() === AUTHORIZED_SECTION6_EMAIL.toLowerCase().trim();
+    }
+
+    function updateSection6Access(user) {
+      const mount = document.getElementById('section-6-mount-point');
+      if (!mount) return;
+
+      if (isAuthorizedForSection6(user)) {
+        unlockSection6();
+      } else {
+        lockSection6(user);
+      }
+    }
+
+    function lockSection6(user) {
+      const mount = document.getElementById('section-6-mount-point');
+      if (!mount) return;
+
+      let msgHtml = '';
+      if (!user) {
+        msgHtml = `
+          <p class="vip-lock-text">Khu vực đề thi nội bộ độc quyền. Bạn cần đăng nhập bằng tài khoản Google chính chủ để mở khóa toàn bộ nội dung:</p>
+          <div class="vip-auth-required-box">
+            <span class="auth-required-label">Tài khoản được cấp quyền:</span>
+            <code class="auth-required-email">${AUTHORIZED_SECTION6_EMAIL}</code>
+          </div>
+          <div>
+            <button class="btn btn-primary btn-lg" onclick="loginWithGoogle()" style="display:inline-flex; align-items:center; gap:8px; margin-top:8px;">
+              <svg class="google-icon-svg" viewBox="0 0 24 24" width="18" height="18">
+                <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+                <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+              </svg>
+              <span>Đăng nhập Google để mở khóa Phần 6</span>
+            </button>
+          </div>
+        `;
+      } else {
+        msgHtml = `
+          <div class="vip-wrong-user-box">
+            <div class="wrong-user-icon">⚠️</div>
+            <div>
+              <div>Đang đăng nhập: <strong>${escapeHtml(user.email || '')}</strong></div>
+              <div style="font-size:0.86rem; color:inherit; opacity:0.9; margin-top:4px;">
+                Rất tiếc, tài khoản này không có quyền xem Phần 6. Nội dung này được khóa riêng cho <strong>${AUTHORIZED_SECTION6_EMAIL}</strong>.
+              </div>
+            </div>
+          </div>
+          <div style="margin-top:14px; display:flex; gap:10px; justify-content:center;">
+            <button class="btn btn-sm btn-ghost" onclick="logoutGoogle()">Đăng xuất</button>
+            <button class="btn btn-sm btn-primary" onclick="loginWithGoogle()">Đổi tài khoản khác</button>
+          </div>
+        `;
+      }
+
+      mount.innerHTML = `
+        <div class="vip-section6-card" id="vip-section6-card">
+          <div class="vip-lock-badge">
+            <span class="vip-lock-icon">🔒</span>
+            <span>NỘI DUNG ĐƯỢC BẢO VỆ</span>
+          </div>
+          <h2 class="vip-lock-title">PHẦN 6: BỘ ĐỀ THỰC CHIẾN MAS QUIZ 2 (20 CÂU HỎI TRẮC NGHIỆM)</h2>
+          <div class="vip-lock-subtitle">Toàn bộ 20 câu hỏi đề thi trực tuyến &bull; Dịch nghĩa song ngữ Anh - Việt &bull; Lời giải 5 bước &bull; Bấm máy Casio fx-580VN X</div>
+          <div class="vip-lock-content-box">
+            ${msgHtml}
+          </div>
+        </div>
+      `;
+
+      buildTOC();
+    }
+
+    function unlockSection6() {
+      const mount = document.getElementById('section-6-mount-point');
+      const b64El = document.getElementById('section-6-b64');
+      if (!mount || !b64El) return;
+
+      try {
+        const b64 = b64El.textContent.trim();
+        if (!b64) return;
+        let rawSec6 = decodeURIComponent(escape(atob(b64)));
+
+        // Protect currency \$
+        rawSec6 = rawSec6.replace(/\\(\$)/g, '___LITERAL_DOLLAR___');
+
+        // Transform alerts
+        rawSec6 = rawSec6.replace(/^>\s*\[!(NOTE|TIP|IMPORTANT|WARNING|CAUTION)\]\s*\n((?:>.*(?:\n|$))*)/gmi, function(match, type, content) {
+          const cleanContent = content.replace(/^>\s?/gm, '');
+          const alertConfig = {
+            NOTE: { title: 'BẢN CHẤT TRỌNG TÂM', icon: '💡', cls: 'alert-note' },
+            TIP: { title: 'MẸO THI & KINH NGHIỆM', icon: '⭐', cls: 'alert-tip' },
+            IMPORTANT: { title: 'QUY CHUẨN BẮT BUỘC', icon: '🔥', cls: 'alert-important' },
+            WARNING: { title: 'LƯU Ý TRÁNH BẪY', icon: '⚠️', cls: 'alert-warning' },
+            CAUTION: { title: 'PHÂN BIỆT SỐNG CÒN', icon: '🚨', cls: 'alert-caution' }
+          };
+          const cfg = alertConfig[type.toUpperCase()] || { title: type, icon: '📌', cls: 'alert-note' };
+          return `\n\n<div class="custom-alert ${cfg.cls}">\n<div class="alert-title"><span class="alert-icon">${cfg.icon}</span> ${cfg.title}</div>\n\n${cleanContent}\n\n</div>\n\n`;
+        });
+
+        // Protect math
+        const mathStoreSec6 = [];
+        let processed = rawSec6.replace(/\$\$([\s\S]*?)\$\$/g, match => {
+          mathStoreSec6.push(match);
+          return `<!--MATH_BLOCK_SEC6_${mathStoreSec6.length - 1}-->`;
+        });
+        processed = processed.replace(/\$([^\$\n\r]+?)\$/g, match => {
+          mathStoreSec6.push(match);
+          return `<!--MATH_BLOCK_SEC6_${mathStoreSec6.length - 1}-->`;
+        });
+
+        let htmlSec6 = marked.parse(processed);
+
+        // Restore math
+        htmlSec6 = htmlSec6.replace(/(?:<code>)?(?:\&lt;!--|<!--)MATH_BLOCK_SEC6_(\d+)(?:--\&gt;|-->)(?:<\/code>)?/g, (match, idx) => {
+          return mathStoreSec6[parseInt(idx)];
+        });
+
+        // Restore currency
+        htmlSec6 = htmlSec6.replace(/___LITERAL_DOLLAR___/g, '<span class="currency-symbol">$</span>');
+
+        const banner = `
+          <div class="vip-unlocked-banner">
+            <div class="vip-unlocked-header">
+              <span class="vip-unlocked-icon">🔓</span>
+              <span>ĐÃ XÁC THỰC BẢN QUYỀN CHÍNH CHỦ</span>
+              <span class="vip-unlocked-email">${escapeHtml(currentUser.email)}</span>
+            </div>
+            <div class="vip-unlocked-sub">
+              Toàn bộ 20 câu hỏi trắc nghiệm thực chiến MAS Quiz 2 đã được mở khóa đầy đủ. Chúc bạn ôn tập đạt điểm 10 tuyệt đối!
+            </div>
+          </div>
+        `;
+
+        mount.innerHTML = banner + htmlSec6;
+
+        // Transform Casio keys
+        mount.querySelectorAll('code').forEach(el => {
+          const txt = el.textContent.trim();
+          if (txt.startsWith('[') && txt.endsWith(']')) {
+            el.className = 'casio-key';
+          }
+        });
+
+        // Render KaTeX
+        renderMathInElement(mount, {
+          delimiters: [
+            {left: '$$', right: '$$', display: true},
+            {left: '$', right: '$', display: false}
+          ],
+          throwOnError: false
+        });
+
+        buildTOC();
+        restoreAllHighlights();
+        showToast("🔓 Đã mở khóa thành công PHẦN 6 cho " + currentUser.email + "!");
+      } catch (err) {
+        console.error("Error unlocking section 6:", err);
+      }
     }
 
     function initNotesSystem() {
