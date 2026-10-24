@@ -2,9 +2,25 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>🥬 Cải Xanh Học MAS - Bí Kíp Chinh Phục Chương 5 Đến 9 (MAS202)</title>
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥬</text></svg>">
+  <meta name="description" content="Bộ tài liệu ôn thi toàn diện MAS202 (Xác suất Thống kê) Chương 5–9: công thức, máy tính mini đa năng, sổ tay ghi chú đồng bộ đám mây và bí kíp bấm Casio fx-580VN X.">
+  <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32.png">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥬</text></svg>" media="(prefers-reduced-motion: no-preference)">
+
+  <!-- ===== PWA (Progressive Web App) ===== -->
+  <link rel="manifest" href="/manifest.webmanifest">
+  <meta name="theme-color" content="#15803d" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0b0f19" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+  <!-- iOS Safari: cài đặt như app native -->
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="Cải Xanh Học">
+  <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+  <!-- Windows tiles -->
+  <meta name="msapplication-TileColor" content="#15803d">
   
   <!-- KaTeX CSS & JS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
@@ -66,6 +82,10 @@
       padding: 0;
     }
 
+    html {
+      -webkit-text-size-adjust: 100%;
+    }
+
     body {
       font-family: var(--font-main);
       background-color: var(--bg);
@@ -73,6 +93,7 @@
       line-height: 1.7;
       overflow-x: hidden;
       transition: background-color 0.25s ease, color 0.25s ease;
+      -webkit-tap-highlight-color: transparent;
     }
 
     /* TOP HEADER */
@@ -1056,6 +1077,229 @@
       display: none;
     }
 
+    /* Backdrop cho sidebar mobile (UX: chạm ngoài để đóng) */
+    .sidebar-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(6, 12, 8, 0.5);
+      backdrop-filter: blur(2px);
+      -webkit-backdrop-filter: blur(2px);
+      z-index: 890;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.28s ease;
+    }
+    .sidebar-backdrop.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Nút cài đặt PWA (chỉ hiện trên trình duyệt hỗ trợ install) */
+    .install-chip {
+      display: none;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 14px;
+      border-radius: 10px;
+      border: 1px solid var(--primary);
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.88rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      font-family: var(--font-main);
+    }
+    .install-chip:hover {
+      background: var(--primary);
+      color: #fff;
+    }
+    .install-chip.visible {
+      display: inline-flex;
+    }
+
+    /* Banner gợi ý cài đặt PWA cho mobile */
+    .install-banner {
+      position: fixed;
+      left: 50%;
+      transform: translate(-50%, 140%);
+      bottom: calc(96px + env(safe-area-inset-bottom, 0px));
+      z-index: 1200;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 12px 14px;
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.18);
+      max-width: min(92vw, 420px);
+      transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .install-banner.show {
+      transform: translate(-50%, 0);
+    }
+    .install-banner-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      flex-shrink: 0;
+    }
+    .install-banner-text {
+      font-size: 0.82rem;
+      line-height: 1.35;
+      color: var(--text);
+    }
+    .install-banner-text strong {
+      color: var(--primary);
+      font-weight: 800;
+    }
+    .install-banner-actions {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .install-banner-cta {
+      border: none;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 700;
+      font-size: 0.8rem;
+      padding: 7px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      white-space: nowrap;
+      font-family: var(--font-main);
+    }
+    .install-banner-cta:hover { background: var(--primary-light); }
+    .install-banner-close {
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      font-size: 1rem;
+      cursor: pointer;
+      padding: 4px;
+      line-height: 1;
+    }
+
+    /* ===== PWA: Hướng dẫn cài đặt cho iOS (Safari không hỗ trợ auto-prompt) ===== */
+    .ios-install-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
+      z-index: 1400;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .ios-install-backdrop.show {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .ios-install-sheet {
+      position: fixed;
+      left: 50%;
+      bottom: 0;
+      transform: translate(-50%, 110%);
+      width: min(94vw, 440px);
+      z-index: 1401;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-bottom: none;
+      border-radius: 20px 20px 0 0;
+      padding: 20px 18px calc(20px + env(safe-area-inset-bottom, 0px));
+      text-align: center;
+      transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+      max-height: 86dvh;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+    }
+    .ios-install-sheet.show {
+      transform: translate(-50%, 0);
+    }
+    .ios-install-close {
+      position: absolute;
+      top: 12px;
+      right: 14px;
+      background: var(--surface-sidebar);
+      border: none;
+      color: var(--text-muted);
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      border-radius: 50%;
+      font-size: 0.9rem;
+      cursor: pointer;
+      line-height: 1;
+    }
+    .ios-install-appicon {
+      width: 64px;
+      height: 64px;
+      border-radius: 15px;
+      box-shadow: 0 4px 14px rgba(21, 128, 61, 0.28);
+      margin-bottom: 8px;
+    }
+    .ios-install-title {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+    .ios-install-sub {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+    .ios-install-steps {
+      list-style: none;
+      text-align: left;
+      margin: 0 0 14px;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .ios-install-steps li {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--surface-sidebar);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 10px 12px;
+      font-size: 0.88rem;
+      color: var(--text);
+      line-height: 1.45;
+    }
+    .ios-step-glyph {
+      flex-shrink: 0;
+      width: 34px;
+      height: 34px;
+      border-radius: 10px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+    }
+    .ios-install-ok {
+      width: 100%;
+      border: none;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 800;
+      font-size: 0.9rem;
+      padding: 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      font-family: var(--font-main);
+    }
+    .ios-install-ok:active { transform: scale(0.98); }
+
     @media (max-width: 1024px) {
       .sidebar {
         transform: translateX(-100%);
@@ -1063,6 +1307,7 @@
       }
       .sidebar.open {
         transform: translateX(0);
+        box-shadow: 16px 0 48px rgba(0,0,0,0.18);
       }
       .main-container {
         margin-left: 0;
@@ -1074,6 +1319,173 @@
       }
       .floating-notes-btn .notes-fab-label {
         display: none;
+      }
+      /* Header compact: thu gọn nhãn nút về icon-only cho vừa khung */
+      .brand-badge {
+        display: none;
+      }
+      .nav-actions {
+        gap: 6px;
+      }
+      .btn-label {
+        display: none;
+      }
+      .auth-btn-text {
+        display: none;
+      }
+      .user-name {
+        max-width: 96px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+    }
+
+    /* ============ MOBILE-FIRST PWA (tối ưu cho màn hình điện thoại) ============ */
+    @media (max-width: 640px) {
+      :root {
+        --header-height: calc(56px + env(safe-area-inset-top, 0px));
+      }
+      header {
+        height: var(--header-height);
+        padding: env(safe-area-inset-top, 0px) calc(10px + env(safe-area-inset-right, 0px)) 0 calc(10px + env(safe-area-inset-left, 0px));
+        align-items: center;
+        gap: 8px;
+      }
+      /* Logo & tiêu đề gọn hơn trên màn hình nhỏ */
+      .brand-logo {
+        font-size: 1.6rem;
+      }
+      .brand-title {
+        font-size: 0.98rem;
+        line-height: 1.2;
+      }
+      .nav-actions .btn {
+        padding: 9px 11px;
+        min-height: 42px;
+        min-width: 42px;
+        justify-content: center;
+        border-radius: 12px;
+      }
+      .nav-actions .btn-primary {
+        display: none; /* Ẩn nút In trên mobile, giữ tinh gọn. Người dùng vẫn dùng menu Print của trình duyệt */
+      }
+      .app-layout {
+        margin-top: var(--header-height);
+        min-height: calc(100dvh - var(--header-height));
+      }
+      .sidebar {
+        top: var(--header-height);
+        padding: 14px 12px calc(24px + env(safe-area-inset-bottom, 0px)) calc(12px + env(safe-area-inset-left, 0px));
+        width: min(86vw, 320px);
+      }
+      .toc-item a {
+        padding: 11px 12px;   /* tap-target ≥ 44px */
+        font-size: 0.92rem;
+      }
+      .toc-sublist a {
+        padding: 9px 10px;
+      }
+      .main-container {
+        padding: 18px 14px calc(120px + env(safe-area-inset-bottom, 0px)) calc(14px + env(safe-area-inset-right, 0px));
+      }
+      .calc-card {
+        padding: 16px;
+        border-radius: 14px;
+        margin-bottom: 24px;
+      }
+      /* Công thức KaTeX dài -> cuộn ngang local thay vì vỡ layout */
+      .content {
+        overflow-x: hidden;
+        overflow-wrap: anywhere;
+      }
+      .content .katex-display {
+        display: block;
+        overflow-x: auto;
+        overflow-y: hidden;
+        padding: 6px 2px;
+        -webkit-overflow-scrolling: touch;
+      }
+      .content .katex {
+        font-size: 0.98em;
+      }
+      /* Table & code không tràn khung */
+      .calc-card table,
+      .content table {
+        display: block;
+        max-width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      pre, code {
+        overflow-x: auto;
+        max-width: 100%;
+      }
+      /* Chặn proxy-bounce khi cuộn trong sidebar / drawer (chuyển động có quán tính chuẩn iOS) */
+      .sidebar, .notes-drawer {
+        overscroll-behavior: contain;
+        -webkit-overflow-scrolling: touch;
+      }
+      /* Input ≥16px để iOS Safari không tự zoom khi focus */
+      .search-input, .form-control, .notes-input, .notes-input-area textarea, input, select, textarea {
+        font-size: 16px !important;
+      }
+      /* Chống iOS tự động zoom khi focus input (font-size phải >= 16px) */
+      .search-input,
+      input[type="text"],
+      input[type="number"],
+      textarea {
+        font-size: 16px !important;
+      }
+      /* Sổ tay ghi chú: full-screen drawer, đệm safe-area tất cả các cạnh */
+      .notes-drawer {
+        width: 100vw;
+        max-width: 100vw;
+        border-left: none;
+        padding-top: env(safe-area-inset-top, 0px);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+        padding-left: env(safe-area-inset-left, 0px);
+      }
+      .notes-header {
+        padding: 12px 14px;
+      }
+      .notes-drawer-footer {
+        padding-bottom: calc(12px + env(safe-area-inset-bottom, 0px));
+      }
+      /* FAB ghi chú: hợp safe-area bottom, đủ to dễ bấm */
+      .floating-notes-container {
+        bottom: calc(16px + env(safe-area-inset-bottom, 0px));
+        right: calc(16px + env(safe-area-inset-right, 0px));
+      }
+      .floating-notes-btn {
+        width: 56px;
+        height: 56px;
+        border-radius: 50%;
+        padding: 0;
+        justify-content: center;
+        font-size: 1.35rem;
+      }
+      .notes-fab-label {
+        display: none;
+      }
+      /* Toast không đè FAB */
+      .toast-msg {
+        bottom: calc(90px + env(safe-area-inset-bottom, 0px));
+      }
+      /* Cắm nội dung nếu có toolbar trình duyệt ẩn hiện */
+      html, body {
+        overscroll-behavior-y: contain;
+      }
+      /* Container đánh dấu highlight drawer cũng full-width */
+      .hl-drawer {
+        width: 100vw !important;
+        max-width: 100vw !important;
+      }
+    }
+
+    /* Ưa thích standalone khi cài PWA: hình ảnh mép không thủng viền */
+    @media (display-mode: standalone) {
+      .brand-badge {
+        text-transform: none;
       }
     }
 
@@ -2074,23 +2486,29 @@
         </div>
       </div>
 
+      <button class="btn install-chip" id="btn-install-pwa" onclick="installPWA()" title="Cài đặt Cải Xanh Học như app">
+        📲 <span class="btn-label">Cài App</span>
+      </button>
       <button class="btn" onclick="scrollToCalc()" title="Mở máy tính thống kê">
-        🧮 Máy Tính Mini
+        🧮 <span class="btn-label">Máy Tính Mini</span>
       </button>
       <button class="btn" id="notes-header-btn" onclick="toggleNotesDrawer(true)" title="Sổ tay ghi chú học tập">
-        📝 Ghi Chú <span id="notes-badge" class="notes-count-badge">0</span>
+        📝 <span class="btn-label">Ghi Chú</span> <span id="notes-badge" class="notes-count-badge">0</span>
       </button>
       <button class="btn" id="theme-btn" onclick="toggleTheme()" title="Đổi giao diện">
-        🌓 Giao Diện
+        🌓 <span class="btn-label">Giao Diện</span>
       </button>
       <button class="btn btn-primary" onclick="window.print()" title="In ra PDF hoặc giấy">
-        🖨️ In / Lưu PDF
+        🖨️ <span class="btn-label">In / Lưu PDF</span>
       </button>
-      <button class="btn mobile-menu-btn" onclick="toggleSidebar()" title="Mục lục">
+      <button class="btn mobile-menu-btn" onclick="toggleSidebar()" title="Mục lục" aria-label="Mở mục lục">
         ☰
       </button>
     </div>
   </header>
+
+  <!-- SIDEBAR BACKDROP CHO MOBILE -->
+  <div class="sidebar-backdrop" id="sidebar-backdrop" onclick="toggleSidebar(false)"></div>
 
   <!-- APP LAYOUT -->
   <div class="app-layout">
@@ -6742,6 +7160,194 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
       </div>
     </div>
   </div>
+
+  <!-- ===== PWA: BANNER GỢI Ý CÀI ĐẶT (Android/Desktop Chromium) ===== -->
+  <div class="install-banner" id="install-banner" role="dialog" aria-label="Cài đặt ứng dụng Cải Xanh Học">
+    <img class="install-banner-icon" src="/icons/icon-192.png" alt="Biểu tượng Cải Xanh Học">
+    <div class="install-banner-text">
+      <strong>Cải Xanh Học MAS</strong><br>
+      Cài đặt app để học <strong>Offline</strong> &amp; mở nhanh như app native.
+    </div>
+    <div class="install-banner-actions">
+      <button class="install-banner-cta" onclick="installPWA()">Cài đặt</button>
+      <button class="install-banner-close" onclick="dismissInstallUI()" aria-label="Đóng gợi ý cài đặt">✕</button>
+    </div>
+  </div>
+
+  <!-- ===== PWA: HƯỚNG DẪN CÀI CHO iOS SAFARI ===== -->
+  <div class="ios-install-backdrop" id="ios-install-backdrop" onclick="closeIosInstallGuide()"></div>
+  <div class="ios-install-sheet" id="ios-install-sheet" role="dialog" aria-label="Hướng dẫn thêm app vào màn hình chính trên iPhone">
+    <button class="ios-install-close" onclick="closeIosInstallGuide()" aria-label="Đóng">✕</button>
+    <img class="ios-install-appicon" src="/icons/icon-192.png" alt="Biểu tượng Cải Xanh Học">
+    <div class="ios-install-title">Thêm vào Màn hình chính</div>
+    <div class="ios-install-sub">Trên iPhone/iPad, làm 3 bước dưới đây để học offline mọi lúc:</div>
+    <ol class="ios-install-steps">
+      <li><span class="ios-step-glyph">⤴</span><span>Mở trang bằng <strong>Safari</strong>, bấm nút <strong>Chia sẻ</strong> (hình vuông có mũi tên lên)</span></li>
+      <li><span class="ios-step-glyph">＋</span><span>Cuộn xuống, chọn <strong>"Thêm vào Màn hình chính"</strong></span></li>
+      <li><span class="ios-step-glyph">✓</span><span>Bấm <strong>"Thêm"</strong> — app 🥬 xuất hiện như app native!</span></li>
+    </ol>
+    <button class="ios-install-ok" onclick="closeIosInstallGuide()">Đã hiểu</button>
+  </div>
+
+  <!-- ===== PWA CORE: đăng ký Service Worker + trình cài đặt ===== -->
+  <script>
+    (function () {
+      "use strict";
+
+      var DISMISS_KEY = "cai_xanh_pwa_dismiss_until";
+      var BANNER_DELAY = 3500;
+      var DISMISS_DAYS = 7;
+
+      var isStandalone = function () {
+        return window.matchMedia("(display-mode: standalone)").matches ||
+               window.matchMedia("(display-mode: minimal-ui)").matches ||
+               window.navigator.standalone === true;
+      };
+
+      var isMobileViewport = function () {
+        return window.matchMedia("(max-width: 1024px)").matches;
+      };
+
+      var isIOS = function () {
+        return (/iphone|ipad|ipod/i.test(navigator.userAgent) ||
+                (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1)) &&
+               !window.MSStream;
+      };
+
+      var hasSw = "serviceWorker" in navigator;
+
+      // 1) ĐĂNG KÝ SERVICE WORKER — điều kiện bắt buộc để app cài được & dùng offline
+      if (hasSw) {
+        window.addEventListener("load", function () {
+          navigator.serviceWorker.register("./sw.js").catch(function () {
+            /* im lặng: môi trường không hỗ trợ (file://, iframe...) */
+          });
+        });
+      }
+
+      // 2) BẮT BEFOREINSTALLPROMPT (Chromium)
+      var deferredPrompt = null;
+      var promptReady = false; // banner ưu tiên theo "sự kiện native đã sẵn sàng"
+
+      window.addEventListener("beforeinstallprompt", function (e) {
+        e.preventDefault();
+        deferredPrompt = e;
+        promptReady = true;
+        updateInstallUI();
+      });
+
+      window.addEventListener("appinstalled", function () {
+        deferredPrompt = null;
+        promptReady = false;
+        hideInstallBanner();
+        closeIosInstallGuide();
+        setDismiss(30); // đã cài -> đừng làm phiền nữa
+        if (typeof showToast === "function") {
+          showToast("🥬 Đã cài app — mở từ màn hình chính để học offline nhé!");
+        }
+      });
+
+      // 3) QUẢN LÝ "ĐÃ BIẾT TỪ NHẸ"
+      function setDismiss(days) {
+        try {
+          localStorage.setItem(DISMISS_KEY, String(Date.now() + days * 864e5));
+        } catch (err) {}
+      }
+      function isDismissed() {
+        try {
+          var until = Number(localStorage.getItem(DISMISS_KEY) || 0);
+          return until > Date.now();
+        } catch (err) {
+          return false;
+        }
+      }
+
+      var banner = document.getElementById("install-banner");
+
+      function showInstallBanner() {
+        if (banner && !isStandalone()) banner.classList.add("show");
+      }
+      function hideInstallBanner() {
+        if (banner) banner.classList.remove("show");
+      }
+      function updateInstallUI() {
+        // Nút chip ở header: hiện khi native prompt sẵn sàng, hoặc là thiết bị iOS mobile chưa cài
+        var chip = document.getElementById("btn-install-pwa");
+        if (!chip) return;
+        if (!isStandalone() && (promptReady || (isIOS() && isMobileViewport()))) {
+          chip.classList.add("visible");
+        }
+        if (promptReady && !isStandalone() && !isDismissed() && isMobileViewport()) {
+          setTimeout(showInstallBanner, BANNER_DELAY);
+        }
+      }
+
+      // API toàn cục dùng bởi onclick trong markup
+      window.installPWA = function () {
+        if (isStandalone()) {
+          if (typeof showToast === "function") showToast("App đang chạy với tư cách app đã cài rồi!");
+          return;
+        }
+        if (deferredPrompt) {
+          deferredPrompt.prompt();
+          deferredPrompt.userChoice.then(function (choice) {
+            if (choice && choice.outcome === "dismissed") setDismiss(3);
+            deferredPrompt = null;
+          });
+          return;
+        }
+        if (isIOS()) {
+          showIosGuide();
+          return;
+        }
+        if (typeof showToast === "function") {
+          showToast("Trình duyệt hiện tại chưa hỗ trợ cài đặt app.");
+        }
+      };
+
+      window.dismissInstallUI = function () {
+        hideInstallBanner();
+        setDismiss(DISMISS_DAYS);
+      };
+
+      // 4) HƯỚNG DẪN iOS
+      var iosSheet = document.getElementById("ios-install-sheet");
+      var iosBackdrop = document.getElementById("ios-install-backdrop");
+
+      function showIosGuide() {
+        if (iosSheet && iosBackdrop) {
+          iosSheet.classList.add("show");
+          iosBackdrop.classList.add("show");
+        }
+      }
+      window.closeIosInstallGuide = function () {
+        if (iosSheet && iosBackdrop) {
+          iosSheet.classList.remove("show");
+          iosBackdrop.classList.remove("show");
+        }
+        setDismiss(DISMISS_DAYS);
+      };
+
+      // 5) TỰ GỢI Ý MỘT LẦN SAU KHI TRANG HOÀT ĐỘNG (mobile chưa cài, chưa dismiss)
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          if (isStandalone() || isDismissed()) return;
+          if (isIOS() && isMobileViewport()) {
+            showInstallBanner(); // iOS: banner sẽ đổi thành hướng dẫn khi bấm Cài đặt
+          }
+          updateInstallUI();
+        }, BANNER_DELAY);
+
+        // Mở từ PWA shortcuts: ?action=calc -> cuộn tới máy tính, ?action=notes -> mở sổ tay
+        var action = new URLSearchParams(location.search).get("action");
+        if (action === "calc" && typeof scrollToCalc === "function") {
+          setTimeout(scrollToCalc, 400);
+        } else if (action === "notes" && typeof toggleNotesDrawer === "function") {
+          setTimeout(function () { toggleNotesDrawer(true); }, 400);
+        }
+      });
+    })();
+  </script>
 
 </body>
 </html>
