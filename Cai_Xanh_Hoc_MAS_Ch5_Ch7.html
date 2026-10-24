@@ -5431,6 +5431,235 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
   - **B5**: Vì $Z_{STAT} = 1.73 > 1.645$ (và $p\text{-value} = 0.0416 < 0.05$), ta **BÁC BỎ $H_0$**. Có bằng chứng thống kê có ý nghĩa kết luận rằng tỷ lệ hoàn trả sai của Medicare thực sự vượt quá $10\%$ (cần chấn chỉnh công tác kiểm toán).
 
 ---
+
+
+---
+
+# PHẦN 10: CẨM NANG BIỆN LUẬN SONG NGỮ (ANH - VIỆT) & QUY CHUẨN LÀM BÀI THI GIẤY
+
+> [!IMPORTANT]
+> **TẦM QUAN TRỌNG ĐẶC BIỆT KHI THI TỰ LUẬN / THI GIẤY (EOS & ASSIGNMENTS):**
+> 1. Đề thi MAS202 tại Đại học FPT được ra **100% bằng tiếng Anh**.
+> 2. Giảng viên chấm thi bài giấy (Handwritten exam / On-paper test) chấm theo **Rubric barem điểm từng bước**. Nếu chỉ bấm máy Casio ra đáp số mà thiếu câu chữ biện luận hoặc viết sai cấu trúc chuẩn, bạn sẽ **bị trừ từ 50% đến 80% số điểm** của câu đó!
+> 3. Tuyệt đối **KHÔNG dùng Google Dịch bừa bãi** vì thuật ngữ thống kê có những quy ước bất di bất dịch (ví dụ: không được viết *"Accept $H_0$"*, không được nói *"Probability that $\mu$ is in interval"*).
+> 
+> Dưới đây là bộ khung mẫu câu chuẩn xác tuyệt đối theo giáo trình **Pearson Basic Business Statistics (Berenson 14th Global Edition)**.
+
+---
+
+## 10.1. QUY CHUẨN 6 BƯỚC LÀM BÀI THI GIẤY (STANDARD 6-STEP PAPER EXAM TEMPLATE)
+
+Khi gặp bất kỳ bài toán kiểm định giả thuyết (Hypothesis Testing) nào trong bài thi giấy, bạn hãy viết đúng thứ tự 6 bước sau vào bài làm:
+
+```
+[BƯỚC 1] State Hypotheses & Define Parameter (Đặt giả thuyết & Nêu rõ ý nghĩa tham số)
+[BƯỚC 2] Significance Level & Check Assumptions (Nêu mức ý nghĩa α & Kiểm tra điều kiện mẫu)
+[BƯỚC 3] Test Statistic Formula & Calculation (Ghi công thức & Thay số tính giá trị thống kê)
+[BƯỚC 4] Decision Rule: Critical Value or P-value (Quy tắc quyết định: Giá trị tới hạn hoặc p-value)
+[BƯỚC 5] Statistical Decision (Quyết định thống kê: Reject H0 hoặc Fail to reject H0)
+[BƯỚC 6] Managerial / Practical Conclusion (Kết luận thực tế gắn liền với câu hỏi đề bài)
+```
+
+### Khung mẫu trình bày chi tiết (Fill-in Template):
+
+```text
+Step 1: Hypotheses
+  - Let μ be the true mean [tên biến, ví dụ: battery life / waiting time] (or π be the true proportion of [tên sự kiện]).
+  - H0: μ = μ0  (or μ ≤ μ0 / μ ≥ μ0)
+  - H1: μ ≠ μ0  (or μ > μ0 / μ < μ0)
+
+Step 2: Level of Significance & Assumptions
+  - Significance level: α = 0.05 (hoặc 0.01, 0.10).
+  - Since σ is unknown and n = [số] (≥ 30 or population is normal), we use the one-sample t-test with df = n - 1 = [số].
+
+Step 3: Test Statistic
+  - Formula: t_STAT = (X̄ - μ0) / (S / √n)
+  - Calculation: t_STAT = ([X̄] - [μ0]) / ([S] / √[n]) = [kết quả số]
+
+Step 4: Decision Rule
+  - [Cách 1: Critical Value]
+    With α = [số] and df = [số], the critical value is t_crit = ±[số].
+    Reject H0 if t_STAT > [số] (or t_STAT < -[số] or |t_STAT| > [số]).
+  - [Cách 2: P-value]
+    p-value = P(t > t_STAT) = [số].
+    Reject H0 if p-value < α.
+
+Step 5: Statistical Decision
+  - Since t_STAT = [số] > t_crit = [số] (or p-value = [số] < α = [số]), we REJECT H0.
+  (hoặc: Since t_STAT does not fall in the rejection region (p-value ≥ α), we FAIL TO REJECT H0).
+
+Step 6: Managerial Conclusion
+  - At the [α*100]% significance level, there is SUFFICIENT statistical evidence to conclude that [nội dung H1 bằng tiếng Anh].
+  (hoặc: At the [α*100]% significance level, there is INSUFFICIENT evidence to conclude that [nội dung H1 bằng tiếng Anh]).
+```
+
+---
+
+## 10.2. BỘ MẪU CÂU BIỆN LUẬN CHƯƠNG 9: KIỂM ĐỊNH GIẢ THUYẾT (HYPOTHESIS TESTING)
+
+### A. Mẫu câu ra Quyết định & Kết luận thực tế (Decisions & Conclusions)
+
+#### 1. Trường hợp BÁC BỎ $H_0$ (Reject $H_0$ - Có bằng chứng ủng hộ $H_1$)
+
+| Thành phần | Tiếng Anh (Dùng khi làm bài thi) | Tiếng Việt (Ý nghĩa bản chất) |
+| :--- | :--- | :--- |
+| **So sánh Critical Value** | *Since $Z_{STAT} = 2.45 > Z_{\alpha} = 1.645$, it falls into the rejection region.* | Vì $Z_{STAT} = 2.45 > 1.645$, giá trị kiểm định rơi vào miền bác bỏ. |
+| **So sánh P-value** | *Since $p\text{-value} = 0.0071 < \alpha = 0.05$, we reject $H_0$.* | Vì $p\text{-value} = 0.0071 < 0.05$, ta bác bỏ giả thuyết $H_0$. |
+| **Quyết định** | *We reject the null hypothesis $H_0$.* | Chúng ta bác bỏ giả thuyết không $H_0$. |
+| **Kết luận thực tế (Mẫu)** | *At the $5\%$ level of significance, there is **sufficient statistical evidence** to conclude that the mean waiting time is less than $5$ minutes.* | Ở mức ý nghĩa $5\%$, có **đủ bằng chứng thống kê** để kết luận rằng thời gian chờ đợi trung bình ít hơn $5$ phút. |
+| **Kết luận (Dạng 2)** | *There is enough evidence to support the claim that the defective rate exceeds $2\%$.* | Có đủ bằng chứng để ủng hộ nhận định rằng tỷ lệ phế phẩm vượt quá $2\%$. |
+
+> [!TIP]
+> **Cụm từ then chốt**: Luôn bắt đầu bằng *"At the $\alpha$ level of significance, there is sufficient evidence to conclude that..."*
+
+---
+
+#### 2. Trường hợp KHÔNG BÁC BỎ $H_0$ (Fail to Reject $H_0$ - Chưa đủ bằng chứng)
+
+| Thành phần | Tiếng Anh (Dùng khi làm bài thi) | Tiếng Việt (Ý nghĩa bản chất) |
+| :--- | :--- | :--- |
+| **So sánh Critical Value** | *Since $t_{STAT} = 1.25 < t_{\alpha, 24} = 1.7109$, it does not fall into the rejection region.* | Vì $t_{STAT} = 1.25 < 1.7109$, giá trị kiểm định không nằm trong miền bác bỏ. |
+| **So sánh P-value** | *Since $p\text{-value} = 0.112 > \alpha = 0.05$, we fail to reject $H_0$.* | Vì $p\text{-value} = 0.112 > 0.05$, ta không bác bỏ giả thuyết $H_0$. |
+| **Quyết định** | *We fail to reject $H_0$ (or: We do not reject $H_0$).* | Chúng ta chưa đủ bằng chứng để bác bỏ $H_0$. |
+| **Kết luận thực tế (Mẫu)** | *At the $5\%$ level of significance, there is **insufficient evidence** to conclude that the mean salary is different from $\$50,000$.* | Ở mức ý nghĩa $5\%$, **không có đủ bằng chứng** để kết luận rằng mức lương trung bình khác $\$50,000$. |
+| **Kết luận (Dạng 2)** | *There is not enough statistical evidence to support the manufacturer's claim.* | Không có đủ bằng chứng thống kê để ủng hộ tuyên bố của nhà sản xuất. |
+
+> [!CAUTION]
+> **LỖI TRỪ ĐIỂM NẶNG NHẤT:** Tuyệt đối **KHÔNG ĐƯỢC VIẾT** *"We accept $H_0$"* (Chúng ta chấp nhận $H_0$). Trong khoa học thống kê, bạn chỉ có thể nói *"Fail to reject $H_0$"* (Chưa đủ chứng cứ để bác bỏ), tương tự như tòa án tuyên *"Không đủ bằng chứng kết tội"* chứ không tuyên *"Vô tội tuyệt đối"*.
+
+---
+
+### B. Mẫu câu định nghĩa & giải thích P-value (P-value Interpretation)
+
+Đề thi tự luận rất hay có câu hỏi phụ 1 điểm: *"Explain the meaning of the p-value in this context"*.
+
+- **Tiếng Anh chuẩn Pearson:**
+  > *"The p-value is the probability of obtaining a test statistic equal to or more extreme than the observed sample result, assuming that the null hypothesis $H_0$ is true."*
+- **Tiếng Việt:**
+  > *"Giá trị p-value là xác suất thu được một giá trị kiểm định bằng hoặc cực đoan hơn kết quả quan sát được từ mẫu, với giả định rằng giả thuyết không $H_0$ là đúng."*
+- **Biện luận theo ngữ cảnh bài toán (Ví dụ đề bài kiểm định $\mu = 10$ với $p\text{-value} = 0.03$):**
+  > *"If the true population mean is indeed $10$, there is only a $3\%$ chance of observing a sample mean as far away from $10$ as the one we obtained. Since this chance is smaller than $\alpha = 5\%$, we reject $H_0$."*  
+  > *(Nếu trung bình tổng thể thực sự bằng $10$, thì chỉ có $3\%$ cơ hội ngẫu nhiên thu được một mẫu lệch xa số $10$ như mẫu ta vừa thấy. Vì xác suất này quá nhỏ so với mức ý nghĩa $5\%$, ta bác bỏ $H_0$.)*
+
+---
+
+### C. Mẫu câu biện luận Sai lầm Loại I & Loại II (Type I & Type II Errors)
+
+| Khái niệm | Tiếng Anh chuẩn | Dịch tiếng Việt | Diễn giải theo ngữ cảnh bài toán |
+| :--- | :--- | :--- | :--- |
+| **Type I Error ($\alpha$)** | *Rejecting a true null hypothesis $H_0$.* | Bác bỏ một giả thuyết $H_0$ trong khi nó thực sự đúng (Báo động giả / False Positive). | *"Concluding that the new drug is effective when in fact it has no effect."*<br>*(Kết luận thuốc mới có hiệu quả trong khi thực tế nó chẳng có tác dụng gì).* |
+| **Type II Error ($\beta$)** | *Failing to reject a false null hypothesis $H_0$.* | Không bác bỏ $H_0$ trong khi thực tế $H_0$ là sai (Bỏ sót lỗi / False Negative). | *"Failing to conclude that the new drug is effective when it actually works."*<br>*(Không nhận ra thuốc mới có hiệu quả trong khi thực tế nó thực sự chữa được bệnh).* |
+| **Power ($1 - \beta$)** | *The probability of correctly rejecting a false null hypothesis.* | Lực của kiểm định: Xác suất bác bỏ đúng một giả thuyết $H_0$ khi nó thực sự sai. | *"The probability of successfully detecting that the production process is out of control when it is indeed defective."* |
+
+---
+
+## 10.3. BỘ MẪU CÂU BIỆN LUẬN CHƯƠNG 8: ƯỚC LƯỢNG KHOẢNG TIN CẬY (CONFIDENCE INTERVALS)
+
+### A. Mẫu câu diễn giải Khoảng tin cậy (Confidence Interval Interpretation)
+
+Khi tính ra khoảng tin cậy ví dụ: $[15.2, 18.8]$ cho trung bình $\mu$:
+
+- **Tiếng Anh chuẩn:**
+  > *"We are $95\%$ confident that the true population mean [tên biến, ví dụ: delivery time] falls between $15.2$ and $18.8$ minutes."*
+- **Tiếng Việt:**
+  > *"Chúng ta có độ tin cậy $95\%$ rằng giá trị trung bình thực sự của tổng thể [thời gian giao hàng] nằm trong khoảng từ $15.2$ đến $18.8$ phút."*
+- **Cho bài toán tỷ lệ $\pi$ (ví dụ: $[0.42, 0.58]$):**
+  > *"We are $95\%$ confident that the true proportion of consumers who prefer Brand A is between $42\%$ and $58\%$."*  
+  > *(Chúng ta có độ tin cậy $95\%$ rằng tỷ lệ thực sự của người tiêu dùng thích Thương hiệu A nằm trong khoảng từ $42\%$ đến $58\%$.)*
+
+> [!CAUTION]
+> **BẪY LÝ THUYẾT KINH ĐIỂN:** Tuyệt đối **KHÔNG ĐƯỢC VIẾT**:  
+> ❌ *"There is a $95\%$ probability that the population mean $\mu$ is between $15.2$ and $18.8$."*  
+> **Lý do:** Tham số tổng thể $\mu$ là một **hằng số cố định** (fixed constant), không phải là biến ngẫu nhiên. Nó hoặc nằm trong khoảng đó, hoặc không nằm trong khoảng đó (xác suất là $1$ hoặc $0$, chứ không phải $0.95$). Thứ mang tính ngẫu nhiên $95\%$ là **phương pháp tạo khoảng từ các mẫu khác nhau**!
+
+---
+
+### B. Mẫu câu giải thích Mức độ tin cậy (Confidence Level Meaning)
+
+Đề bài: *"What does 95% confidence really mean?"*
+
+- **Tiếng Anh:**
+  > *"If all possible random samples of size $n$ were repeatedly selected from this population and a $95\%$ confidence interval was constructed for each sample, $95\%$ of these constructed intervals would contain the true population parameter $\mu$, while $5\%$ would not."*
+- **Tiếng Việt:**
+  > *"Nếu lặp lại việc lấy tất cả các mẫu ngẫu nhiên có cùng kích thước $n$ từ tổng thể này và lập khoảng tin cậy $95\%$ cho mỗi mẫu, thì $95\%$ số khoảng được tạo ra sẽ thực sự chứa tham số tổng thể $\mu$, và $5\%$ số khoảng sẽ không chứa $\mu$."*
+
+---
+
+### C. Dùng Khoảng tin cậy để Kiểm định Giả thuyết 2 phía (Testing via CI)
+
+- **Trường hợp giá trị $\mu_0$ nằm ngoài khoảng (Outside CI $\implies$ Reject $H_0$):**
+  - *EN*: *"Since the hypothesized value $\mu_0 = 20$ is NOT included in the $95\%$ confidence interval $[15.2, 18.8]$, we reject the null hypothesis $H_0: \mu = 20$ at the $\alpha = 0.05$ significance level."*
+  - *VI*: *"Vì giá trị giả thuyết $\mu_0 = 20$ KHÔNG nằm trong khoảng tin cậy $95\%$ $[15.2, 18.8]$, ta bác bỏ giả thuyết $H_0: \mu = 20$ ở mức ý nghĩa $\alpha = 0.05$."*
+- **Trường hợp giá trị $\mu_0$ nằm trong khoảng (Inside CI $\implies$ Fail to reject $H_0$):**
+  - *EN*: *"Since the hypothesized value $\mu_0 = 17$ falls within the $95\%$ confidence interval $[15.2, 18.8]$, we fail to reject $H_0: \mu = 17$ at $\alpha = 0.05$."*
+  - *VI*: *"Vì giá trị giả thuyết $\mu_0 = 17$ nằm trong khoảng tin cậy $95\%$ $[15.2, 18.8]$, ta chưa đủ bằng chứng để bác bỏ $H_0: \mu = 17$ ở mức ý nghĩa $\alpha = 0.05$."*
+
+---
+
+## 10.4. BỘ MẪU CÂU BIỆN LUẬN CHƯƠNG 7: PHÂN PHỐI CHỌN MẪU & CLT
+
+### A. Biện luận điều kiện áp dụng Định lý Giới hạn Trung tâm (Central Limit Theorem - CLT)
+
+- **Trường hợp mẫu lớn ($n \ge 30$):**
+  - *EN*: *"Since the sample size $n = 45 \ge 30$, by the Central Limit Theorem (CLT), the sampling distribution of the sample mean $\bar{X}$ is approximately normally distributed, regardless of the shape of the population distribution."*
+  - *VI*: *"Vì cỡ mẫu $n = 45 \ge 30$, theo Định lý Giới hạn Trung tâm (CLT), phân phối chọn mẫu của số trung bình $\bar{X}$ xấp xỉ phân phối chuẩn, bất kể phân phối ban đầu của tổng thể có hình dạng gì."*
+- **Trường hợp mẫu nhỏ ($n < 30$) nhưng đề bài cho tổng thể chuẩn:**
+  - *EN*: *"Since the population is assumed to be normally distributed, the sampling distribution of $\bar{X}$ is strictly normally distributed for any sample size $n$."*
+  - *VI*: *"Vì tổng thể được giả định có phân phối chuẩn, nên phân phối chọn mẫu của $\bar{X}$ luôn tuân theo phân phối chuẩn với bất kỳ kích thước mẫu $n$ nào."*
+- **Trường hợp tỷ lệ mẫu $p$ (Proportion):**
+  - *EN*: *"Since $n\pi = 100(0.20) = 20 \ge 5$ and $n(1-\pi) = 100(0.80) = 80 \ge 5$, the sampling distribution of the sample proportion $p$ is approximately normal."*
+  - *VI*: *"Vì $n\pi \ge 5$ và $n(1-\pi) \ge 5$, phân phối chọn mẫu của tỷ lệ mẫu $p$ xấp xỉ phân phối chuẩn."*
+
+---
+
+## 10.5. BỘ MẪU CÂU BIỆN LUẬN CHƯƠNG 5 & 6: BIẾN NGẪU NHIÊN & PHÂN PHỐI XÁC SUẤT
+
+### A. Biện luận Kỳ vọng $E(X)$ & Độ lệch chuẩn $\sigma$
+
+- **Kỳ vọng $E(X)$ (Expected Value):**
+  - *EN*: *"The expected value $E(X) = 2.4$ indicates that, on average, over many repetitions in the long run, the company can expect to sell $2.4$ insurance policies per day."*
+  - *VI*: *"Kỳ vọng $E(X) = 2.4$ biểu thị rằng, tính trung bình trong dài hạn qua nhiều ngày lặp lại, công ty kỳ vọng bán được $2.4$ hợp đồng bảo hiểm mỗi ngày."*
+- **Độ lệch chuẩn $\sigma$ (Standard Deviation):**
+  - *EN*: *"The standard deviation $\sigma = 1.12$ measures the variability, dispersion, or risk of daily sales around the average expectation."*
+  - *VI*: *"Độ lệch chuẩn $\sigma = 1.12$ đo lường mức độ biến động, phân tán hoặc mức độ rủi ro của doanh số bán hàng hàng ngày xung quanh giá trị kỳ vọng trung bình."*
+
+### B. Biện luận Hiệp phương sai & Hệ số tương quan (Portfolio Risk & Return)
+
+- **Hiệp phương sai âm ($\sigma_{XY} < 0$):**
+  - *EN*: *"A negative covariance ($\sigma_{XY} = -45$) means that when Stock X increases in return, Stock Y tends to decrease. Combining these two stocks provides significant diversification benefit (reduces overall portfolio risk)."*
+  - *VI*: *"Hiệp phương sai âm biểu thị rằng khi lợi suất cổ phiếu X tăng, cổ phiếu Y có xu hướng giảm. Việc kết hợp 2 cổ phiếu này giúp đa dạng hóa danh mục đầu tư hiệu quả (giảm thiểu rủi ro tổng thể)."*
+- **Hệ số tương quan ($r$ hoặc $\rho$):**
+  - *EN*: *"$\rho = -0.85$ indicates a strong negative linear relationship between the returns of the two assets."*
+  - *VI*: *"$\rho = -0.85$ thể hiện mối quan hệ tuyến tính nghịch biến rất mạnh giữa tỷ suất sinh lời của hai tài sản."*
+
+### C. Biện luận Phân vị / Tỷ lệ phần trăm trong Phân phối Chuẩn (Percentiles / Top % - Bottom %)
+
+- *EN*: *"A score of $85$ represents the $90\text{th}$ percentile, meaning that $90\%$ of the candidates scored below $85$, and only $10\%$ scored above $85$."*
+- *VI*: *"Điểm số $85$ đại diện cho phân vị thứ $90$, có nghĩa là $90\%$ thí sinh đạt điểm dưới $85$, và chỉ có $10\%$ thí sinh đạt điểm trên $85$ (thuộc top $10\%$ xuất sắc nhất)."*
+
+---
+
+## 10.6. TỔNG HỢP TỪ VỰNG TIẾNG ANH "SỐNG CÒN" KHI ĐỌC ĐỀ THI
+
+### 1. Bảng nhận diện Dấu Giả thuyết Đối $H_1$ từ đề bài
+
+| Cụm từ tiếng Anh trong đề bài | Nghĩa tiếng Việt | Dấu trong $H_1$ | Dạng kiểm định |
+| :--- | :--- | :---: | :--- |
+| *greater than, more than, exceeds, higher, increase, improved, above* | lớn hơn, nhiều hơn, vượt quá, tăng lên, cao hơn | $>$ | **Upper-tail test** (Đuôi phải/trên) |
+| *less than, fewer than, lower, decrease, reduced, below, under* | nhỏ hơn, ít hơn, giảm đi, thấp hơn, dưới mức | $<$ | **Lower-tail test** (Đuôi trái/dưới) |
+| *different from, has changed, is not equal to, has an effect, differs* | khác biệt, đã thay đổi, không bằng, có sự ảnh hưởng | $\neq$ | **Two-tail test** (Hai đuôi) |
+
+### 2. Bảng thuật ngữ chỉ thị hành động (Action Verbs & Key Directives)
+
+- **Claim / State**: Nhận định, khẳng định ban đầu của đề bài (thường nằm ở $H_1$ nếu đề yêu cầu kiểm tra xem nhận định có đúng không).
+- **At the $\alpha = 0.05$ significance level**: Tại mức ý nghĩa $\alpha = 0.05$.
+- **Test statistic**: Giá trị thống kê kiểm định ($Z_{STAT}$ hoặc $t_{STAT}$).
+- **Critical value**: Giá trị tới hạn ($Z_{crit}$ hoặc $t_{crit}$).
+- **Rejection region**: Miền bác bỏ (vùng chấp nhận bác bỏ $H_0$).
+- **Sufficient statistical evidence**: Đủ bằng chứng thống kê.
+- **Insufficient statistical evidence**: Không đủ bằng chứng thống kê.
+- **Margin of error ($e$)**: Sai số biên độ cho phép khi ước lượng.
+- **Pooled variance ($S_p^2$)**: Phương sai gộp (trong so sánh 2 mẫu độc lập có phương sai bằng nhau).
 </script>
 
   <script>
