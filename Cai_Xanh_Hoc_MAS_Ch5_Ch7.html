@@ -1920,402 +1920,8 @@
     }
 
   
-    /* ==========================================================================
-       INTERACTIVE HIGHLIGHT & HOVER NOTE SYSTEM (CẢI XANH MAS202)
-       ========================================================================== */
-    .user-inline-highlight {
-      background-color: var(--hl-bg, #FEF08A);
-      color: #0F172A !important;
-      padding: 2px 5px;
-      border-radius: 4px;
-      border-bottom: 2px solid rgba(0, 0, 0, 0.25);
-      cursor: help;
-      display: inline;
-      box-decoration-break: clone;
-      -webkit-box-decoration-break: clone;
-      transition: all 0.18s ease;
-      position: relative;
-    }
-    .user-inline-highlight:hover {
-      filter: brightness(0.92);
-      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.18);
-    }
-    .user-inline-highlight.hl-pulse-active {
-      animation: hlPulse 1.8s ease;
-    }
-    @keyframes hlPulse {
-      0% { box-shadow: 0 0 0 0 rgba(21, 128, 61, 0.8); }
-      40% { box-shadow: 0 0 0 12px rgba(21, 128, 61, 0); }
-      80% { box-shadow: 0 0 0 16px rgba(21, 128, 61, 0); }
-      100% { box-shadow: none; }
-    }
 
-    /* Floating Pill when Text is Selected */
-    .selection-highlight-pill {
-      position: absolute;
-      display: none;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 14px;
-      background: linear-gradient(135deg, #15803D 0%, #166534 100%);
-      color: #FFFFFF;
-      border-radius: 9999px;
-      font-size: 0.82rem;
-      font-weight: 700;
-      box-shadow: 0 8px 24px rgba(21, 128, 61, 0.4);
-      cursor: pointer;
-      z-index: 1250;
-      transform: translateY(-6px);
-      transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
-      user-select: none;
-      border: 1px solid rgba(255, 255, 255, 0.25);
-      white-space: nowrap;
-    }
-    .selection-highlight-pill:hover {
-      transform: translateY(-8px) scale(1.05);
-      background: linear-gradient(135deg, #16A34A 0%, #15803D 100%);
-      box-shadow: 0 12px 28px rgba(22, 163, 74, 0.45);
-    }
-    .selection-highlight-pill::after {
-      content: '';
-      position: absolute;
-      bottom: -6px;
-      left: 50%;
-      transform: translateX(-50%);
-      border-width: 6px 6px 0 6px;
-      border-style: solid;
-      border-color: #166534 transparent transparent transparent;
-    }
-
-    /* Hover Tooltip for Highlights */
-    .highlight-hover-tooltip {
-      position: absolute;
-      display: none;
-      z-index: 1260;
-      width: 320px;
-      max-width: 90vw;
-      background: #0F172A;
-      color: #F8FAFC;
-      padding: 12px 14px;
-      border-radius: 12px;
-      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.35);
-      font-size: 0.86rem;
-      line-height: 1.5;
-      pointer-events: auto;
-      border: 1px solid rgba(255, 255, 255, 0.12);
-      transition: opacity 0.15s ease, transform 0.15s ease;
-      animation: tooltipPop 0.18s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    @keyframes tooltipPop {
-      0% { opacity: 0; transform: translateY(6px) scale(0.96); }
-      100% { opacity: 1; transform: translateY(0) scale(1); }
-    }
-    .hl-tooltip-header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 8px;
-      padding-bottom: 6px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-    }
-    .hl-tooltip-badge {
-      font-size: 0.75rem;
-      font-weight: 700;
-      color: #4ADE80;
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-    .hl-tooltip-actions {
-      display: flex;
-      gap: 6px;
-    }
-    .hl-tooltip-btn {
-      background: rgba(255, 255, 255, 0.12);
-      border: none;
-      color: #E2E8F0;
-      font-size: 0.74rem;
-      padding: 3px 8px;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.15s ease;
-    }
-    .hl-tooltip-btn:hover {
-      background: rgba(255, 255, 255, 0.25);
-      color: #FFFFFF;
-    }
-    .hl-tooltip-btn.btn-delete:hover {
-      background: #EF4444;
-      color: #FFFFFF;
-    }
-    .hl-tooltip-content {
-      color: #F1F5F9;
-      word-break: break-word;
-      white-space: pre-wrap;
-    }
-    .hl-tooltip-arrow {
-      position: absolute;
-      width: 10px;
-      height: 10px;
-      background: #0F172A;
-      transform: rotate(45deg);
-      border-right: 1px solid rgba(255, 255, 255, 0.12);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-    }
-
-    /* Modal for Creating & Editing Highlight Note */
-    .highlight-modal-backdrop {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      background: rgba(15, 23, 42, 0.55);
-      backdrop-filter: blur(4px);
-      z-index: 1290;
-      display: none;
-    }
-    .highlight-note-modal {
-      position: fixed;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 480px;
-      max-width: 92vw;
-      background: var(--surface);
-      border: 1px solid var(--border);
-      border-radius: 16px;
-      box-shadow: 0 24px 50px rgba(0, 0, 0, 0.25);
-      z-index: 1300;
-      display: none;
-      flex-direction: column;
-      overflow: hidden;
-      animation: modalFadeIn 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-    @keyframes modalFadeIn {
-      0% { opacity: 0; transform: translate(-50%, -46%) scale(0.96); }
-      100% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
-    }
-    .hl-modal-header {
-      padding: 16px 20px;
-      background: var(--surface-sidebar);
-      border-bottom: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .hl-modal-title {
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--text);
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-    .hl-modal-close {
-      background: none;
-      border: none;
-      font-size: 1.25rem;
-      color: var(--text-muted);
-      cursor: pointer;
-      line-height: 1;
-      padding: 4px;
-      border-radius: 6px;
-    }
-    .hl-modal-close:hover {
-      color: var(--text);
-      background: var(--border);
-    }
-    .hl-modal-body {
-      padding: 18px 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
-    .hl-preview-box {
-      background: var(--surface-sidebar);
-      border-left: 4px solid var(--primary);
-      padding: 10px 14px;
-      border-radius: 6px;
-      font-size: 0.88rem;
-      font-style: italic;
-      color: var(--text);
-      max-height: 90px;
-      overflow-y: auto;
-      line-height: 1.4;
-    }
-    .hl-color-picker-label {
-      font-size: 0.8rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 6px;
-    }
-    .hl-color-palette {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-    .hl-color-chip {
-      width: 28px;
-      height: 28px;
-      border-radius: 50%;
-      border: 2px solid transparent;
-      cursor: pointer;
-      transition: transform 0.15s ease, border-color 0.15s ease;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    }
-    .hl-color-chip:hover {
-      transform: scale(1.15);
-    }
-    .hl-color-chip.active {
-      border-color: var(--text);
-      transform: scale(1.18);
-      box-shadow: 0 0 0 2px var(--surface), 0 0 0 4px var(--primary);
-    }
-    .hl-textarea {
-      width: 100%;
-      min-height: 95px;
-      padding: 10px 12px;
-      font-family: inherit;
-      font-size: 0.9rem;
-      color: var(--text);
-      background: var(--bg);
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      resize: vertical;
-    }
-    .hl-textarea:focus {
-      outline: none;
-      border-color: var(--primary);
-      box-shadow: 0 0 0 3px var(--primary-soft);
-    }
-    .hl-modal-footer {
-      padding: 14px 20px;
-      background: var(--surface-sidebar);
-      border-top: 1px solid var(--border);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-    .hl-modal-tip {
-      font-size: 0.78rem;
-      color: var(--text-muted);
-    }
-
-    /* Tab Switcher inside Notes Drawer */
-    .notes-tabs-bar {
-      display: flex;
-      border-bottom: 1px solid var(--border);
-      background: var(--surface);
-    }
-    .notes-tab-btn {
-      flex: 1;
-      padding: 11px 14px;
-      background: none;
-      border: none;
-      border-bottom: 2px solid transparent;
-      font-size: 0.84rem;
-      font-weight: 600;
-      color: var(--text-muted);
-      cursor: pointer;
-      transition: all 0.15s ease;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
-    .notes-tab-btn:hover {
-      color: var(--text);
-      background: var(--surface-sidebar);
-    }
-    .notes-tab-btn.active {
-      color: var(--primary);
-      border-bottom-color: var(--primary);
-      background: var(--primary-soft);
-    }
-    .tab-badge {
-      font-size: 0.72rem;
-      padding: 1px 6px;
-      border-radius: 9999px;
-      background: var(--border);
-      color: var(--text);
-    }
-    .notes-tab-btn.active .tab-badge {
-      background: var(--primary);
-      color: #FFFFFF;
-    }
-
-    /* Highlight Items in Drawer */
-    .hl-drawer-item {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 10px;
-      padding: 12px 14px;
-      margin-bottom: 10px;
-      transition: box-shadow 0.15s ease;
-    }
-    .hl-drawer-item:hover {
-      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
-    }
-    .hl-drawer-quote {
-      font-size: 0.84rem;
-      font-style: italic;
-      color: var(--text);
-      padding: 6px 10px;
-      border-left: 3px solid var(--primary);
-      background: var(--surface-sidebar);
-      border-radius: 4px;
-      margin-bottom: 8px;
-      word-break: break-word;
-    }
-    .hl-drawer-note {
-      font-size: 0.88rem;
-      color: var(--text);
-      white-space: pre-wrap;
-      margin-bottom: 8px;
-    }
-    .hl-drawer-footer {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      font-size: 0.76rem;
-      color: var(--text-muted);
-    }
-    .hl-drawer-actions {
-      display: flex;
-      gap: 6px;
-    }
-    .btn-hl-jump {
-      background: var(--primary-soft);
-      color: var(--primary);
-      border: none;
-      padding: 3px 8px;
-      border-radius: 6px;
-      font-size: 0.74rem;
-      font-weight: 600;
-      cursor: pointer;
-      transition: background 0.15s ease;
-    }
-    .btn-hl-jump:hover {
-      background: var(--primary);
-      color: #FFFFFF;
-    }
-    .btn-hl-del {
-      background: none;
-      color: #EF4444;
-      border: none;
-      padding: 3px 6px;
-      border-radius: 6px;
-      font-size: 0.74rem;
-      cursor: pointer;
-    }
-    .btn-hl-del:hover {
-      background: #FEE2E2;
-    }
+  
 
   
     /* ==========================================================================
@@ -6019,6 +5625,11 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
 
       // Cập nhật Mục lục: Chỉ hiện Phần 6 nếu đăng nhập chính chủ
       buildTOC(isAuth);
+
+      // Khôi phục highlight nếu vừa mở khóa Phần 6
+      if (isAuth) {
+        restoreAllHighlights();
+      }
     }
 
     // 4. Build Table of Contents & Inline Note Triggers
@@ -6161,6 +5772,9 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
         localStorage.setItem(NOTES_STORAGE_KEY, JSON.stringify(notes));
       } catch (e) {
         console.error("Error writing notes to localStorage:", e);
+      }
+      if (currentUser) {
+        syncToCloud();
       }
     }
 
@@ -6728,10 +6342,13 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
 
     
     /* ==========================================================================
-       HIGHLIGHT & HOVER NOTE LOGIC (PERSISTENCE & TOOLTIPS)
+       HIGHLIGHT & HOVER NOTE LOGIC (PERSISTENCE, MULTI-NODE & TOOLTIPS)
        ========================================================================== */
     const HIGHLIGHT_STORAGE_KEY = 'cai_xanh_highlights_mas202';
     let currentSelectedText = '';
+    let currentSelectedPrefix = '';
+    let currentSelectedSuffix = '';
+    let activeSelectionRange = null;
     let currentActiveColor = '#FEF08A';
     let activeEditingHlId = null;
     let hideTooltipTimer = null;
@@ -6752,6 +6369,9 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
       if (activeDrawerTab === 'highlights') {
         renderHighlightsDrawerList();
       }
+      if (currentUser) {
+        syncToCloud();
+      }
     }
 
     function initHighlightSystem() {
@@ -6770,6 +6390,17 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
         document.addEventListener('selectionchange', handleSelectionChange);
         article.addEventListener('mouseup', handleMouseUpSelection);
         article.addEventListener('touchend', handleMouseUpSelection);
+      }
+
+      // Prevent pill mousedown/touchstart from collapsing the user's active text selection
+      const pill = document.getElementById('selection-highlight-pill');
+      if (pill) {
+        pill.addEventListener('mousedown', (e) => {
+          e.preventDefault();
+        });
+        pill.addEventListener('touchstart', (e) => {
+          e.stopPropagation();
+        }, { passive: true });
       }
 
       // 3. Setup Hover Tooltip persistence
@@ -6806,14 +6437,15 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
       const sel = window.getSelection();
       if (!sel || sel.isCollapsed || sel.toString().trim().length < 2) {
         const pill = document.getElementById('selection-highlight-pill');
-        if (pill && pill.style.display !== 'none' && !pill.matches(':hover')) {
+        const modal = document.getElementById('highlight-note-modal');
+        const isModalOpen = modal && modal.style.display === 'flex';
+        if (pill && pill.style.display !== 'none' && !pill.matches(':hover') && !isModalOpen) {
           pill.style.display = 'none';
         }
       }
     }
 
     function handleMouseUpSelection(e) {
-      // Wait for selection to settle
       setTimeout(() => {
         const sel = window.getSelection();
         if (!sel || sel.isCollapsed) return;
@@ -6826,21 +6458,39 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
 
         try {
           const range = sel.getRangeAt(0);
-          if (!article.contains(range.commonAncestorContainer)) return;
+          if (!article.contains(range.startContainer) || !article.contains(range.endContainer)) return;
 
           currentSelectedText = text;
+          activeSelectionRange = range.cloneRange();
+
+          // Capture context for resilient restoration across reloads & cloud
+          try {
+            const preRange = document.createRange();
+            preRange.setStart(article, 0);
+            preRange.setEnd(range.startContainer, range.startOffset);
+            currentSelectedPrefix = preRange.toString().slice(-40);
+
+            const postRange = document.createRange();
+            postRange.setStart(range.endContainer, range.endOffset);
+            postRange.setEnd(article, article.childNodes.length);
+            currentSelectedSuffix = postRange.toString().slice(0, 40);
+          } catch (ctxErr) {
+            currentSelectedPrefix = '';
+            currentSelectedSuffix = '';
+          }
+
           const rect = range.getBoundingClientRect();
           const pill = document.getElementById('selection-highlight-pill');
           if (pill) {
             pill.style.display = 'flex';
-            const pillWidth = pill.offsetWidth || 155;
-            const top = rect.top + window.scrollY - 44;
+            const pillWidth = pill.offsetWidth || 160;
+            const top = rect.top + window.scrollY - 46;
             const left = rect.left + window.scrollX + (rect.width / 2) - (pillWidth / 2);
             pill.style.top = Math.max(10, top) + 'px';
             pill.style.left = Math.max(10, Math.min(window.innerWidth - pillWidth - 10, left)) + 'px';
           }
         } catch (err) {}
-      }, 10);
+      }, 15);
     }
 
     function openHighlightModalFromSelection() {
@@ -6895,11 +6545,10 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
           hl.updatedAt = Date.now();
           setStoredHighlights(highlights);
 
-          // Update DOM mark element
-          const mark = document.querySelector(`.user-inline-highlight[data-hl-id="${activeEditingHlId}"]`);
-          if (mark) {
+          // Update all DOM mark elements for this hlId
+          document.querySelectorAll(`.user-inline-highlight[data-hl-id="${activeEditingHlId}"]`).forEach(mark => {
             mark.style.backgroundColor = currentActiveColor;
-          }
+          });
           showToast("✅ Đã cập nhật ghi chú highlight!");
         }
       } else {
@@ -6907,8 +6556,10 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
         if (!currentSelectedText) return;
 
         const newHl = {
-          id: 'hl_' + Date.now() + '_' + Math.random().toString(36).substr(2, 5),
+          id: 'hl_' + Date.now() + '_' + Math.random().toString(36).substr(2, 6),
           text: currentSelectedText,
+          prefix: currentSelectedPrefix || '',
+          suffix: currentSelectedSuffix || '',
           note: noteContent,
           color: currentActiveColor,
           createdAt: Date.now()
@@ -6918,52 +6569,239 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
         setStoredHighlights(highlights);
 
         // Apply highlight mark into DOM
-        applyHighlightInDOM(newHl);
+        let applied = false;
+        // 1. Try wrapping active live Range first (instant & exact)
+        if (activeSelectionRange) {
+          try {
+            applied = wrapRangeWithHighlight(activeSelectionRange, newHl);
+          } catch (e) {
+            console.warn("Live range wrap error, falling back to multi-node walker:", e);
+          }
+        }
+        // 2. Fall back to multi-node text matching if range wrap didn't succeed
+        if (!applied) {
+          applyHighlightInDOM(newHl);
+        }
+
         showToast("🖍️ Đã tạo highlight & ghi chú thành công!");
       }
 
       closeHighlightModal();
+      activeSelectionRange = null;
       window.getSelection()?.removeAllRanges();
     }
 
-    // DOM Highlight TreeWalker Restoration
-    function applyHighlightInDOM(hl) {
-      if (document.querySelector(`.user-inline-highlight[data-hl-id="${hl.id}"]`)) return;
+    // Helper: Escape Regex characters
+    function escapeRegExp(str) {
+      return str.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+    }
 
-      const article = document.getElementById('article-content');
-      if (!article) return;
-
-      const walker = document.createTreeWalker(article, NodeFilter.SHOW_TEXT, {
+    // Helper: Collect all text nodes in a Range
+    function getTextNodesInRange(range) {
+      const root = range.commonAncestorContainer.nodeType === Node.TEXT_NODE 
+        ? range.commonAncestorContainer.parentNode 
+        : range.commonAncestorContainer;
+        
+      const textNodes = [];
+      const walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
         acceptNode: function(node) {
-          if (!node.nodeValue.trim()) return NodeFilter.FILTER_REJECT;
+          if (!node.nodeValue) return NodeFilter.FILTER_REJECT;
+          const parent = node.parentElement;
+          if (!parent || parent.closest('script, style, button, .selection-highlight-pill, .highlight-hover-tooltip, .highlight-note-modal, .katex-mathml')) {
+            return NodeFilter.FILTER_REJECT;
+          }
+          try {
+            const pointAfter = range.comparePoint(node, node.length);
+            const pointBefore = range.comparePoint(node, 0);
+            if (pointAfter >= 0 && pointBefore <= 0) {
+              return NodeFilter.FILTER_ACCEPT;
+            }
+          } catch (e) {}
+          return NodeFilter.FILTER_REJECT;
+        }
+      });
+
+      let n;
+      while ((n = walker.nextNode())) {
+        textNodes.push(n);
+      }
+      return textNodes;
+    }
+
+    // Helper: Wrap live Range with <mark> elements
+    function wrapRangeWithHighlight(range, hl) {
+      const textNodes = getTextNodesInRange(range);
+      if (!textNodes || textNodes.length === 0) return false;
+
+      for (let i = textNodes.length - 1; i >= 0; i--) {
+        let node = textNodes[i];
+        let startOffset = 0;
+        let endOffset = node.nodeValue.length;
+
+        if (node === range.startContainer) {
+          startOffset = range.startOffset;
+        }
+        if (node === range.endContainer) {
+          endOffset = range.endOffset;
+        }
+
+        if (startOffset >= endOffset) continue;
+
+        if (endOffset < node.nodeValue.length) {
+          node.splitText(endOffset);
+        }
+        let target = node;
+        if (startOffset > 0) {
+          target = node.splitText(startOffset);
+        }
+
+        const mark = document.createElement('mark');
+        mark.className = 'user-inline-highlight';
+        mark.setAttribute('data-hl-id', hl.id);
+        mark.style.backgroundColor = hl.color || '#FEF08A';
+
+        target.parentNode.replaceChild(mark, target);
+        mark.appendChild(target);
+        attachHighlightEvents(mark);
+      }
+      return true;
+    }
+
+    // Helper: Collect all text nodes in article for multi-node restoration
+    function getAllTextNodes(container) {
+      const nodes = [];
+      const walker = document.createTreeWalker(container, NodeFilter.SHOW_TEXT, {
+        acceptNode: function(node) {
+          if (!node.nodeValue) return NodeFilter.FILTER_REJECT;
           const parent = node.parentElement;
           if (!parent) return NodeFilter.FILTER_REJECT;
-          if (parent.closest('.user-inline-highlight, script, style, button, .custom-alert .alert-title')) {
+          if (parent.closest('script, style, button, .selection-highlight-pill, .highlight-hover-tooltip, .highlight-note-modal, .katex-mathml, .user-inline-highlight')) {
             return NodeFilter.FILTER_REJECT;
           }
           return NodeFilter.FILTER_ACCEPT;
         }
       });
 
-      let currentNode;
-      while ((currentNode = walker.nextNode())) {
-        const textVal = currentNode.nodeValue;
-        const idx = textVal.indexOf(hl.text);
-        if (idx !== -1) {
-          const matchNode = currentNode.splitText(idx);
-          matchNode.splitText(hl.text.length);
+      let n;
+      while ((n = walker.nextNode())) {
+        nodes.push(n);
+      }
+      return nodes;
+    }
 
-          const mark = document.createElement('mark');
-          mark.className = 'user-inline-highlight';
-          mark.setAttribute('data-hl-id', hl.id);
-          mark.style.backgroundColor = hl.color || '#FEF08A';
-          mark.textContent = matchNode.nodeValue;
+    // DOM Multi-Node Highlight Restoration (matches headings, paragraphs, lists, tables, alerts, formulas)
+    function applyHighlightInDOM(hl) {
+      if (document.querySelector(`.user-inline-highlight[data-hl-id="${hl.id}"]`)) return true;
 
-          matchNode.parentNode.replaceChild(mark, matchNode);
-          attachHighlightEvents(mark);
-          break;
+      const article = document.getElementById('article-content');
+      if (!article) return false;
+
+      const textNodes = getAllTextNodes(article);
+      if (!textNodes || textNodes.length === 0) return false;
+
+      let fullDocText = '';
+      const nodeMap = [];
+
+      for (let i = 0; i < textNodes.length; i++) {
+        const node = textNodes[i];
+        const val = node.nodeValue;
+        const start = fullDocText.length;
+        fullDocText += val;
+        nodeMap.push({
+          node: node,
+          start: start,
+          end: fullDocText.length,
+          len: val.length
+        });
+      }
+
+      let matchStart = -1;
+      let matchEnd = -1;
+
+      // 1. Context search if prefix/suffix present
+      if (hl.prefix || hl.suffix) {
+        const contextStr = (hl.prefix || '') + hl.text + (hl.suffix || '');
+        const escapedContext = escapeRegExp(contextStr).replace(/\s+/g, '\\s+');
+        try {
+          const contextRegex = new RegExp(escapedContext);
+          const ctxMatch = contextRegex.exec(fullDocText);
+          if (ctxMatch) {
+            const escapedText = escapeRegExp(hl.text).replace(/\s+/g, '\\s+');
+            const textRegex = new RegExp(escapedText);
+            const subMatch = textRegex.exec(ctxMatch[0]);
+            if (subMatch) {
+              matchStart = ctxMatch.index + subMatch.index;
+              matchEnd = matchStart + subMatch[0].length;
+            }
+          }
+        } catch (e) {}
+      }
+
+      // 2. Direct string match
+      if (matchStart === -1) {
+        const directIdx = fullDocText.indexOf(hl.text);
+        if (directIdx !== -1) {
+          matchStart = directIdx;
+          matchEnd = directIdx + hl.text.length;
         }
       }
+
+      // 3. Flexible whitespace regex match
+      if (matchStart === -1) {
+        try {
+          const escaped = escapeRegExp(hl.text).replace(/\s+/g, '\\s+');
+          const regex = new RegExp(escaped);
+          const m = regex.exec(fullDocText);
+          if (m) {
+            matchStart = m.index;
+            matchEnd = m.index + m[0].length;
+          }
+        } catch (e) {}
+      }
+
+      if (matchStart === -1) {
+        return false;
+      }
+
+      // Identify affected text nodes
+      const matchedNodes = [];
+      for (let i = 0; i < nodeMap.length; i++) {
+        const item = nodeMap[i];
+        if (item.end > matchStart && item.start < matchEnd) {
+          matchedNodes.push(item);
+        }
+      }
+
+      // Wrap matched portions in reverse order
+      for (let i = matchedNodes.length - 1; i >= 0; i--) {
+        const item = matchedNodes[i];
+        let node = item.node;
+        const nodeStartInDoc = item.start;
+
+        const sliceStart = Math.max(0, matchStart - nodeStartInDoc);
+        const sliceEnd = Math.min(item.len, matchEnd - nodeStartInDoc);
+
+        if (sliceStart >= sliceEnd) continue;
+
+        if (sliceEnd < node.nodeValue.length) {
+          node.splitText(sliceEnd);
+        }
+        let targetNode = node;
+        if (sliceStart > 0) {
+          targetNode = node.splitText(sliceStart);
+        }
+
+        const mark = document.createElement('mark');
+        mark.className = 'user-inline-highlight';
+        mark.setAttribute('data-hl-id', hl.id);
+        mark.style.backgroundColor = hl.color || '#FEF08A';
+
+        targetNode.parentNode.replaceChild(mark, targetNode);
+        mark.appendChild(targetNode);
+        attachHighlightEvents(mark);
+      }
+
+      return true;
     }
 
     function restoreAllHighlights() {
@@ -7079,13 +6917,21 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
       highlights = highlights.filter(h => h.id !== hlId);
       setStoredHighlights(highlights);
 
-      // Unwrap mark elements
+      // Unwrap all mark elements for this hlId
+      const parents = new Set();
       document.querySelectorAll(`.user-inline-highlight[data-hl-id="${hlId}"]`).forEach(mark => {
         const parent = mark.parentNode;
-        while (mark.firstChild) {
-          parent.insertBefore(mark.firstChild, mark);
+        if (parent) {
+          parents.add(parent);
+          while (mark.firstChild) {
+            parent.insertBefore(mark.firstChild, mark);
+          }
+          parent.removeChild(mark);
         }
-        parent.removeChild(mark);
+      });
+
+      parents.forEach(p => {
+        try { p.normalize(); } catch (e) {}
       });
 
       showToast("🗑️ Đã xóa highlight!");
@@ -7165,13 +7011,16 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
 
     function jumpToHighlight(hlId) {
       toggleNotesDrawer(false);
-      const mark = document.querySelector(`.user-inline-highlight[data-hl-id="${hlId}"]`);
-      if (mark) {
-        mark.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        mark.classList.remove('hl-pulse-active');
-        void mark.offsetWidth; // trigger reflow
-        mark.classList.add('hl-pulse-active');
-        setTimeout(() => showHighlightTooltip(mark, hlId), 500);
+      const marks = document.querySelectorAll(`.user-inline-highlight[data-hl-id="${hlId}"]`);
+      if (marks && marks.length > 0) {
+        const firstMark = marks[0];
+        firstMark.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        marks.forEach(m => {
+          m.classList.remove('hl-pulse-active');
+          void m.offsetWidth; // trigger reflow
+          m.classList.add('hl-pulse-active');
+        });
+        setTimeout(() => showHighlightTooltip(firstMark, hlId), 500);
       } else {
         showToast("⚠️ Không tìm thấy vị trí highlight trên trang này!");
       }
