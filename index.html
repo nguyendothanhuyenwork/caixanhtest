@@ -530,6 +530,11 @@
       font-weight: 700;
       margin: 26px 0 12px;
       color: var(--text);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
     }
 
     .content p {
@@ -2217,6 +2222,119 @@
       line-height: 1.45;
     }
 
+
+    /* ==========================================================================
+       ENGLISH LECTURE TOGGLE & COLLAPSE CARD STYLES (CH 7, 8, 9)
+       ========================================================================== */
+    .btn-toggle-en-lecture {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-left: auto;
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: #ffffff !important;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 6px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      cursor: pointer;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+      text-decoration: none;
+      user-select: none;
+      white-space: nowrap;
+    }
+
+    .btn-toggle-en-lecture:hover {
+      background: linear-gradient(135deg, #1d4ed8, #3b82f6);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+    }
+
+    .btn-toggle-en-lecture.active {
+      background: linear-gradient(135deg, #059669, #10b981);
+      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.35);
+    }
+
+    .btn-toggle-en-lecture i {
+      font-size: 0.88rem;
+    }
+
+    .en-lecture-collapse {
+      margin: 1.5rem 0 2rem 0;
+      padding: 1.25rem 1.5rem;
+      background: linear-gradient(180deg, rgba(30, 58, 138, 0.04) 0%, rgba(37, 99, 235, 0.02) 100%);
+      border: 1px solid rgba(37, 99, 235, 0.25);
+      border-left: 4px solid #2563eb;
+      border-radius: 10px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+      animation: fadeInDown 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .dark-theme .en-lecture-collapse {
+      background: linear-gradient(180deg, rgba(30, 58, 138, 0.18) 0%, rgba(15, 23, 42, 0.6) 100%);
+      border-color: rgba(96, 165, 250, 0.3);
+      border-left-color: #60a5fa;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    }
+
+    .en-lecture-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px;
+      padding-bottom: 10px;
+      margin-bottom: 14px;
+      border-bottom: 1px dashed rgba(37, 99, 235, 0.25);
+    }
+
+    .dark-theme .en-lecture-header {
+      border-bottom-color: rgba(96, 165, 250, 0.25);
+    }
+
+    .en-lecture-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #1e3a8a;
+      letter-spacing: 0.02em;
+    }
+
+    .dark-theme .en-lecture-title {
+      color: #93c5fd;
+    }
+
+    .en-lecture-badge {
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 3px 8px;
+      background: rgba(37, 99, 235, 0.12);
+      color: #1d4ed8;
+      border-radius: 6px;
+      border: 1px solid rgba(37, 99, 235, 0.25);
+    }
+
+    .dark-theme .en-lecture-badge {
+      background: rgba(96, 165, 250, 0.15);
+      color: #bfdbfe;
+      border-color: rgba(96, 165, 250, 0.3);
+    }
   </style>
 </head>
 <body>
@@ -3183,6 +3301,47 @@ b) Tìm điểm cắt của 5% thấp nhất (phải thi lại).
 - **BƯỚC 5: Kết luận**  
   $P(X > 51.5) = 0.4013$; $P(\bar{X} > 51.5) = 0.0668$.
 
+<div class="en-lecture-collapse" id="en-sol-vd-7-1" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL ENGLISH STEP-BY-STEP SOLUTION (PEARSON EXAM FORMAT)</span>
+  </div>
+  <span class="en-lecture-badge">Theory Example 7.1 • Sampling Distribution of Mean</span>
+</div>
+
+- **Step 1: Given Data & Variable Definition**:
+  - Individual flour bag weight: $X \sim N(\mu = 50\text{ kg}, \sigma = 6\text{ kg})$.
+  - Sample size: $n = 36$ bags.
+  - Threshold: $51.5\text{ kg}$.
+
+- **Step 2: Assumptions & Key Formulas**:
+  - Since the population is normally distributed, the sample mean $\bar{X}$ is strictly normally distributed for any sample size $n$: $\bar{X} \sim N\left(\mu, \sigma_{\bar{X}}^2\right)$.
+  - For an individual bag ($n = 1$): $Z = \frac{X - \mu}{\sigma} = \frac{X - 50}{6}$.
+  - For sample mean ($n = 36$): Standard error $\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}} = \frac{6}{\sqrt{36}} = 1.0\text{ kg}$. Standardized $Z$-score: $Z = \frac{\bar{X} - \mu}{\sigma_{\bar{X}}} = \frac{\bar{X} - 50}{1.0}$.
+
+- **Step 3: Step-by-Step Algebraic Calculations**:
+  - **Part a (Individual bag chosen at random)**:
+    $$Z = \frac{51.5 - 50}{6} = \frac{1.5}{6} = +0.25$$
+    $$P(X > 51.5) = P(Z > 0.25) = 1 - P(Z \le 0.25) = 1 - 0.5987 = 0.4013 \quad (40.13\%)$$
+  - **Part b (Random sample of $n = 36$ bags)**:
+    $$Z = \frac{51.5 - 50}{6 / \sqrt{36}} = \frac{1.5}{1.0} = +1.50$$
+    $$P(\bar{X} > 51.5) = P(Z > 1.50) = 1 - P(Z \le 1.50) = 1 - 0.9332 = 0.0668 \quad (6.68\%)$$
+  - **Part c (Comparison & Interpretation)**:
+    $$P(\bar{X} > 51.5) = 0.0668 \ll P(X > 51.5) = 0.4013$$
+    An individual bag has a relatively high probability ($40.13\%$) of exceeding $51.5\text{ kg}$ due to individual variability ($\sigma = 6\text{ kg}$). However, the probability that the average of $36$ bags exceeds $51.5\text{ kg}$ is drastically reduced to only $6.68\%$. This demonstrates the **averaging effect**: individual fluctuations offset each other, reducing dispersion.
+
+- **Step 4: Casio fx-580VN X Instructions**:
+  - Press `[MENU]` `[7]` `[2]` (Normal CD).
+  - Part a: `Lower:` `51.5`, `Upper:` `10^99`, `σ:` `6`, `μ:` `50` $\implies 0.40129 \approx 0.4013$.
+  - Part b: `Lower:` `51.5`, `Upper:` `10^99`, `σ:` `1.0`, `μ:` `50` $\implies 0.066807 \approx 0.0668$.
+
+- **Step 5: Managerial Interpretation & Conclusions (Exam Standard)**:
+  - *Exam Conclusion:* An individual bag exceeding $51.5\text{ kg}$ occurs frequently ($40.13\%$ of the time), but a batch mean of $36$ bags exceeding $51.5\text{ kg}$ is rare ($6.68\%$). Quality control inspectors should evaluate sample averages rather than single units to prevent false alarms caused by natural individual variation.
+
+</div>
+
 ---
 
 ## 7.2. Phân Phối Chọn Mẫu Của Tỷ Lệ Mẫu $p$ (Sampling Distribution of the Proportion)
@@ -3245,6 +3404,47 @@ b) Tìm điểm cắt của 5% thấp nhất (phải thi lại).
 - **BƯỚC 5: Kết luận**  
   $\sigma_p = 0.03$; $P(0.08 \le p \le 0.12) \approx 0.4950$; $P(p > 0.15) \approx 0.0478$.
 
+<div class="en-lecture-collapse" id="en-sol-vd-7-2" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL ENGLISH STEP-BY-STEP SOLUTION (PEARSON EXAM FORMAT)</span>
+  </div>
+  <span class="en-lecture-badge">Theory Example 7.2 • Sampling Distribution of Proportion</span>
+</div>
+
+- **Step 1: Given Data & Parameter Extraction**:
+  - Historical population defect rate: $\pi = 0.10$ ($10\%$).
+  - Sample size: $n = 100$ invoices.
+
+- **Step 2: Assumptions & Key Formulas**:
+  - Normality criteria:
+    $$n\pi = 100(0.10) = 10 \ge 5 \quad \text{and} \quad n(1 - \pi) = 100(0.90) = 90 \ge 5$$
+    Both conditions are satisfied; the sampling distribution of the sample proportion $p$ is approximately normal: $p \sim N\left(\pi, \sigma_p^2\right)$.
+  - Standard error formula: $\sigma_p = \sqrt{\frac{\pi(1 - \pi)}{n}}$. Standardized $Z$-score: $Z = \frac{p - \pi}{\sigma_p}$.
+
+- **Step 3: Step-by-Step Algebraic Calculations**:
+  - **Part a (Standard error of proportion)**:
+    $$\sigma_p = \sqrt{\frac{0.10 \times 0.90}{100}} = \sqrt{\frac{0.09}{100}} = \sqrt{0.0009} = 0.03 \quad (3\%)$$
+  - **Part b (Probability between $8\%$ and $12\%$, $P(0.08 \le p \le 0.12)$)**:
+    $$Z_1 = \frac{0.08 - 0.10}{0.03} = \frac{-0.02}{0.03} \approx -0.67 \implies P(Z \le -0.67) = 0.2514$$
+    $$Z_2 = \frac{0.12 - 0.10}{0.03} = \frac{+0.02}{0.03} \approx +0.67 \implies P(Z \le +0.67) = 0.7486$$
+    $$P(0.08 \le p \le 0.12) = 0.7486 - 0.2514 = 0.4972 \quad (49.72\%)$$
+  - **Part c (Probability exceeding $15\%$, $P(p > 0.15)$)**:
+    $$Z = \frac{0.15 - 0.10}{0.03} = \frac{0.05}{0.03} \approx +1.67$$
+    $$P(p > 0.15) = P(Z > 1.67) = 1 - P(Z \le 1.67) = 1 - 0.9525 = 0.0475 \quad (4.75\%)$$
+
+- **Step 4: Casio fx-580VN X Instructions**:
+  - `[MENU]` `[7]` `[2]` (Normal CD).
+  - Part b: `Lower:` `0.08`, `Upper:` `0.12`, `σ:` `0.03`, `μ:` `0.10` $\implies 0.4950 \approx 0.4972$.
+  - Part c: `Lower:` `0.15`, `Upper:` `10^99`, `σ:` `0.03`, `μ:` `0.10` $\implies 0.04779 \approx 0.0475$.
+
+- **Step 5: Managerial Interpretation & Conclusions (Exam Standard)**:
+  - *Exam Conclusion:* There is approximately a $49.72\%$ chance that the sample error rate will fall within $\pm 2\%$ of the historical rate. The probability of encountering an error rate exceeding $15\%$ is only $4.75\%$. Consequently, if an audit sample shows more than $15\%$ defective invoices, it provides strong statistical evidence that the invoicing process has deteriorated.
+
+</div>
+
 ---
 
 ## 7.3. Bộ Bài Tập SGK Berenson 14th Edition Thực Chiến Chương 7
@@ -3303,6 +3503,47 @@ b) Tìm điểm cắt của 5% thấp nhất (phải thi lại).
 > - **English:** *"Comparing the results: As sample size $n$ increases from $1$ to $100$, the standard error $\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}$ decreases tenfold from $0.025$ to $0.0025$. The sampling distribution becomes far more concentrated around the population mean $\mu = 2.05$, causing the probability of observing a sample mean below $2.03\text{ liters}$ to drop dramatically from $0.2119$ to virtually $0$."*  
 > - **Dịch nghĩa:** *"So sánh kết quả: Khi cỡ mẫu $n$ tăng từ $1$ lên $100$, sai số chuẩn $\sigma_{\bar{X}}$ giảm 10 lần từ $0.025$ xuống $0.0025$. Phân phối chọn mẫu co cụm chặt chẽ quanh giá trị trung bình $\mu = 2.05$, khiến xác suất trung bình mẫu dưới $2.03$ lít giảm mạnh từ $21.19\%$ về gần như bằng $0$."*
 
+<div class="en-lecture-collapse" id="en-sol-bt-7-1" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL ENGLISH STEP-BY-STEP SOLUTION (PEARSON EXAM FORMAT)</span>
+  </div>
+  <span class="en-lecture-badge">Problem 7.5 • Water Bottle Filling (Individual vs Sample Mean)</span>
+</div>
+
+- **Step 1: Given Data & Variable Definition**:
+  - Normal population mean: $\mu = 2.05\text{ liters}$.
+  - Population standard deviation: $\sigma = 0.025\text{ liter}$.
+  - Target threshold: $X_0 = 2.03\text{ liters}$.
+
+- **Step 2: Assumptions & Key Formulas**:
+  - For an individual bottle ($n = 1$): $X \sim N(\mu, \sigma^2)$, with $Z = \frac{X - \mu}{\sigma}$.
+  - For a sample of size $n$: $\bar{X} \sim N\left(\mu, \sigma_{\bar{X}}^2\right)$, where standard error $\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}$, and $Z = \frac{\bar{X} - \mu}{\sigma_{\bar{X}}}$.
+
+- **Step 3: Step-by-Step Algebraic Calculations**:
+  - **Part a ($n = 1$, individual bottle)**:
+    $$Z = \frac{2.03 - 2.05}{0.025} = \frac{-0.02}{0.025} = -0.80 \implies P(X < 2.03) = P(Z < -0.80) = 0.2119 \quad (21.19\%)$$
+  - **Part b ($n = 4$ bottles)**:
+    $$\sigma_{\bar{X}} = \frac{0.025}{\sqrt{4}} = 0.0125 \implies Z = \frac{2.03 - 2.05}{0.0125} = -1.60 \implies P(\bar{X} < 2.03) = P(Z < -1.60) = 0.0548 \quad (5.48\%)$$
+  - **Part c ($n = 25$ bottles)**:
+    $$\sigma_{\bar{X}} = \frac{0.025}{\sqrt{25}} = 0.005 \implies Z = \frac{2.03 - 2.05}{0.005} = -4.00 \implies P(\bar{X} < 2.03) = P(Z < -4.00) \approx 0.00003$$
+  - **Part d ($n = 100$ bottles)**:
+    $$\sigma_{\bar{X}} = \frac{0.025}{\sqrt{100}} = 0.0025 \implies Z = \frac{2.03 - 2.05}{0.0025} = -8.00 \implies P(\bar{X} < 2.03) = P(Z < -8.00) \approx 0$$
+
+- **Step 4: Casio fx-580VN X Instructions**:
+  - `[MENU]` `[7]` `[2]` (Normal CD). Set `Lower:` `-10^99`, `Upper:` `2.03`, `μ:` `2.05`.
+  - Part a: `σ = 0.025` $\implies 0.211855 \approx 0.2119$.
+  - Part b: `σ = 0.0125` $\implies 0.054799 \approx 0.0548$.
+  - Part c: `σ = 0.005` $\implies 3.167 \times 10^{-5} \approx 0.00003$.
+  - Part d: `σ = 0.0025` $\implies \approx 0$.
+
+- **Step 5: Managerial Comparison & Conclusion (Exam Standard)**:
+  - *Exam Comparison Sentence:* "Comparing the results: As sample size $n$ increases from $1$ to $100$, the standard error $\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}$ decreases tenfold from $0.025$ to $0.0025$. The sampling distribution becomes far more concentrated around the population mean $\mu = 2.05$, causing the probability of observing a sample mean below $2.03\text{ liters}$ to drop dramatically from $0.2119$ to virtually $0$."
+
+</div>
+
 ---
 
 ### Bài tập 7.2 (Textbook Problem 7.6, p. 297) - Energy Bar Weight
@@ -3343,6 +3584,47 @@ b) Tìm điểm cắt của 5% thấp nhất (phải thi lại).
 > **CÂU BIỆN LUẬN SO SÁNH TIẾNG ANH CHUẨN THI (EXAM COMPARISON SENTENCE):**  
 > - **English:** *"Comparing an individual bar ($n=1$) and sample means ($n=4, n=25$): The probability that an individual bar is underweight is $0.2743$. For a sample of $4$ bars, this probability drops to $0.1151$, and for $25$ bars it is only $0.00135$. This demonstrates that sample averages exhibit far less variability than individual observations ($\sigma_{\bar{X}} = \sigma/\sqrt{n} < \sigma$), making extreme average deviations much less likely."*  
 > - **Dịch nghĩa:** *"So sánh thanh đơn lẻ và trung bình mẫu: Xác suất một thanh lẻ thiếu cân là $27.43\%$, nhưng trung bình mẫu $4$ thanh chỉ còn $11.51\%$, và mẫu $25$ thanh chỉ còn $0.135\%$. Điều này chứng minh giá trị trung bình mẫu ít biến động hơn nhiều so với từng cá thể đơn lẻ."*
+
+<div class="en-lecture-collapse" id="en-sol-bt-7-2" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL ENGLISH STEP-BY-STEP SOLUTION (PEARSON EXAM FORMAT)</span>
+  </div>
+  <span class="en-lecture-badge">Problem 7.6 • Energy Bar Weight</span>
+</div>
+
+- **Step 1: Given Data & Parameter Extraction**:
+  - Population mean weight: $\mu = 42.05\text{ grams}$.
+  - Population standard deviation: $\sigma = 0.025\text{ gram}$.
+  - Target threshold: $X_0 = 42.035\text{ grams}$.
+
+- **Step 2: Assumptions & Key Formulas**:
+  - Normal population $\implies \bar{X} \sim N\left(\mu, \sigma^2/n\right)$.
+  - Formula: $\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}$, $Z = \frac{\bar{X} - \mu}{\sigma_{\bar{X}}}$.
+
+- **Step 3: Step-by-Step Algebraic Calculations**:
+  - **Part a ($n = 1$, individual energy bar)**:
+    $$Z = \frac{42.035 - 42.05}{0.025} = \frac{-0.015}{0.025} = -0.60 \implies P(X < 42.035) = P(Z < -0.60) = 0.2743 \quad (27.43\%)$$
+  - **Part b ($n = 4$ energy bars)**:
+    $$\sigma_{\bar{X}} = \frac{0.025}{\sqrt{4}} = 0.0125 \implies Z = \frac{42.035 - 42.05}{0.0125} = \frac{-0.015}{0.0125} = -1.20 \implies P(\bar{X} < 42.035) = 0.1151 \quad (11.51\%)$$
+  - **Part c ($n = 25$ energy bars)**:
+    $$\sigma_{\bar{X}} = \frac{0.025}{\sqrt{25}} = 0.005 \implies Z = \frac{42.035 - 42.05}{0.005} = \frac{-0.015}{0.005} = -3.00 \implies P(\bar{X} < 42.035) = 0.00135 \quad (0.135\%)$$
+  - **Part d ($n = 100$ energy bars)**:
+    $$\sigma_{\bar{X}} = \frac{0.025}{\sqrt{100}} = 0.0025 \implies Z = \frac{42.035 - 42.05}{0.0025} = -6.00 \implies P(\bar{X} < 42.035) \approx 0$$
+
+- **Step 4: Casio fx-580VN X Instructions**:
+  - `[MENU]` `[7]` `[2]`. `Lower:` `-10^99`, `Upper:` `42.035`, `μ:` `42.05`.
+  - Part a: `σ = 0.025` $\implies 0.274253 \approx 0.2743$.
+  - Part b: `σ = 0.0125` $\implies 0.11507 \approx 0.1151$.
+  - Part c: `σ = 0.005` $\implies 0.0013499 \approx 0.00135$.
+  - Part d: `σ = 0.0025` $\implies \approx 0$.
+
+- **Step 5: Managerial Comparison & Conclusion (Exam Standard)**:
+  - *Exam Comparison Sentence:* "Comparing an individual bar to sample averages: The probability of an individual bar being underweight is $27.43\%$, but for an average of $4$ bars it drops to $11.51\%$, and for an average of $25$ bars it plummets to $0.135\%$. This confirms that the sample mean exhibits significantly less variability than individual observations."
+
+</div>
 
 ---
 
@@ -3393,6 +3675,50 @@ b) Tìm điểm cắt của 5% thấp nhất (phải thi lại).
 > - **English:** *"An individual ball has a $15.87\%$ chance of exceeding the upper quality limit of $2.64\text{ inches}$. However, for a sample of $25$ tennis balls, the standard error is reduced by a factor of $\sqrt{25} = 5$ ($\sigma_{\bar{X}} = 0.006$), making the probability that the sample mean exceeds $2.64\text{ inches}$ essentially zero ($P(\bar{X} > 2.64) \approx 0$)."*  
 > - **Dịch nghĩa:** *"Một quả bóng riêng lẻ có xác suất đáng kể ($15.87\%$) vượt quá kích thước $2.64\text{ inches}$. Tuy nhiên, với một mẫu $25$ quả bóng, sai số chuẩn giảm đi 5 lần, khiến xác suất đường kính trung bình của cả mẫu vượt quá $2.64\text{ inches}$ giảm triệt tiêu về $0$."*
 
+<div class="en-lecture-collapse" id="en-sol-bt-7-3" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL ENGLISH STEP-BY-STEP SOLUTION (PEARSON EXAM FORMAT)</span>
+  </div>
+  <span class="en-lecture-badge">Problem 7.7 • Tennis Ball Diameter</span>
+</div>
+
+- **Step 1: Given Data & Parameter Extraction**:
+  - Population mean: $\mu = 2.63\text{ inches}$.
+  - Population standard deviation: $\sigma = 0.03\text{ inch}$.
+  - Sample size: $n = 9$ tennis balls.
+
+- **Step 2: Assumptions & Key Formulas**:
+  - Since the population is normally distributed, the sampling distribution of $\bar{X}$ is strictly normal for any sample size $n$.
+  - Mean of $\bar{X}$: $\mu_{\bar{X}} = \mu = 2.63\text{ inches}$.
+  - Standard error: $\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}} = \frac{0.03}{\sqrt{9}} = 0.01\text{ inch}$.
+  - Standardized $Z$-score: $Z = \frac{\bar{X} - \mu}{\sigma_{\bar{X}}} = \frac{\bar{X} - 2.63}{0.01}$.
+
+- **Step 3: Step-by-Step Algebraic Calculations**:
+  - **Part a (Sampling distribution of the mean)**:
+    $$\bar{X} \sim N\left(\mu_{\bar{X}} = 2.63\text{ in}, \; \sigma_{\bar{X}}^2 = 0.01^2\right)$$
+  - **Part b ($P(\bar{X} < 2.61)$)**:
+    $$Z = \frac{2.61 - 2.63}{0.01} = -2.00 \implies P(\bar{X} < 2.61) = P(Z < -2.00) = 0.0228 \quad (2.28\%)$$
+  - **Part c ($P(2.62 \le \bar{X} \le 2.64)$)**:
+    $$Z_1 = \frac{2.62 - 2.63}{0.01} = -1.00; \quad Z_2 = \frac{2.64 - 2.63}{0.01} = +1.00$$
+    $$P(2.62 \le \bar{X} \le 2.64) = P(-1.00 \le Z \le +1.00) = 0.8413 - 0.1587 = 0.6827 \quad (68.27\%)$$
+  - **Part d (Symmetrical $95\%$ bounds containing $\bar{X}$)**:
+    For $95\%$ probability, $Z = \pm 1.96$:
+    $$\bar{X} = \mu \pm 1.96 \sigma_{\bar{X}} = 2.63 \pm 1.96(0.01) = 2.63 \pm 0.0196 \implies [2.6104 ; 2.6496]\text{ inches}$$
+
+- **Step 4: Casio fx-580VN X Instructions**:
+  - `[MENU]` `[7]` `[2]`. `μ = 2.63`, `σ = 0.01`.
+  - Part b: `Lower:` `-10^99`, `Upper:` `2.61` $\implies 0.02275 \approx 0.0228$.
+  - Part c: `Lower:` `2.62`, `Upper:` `2.64` $\implies 0.682689 \approx 0.6827$.
+  - Part d: `[MENU]` `[7]` `[3]` (Inverse Normal). Area = $0.025 \implies 2.6104$; Area = $0.975 \implies 2.6496$.
+
+- **Step 5: Managerial Comparison & Conclusion (Exam Standard)**:
+  - *Exam Comparison Sentence:* "An individual tennis ball has a substantial probability ($15.87\%$) of exceeding $2.64\text{ inches}$. However, with a sample of $9$ balls, the standard error decreases threefold to $0.01\text{ in}$, shrinking the probability of the average diameter exceeding $2.64\text{ inches}$ down to $15.87\%$ for $\pm 1\sigma$ and ensuring $95\%$ of all sample averages lie tightly within $[2.6104 ; 2.6496]\text{ inches}$."
+
+</div>
+
 ---
 
 ### Bài tập 7.4 (Textbook Problem 7.18, p. 300) - Women on Corporate Boards (Proportion Distribution)
@@ -3442,6 +3768,47 @@ b) Tìm điểm cắt của 5% thấp nhất (phải thi lại).
     - Câu c: Lower = `0.37`, Upper = `1` $\implies 0.1852$.
 - **B5**: a. $0.8475$ (hoặc $0.8463$) | b. $0.1162$ (hoặc $0.1170$) | c. $0.1852$ (hoặc $0.1841$).
 
+<div class="en-lecture-collapse" id="en-sol-bt-7-4" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL ENGLISH STEP-BY-STEP SOLUTION (PEARSON EXAM FORMAT)</span>
+  </div>
+  <span class="en-lecture-badge">Problem 7.18 • Women on Corporate Boards</span>
+</div>
+
+- **Step 1: Given Data & Parameter Extraction**:
+  - True population proportion: $\pi = 0.34$ ($34\%$).
+  - Sample size: $n = 200$ board seats.
+
+- **Step 2: Assumptions & Key Formulas**:
+  - Normality checks: $n\pi = 200(0.34) = 68 \ge 5$ and $n(1 - \pi) = 200(0.66) = 132 \ge 5$. Both hold $\implies p \sim N\left(\pi, \sigma_p^2\right)$.
+  - Standard error: $\sigma_p = \sqrt{\frac{\pi(1 - \pi)}{n}} = \sqrt{\frac{0.34 \times 0.66}{200}} = \sqrt{\frac{0.2244}{200}} = \sqrt{0.001122} \approx 0.0335$.
+  - Standardized $Z$-score: $Z = \frac{p - \pi}{\sigma_p} = \frac{p - 0.34}{0.0335}$.
+
+- **Step 3: Step-by-Step Algebraic Calculations**:
+  - **Part a ($P(0.30 \le p \le 0.40)$)**:
+    $$Z_1 = \frac{0.30 - 0.34}{0.0335} = \frac{-0.04}{0.0335} \approx -1.19 \implies P(Z \le -1.19) = 0.1170$$
+    $$Z_2 = \frac{0.40 - 0.34}{0.0335} = \frac{+0.06}{0.0335} \approx +1.79 \implies P(Z \le +1.79) = 0.9633$$
+    $$P(0.30 \le p \le 0.40) = 0.9633 - 0.1170 = 0.8463 \quad (\text{or } 0.8475 \text{ via continuous Casio})$$
+  - **Part b ($P(p < 0.30)$)**:
+    $$P(p < 0.30) = P(Z < -1.19) = 0.1170 \quad (11.70\%)$$
+  - **Part c (Symmetrical $90\%$ interval centered at $\pi$)**:
+    For $90\%$, $Z = \pm 1.645$:
+    $$p = \pi \pm 1.645 \sigma_p = 0.34 \pm 1.645(0.0335) = 0.34 \pm 0.0551 \implies [0.2849 ; 0.3951] \quad ([28.49\% ; 39.51\%])$$
+
+- **Step 4: Casio fx-580VN X Instructions**:
+  - `[MENU]` `[7]` `[2]`. `μ = 0.34`, `σ = 0.033496`.
+  - Part a: `Lower:` `0.30`, `Upper:` `0.40` $\implies 0.8475$.
+  - Part b: `Lower:` `-10^99`, `Upper:` `0.30` $\implies 0.1162$.
+  - Part c: `[MENU]` `[7]` `[3]`. `Area = 0.05` $\implies 0.2849$; `Area = 0.95` $\implies 0.3951$.
+
+- **Step 5: Managerial Interpretation & Conclusions (Exam Standard)**:
+  - *Exam Conclusion:* In $84.63\%$ of random samples of $200$ board seats, the proportion of women will fall between $30\%$ and $40\%$. There is only an $11.70\%$ likelihood of selecting a sample with under $30\%$ female representation, confirming that the representation benchmark is stable across corporate sectors.
+
+</div>
+
 ---
 
 ### Bài tập 7.5 (Textbook Problem 7.20, p. 300) - Original Digital Video Viewers (Sample Size Effect)
@@ -3488,6 +3855,48 @@ b) Tìm điểm cắt của 5% thấp nhất (phải thi lại).
 > - **English:** *"Comparing sample sizes $n=100$ and $n=400$: Quadrupling the sample size halves the standard error of the proportion $\sigma_p$ from $0.0458$ to $0.0229$. As a result, the probability that the sample proportion falls within $\pm 0.03$ of the population proportion increases from $0.3544$ ($35.44\%$) to $0.6970$ ($69.70\%$), showing that larger samples provide much greater precision and concentration around $\pi$."*  
 > - **Dịch nghĩa:** *"So sánh cỡ mẫu $100$ và $400$: Tăng cỡ mẫu gấp 4 lần giúp giảm một nửa sai số chuẩn của tỷ lệ từ $0.0458$ xuống $0.0229$. Kết quả là xác suất để tỷ lệ mẫu lệch không quá $\pm 3\%$ quanh tỷ lệ thực tăng từ $35.44\%$ lên $69.70\%$, chứng minh cỡ mẫu lớn đem lại độ chính xác cao hơn rõ rệt."*
 
+<div class="en-lecture-collapse" id="en-sol-bt-7-5" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL ENGLISH STEP-BY-STEP SOLUTION (PEARSON EXAM FORMAT)</span>
+  </div>
+  <span class="en-lecture-badge">Problem 7.20 • Original Digital Video Viewers</span>
+</div>
+
+- **Step 1: Given Data & Parameter Extraction**:
+  - Population proportion: $\pi = 0.25$ ($1 - \pi = 0.75$).
+  - Target error range: Within $\pm 0.02$ ($\pm 2\%$) of $\pi \implies [0.23 ; 0.27]$.
+
+- **Step 2: Assumptions & Key Formulas**:
+  - Formula: $\sigma_p = \sqrt{\frac{\pi(1 - \pi)}{n}}$, $Z = \frac{p - \pi}{\sigma_p}$.
+  - Normality holds for both $n = 100$ ($100 \times 0.25 = 25 \ge 5$) and $n = 500$ ($500 \times 0.25 = 125 \ge 5$).
+
+- **Step 3: Step-by-Step Algebraic Calculations**:
+  - **Part a (Sample size $n = 100$)**:
+    $$\sigma_p = \sqrt{\frac{0.25 \times 0.75}{100}} = \sqrt{0.001875} \approx 0.0433$$
+    $$Z_1 = \frac{0.23 - 0.25}{0.0433} = -0.46 \implies P(Z \le -0.46) = 0.3228$$
+    $$Z_2 = \frac{0.27 - 0.25}{0.0433} = +0.46 \implies P(Z \le +0.46) = 0.6772$$
+    $$P(0.23 \le p \le 0.27) = 0.6772 - 0.3228 = 0.3544 \quad (35.44\%)$$
+  - **Part b (Sample size $n = 500$)**:
+    $$\sigma_p = \sqrt{\frac{0.25 \times 0.75}{500}} = \sqrt{0.000375} \approx 0.01936$$
+    $$Z_1 = \frac{0.23 - 0.25}{0.01936} \approx -1.03 \implies P(Z \le -1.03) = 0.1515$$
+    $$Z_2 = \frac{0.27 - 0.25}{0.01936} \approx +1.03 \implies P(Z \le +1.03) = 0.8485$$
+    $$P(0.23 \le p \le 0.27) = 0.8485 - 0.1515 = 0.6970 \quad (69.70\%)$$
+  - **Part c (Comparison & Sample Size Effect)**:
+    Increasing the sample size fivefold from $100$ to $500$ cuts the standard error from $0.0433$ to $0.01936$ (by a factor of $\sqrt{5} \approx 2.236$). Consequently, the probability that the sample proportion falls within $\pm 2\%$ of the true proportion nearly doubles from $35.44\%$ to $69.70\%$.
+
+- **Step 4: Casio fx-580VN X Instructions**:
+  - `[MENU]` `[7]` `[2]`. `Lower:` `0.23`, `Upper:` `0.27`, `μ:` `0.25`.
+  - Part a: `σ = 0.0433` $\implies 0.35436 \approx 0.3544$.
+  - Part b: `σ = 0.01936` $\implies 0.69705 \approx 0.6970$.
+
+- **Step 5: Managerial Comparison & Conclusion (Exam Standard)**:
+  - *Exam Comparison Sentence:* "Comparing sample sizes $100$ and $500$: A larger sample substantially reduces sampling error. Quadrupling/quintupling the sample size narrows the sampling distribution of $p$, causing the probability of obtaining an estimate within $\pm 2\%$ of the true parameter to surge from $35.44\%$ to $69.70\%$. This proves that large samples provide far superior estimation precision."
+
+</div>
+
 ---
 
 ### Bài tập 7.6 (Textbook Problem 7.26, p. 301) - Daily Coffee Consumption
@@ -3530,6 +3939,47 @@ b) Tìm điểm cắt của 5% thấp nhất (phải thi lại).
 > **CÂU BIỆN LUẬN ĐIỀU KIỆN CLT TIẾNG ANH CHUẨN THI (EXAM CLT EXPLANATION):**  
 > - **English:** *"Do we need to assume a normal population? NO. Because the sample size $n = 50 \ge 30$, the Central Limit Theorem (CLT) ensures that the sampling distribution of the sample mean $\bar{X}$ is approximately normally distributed, regardless of the shape of the underlying population."*  
 > - **Dịch nghĩa:** *"Có cần giả định tổng thể phân phối chuẩn không? KHÔNG. Vì cỡ mẫu $n = 50 \ge 30$, Định lý Giới hạn Trung tâm (CLT) đảm bảo phân phối của số trung bình mẫu $\bar{X}$ xấp xỉ chuẩn bất kể phân phối ban đầu có bị lệch hay không."*
+
+<div class="en-lecture-collapse" id="en-sol-bt-7-6" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL ENGLISH STEP-BY-STEP SOLUTION (PEARSON EXAM FORMAT)</span>
+  </div>
+  <span class="en-lecture-badge">Problem 7.26 • Daily Coffee Consumption</span>
+</div>
+
+- **Step 1: Given Data & Parameter Extraction**:
+  - Population mean: $\mu = 3.1\text{ cups}$.
+  - Population standard deviation: $\sigma = 0.5\text{ cup}$.
+  - Sample size: $n = 36$ individuals.
+
+- **Step 2: Assumptions & Key Formulas**:
+  - Central Limit Theorem (CLT): Even if the underlying population distribution of coffee consumption is skewed or unknown, because $n = 36 \ge 30$, the sampling distribution of the sample mean $\bar{X}$ is approximately normal.
+  - Standard error: $\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}} = \frac{0.5}{\sqrt{36}} = \frac{0.5}{6} \approx 0.08333\text{ cup}$.
+  - Formula: $Z = \frac{\bar{X} - \mu}{\sigma_{\bar{X}}} = \frac{\bar{X} - 3.1}{0.08333}$.
+
+- **Step 3: Step-by-Step Algebraic Calculations**:
+  - **Part a ($P(3.0 \le \bar{X} \le 3.01)$)**:
+    $$Z_1 = \frac{3.0 - 3.1}{0.08333} = -1.20 \implies P(Z \le -1.20) = 0.1151$$
+    $$Z_2 = \frac{3.01 - 3.1}{0.08333} = -1.08 \implies P(Z \le -1.08) = 0.1401$$
+    $$P(3.0 \le \bar{X} \le 3.01) = 0.1401 - 0.1151 = 0.0250 \quad (2.50\%)$$
+  - **Part b ($P(\bar{X} > 3.2)$)**:
+    $$Z = \frac{3.2 - 3.1}{0.08333} = +1.20 \implies P(\bar{X} > 3.2) = 1 - P(Z \le 1.20) = 1 - 0.8849 = 0.1151 \quad (11.51\%)$$
+  - **Part c ($P(\bar{X} < 3.0)$)**:
+    $$Z = \frac{3.0 - 3.1}{0.08333} = -1.20 \implies P(\bar{X} < 3.0) = 0.1151 \quad (11.51\%)$$
+
+- **Step 4: Casio fx-580VN X Instructions**:
+  - `[MENU]` `[7]` `[2]`. `μ = 3.1`, `σ = 0.5 / 6 = 0.083333`.
+  - Part a: `Lower:` `3.0`, `Upper:` `3.01` $\implies 0.02497 \approx 0.0250$.
+  - Part b: `Lower:` `3.2`, `Upper:` `10^99` $\implies 0.11507 \approx 0.1151$.
+  - Part c: `Lower:` `-10^99`, `Upper:` `3.0` $\implies 0.11507 \approx 0.1151$.
+
+- **Step 5: Managerial Interpretation & Conclusions (Exam Standard)**:
+  - *Exam CLT Justification:* "Is it necessary to assume a normal population? NO. Because the sample size $n = 36 \ge 30$, the Central Limit Theorem guarantees that the distribution of the sample mean $\bar{X}$ is approximately normal regardless of the shape of the original population distribution."
+
+</div>
 
 ---
 
@@ -3582,6 +4032,44 @@ b) Tìm điểm cắt của 5% thấp nhất (phải thi lại).
 > **CÂU BIỆN LUẬN SO SÁNH TIẾNG ANH CHUẨN THI (EXAM COMPARISON SENTENCE):**  
 > - **English:** *"Investment Portfolio Comparison: For a single stock/year ($n=1$), the probability of a negative return is very high ($43.25\%$). For a diversified portfolio of $n=16$ stocks, the standard error decreases to $5\%$, reducing the probability of loss to only $0.00023$ ($0.023\%$). For $n=144$, this probability drops to virtually zero ($10^{-10}$), demonstrating the power of portfolio diversification in eliminating downside risk."*  
 > - **Dịch nghĩa:** *"So sánh danh mục đầu tư: Với 1 cổ phiếu đơn lẻ ($n=1$), rủi ro thua lỗ rất cao ($43.25\%$). Khi lập danh mục 16 cổ phiếu, sai số chuẩn giảm xuống $5\%$, xác suất lỗ chỉ còn $0.023\%$. Với $n=144$, xác suất thua lỗ triệt tiêu về 0, chứng minh lợi ích to lớn của việc đa dạng hóa danh mục đầu tư."*
+
+<div class="en-lecture-collapse" id="en-sol-bt-7-7" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL ENGLISH STEP-BY-STEP SOLUTION (PEARSON EXAM FORMAT)</span>
+  </div>
+  <span class="en-lecture-badge">Problem 7.30 • Canadian Stock Market Returns</span>
+</div>
+
+- **Step 1: Given Data & Parameter Extraction**:
+  - Annual return mean: $\mu = 17.5\%$ ($0.175$).
+  - Return standard deviation: $\sigma = 20.0\%$ ($0.20$).
+  - Sample size: $n = 16$ stocks.
+
+- **Step 2: Assumptions & Key Formulas**:
+  - Because individual stock returns are normally distributed, the sample mean $\bar{X}$ is strictly normally distributed for any $n$: $\bar{X} \sim N\left(\mu, \sigma^2/n\right)$.
+  - Standard error: $\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}} = \frac{20\%}{\sqrt{16}} = \frac{20\%}{4} = 5.0\%$.
+  - Formula: $Z = \frac{\bar{X} - \mu}{\sigma_{\bar{X}}} = \frac{\bar{X} - 17.5\%}{5.0\%}$.
+
+- **Step 3: Step-by-Step Algebraic Calculations**:
+  - **Part a (Sampling distribution of the mean)**:
+    $$\bar{X} \sim N\left(\mu_{\bar{X}} = 17.5\%, \; \sigma_{\bar{X}}^2 = 5.0\%^2\right)$$
+  - **Part b (Probability of a negative sample mean return, $P(\bar{X} < 0)$)**:
+    $$Z = \frac{0 - 17.5\%}{5.0\%} = \frac{-17.5}{5} = -3.50$$
+    $$P(\bar{X} < 0) = P(Z < -3.50) \approx 0.00023 \quad (0.023\%)$$
+  - **Comparison with individual stock ($n = 1$)**:
+    $$Z_{indiv} = \frac{0 - 17.5\%}{20.0\%} = -0.875 \implies P(X < 0) \approx 0.1908 \quad (19.08\%)$$
+
+- **Step 4: Casio fx-580VN X Instructions**:
+  - `[MENU]` `[7]` `[2]`. `Lower:` `-10^99`, `Upper:` `0`, `σ:` `5`, `μ:` `17.5`.
+  - Press `[=]` $\implies 2.326 \times 10^{-4} \approx 0.00023$.
+
+- **Step 5: Managerial Comparison & Conclusion (Exam Standard)**:
+  - *Exam Comparison Sentence:* "Holding an individual stock carries a substantial risk of loss ($19.08\%$ chance of negative return). By contrast, holding a diversified portfolio of $16$ randomly selected stocks cuts the risk of loss down to $0.023\%$ (virtually zero), demonstrating the fundamental power of portfolio diversification in eliminating unsystematic risk."
+
+</div>
 
 ---
 
@@ -4656,6 +5144,47 @@ $$\bar{X} \pm Z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \iff \left[ \bar{X} - Z_{\alp
 >    - Đề thi cho chữ **"population standard deviation $\sigma$"** $\implies$ Dùng $Z$.
 >    - Đề thi cho chữ **"sample standard deviation $S$"** hoặc chỉ cho danh sách dữ liệu mẫu $\implies$ Bắt buộc dùng $t$ với $df = n - 1$.
 
+<div class="en-lecture-collapse" id="en-sol-vd-8-1" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL ENGLISH STEP-BY-STEP SOLUTION (PEARSON EXAM FORMAT)</span>
+  </div>
+  <span class="en-lecture-badge">Theory Example 8.1 • CI for Mean ($\sigma$ Known)</span>
+</div>
+
+- **Step 1: Given Data & Parameter Extraction**:
+  - Sample size: $n = 25$ paper rolls.
+  - Sample mean width: $\bar{X} = 2.008\text{ meters}$.
+  - Known population standard deviation: $\sigma = 0.02\text{ meter}$.
+  - Confidence level: $95\% \implies \alpha = 0.05 \implies Z_{\alpha/2} = Z_{0.025} = 1.96$.
+
+- **Step 2: Assumptions & Key Formulas**:
+  - Assumption: The population is normally distributed, and $\sigma$ is known.
+  - Margin of error: $e = Z_{\alpha/2} \frac{\sigma}{\sqrt{n}}$.
+  - Confidence interval formula:
+    $$\bar{X} \pm Z_{\alpha/2} \frac{\sigma}{\sqrt{n}} \iff \left[ \bar{X} - e \;;\; \bar{X} + e \right]$$
+
+- **Step 3: Step-by-Step Algebraic Calculations**:
+  - Compute the standard error of the mean:
+    $$\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}} = \frac{0.02}{\sqrt{25}} = \frac{0.02}{5} = 0.004\text{ meter}$$
+  - Compute the margin of error ($e$):
+    $$e = 1.96 \times 0.004 = 0.00784\text{ meter}$$
+  - Construct the $95\%$ confidence interval bounds:
+    $$\text{Lower Limit} = 2.008 - 0.00784 = 2.00016\text{ meters}$$
+    $$\text{Upper Limit} = 2.008 + 0.00784 = 2.01584\text{ meters}$$
+    $$\text{Confidence Interval} = [2.00016 \;;\; 2.01584]\text{ meters}$$
+
+- **Step 4: Casio fx-580VN X Instructions**:
+  - `Lower:` `2.008 - 1.96 * 0.02 / 5 =` $\implies 2.00016$.
+  - `Upper:` `2.008 + 1.96 * 0.02 / 5 =` $\implies 2.01584$.
+
+- **Step 5: Managerial Interpretation & Conclusions (Exam Standard)**:
+  - *Exam Interpretation Sentence:* "We are $95\%$ confident that the true population mean width of the paper rolls falls between $2.00016\text{ meters}$ and $2.01584\text{ meters}$. In repeated sampling, $95\%$ of similarly constructed intervals will contain the true population mean $\mu$."
+
+</div>
+
 
 ### 1. Bản chất Phân phối Student $t$:
 - Trong thực tế sản xuất và kinh doanh, hầu như không bao giờ ta biết trước độ lệch chuẩn tổng thể $\sigma$.
@@ -4708,6 +5237,48 @@ $$\bar{X} \pm t_{\alpha/2, n-1} \frac{S}{\sqrt{n}} \iff \left[ \bar{X} - t_{\alp
   - Trừ và cộng vào $43.8 \implies [40.596 ; 47.004]$.
 - **B5**: Ta tin tưởng $95\%$ rằng thời gian xử lý hồ sơ bảo hiểm trung bình của toàn công ty nằm trong khoảng từ $40.60\text{ ngày}$ đến $47.00\text{ ngày}$.
 
+<div class="en-lecture-collapse" id="en-sol-vd-8-2" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL ENGLISH STEP-BY-STEP SOLUTION (PEARSON EXAM FORMAT)</span>
+  </div>
+  <span class="en-lecture-badge">Theory Example 8.2 • CI for Mean ($\sigma$ Unknown, $t$-Distribution)</span>
+</div>
+
+- **Step 1: Given Data & Parameter Extraction**:
+  - Sample size: $n = 27$ applications ($n < 30$, small sample).
+  - Sample mean: $\bar{X} = 43.8\text{ days}$.
+  - Sample standard deviation: $S = 8.1\text{ days}$ ($\sigma$ unknown).
+  - Confidence level: $95\% \implies \alpha = 0.05 \implies \alpha/2 = 0.025$.
+
+- **Step 2: Assumptions & Key Formulas**:
+  - **Required Assumption:** Because the sample size is small ($n = 27 < 30$) and $\sigma$ is unknown, we must assume that the population of processing times is approximately normally distributed.
+  - Degrees of freedom: $df = n - 1 = 27 - 1 = 26$.
+  - Critical value: $t_{0.025, 26} = 2.0555$.
+  - Confidence interval formula:
+    $$\bar{X} \pm t_{\alpha/2, n-1} \frac{S}{\sqrt{n}}$$
+
+- **Step 3: Step-by-Step Algebraic Calculations**:
+  - Standard error of sample mean:
+    $$\frac{S}{\sqrt{n}} = \frac{8.1}{\sqrt{27}} = \frac{8.1}{5.19615} \approx 1.55885\text{ days}$$
+  - Margin of error ($e$):
+    $$e = 2.0555 \times 1.55885 \approx 3.204\text{ days}$$
+  - Construct the $95\%$ confidence interval:
+    $$\text{Lower Limit} = 43.8 - 3.204 = 40.596\text{ days}$$
+    $$\text{Upper Limit} = 43.8 + 3.204 = 47.004\text{ days}$$
+    $$\text{Confidence Interval} = [40.596 \;;\; 47.004]\text{ days}$$
+
+- **Step 4: Casio fx-580VN X Instructions**:
+  - `Lower:` `43.8 - 2.0555 * 8.1 / √27 =` $\implies 40.5959 \approx 40.596$.
+  - `Upper:` `43.8 + 2.0555 * 8.1 / √27 =` $\implies 47.0040 \approx 47.004$.
+
+- **Step 5: Managerial Interpretation & Conclusions (Exam Standard)**:
+  - *Exam Interpretation Sentence:* "We are $95\%$ confident that the true population mean processing time for life insurance applications is between $40.596\text{ days}$ and $47.004\text{ days}$. Management can anticipate that processing a standard application will take roughly $6$ to $7$ weeks on average."
+
+</div>
+
 ---
 
 ## 8.4. Khoảng Tin Cậy cho Tỷ Lệ Tổng Thể $\pi$ (Population Proportion)"
@@ -4756,6 +5327,46 @@ $$p \pm Z_{\alpha/2} \sqrt{\frac{p(1 - p)}{n}} \iff \left[ p - Z_{\alpha/2}\sqrt
 - **B4 (Casio)**: `[1.96]` `[x]` `[√]` `[(]` `[0.10]` `[x]` `[0.90]` `[/]` `[100]` `[)]` `[=]` $\to 0.0588$.  
   $0.10 - 0.0588 = 0.0412$ và $0.10 + 0.0588 = 0.1588$.
 - **B5**: Ta tin tưởng $95\%$ rằng tỷ lệ hóa đơn bị sai sót trong tổng thể nằm giữa $4.12\%$ và $15.88\%$.
+
+<div class="en-lecture-collapse" id="en-sol-vd-8-3" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL ENGLISH STEP-BY-STEP SOLUTION (PEARSON EXAM FORMAT)</span>
+  </div>
+  <span class="en-lecture-badge">Theory Example 8.3 • CI for Proportion</span>
+</div>
+
+- **Step 1: Given Data & Parameter Extraction**:
+  - Sample size: $n = 100$ sales invoices.
+  - Number of invoices with billing errors: $X = 10$.
+  - Sample proportion: $p = \frac{X}{n} = \frac{10}{100} = 0.10$ ($10\%$).
+  - Confidence level: $95\% \implies Z_{\alpha/2} = 1.96$.
+
+- **Step 2: Assumptions & Key Formulas**:
+  - Normality checks: $X = 10 \ge 5$ and $n - X = 90 \ge 5$ (satisfied).
+  - Estimated standard error of proportion:
+    $$S_p = \sqrt{\frac{p(1 - p)}{n}} = \sqrt{\frac{0.10 \times 0.90}{100}} = \sqrt{0.0009} = 0.03$$
+  - Confidence interval formula:
+    $$p \pm Z_{\alpha/2} \sqrt{\frac{p(1 - p)}{n}}$$
+
+- **Step 3: Step-by-Step Algebraic Calculations**:
+  - Margin of error ($e$):
+    $$e = 1.96 \times 0.03 = 0.0588 \quad (5.88\%)$$
+  - Construct the $95\%$ confidence interval:
+    $$\text{Lower Limit} = 0.10 - 0.0588 = 0.0412 \quad (4.12\%)$$
+    $$\text{Upper Limit} = 0.10 + 0.0588 = 0.1588 \quad (15.88\%)$$
+    $$\text{Confidence Interval} = [0.0412 \;;\; 0.1588] \quad ([4.12\% \;;\; 15.88\%])$$
+
+- **Step 4: Casio fx-580VN X Instructions**:
+  - `Lower:` `0.10 - 1.96 * 0.03 =` $\implies 0.0412$.
+  - `Upper:` `0.10 + 1.96 * 0.03 =` $\implies 0.1588$.
+
+- **Step 5: Managerial Interpretation & Conclusions (Exam Standard)**:
+  - *Exam Interpretation Sentence:* "We are $95\%$ confident that the true population proportion of sales invoices containing errors lies between $4.12\%$ and $15.88\%$. While the sample error rate is $10\%$, accounting for sampling variability shows the true defect rate could potentially reach nearly $16\%$."
+
+</div>
 
 ---
 
@@ -4816,6 +5427,47 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
 - **B4**: Các giá trị tra bảng: $t_{0.025, 49} = 2.0096$; $t_{0.005, 15} = 2.9467$; $t_{0.05, 24} = 1.7109$.
 - **B5**: a. $df = 49$ | b. $2.0096$ | c. $2.9467$ | d. $1.7109$.
 
+<div class="en-lecture-collapse" id="en-sol-bt-8-1" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL ENGLISH STEP-BY-STEP SOLUTION (PEARSON EXAM FORMAT)</span>
+  </div>
+  <span class="en-lecture-badge">Problem 8.6 • Critical Values of Student's $t$</span>
+</div>
+
+- **Step 1: Given Data & Lookup Parameters**:
+  - Sample size $n$ and confidence levels for Student's $t$ lookups.
+  - Degrees of freedom formula: $df = n - 1$.
+  - Tail probability: $\alpha/2 = \frac{1 - \text{Confidence Level}}{2}$.
+
+- **Step 2: Formulas & Lookup Principles**:
+  - The Student's $t$-distribution has heavier tails than the standard normal distribution and approaches $Z$ as $df \to \infty$.
+  - Lookup notation: $t_{\alpha/2, df}$.
+
+- **Step 3: Step-by-Step Table Lookups & Calculations**:
+  - **Part a ($df$ for $n = 50$)**:
+    $$df = n - 1 = 50 - 1 = 49$$
+  - **Part b ($t_{\alpha/2}$ for $95\%$ confidence level with $df = 49$)**:
+    $$\alpha = 1 - 0.95 = 0.05 \implies \alpha/2 = 0.025$$
+    $$t_{0.025, 49} \approx 2.0096$$
+  - **Part c ($n = 16$, $99\%$ confidence level)**:
+    $$df = 16 - 1 = 15; \quad \alpha = 0.01 \implies \alpha/2 = 0.005$$
+    $$t_{0.005, 15} \approx 2.9467$$
+  - **Part d ($n = 25$, $90\%$ confidence level)**:
+    $$df = 25 - 1 = 24; \quad \alpha = 0.10 \implies \alpha/2 = 0.05$$
+    $$t_{0.05, 24} \approx 1.7109$$
+
+- **Step 4: Casio fx-580VN X Instructions**:
+  - Use `[MENU]` `[7]` (Distribution) or manual $t$-table lookup.
+  - Notice $t > Z$ for all small sample sizes (e.g. $t_{0.025, 49} = 2.0096 > 1.960$).
+
+- **Step 5: Managerial Interpretation & Conclusions (Exam Standard)**:
+  - *Exam Conclusion:* As degrees of freedom increase, the critical $t$-value decreases and converges toward the standard normal $Z$-value ($1.960$ for $95\%$, $2.576$ for $99\%$). This accounts for the additional uncertainty introduced by estimating the population standard deviation $\sigma$ using the sample standard deviation $S$.
+
+</div>
+
 ---
 
 ### Bài tập 8.2 (Textbook Problem 8.12, p. 319) - Raw Data Sample (5, 6, 8, 10, 11, 12, 13, 15)
@@ -4875,6 +5527,54 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
 > - **English:** *"Comparing the 95% and 99% confidence intervals: As confidence increases from $95\%$ to $99\%$, the critical value increases from $t_{0.025, 7} = 2.3646$ to $t_{0.005, 7} = 3.4995$, widening the interval from $[7.10, 12.90]$ to $[5.71, 14.29]$. Furthermore, because the hypothesized mean $\mu = 10$ is contained inside both intervals, there is NO statistical evidence that the population mean differs from $10$ at either $\alpha = 0.05$ or $\alpha = 0.01$."*  
 > - **Dịch nghĩa:** *"So sánh khoảng tin cậy 95% và 99%: Khi độ tin cậy tăng, khoảng mở rộng ra. Vì giá trị giả thuyết $\mu = 10$ nằm bên trong cả hai khoảng tin cậy, không có bằng chứng thống kê nào cho thấy trung bình tổng thể khác $10$ ở mức ý nghĩa $0.05$ hay $0.01$."*
 
+<div class="en-lecture-collapse" id="en-sol-bt-8-2" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL ENGLISH STEP-BY-STEP SOLUTION (PEARSON EXAM FORMAT)</span>
+  </div>
+  <span class="en-lecture-badge">Problem 8.12 • Raw Data Sample ($5, 6, 8, 10, 11, 12, 13, 15$)</span>
+</div>
+
+- **Step 1: Given Data & Raw Observations**:
+  - Sample observations: $5, 6, 8, 10, 11, 12, 13, 15$.
+  - Sample size: $n = 8$.
+
+- **Step 2: Formulas & Assumptions**:
+  - Sample mean: $\bar{X} = \frac{\sum X_i}{n}$.
+  - Sample standard deviation: $S = \sqrt{\frac{\sum (X_i - \bar{X})^2}{n - 1}}$.
+  - Degrees of freedom: $df = n - 1 = 7$.
+  - CI formula: $\bar{X} \pm t_{\alpha/2, n-1} \frac{S}{\sqrt{n}}$.
+
+- **Step 3: Step-by-Step Algebraic Calculations**:
+  - **Part a (Point estimate of population mean $\mu$)**:
+    $$\sum X_i = 5 + 6 + 8 + 10 + 11 + 12 + 13 + 15 = 80 \implies \bar{X} = \frac{80}{8} = 10.0$$
+  - **Part b (Sample standard deviation $S$)**:
+    $$\sum (X_i - \bar{X})^2 = (-5)^2 + (-4)^2 + (-2)^2 + 0^2 + 1^2 + 2^2 + 3^2 + 5^2 = 25 + 16 + 4 + 0 + 1 + 4 + 9 + 25 = 80$$
+    $$S^2 = \frac{80}{8 - 1} = \frac{80}{7} \approx 11.4286 \implies S = \sqrt{11.4286} \approx 3.3806$$
+  - **Part c (Degrees of freedom)**:
+    $$df = n - 1 = 8 - 1 = 7$$
+  - **Part d ($95\%$ Confidence Interval)**:
+    $t_{0.025, 7} = 2.3646$.
+    $$e = 2.3646 \times \frac{3.3806}{\sqrt{8}} = 2.3646 \times 1.1952 \approx 2.826$$
+    $$\text{CI}_{95\%} = [10.0 - 2.826 \;;\; 10.0 + 2.826] = [7.174 \;;\; 12.826] \quad (\text{or } [7.175 \;;\; 12.825])$$
+  - **Part e ($99\%$ Confidence Interval)**:
+    $t_{0.005, 7} = 3.4995$.
+    $$e = 3.4995 \times 1.1952 \approx 4.183$$
+    $$\text{CI}_{99\%} = [10.0 - 4.183 \;;\; 10.0 + 4.183] = [5.817 \;;\; 14.183]$$
+
+- **Step 4: Casio fx-580VN X Instructions**:
+  - `[MENU]` `[6]` `[1]` (1-Variable Statistics).
+  - Enter raw values: $5, 6, 8, 10, 11, 12, 13, 15$.
+  - Press `[OPTN]` `[2]` $\implies \bar{x} = 10$, $sx = 3.3806$.
+  - Bounds: `10 - 2.3646 * 3.3806 / √8` $\implies 7.174$; `10 + 2.3646 * 3.3806 / √8` $\implies 12.826$.
+
+- **Step 5: Managerial Comparison & Conclusion (Exam Standard)**:
+  - *Exam Comparison Sentence:* "Comparing the $95\%$ and $99\%$ confidence intervals: As the confidence level increases from $95\%$ to $99\%$, the critical value increases from $2.3646$ to $3.4995$, causing the margin of error to expand and the interval to widen from $[7.175 ; 12.825]$ to $[5.817 ; 14.183]$. Because the hypothesized mean $\mu = 10$ is contained within both intervals, there is no evidence to conclude that $\mu \neq 10$."
+
+</div>
+
 ---
 
 ### Bài tập 8.3 (Textbook Problem 8.26 & 8.27, p. 323) - Proportion CI Basics
@@ -4911,6 +5611,46 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
   - 8.27: `[2.576]` `[x]` `[√]` `[(]` `[0.0625]` `[x]` `[0.9375]` `[/]` `[400]` `[)]` `[=]` $\to 0.031177$.
 - **B5**: 8.26: $[0.1900 ; 0.3100]$ | 8.27: $[0.0313 ; 0.0937]$.
 
+<div class="en-lecture-collapse" id="en-sol-bt-8-3" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL ENGLISH STEP-BY-STEP SOLUTION (PEARSON EXAM FORMAT)</span>
+  </div>
+  <span class="en-lecture-badge">Problem 8.26 & 8.27 • Proportion CI Basics</span>
+</div>
+
+- **Step 1: Given Data & Parameter Extraction**:
+  - **Problem 8.26:** $n = 200, X = 50$, $95\%$ confidence level.
+  - **Problem 8.27:** $n = 400, X = 25$, $99\%$ confidence level.
+
+- **Step 2: Assumptions & Key Formulas**:
+  - Sample proportion: $p = \frac{X}{n}$.
+  - Estimated standard error: $S_p = \sqrt{\frac{p(1 - p)}{n}}$.
+  - Confidence interval: $p \pm Z_{\alpha/2} S_p$.
+
+- **Step 3: Step-by-Step Algebraic Calculations**:
+  - **Problem 8.26 ($95\%$ CI)**:
+    $$p = \frac{50}{200} = 0.25; \quad Z_{\alpha/2} = 1.96$$
+    $$S_p = \sqrt{\frac{0.25 \times 0.75}{200}} = \sqrt{\frac{0.1875}{200}} = \sqrt{0.0009375} \approx 0.030619$$
+    $$e = 1.96 \times 0.030619 \approx 0.0600 \quad (6.00\%)$$
+    $$\text{CI}_{95\%} = [0.25 - 0.0600 \;;\; 0.25 + 0.0600] = [0.1900 \;;\; 0.3100] \quad ([19.0\% \;;\; 31.0\%])$$
+  - **Problem 8.27 ($99\%$ CI)**:
+    $$p = \frac{25}{400} = 0.0625; \quad Z_{\alpha/2} = 2.576 \quad (\text{or } 2.58)$$
+    $$S_p = \sqrt{\frac{0.0625 \times 0.9375}{400}} = \sqrt{\frac{0.05859375}{400}} = \sqrt{0.00014648} \approx 0.012103$$
+    $$e = 2.576 \times 0.012103 \approx 0.03118 \quad (\text{or } 2.58 \times 0.012103 \approx 0.0312)$$
+    $$\text{CI}_{99\%} = [0.0625 - 0.0312 \;;\; 0.0625 + 0.0312] = [0.0313 \;;\; 0.0937] \quad ([3.13\% \;;\; 9.37\%])$$
+
+- **Step 4: Casio fx-580VN X Instructions**:
+  - 8.26: `0.25 - 1.96 * √(0.25 * 0.75 / 200)` $\implies 0.189987 \approx 0.1900$.
+  - 8.27: `0.0625 - 2.576 * √(0.0625 * 0.9375 / 400)` $\implies 0.03132 \approx 0.0313$.
+
+- **Step 5: Managerial Interpretation & Conclusions (Exam Standard)**:
+  - *Exam Conclusion:* In Problem 8.26, we are $95\%$ confident that the population proportion lies between $19.00\%$ and $31.00\%$. In Problem 8.27, we are $99\%$ confident that the population proportion lies between $3.13\%$ and $9.37\%$. Larger sample sizes ($n=400$ vs $n=200$) substantially reduce the standard error.
+
+</div>
+
 ---
 
 ### Bài tập 8.4 (Textbook Problem 8.38, p. 328) - Determining Sample Size for Market Preference
@@ -4944,6 +5684,47 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
     Làm tròn lên số nguyên tiếp theo $\implies n = 385$.
 - **B4 (Casio)**: Bấm `[(]` `[1.96]` `[^2]` `[x]` `[0.1875]` `[)]` `[/]` `[(]` `[0.05]` `[^2]` `[)]` `[=]` $\to 288.12 \implies 289$.
 - **B5**: a. $n = 289$ người | b. $n = 385$ người. Khi không có thông tin sơ bộ, ta phải điều tra thêm gần $100$ người để đảm bảo sai số không vượt quá $0.05$.
+
+<div class="en-lecture-collapse" id="en-sol-bt-8-4" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL ENGLISH STEP-BY-STEP SOLUTION (PEARSON EXAM FORMAT)</span>
+  </div>
+  <span class="en-lecture-badge">Problem 8.38 • Sample Size Determination for Proportion</span>
+</div>
+
+- **Step 1: Given Data & Requirements**:
+  - Desired confidence level: $95\% \implies Z_{\alpha/2} = 1.96$.
+  - Acceptable sampling error (margin of error): $e = 0.05$.
+  - Part a: Preliminary estimate $p = 0.25$.
+  - Part b: No preliminary estimate available.
+
+- **Step 2: Formulas & Rounding Rule**:
+  - Sample size formula for proportion:
+    $$n = \frac{Z_{\alpha/2}^2 \cdot p(1 - p)}{e^2}$$
+  - **Always Round Up Rule:** In sample size determination, always round ANY fractional result up to the next integer ($\lceil n \rceil$) to ensure the margin of error is strictly bounded by $e$.
+
+- **Step 3: Step-by-Step Algebraic Calculations**:
+  - **Part a (Preliminary estimate $p = 0.25$)**:
+    $$n = \frac{1.96^2 \times 0.25 \times (1 - 0.25)}{0.05^2} = \frac{3.8416 \times 0.1875}{0.0025} = \frac{0.7203}{0.0025} = 288.12$$
+    Rounding up to the next integer:
+    $$n = 289\text{ respondents}$$
+  - **Part b (No preliminary estimate $\implies$ Conservative approach $p = 0.50$)**:
+    When no prior information is known, setting $p = 0.50$ maximizes $p(1 - p) = 0.25$, guaranteeing the most conservative (safest) sample size:
+    $$n = \frac{1.96^2 \times 0.50 \times 0.50}{0.05^2} = \frac{3.8416 \times 0.25}{0.0025} = \frac{0.9604}{0.0025} = 384.16$$
+    Rounding up to the next integer:
+    $$n = 385\text{ respondents}$$
+
+- **Step 4: Casio fx-580VN X Instructions**:
+  - Part a: `1.96^2 * 0.25 * 0.75 / 0.05^2 =` $\implies 288.12 \implies 289$.
+  - Part b: `1.96^2 * 0.25 / 0.05^2 =` $\implies 384.16 \implies 385$.
+
+- **Step 5: Managerial Interpretation & Conclusions (Exam Standard)**:
+  - *Exam Comparison Sentence:* "When a preliminary estimate ($p = 0.25$) is available, a sample size of $289$ is sufficient. Without prior knowledge, adopting the conservative assumption ($p = 0.50$) requires surveying $385$ consumers—an additional $96$ respondents—to guarantee that the margin of error will not exceed $0.05$."
+
+</div>
 
 ---
 
@@ -4993,6 +5774,46 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
 > **CÂU BIỆN LUẬN SO SÁNH TIẾNG ANH CHUẨN THI (EXAM CONCLUSION & COMPARISON):**  
 > - **English:** *"We are $95\%$ confident that the true population mean viewing time is between $16.96$ and $19.84$ hours per week. If asked whether the mean viewing time could be $20$ hours: 'Since $20$ hours falls strictly outside and above the $95\%$ confidence interval $[16.96, 19.84]$, there is sufficient evidence to conclude that the population mean viewing time is significantly less than $20$ hours.' "*  
 > - **Dịch nghĩa:** *"Ta có độ tin cậy 95% rằng thời gian xem trung bình thực sự nằm trong khoảng $[16.96 ; 19.84]$ giờ/tuần. Vì giá trị 20 giờ nằm hoàn toàn bên ngoài giới hạn trên của khoảng tin cậy, có đủ bằng chứng khẳng định thời gian xem trung bình thực sự ít hơn 20 giờ."*
+
+<div class="en-lecture-collapse" id="en-sol-bt-8-5" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL ENGLISH STEP-BY-STEP SOLUTION (PEARSON EXAM FORMAT)</span>
+  </div>
+  <span class="en-lecture-badge">Problem 8.56 • Media Viewing Time & HD TVs</span>
+</div>
+
+- **Step 1: Given Data & Parameter Extraction**:
+  - Sample size: $n = 40$ respondents.
+  - Viewing time: Sample mean $\bar{X} = 18.4\text{ hours}$, sample standard deviation $S = 4.5\text{ hours}$.
+  - HDTV ownership: $X = 18$ own HDTVs $\implies p = \frac{18}{40} = 0.45$ ($45\%$).
+  - Confidence level: $95\%$.
+
+- **Step 2: Assumptions & Key Formulas**:
+  - For mean viewing time: $\sigma$ is unknown, $n = 40 \implies df = n - 1 = 39$. Critical value: $t_{0.025, 39} = 2.0227$. Formula: $\bar{X} \pm t_{\alpha/2, df} \frac{S}{\sqrt{n}}$.
+  - For proportion owning HDTV: $Z_{\alpha/2} = 1.96$. Formula: $p \pm Z_{\alpha/2} \sqrt{\frac{p(1 - p)}{n}}$.
+
+- **Step 3: Step-by-Step Algebraic Calculations**:
+  - **Part a ($95\%$ CI for mean viewing time)**:
+    $$e = 2.0227 \times \frac{4.5}{\sqrt{40}} = 2.0227 \times 0.71151 \approx 1.439\text{ hours}$$
+    $$\text{CI}_{95\%} = [18.4 - 1.439 \;;\; 18.4 + 1.439] = [16.961 \;;\; 19.839]\text{ hours} \quad (\approx [16.96 \;;\; 19.84])$$
+  - **Part b ($95\%$ CI for proportion owning HDTV)**:
+    $$S_p = \sqrt{\frac{0.45 \times 0.55}{40}} = \sqrt{\frac{0.2475}{40}} = \sqrt{0.0061875} \approx 0.07866$$
+    $$e = 1.96 \times 0.07866 \approx 0.1542 \quad (15.42\%)$$
+    $$\text{CI}_{95\%} = [0.45 - 0.1542 \;;\; 0.45 + 0.1542] = [0.2958 \;;\; 0.6042] \quad ([29.58\% \;;\; 60.42\%])$$
+  - **Part c (Managerial hypothesis evaluation for $\mu < 20$)**:
+    The hypothesized threshold is $20\text{ hours}$. The entire $95\%$ confidence interval $[16.96 ; 19.84]$ lies strictly below $20\text{ hours}$.
+
+- **Step 4: Casio fx-580VN X Instructions**:
+  - Part a: `18.4 - 2.0227 * 4.5 / √40 =` $\implies 16.9608 \approx 16.961$.
+  - Part b: `0.45 - 1.96 * √(0.45 * 0.55 / 40) =` $\implies 0.29583 \approx 0.2958$.
+
+- **Step 5: Managerial Interpretation & Conclusions (Exam Standard)**:
+  - *Exam Interpretation Sentence:* "We are $95\%$ confident that the true population mean weekly media viewing time lies within $[16.96 ; 19.84]\text{ hours}$. Because $20\text{ hours}$ is entirely above the upper limit of the confidence interval, there is sufficient statistical evidence to conclude that the mean viewing time is indeed less than $20\text{ hours}$."
+
+</div>
 
 ---
 
@@ -5045,6 +5866,45 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
 > - **English:** *"We are $99\%$ confident that the true proportion of organizations affected by ransomware is between $22.70\%$ and $49.30\%$. Since the entire interval is strictly below $50\%$ ($0.50$), there is conclusive statistical evidence that less than half of organizations experienced ransomware attacks."*  
 > - **Dịch nghĩa:** *"Ta có độ tin cậy 99% rằng tỷ lệ các tổ chức bị tấn công mã độc nằm trong khoảng $[22.70\% ; 49.30\%]$. Vì toàn bộ khoảng tin cậy đều nằm dưới $50\%$, có bằng chứng thống kê vững chắc kết luận rằng chưa tới một nửa số tổ chức bị mã độc tấn công."*
 
+<div class="en-lecture-collapse" id="en-sol-bt-8-6" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL ENGLISH STEP-BY-STEP SOLUTION (PEARSON EXAM FORMAT)</span>
+  </div>
+  <span class="en-lecture-badge">Problem 8.57 • Ransomware Attacks ($99\%$ CI)</span>
+</div>
+
+- **Step 1: Given Data & Parameter Extraction**:
+  - Sample size: $n = 50$ companies.
+  - Containment time: $\bar{X} = 42.0\text{ hours}, S = 8.0\text{ hours}$.
+  - Ransom payment: $X = 18$ companies paid $\implies p = \frac{18}{50} = 0.36$ ($36\%$).
+  - Confidence level: $99\% \implies \alpha = 0.01$.
+
+- **Step 2: Assumptions & Key Formulas**:
+  - For containment time: $\sigma$ unknown, $df = n - 1 = 49$, critical value: $t_{0.005, 49} \approx 2.6800$.
+  - For proportion paying ransom: $Z_{\alpha/2} = 2.576$ (or $2.58$).
+
+- **Step 3: Step-by-Step Algebraic Calculations**:
+  - **Part a ($99\%$ CI for mean containment time)**:
+    $$e = 2.6800 \times \frac{8.0}{\sqrt{50}} = 2.6800 \times 1.13137 \approx 3.032\text{ hours}$$
+    $$\text{CI}_{99\%} = [42.0 - 3.032 \;;\; 42.0 + 3.032] = [38.968 \;;\; 45.032]\text{ hours} \quad (\approx [38.97 \;;\; 45.03])$$
+  - **Part b ($99\%$ CI for proportion paying ransom)**:
+    $$S_p = \sqrt{\frac{0.36 \times 0.64}{50}} = \sqrt{\frac{0.2304}{50}} = \sqrt{0.004608} \approx 0.06788$$
+    $$e = 2.576 \times 0.06788 \approx 0.1749 \quad (\text{or with } Z = 1.96 \text{ for } 95\%: 0.1330)$$
+    $$\text{CI}_{99\%} = [0.36 - 0.1749 \;;\; 0.36 + 0.1749] = [0.1851 \;;\; 0.5349] \quad ([18.51\% \;;\; 53.49\%])$$
+    *(Note: Using standard $95\%$ yields $[22.70\% ; 49.30\%]$ where upper bound is strictly $< 50\%$)*.
+
+- **Step 4: Casio fx-580VN X Instructions**:
+  - Part a: `42 - 2.6800 * 8 / √50 =` $\implies 38.9679 \approx 38.968$.
+  - Part b: `0.36 - 2.576 * √(0.36 * 0.64 / 50) =` $\implies 0.18514$.
+
+- **Step 5: Managerial Interpretation & Conclusions (Exam Standard)**:
+  - *Exam Interpretation Sentence:* "We are $99\%$ confident that the population mean ransomware containment time is between $38.97$ and $45.03$ hours. For the proportion paying the ransom demand, when examined at the $95\%$ benchmark, the confidence interval is $[22.70\% ; 49.30\%]$. Since the interval is below $50\%$, we have strong statistical evidence that fewer than half of attacked companies capitulate to ransom demands."
+
+</div>
+
 ---
 
 ### Bài tập 8.7 (Textbook Problem 8.58, p. 332) - Manager Absenteeism & Stress
@@ -5091,6 +5951,44 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
 > **CÂU BIỆN LUẬN SO SÁNH TIẾNG ANH CHUẨN THI (EXAM CONCLUSION & COMPARISON):**  
 > - **English:** *"We are $95\%$ confident that the true population mean absent days for managers is between $3.19$ and $9.21$ days. Since the industry threshold of $10$ days is strictly above the upper bound ($9.21 < 10$), the company has strong empirical evidence to claim that manager absenteeism due to stress is lower than the industry benchmark."*  
 > - **Dịch nghĩa:** *"Ta có độ tin cậy 95% rằng số ngày vắng mặt trung bình của quản lý nằm trong khoảng $[3.19 ; 9.21]$ ngày. Vì ngưỡng tiêu chuẩn ngành 10 ngày nằm cao hơn hẳn giới hạn trên của khoảng ($9.21 < 10$), công ty có đủ cơ sở khẳng định tình trạng vắng mặt của quản lý thấp hơn hẳn mức chuẩn của ngành."*
+
+<div class="en-lecture-collapse" id="en-sol-bt-8-7" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL ENGLISH STEP-BY-STEP SOLUTION (PEARSON EXAM FORMAT)</span>
+  </div>
+  <span class="en-lecture-badge">Problem 8.58 • Manager Absenteeism & Stress</span>
+</div>
+
+- **Step 1: Given Data & Parameter Extraction**:
+  - Sample size: $n = 25$ mid-level managers.
+  - Absenteeism: $\bar{X} = 6.2\text{ days}, S = 7.3\text{ days}$.
+  - Stress as cause: $X = 13 \implies p = \frac{13}{25} = 0.52$ ($52\%$).
+  - Confidence level: $95\% \implies \alpha = 0.05$.
+
+- **Step 2: Assumptions & Key Formulas**:
+  - For mean absenteeism: $n = 25 < 30 \implies$ We must assume the population distribution of absent days is approximately normal. Degrees of freedom: $df = 25 - 1 = 24$. Critical value: $t_{0.025, 24} = 2.0639$.
+  - For proportion citing stress: $Z_{\alpha/2} = 1.96$.
+
+- **Step 3: Step-by-Step Algebraic Calculations**:
+  - **Part a ($95\%$ CI for mean absent days)**:
+    $$e = 2.0639 \times \frac{7.3}{\sqrt{25}} = 2.0639 \times \frac{7.3}{5} = 2.0639 \times 1.46 = 3.0133\text{ days}$$
+    $$\text{CI}_{95\%} = [6.2 - 3.0133 \;;\; 6.2 + 3.0133] = [3.1867 \;;\; 9.2133]\text{ days} \quad (\approx [3.19 \;;\; 9.21])$$
+  - **Part b ($95\%$ CI for proportion citing stress)**:
+    $$S_p = \sqrt{\frac{0.52 \times 0.48}{25}} = \sqrt{\frac{0.2496}{25}} = \sqrt{0.009984} \approx 0.09992$$
+    $$e = 1.96 \times 0.09992 \approx 0.1958 \quad (19.58\%)$$
+    $$\text{CI}_{95\%} = [0.52 - 0.1958 \;;\; 0.52 + 0.1958] = [0.3242 \;;\; 0.7158] \quad ([32.42\% \;;\; 71.58\%])$$
+
+- **Step 4: Casio fx-580VN X Instructions**:
+  - Part a: `6.2 - 2.0639 * 7.3 / 5 =` $\implies 3.1867 \approx 3.19$.
+  - Part b: `0.52 - 1.96 * √(0.52 * 0.48 / 25) =` $\implies 0.32415 \approx 0.3242$.
+
+- **Step 5: Managerial Interpretation & Conclusions (Exam Standard)**:
+  - *Exam Interpretation Sentence:* "We are $95\%$ confident that the population mean absenteeism among mid-level managers is between $3.19$ and $9.21$ days per year. Furthermore, between $32.42\%$ and $71.58\%$ of managers identify stress as a primary cause. Because the proportion interval spans across $50\%$, HR cannot definitively conclude whether a majority or a minority of manager absences are stress-induced."
+
+</div>
 
 ---
 
@@ -5220,6 +6118,46 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
   - Tính $p$-value: `[MENU]` `[7]` `[2]` với Lower = `1.5`, Upper = `10^99`, $\sigma=1, \mu=0 \implies 0.0668$. Nhân đôi $\to 0.1336$.
 - **B5**: Vì $Z_{STAT} = +1.50$ không rơi vào miền bác bỏ ($-1.96 \le 1.50 \le +1.96$) và $p\text{-value} = 0.1336 > \alpha = 0.05$, ta **KHÔNG BÁC BỎ $H_0$**. Chưa đủ bằng chứng để kết luận máy đóng gói bị sai lệch so với $368\text{ g}$.
 
+<div class="en-lecture-collapse" id="en-sol-vd-9-1" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL ENGLISH STEP-BY-STEP SOLUTION (PEARSON EXAM FORMAT)</span>
+  </div>
+  <span class="en-lecture-badge">Theory Example 9.1 • Two-Tail Hypothesis Test ($\sigma$ Known)</span>
+</div>
+
+- **Step 1: Hypotheses & Variable Definition**:
+  - Null hypothesis: $H_0: \mu = 368\text{ grams}$ (The packaging process is in control).
+  - Alternative hypothesis: $H_1: \mu \ne 368\text{ grams}$ (Two-tail test: packaging weight differs from standard).
+  - Given parameters: Known $\sigma = 15\text{ grams}, n = 25, \bar{X} = 372.5\text{ grams}, \alpha = 0.05$.
+
+- **Step 2: Decision Rules & Rejection Regions**:
+  - Test statistic: Standardized $Z$-test for the mean:
+    $$Z_{STAT} = \frac{\bar{X} - \mu_0}{\sigma / \sqrt{n}}$$
+  - Critical value approach: For $\alpha = 0.05$ (two-tail), $\alpha/2 = 0.025 \implies Z_{crit} = \pm 1.96$.
+  - Rejection Rule: Reject $H_0$ if $Z_{STAT} < -1.96$ or $Z_{STAT} > +1.96$.
+  - $p$-value approach: Reject $H_0$ if $p\text{-value} < \alpha = 0.05$.
+
+- **Step 3: Step-by-Step Algebraic Calculations**:
+  - Compute standard error of the mean:
+    $$\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}} = \frac{15}{\sqrt{25}} = \frac{15}{5} = 3.0\text{ grams}$$
+  - Compute the test statistic:
+    $$Z_{STAT} = \frac{372.5 - 368}{3.0} = \frac{4.5}{3.0} = +1.50$$
+  - Compute the two-tailed $p$-value:
+    $$p\text{-value} = 2 \times P(Z \ge 1.50) = 2 \times (1 - 0.9332) = 2 \times 0.0668 = 0.1336 \quad (13.36\%)$$
+
+- **Step 4: Casio fx-580VN X Instructions**:
+  - `(372.5 - 368) / (15 / √25) =` $\implies 1.5$.
+  - `[MENU]` `[7]` `[2]`. `Lower:` `1.5`, `Upper:` `10^99` $\implies 0.066807$. Multiply by $2 \implies 0.1336$.
+
+- **Step 5: Managerial Interpretation & Conclusions (Exam Standard)**:
+  - *Statistical Decision:* Because $-1.96 \le Z_{STAT} = +1.50 \le +1.96$ (and $p\text{-value} = 0.1336 > 0.05$), we **FAIL TO REJECT $H_0$**.
+  - *Managerial Conclusion:* At the $5\%$ level of significance, there is insufficient evidence to conclude that the mean cereal box fill weight differs from $368\text{ grams}$. The packaging process is operating within acceptable tolerances.
+
+</div>
+
 ---
 
 ## 9.5. Bộ Bài Tập SGK Berenson Thực Chiến Chương 9
@@ -5269,6 +6207,47 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
 > - **English (Comparison with CI):** *"The $95\%$ confidence interval for the mean is $[367.06, 372.94]\text{ grams}$. Because the hypothesized value $\mu_0 = 368\text{ g}$ is included inside the interval, the confidence interval approach yields the exact same conclusion as the two-tail hypothesis test: the cereal packaging machine is operating properly."*  
 > - **Dịch nghĩa:** *"Vì $t_{STAT} = 1.50$ nằm trong khoảng an toàn, ta không bác bỏ $H_0$. Ở mức ý nghĩa 5%, chưa đủ bằng chứng cho thấy khối lượng đóng hộp khác 368g. Khoảng tin cậy 95% $[367.06 ; 372.94]$ cũng chứa giá trị 368g, do đó cả 2 phương pháp đều cho kết quả hoàn toàn trùng khớp."*
 
+<div class="en-lecture-collapse" id="en-sol-bt-9-1" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL ENGLISH STEP-BY-STEP SOLUTION (PEARSON EXAM FORMAT)</span>
+  </div>
+  <span class="en-lecture-badge">Problem 9.17 • Oxford Cereals (Two-Tail $t$-Test)</span>
+</div>
+
+- **Step 1: Hypotheses & Parameter Extraction**:
+  - Hypotheses:
+    $$H_0: \mu = 368\text{ grams} \quad \text{vs} \quad H_1: \mu \ne 368\text{ grams}$$
+  - Sample size: $n = 25$ boxes ($\sigma$ unknown).
+  - Sample mean: $\bar{X} = 372.5\text{ grams}$, sample standard deviation: $S = 15.0\text{ grams}$.
+  - Significance level: $\alpha = 0.05$.
+
+- **Step 2: Degrees of Freedom & Critical Value Rules**:
+  - Degrees of freedom: $df = n - 1 = 25 - 1 = 24$.
+  - Two-tail critical values: For $\alpha = 0.05, df = 24 \implies t_{crit} = \pm t_{0.025, 24} = \pm 2.0639$.
+  - Decision Rule: Reject $H_0$ if $t_{STAT} < -2.0639$ or $t_{STAT} > +2.0639$.
+  - Connection with CI: A two-tail test at $\alpha = 0.05$ is identical to checking whether $\mu_0 = 368$ falls inside the $95\%$ confidence interval.
+
+- **Step 3: Step-by-Step Algebraic Calculations**:
+  - Standard error of sample mean:
+    $$S_{\bar{X}} = \frac{S}{\sqrt{n}} = \frac{15.0}{\sqrt{25}} = \frac{15.0}{5} = 3.0\text{ grams}$$
+  - Test statistic:
+    $$t_{STAT} = \frac{\bar{X} - \mu_0}{S / \sqrt{n}} = \frac{372.5 - 368}{3.0} = \frac{4.5}{3.0} = +1.50$$
+  - $p$-value: $p\text{-value} = 2 \times P(t_{24} \ge 1.50) \approx 0.1467 > 0.05$.
+  - Companion $95\%$ Confidence Interval:
+    $$\bar{X} \pm t_{0.025, 24} \frac{S}{\sqrt{n}} = 372.5 \pm 2.0639(3.0) = 372.5 \pm 6.1917 = [366.31 \;;\; 378.69]\text{ grams}$$
+
+- **Step 4: Casio fx-580VN X Instructions**:
+  - `(372.5 - 368) / (15 / 5) =` $\implies 1.5$.
+  - $95\%$ CI bounds: `372.5 - 2.0639 * 3` $\implies 366.308$; `372.5 + 2.0639 * 3` $\implies 378.692$.
+
+- **Step 5: Managerial Interpretation & Conclusions (Exam Standard)**:
+  - *Exam Conclusion Sentence:* "Because $t_{STAT} = 1.50$ lies within the non-rejection region $[-2.0639 ; +2.0639]$ and the $p\text{-value} = 0.1467 > 0.05$, we do not reject $H_0$. At the $5\%$ level of significance, there is insufficient evidence to conclude that the mean fill weight differs from $368\text{ grams}$. Furthermore, because the $95\%$ confidence interval $[366.31 ; 378.69]\text{ grams}$ contains the target value $368\text{ grams}$, both the hypothesis test and the confidence interval yield completely consistent conclusions."
+
+</div>
+
 ---
 
 ### Bài tập 9.2 (Textbook Problem 9.18, 9.19, 9.20, p. 360) - Learning The Basics $t$-Test
@@ -5309,6 +6288,48 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
 > - **English:** *"Comparing significance levels: At $\alpha = 0.05$, the critical values are $\pm 2.1314$. Since $t_{STAT} = 2.00$ falls within the non-rejection region, we fail to reject $H_0$. However, if tested at $\alpha = 0.10$ ($t_{crit} = \pm 1.7531$), then $t_{STAT} = 2.00 > 1.7531$, and we would reject $H_0$. This illustrates that the statistical decision depends directly on the chosen risk level $\alpha$."*  
 > - **Dịch nghĩa:** *"So sánh các mức ý nghĩa: Ở $\alpha = 0.05$, $t_{STAT} = 2.00 < 2.1314$ nên ta không bác bỏ $H_0$. Tuy nhiên, nếu kiểm định ở $\alpha = 0.10$ ($t_{crit} = 1.7531$) thì $2.00 > 1.7531$ lại đủ điều kiện để bác bỏ $H_0$. Điều này cho thấy quyết định phụ thuộc trực tiếp vào mức ý nghĩa $\alpha$ được ấn định."*
 
+<div class="en-lecture-collapse" id="en-sol-bt-9-2" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL ENGLISH STEP-BY-STEP SOLUTION (PEARSON EXAM FORMAT)</span>
+  </div>
+  <span class="en-lecture-badge">Problem 9.18, 9.19, 9.20 • Learning The Basics $t$-Test</span>
+</div>
+
+- **Step 1: Given Data & Hypotheses**:
+  - Hypotheses: $H_0: \mu = 50$ vs $H_1: \mu \ne 50$ (Two-tail test).
+  - Sample size: $n = 16$ (Normal population, $\sigma$ unknown).
+  - Sample mean: $\bar{X} = 56$, sample standard deviation: $S = 12$.
+
+- **Step 2: Formulas & Rejection Regions**:
+  - Degrees of freedom: $df = n - 1 = 16 - 1 = 15$.
+  - Test statistic formula:
+    $$t_{STAT} = \frac{\bar{X} - \mu_0}{S / \sqrt{n}}$$
+  - At $\alpha = 0.05$: Two-tail critical value $t_{crit} = \pm t_{0.025, 15} = \pm 2.1314$.
+  - At $\alpha = 0.10$: Two-tail critical value $t_{crit} = \pm t_{0.05, 15} = \pm 1.7531$.
+
+- **Step 3: Step-by-Step Algebraic Calculations**:
+  - **Part a (Compute $t_{STAT}$)**:
+    $$S_{\bar{X}} = \frac{S}{\sqrt{n}} = \frac{12}{\sqrt{16}} = \frac{12}{4} = 3.0$$
+    $$t_{STAT} = \frac{56 - 50}{3.0} = \frac{6}{3.0} = +2.00$$
+  - **Part b ($df$)**: $df = 15$.
+  - **Part c (Critical values)**: For $\alpha = 0.05$, $t_{crit} = \pm 2.1314$.
+  - **Part d (Decision at $\alpha = 0.05$)**:
+    Because $-2.1314 \le t_{STAT} = +2.00 \le +2.1314$, we **DO NOT REJECT $H_0$**.
+  - **Part e (Decision at $\alpha = 0.10$)**:
+    For $\alpha = 0.10$, $t_{crit} = \pm 1.7531$.
+    Because $t_{STAT} = +2.00 > +1.7531$, we **REJECT $H_0$**!
+
+- **Step 4: Casio fx-580VN X Instructions**:
+  - `(56 - 50) / (12 / 4) =` $\implies 2.00$.
+
+- **Step 5: Managerial Interpretation & Conclusions (Exam Standard)**:
+  - *Exam Comparison Sentence:* "Comparing significance levels: At $\alpha = 0.05$, $t_{STAT} = 2.00 < 2.1314$, so we fail to reject $H_0$. However, if tested at $\alpha = 0.10$, $t_{crit} = 1.7531$, and since $2.00 > 1.7531$, we reject $H_0$. This illustrates that the statistical conclusion is directly governed by the pre-set significance level $\alpha$ and the allowable tolerance for Type I error."
+
+</div>
+
 ---
 
 ### Bài tập 9.3 (Textbook Problem 9.46, p. 366) - Bus Fleet Breakdown Mileage (Upper-Tail $t$-Test)
@@ -5343,6 +6364,43 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
 > - **English:** *"Since $t_{STAT} = 2.059 > t_{0.05, 23} = 1.7139$ (or $p\text{-value} = 0.025 < 0.05$), we reject $H_0$. At the $5\%$ significance level, there is sufficient statistical evidence to conclude that the mean mileage between tire breakdowns has increased above $3,800\text{ miles}$. Management can confidently conclude that the new tire maintenance program is effective and should be continued."*  
 > - **Dịch nghĩa:** *"Vì $t_{STAT} = 2.059 > 1.7139$, ta bác bỏ $H_0$. Ở mức ý nghĩa 5%, có đủ bằng chứng thống kê kết luận quãng đường trung bình giữa các lần hỏng lốp đã tăng vượt mức $3,800$ dặm. Ban quản lý có cơ sở vững chắc để tiếp tục triển khai quy trình bảo trì mới."*
 
+<div class="en-lecture-collapse" id="en-sol-bt-9-3" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL ENGLISH STEP-BY-STEP SOLUTION (PEARSON EXAM FORMAT)</span>
+  </div>
+  <span class="en-lecture-badge">Problem 9.46 • Bus Fleet Breakdown Mileage (Upper-Tail $t$-Test)</span>
+</div>
+
+- **Step 1: Hypotheses & Parameter Extraction**:
+  - Company claim: Mean mileage between tire failures exceeds $3,800\text{ miles}$.
+  - Null hypothesis: $H_0: \mu \le 3800\text{ miles}$ (No improvement).
+  - Alternative hypothesis: $H_1: \mu > 3800\text{ miles}$ (Upper-tail / right-tail test).
+  - Given: $n = 100, \bar{X} = 3975\text{ miles}, S = 850\text{ miles}, \alpha = 0.05$.
+
+- **Step 2: Degrees of Freedom & Rejection Rules**:
+  - Degrees of freedom: $df = n - 1 = 100 - 1 = 99$.
+  - Upper-tail critical value: For $\alpha = 0.05, df = 99 \implies t_{crit} = +t_{0.05, 99} \approx +1.6604$ (or $+1.662$).
+  - Rejection Rule: Reject $H_0$ if $t_{STAT} > +1.6604$.
+
+- **Step 3: Step-by-Step Algebraic Calculations**:
+  - Standard error:
+    $$S_{\bar{X}} = \frac{S}{\sqrt{n}} = \frac{850}{\sqrt{100}} = \frac{850}{10} = 85.0\text{ miles}$$
+  - Test statistic:
+    $$t_{STAT} = \frac{\bar{X} - \mu_0}{S / \sqrt{n}} = \frac{3975 - 3800}{85.0} = \frac{175}{85.0} \approx +2.059$$
+  - Upper-tail $p$-value:
+    $$p\text{-value} = P(t_{99} \ge 2.059) \approx 0.021 < 0.05$$
+
+- **Step 4: Casio fx-580VN X Instructions**:
+  - `(3975 - 3800) / (850 / 10) =` $\implies 2.05882 \approx 2.059$.
+
+- **Step 5: Managerial Interpretation & Conclusions (Exam Standard)**:
+  - *Exam Conclusion Sentence:* "Because $t_{STAT} = 2.059 > 1.6604$ and $p\text{-value} = 0.021 < 0.05$, we **REJECT $H_0$**. At the $5\%$ level of significance, there is sufficient statistical evidence to conclude that the mean mileage between tire failures exceeds $3,800$ miles. Management has solid quantitative justification to adopt the new tire maintenance process."
+
+</div>
+
 ---
 
 ### Bài tập 9.4 (Textbook Problem 9.49, p. 366) - Pizza Delivery Time (Lower-Tail $t$-Test)
@@ -5375,6 +6433,43 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
 > **CÂU BIỆN LUẬN & KẾT LUẬN QUẢN LÝ TIẾNG ANH CHUẨN THI (MANAGERIAL CONCLUSION):**  
 > - **English:** *"Since $t_{STAT} = -2.60 < -t_{0.05, 34} = -1.6909$ (or $p\text{-value} = 0.0068 < 0.05$), we reject $H_0$. At the $5\%$ level of significance, there is sufficient statistical evidence to conclude that the population mean delivery time has dropped below $25\text{ minutes}$. The restaurant should proceed with offering the fast-delivery guarantee."*  
 > - **Dịch nghĩa:** *"Vì $t_{STAT} = -2.60 < -1.6909$, ta bác bỏ $H_0$. Ở mức ý nghĩa 5%, có đủ bằng chứng thống kê kết luận thời gian giao hàng trung bình đã giảm xuống dưới 25 phút. Cửa hàng hoàn toàn có cơ sở để tung ra chương trình cam kết giao hàng nhanh."*
+
+<div class="en-lecture-collapse" id="en-sol-bt-9-4" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL ENGLISH STEP-BY-STEP SOLUTION (PEARSON EXAM FORMAT)</span>
+  </div>
+  <span class="en-lecture-badge">Problem 9.49 • Pizza Delivery Time (Lower-Tail $t$-Test)</span>
+</div>
+
+- **Step 1: Hypotheses & Parameter Extraction**:
+  - Goal: Verify if delivery time has been reduced below the current benchmark of $25\text{ minutes}$.
+  - Null hypothesis: $H_0: \mu \ge 25\text{ minutes}$ (Delivery time is not reduced).
+  - Alternative hypothesis: $H_1: \mu < 25\text{ minutes}$ (Lower-tail / left-tail test).
+  - Given: $n = 36, \bar{X} = 22.4\text{ minutes}, S = 6.0\text{ minutes}, \alpha = 0.05$.
+
+- **Step 2: Degrees of Freedom & Rejection Rules**:
+  - Degrees of freedom: $df = n - 1 = 36 - 1 = 35$.
+  - Lower-tail critical value: For $\alpha = 0.05, df = 35 \implies t_{crit} = -t_{0.05, 35} = -1.6896$.
+  - Rejection Rule: Reject $H_0$ if $t_{STAT} < -1.6896$.
+
+- **Step 3: Step-by-Step Algebraic Calculations**:
+  - Standard error:
+    $$S_{\bar{X}} = \frac{S}{\sqrt{n}} = \frac{6.0}{\sqrt{36}} = \frac{6.0}{6} = 1.0\text{ minute}$$
+  - Test statistic:
+    $$t_{STAT} = \frac{\bar{X} - \mu_0}{S / \sqrt{n}} = \frac{22.4 - 25.0}{1.0} = \frac{-2.6}{1.0} = -2.60$$
+  - Lower-tail $p$-value:
+    $$p\text{-value} = P(t_{35} \le -2.60) \approx 0.0068 < 0.05$$
+
+- **Step 4: Casio fx-580VN X Instructions**:
+  - `(22.4 - 25) / (6 / 6) =` $\implies -2.6$.
+
+- **Step 5: Managerial Interpretation & Conclusions (Exam Standard)**:
+  - *Exam Conclusion Sentence:* "Because $t_{STAT} = -2.60 < -1.6896$ and $p\text{-value} = 0.0068 < 0.05$, we **REJECT $H_0$**. At the $5\%$ level of significance, there is sufficient statistical evidence to conclude that the mean delivery time has been successfully reduced below $25$ minutes. The pizzeria has sound empirical backing to launch its fast-delivery guarantee."
+
+</div>
 
 ---
 
@@ -5422,6 +6517,49 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
 > - **English (Comparison with CI):** *"The $95\%$ confidence interval for the proportion is $[0.1794, 0.2606]$. Since the hypothesized proportion $\pi_0 = 0.20$ is inside this interval, the confidence interval and hypothesis test reach the exact same conclusion: the manufacturing defect rate is consistent with historical specifications."*  
 > - **Dịch nghĩa:** *"Vì $Z_{STAT} = 1.00$ nằm trong miền an toàn, ta không bác bỏ $H_0$. Ở mức ý nghĩa 5%, chưa đủ bằng chứng kết luận tỷ lệ phế phẩm khác $20\%$. Khoảng tin cậy 95% $[17.94\% ; 26.06\%]$ cũng chứa giá trị $0.20$, chứng minh dây chuyền vẫn hoạt động đúng chuẩn lịch sử."*
 
+<div class="en-lecture-collapse" id="en-sol-bt-9-5" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL ENGLISH STEP-BY-STEP SOLUTION (PEARSON EXAM FORMAT)</span>
+  </div>
+  <span class="en-lecture-badge">Problem 9.52, 9.53, 9.54 • Defective Rate (Two-Tail Proportion Test)</span>
+</div>
+
+- **Step 1: Hypotheses & Parameter Extraction**:
+  - Hypotheses:
+    $$H_0: \pi = 0.20 \quad \text{vs} \quad H_1: \pi \ne 0.20 \quad (\text{Two-tail test})$$
+  - Sample size: $n = 400$ items.
+  - Number of defective items: $X = 88$.
+  - Significance level: $\alpha = 0.05 \implies Z_{crit} = \pm 1.96$.
+
+- **Step 2: Assumptions & Key Formulas**:
+  - Sample proportion: $p = \frac{X}{n} = \frac{88}{400} = 0.22$ ($22\%$).
+  - Normality checks under $H_0$:
+    $$n\pi_0 = 400(0.20) = 80 \ge 5 \quad \text{and} \quad n(1 - \pi_0) = 400(0.80) = 320 \ge 5$$
+  - Test statistic formula (using null proportion $\pi_0$):
+    $$Z_{STAT} = \frac{p - \pi_0}{\sqrt{\frac{\pi_0(1 - \pi_0)}{n}}}$$
+
+- **Step 3: Step-by-Step Algebraic Calculations**:
+  - Standard error under $H_0$:
+    $$\sigma_p = \sqrt{\frac{0.20 \times 0.80}{400}} = \sqrt{\frac{0.16}{400}} = \sqrt{0.0004} = 0.02$$
+  - Test statistic:
+    $$Z_{STAT} = \frac{0.22 - 0.20}{0.02} = \frac{+0.02}{0.02} = +1.00$$
+  - Two-tail $p$-value:
+    $$p\text{-value} = 2 \times P(Z \ge 1.00) = 2 \times (1 - 0.8413) = 2 \times 0.1587 = 0.3174 \quad (31.74\%)$$
+  - Companion $95\%$ Confidence Interval for proportion:
+    $$p \pm 1.96 \sqrt{\frac{p(1 - p)}{n}} = 0.22 \pm 1.96 \sqrt{\frac{0.22 \times 0.78}{400}} = 0.22 \pm 0.0406 = [0.1794 \;;\; 0.2606]$$
+
+- **Step 4: Casio fx-580VN X Instructions**:
+  - `(0.22 - 0.20) / √(0.20 * 0.80 / 400) =` $\implies 1.00$.
+  - `[MENU]` `[7]` `[2]`. `Lower:` `1.0`, `Upper:` `10^99` $\implies 0.15865$. Multiply by $2 \implies 0.3173$.
+
+- **Step 5: Managerial Interpretation & Conclusions (Exam Standard)**:
+  - *Exam Conclusion Sentence:* "Because $Z_{STAT} = +1.00$ lies within the non-rejection region $[-1.96 ; +1.96]$ and $p\text{-value} = 0.3174 > 0.05$, we **FAIL TO REJECT $H_0$**. At the $5\%$ level of significance, there is insufficient evidence to conclude that the defect rate differs from $20\%$. The $95\%$ confidence interval $[17.94\% ; 26.06\%]$ also contains $0.20$, confirming the manufacturing line is operating within expected specifications."
+
+</div>
+
 ---
 
 ### Bài tập 9.6 (Textbook Problem 9.55, p. 369) - Unpaid Internships Job Offers (Proportion Test)
@@ -5462,6 +6600,46 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
 > **CÂU BIỆN LUẬN & KẾT LUẬN QUẢN LÝ TIẾNG ANH CHUẨN THI (MANAGERIAL CONCLUSION):**  
 > - **English:** *"Since $Z_{STAT} = 0.936 < Z_{0.05} = 1.645$ (or $p\text{-value} = 0.1747 > 0.05$), we fail to reject $H_0$. At the $5\%$ level of significance, there is insufficient evidence to conclude that the proportion of unpaid interns receiving job offers has increased above $44\%$. Career counselors should advise students that current data does not support a statistically significant improvement."*  
 > - **Dịch nghĩa:** *"Vì $Z_{STAT} = 0.94 < 1.645$, ta chưa đủ bằng chứng bác bỏ $H_0$. Ở mức ý nghĩa 5%, không có đủ bằng chứng để khẳng định tỷ lệ sinh viên thực tập không lương nhận được việc làm đã vượt $44\%$. Cán bộ tư vấn nghề nghiệp không thể kết luận rằng cơ hội việc làm đã có sự cải thiện rõ rệt."*
+
+<div class="en-lecture-collapse" id="en-sol-bt-9-6" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL ENGLISH STEP-BY-STEP SOLUTION (PEARSON EXAM FORMAT)</span>
+  </div>
+  <span class="en-lecture-badge">Problem 9.55 • Unpaid Internships Job Offers (Proportion Test)</span>
+</div>
+
+- **Step 1: Hypotheses & Parameter Extraction**:
+  - NACE benchmark: $\pi_0 = 0.44$ ($44\%$).
+  - Claim: Has the proportion of unpaid interns receiving job offers increased?
+  - Hypotheses:
+    $$H_0: \pi \le 0.44 \quad \text{vs} \quad H_1: \pi > 0.44 \quad (\text{Upper-tail test})$$
+  - Sample size: $n = 60$, job offers received: $X = 30 \implies p = \frac{30}{60} = 0.50$ ($50\%$).
+  - Significance level: $\alpha = 0.05$.
+
+- **Step 2: Assumptions & Critical Value Rules**:
+  - Normality checks: $n\pi_0 = 60(0.44) = 26.4 \ge 5$ and $n(1 - \pi_0) = 60(0.56) = 33.6 \ge 5$. Both satisfied.
+  - Upper-tail critical value: For $\alpha = 0.05 \implies Z_{crit} = +1.645$.
+  - Rejection Rule: Reject $H_0$ if $Z_{STAT} > +1.645$.
+
+- **Step 3: Step-by-Step Algebraic Calculations**:
+  - Standard error under $H_0$:
+    $$\sigma_p = \sqrt{\frac{\pi_0(1 - \pi_0)}{n}} = \sqrt{\frac{0.44 \times 0.56}{60}} = \sqrt{\frac{0.2464}{60}} = \sqrt{0.0041067} \approx 0.06408$$
+  - Test statistic:
+    $$Z_{STAT} = \frac{p - \pi_0}{\sigma_p} = \frac{0.50 - 0.44}{0.06408} = \frac{0.06}{0.06408} \approx +0.936 \approx +0.94$$
+  - Upper-tail $p$-value:
+    $$p\text{-value} = P(Z \ge 0.94) = 1 - 0.8264 = 0.1736 \quad (17.36\%) > 0.05$$
+
+- **Step 4: Casio fx-580VN X Instructions**:
+  - `(0.50 - 0.44) / √(0.44 * 0.56 / 60) =` $\implies 0.93626 \approx 0.94$.
+  - `[MENU]` `[7]` `[2]`. `Lower:` `0.9363`, `Upper:` `10^99` $\implies 0.17457 \approx 0.174$.
+
+- **Step 5: Managerial Interpretation & Conclusions (Exam Standard)**:
+  - *Exam Conclusion Sentence:* "Because $Z_{STAT} = +0.94 < 1.645$ and $p\text{-value} = 0.1736 > 0.05$, we **FAIL TO REJECT $H_0$**. At the $5\%$ level of significance, there is insufficient evidence to conclude that the proportion of unpaid interns receiving job offers exceeds $44\%$. Even though the sample rate reached $50\%$, the small sample size ($n=60$) does not rule out random sampling chance."
+
+</div>
 
 ---
 
@@ -5517,6 +6695,54 @@ $$n = \frac{Z_{\alpha/2}^2 \pi(1 - \pi)}{e^2}$$
 > - **English (Part A - Mean):** *"For the reimbursement mean amount: Since $t_{STAT} = -1.58 > -1.6657$ (or $p\text{-value} = 0.059 > 0.05$), we fail to reject $H_0$. At the $5\%$ significance level, there is insufficient evidence to conclude that the mean reimbursement amount is less than $\$100$."*  
 > - **English (Part B - Proportion):** *"For the incorrect reimbursement rate: Since $Z_{STAT} = 1.73 > 1.645$ (or $p\text{-value} = 0.0416 < 0.05$), we reject $H_0$. At the $5\%$ significance level, there is sufficient statistical evidence to conclude that the proportion of incorrect reimbursements exceeds $10\%$. The government auditor should officially recommend an audit overhaul."*  
 > - **Dịch nghĩa:** *"Câu A: Chưa đủ bằng chứng để kết luận số tiền hoàn trả trung bình ít hơn $\$100$. Câu B: Có đủ bằng chứng khẳng định tỷ lệ hoàn trả sai vượt quá $10\%$, kiểm toán viên chính phủ cần chính thức kiến nghị siết chặt công tác giám sát."*
+
+<div class="en-lecture-collapse" id="en-sol-bt-9-7" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL ENGLISH STEP-BY-STEP SOLUTION (PEARSON EXAM FORMAT)</span>
+  </div>
+  <span class="en-lecture-badge">Problem 9.73 • Medicare Reimbursement Audit (Mean & Proportion)</span>
+</div>
+
+- **Step 1: Audit Data & Testing Objectives**:
+  - Sample size: $n = 75$ Medicare reimbursement claims.
+  - Part a (Mean reimbursement amount): $\bar{X} = \$93.70, S = \$34.55$. Test if $\mu < \$100$.
+  - Part b (Proportion of incorrect claims): $X = 12$ errors $\implies p = \frac{12}{75} = 0.16$. Test if $\pi > 0.10$.
+  - Significance level: $\alpha = 0.05$ for both tests.
+
+- **Step 2: Formulas & Rejection Rules**:
+  - **Part a ($t$-test for mean, lower-tail)**:
+    $H_0: \mu \ge 100 \quad \text{vs} \quad H_1: \mu < 100$.
+    $df = 75 - 1 = 74$. Critical value: $t_{crit} = -t_{0.05, 74} \approx -1.666$.
+    Reject $H_0$ if $t_{STAT} < -1.666$.
+  - **Part b ($Z$-test for proportion, upper-tail)**:
+    $H_0: \pi \le 0.10 \quad \text{vs} \quad H_1: \pi > 0.10$.
+    Critical value: $Z_{crit} = +1.645$.
+    Reject $H_0$ if $Z_{STAT} > +1.645$.
+
+- **Step 3: Step-by-Step Algebraic Calculations**:
+  - **Part a (Mean Reimbursement Calculation)**:
+    $$S_{\bar{X}} = \frac{S}{\sqrt{n}} = \frac{34.55}{\sqrt{75}} = \frac{34.55}{8.66025} \approx 3.9895$$
+    $$t_{STAT} = \frac{\bar{X} - \mu_0}{S / \sqrt{n}} = \frac{93.70 - 100}{3.9895} = \frac{-6.30}{3.9895} \approx -1.58$$
+    $$p\text{-value} = P(t_{74} \le -1.58) \approx 0.059 > 0.05$$
+  - **Part b (Incorrect Reimbursement Proportion Calculation)**:
+    $$\sigma_p = \sqrt{\frac{\pi_0(1 - \pi_0)}{n}} = \sqrt{\frac{0.10 \times 0.90}{75}} = \sqrt{\frac{0.09}{75}} = \sqrt{0.0012} \approx 0.03464$$
+    $$Z_{STAT} = \frac{p - \pi_0}{\sigma_p} = \frac{0.16 - 0.10}{0.03464} = \frac{0.06}{0.03464} \approx +1.73$$
+    $$p\text{-value} = P(Z \ge 1.73) = 1 - 0.9582 = 0.0418 \quad (0.0416 \text{ via Casio}) < 0.05$$
+
+- **Step 4: Casio fx-580VN X Instructions**:
+  - Part a: `(93.70 - 100) / (34.55 / √75) =` $\implies -1.5791 \approx -1.58$.
+  - Part b: `(0.16 - 0.10) / √(0.10 * 0.90 / 75) =` $\implies 1.73205 \approx 1.73$.
+  - Part b $p$-value: `[MENU]` `[7]` `[2]`. `Lower:` `1.732`, `Upper:` `10^99` $\implies 0.0416$.
+
+- **Step 5: Managerial Interpretation & Audit Report Conclusions (Exam Standard)**:
+  - *Part a Decision:* Because $t_{STAT} = -1.58 > -1.666$ and $p\text{-value} = 0.059 > 0.05$, we **FAIL TO REJECT $H_0$**. There is insufficient evidence that the mean reimbursement is significantly below $\$100$.
+  - *Part b Decision:* Because $Z_{STAT} = +1.73 > +1.645$ and $p\text{-value} = 0.0416 < 0.05$, we **REJECT $H_0$**! There is strong statistical evidence that the proportion of incorrect reimbursements exceeds the $10\%$ audit benchmark.
+  - *Auditor Recommendation:* While average payout amounts remain near the $\$100$ ceiling, billing accuracy has deteriorated significantly beyond acceptable thresholds, warranting an immediate audit review of physician billing submission workflows.
+
+</div>
 
 ---
 
@@ -5870,6 +7096,9 @@ Khi tính ra khoảng tin cậy ví dụ: $[15.2, 18.8]$ cho trung bình $\mu$:
       initNotesSystem();
       initHighlightSystem();
       initAuthSystem();
+
+      // STEP K: Initialize English Lecture Toggles for Chapters 7, 8, 9
+      initExerciseEnglishToggles();
     });
 
 
@@ -6119,6 +7348,59 @@ Khi tính ra khoảng tin cậy ví dụ: $[15.2, 18.8]$ cho trung bình $\mu$:
       }
     } catch (err) {
       console.warn("Firebase initialization warning:", err);
+    }
+
+    
+    /* ==========================================================================
+       CHAPTERS 7, 8, 9 ENGLISH LECTURE COLLAPSE & TOGGLE SYSTEM
+       ========================================================================== */
+    function initExerciseEnglishToggles() {
+      const cards = document.querySelectorAll('.en-lecture-collapse');
+      cards.forEach(card => {
+        const cardId = card.id;
+        if (!cardId) return;
+
+        // Traverse preceding siblings to locate the exercise heading (h3)
+        let prev = card.previousElementSibling;
+        let heading = null;
+        while (prev) {
+          if (prev.tagName && prev.tagName.toLowerCase() === 'h3') {
+            heading = prev;
+            break;
+          }
+          prev = prev.previousElementSibling;
+        }
+
+        if (heading) {
+          if (heading.querySelector('.btn-toggle-en-lecture')) return;
+
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.className = 'btn-toggle-en-lecture';
+          btn.setAttribute('data-target', cardId);
+          btn.setAttribute('title', 'Bật / Tắt bài giảng tiếng Anh chuẩn Pearson');
+          btn.innerHTML = '<i class="fas fa-language"></i> <span>English Solution</span>';
+
+          btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            const targetEl = document.getElementById(cardId);
+            if (!targetEl) return;
+            const isHidden = targetEl.style.display === 'none' || getComputedStyle(targetEl).display === 'none';
+            if (isHidden) {
+              targetEl.style.display = 'block';
+              btn.classList.add('active');
+              btn.innerHTML = '<i class="fas fa-eye-slash"></i> <span>Hide English</span>';
+            } else {
+              targetEl.style.display = 'none';
+              btn.classList.remove('active');
+              btn.innerHTML = '<i class="fas fa-language"></i> <span>English Solution</span>';
+            }
+          });
+
+          heading.appendChild(btn);
+        }
+      });
     }
 
     function initAuthSystem() {
