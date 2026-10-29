@@ -2335,6 +2335,105 @@
       color: #bfdbfe;
       border-color: rgba(96, 165, 250, 0.3);
     }
+
+    /* ==========================================================================
+       30-MINUTE EXAM TIMER CARD STYLES
+       ========================================================================== */
+    .exam-timer-card {
+      margin: 1.5rem 0 2rem;
+      padding: 1.25rem 1.5rem;
+      background: linear-gradient(135deg, rgba(37, 99, 235, 0.08) 0%, rgba(30, 58, 138, 0.04) 100%);
+      border: 1px solid rgba(37, 99, 235, 0.3);
+      border-radius: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 16px;
+      box-shadow: 0 4px 16px rgba(37, 99, 235, 0.08);
+    }
+    .dark-theme .exam-timer-card {
+      background: linear-gradient(135deg, rgba(30, 58, 138, 0.3) 0%, rgba(15, 23, 42, 0.7) 100%);
+      border-color: rgba(96, 165, 250, 0.35);
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+    }
+    .exam-timer-info {
+      flex: 1 1 300px;
+    }
+    .exam-timer-title {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #1e3a8a;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }
+    .dark-theme .exam-timer-title {
+      color: #93c5fd;
+    }
+    .exam-timer-desc {
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+      line-height: 1.45;
+    }
+    .exam-timer-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .exam-timer-display {
+      font-family: 'JetBrains Mono', 'Courier New', monospace;
+      font-size: 1.75rem;
+      font-weight: 800;
+      color: #2563eb;
+      background: rgba(37, 99, 235, 0.1);
+      padding: 6px 14px;
+      border-radius: 8px;
+      letter-spacing: 1px;
+      min-width: 100px;
+      text-align: center;
+      border: 1px solid rgba(37, 99, 235, 0.25);
+    }
+    .dark-theme .exam-timer-display {
+      color: #60a5fa;
+      background: rgba(96, 165, 250, 0.15);
+      border-color: rgba(96, 165, 250, 0.3);
+    }
+    .btn-timer-toggle {
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #fff !important;
+      font-size: 0.88rem;
+      font-weight: 600;
+      padding: 8px 16px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+    }
+    .btn-timer-toggle:hover {
+      background: linear-gradient(135deg, #1d4ed8, #1e40af);
+      transform: translateY(-1px);
+    }
+    .btn-timer-reset {
+      background: rgba(148, 163, 184, 0.15);
+      color: var(--text) !important;
+      font-size: 0.88rem;
+      padding: 8px 12px;
+      border-radius: 8px;
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      transition: all 0.2s ease;
+    }
+    .btn-timer-reset:hover {
+      background: rgba(148, 163, 184, 0.3);
+    }
   </style>
 </head>
 <body>
@@ -6974,6 +7073,371 @@ Khi tính ra khoảng tin cậy ví dụ: $[15.2, 18.8]$ cho trung bình $\mu$:
 - **Insufficient statistical evidence**: Không đủ bằng chứng thống kê.
 - **Margin of error ($e$)**: Sai số biên độ cho phép khi ước lượng.
 - **Pooled variance ($S_p^2$)**: Phương sai gộp (trong so sánh 2 mẫu độc lập có phương sai bằng nhau).
+
+---
+
+# PHẦN 11: 30-MINUTE TIMED WRITTEN PRACTICE EXAM (CHAPTERS 7, 8, 9)
+
+> [!IMPORTANT]
+> **EXAM INSTRUCTIONS & STANDARDS (READ CAREFULLY BEFORE STARTING):**
+> - **Total Time Allowed:** **30 Minutes** (Problem 1: ~7 mins | Problem 2: ~8 mins | Problem 3: ~7 mins | Problem 4: ~8 mins).
+> - **Format:** 4 comprehensive written essay / calculation problems adhering to the Pearson *Basic Business Statistics* exam format.
+> - **Language Requirement:** Both problem prompts and complete solutions are presented in **100% Academic English**.
+> - **Statistical Reference Tables:** **No external table lookup is required!** All candidate normal probabilities $P(Z < z)$ and Student's $t$ critical values ($t_{\alpha, df}$) are explicitly provided in each problem's **Reference Data Box**. You must analyze the problem and correctly select the appropriate parameter values.
+> - **Interactive Self-Study Feature:** All detailed step-by-step solutions are collapsed by default. Try solving each problem on scratch paper under exam conditions. When you are ready, click the **"Show Solution"** button on the far right of any question header to reveal the complete Pearson 5-step model answer.
+
+<div class="exam-timer-card">
+  <div class="exam-timer-info">
+    <div class="exam-timer-title"><i class="fas fa-stopwatch"></i> <span>30-MINUTE TIMED PRACTICE TIMER</span></div>
+    <div class="exam-timer-desc">Click "Start Timer" below to begin your 30-minute practice session. Work through all 4 problems without revealing the solutions until time expires!</div>
+  </div>
+  <div class="exam-timer-controls">
+    <div class="exam-timer-display" id="exam-timer-val">30:00</div>
+    <button type="button" class="btn-timer-toggle" id="btn-start-exam-timer" onclick="toggleExamTimer()"><i class="fas fa-play"></i> <span>Start Timer</span></button>
+    <button type="button" class="btn-timer-reset" id="btn-reset-exam-timer" onclick="resetExamTimer()" style="display:none;" title="Reset 30-min timer"><i class="fas fa-redo"></i></button>
+  </div>
+</div>
+
+---
+
+## Problem 1 (Chapter 7): Sampling Distribution of the Mean & Process Monitoring
+
+### Problem 1 (Chapter 7): Juice Bottling Fill Volume & Central Limit Theorem
+
+#### 1. Problem Statement (Original English):
+> **Written Exam Problem 1 (Estimated Time: 7 Minutes | 25 Points):**  
+> An automated beverage packaging facility fills eco-friendly glass bottles with organic cold-pressed orange juice. Historical quality control records confirm that the fill volume of individual juice bottles is normally distributed with a population mean of $\mu = 500\text{ mL}$ and a population standard deviation of $\sigma = 12\text{ mL}$.  
+>   
+> **a.** If a single juice bottle is selected at random from the production line, what is the probability that it contains less than $494\text{ mL}$?  
+> **b.** If a quality assurance auditor randomly selects a sample of $n = 16$ bottles, what is the probability that the sample mean fill volume $\bar{X}$ is less than $494\text{ mL}$?  
+> **c.** If the sample size is increased to $n = 36$ bottles, what is the probability that the sample mean fill volume falls between $496\text{ mL}$ and $503\text{ mL}$?  
+> **d.** Compare and interpret the results obtained in parts **(a)** and **(b)**. Specifically explain the effect of the sample size on the standard error of the mean and its practical consequence for minimizing false quality alarms.
+
+#### 2. Given Statistical Reference Values (No Table Lookup Needed):
+> [!NOTE]
+> **STATISTICAL DATA SHEET FOR PROBLEM 1 (CUMULATIVE STANDARD NORMAL PROBABILITIES $P(Z < z)$):**  
+> | $z$-score | $P(Z < z)$ | $z$-score | $P(Z < z)$ |
+> | :---: | :---: | :---: | :---: |
+> | **$-2.00$** | **$0.0228$** | **$+0.50$** | **$0.6915$** |
+> | **$-1.50$** | **$0.0668$** | **$+1.00$** | **$0.8413$** |
+> | **$-1.25$** | **$0.1056$** | **$+1.25$** | **$0.8944$** |
+> | **$-0.50$** | **$0.3085$** | **$+1.50$** | **$0.9332$** |
+> | **$0.00$**  | **$0.5000$** | **$+2.00$** | **$0.9772$** |
+> *(Note: Additional distractor values are included above. Identify the correct standardized $Z$-scores derived from your algebraic steps).*
+
+<div class="en-lecture-collapse" id="en-sol-exam-1" data-btn-show="Show Solution" data-btn-hide="Hide Solution" data-btn-icon="fa-lightbulb" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL STEP-BY-STEP SOLUTION • PROBLEM 1 (CHAPTER 7)</span>
+  </div>
+  <span class="en-lecture-badge">Sampling Distribution of Mean • Pearson 5-Step Model</span>
+</div>
+
+- **Step 1: Given Data & Variable Definition**:
+  - Individual bottle fill volume: $X \sim N(\mu = 500\text{ mL}, \sigma = 12\text{ mL})$.
+  - Threshold fill volumes: $X_1 = 494\text{ mL}$, $X_2 = 496\text{ mL}$, $X_3 = 503\text{ mL}$.
+  - Sample sizes: Part b: $n = 16$; Part c: $n = 36$.
+
+- **Step 2: Assumptions & Key Sampling Formulas**:
+  - Because the underlying population is normally distributed, the sampling distribution of the sample mean $\bar{X}$ is **strictly normal** for any sample size $n \ge 1$:
+    $$\bar{X} \sim N\left(\mu_{\bar{X}} = \mu, \; \sigma_{\bar{X}}^2 = \frac{\sigma^2}{n}\right)$$
+  - Standard error formula: $\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}$.
+  - Individual standardization ($n = 1$): $Z = \frac{X - \mu}{\sigma}$.
+  - Sample mean standardization ($n > 1$): $Z = \frac{\bar{X} - \mu}{\sigma_{\bar{X}}}$.
+
+- **Step 3: Step-by-Step Algebraic Calculations**:
+  - **Part a (Single Bottle, $n = 1$)**:
+    $$Z = \frac{494 - 500}{12} = \frac{-6}{12} = -0.50$$
+    From the Reference Table:
+    $$P(X < 494) = P(Z < -0.50) = 0.3085 \quad (30.85\%)$$
+  - **Part b (Sample of $n = 16$ Bottles)**:
+    Compute standard error of the mean:
+    $$\sigma_{\bar{X}} = \frac{12}{\sqrt{16}} = \frac{12}{4} = 3.0\text{ mL}$$
+    Standardize the sample mean:
+    $$Z = \frac{494 - 500}{3.0} = \frac{-6}{3.0} = -2.00$$
+    From the Reference Table:
+    $$P(\bar{X} < 494) = P(Z < -2.00) = 0.0228 \quad (2.28\%)$$
+  - **Part c (Sample of $n = 36$ Bottles, $P(496 \le \bar{X} \le 503)$)**:
+    Compute standard error for $n = 36$:
+    $$\sigma_{\bar{X}} = \frac{12}{\sqrt{36}} = \frac{12}{6} = 2.0\text{ mL}$$
+    Standardize both boundary values:
+    $$Z_1 = \frac{496 - 500}{2.0} = \frac{-4}{2.0} = -2.00$$
+    $$Z_2 = \frac{503 - 500}{2.0} = \frac{+3}{2.0} = +1.50$$
+    From the Reference Table:
+    $$P(Z < -2.00) = 0.0228, \quad P(Z < +1.50) = 0.9332$$
+    $$P(496 \le \bar{X} \le 503) = P(-2.00 \le Z \le +1.50) = P(Z < 1.50) - P(Z < -2.00) = 0.9332 - 0.0228 = 0.9104 \quad (91.04\%)$$
+
+- **Step 4: Casio fx-580VN X Verification Keystrokes**:
+  - `[MENU]` `[7]` `[2]` (Normal CD).
+  - Part a: `Lower:` `-10^99`, `Upper:` `494`, `σ:` `12`, `μ:` `500` $\implies 0.3085$.
+  - Part b: `Lower:` `-10^99`, `Upper:` `494`, `σ:` `3`, `μ:` `500` $\implies 0.0228$.
+  - Part c: `Lower:` `496`, `Upper:` `503`, `σ:` `2`, `μ:` `500` $\implies 0.9104$.
+
+- **Step 5: Managerial Comparison & Exam Conclusion (Part d)**:
+  - *Comparison:* $P(X < 494) = 0.3085 \gg P(\bar{X} < 494) = 0.0228$.
+  - *Quality Control Implication:* An individual bottle has a high probability ($30.85\%$) of falling below $494\text{ mL}$ due to natural individual variability ($\sigma = 12\text{ mL}$). However, when inspecting a sample batch of $16$ bottles, the standard error shrinks by half (from $12\text{ mL}$ to $3\text{ mL}$), causing the probability of an underweight average to drop drastically to only $2.28\%$. Evaluating batch sample means rather than isolated individual bottles prevents expensive false alarms and unwarranted line shutdowns.
+
+</div>
+
+---
+
+## Problem 2 (Chapter 8): Confidence Interval for Mean ($\sigma$ Unknown & $t$-Distribution)
+
+### Problem 2 (Chapter 8): Cloud Security Incident Resolution Time ($t$-Interval)
+
+#### 1. Problem Statement (Original English):
+> **Written Exam Problem 2 (Estimated Time: 8 Minutes | 25 Points):**  
+> A cybersecurity managed service provider wishes to estimate the true population mean turnaround time (in hours) required to detect, isolate, and remediate high-severity zero-day ransomware incidents. Because population variability is unknown, the IT audit team extracts a random sample of $n = 25$ resolved incident tickets from the preceding quarter. The sample data produces:  
+> $$\text{Sample Mean: } \bar{X} = 34.2\text{ hours}, \quad \text{Sample Standard Deviation: } S = 6.5\text{ hours}$$  
+>   
+> **a.** What fundamental distributional assumption must be made about the population of incident resolution times to construct a mathematically valid confidence interval? Why is this assumption mandatory?  
+> **b.** State the appropriate sampling distribution and determine the exact number of degrees of freedom ($df$).  
+> **c.** Construct a $95\%$ confidence interval estimate for the true population mean resolution time $\mu$.  
+> **d.** Construct a $99\%$ confidence interval estimate for $\mu$.  
+> **e.** The Chief Information Security Officer (CISO) publicly pledged to clients that the company's average resolution time does not exceed $38.0\text{ hours}$. Based on your $95\%$ confidence interval in part **(c)**, evaluate whether there is statistical evidence to support or refute the CISO's pledge. Explain thoroughly.
+
+#### 2. Given Statistical Reference Values (No Table Lookup Needed):
+> [!NOTE]
+> **STATISTICAL DATA SHEET FOR PROBLEM 2 (STUDENT'S $t$ CRITICAL VALUES & NORMAL VALUES):**  
+> | Distribution / $df$ | Cumulative Upper-Tail $\alpha = 0.05$ | Cumulative Upper-Tail $\alpha = 0.025$ | Cumulative Upper-Tail $\alpha = 0.005$ |
+> | :---: | :---: | :---: | :---: |
+> | **Student's $t$ ($df = 24$)** | **$t_{0.05, 24} = 1.7109$** | **$t_{0.025, 24} = 2.0639$** | **$t_{0.005, 24} = 2.7969$** |
+> | **Student's $t$ ($df = 25$)** | **$t_{0.05, 25} = 1.7081$** | **$t_{0.025, 25} = 2.0595$** | **$t_{0.005, 25} = 2.7874$** |
+> | **Standard Normal $Z$** | **$Z_{0.05} = 1.6450$** | **$Z_{0.025} = 1.9600$** | **$Z_{0.005} = 2.5760$** |
+> *(Note: Select the appropriate critical value corresponding to your degrees of freedom and confidence level).*
+
+<div class="en-lecture-collapse" id="en-sol-exam-2" data-btn-show="Show Solution" data-btn-hide="Hide Solution" data-btn-icon="fa-lightbulb" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL STEP-BY-STEP SOLUTION • PROBLEM 2 (CHAPTER 8)</span>
+  </div>
+  <span class="en-lecture-badge">Confidence Interval for Mean • Student's $t$ Model</span>
+</div>
+
+- **Step 1: Given Data & Parameter Extraction**:
+  - Sample size: $n = 25$ incidents ($n < 30$, small sample).
+  - Sample mean: $\bar{X} = 34.2\text{ hours}$.
+  - Sample standard deviation: $S = 6.5\text{ hours}$.
+  - Population standard deviation $\sigma$ is **unknown**.
+
+- **Step 2: Assumptions & Key Formulas**:
+  - **Part a (Mandatory Distributional Assumption):** We must assume that the population of incident resolution times is **approximately normally distributed**. This assumption is required because the sample size is small ($n = 25 < 30$) and the Central Limit Theorem cannot be invoked without a sufficiently large sample ($n \ge 30$).
+  - **Part b (Distribution & Degrees of Freedom):** Because $\sigma$ is unknown and replaced by $S$, we must use the **Student's $t$-distribution** with degrees of freedom:
+    $$df = n - 1 = 25 - 1 = 24$$
+  - Confidence interval formula:
+    $$\bar{X} \pm t_{\alpha/2, n-1} \frac{S}{\sqrt{n}}$$
+
+- **Step 3: Step-by-Step Algebraic Calculations**:
+  - Estimated standard error of the mean:
+    $$S_{\bar{X}} = \frac{S}{\sqrt{n}} = \frac{6.5}{\sqrt{25}} = \frac{6.5}{5} = 1.30\text{ hours}$$
+  - **Part c ($95\%$ Confidence Interval)**:
+    For $95\%$ confidence: $\alpha = 0.05 \implies \alpha/2 = 0.025$.  
+    From the Reference Table: $t_{0.025, 24} = 2.0639$.  
+    Margin of error:
+    $$e_{95\%} = t_{0.025, 24} \times \frac{S}{\sqrt{n}} = 2.0639 \times 1.30 = 2.683\text{ hours}$$
+    Confidence interval bounds:
+    $$\text{Lower Limit} = 34.2 - 2.683 = 31.517\text{ hours}$$
+    $$\text{Upper Limit} = 34.2 + 2.683 = 36.883\text{ hours}$$
+    $$\text{CI}_{95\%} = [31.517 \;;\; 36.883]\text{ hours} \quad (\approx [31.52 \;;\; 36.88])$$
+  - **Part d ($99\%$ Confidence Interval)**:
+    For $99\%$ confidence: $\alpha = 0.01 \implies \alpha/2 = 0.005$.  
+    From the Reference Table: $t_{0.005, 24} = 2.7969$.  
+    Margin of error:
+    $$e_{99\%} = 2.7969 \times 1.30 = 3.636\text{ hours}$$
+    Confidence interval bounds:
+    $$\text{Lower Limit} = 34.2 - 3.636 = 30.564\text{ hours}$$
+    $$\text{Upper Limit} = 34.2 + 3.636 = 37.836\text{ hours}$$
+    $$\text{CI}_{99\%} = [30.564 \;;\; 37.836]\text{ hours} \quad (\approx [30.56 \;;\; 37.84])$$
+
+- **Step 4: Casio fx-580VN X Instructions**:
+  - Standard error: `6.5 / 5 =` $\implies 1.3$.
+  - $95\%$ bounds: `34.2 - 2.0639 * 1.3` $\implies 31.5169$; `34.2 + 2.0639 * 1.3` $\implies 36.8831$.
+  - $99\%$ bounds: `34.2 - 2.7969 * 1.3` $\implies 30.5640$; `34.2 + 2.7969 * 1.3` $\implies 37.8360$.
+
+- **Step 5: Managerial Evaluation & Conclusion (Part e)**:
+  - *Evaluation of CISO Pledge:* The benchmark threshold is $38.0\text{ hours}$.
+  - The entire $95\%$ confidence interval $[31.52 ; 36.88]\text{ hours}$ lies **strictly below $38.0\text{ hours}$** (even the upper bound $36.88\text{ hours}$ is well under the ceiling).
+  - *Formal Conclusion:* We are $95\%$ confident that the true population mean resolution time is between $31.52$ and $36.88$ hours. The sample data provides compelling statistical evidence to **support the CISO's pledge**, confirming that the operational team consistently resolves incidents in fewer than $38.0$ hours on average.
+
+</div>
+
+---
+
+## Problem 3 (Chapter 8): Confidence Interval for Proportion & Sample Size Determination
+
+### Problem 3 (Chapter 8): E-Commerce Checkout Cart Abandonment & Sample Size Planning
+
+#### 1. Problem Statement (Original English):
+> **Written Exam Problem 3 (Estimated Time: 7 Minutes | 25 Points):**  
+> A prominent digital commerce marketplace launched a streamlined one-click mobile checkout interface aimed at reducing customer shopping cart abandonment. To evaluate current user behavior, the marketplace analytics team takes a random sample of $n = 400$ mobile checkout sessions and observes that $X = 80$ sessions were abandoned before transaction completion.  
+>   
+> **a.** Calculate the point estimate of the population proportion of abandoned checkouts ($p$). Formally verify whether the sampling distribution of the proportion can be approximated by a normal distribution.  
+> **b.** Construct a $95\%$ confidence interval estimate for the true population proportion $\pi$ of abandoned mobile checkouts.  
+> **c.** Interpret the confidence interval constructed in part **(b)** within the context of e-commerce performance metrics.  
+> **d.** For next quarter's strategic planning, the Vice President of Marketing insists on conducting a new user survey to estimate the abandonment proportion within an acceptable margin of error of no more than $e = 0.03$ ($3\%$) with $95\%$ confidence:  
+> &nbsp;&nbsp;&nbsp;&nbsp;**i.** Determine the required sample size $n$ using the current sample proportion ($p = 0.20$) as a preliminary planning estimate.  
+> &nbsp;&nbsp;&nbsp;&nbsp;**ii.** Determine the required sample size $n$ if no prior planning information is available (conservative approach).  
+> &nbsp;&nbsp;&nbsp;&nbsp;**iii.** State the mathematical rounding principle applied to sample size determination and explain the cost-benefit trade-off between the two approaches.
+
+#### 2. Given Statistical Reference Values (No Table Lookup Needed):
+> [!NOTE]
+> **STATISTICAL DATA SHEET FOR PROBLEM 3 (CRITICAL VALUES $Z_{\alpha/2}$ & $t_{\alpha/2}$):**  
+> | Confidence Level | Standard Normal $Z_{\alpha/2}$ | $t_{\alpha/2}$ ($df = 399$) |
+> | :---: | :---: | :---: |
+> | **$90\%$ ($\alpha = 0.10$)** | **$Z_{0.05} = 1.6450$** | **$t_{0.05, 399} = 1.6487$** |
+> | **$95\%$ ($\alpha = 0.05$)** | **$Z_{0.025} = 1.9600$** | **$t_{0.025, 399} = 1.9659$** |
+> | **$99\%$ ($\alpha = 0.01$)** | **$Z_{0.005} = 2.5760$** | **$t_{0.005, 399} = 2.5881$** |
+> *(Note: The standard normal $Z$-distribution is the Pearson standard for all proportion confidence intervals and sample size formulas).*
+
+<div class="en-lecture-collapse" id="en-sol-exam-3" data-btn-show="Show Solution" data-btn-hide="Hide Solution" data-btn-icon="fa-lightbulb" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL STEP-BY-STEP SOLUTION • PROBLEM 3 (CHAPTER 8)</span>
+  </div>
+  <span class="en-lecture-badge">Proportion CI & Sample Size Planning • Pearson Model</span>
+</div>
+
+- **Step 1: Given Data & Variable Definition**:
+  - Sample size: $n = 400$ checkout attempts.
+  - Number of abandoned checkouts: $X = 80$.
+  - Target margin of error for planning: $e = 0.03$.
+  - Confidence level: $95\% \implies \alpha = 0.05 \implies Z_{\alpha/2} = Z_{0.025} = 1.96$.
+
+- **Step 2: Assumptions & Key Formulas**:
+  - **Part a (Point Estimate & Normality Criteria):**
+    $$p = \frac{X}{n} = \frac{80}{400} = 0.20 \quad (20.0\%)$$
+    Check the two Pearson normality conditions:
+    $$X = n p = 400(0.20) = 80 \ge 5$$
+    $$n - X = n(1 - p) = 400(0.80) = 320 \ge 5$$
+    Both conditions are abundantly satisfied; hence, the sampling distribution of $p$ is approximately normal.
+  - Estimated standard error of proportion: $S_p = \sqrt{\frac{p(1 - p)}{n}}$.
+  - Confidence interval: $p \pm Z_{\alpha/2} \sqrt{\frac{p(1 - p)}{n}}$.
+  - Sample size formula for proportion: $n = \frac{Z_{\alpha/2}^2 \cdot p(1 - p)}{e^2}$.
+
+- **Step 3: Step-by-Step Algebraic Calculations**:
+  - **Part b ($95\%$ Confidence Interval)**:
+    $$S_p = \sqrt{\frac{0.20 \times 0.80}{400}} = \sqrt{\frac{0.16}{400}} = \sqrt{0.0004} = 0.020$$
+    Margin of error ($e$):
+    $$e = 1.96 \times 0.020 = 0.0392 \quad (3.92\%)$$
+    Confidence interval bounds:
+    $$\text{Lower Limit} = 0.20 - 0.0392 = 0.1608 \quad (16.08\%)$$
+    $$\text{Upper Limit} = 0.20 + 0.0392 = 0.2392 \quad (23.92\%)$$
+    $$\text{CI}_{95\%} = [0.1608 \;;\; 0.2392] \quad ([16.08\% \;;\; 23.92\%])$$
+  - **Part d-i (Sample Size with Prior Estimate $p = 0.20$)**:
+    $$n = \frac{1.96^2 \times 0.20 \times 0.80}{0.03^2} = \frac{3.8416 \times 0.16}{0.0009} = \frac{0.614656}{0.0009} = 682.951$$
+    Applying the rounding rule:
+    $$n = 683\text{ checkout sessions}$$
+  - **Part d-ii (Sample Size without Prior Estimate $\implies$ Conservative $p = 0.50$)**:
+    Setting $p = 0.50$ maximizes $p(1 - p) = 0.25$:
+    $$n = \frac{1.96^2 \times 0.50 \times 0.50}{0.03^2} = \frac{3.8416 \times 0.25}{0.0009} = \frac{0.9604}{0.0009} = 1067.111$$
+    Applying the rounding rule:
+    $$n = 1068\text{ checkout sessions}$$
+
+- **Step 4: Casio fx-580VN X Instructions**:
+  - Proportion CI: `0.20 - 1.96 * √(0.20 * 0.80 / 400)` $\implies 0.1608$; `+` $\implies 0.2392$.
+  - Sample size (i): `1.96^2 * 0.16 / 0.03^2 =` $\implies 682.95 \implies 683$.
+  - Sample size (ii): `1.96^2 * 0.25 / 0.03^2 =` $\implies 1067.11 \implies 1068$.
+
+- **Step 5: Managerial Interpretations & Rounding Rule (Parts c & d-iii)**:
+  - *Part c Interpretation:* We are $95\%$ confident that the true population proportion of mobile shopping cart abandonments is between $16.08\%$ and $23.92\%$. Management can reliably budget infrastructure based on a $20\%$ baseline abandonment rate.
+  - *Part d-iii Rounding Principle & Trade-off:* In sample size determination, any non-integer result must **always be rounded UP to the next whole integer** ($\lceil n \rceil$). Rounding down would cause the true sampling error to slightly exceed the strict $0.03$ tolerance. Utilizing preliminary empirical knowledge ($p = 0.20$) reduces the required sample size from $1068$ to $683$—saving $385$ audit sessions ($36\%$ cost savings) while achieving identical estimation precision.
+
+</div>
+
+---
+
+## Problem 4 (Chapter 9): One-Sample Hypothesis Test for Population Mean (Lower-Tail $t$-Test)
+
+### Problem 4 (Chapter 9): Electric Vehicle Battery Rapid-Charging Temperature Optimization
+
+#### 1. Problem Statement (Original English):
+> **Written Exam Problem 4 (Estimated Time: 8 Minutes | 25 Points):**  
+> An electric vehicle (EV) powertrain research institute developed an intelligent liquid-immersion thermal cooling jacket designed to prevent battery degradation during $350\text{ kW}$ ultra-fast DC charging. Under the baseline conventional cooling architecture, the mean maximum core cell temperature during a full charge was documented at $\mu = 45.0^\circ\text{C}$.  
+>   
+> The engineering team claims that the new immersion jacket significantly reduces the mean core cell temperature below $45.0^\circ\text{C}$. To validate this performance improvement prior to commercial vehicle release, an independent testing laboratory benchmarks a random sample of $n = 36$ charging cycles equipped with the new system. The test yields:  
+> $$\text{Sample Mean: } \bar{X} = 43.2^\circ\text{C}, \quad \text{Sample Standard Deviation: } S = 4.5^\circ\text{C}$$  
+>   
+> Conduct a formal hypothesis test at the $\alpha = 0.05$ level of significance:  
+> **a.** State the null hypothesis ($H_0$) and the alternative hypothesis ($H_1$). Identify whether this is a two-tail, upper-tail, or lower-tail test.  
+> **b.** Identify the appropriate test statistic ($Z_{STAT}$ or $t_{STAT}$) and determine the degrees of freedom ($df$). State why this test statistic is selected.  
+> **c.** Determine the critical value and establish the decision rule using the critical value approach.  
+> **d.** Compute the numerical value of the test statistic.  
+> **e.** Using the provided Reference Data Sheet, determine the corresponding $p$-value and state the statistical decision (Reject $H_0$ or Fail to Reject $H_0$).  
+> **f.** State the managerial engineering conclusion. What actionable recommendation should be delivered to automotive program leadership?
+
+#### 2. Given Statistical Reference Values (No Table Lookup Needed):
+> [!NOTE]
+> **STATISTICAL DATA SHEET FOR PROBLEM 4 (STUDENT'S $t$ CRITICAL VALUES & CUMULATIVE PROBABILITIES FOR $df = 35$):**  
+> | Degrees of Freedom | $t_{0.10}$ | $t_{0.05}$ | $t_{0.025}$ | $t_{0.01}$ | $t_{0.005}$ |
+> | :---: | :---: | :---: | :---: | :---: | :---: |
+> | **$df = 35$** | **$1.3062$** | **$1.6896$** | **$2.0301$** | **$2.4377$** | **$2.7238$** |
+> | **$df = 36$** | **$1.3055$** | **$1.6883$** | **$2.0281$** | **$2.4345$** | **$2.7195$** |
+>   
+> | Cumulative Left-Tail $t$-Probability on $df = 35$ | $P(t_{35} < -2.40)$ | $P(t_{35} < -2.03)$ | $P(t_{35} < -1.69)$ | $P(t_{35} < -1.00)$ |
+> | :---: | :---: | :---: | :---: | :---: |
+> | **Probability** | **$0.0109$** | **$0.0250$** | **$0.0500$** | **$0.1620$** |
+> *(Note: Critical values $t_{\alpha}$ represent upper-tail cutoff values; for lower-tail tests, apply the negative sign due to symmetry: $-t_{\alpha}$).*
+
+<div class="en-lecture-collapse" id="en-sol-exam-4" data-btn-show="Show Solution" data-btn-hide="Hide Solution" data-btn-icon="fa-lightbulb" style="display: none;">
+
+<div class="en-lecture-header">
+  <div class="en-lecture-title">
+    <span class="en-flag">🇬🇧</span>
+    <span>FULL STEP-BY-STEP SOLUTION • PROBLEM 4 (CHAPTER 9)</span>
+  </div>
+  <span class="en-lecture-badge">One-Sample Hypothesis Testing • Student's $t$-Test Model</span>
+</div>
+
+- **Step 1: State Hypotheses & Direction of Test (Part a)**:
+  - Null hypothesis: $H_0: \mu \ge 45.0^\circ\text{C}$ (The new cooling jacket does not reduce the mean temperature).
+  - Alternative hypothesis: $H_1: \mu < 45.0^\circ\text{C}$ (The new cooling jacket significantly reduces the mean temperature).
+  - Test Direction: **Lower-tail (left-tail) test**, because the claim focuses strictly on temperature reduction ($< 45.0^\circ\text{C}$).
+  - Significance level: $\alpha = 0.05$.
+
+- **Step 2: Identify Test Statistic & Degrees of Freedom (Part b)**:
+  - Because the population standard deviation $\sigma$ is **unknown** and estimated using the sample standard deviation $S = 4.5^\circ\text{C}$, the appropriate test statistic is the **one-sample Student's $t$-test statistic**:
+    $$t_{STAT} = \frac{\bar{X} - \mu_0}{S / \sqrt{n}}$$
+  - Degrees of freedom:
+    $$df = n - 1 = 36 - 1 = 35$$
+  - Central Limit Theorem justifies normality because $n = 36 \ge 30$.
+
+- **Step 3: Decision Rules & Critical Value (Part c)**:
+  - For a lower-tail test with $\alpha = 0.05$ and $df = 35$:  
+    From the Reference Table: $t_{0.05, 35} = 1.6896 \implies t_{crit} = -1.6896$.
+  - **Decision Rule (Critical Value Approach):**
+    $$\text{Reject } H_0 \text{ if } t_{STAT} < -1.6896$$
+  - **Decision Rule ($p$-Value Approach):**
+    $$\text{Reject } H_0 \text{ if } p\text{-value} < \alpha = 0.05$$
+
+- **Step 4: Algebraic Calculations & $p$-Value Evaluation (Parts d & e)**:
+  - Standard error of the sample mean:
+    $$S_{\bar{X}} = \frac{S}{\sqrt{n}} = \frac{4.5}{\sqrt{36}} = \frac{4.5}{6} = 0.75^\circ\text{C}$$
+  - Compute the test statistic $t_{STAT}$:
+    $$t_{STAT} = \frac{\bar{X} - \mu_0}{S_{\bar{X}}} = \frac{43.2 - 45.0}{0.75} = \frac{-1.80}{0.75} = -2.40$$
+  - Evaluate the $p$-value:
+    From the Reference Table:
+    $$p\text{-value} = P(t_{35} < -2.40) = 0.0109 \quad (1.09\%)$$
+  - **Statistical Decision:**
+    - Since $t_{STAT} = -2.40 < t_{crit} = -1.6896$, $t_{STAT}$ falls deep inside the rejection region.
+    - Since $p\text{-value} = 0.0109 < \alpha = 0.05$, we **REJECT $H_0$**!
+
+- **Step 5: Casio fx-580VN X Instructions & Managerial Conclusion (Part f)**:
+  - **Casio fx-580VN X Keystrokes:**
+    - `(43.2 - 45) / (4.5 / 6) =` $\implies -2.4$.
+    - `[MENU]` `[7]` (Distribution) $\to$ $t$-distribution verification.
+  - **Formal Managerial Conclusion:**
+    - *"Statistical Interpretation:* At the $\alpha = 0.05$ level of significance, there is sufficient statistical evidence ($t_{STAT} = -2.40$, $p\text{-value} = 0.0109$) to conclude that the true mean battery core charging temperature with the new liquid-immersion cooling jacket is significantly less than $45.0^\circ\text{C}$."
+    - *"Actionable Engineering Recommendation:* Automotive program managers have robust empirical justification to approve the immersion cooling architecture for full commercial deployment, reducing cell thermal stress and dramatically enhancing battery longevity during ultra-fast charging."
+
+</div>
+
+---
 </script>
 
   <script>
@@ -7354,6 +7818,61 @@ Khi tính ra khoảng tin cậy ví dụ: $[15.2, 18.8]$ cho trung bình $\mu$:
     /* ==========================================================================
        CHAPTERS 7, 8, 9 ENGLISH LECTURE COLLAPSE & TOGGLE SYSTEM
        ========================================================================== */
+    
+    /* ==========================================================================
+       30-MINUTE TIMED EXAM COUNTDOWN SYSTEM
+       ========================================================================== */
+    let examTimerInterval = null;
+    let examTimerRemaining = 1800; // 30 minutes in seconds
+    let examTimerRunning = false;
+
+    function formatExamTime(sec) {
+      const m = Math.floor(sec / 60);
+      const s = sec % 60;
+      return (m < 10 ? '0' : '') + m + ':' + (s < 10 ? '0' : '') + s;
+    }
+
+    function updateExamTimerDisplay() {
+      const el = document.getElementById('exam-timer-val');
+      if (el) el.textContent = formatExamTime(examTimerRemaining);
+    }
+
+    window.toggleExamTimer = function() {
+      const btn = document.getElementById('btn-start-exam-timer');
+      const resetBtn = document.getElementById('btn-reset-exam-timer');
+      if (!examTimerRunning) {
+        examTimerRunning = true;
+        if (btn) btn.innerHTML = '<i class="fas fa-pause"></i> <span>Pause Timer</span>';
+        if (resetBtn) resetBtn.style.display = 'inline-flex';
+        examTimerInterval = setInterval(() => {
+          if (examTimerRemaining > 0) {
+            examTimerRemaining--;
+            updateExamTimerDisplay();
+          } else {
+            clearInterval(examTimerInterval);
+            examTimerRunning = false;
+            if (btn) btn.innerHTML = '<i class="fas fa-flag-checkered"></i> <span>Time Up!</span>';
+            alert('⏱ 30 MINUTES EXPIRED! Great job completing the written exam! Click "Show Solution" on each problem to check your answers.');
+          }
+        }, 1000);
+      } else {
+        clearInterval(examTimerInterval);
+        examTimerRunning = false;
+        if (btn) btn.innerHTML = '<i class="fas fa-play"></i> <span>Resume Timer</span>';
+      }
+    };
+
+    window.resetExamTimer = function() {
+      clearInterval(examTimerInterval);
+      examTimerRunning = false;
+      examTimerRemaining = 1800;
+      updateExamTimerDisplay();
+      const btn = document.getElementById('btn-start-exam-timer');
+      const resetBtn = document.getElementById('btn-reset-exam-timer');
+      if (btn) btn.innerHTML = '<i class="fas fa-play"></i> <span>Start Timer</span>';
+      if (resetBtn) resetBtn.style.display = 'none';
+    };
+
     function initExerciseEnglishToggles() {
       const cards = document.querySelectorAll('.en-lecture-collapse');
       cards.forEach(card => {
@@ -7374,12 +7893,16 @@ Khi tính ra khoảng tin cậy ví dụ: $[15.2, 18.8]$ cho trung bình $\mu$:
         if (heading) {
           if (heading.querySelector('.btn-toggle-en-lecture')) return;
 
+          const showText = card.getAttribute('data-btn-show') || 'English Solution';
+          const hideText = card.getAttribute('data-btn-hide') || 'Hide English';
+          const iconShow = card.getAttribute('data-btn-icon') || 'fa-language';
+
           const btn = document.createElement('button');
           btn.type = 'button';
           btn.className = 'btn-toggle-en-lecture';
           btn.setAttribute('data-target', cardId);
-          btn.setAttribute('title', 'Bật / Tắt bài giảng tiếng Anh chuẩn Pearson');
-          btn.innerHTML = '<i class="fas fa-language"></i> <span>English Solution</span>';
+          btn.setAttribute('title', showText);
+          btn.innerHTML = `<i class="fas ${iconShow}"></i> <span>${showText}</span>`;
 
           btn.addEventListener('click', (e) => {
             e.preventDefault();
@@ -7390,11 +7913,11 @@ Khi tính ra khoảng tin cậy ví dụ: $[15.2, 18.8]$ cho trung bình $\mu$:
             if (isHidden) {
               targetEl.style.display = 'block';
               btn.classList.add('active');
-              btn.innerHTML = '<i class="fas fa-eye-slash"></i> <span>Hide English</span>';
+              btn.innerHTML = `<i class="fas fa-eye-slash"></i> <span>${hideText}</span>`;
             } else {
               targetEl.style.display = 'none';
               btn.classList.remove('active');
-              btn.innerHTML = '<i class="fas fa-language"></i> <span>English Solution</span>';
+              btn.innerHTML = `<i class="fas ${iconShow}"></i> <span>${showText}</span>`;
             }
           });
 
