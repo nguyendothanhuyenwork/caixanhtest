@@ -2808,6 +2808,7 @@
       <div class="notes-filter-tags">
         <button class="filter-tag active" onclick="setFilterTag('all', this)">Tất cả</button>
         <button class="filter-tag" onclick="setFilterTag('quiz2', this)">Mas Quiz 2</button>
+          <button class="filter-tag" onclick="setFilterTag('quiz3', this)">Mas Quiz 3</button>
         <button class="filter-tag" onclick="setFilterTag('ch5', this)">Chương 5</button>
         <button class="filter-tag" onclick="setFilterTag('ch6', this)">Chương 6</button>
         <button class="filter-tag" onclick="setFilterTag('ch7', this)">Chương 7</button>
@@ -7438,6 +7439,898 @@ Khi tính ra khoảng tin cậy ví dụ: $[15.2, 18.8]$ cho trung bình $\mu$:
 </div>
 
 ---
+
+
+# PHẦN 12: BỘ ĐỀ THỰC CHIẾN MAS QUIZ 3 (20 CÂU HỎI TRẮC NGHIỆM ĐẦY ĐỦ ANH - VIỆT - 5 BƯỚC - CASIO 580)
+
+> [!NOTE]
+> **TỔNG QUAN BỘ ĐỀ THỰC CHIẾN MAS QUIZ 3 (CHƯƠNG 7, 8, 9, 10)**
+> Tuyển tập trọn vẹn 20 câu hỏi trắc nghiệm thực chiến lấy trực tiếp từ đề thi kiểm tra trực tuyến tiến độ môn Thống kê Ứng dụng (MAS202). Bộ đề bao quát toàn diện các kiến thức trọng tâm:
+> 1. Phân phối chọn mẫu (Sampling Distributions - Chương 7).
+> 2. Khoảng tin cậy cho kỳ vọng $\mu$ và tỷ lệ $\pi$, xác định cỡ mẫu tối thiểu (Confidence Intervals & Sample Size - Chương 8).
+> 3. Kiểm định giả thuyết 1 mẫu cho trung bình và tỷ lệ (One-Sample Hypothesis Testing - Chương 9).
+> 4. Kiểm định giả thuyết 2 mẫu độc lập và 2 mẫu theo cặp (Two-Sample Hypothesis Testing - Chương 10).
+> Toàn bộ 20 câu hỏi được số hóa 100% bằng văn bản chuẩn (không dùng ảnh chụp), song ngữ Anh - Việt, giải chi tiết theo **Quy chuẩn 5 Bước** và hướng dẫn từng phím bấm máy tính **Casio fx-580VN X**.
+
+---
+
+## Câu 1: Kiểm Định t Hai Mẫu Độc Lập Phương Sai Gộp (Two-Independent-Samples Pooled-Variance t-Test)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 1 (Single Choice):**
+> Assume that you have a sample of $n_1 = 8$, with the sample mean $\bar{X}_1 = 42$, and a sample standard deviation $S_1 = 4$, and you have an independent sample of $n_2 = 15$ from another population with a sample mean of $\bar{X}_2 = 34$ and a sample standard deviation $S_2 = 5$.
+> What is the value of the pooled-variance $t_{STAT}$ test statistic for testing $H_0: \mu_1 = \mu_2$?
+> - A. $t = 4.1329$
+> - B. $t = 3.8959$
+> - C. $t = 5.3174$
+> - D. $t = 2.1452$
+
+### 2. Dịch nghĩa tiếng Việt:
+Giả sử bạn có một mẫu gồm $n_1 = 8$ quan sát, với trung bình mẫu $\bar{X}_1 = 42$ và độ lệch chuẩn mẫu $S_1 = 4$, cùng một mẫu độc lập gồm $n_2 = 15$ quan sát từ một quần thể khác có trung bình mẫu $\bar{X}_2 = 34$ và độ lệch chuẩn mẫu $S_2 = 5$.
+Giá trị của thống kê kiểm định $t_{STAT}$ phương sai gộp (pooled-variance $t$-test) để kiểm định giả thuyết $H_0: \mu_1 = \mu_2$ là bao nhiêu?
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Mẫu 1: $n_1 = 8$, $\bar{X}_1 = 42$, $S_1 = 4$.
+  - Mẫu 2: $n_2 = 15$, $\bar{X}_2 = 34$, $S_2 = 5$.
+  - Giả thuyết kiểm định: $H_0: \mu_1 = \mu_2$ (hay $\mu_1 - \mu_2 = 0$).
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - Đối với kiểm định hai mẫu độc lập khi giả định phương sai hai tổng thể bằng nhau ($\sigma_1^2 = \sigma_2^2$), ta sử dụng **phương sai gộp (Pooled Variance $S_p^2$)**:
+    $$S_p^2 = \frac{(n_1 - 1)S_1^2 + (n_2 - 1)S_2^2}{(n_1 - 1) + (n_2 - 1)} = \frac{(n_1 - 1)S_1^2 + (n_2 - 1)S_2^2}{n_1 + n_2 - 2}$$
+  - Thống kê kiểm định $t_{STAT}$ có bậc tự do $df = n_1 + n_2 - 2$:
+    $$t_{STAT} = \frac{(\bar{X}_1 - \bar{X}_2) - (\mu_1 - \mu_2)}{\sqrt{S_p^2 \left(\frac{1}{n_1} + \frac{1}{n_2}\right)}} = \frac{\bar{X}_1 - \bar{X}_2}{\sqrt{S_p^2 \left(\frac{1}{n_1} + \frac{1}{n_2}\right)}}$$
+- **BƯỚC 3: Thay số & Tính toán đại số chi tiết:**
+  - Tính phương sai gộp $S_p^2$:
+    $$S_p^2 = \frac{(8 - 1) \cdot 4^2 + (15 - 1) \cdot 5^2}{8 + 15 - 2} = \frac{7 \cdot 16 + 14 \cdot 25}{21} = \frac{112 + 350}{21} = \frac{462}{21} = 22$$
+  - Tính sai số chuẩn (Standard Error of the difference):
+    $$SE = \sqrt{S_p^2 \left(\frac{1}{n_1} + \frac{1}{n_2}\right)} = \sqrt{22 \cdot \left(\frac{1}{8} + \frac{1}{15}\right)} = \sqrt{22 \cdot \frac{23}{120}} = \sqrt{\frac{506}{120}} \approx \sqrt{4.216667} \approx 2.053452$$
+  - Tính thống kê $t_{STAT}$:
+    $$t_{STAT} = \frac{42 - 34}{2.053452} = \frac{8}{2.053452} \approx 3.895878 \approx 3.8959$$
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - Bấm `[MENU]` `[1]` (Chế độ tính toán thông thường).
+  - Tính $S_p^2$ và lưu vào biến $A$:
+    - Bấm phân số: `[(■/□)]` `7 × 4² + 14 × 5²` `[▼]` `21` `[=]` $\to$ Hiện `22`.
+    - Bấm `[STO]` `[A]` (Lưu 22 vào A).
+  - Tính giá trị $t_{STAT}$:
+    - Bấm phân số: `[(■/□)]` `42 - 34` `[▼]` `[√]` `[ALPHA]` `[A]` `( 1 ÷ 8 + 1 ÷ 15 )` `[=]`
+    - Màn hình hiển thị: `3.895878287`.
+- **BƯỚC 5: Kết luận:**
+  - Giá trị thống kê kiểm định là **$t = 3.8959$**.
+  - **Đáp án chính xác: B**.
+
+---
+
+## Câu 2: Đọc Bảng Kết Quả PHStat Kiểm Định t Một Mẫu (PHStat Output Interpretation for One-Sample t-Test)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 2 (Single Choice):**
+> PHStat output:
+> ```
+> t Test for Hypothesis of the Mean
+> ------------------------------------------------
+> Data
+> Null Hypothesis                  μ =       1475
+> Level of Significance                     0.05
+> Sample Size                                100
+> Sample Mean                               1500
+> Sample Standard Deviation                  200
+> ------------------------------------------------
+> Intermediate Calculations
+> Standard Error of the Mean             20.0000
+> Degrees of Freedom                          99
+> t Test Statistic                        1.2500
+> ------------------------------------------------
+> Two-Tail Test
+> Lower Critical Value                   -1.9842
+> Upper Critical Value                    1.9842
+> p-Value                                 0.2142
+> ```
+> Choose the correct statement:
+> - A. do not reject $H_0$
+> - B. Reject $H_0$ if the test statistic is greater than 0.2142 or less than -0.2142.
+> - C. reject $H_0$
+> - D. Reject $H_0$ if the test statistic is greater than 1.2500 or less than -1.2500.
+
+### 2. Dịch nghĩa tiếng Việt:
+Bảng xuất kết quả từ phần mềm PHStat cho bài toán kiểm định giả thuyết về giá trị trung bình $t$-Test ($H_0: \mu = 1475$ so với $H_1: \mu \ne 1475$, mức ý nghĩa $\alpha = 0.05$). Hãy chọn khẳng định đúng nhất trong các phương án trên.
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Cặp giả thuyết 2 phía: $H_0: \mu = 1475$ vs $H_1: \mu \ne 1475$.
+  - Mức ý nghĩa: $\alpha = 0.05$.
+  - Thống kê kiểm định tính được: $t_{STAT} = 1.2500$.
+  - Hai giá trị tới hạn (Critical Values): $t_{crit, lower} = -1.9842$ và $t_{crit, upper} = +1.9842$.
+  - Mức xác suất p-Value: $p\text{-value} = 0.2142$.
+- **BƯỚC 2: Bản chất lý thuyết & Quy tắc quyết định:**
+  - **Cách 1: Tiếp cận theo Giá trị tới hạn (Critical Value Approach):**
+    - Miền bác bỏ (Rejection Region) của kiểm định 2 phía: Bác bỏ $H_0$ nếu $t_{STAT} < -1.9842$ hoặc $t_{STAT} > 1.9842$.
+    - Miền không bác bỏ (Non-rejection Region): $[-1.9842; 1.9842]$.
+  - **Cách 2: Tiếp cận theo p-Value (p-Value Approach):**
+    - Quy tắc chuẩn quốc tế: Bác bỏ $H_0$ nếu $p\text{-value} < \alpha$. Ngược lại, không bác bỏ $H_0$ nếu $p\text{-value} \ge \alpha$.
+- **BƯỚC 3: So sánh & Đưa ra quyết định:**
+  - Xét $t_{STAT} = 1.2500$: Rõ ràng $-1.9842 < 1.2500 < 1.9842 \implies t_{STAT}$ rơi vào miền không bác bỏ.
+  - Xét $p\text{-value} = 0.2142$: Vì $0.2142 > \alpha = 0.05 \implies$ Không đủ bằng chứng thống kê để bác bỏ $H_0$.
+  - Kết luận thống kê duy nhất đúng: **do not reject $H_0$ (Không bác bỏ $H_0$)**.
+  - *Vạch trần bẫy:* Phương án B và D bịa đặt quy tắc bằng cách lấy nhầm $p$-value ($0.2142$) hoặc $t_{STAT}$ ($1.2500$) làm ngưỡng tới hạn, vi phạm bản chất thống kê.
+- **BƯỚC 4: Hướng dẫn Casio fx-580VN X:**
+  - Bài đọc bảng kết quả trực quan, không cần tính toán số học.
+- **BƯỚC 5: Kết luận:**
+  - Khẳng định đúng: **do not reject $H_0$**.
+  - **Đáp án chính xác: A**.
+
+---
+
+## Câu 3: Ước Lượng Điểm Cho Tỷ Lệ Tổng Thể (Point Estimate for Population Proportion)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 3 (Single Choice):**
+> Four hundred people were asked whether gun laws should be more stringent. Three hundred said "yes," and 100 said "no". The point estimate of the proportion in the population who will respond "no" is
+> - A. 0.75
+> - B. 0.5
+> - C. 0.25
+> - D. None of the others
+
+### 2. Dịch nghĩa tiếng Việt:
+Bốn trăm người được hỏi ý kiến xem liệu luật quản lý súng đạn có nên được siết chặt hơn hay không. Ba trăm người trả lời "đồng ý" (yes), và 100 người trả lời "không đồng ý" (no). Ước lượng điểm của tỷ lệ trong tổng thể những người sẽ trả lời "không đồng ý" là bao nhiêu?
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Tổng số người được khảo sát (cỡ mẫu): $n = 400$.
+  - Số người trả lời "đồng ý" (yes): $X_{yes} = 300$.
+  - Số người trả lời "không đồng ý" (no): $X_{no} = 100$.
+  - Biến cố mục tiêu: Tỷ lệ người phản hồi "no".
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - Ước lượng điểm (Point Estimate) không chệch cho tỷ lệ tổng thể $\pi$ chính là tỷ lệ mẫu (Sample Proportion $\hat{p}$):
+    $$\hat{p} = \frac{X}{n}$$
+    với $X$ là số phần tử mang đặc tính đang quan tâm trong mẫu.
+- **BƯỚC 3: Thay số & Tính toán:**
+  $$\hat{p}_{no} = \frac{X_{no}}{n} = \frac{100}{400} = \frac{1}{4} = 0.25$$
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - Bấm: `100 ÷ 400 =` $\to$ Hiện phân số `1/4`.
+  - Bấm phím `[S<=>D]` để chuyển thành số thập phân: `0.25`.
+- **BƯỚC 5: Kết luận:**
+  - Ước lượng điểm cần tìm là **0.25**.
+  - **Đáp án chính xác: C**.
+
+---
+
+## Câu 4: Xác Định Cỡ Mẫu Cần Thiết Để Ước Lượng Trung Bình (Sample Size for Estimating the Mean)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 4 (Single Choice):**
+> If you want to be 95% confident of estimating the population mean to within a sampling error of $\pm 2$ and the standard deviation is assumed to be 12, what sample size is required?
+> Let $Z_{0.025} = 1.96$.
+> - A. 10
+> - B. 97
+> - C. 12
+> - D. 139
+
+### 2. Dịch nghĩa tiếng Việt:
+Nếu bạn muốn có độ tin cậy 95% để ước lượng giá trị trung bình tổng thể với sai số chọn mẫu trong phạm vi $\pm 2$ và độ lệch chuẩn của tổng thể được giả định là 12, thì cần một cỡ mẫu bằng bao nhiêu? Cho $Z_{0.025} = 1.96$.
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Độ tin cậy: $1 - \alpha = 0.95 \implies \alpha = 0.05 \implies Z_{\alpha/2} = Z_{0.025} = 1.96$.
+  - Sai số chọn mẫu cho phép (Margin of Error / Sampling Error): $e = 2$.
+  - Độ lệch chuẩn tổng thể: $\sigma = 12$.
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - Khoảng sai số biên là $e = Z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}$.
+  - Giải phương trình tìm cỡ mẫu $n$:
+    $$n = \left(\frac{Z_{\alpha/2} \cdot \sigma}{e}\right)^2 = \frac{Z_{\alpha/2}^2 \cdot \sigma^2}{e^2}$$
+  - **NGUYÊN TẮC LÀM TRÒN BẮT BUỘC:** Cỡ mẫu $n$ luôn luôn phải **làm tròn lên (round UP)** đến số nguyên tiếp theo gần nhất ($\lceil n \rceil$), dù phần thập phân có nhỏ đến đâu (ví dụ $138.01$ cũng phải tròn lên $139$) để đảm bảo sai số không vượt quá mức $e$ cho phép.
+- **BƯỚC 3: Thay số & Tính toán:**
+  $$n = \left(\frac{1.96 \cdot 12}{2}\right)^2 = (1.96 \cdot 6)^2 = (11.76)^2 = 138.2976$$
+  - Áp dụng quy tắc làm tròn lên:
+    $$\lceil 138.2976 \rceil = 139$$
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - Bấm `[MENU]` `[1]`
+  - Bấm: `( 1.96 × 12 ÷ 2 ) x² =`
+  - Màn hình hiện: `138.2976`.
+  - Làm tròn lên số nguyên kế tiếp $\to 139$.
+- **BƯỚC 5: Kết luận:**
+  - Cỡ mẫu cần thiết là **139**.
+  - **Đáp án chính xác: D**.
+
+---
+
+## Câu 5: Thống Kê Mẫu Dùng Để Ước Lượng Tham Số Tổng Thể (Sample Statistic Estimates Population Parameter)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 5 (Single Choice):**
+> The value of the _____ is used to estimate the value of the population parameter.
+> - A. population statistic
+> - B. population estimate
+> - C. sample parameter
+> - D. sample statistic
+
+### 2. Dịch nghĩa tiếng Việt:
+Giá trị của _____ được sử dụng để ước lượng giá trị của tham số tổng thể (population parameter).
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Câu hỏi kiểm tra nền tảng lý thuyết phân biệt giữa **Mẫu (Sample)** và **Tổng thể (Population)** trong Thống kê suy diễn.
+- **BƯỚC 2: Bản chất lý thuyết & Định nghĩa chuẩn mực:**
+  - **Tham số tổng thể (Population Parameter):** Là giá trị số mô tả đặc tính của toàn bộ quần thể (ví dụ: trung bình tổng thể $\mu$, tỷ lệ tổng thể $\pi$, phương sai tổng thể $\sigma^2$). Trong thực tế, các tham số này hầu như luôn chưa biết vì chi phí điều tra toàn bộ tổng thể quá lớn hoặc bất khả thi.
+  - **Thống kê mẫu (Sample Statistic):** Là giá trị số được tính toán trực tiếp từ dữ liệu của một mẫu ngẫu nhiên (ví dụ: trung bình mẫu $\bar{X}$, tỷ lệ mẫu $\hat{p}$, phương sai mẫu $S^2$).
+  - Trong thống kê suy diễn (Inferential Statistics), nhà nghiên cứu dùng giá trị đã biết của **thống kê mẫu (sample statistic)** làm ước lượng điểm (point estimate) hoặc xây dựng khoảng tin cậy để ước lượng giá trị chưa biết của **tham số tổng thể (population parameter)**.
+- **BƯỚC 3: Loại trừ các phương án sai:**
+  - "Population statistic" & "Sample parameter": Sai thuật ngữ hoàn toàn (Tổng thể chỉ có "parameter", Mẫu mới có "statistic").
+  - "Population estimate": Không phải thuật ngữ khoa học chuẩn.
+  - Thuật ngữ duy nhất chính xác: **sample statistic**.
+- **BƯỚC 4: Hướng dẫn Casio fx-580VN X:**
+  - Câu hỏi lý thuyết định tính.
+- **BƯỚC 5: Kết luận:**
+  - Khái niệm đúng cần điền là **sample statistic**.
+  - **Đáp án chính xác: D**.
+
+---
+
+## Câu 6: Khoảng Tin Cậy Cho Trung Bình Với Cỡ Mẫu Nhỏ & Chưa Biết Phương Sai (t-Confidence Interval for the Mean)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 6 (Single Choice):**
+> The following random sample from a population whose values were normally distributed was collected:
+> 10, 8, 11, 11
+> The 95% confidence interval for $\mu$ is
+> Let $t_{0.025; 3} = 3.1824$.
+> - A. (8.00; 10.00)
+> - B. (9.25; 10.75)
+> - C. (7.75; 12.25)
+> - D. (8.52; 11.48)
+
+### 2. Dịch nghĩa tiếng Việt:
+Một mẫu ngẫu nhiên gồm các giá trị $\{10, 8, 11, 11\}$ được thu thập từ một tổng thể có phân phối chuẩn. Khoảng tin cậy 95% cho giá trị trung bình $\mu$ là bao nhiêu? Biết giá trị phân phối Student $t_{0.025; 3} = 3.1824$.
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Mẫu dữ liệu thô: $\{10, 8, 11, 11\}$. Cỡ mẫu $n = 4$ ($n < 30$, mẫu nhỏ).
+  - Phân phối tổng thể là chuẩn, nhưng phương sai $\sigma^2$ chưa biết $\implies$ Dùng phân phối Student $t$ với bậc tự do $df = n - 1 = 4 - 1 = 3$.
+  - Mức tin cậy $95\% \implies \alpha = 0.05 \implies t_{\alpha/2; df} = t_{0.025; 3} = 3.1824$.
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - Trung bình mẫu: $\bar{X} = \frac{\sum X_i}{n}$.
+  - Độ lệch chuẩn mẫu: $S = \sqrt{\frac{\sum (X_i - \bar{X})^2}{n - 1}}$.
+  - Biên sai số: $e = t_{\alpha/2; n-1} \cdot \frac{S}{\sqrt{n}}$.
+  - Khoảng tin cậy: $[\bar{X} - e; \bar{X} + e]$.
+- **BƯỚC 3: Thay số & Tính toán chi tiết:**
+  - Tính trung bình mẫu:
+    $$\bar{X} = \frac{10 + 8 + 11 + 11}{4} = \frac{40}{4} = 10$$
+  - Tính tổng bình phương độ lệch:
+    $$\sum (X_i - \bar{X})^2 = (10 - 10)^2 + (8 - 10)^2 + (11 - 10)^2 + (11 - 10)^2 = 0 + 4 + 1 + 1 = 6$$
+  - Tính phương sai và độ lệch chuẩn mẫu:
+    $$S^2 = \frac{6}{4 - 1} = \frac{6}{3} = 2 \implies S = \sqrt{2} \approx 1.41421356$$
+  - Tính sai số chuẩn của trung bình mẫu:
+    $$S_{\bar{X}} = \frac{S}{\sqrt{n}} = \frac{\sqrt{2}}{\sqrt{4}} = \frac{\sqrt{2}}{2} \approx 0.70710678$$
+  - Tính biên sai số $e$:
+    $$e = 3.1824 \cdot \frac{\sqrt{2}}{2} = 3.1824 \cdot 0.70710678 \approx 2.2503 \approx 2.25$$
+  - Tính hai cận của khoảng tin cậy:
+    - Cận dưới: $\bar{X} - e = 10 - 2.25 = 7.75$
+    - Cận trên: $\bar{X} + e = 10 + 2.25 = 12.25$
+    - Khoảng tin cậy: $[7.75; 12.25]$.
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - **Nhập dữ liệu 1 biến:**
+    - Bấm: `[MENU]` `[6]` (Statistics) $\to$ chọn `[1]` (1-Variable).
+    - Nhập các giá trị: `10` `[=]` `8` `[=]` `11` `[=]` `11` `[=]`.
+    - Bấm `[OPTN]` `[2]` (1-Variable Calc).
+    - Đọc ngay kết quả trên màn hình máy tính: $\bar{x} = 10$, $sx = 1.414213562$.
+  - **Tính khoảng tin cậy:**
+    - Bấm `[AC]` để quay về màn hình tính toán.
+    - Bấm `3.1824 × 1.414213562 ÷ √4 =` $\to 2.250000...$
+    - Bấm `10 - Ans =` $\to 7.75$.
+    - Bấm `10 + Ans =` $\to 12.25$.
+- **BƯỚC 5: Kết luận:**
+  - Khoảng tin cậy 95% là **(7.75; 12.25)**.
+  - **Đáp án chính xác: C**.
+
+---
+
+## Câu 7: Xác Suất Của Phân Phối Chọn Mẫu Tỷ Lệ (Sampling Distribution of the Proportion)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 7 (Single Choice):**
+> In a local college, 40% of the students live in the dormitories. A random sample of 80 students is selected for a particular study. The probability that the sample proportion (the proportion living in the dormitories) is between 0.30 and 0.50 is (Let $P(Z < 1.83) = 0.9664$)
+> - A. 0.9328
+> - B. 0.4664
+> - C. 0.0672
+> - D. 0.0336
+
+### 2. Dịch nghĩa tiếng Việt:
+Tại một trường đại học địa phương, có 40% sinh viên sống trong ký túc xá. Một mẫu ngẫu nhiên gồm 80 sinh viên được chọn cho một nghiên cứu cụ thể. Xác suất để tỷ lệ mẫu (tỷ lệ sinh viên sống trong ký túc xá) nằm trong khoảng từ 0.30 đến 0.50 là bao nhiêu? Cho biết $P(Z < 1.83) = 0.9664$.
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Tỷ lệ tổng thể: $\pi = 40\% = 0.40$.
+  - Cỡ mẫu khảo sát: $n = 80$.
+  - Biến cố cần tính xác suất: $P(0.30 \le \hat{p} \le 0.50)$.
+  - Dữ kiện chuẩn tắc: $P(Z < 1.83) = 0.9664$.
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - Kiểm tra điều kiện xấp xỉ chuẩn:
+    $$n\pi = 80(0.40) = 32 \ge 5, \quad n(1 - \pi) = 80(0.60) = 48 \ge 5 \implies \hat{p} \dot{\sim} N\left(\pi, \sigma_{\hat{p}}^2\right)$$
+  - Sai số chuẩn của tỷ lệ mẫu (Standard Error of the Proportion):
+    $$\sigma_{\hat{p}} = \sqrt{\frac{\pi(1 - \pi)}{n}}$$
+  - Công thức chuẩn hóa $Z$:
+    $$Z = \frac{\hat{p} - \pi}{\sigma_{\hat{p}}}$$
+- **BƯỚC 3: Thay số & Tính toán chi tiết:**
+  - Tính sai số chuẩn:
+    $$\sigma_{\hat{p}} = \sqrt{\frac{0.40 \cdot (1 - 0.40)}{80}} = \sqrt{\frac{0.24}{80}} = \sqrt{0.003} \approx 0.05477225575$$
+  - Chuẩn hóa hai cận của $\hat{p}$:
+    - Cận dưới: $Z_1 = \frac{0.30 - 0.40}{0.05477226} = \frac{-0.10}{0.05477226} \approx -1.8257 \approx -1.83$
+    - Cận trên: $Z_2 = \frac{0.50 - 0.40}{0.05477226} = \frac{+0.10}{0.05477226} \approx +1.8257 \approx +1.83$
+  - Áp dụng tính chất đối xứng của hàm mật độ chuẩn tắc $Z$:
+    $$P(0.30 \le \hat{p} \le 0.50) = P(-1.83 \le Z \le 1.83) = P(Z < 1.83) - P(Z < -1.83)$$
+    $$= P(Z < 1.83) - [1 - P(Z < 1.83)] = 2 \cdot P(Z < 1.83) - 1$$
+    $$= 2 \cdot 0.9664 - 1 = 1.9328 - 1 = 0.9328$$
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - Bấm `[MENU]` `[1]`
+  - Bấm: `2 × 0.9664 - 1 =` $\to$ Hiện ngay kết quả: `0.9328`.
+- **BƯỚC 5: Kết luận:**
+  - Xác suất cần tìm là **0.9328**.
+  - **Đáp án chính xác: A**.
+
+---
+
+## Câu 8: Ý Nghĩa Khi Bác Bỏ Giả Thuyết Không (Interpretation of Rejecting the Null Hypothesis)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 8 (Single Choice):**
+> If the null hypothesis is rejected in hypothesis testing,
+> - A. the data must have been accumulated incorrectly.
+> - B. no conclusions can be drawn from the test.
+> - C. the alternative hypothesis is true.
+> - D. the sample size has been too small.
+
+### 2. Dịch nghĩa tiếng Việt:
+Nếu giả thuyết không ($H_0$) bị bác bỏ trong một quy trình kiểm định giả thuyết, điều đó có nghĩa là:
+- A. Dữ liệu chắc chắn đã được thu thập sai sót.
+- B. Không thể rút ra được bất kỳ kết luận nào từ kiểm định.
+- C. Giả thuyết đối ($H_1$) là đúng (được chứng minh/ủng hộ bởi dữ liệu).
+- D. Cỡ mẫu đã quá nhỏ.
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Câu hỏi kiểm tra bản chất logic suy luận của bài toán Kiểm định giả thuyết (Hypothesis Testing).
+- **BƯỚC 2: Bản chất lý thuyết & Logic kiểm định:**
+  - Trong kiểm định giả thuyết thống kê:
+    - $H_0$ (Null Hypothesis): Giả định ban đầu (status quo / no effect).
+    - $H_1$ (Alternative Hypothesis): Giả thuyết đối lập mà ta mong muốn chứng minh là có hiệu ứng hoặc có sự khác biệt có ý nghĩa thống kê.
+  - Ta luôn tạm giả định $H_0$ là đúng để tính xác suất xuất hiện dữ liệu mẫu ($p$-value).
+  - Khi xác suất xuất hiện dữ liệu mẫu quá nhỏ ($p\text{-value} < \alpha$) hoặc thống kê kiểm định vượt qua giá trị tới hạn, ta tuyên bố: **Bác bỏ $H_0$ (Reject $H_0$)**.
+  - Khi $H_0$ bị bác bỏ, bằng chứng thực nghiệm từ mẫu chỉ ra rằng trạng thái giả định ban đầu không còn hợp lý, và ta có cơ sở thống kê để kết luận rằng **giả thuyết đối là đúng (the alternative hypothesis is true)**.
+- **BƯỚC 3: Loại trừ các phương án bẫy:**
+  - A sai: Bác bỏ $H_0$ là kết quả suy diễn toán học chuẩn mực, không liên quan đến thu thập sai.
+  - B sai: Khi bác bỏ $H_0$, ta có kết luận rất đanh thép và rõ ràng (ủng hộ $H_1$).
+  - D sai: Cỡ mẫu nhỏ không phải là nguyên nhân quy định việc bác bỏ $H_0$.
+- **BƯỚC 4: Hướng dẫn Casio fx-580VN X:**
+  - Câu hỏi lý thuyết định tính.
+- **BƯỚC 5: Kết luận:**
+  - Khi $H_0$ bị bác bỏ, khẳng định đúng là: **the alternative hypothesis is true**.
+  - **Đáp án chính xác: C**.
+
+---
+
+## Câu 9: Xác Định Cỡ Mẫu Tối Thiểu Ước Lượng Tỷ Lệ Khi Chưa Biết Tỷ Lệ Ban Đầu (Minimum Sample Size for Proportion)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 9 (Single Choice):**
+> We are interested in conducting a study to determine the percentage of voters in a state that would vote for the incumbent governor. What is the minimum sample size needed to estimate the population proportion with a margin of error of 0.05 or less at 95% confidence?
+> Let $Z_{0.025} = 1.96$.
+> - A. 58
+> - B. 200
+> - C. 385
+> - D. 100
+
+### 2. Dịch nghĩa tiếng Việt:
+Chúng tôi quan tâm đến việc tiến hành một nghiên cứu nhằm xác định tỷ lệ cử tri trong một tiểu bang sẽ bỏ phiếu cho vị thống đốc đương nhiệm. Cỡ mẫu tối thiểu cần thiết để ước lượng tỷ lệ tổng thể với sai số biên (margin of error) không vượt quá 0.05 ở mức độ tin cậy 95% là bao nhiêu? Cho $Z_{0.025} = 1.96$.
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Sai số biên cho phép: $e = 0.05$.
+  - Mức độ tin cậy: $95\% \implies Z_{\alpha/2} = Z_{0.025} = 1.96$.
+  - Không có thông tin ước lượng trước về tỷ lệ tổng thể ($\pi$ chưa biết).
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - Công thức cỡ mẫu ước lượng tỷ lệ tổng thể:
+    $$n = \frac{Z_{\alpha/2}^2 \cdot \pi(1 - \pi)}{e^2}$$
+  - **Nguyên lý Thận trọng (Conservative Approach):** Khi hoàn toàn không có thông tin hoặc ước tính trước về $\pi$, tích $\pi(1 - \pi)$ đạt giá trị cực đại bằng $0.5 \times (1 - 0.5) = 0.25$ tại $\pi = 0.5$. Chọn $\pi = 0.5$ sẽ đảm bảo cỡ mẫu thu thập luôn đủ lớn để biên sai số không bao giờ vượt quá $0.05$ trong bất kỳ kịch bản nào.
+  - Công thức trở thành:
+    $$n = \frac{Z_{\alpha/2}^2 \cdot 0.25}{e^2}$$
+  - Cỡ mẫu luôn được **làm tròn lên** số nguyên tiếp theo: $\lceil n \rceil$.
+- **BƯỚC 3: Thay số & Tính toán:**
+  $$n = \frac{1.96^2 \cdot 0.25}{0.05^2} = \frac{3.8416 \cdot 0.25}{0.0025} = \frac{0.9604}{0.0025} = 384.16$$
+  - Làm tròn lên:
+    $$\lceil 384.16 \rceil = 385$$
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - Bấm `[MENU]` `[1]`
+  - Bấm: `1.96 x² × 0.25 ÷ 0.05 x² =`
+  - Màn hình hiển thị: `384.16`.
+  - Luôn làm tròn lên số nguyên kế tiếp $\to 385$.
+- **BƯỚC 5: Kết luận:**
+  - Cỡ mẫu tối thiểu cần thiết là **385**.
+  - **Đáp án chính xác: C**.
+
+---
+
+## Câu 10: Kỳ Vọng Và Độ Lệch Chuẩn Của Phân Phối Trung Bình Mẫu (Mean and Standard Deviation of Sample Mean)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 10 (Single Choice):**
+> The mean and the standard deviation of a population are 200 and 12, respectively. Find the mean and standard deviation of the sampling distribution of the sample mean of size 36.
+> - A. Mean = 200; standard deviation = 36
+> - B. Mean = 200; standard deviation = 2
+> - C. Mean = 200; standard deviation = 12
+> - D. Mean = 33.33; standard deviation = 2
+
+### 2. Dịch nghĩa tiếng Việt:
+Giá trị trung bình và độ lệch chuẩn của một tổng thể lần lượt là 200 và 12. Hãy tìm giá trị trung bình và độ lệch chuẩn của phân phối chọn mẫu của trung bình mẫu với cỡ mẫu $n = 36$.
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Tham số tổng thể: Trung bình $\mu = 200$, độ lệch chuẩn $\sigma = 12$.
+  - Kích thước mẫu ngẫu nhiên: $n = 36$.
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - Theo Định lý Giới hạn Trung tâm (CLT) và các tính chất phân phối chọn mẫu của $\bar{X}$:
+    1. **Kỳ vọng của trung bình mẫu (Mean of the sampling distribution):**
+       $$\mu_{\bar{X}} = E(\bar{X}) = \mu = 200$$
+    2. **Độ lệch chuẩn của trung bình mẫu (Standard deviation of the sampling distribution / Standard Error):**
+       $$\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}}$$
+- **BƯỚC 3: Thay số & Tính toán:**
+  - $\mu_{\bar{X}} = 200$.
+  - $\sigma_{\bar{X}} = \frac{12}{\sqrt{36}} = \frac{12}{6} = 2$.
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - Bấm `12 ÷ √36 =` $\to 2$.
+- **BƯỚC 5: Kết luận:**
+  - Phân phối chọn mẫu có: **Mean = 200; standard deviation = 2**.
+  - **Đáp án chính xác: B**.
+
+---
+
+## Câu 11: Xác Định Giá Trị Tới Hạn Kiểm Định Tỷ Lệ Hai Phía (Critical Values for Two-Tailed Proportion Test)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 11 (Single Choice):**
+> Determine the critical value to test the claim about the population proportion $\pi \ne 0.5$.
+> Given $n = 40$ and $p = 0.42$. Use $\alpha = 0.1$.
+> Let
+> $z_{0.025} = 1.96, \quad z_{0.05} = 1.645$
+> $z_{0.01} = 2.33, \quad z_{0.005} = 2.575$
+> - A. -2.575 and 2.575
+> - B. -2.33 and 2.33
+> - C. -1.645 and 1.645
+> - D. -1.96 and 1.96
+
+### 2. Dịch nghĩa tiếng Việt:
+Xác định giá trị tới hạn để kiểm định khẳng định về tỷ lệ tổng thể với giả thuyết đối $\pi \ne 0.5$. Cho $n = 40$ và tỷ lệ mẫu $p = 0.42$. Mức ý nghĩa $\alpha = 0.1$.
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Cặp giả thuyết: $H_0: \pi = 0.5$ vs $H_1: \pi \ne 0.5$.
+  - Dấu $\ne$ ở giả thuyết đối $H_1$ chỉ ra đây là **kiểm định hai phía (Two-Tail Test)**.
+  - Mức ý nghĩa: $\alpha = 0.1$.
+  - Cỡ mẫu $n = 40$ và tỷ lệ mẫu $p = 0.42$ là dữ liệu để tính thống kê kiểm định, **không làm thay đổi giá trị tới hạn** (Critical values chỉ phụ thuộc vào $\alpha$ và hướng kiểm định).
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - Do là kiểm định 2 phía, mức ý nghĩa $\alpha$ được chia đều cho 2 đuôi:
+    $$\text{Diện tích mỗi đuôi} = \frac{\alpha}{2} = \frac{0.1}{2} = 0.05$$
+  - Giá trị tới hạn bên phải là $+Z_{\alpha/2} = +Z_{0.05} = +1.645$.
+  - Giá trị tới hạn bên trái là $-Z_{\alpha/2} = -Z_{0.05} = -1.645$.
+- **BƯỚC 3: Đối chiếu với các phương án:**
+  - Hai giá trị tới hạn là $-1.645$ và $1.645$.
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - Bấm `[MENU]` `[7]` (Phân phối Distribution) $\to$ chọn `[3]` (Inverse Normal).
+  - Nhập `Area`: `0.05` `[=]`, `σ`: `1` `[=]`, `μ`: `0` `[=]`.
+  - Bấm `[=]` $\to$ Hiện: `-1.64485...` $\approx -1.645$.
+  - Do tính đối xứng, hai giá trị tới hạn là $\pm 1.645$.
+- **BƯỚC 5: Kết luận:**
+  - Các giá trị tới hạn là **-1.645 and 1.645**.
+  - **Đáp án chính xác: C**.
+
+---
+
+## Câu 12: Khoảng Tin Cậy 95% Cho Trung Bình Khi Đã Biết Độ Lệch Chuẩn Tổng Thể (Z-Confidence Interval for Mean)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 12 (Single Choice):**
+> The manager of a grocery store has taken a random sample of 100 customers. The average length of time it took these 100 customers to check out was 3 minutes. It is known that the standard deviation of the population of checkout times is 1 minute. The 95% confidence interval for the true average checkout time (in minutes) is
+> Let:
+> $z_{0.025} = 1.96, \quad z_{0.05} = 1.645$
+> $z_{0.01} = 2.33, \quad z_{0.005} = 2.575$
+> - A. (2.5; 3.5)
+> - B. (2.804; 3.196)
+> - C. (1; 5)
+> - D. (1.36; 4.64)
+
+### 2. Dịch nghĩa tiếng Việt:
+Người quản lý của một cửa hàng tạp hóa đã lấy một mẫu ngẫu nhiên gồm 100 khách hàng. Thời gian thanh toán trung bình của 100 khách hàng này là 3 phút. Biết rằng độ lệch chuẩn của tổng thể thời gian thanh toán là 1 phút. Khoảng tin cậy 95% cho thời gian thanh toán trung bình thực tế (tính bằng phút) là bao nhiêu?
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Kích thước mẫu: $n = 100$.
+  - Trung bình mẫu: $\bar{X} = 3$ phút.
+  - Độ lệch chuẩn tổng thể **ĐÃ BIẾT**: $\sigma = 1$ phút.
+  - Mức tin cậy $95\% \implies \alpha = 0.05 \implies Z_{\alpha/2} = Z_{0.025} = 1.96$.
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - Vì độ lệch chuẩn tổng thể $\sigma$ đã biết và mẫu lớn ($n = 100 \ge 30$), ta áp dụng **phân phối chuẩn tắc $Z$**:
+    $$CI = \bar{X} \pm Z_{\alpha/2} \cdot \frac{\sigma}{\sqrt{n}}$$
+- **BƯỚC 3: Thay số & Tính toán chi tiết:**
+  - Sai số chuẩn:
+    $$\sigma_{\bar{X}} = \frac{\sigma}{\sqrt{n}} = \frac{1}{\sqrt{100}} = \frac{1}{10} = 0.1$$
+  - Biên sai số (Margin of Error):
+    $$e = Z_{0.025} \cdot \sigma_{\bar{X}} = 1.96 \cdot 0.1 = 0.196$$
+  - Hai cận của khoảng tin cậy:
+    - Cận dưới (Lower bound): $\bar{X} - e = 3 - 0.196 = 2.804$
+    - Cận trên (Upper bound): $\bar{X} + e = 3 + 0.196 = 3.196$
+    - Khoảng tin cậy: $[2.804; 3.196]$.
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - Bấm `[MENU]` `[1]`
+  - Tính cận dưới: `3 - 1.96 × 1 ÷ √100 =` $\to 2.804$.
+  - Tính cận trên: `3 + 1.96 × 1 ÷ √100 =` $\to 3.196$.
+- **BƯỚC 5: Kết luận:**
+  - Khoảng tin cậy 95% là **(2.804; 3.196)**.
+  - **Đáp án chính xác: B**.
+
+---
+
+## Câu 13: Thống Kê t Phương Sai Gộp Cho Kiểm Định So Sánh Hai Trung Bình (Pooled-Variance Two-Sample t-Test Statistic)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 13 (Single Choice):**
+> Two samples are random, independent, and come from two populations that are normally distributed having the same variance. The sample statistic are given below.
+> Find the test statistic, t, to test the claim that the true mean of the first population is greater than the second:
+> - first sample: size = 14, sample mean = 3, sample standard deviation = 2.5
+> - second sample: size = 12, sample mean = 4, sample standard deviation = 2.8
+> - A. Approximate -0.96
+> - B. Approximate -4.59
+> - C. Approximate 0.95
+> - D. Approximate 4.59
+
+### 2. Dịch nghĩa tiếng Việt:
+Hai mẫu ngẫu nhiên, độc lập được rút ra từ hai tổng thể có phân phối chuẩn và có cùng phương sai. Các đại lượng thống kê mẫu được cho dưới đây. Hãy tìm thống kê kiểm định $t$ để kiểm định khẳng định rằng giá trị trung bình thực tế của tổng thể thứ nhất lớn hơn tổng thể thứ hai ($H_1: \mu_1 > \mu_2$):
+- Mẫu 1: $n_1 = 14, \bar{X}_1 = 3, S_1 = 2.5$
+- Mẫu 2: $n_2 = 12, \bar{X}_2 = 4, S_2 = 2.8$
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Mẫu 1: $n_1 = 14, \bar{X}_1 = 3, S_1 = 2.5$.
+  - Mẫu 2: $n_2 = 12, \bar{X}_2 = 4, S_2 = 2.8$.
+  - Giả định cùng phương sai: $\sigma_1^2 = \sigma_2^2 \implies$ Sử dụng $t$-test phương sai gộp ($S_p^2$).
+  - Giả thuyết: $H_0: \mu_1 \le \mu_2$ vs $H_1: \mu_1 > \mu_2$ (hay $\mu_1 - \mu_2 = 0$).
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - Phương sai gộp $S_p^2$:
+    $$S_p^2 = \frac{(n_1 - 1)S_1^2 + (n_2 - 1)S_2^2}{n_1 + n_2 - 2}$$
+  - Thống kê kiểm định $t_{STAT}$:
+    $$t_{STAT} = \frac{(\bar{X}_1 - \bar{X}_2) - 0}{\sqrt{S_p^2 \left(\frac{1}{n_1} + \frac{1}{n_2}\right)}}$$
+- **BƯỚC 3: Thay số & Tính toán chi tiết:**
+  - Tính tử số của $S_p^2$:
+    $$(14 - 1) \cdot (2.5)^2 + (12 - 1) \cdot (2.8)^2 = 13 \cdot 6.25 + 11 \cdot 7.84 = 81.25 + 86.24 = 167.49$$
+  - Bậc tự do mẫu số: $df = 14 + 12 - 2 = 24$.
+  - Phương sai gộp:
+    $$S_p^2 = \frac{167.49}{24} = 6.97875$$
+  - Thừa số cỡ mẫu:
+    $$\frac{1}{n_1} + \frac{1}{n_2} = \frac{1}{14} + \frac{1}{12} = \frac{6 + 7}{84} = \frac{13}{84} \approx 0.1547619$$
+  - Sai số chuẩn:
+    $$SE = \sqrt{6.97875 \cdot \frac{13}{84}} = \sqrt{\frac{2177.37}{2016}} \approx \sqrt{1.0800446} \approx 1.039252$$
+  - Thống kê $t_{STAT}$:
+    $$t_{STAT} = \frac{3 - 4}{1.039252} = \frac{-1}{1.039252} \approx -0.96223 \approx -0.96$$
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - Bấm `[MENU]` `[1]`
+  - Tính $S_p^2$: `(13 × 2.5² + 11 × 2.8²) ÷ 24 =` $\to 6.97875$.
+  - Bấm `[STO]` `[A]` (Lưu phương sai gộp vào biến A).
+  - Tính thống kê $t$:
+    - Bấm: `( 3 - 4 ) ÷ √( [ALPHA] [A] × ( 1 ÷ 14 + 1 ÷ 12 ) ) =`
+    - Màn hình hiện: `-0.962229...` $\approx -0.96$.
+- **BƯỚC 5: Kết luận:**
+  - Giá trị thống kê kiểm định là **Approximate -0.96**.
+  - **Đáp án chính xác: A**.
+
+---
+
+## Câu 14: Tính Ước Lượng Điểm Của Trung Bình Mẫu Từ Dữ Liệu Thô (Point Estimate of the Mean from Raw Data)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 14 (Single Choice):**
+> Market researchers use the number of sentences per advertisement as a measure of readability for magazine advertisements. The following represents a random sample of the number of sentences found in 15 advertisements:
+> 9; 20; 18; 16; 9; 9; 11; 13; 22; 16; 5; 18; 6; 6; and 5.
+> Find a point estimate of the population mean.
+> - A. 12.2
+> - B. 22.2
+> - C. 13.2
+> - D. 12.3
+
+### 2. Dịch nghĩa tiếng Việt:
+Các nhà nghiên cứu thị trường sử dụng số lượng câu trong mỗi mẩu quảng cáo như một thước đo về mức độ dễ đọc đối với các quảng cáo trên tạp chí. Dưới đây là một mẫu ngẫu nhiên gồm số câu tìm thấy trong 15 mẩu quảng cáo: 9; 20; 18; 16; 9; 9; 11; 13; 22; 16; 5; 18; 6; 6; và 5. Hãy tìm ước lượng điểm cho giá trị trung bình của tổng thể.
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Cỡ mẫu: $n = 15$ quan sát.
+  - Các giá trị dữ liệu: $9, 20, 18, 16, 9, 9, 11, 13, 22, 16, 5, 18, 6, 6, 5$.
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - Ước lượng điểm không chệch tốt nhất (Best Unbiased Point Estimator) cho giá trị trung bình của tổng thể $\mu$ là **trung bình mẫu $\bar{X}$**:
+    $$\bar{X} = \frac{\sum_{i=1}^n X_i}{n}$$
+- **BƯỚC 3: Thay số & Tính toán:**
+  - Tính tổng các giá trị trong mẫu:
+    $$\sum_{i=1}^{15} X_i = 9 + 20 + 18 + 16 + 9 + 9 + 11 + 13 + 22 + 16 + 5 + 18 + 6 + 6 + 5 = 183$$
+  - Tính trung bình mẫu:
+    $$\bar{X} = \frac{183}{15} = 12.2$$
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - **Cách 1: Tính phân số trực tiếp:**
+    - Bấm: `( 9 + 20 + 18 + 16 + 9 + 9 + 11 + 13 + 22 + 16 + 5 + 18 + 6 + 6 + 5 ) ÷ 15 =`
+    - Màn hình hiện: `12.2`.
+  - **Cách 2: Nhập bảng Thống kê (Statistics):**
+    - Bấm: `[MENU]` `[6]` `[1]` (1-Variable).
+    - Nhập tuần tự 15 số trên vào cột $X$.
+    - Bấm `[OPTN]` `[2]` (1-Variable Calc) $\to$ Đọc ngay kết quả $\bar{x} = 12.2$.
+- **BƯỚC 5: Kết luận:**
+  - Ước lượng điểm của trung bình tổng thể là **12.2**.
+  - **Đáp án chính xác: A**.
+
+---
+
+## Câu 15: Kiểm Định t Theo Cặp Bắt Buộc Kích Thước Hai Mẫu Phải Bằng Nhau (Paired t-Test Equal Sample Size Property)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 15 (Single Choice):**
+> True or False: In the paired t-test for the mean difference, the sample sizes must be equal in the two groups.
+> - A. True
+> - B. False
+
+### 2. Dịch nghĩa tiếng Việt:
+Đúng hay Sai: Trong kiểm định $t$ theo cặp (paired $t$-test) cho độ chênh lệch trung bình, kích thước mẫu ở hai nhóm bắt buộc phải bằng nhau.
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Câu hỏi kiểm tra điều kiện áp dụng và bản chất của phương pháp Kiểm định mẫu phối hợp từng cặp (Paired/Matched-Samples $t$-Test).
+- **BƯỚC 2: Bản chất lý thuyết & Định nghĩa:**
+  - Kiểm định $t$ theo cặp được thiết kế khi dữ liệu thu thập gồm các **cặp số liệu ghép đôi tự nhiên** $(X_{1i}, X_{2i})$. Ví dụ:
+    - Đo huyết áp của cùng một bệnh nhân trước (Before) và sau (After) khi dùng thuốc.
+    - So sánh năng suất của các cặp người lao động được ghép cặp tương đồng về tuổi tác và kinh nghiệm.
+  - Phân tích thống kê thực chất dựa trên một biến số duy nhất là **độ chênh lệch từng cặp**:
+    $$D_i = X_{1i} - X_{2i} \quad (i = 1, 2, \dots, n)$$
+  - Vì mỗi quan sát ở nhóm 1 phải tương ứng với đúng một quan sát ở nhóm 2 để tạo thành cặp chênh lệch $D_i$, nên **số quan sát ở hai nhóm bắt buộc phải bằng nhau tuyệt đối** ($n_1 = n_2 = n$).
+  - Nếu số quan sát khác nhau, các phần tử bị lẻ sẽ không thể tạo thành cặp và kiểm định theo cặp không thể thực hiện được.
+- **BƯỚC 3: Đưa ra nhận định:**
+  - Mệnh đề khẳng định "the sample sizes must be equal in the two groups" là hoàn toàn **ĐÚNG (True)**.
+- **BƯỚC 4: Hướng dẫn Casio fx-580VN X:**
+  - Câu hỏi lý thuyết định tính.
+- **BƯỚC 5: Kết luận:**
+  - Khẳng định trên là **True**.
+  - **Đáp án chính xác: A**.
+
+---
+
+## Câu 16: Xác Định Giá Trị Tới Hạn Cho Kiểm Định Trung Bình Đuôi Phải Khi Chưa Biết Phương Sai (Upper-Tail Critical Value with Unknown Sigma)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 16 (Single Choice):**
+> The critical value in testing a claim about a mean, $\sigma$ not known:
+> $$H_0: \mu = \mu_0; \quad H_1: \mu > \mu_0$$
+> with the significance level $\alpha$ is _______
+> (i) $-t_{\alpha; n-1}$
+> (ii) $t_{\alpha; n-1}$
+> (iii) $t_{\alpha/2; n-1}$
+> - A. None of the other choices is correct
+> - B. (ii)
+> - C. (i)
+> - D. (iii)
+
+### 2. Dịch nghĩa tiếng Việt:
+Giá trị tới hạn trong bài toán kiểm định khẳng định về giá trị trung bình với độ lệch chuẩn tổng thể $\sigma$ chưa biết:
+$$H_0: \mu = \mu_0; \quad H_1: \mu > \mu_0$$
+với mức ý nghĩa $\alpha$ là:
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Kiểm định kỳ vọng $\mu$, $\sigma$ chưa biết $\implies$ Dùng phân phối Student $t$ với bậc tự do $df = n - 1$.
+  - Giả thuyết đối: $H_1: \mu > \mu_0$.
+  - Mức ý nghĩa: $\alpha$.
+- **BƯỚC 2: Bản chất lý thuyết & Xác định miền bác bỏ:**
+  - Dấu $>$ ở $H_1$ quy định đây là **kiểm định đuôi phải (Right-tail / Upper-tail test)**.
+  - Toàn bộ mức ý nghĩa $\alpha$ là diện tích nằm ở phần đuôi phía bên phải của phân phối $t$.
+  - Do phân phối $t$ đối xứng qua 0, giá trị tới hạn ở đuôi phải là một số dương, ký hiệu chuẩn mực là:
+    $$t_{crit} = +t_{\alpha; n-1}$$
+  - *So sánh các trường hợp:*
+    - Nếu là đuôi trái ($H_1: \mu < \mu_0$): Giá trị tới hạn là $-t_{\alpha; n-1}$ (biểu thức i).
+    - Nếu là hai phía ($H_1: \mu \ne \mu_0$): Hai giá trị tới hạn là $\pm t_{\alpha/2; n-1}$ (biểu thức iii).
+    - Vì đề bài là đuôi phải ($H_1: \mu > \mu_0$), giá trị tới hạn chính xác là $+t_{\alpha; n-1}$ (biểu thức ii).
+- **BƯỚC 3: Đối chiếu với các phương án:**
+  - Biểu thức (ii) là biểu thức đúng.
+  - Chọn phương án tương ứng với (ii).
+- **BƯỚC 4: Hướng dẫn Casio fx-580VN X:**
+  - Nhận diện công thức lý thuyết giải tích thống kê.
+- **BƯỚC 5: Kết luận:**
+  - Giá trị tới hạn là **(ii)**.
+  - **Đáp án chính xác: B**.
+
+---
+
+## Câu 17: Thiết Lập Cặp Giả Thuyết Thống Kê Chuẩn Cho Máy Chiết Rót Nước Giải Khát (Hypothesis Formulation for Soft Drink Filling Machine)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 17 (Single Choice):**
+> A soft drink company has a filling machine that can be set at different levels to produce different average fill amounts. The company sets the machine to provide a mean fill of 15 ounces. Which of the following would be the correct formulation of the null and alternative?
+> - i) $H_0: \bar{X} \ne 15 \quad H_1: \bar{X} > 15 \text{ ounces}$
+> - ii) $H_0: \mu = 15 \quad H_1: \mu \ne 15 \text{ ounces}$
+> - iii) $H_0: \mu \ne 15 \quad H_1: \mu = 15 \text{ ounces}$
+> - iv) None of the others.
+> ---
+> Các phương án lựa chọn:
+> - A. (iii)
+> - B. (iv)
+> - C. (ii)
+> - D. (i)
+
+### 2. Dịch nghĩa tiếng Việt:
+Một công ty sản xuất nước giải khát sở hữu một máy chiết rót có thể điều chỉnh ở các mức khác nhau để tạo ra lượng chiết rót trung bình khác nhau. Công ty thiết lập máy để đạt lượng rót trung bình là 15 ounce. Phát biểu nào sau đây là cách thiết lập đúng của giả thuyết không ($H_0$) và giả thuyết đối ($H_1$)?
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Tiêu chuẩn quy định: Máy được thiết kế để rót trung bình 15 ounces.
+  - Bất kỳ sự sai lệch nào: Rót thiếu ($< 15$ oz - bị người tiêu dùng khiếu nại, vi phạm luật bảo vệ người tiêu dùng) hoặc rót thừa ($> 15$ oz - gây lãng phí nguyên liệu sản xuất) đều chứng tỏ máy gặp sự cố và phải dừng lại hiệu chỉnh.
+  - Do đó, mục tiêu giám sát chất lượng là phát hiện xem lượng rót có **khác biệt (sai lệch hai phía)** so với mức 15 ounces hay không.
+- **BƯỚC 2: Ba quy tắc vàng bất di bất dịch khi lập giả thuyết thống kê:**
+  1. **Quy tắc 1 (Tham số tổng thể):** Giả thuyết thống kê **phải luôn luôn được phát biểu theo tham số tổng thể ($\mu, \pi, \sigma^2$)**, tuyệt đối không bao giờ được viết theo thống kê mẫu ($\bar{X}, \hat{p}$). Do đó, phát biểu (i) sai lập tức.
+  2. **Quy tắc 2 (Dấu bằng thuộc về $H_0$):** Dấu bằng ($=, \le, \ge$) luôn luôn bắt buộc phải nằm ở giả thuyết không $H_0$. Giả thuyết đối $H_1$ không bao giờ chứa dấu bằng. Do đó, phát biểu (iii) sai vì đặt dấu bằng ở $H_1$.
+  3. **Quy tắc 3 (Phản ánh sự sai lệch ở $H_1$):** Khi muốn kiểm tra máy có duy trì đúng chuẩn 15 oz hay không, trạng thái bình thường là $\mu = 15$, và trạng thái có vấn đề cần can thiệp là $\mu \ne 15$.
+- **BƯỚC 3: Tổng hợp cặp giả thuyết chuẩn mực:**
+  $$H_0: \mu = 15 \quad \text{vs} \quad H_1: \mu \ne 15 \text{ ounces}$$
+  Đây chính là phát biểu (ii).
+- **BƯỚC 4: Hướng dẫn Casio fx-580VN X:**
+  - Câu hỏi lý thuyết thiết lập mô hình.
+- **BƯỚC 5: Kết luận:**
+  - Phát biểu đúng là **(ii)**.
+  - **Đáp án chính xác: C**.
+
+---
+
+## Câu 18: Tính Giá Trị Thống Kê Kiểm Định t Một Mẫu (One-Sample t-Test Statistic Calculation)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 18 (Single Choice):**
+> If in a sample of $n = 16$ selected from a normal population, $\bar{X} = 56$ and $S = 12$, what is the value of $t_{STAT}$ if you are testing the null hypothesis $H_0: \mu = 50$?
+> - A. 3
+> - B. 2.5
+> - C. 1.5
+> - D. 2
+
+### 2. Dịch nghĩa tiếng Việt:
+Nếu trong một mẫu gồm $n = 16$ phần tử được chọn từ một tổng thể có phân phối chuẩn, có trung bình mẫu $\bar{X} = 56$ và độ lệch chuẩn mẫu $S = 12$, thì giá trị của thống kê kiểm định $t_{STAT}$ là bao nhiêu khi bạn kiểm định giả thuyết không $H_0: \mu = 50$?
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Cỡ mẫu: $n = 16$.
+  - Trung bình mẫu: $\bar{X} = 56$.
+  - Độ lệch chuẩn mẫu: $S = 12$.
+  - Giá trị kỳ vọng giả định: $\mu_0 = 50$.
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - Vì độ lệch chuẩn tổng thể $\sigma$ chưa biết và được ước lượng bằng $S$, thống kê kiểm định tuân theo phân phối Student $t$ với $df = n - 1 = 16 - 1 = 15$:
+    $$t_{STAT} = \frac{\bar{X} - \mu_0}{S / \sqrt{n}}$$
+- **BƯỚC 3: Thay số & Tính toán:**
+  - Sai số chuẩn của mẫu:
+    $$S_{\bar{X}} = \frac{S}{\sqrt{n}} = \frac{12}{\sqrt{16}} = \frac{12}{4} = 3$$
+  - Giá trị thống kê $t_{STAT}$:
+    $$t_{STAT} = \frac{56 - 50}{3} = \frac{6}{3} = 2$$
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - Bấm `[MENU]` `[1]`
+  - Nhập phân số: `[(■/□)]` `56 - 50` `[▼]` `12 ÷ √16` `[=]`
+  - Màn hình hiển thị: `2`.
+- **BƯỚC 5: Kết luận:**
+  - Giá trị của $t_{STAT}$ là **2**.
+  - **Đáp án chính xác: D**.
+
+---
+
+## Câu 19: Tính Biên Sai Số (Margin of Error) Cho Khoảng Tin Cậy 95% Điểm Thi SAT (Margin of Error for SAT Scores)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 19 (Single Choice):**
+> A random sample of 64 SAT scores of students applying for merit scholarships showed an average of 1400 with a standard deviation of 240. The margin of error at 95% confidence is
+> Let $t_{0.025; 63} = 1.9983$.
+> - A. 59.949
+> - B. 50.071
+> - C. 80.02
+> - D. 1.9983
+
+### 2. Dịch nghĩa tiếng Việt:
+Một mẫu ngẫu nhiên gồm 64 điểm thi SAT của các học sinh nộp đơn xin học bổng khuyến học cho thấy điểm trung bình là 1400 với độ lệch chuẩn là 240. Biên sai số (margin of error) ở độ tin cậy 95% là bao nhiêu? Cho biết giá trị $t_{0.025; 63} = 1.9983$.
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Kích thước mẫu: $n = 64$.
+  - Trung bình mẫu: $\bar{X} = 1400$.
+  - Độ lệch chuẩn mẫu: $S = 240$.
+  - Bậc tự do: $df = n - 1 = 64 - 1 = 63$.
+  - Giá trị tới hạn tương ứng độ tin cậy 95%: $t_{\alpha/2; df} = t_{0.025; 63} = 1.9983$.
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - Khoảng tin cậy cho giá trị trung bình có dạng $\bar{X} \pm e$.
+  - Trong đó, **biên sai số (Margin of Error)** được tính bằng tích của giá trị tới hạn và sai số chuẩn:
+    $$e = t_{\alpha/2; n-1} \cdot \frac{S}{\sqrt{n}}$$
+- **BƯỚC 3: Thay số & Tính toán:**
+  - Tính sai số chuẩn:
+    $$S_{\bar{X}} = \frac{S}{\sqrt{n}} = \frac{240}{\sqrt{64}} = \frac{240}{8} = 30$$
+  - Tính biên sai số $e$:
+    $$e = 1.9983 \cdot 30 = 59.949$$
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - Bấm `[MENU]` `[1]`
+  - Bấm: `1.9983 × 240 ÷ √64 =`
+  - Màn hình hiển thị: `59.949`.
+- **BƯỚC 5: Kết luận:**
+  - Biên sai số ở độ tin cậy 95% là **59.949**.
+  - **Đáp án chính xác: A**.
+
+---
+
+## Câu 20: Tính Độ Rộng (Width) Của Khoảng Tin Cậy 95% Cho Tỷ Lệ Thuê Bao Nâng Cấp Điện Thoại (Width of Confidence Interval for Proportion)
+
+### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+> **Question 20 (Single Choice):**
+> A cellphone provider has the business objectives of wanting to estimate the proportion of subscribers who would upgrade to a new cellphone with improved features if it were made available at a substantially reduced cost. Data are collected from a random sample of 250 subscribers and there are 165 of these subscribers would upgrade to a new cellphone at a reduced cost. Find the width of 95% confidence interval estimate for the true proportion of subscribers that would upgrade to a cellphone at a reduced cost.
+> Let $Z_{0.05} = 1.645, \quad Z_{0.025} = 1.96$.
+> - A. 0.1174
+> - B. 0.0986
+> - C. 0.0587
+> - D. 0.0493
+
+### 2. Dịch nghĩa tiếng Việt:
+Một nhà cung cấp mạng di động có mục tiêu kinh doanh là muốn ước lượng tỷ lệ thuê bao sẽ nâng cấp lên điện thoại mới với tính năng cải tiến nếu nó được cung cấp với mức giá giảm đáng kể. Dữ liệu được thu thập từ một mẫu ngẫu nhiên gồm 250 thuê bao và có 165 người trong số này sẵn sàng nâng cấp điện thoại ở mức giá ưu đãi. Hãy tìm độ rộng (width) của khoảng tin cậy 95% ước lượng tỷ lệ thực tế của các thuê bao sẽ nâng cấp điện thoại. Cho biết $Z_{0.05} = 1.645, Z_{0.025} = 1.96$.
+
+### 3. Phương pháp giải chuẩn 5 bước:
+- **BƯỚC 1: Phân tích & Trích xuất thông tin:**
+  - Kích thước mẫu: $n = 250$.
+  - Số thuê bao đồng ý nâng cấp: $X = 165$.
+  - Độ tin cậy: $95\% \implies \alpha = 0.05 \implies Z_{\alpha/2} = Z_{0.025} = 1.96$.
+  - **TỪ KHÓA BẪY:** Đề bài hỏi **ĐỘ RỘNG (WIDTH)** của khoảng tin cậy, chứ không phải biên sai số (Margin of error).
+- **BƯỚC 2: Bản chất lý thuyết & Nhận diện công thức:**
+  - Tỷ lệ mẫu: $\hat{p} = \frac{X}{n}$.
+  - Sai số chuẩn của tỷ lệ mẫu:
+    $$SE = \sqrt{\frac{\hat{p}(1 - \hat{p})}{n}}$$
+  - Biên sai số (Margin of Error):
+    $$e = Z_{\alpha/2} \cdot \sqrt{\frac{\hat{p}(1 - \hat{p})}{n}}$$
+  - Khoảng tin cậy là $[\hat{p} - e; \hat{p} + e]$. Do đó, **Độ rộng (Width)** của khoảng tin cậy bằng hiệu giữa cận trên và cận dưới:
+    $$\text{Width} = (\hat{p} + e) - (\hat{p} - e) = 2 \cdot e = 2 \cdot Z_{\alpha/2} \cdot \sqrt{\frac{\hat{p}(1 - \hat{p})}{n}}$$
+- **BƯỚC 3: Thay số & Tính toán chi tiết:**
+  - Tính tỷ lệ mẫu $\hat{p}$:
+    $$\hat{p} = \frac{165}{250} = 0.66 \implies 1 - \hat{p} = 1 - 0.66 = 0.34$$
+  - Tính sai số chuẩn:
+    $$SE = \sqrt{\frac{0.66 \cdot 0.34}{250}} = \sqrt{\frac{0.2244}{250}} = \sqrt{0.0008976} \approx 0.02995997$$
+  - Tính biên sai số $e$:
+    $$e = 1.96 \cdot 0.02995997 \approx 0.0587215 \approx 0.0587$$
+  - Tính độ rộng (Width):
+    $$\text{Width} = 2 \cdot e = 2 \cdot 0.0587215 \approx 0.117443 \approx 0.1174$$
+  - *Cảnh báo bẫy thi trắc nghiệm:* Rất nhiều sinh viên dừng lại ở $e = 0.0587$ và vội vàng khoanh phương án C. Đề bài hỏi "width" nên phải nhân 2!
+- **BƯỚC 4: Hướng dẫn bấm máy tính Casio fx-580VN X:**
+  - Bấm `[MENU]` `[1]`
+  - Tính $\hat{p}$: `165 ÷ 250 =` $\to$ Hiện `0.66`. Lưu vào biến $A$: `[STO]` `[A]`.
+  - Tính trực tiếp độ rộng:
+    - Bấm: `2 × 1.96 × √( [ALPHA] [A] × ( 1 - [ALPHA] [A] ) ÷ 250 ) =`
+    - Màn hình hiển thị: `0.1174430687`.
+    - Làm tròn 4 chữ số thập phân $\to 0.1174$.
+- **BƯỚC 5: Kết luận:**
+  - Độ rộng của khoảng tin cậy 95% là **0.1174**.
+  - **Đáp án chính xác: A**.
+
+---
+
+### BẢNG TỔNG KẾT ĐÁP ÁN NHANH 20 CÂU MAS QUIZ 3
+
+| Câu | Chủ đề kiến thức | Thống kê / Giá trị mấu chốt | Đáp án đúng | Phương án |
+| :---: | :--- | :--- | :---: | :---: |
+| **1** | Hai mẫu độc lập ($t$-test phương sai gộp) | $S_p^2 = 22 \implies t_{STAT} = \frac{42 - 34}{\sqrt{22(1/8 + 1/15)}} = 3.8959$ | **t = 3.8959** | **B** |
+| **2** | Đọc kết quả phần mềm PHStat | $t = 1.2500 \in [-1.9842; 1.9842], p = 0.2142 > 0.05$ | **do not reject $H_0$** | **A** |
+| **3** | Ước lượng điểm cho tỷ lệ | $\hat{p}_{no} = 100 / 400 = 0.25$ | **0.25** | **C** |
+| **4** | Cỡ mẫu ước lượng kỳ vọng | $n = (1.96 \times 12 / 2)^2 = 138.2976 \to 139$ (làm tròn lên) | **139** | **D** |
+| **5** | Khái niệm mẫu và tổng thể | Dùng thống kê mẫu ước lượng tham số tổng thể | **sample statistic** | **D** |
+| **6** | Khoảng tin cậy cho $\mu$ (mẫu nhỏ, $\sigma$ chưa biết) | $\bar{X} = 10, S = \sqrt{2}, e = 3.1824 \times \frac{\sqrt{2}}{2} = 2.25 \implies [7.75; 12.25]$ | **(7.75; 12.25)** | **C** |
+| **7** | Phân phối chọn mẫu tỷ lệ | $Z = \pm 1.83 \implies P = 2(0.9664) - 1 = 0.9328$ | **0.9328** | **A** |
+| **8** | Bản chất bác bỏ giả thuyết không | Bác bỏ $H_0$ đồng nghĩa với giả thuyết đối là đúng | **the alternative hypothesis is true** | **C** |
+| **9** | Cỡ mẫu tối thiểu cho tỷ lệ (thận trọng) | $n = \frac{1.96^2 \times 0.25}{0.05^2} = 384.16 \to 385$ (làm tròn lên) | **385** | **C** |
+| **10** | Phân phối chọn mẫu của trung bình | $\mu_{\bar{X}} = \mu = 200, \sigma_{\bar{X}} = 12 / \sqrt{36} = 2$ | **Mean = 200; standard deviation = 2** | **B** |
+| **11** | Giá trị tới hạn kiểm định tỷ lệ hai phía | $\alpha = 0.1 \implies \alpha/2 = 0.05 \implies Z = \pm 1.645$ | **-1.645 and 1.645** | **C** |
+| **12** | Khoảng tin cậy cho $\mu$ khi $\sigma$ đã biết | $3 \pm 1.96 \times \frac{1}{\sqrt{100}} = 3 \pm 0.196 \implies [2.804; 3.196]$ | **(2.804; 3.196)** | **B** |
+| **13** | Thống kê $t$ hai mẫu độc lập ($S_p^2$) | $S_p^2 = 6.97875 \implies t_{STAT} = \frac{3 - 4}{1.03925} \approx -0.96$ | **Approximate -0.96** | **A** |
+| **14** | Ước lượng điểm trung bình từ dữ liệu thô | $\bar{X} = 183 / 15 = 12.2$ | **12.2** | **A** |
+| **15** | Kiểm định $t$ theo cặp | Quan sát ghép đôi từng cặp đòi hỏi 2 nhóm phải bằng nhau | **True** | **A** |
+| **16** | Giá trị tới hạn kiểm định $\mu$ đuôi phải | Kiểm định đuôi phải với $\sigma$ chưa biết lấy $+t_{\alpha; n-1}$ | **(ii)** | **B** |
+| **17** | Thiết lập giả thuyết cho máy chiết rót | Giả thuyết viết theo $\mu$, dấu bằng ở $H_0$: $H_0: \mu = 15 \text{ vs } H_1: \mu \ne 15$ | **(ii)** | **C** |
+| **18** | Thống kê $t$ kiểm định 1 mẫu | $t_{STAT} = \frac{56 - 50}{12 / \sqrt{16}} = \frac{6}{3} = 2$ | **2** | **D** |
+| **19** | Biên sai số (Margin of Error) cho $\mu$ | $e = 1.9983 \times \frac{240}{\sqrt{64}} = 1.9983 \times 30 = 59.949$ | **59.949** | **A** |
+| **20** | Độ rộng (Width) khoảng tin cậy tỷ lệ | $e = 0.05872 \implies \text{Width} = 2 \times e = 0.1174$ | **0.1174** | **A** |
+
 </script>
 
   <script>
@@ -7587,56 +8480,100 @@ Khi tính ra khoảng tin cậy ví dụ: $[15.2, 18.8]$ cho trung bình $\mu$:
     function wrapSection6() {
       const article = document.getElementById('article-content');
       if (!article) return;
-      if (document.getElementById('section-6-wrapper')) return;
 
-      const headings = article.querySelectorAll('h1');
-      let h1Sec6 = null;
-      let h1Sec7 = null;
+      // Wrap Section 6 (Quiz 2)
+      if (!document.getElementById('section-6-wrapper')) {
+        const headings = article.querySelectorAll('h1');
+        let h1Sec6 = null;
+        let h1Sec7 = null;
 
-      headings.forEach(h => {
-        const txt = h.textContent;
-        if (txt.includes('PHẦN 6') || txt.includes('MAS QUIZ 2')) {
-          h1Sec6 = h;
-        } else if (txt.includes('PHẦN 7') || txt.includes('CHƯƠNG 8')) {
-          if (!h1Sec7 && h1Sec6) h1Sec7 = h;
+        headings.forEach(h => {
+          const txt = h.textContent;
+          if (txt.includes('PHẦN 6') || txt.includes('MAS QUIZ 2')) {
+            h1Sec6 = h;
+          } else if (txt.includes('PHẦN 7') || txt.includes('CHƯƠNG 8')) {
+            if (!h1Sec7 && h1Sec6) h1Sec7 = h;
+          }
+        });
+
+        if (h1Sec6) {
+          const wrapper = document.createElement('div');
+          wrapper.id = 'section-6-wrapper';
+          wrapper.className = 'section-6-wrapper';
+
+          const nodes = [];
+          let curr = h1Sec6;
+          while (curr && curr !== h1Sec7) {
+            const next = curr.nextSibling;
+            nodes.push(curr);
+            curr = next;
+          }
+
+          if (h1Sec7) {
+            h1Sec7.parentNode.insertBefore(wrapper, h1Sec7);
+          } else {
+            article.appendChild(wrapper);
+          }
+
+          nodes.forEach(n => wrapper.appendChild(n));
         }
-      });
-
-      if (!h1Sec6) return;
-
-      const wrapper = document.createElement('div');
-      wrapper.id = 'section-6-wrapper';
-      wrapper.className = 'section-6-wrapper';
-
-      const nodes = [];
-      let curr = h1Sec6;
-      while (curr && curr !== h1Sec7) {
-        const next = curr.nextSibling;
-        nodes.push(curr);
-        curr = next;
       }
 
-      if (h1Sec7) {
-        h1Sec7.parentNode.insertBefore(wrapper, h1Sec7);
-      } else {
-        article.appendChild(wrapper);
-      }
+      // Wrap Section 12 (Quiz 3)
+      if (!document.getElementById('section-quiz3-wrapper')) {
+        const headings = article.querySelectorAll('h1');
+        let h1Sec12 = null;
+        let h1Next = null;
 
-      nodes.forEach(n => wrapper.appendChild(n));
+        headings.forEach(h => {
+          const txt = h.textContent;
+          if (txt.includes('MAS QUIZ 3')) {
+            h1Sec12 = h;
+          } else if (h1Sec12 && !h1Next) {
+            h1Next = h;
+          }
+        });
+
+        if (h1Sec12) {
+          const wrapper = document.createElement('div');
+          wrapper.id = 'section-quiz3-wrapper';
+          wrapper.className = 'section-6-wrapper section-quiz3-wrapper';
+
+          const nodes = [];
+          let curr = h1Sec12;
+          while (curr && curr !== h1Next) {
+            const next = curr.nextSibling;
+            nodes.push(curr);
+            curr = next;
+          }
+
+          if (h1Next) {
+            h1Next.parentNode.insertBefore(wrapper, h1Next);
+          } else {
+            article.appendChild(wrapper);
+          }
+
+          nodes.forEach(n => wrapper.appendChild(n));
+        }
+      }
     }
 
     function updateSection6Visibility(user) {
       const isAuth = isAuthorizedForSection6(user);
-      const wrapper = document.getElementById('section-6-wrapper');
+      const wrapper6 = document.getElementById('section-6-wrapper');
+      const wrapperQuiz3 = document.getElementById('section-quiz3-wrapper');
       
-      if (wrapper) {
-        wrapper.style.display = isAuth ? 'block' : 'none';
+      if (wrapper6) {
+        wrapper6.style.display = isAuth ? 'block' : 'none';
+      }
+      if (wrapperQuiz3) {
+        wrapperQuiz3.style.display = isAuth ? 'block' : 'none';
       }
 
-      // Cập nhật Mục lục: Chỉ hiện Phần 6 nếu đăng nhập chính chủ
+      // Cập nhật Mục lục: Chỉ hiện Phần 6 & Quiz 3 nếu đăng nhập chính chủ
       buildTOC(isAuth);
 
-      // Khôi phục highlight nếu vừa mở khóa Phần 6
+      // Khôi phục highlight nếu vừa mở khóa Phần 6 & Quiz 3
       if (isAuth) {
         restoreAllHighlights();
       }
@@ -7663,8 +8600,9 @@ Khi tính ra khoảng tin cậy ví dụ: $[15.2, 18.8]$ cho trung bình $\mu$:
         h.querySelectorAll('.btn-heading-note').forEach(b => b.remove());
         const text = h.textContent.replace(/^#+\s*/, '').trim();
 
-        // Kiểm tra Phần 6
-        if (text.includes('PHẦN 6') || text.includes('MAS QUIZ 2')) {
+        // Kiểm tra Phần VIP (Phần 6 Quiz 2 & Phần 12 Quiz 3)
+        const isVipHeading = text.includes('PHẦN 6') || text.includes('MAS QUIZ 2') || text.includes('MAS QUIZ 3');
+        if (isVipHeading) {
           isSection6 = true;
           if (!showSection6) {
             currentH1Li = null;
@@ -7675,7 +8613,7 @@ Khi tính ra khoảng tin cậy ví dụ: $[15.2, 18.8]$ cho trung bình $\mu$:
           isSection6 = false;
         }
 
-        // Bỏ qua câu hỏi thuộc Phần 6 nếu không được cấp quyền
+        // Bỏ qua câu hỏi thuộc Phần VIP nếu không được cấp quyền
         if (isSection6 && !showSection6) {
           return;
         }
@@ -8004,7 +8942,7 @@ Khi tính ra khoảng tin cậy ví dụ: $[15.2, 18.8]$ cho trung bình $\mu$:
           updateAuthUI(currentUser);
           updateSection6Visibility(currentUser);
           if (isAuthorizedForSection6(currentUser)) {
-            showToast(`👑 Xin chào Huyền! Đã mở khóa thành công PHẦN 6 & Mục lục Quiz 2.`);
+            showToast(`👑 Xin chào Huyền! Đã mở khóa thành công PHẦN 6 (Quiz 2) & PHẦN 12 (Quiz 3).`);
           } else {
             showToast(`🎉 Xin chào ${result.user.displayName || 'bạn'}! Đang đồng bộ Cloud...`);
           }
@@ -8380,7 +9318,8 @@ Khi tính ra khoảng tin cậy ví dụ: $[15.2, 18.8]$ cho trung bình $\mu$:
       if (currentFilterTag !== 'all') {
         notes = notes.filter(n => {
           const t = (n.topic + ' ' + (n.targetId || '')).toLowerCase();
-          if (currentFilterTag === 'quiz2') return t.includes('câu ') || t.includes('quiz') || t.includes('question');
+          if (currentFilterTag === 'quiz2') return t.includes('quiz 2') || (t.includes('câu ') && !t.includes('quiz 3'));
+          if (currentFilterTag === 'quiz3') return t.includes('quiz 3');
           if (currentFilterTag === 'ch5') return t.includes('chương 5') || t.includes('ch5') || t.includes('nhị thức') || t.includes('poisson') || t.includes('rời rạc');
           if (currentFilterTag === 'ch6') return t.includes('chương 6') || t.includes('ch6') || t.includes('chuẩn') || t.includes('normal') || t.includes('z-score');
           if (currentFilterTag === 'ch7') return t.includes('chương 7') || t.includes('ch7') || t.includes('cỡ mẫu') || t.includes('sample') || t.includes('trung tâm');
