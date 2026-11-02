@@ -7503,29 +7503,89 @@ Giá trị của thống kê kiểm định $t_{STAT}$ phương sai gộp (poole
 ## Câu 2: Đọc Bảng Kết Quả PHStat Kiểm Định t Một Mẫu (PHStat Output Interpretation for One-Sample t-Test)
 
 ### 1. Nguyên văn đề thi tiếng Anh & Các phương án lựa chọn:
+
 > **Question 2 (Single Choice):**
-> PHStat output:
-> ```
-> t Test for Hypothesis of the Mean
-> ------------------------------------------------
-> Data
-> Null Hypothesis                  μ =       1475
-> Level of Significance                     0.05
-> Sample Size                                100
-> Sample Mean                               1500
-> Sample Standard Deviation                  200
-> ------------------------------------------------
-> Intermediate Calculations
-> Standard Error of the Mean             20.0000
-> Degrees of Freedom                          99
-> t Test Statistic                        1.2500
-> ------------------------------------------------
-> Two-Tail Test
-> Lower Critical Value                   -1.9842
-> Upper Critical Value                    1.9842
-> p-Value                                 0.2142
-> ```
-> Choose the correct statement:
+> 
+> Examine the output from the PHStat statistical software package below:
+
+<div class="phstat-table-wrapper" style="max-width: 500px; margin: 20px auto; background: var(--surface); border: 2px solid var(--border); border-radius: 10px; overflow: hidden; box-shadow: 0 4px 14px rgba(0,0,0,0.08); font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;">
+  <div style="background: linear-gradient(135deg, #1e40af, #3b82f6); color: #ffffff; padding: 12px 18px; font-weight: 700; font-size: 1.05rem; text-align: center; letter-spacing: 0.5px;">
+    📊 PHStat output: t Test for Hypothesis of the Mean
+  </div>
+  <table style="width: 100%; border-collapse: collapse; margin: 0; background: transparent; font-size: 0.93rem;">
+    <!-- BLOCK 1: DATA -->
+    <tr style="background: var(--code-bg); font-weight: 700; color: var(--primary);">
+      <td colspan="3" style="padding: 9px 16px; border-bottom: 1px solid var(--border); font-size: 0.85rem; letter-spacing: 0.5px; text-transform: uppercase;">
+        📁 Data
+      </td>
+    </tr>
+    <tr style="border-bottom: 1px solid var(--border);">
+      <td style="padding: 8px 16px; color: var(--text);">Null Hypothesis</td>
+      <td style="padding: 8px 6px; text-align: center; font-weight: 700; color: #2563eb;">&mu; =</td>
+      <td style="padding: 8px 16px; text-align: right; font-weight: 700; color: var(--text);">1475</td>
+    </tr>
+    <tr style="border-bottom: 1px solid var(--border);">
+      <td style="padding: 8px 16px; color: var(--text);">Level of Significance</td>
+      <td style="padding: 8px 6px;"></td>
+      <td style="padding: 8px 16px; text-align: right; font-weight: 600; color: var(--text);">0.05</td>
+    </tr>
+    <tr style="border-bottom: 1px solid var(--border);">
+      <td style="padding: 8px 16px; color: var(--text);">Sample Size</td>
+      <td style="padding: 8px 6px;"></td>
+      <td style="padding: 8px 16px; text-align: right; font-weight: 600; color: var(--text);">100</td>
+    </tr>
+    <tr style="border-bottom: 1px solid var(--border);">
+      <td style="padding: 8px 16px; color: var(--text);">Sample Mean</td>
+      <td style="padding: 8px 6px;"></td>
+      <td style="padding: 8px 16px; text-align: right; font-weight: 600; color: var(--text);">1500</td>
+    </tr>
+    <tr style="border-bottom: 2px solid var(--border);">
+      <td style="padding: 8px 16px; color: var(--text);">Sample Standard Deviation</td>
+      <td style="padding: 8px 6px;"></td>
+      <td style="padding: 8px 16px; text-align: right; font-weight: 600; color: var(--text);">200</td>
+    </tr>
+
+    <!-- BLOCK 2: INTERMEDIATE CALCULATIONS -->
+    <tr style="background: var(--code-bg); font-weight: 700; color: var(--primary);">
+      <td colspan="3" style="padding: 9px 16px; border-bottom: 1px solid var(--border); font-size: 0.85rem; letter-spacing: 0.5px; text-transform: uppercase;">
+        ⚙️ Intermediate Calculations
+      </td>
+    </tr>
+    <tr style="border-bottom: 1px solid var(--border);">
+      <td style="padding: 8px 16px; color: var(--text);" colspan="2">Standard Error of the Mean</td>
+      <td style="padding: 8px 16px; text-align: right; font-weight: 600; color: var(--text);">20.0000</td>
+    </tr>
+    <tr style="border-bottom: 1px solid var(--border);">
+      <td style="padding: 8px 16px; color: var(--text);" colspan="2">Degrees of Freedom</td>
+      <td style="padding: 8px 16px; text-align: right; font-weight: 600; color: var(--text);">99</td>
+    </tr>
+    <tr style="border-bottom: 2px solid var(--border);">
+      <td style="padding: 8px 16px; color: var(--text); font-weight: 700;" colspan="2">t Test Statistic</td>
+      <td style="padding: 8px 16px; text-align: right; font-weight: 800; color: #e11d48; font-size: 1.05rem;">1.2500</td>
+    </tr>
+
+    <!-- BLOCK 3: TWO-TAIL TEST -->
+    <tr style="background: var(--code-bg); font-weight: 700; color: var(--primary);">
+      <td colspan="3" style="padding: 9px 16px; border-bottom: 1px solid var(--border); font-size: 0.85rem; letter-spacing: 0.5px; text-transform: uppercase;">
+        🎯 Two-Tail Test
+      </td>
+    </tr>
+    <tr style="border-bottom: 1px solid var(--border);">
+      <td style="padding: 8px 16px; color: var(--text);" colspan="2">Lower Critical Value</td>
+      <td style="padding: 8px 16px; text-align: right; font-weight: 700; color: var(--text);">-1.9842</td>
+    </tr>
+    <tr style="border-bottom: 1px solid var(--border);">
+      <td style="padding: 8px 16px; color: var(--text);" colspan="2">Upper Critical Value</td>
+      <td style="padding: 8px 16px; text-align: right; font-weight: 700; color: var(--text);">1.9842</td>
+    </tr>
+    <tr>
+      <td style="padding: 8px 16px; color: var(--text); font-weight: 700;" colspan="2">p-Value</td>
+      <td style="padding: 8px 16px; text-align: right; font-weight: 800; color: #16a34a; font-size: 1.05rem;">0.2142</td>
+    </tr>
+  </table>
+</div>
+
+> **Choose the correct statement:**
 > - A. do not reject $H_0$
 > - B. Reject $H_0$ if the test statistic is greater than 0.2142 or less than -0.2142.
 > - C. reject $H_0$
