@@ -316,7 +316,7 @@ D. 50
 
 > 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
 >
-> ![Bảng số liệu Câu 6](MAS202_SU26_FE_tables/Q6_table.png)
+> ![Bảng số liệu Câu 6](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q6_table.png)
 
 **Đáp án đúng của đề thi:** **A**
 
@@ -466,7 +466,7 @@ D. None of them
 
 > 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
 >
-> ![Bảng số liệu Câu 9](MAS202_SU26_FE_tables/Q9_table.png)
+> ![Bảng số liệu Câu 9](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q9_table.png)
 
 **Đáp án đúng của đề thi:** **D**
 
@@ -672,7 +672,7 @@ D. The shape of the distribution is not clearly determined.
 
 > 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
 >
-> ![Bảng số liệu Câu 13](MAS202_SU26_FE_tables/Q13_table.png)
+> ![Bảng số liệu Câu 13](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q13_table.png)
 
 **Đáp án đúng của đề thi:** **A**
 
@@ -793,7 +793,7 @@ E. None of the other choices is correct
 
 > 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
 >
-> ![Bảng số liệu Câu 15](MAS202_SU26_FE_tables/Q15_table.png)
+> ![Bảng số liệu Câu 15](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q15_table.png)
 
 **Đáp án đúng của đề thi:** **A**
 
@@ -874,7 +874,7 @@ E. 0.625
 
 > 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
 >
-> ![Bảng số liệu Câu 16](MAS202_SU26_FE_tables/Q16_table.png)
+> ![Bảng số liệu Câu 16](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q16_table.png)
 
 **Đáp án đúng của đề thi:** **A**
 
@@ -1089,7 +1089,7 @@ E. None of the other choices is correct
 
 > 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
 >
-> ![Bảng số liệu Câu 20](MAS202_SU26_FE_tables/Q20_table.png)
+> ![Bảng số liệu Câu 20](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q20_table.png)
 
 **Đáp án đúng của đề thi:** **A**
 
@@ -1266,7 +1266,7 @@ E. None of the other choices is correct
 
 > 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
 >
-> ![Bảng số liệu Câu 23](MAS202_SU26_FE_tables/Q23_table.png)
+> ![Bảng số liệu Câu 23](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q23_table.png)
 
 **Đáp án đúng của đề thi:** **A**
 
@@ -1998,7 +1998,7 @@ D. (iv)
 
 > 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
 >
-> ![Bảng số liệu Câu 36](MAS202_SU26_FE_tables/Q36_table.png)
+> ![Bảng số liệu Câu 36](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q36_table.png)
 
 **Đáp án đúng của đề thi:** **C**
 
@@ -2149,7 +2149,7 @@ D. (-3.51, 1.76)
 
 > 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
 >
-> ![Bảng số liệu Câu 39](MAS202_SU26_FE_tables/Q39_table.png)
+> ![Bảng số liệu Câu 39](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q39_table.png)
 
 **Đáp án đúng của đề thi:** **A**
 
@@ -2291,7 +2291,7 @@ D. There is evidence that the population variances between preservatives I and I
 
 > 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
 >
-> ![Bảng số liệu Câu 41](MAS202_SU26_FE_tables/Q41_table.png)
+> ![Bảng số liệu Câu 41](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q41_table.png)
 
 **Đáp án đúng của đề thi:** **A**
 
@@ -2366,7 +2366,7 @@ D. 19
 
 > 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
 >
-> ![Bảng số liệu Câu 42](MAS202_SU26_FE_tables/Q42_table.png)
+> ![Bảng số liệu Câu 42](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q42_table.png)
 
 **Đáp án đúng của đề thi:** **C**
 
@@ -2433,7 +2433,7 @@ E. 12.50
 
 > 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
 >
-> ![Bảng số liệu Câu 43](MAS202_SU26_FE_tables/Q43_table.png)
+> ![Bảng số liệu Câu 43](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q43_table.png)
 
 **Đáp án đúng của đề thi:** **A**
 
@@ -2507,7 +2507,7 @@ D. When the student does not study for the final exam, the predicted mean final 
 
 > 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
 >
-> ![Bảng số liệu Câu 44](MAS202_SU26_FE_tables/Q44_table.png)
+> ![Bảng số liệu Câu 44](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q44_table.png)
 
 **Đáp án đúng của đề thi:** **A**
 
@@ -2614,7 +2614,7 @@ E. None of the other choices is correct.
 
 > 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
 >
-> ![Bảng số liệu Câu 46](MAS202_SU26_FE_tables/Q46_table.png)
+> ![Bảng số liệu Câu 46](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q46_table.png)
 
 **Đáp án đúng của đề thi:** **A**
 
@@ -2675,7 +2675,7 @@ D. Independence of errors
 
 > 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
 >
-> ![Bảng số liệu Câu 47](MAS202_SU26_FE_tables/Q47_table.png)
+> ![Bảng số liệu Câu 47](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q47_table.png)
 
 **Đáp án đúng của đề thi:** **C**
 
@@ -2792,7 +2792,7 @@ E. None of the other choices is correct.
 
 > 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
 >
-> ![Bảng số liệu Câu 49](MAS202_SU26_FE_tables/Q49_table.png)
+> ![Bảng số liệu Câu 49](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q49_table.png)
 
 **Đáp án đúng của đề thi:** **A**
 
@@ -2871,7 +2871,7 @@ D. 83.0%
 
 > 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
 >
-> ![Bảng số liệu Câu 50](MAS202_SU26_FE_tables/Q50_table.png)
+> ![Bảng số liệu Câu 50](https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q50_table.png)
 
 **Đáp án đúng của đề thi:** **C**
 

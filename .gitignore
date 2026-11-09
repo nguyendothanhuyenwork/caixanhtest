@@ -32,3 +32,8 @@ MAS202_SP26_FE/
 MAS202_SP26_RE/
 MAS202_SU25_FE/
 MAS202_SU25_RE/
+
+# Exam & Table images hosted on Supabase Storage (do not commit to git)
+MAS202_SU26_FE/
+MAS202_SU26_FE_tables/
+MAS202_SU26_FE_png/

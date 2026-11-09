@@ -22,7 +22,8 @@
     "casio": "Câu hỏi lý thuyết định nghĩa khái niệm, không cần bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 1 - Mục 1.2: Organizing and Classifying Variables):\n- Dữ liệu định lượng (Numerical) chia làm 2 loại: Rời rạc (Discrete - phát sinh từ phép đếm) và Liên tục (Continuous - phát sinh từ phép đo như thời gian, chiều cao, cân nặng, nhiệt độ).",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q1.webp"
   },
   {
     "id": 2,
@@ -47,7 +48,8 @@
     "casio": "Câu hỏi lý thuyết định nghĩa khái niệm, không cần bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 1 - Mục 1.1: Basic Concepts of Statistics):\n- Tham số (Parameter): Đo lường tóm tắt định lượng tính trên toàn bộ tổng thể (Population).\n- Thống kê (Statistic): Đo lường tóm tắt định lượng tính trên một mẫu (Sample).",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q2.webp"
   },
   {
     "id": 3,
@@ -70,7 +72,8 @@
     "casio": "Câu hỏi lý thuyết khái niệm, không cần bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 1 - Mục 1.4: Types of Survey Errors):\n- Sampling error xảy ra vì ta chỉ quan sát một phần của tổng thể. Cách duy nhất loại trừ triệt để sai số này là tiến hành Census (điều tra toàn bộ tổng thể).",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q3.webp"
   },
   {
     "id": 4,
@@ -95,7 +98,8 @@
     "casio": "Câu hỏi lý thuyết thu thập dữ liệu, không cần bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 1 - Mục 1.3: Data Sources):\n- Surveying involves designing questions to collect opinions, attitudes, or factual data from respondents via paper, phone, or electronic questionnaires.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q4.webp"
   },
   {
     "id": 5,
@@ -120,7 +124,8 @@
     "casio": "Câu hỏi lý thuyết cấu trúc dữ liệu, không cần bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 2 - Mục 2.1: Organizing Categorical Data):\n- A cross-classification table (or contingency table) presents the results of two categorical variables simultaneously across $r$ rows and $c$ columns ($r \\times c$ table).",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q5.webp"
   },
   {
     "id": 6,
@@ -144,8 +149,9 @@
     "ap_dung": "$$P = \\frac{20}{200} \\times 100\\% = 10\\%$$\n\n=> Chọn đáp án A (10).",
     "casio": "Thao tác trên Casio fx-580VN X:\nBấm `20 / 200 * 100 =` -> Kết quả ra 10.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 2 - Mục 2.1: The Contingency Table):\n- Tỷ lệ đồng thời (Joint proportion) tính bằng số quan sát thỏa mãn đồng thời cả 2 điều kiện chia cho tổng số quan sát trong mẫu.",
-    "table_image": "MAS202_SU26_FE_tables/Q6_table.webp",
-    "table_image_png": "MAS202_SU26_FE_tables/Q6_table.png"
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q6_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q6_table.png",
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q6.webp"
   },
   {
     "id": 7,
@@ -170,7 +176,8 @@
     "casio": "Câu hỏi lý thuyết biểu đồ, không cần bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 2 - Mục 2.2: Tables and Charts for Categorical Data):\n- A Pareto chart is a vertical bar chart in which categories are plotted in descending order of frequency, combined with a cumulative percentage line.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q7.webp"
   },
   {
     "id": 8,
@@ -195,7 +202,8 @@
     "casio": "Câu hỏi lý thuyết đồ họa thống kê, không cần bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 2 - Mục 2.5: Misusing Graphs and Ethical Issues):\n- In constructing histograms, frequency polygons, and bar charts, the vertical axis representing frequency or percentage MUST include the true zero origin to prevent misleading impressions of differences.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q8.webp"
   },
   {
     "id": 9,
@@ -219,8 +227,9 @@
     "ap_dung": "Vì 4 hiệu sách là dữ liệu định tính (nominal categories), việc vẽ biểu đồ Histogram (dù là Frequency histogram hay Relative frequency histogram) là vi phạm nghiêm trọng quy chuẩn biểu diễn thống kê.\n\n=> Cả hai dạng Histogram trên đều không phải là cách trình bày phù hợp.\n=> Chọn đáp án D (None of them).",
     "casio": "Câu hỏi lý thuyết trực quan hóa, không cần bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 2 - Mục 2.3 & Mục 2.5):\n- Histograms are appropriate ONLY for numerical data. When data are categorical, a bar chart or Pareto chart must be used, not a histogram.",
-    "table_image": "MAS202_SU26_FE_tables/Q9_table.webp",
-    "table_image_png": "MAS202_SU26_FE_tables/Q9_table.png"
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q9_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q9_table.png",
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q9.webp"
   },
   {
     "id": 10,
@@ -247,7 +256,8 @@
     "casio": "Câu hỏi lý thuyết tính chất thống kê, không cần bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 3 - Mục 3.1: Measures of Central Tendency):\n- The mean is sensitive to extreme values (outliers). In such cases, the median is generally a better measure of central tendency because it is not affected by extreme values.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q10.webp"
   },
   {
     "id": 11,
@@ -270,7 +280,8 @@
     "casio": "Câu hỏi lý thuyết phân loại chỉ số thống kê, không cần bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 3 - Mục 3.2: Measures of Variation):\n- The coefficient of variation ($CV$) measures the relative scatter of data in relation to the mean. It is a measure of relative variation, not central tendency.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q11.webp"
   },
   {
     "id": 12,
@@ -295,7 +306,8 @@
     "casio": "Thao tác trên Casio fx-580VN X:\n1. Bấm MENU 6 1 (Thống kê 1 biến - 1-Variable).\n2. Nhập các giá trị: `9.66 = 5.90 = 8.02 = 5.79 = 8.73 =`.\n3. Bấm AC để lưu dữ liệu.\n4. Bấm OPTN 3 (Tính 1-Biến).\n5. Đọc dòng `sx` (Độ lệch chuẩn mẫu): máy hiện `1.72199...` làm tròn thành **1.72**.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 3 - Mục 3.2: Measures of Variation):\n- Khi tính độ lệch chuẩn cho dữ liệu mẫu (sample standard deviation), mẫu số luôn là $n - 1$ để đảm bảo ước lượng không chệch cho phương sai tổng thể.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q12.webp"
   },
   {
     "id": 13,
@@ -319,8 +331,9 @@
     "ap_dung": "Nhánh râu bên phải kéo dài tới 1060, cho thấy có một số viên pin có tuổi thọ rất cao kéo đuôi phân phối về phía bên phải.\n\n=> Phân phối bị lệch phải (right-skewed).\n=> Chọn đáp án A (right-skewed).",
     "casio": "Câu hỏi đọc đồ thị thống kê, không cần bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 3 - Mục 3.3: Exploring Numerical Data - The Boxplot):\n- If the box and central line are shifted toward the left and the right whisker is substantially longer than the left whisker, the data distribution is skewed to the right (positively skewed).",
-    "table_image": "MAS202_SU26_FE_tables/Q13_table.webp",
-    "table_image_png": "MAS202_SU26_FE_tables/Q13_table.png"
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q13_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q13_table.png",
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q13.webp"
   },
   {
     "id": 14,
@@ -345,7 +358,8 @@
     "casio": "Thao tác trên Casio fx-580VN X:\n1. Bấm MENU 6 1 (Thống kê 1 biến - 1-Variable).\n2. Nhập các giá trị: `25 = 22 = 19 = 8 = 13 = 6 = 15 =`.\n3. Bấm AC để lưu dữ liệu.\n4. Bấm OPTN 3 (Tính 1-Biến).\n5. Đọc dòng `σx` (Độ lệch chuẩn tổng thể): máy hiện `6.52154...` làm tròn thành **6.52**.\n*(Tuyệt đối không lấy dòng `sx = 7.043...` vì `sx` là độ lệch chuẩn mẫu)*.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 3 - Mục 3.2: Measures of Variation):\n- Khi đề bài yêu cầu *population standard deviation*, công thức dùng mẫu số là kích thước tổng thể $N$ (ký hiệu $\\sigma$).",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q14.webp"
   },
   {
     "id": 15,
@@ -370,8 +384,9 @@
     "ap_dung": "- Bước 1: Tính các tổng:\n  $$\\sum X_i = 115 + 191 + 153 + 194 + 236 + 184 = 1073$$\n  $$\\sum Y_i = 74 + 78 + 79 + 80 + 84 + 76 = 471$$\n  $$\\bar{X} = \\frac{1073}{6} \\approx 178.8333, \\quad \\bar{Y} = \\frac{471}{6} = 78.50$$\n- Bước 2: Tính tổng tích $\\sum X_i Y_i$:\n  $$\\sum X_i Y_i = (115 \\times 74) + (191 \\times 78) + (153 \\times 79) + (194 \\times 80) + (236 \\times 84) + (184 \\times 76)$$\n  $$= 8510 + 14898 + 12087 + 15520 + 19824 + 13984 = 84823$$\n- Bước 3: Tính tử số $SS_{XY}$:\n  $$SS_{XY} = \\sum X_i Y_i - \\frac{(\\sum X_i)(\\sum Y_i)}{n} = 84823 - \\frac{1073 \\times 471}{6} = 84823 - 84230.5 = 592.5$$\n- Bước 4: Tính hiệp phương sai mẫu:\n  $$S_{XY} = \\frac{592.5}{6 - 1} = \\frac{592.5}{5} = 118.5$$\n\n=> Chọn đáp án A (118.5).",
     "casio": "Thao tác trên Casio fx-580VN X:\n1. Bấm MENU 6 2 (Thống kê 2 biến - $y = a + bx$).\n2. Cột X nhập: `115 = 191 = 153 = 194 = 236 = 184 =`.\n3. Cột Y nhập: `74 = 78 = 79 = 80 = 84 = 76 =`.\n4. Bấm AC để lưu.\n5. Bấm OPTN 3 (Tính 2-Biến).\n6. Đọc các tổng: `Σxy = 84823`, `Σx = 1073`, `Σy = 471`, `n = 6`.\n7. Ra ngoài màn hình tính toán: `(84823 - 1073 * 471 / 6) / 5 =` -> Máy hiện chính xác **118.5**.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 3 - Mục 3.4: Measures of Association Between Two Variables):\n- Sample covariance ($S_{XY}$) measures the strength of the linear relationship between two numerical variables. A positive value indicates that as $X$ increases, $Y$ tends to increase.",
-    "table_image": "MAS202_SU26_FE_tables/Q15_table.webp",
-    "table_image_png": "MAS202_SU26_FE_tables/Q15_table.png"
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q15_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q15_table.png",
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q15.webp"
   },
   {
     "id": 16,
@@ -396,8 +411,9 @@
     "ap_dung": "$$P(D \\cup C) = \\frac{36 + 30 - 12}{80} = \\frac{54}{80} = 0.675$$\n\n=> Chọn đáp án A (0.675).",
     "casio": "Thao tác trên Casio fx-580VN X:\nBấm `(36 + 30 - 12) / 80 =` -> máy hiện phân số `27/40`, bấm phím `S<=>D` chuyển sang số thập phân ra **0.675**.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 4 - Mục 4.2: Basic Probability Rules):\n- General Addition Rule: $P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$. Ta phải trừ đi xác suất giao $P(A \\cap B)$ để tránh đếm trùng hai lần phần tử chung.",
-    "table_image": "MAS202_SU26_FE_tables/Q16_table.webp",
-    "table_image_png": "MAS202_SU26_FE_tables/Q16_table.png"
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q16_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q16_table.png",
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q16.webp"
   },
   {
     "id": 17,
@@ -423,7 +439,8 @@
     "casio": "Thao tác trên Casio fx-580VN X:\nBấm `0.02 / 0.70 =` -> máy hiện `0.0285714...` làm tròn thành **0.029**.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 4 - Mục 4.2: Conditional Probability):\n- $P(A|B)$ là xác suất của $A$ với điều kiện biến cố $B$ đã xảy ra, bằng tỷ số giữa xác suất đồng thời $P(A \\cap B)$ và xác suất biên $P(B)$.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q17.webp"
   },
   {
     "id": 18,
@@ -448,7 +465,8 @@
     "casio": "Thao tác trên Casio fx-580VN X:\n1. Tử số: `(4 / 10) * (6 C 2 / 9 C 2) =` -> máy hiện `1/6`.\n2. Mẫu số: `Ans + (6 / 10) * (5 C 2 / 9 C 2) =` -> máy hiện `1/3`.\n3. Chia: `(1/6) / (1/3) =` -> máy hiện chính xác **1/2**.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 4 - Mục 4.3: Bayes' Theorem):\n- Định lý Bayes dùng để cập nhật xác suất tiên nghiệm của một nguyên nhân khi đã biết kết quả quan sát được trong thực tế.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q18.webp"
   },
   {
     "id": 19,
@@ -473,7 +491,8 @@
     "casio": "Thao tác trên Casio fx-580VN X:\nBấm `3 * 3 * 3 =` hoặc `3 ^ 3 =` ra **27**.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 4 - Mục 4.4: Counting Rules):\n- Quy tắc nhân (Counting Rule 1): Nếu một sự kiện gồm một chuỗi gồm $k$ bước độc lập, trong đó bước 1 có $n_1$ cách chọn, bước 2 có $n_2$ cách chọn,..., thì tổng số cách chọn kết hợp là $n_1 \\times n_2 \\times ... \\times n_k$.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q19.webp"
   },
   {
     "id": 20,
@@ -498,8 +517,9 @@
     "ap_dung": "- Bước 1: Tính kỳ vọng $\\mu = E(X)$:\n  $$\\mu = (0 \\times 0.10) + (1 \\times 0.20) + (2 \\times 0.45) + (3 \\times 0.15) + (4 \\times 0.05) + (5 \\times 0.05)$$\n  $$= 0 + 0.20 + 0.90 + 0.45 + 0.20 + 0.25 = 2.00$$\n- Bước 2: Tính kỳ vọng bình phương $E(X^2)$:\n  $$E(X^2) = (0^2 \\times 0.10) + (1^2 \\times 0.20) + (2^2 \\times 0.45) + (3^2 \\times 0.15) + (4^2 \\times 0.05) + (5^2 \\times 0.05)$$\n  $$= 0 + 0.20 + (4 \\times 0.45) + (9 \\times 0.15) + (16 \\times 0.05) + (25 \\times 0.05)$$\n  $$= 0.20 + 1.80 + 1.35 + 0.80 + 1.25 = 5.40$$\n- Bước 3: Tính phương sai:\n  $$\\sigma^2 = Var(X) = 5.40 - (2.00)^2 = 5.40 - 4.00 = 1.40$$\n\n=> Chọn đáp án A (1.40).\n*(Lưu ý: Phương án C là 2.00 - đó là kỳ vọng E(X), không phải phương sai! Phương án B là 1.18 - đó là độ lệch chuẩn $\\sigma = \\sqrt{1.40} \\approx 1.183$)*.",
     "casio": "Thao tác trên Casio fx-580VN X:\n1. Bật cột tần số: SHIFT MENU cuộn xuống chọn 3 (Thống kê - Statistics) -> chọn 1 (Bật - On).\n2. Bấm MENU 6 1 (Thống kê 1 biến).\n3. Cột x nhập: `0 = 1 = 2 = 3 = 4 = 5 =`.\n4. Cột FREQ nhập: `0.10 = 0.20 = 0.45 = 0.15 = 0.05 = 0.05 =`.\n5. Bấm AC để lưu dữ liệu.\n6. Bấm OPTN 3 (Tính 1-Biến).\n7. Đọc dòng `σ²x` (Phương sai tổng thể): máy hiện chính xác **1.4**.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 5 - Mục 5.1: The Probability Distribution for a Discrete Random Variable):\n- Variance of a discrete random variable measures the dispersion of values around the expected value.",
-    "table_image": "MAS202_SU26_FE_tables/Q20_table.webp",
-    "table_image_png": "MAS202_SU26_FE_tables/Q20_table.png"
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q20_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q20_table.png",
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q20.webp"
   },
   {
     "id": 21,
@@ -525,7 +545,8 @@
     "casio": "Thao tác trên Casio fx-580VN X:\nBấm `10 * 0.70 =` ra **7**.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 5 - Mục 5.3: Binomial Distribution):\n- Mean: $\\mu = np$\n- Variance: $\\sigma^2 = np(1-p)$\n- Standard Deviation: $\\sigma = \\sqrt{np(1-p)}$.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q21.webp"
   },
   {
     "id": 22,
@@ -550,7 +571,8 @@
     "casio": "Thao tác trên Casio fx-580VN X:\n- Cách 1 (Bấm trực tiếp): Bấm `7 * SHIFT ln (-6) =` -> máy hiện `0.0173512...` làm tròn thành **0.017**.\n- Cách 2 (Menu Phân phối): Bấm MENU 7 cuộn xuống chọn 3 (Poisson CD - Tích lũy), chọn 2 (Biến số - Variable). Nhập `x: 1 =`, `λ: 6 =` -> bấm `=` máy hiện `P = 0.0173512...`.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 5 - Mục 5.4: Poisson Distribution):\n- The Poisson distribution is used to model the number of occurrences of an event over a continuous interval of time or space.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q22.webp"
   },
   {
     "id": 23,
@@ -575,8 +597,9 @@
     "ap_dung": "- Bước 1: Tính kỳ vọng của $X$:\n  $$E(X) = (0.25 \\times 100) + (0.40 \\times 50) + (0.35 \\times 200) = 25 + 20 + 70 = 115$$\n- Bước 2: Tính kỳ vọng của $Y$:\n  $$E(Y) = (0.25 \\times 75) + (0.40 \\times 30) + (0.35 \\times 20) = 18.75 + 12 + 7 = 37.75$$\n- Bước 3: Tính kỳ vọng tích $E(XY)$:\n  $$E(XY) = (0.25 \\times 100 \\times 75) + (0.40 \\times 50 \\times 30) + (0.35 \\times 200 \\times 20)$$\n  $$= 1875 + 600 + 1400 = 3875$$\n- Bước 4: Tính hiệp phương sai:\n  $$\\sigma_{XY} = E(XY) - E(X) \\cdot E(Y) = 3875 - (115 \\times 37.75) = 3875 - 4341.25 = -466.25$$\n\n=> Chọn đáp án A (-466.25).",
     "casio": "Thao tác trên Casio fx-580VN X:\nBấm trực tiếp dòng biểu thức:\n`0.25 * 100 * 75 + 0.40 * 50 * 30 + 0.35 * 200 * 20 - (0.25 * 100 + 0.40 * 50 + 0.35 * 200) * (0.25 * 75 + 0.40 * 30 + 0.35 * 20) =`\nMáy hiện ra ngay kết quả chính xác: **-466.25**.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 5 - Mục 5.2: Covariance and Its Application in Finance):\n- The covariance of two discrete random variables measures the joint variation of two variables. A negative covariance indicates an inverse relationship (when one stock increases, the other tends to decrease), which provides diversification benefits.",
-    "table_image": "MAS202_SU26_FE_tables/Q23_table.webp",
-    "table_image_png": "MAS202_SU26_FE_tables/Q23_table.png"
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q23_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q23_table.png",
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q23.webp"
   },
   {
     "id": 24,
@@ -601,7 +624,8 @@
     "casio": "Thao tác trên Casio fx-580VN X:\nBấm `(1 - 0.7) ^ 3 * 0.7 =` -> máy hiện phân số `189/10000`, bấm phím `S<=>D` chuyển thành **0.0189**.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 5 - Geometric Distribution):\n- Phân phối hình học mô hình hóa số phép thử độc lập cần thiết cho đến khi có thành công đầu tiên.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q24.webp"
   },
   {
     "id": 25,
@@ -627,7 +651,8 @@
     "casio": "Thao tác trên Casio fx-580VN X:\nBấm `0.8413 - 0.0013 =` -> máy hiện `0.84` tương ứng **84.00%**.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 6 - Mục 6.1: The Normal Distribution):\n- The standard normal distribution has $\\mu = 0$ and $\\sigma = 1$. The probability of falling within an interval $[a, b]$ is given by $F(b) - F(a)$.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q25.webp"
   },
   {
     "id": 26,
@@ -652,7 +677,8 @@
     "casio": "Thao tác trên Casio fx-580VN X:\nBấm `(17 - 5) / căn(12) =` -> máy hiện `2√3`, bấm phím `S<=>D` máy hiện `3.4641016...` làm tròn thành **3.46**.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 6 - Mục 6.4: The Uniform Distribution):\n- For a uniform distribution defined on $[a, b]$, the mean is $\\mu = \\frac{a+b}{2}$ and the standard deviation is $\\sigma = \\frac{b-a}{\\sqrt{12}}$.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q26.webp"
   },
   {
     "id": 27,
@@ -678,7 +704,8 @@
     "casio": "Thao tác trên Casio fx-580VN X:\nBấm `72.7 + 0.517623 * (13.1 / căn(38)) =` -> máy hiện `73.8000...` làm tròn thành **73.8**.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 7 - Mục 7.1: Sampling Distributions of the Mean):\n- When the population is normally distributed, the sampling distribution of the mean is also normal with mean $\\mu_{\\bar{X}} = \\mu$ and standard error $\\sigma_{\\bar{X}} = \\frac{\\sigma}{\\sqrt{n}}$.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q27.webp"
   },
   {
     "id": 28,
@@ -704,7 +731,8 @@
     "casio": "Thao tác trên Casio fx-580VN X:\n1. Tính Z: `(19 / 30 - 0.72) / căn(0.72 * 0.28 / 30) =` -> máy hiện `-1.057228...`.\n2. Khớp trực tiếp với số liệu đề bài cho: $P(Z < -1.05723) = 0.145204$.\n3. Đối chiếu các phương án, chọn **E**.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 7 - Mục 7.2: Sampling Distribution of the Proportion):\n- When $n\\pi \\ge 5$ and $n(1-\\pi) \\ge 5$, the sampling distribution of the sample proportion $p$ is approximately normally distributed.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q28.webp"
   },
   {
     "id": 29,
@@ -729,7 +757,8 @@
     "casio": "Thao tác trên Casio fx-580VN X:\nBấm `54 - 1.96 * (5 / căn(25)) =` -> ra 52.04.\nBấm phím mũi tên lùi lại, sửa dấu `-` thành `+`:\n`54 + 1.96 * (5 / căn(25)) =` -> ra 55.96.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 8 - Mục 8.1: Confidence Interval Estimate for the Mean (σ Known)):\n- When the population standard deviation $\\sigma$ is known, the confidence interval is based on the standard normal $Z$ distribution.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q29.webp"
   },
   {
     "id": 30,
@@ -754,7 +783,8 @@
     "casio": "Thao tác trên Casio fx-580VN X:\n1. Lưu $p$: Bấm `50 / 90 STO A`.\n2. Tính cận dưới: Bấm `A - 1.96 * căn(A * (1 - A) / 90) =` -> máy hiện `0.45289...` làm tròn thành **0.453**.\n3. Tính cận trên: Bấm mũi tên lùi lại, sửa dấu `-` thành `+`:\n`A + 1.96 * căn(A * (1 - A) / 90) =` -> máy hiện `0.65821...` làm tròn thành **0.658**.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 8 - Mục 8.3: Confidence Interval Estimation for the Proportion):\n- The sample proportion $p = X/n$ is used to estimate the population proportion $\\pi$.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q30.webp"
   },
   {
     "id": 31,
@@ -779,7 +809,8 @@
     "casio": "Thao tác trên Casio fx-580VN X:\nBấm `(1.96 ^ 2 * 0.345 * (1 - 0.345)) / (0.02 ^ 2) =` -> máy hiện `2170.2639...`, làm tròn lên thành **2171**.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 8 - Mục 8.4: Determining Sample Size for the Proportion):\n- To ensure that the margin of error is within the specified bound, any fractional result for $n$ must be rounded up to the next integer.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q31.webp"
   },
   {
     "id": 32,
@@ -803,7 +834,8 @@
     "casio": "Câu hỏi lý thuyết kiểm định giả thuyết, không cần bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 9 - Mục 9.1: Fundamentals of Hypothesis-Testing Methodology):\n- Type II error occurs if you fail to reject the null hypothesis $H_0$ when it is false and should be rejected.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q32.webp"
   },
   {
     "id": 33,
@@ -829,7 +861,8 @@
     "casio": "Thao tác tra giá trị tới hạn trên Casio fx-580VN X:\nBấm MENU 7 cuộn xuống chọn phân phối t để kiểm tra, hoặc đối chiếu trực tiếp dữ liệu đề cho $t_{0.005; 249} = 2.5957$.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 9 - Mục 9.2: t Test of Hypothesis for the Mean (σ Unknown)):\n- In a two-tail test, the critical region is split into two equal parts in both tails, each with area $\\alpha/2$.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q33.webp"
   },
   {
     "id": 34,
@@ -854,7 +887,8 @@
     "casio": "Thao tác trên Casio fx-580VN X:\nĐối chiếu trực tiếp giá trị tới hạn $t_{0.05; 99} = 1.6604$ đề bài cung cấp, vì kiểm định phía trái nên thêm dấu âm thành $-1.6604$.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 9 - Mục 9.2: One-Tail Tests):\n- In a one-tail test where $H_1: \\mu < \\mu_0$, the entire rejection region of size $\\alpha$ is placed in the lower (left) tail of the distribution.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q34.webp"
   },
   {
     "id": 35,
@@ -880,7 +914,8 @@
     "casio": "Thao tác trên Casio fx-580VN X:\nĐối chiếu trực tiếp với bảng giá trị tra $z_{0.025} = 1.96$ được cung cấp trong đề bài.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 9 - Mục 9.4: Z Test of Hypothesis for the Proportion):\n- In testing a hypothesis about the proportion, when $H_1: \\pi \\ne \\pi_0$, the two critical values are $-Z_{\\alpha/2}$ and $+Z_{\\alpha/2}$.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q35.webp"
   },
   {
     "id": 36,
@@ -904,8 +939,9 @@
     "ap_dung": "Cặp giả thuyết phù hợp chính là (iii):\n$$H_0: \\mu_I - \\mu_{II} = 0 \\quad \\text{versus} \\quad H_1: \\mu_I - \\mu_{II} \\ne 0$$\n\n=> Chọn đáp án C ((iii)).",
     "casio": "Câu hỏi lý thuyết đọc bảng Excel thống kê, không cần bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.1: Comparing Two Independent Samples):\n- When testing for differences between two means without specifying direction, the two-tailed alternative hypothesis $H_1: \\mu_1 \\ne \\mu_2$ is tested against $H_0: \\mu_1 = \\mu_2$.",
-    "table_image": "MAS202_SU26_FE_tables/Q36_table.webp",
-    "table_image_png": "MAS202_SU26_FE_tables/Q36_table.png"
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q36_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q36_table.png",
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q36.webp"
   },
   {
     "id": 37,
@@ -930,7 +966,8 @@
     "casio": "Thao tác trên Casio fx-580VN X:\nBấm `20 + 20 - 2 =` ra **38**.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.1: Pooled-Variance t Test for the Difference Between Two Means):\n- Because two sample means are calculated, 2 degrees of freedom are lost, resulting in $df = (n_1 - 1) + (n_2 - 1) = n_1 + n_2 - 2$.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q37.webp"
   },
   {
     "id": 38,
@@ -956,7 +993,8 @@
     "casio": "Thao tác trên Casio fx-580VN X:\nBấm `20 - 1 =` ra **19**.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.2: Paired t Test for the Mean Difference):\n- In a paired experiment, observations are matched in pairs. The test statistic is based on the single sample of differences $D$, with degrees of freedom $df = n - 1$.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q38.webp"
   },
   {
     "id": 39,
@@ -980,8 +1018,9 @@
     "ap_dung": "- Bước 1: Tính trung bình của sai khác $\\bar{D}$:\n  $$\\sum D_i = (-4) + 1 + (-2) + 0 + 1 + (-5) + 4 + (-2) = -7$$\n  $$\\bar{D} = \\frac{-7}{8} = -0.875$$\n- Bước 2: Tính độ lệch chuẩn mẫu của sai khác $S_D$:\n  $$\\sum D_i^2 = (-4)^2 + 1^2 + (-2)^2 + 0^2 + 1^2 + (-5)^2 + 4^2 + (-2)^2 = 16 + 1 + 4 + 0 + 1 + 25 + 16 + 4 = 67$$\n  $$S_D^2 = \\frac{\\sum D_i^2 - \\frac{(\\sum D_i)^2}{n}}{n - 1} = \\frac{67 - \\frac{(-7)^2}{8}}{7} = \\frac{67 - 6.125}{7} = \\frac{60.875}{7} \\approx 8.69643$$\n  $$S_D = \\sqrt{8.69643} \\approx 2.9490$$\n- Bước 3: Tính sai số biên:\n  $$E = t_{0.025; 7} \\times \\frac{S_D}{\\sqrt{n}} = 2.36 \\times \\frac{2.9490}{\\sqrt{8}} = 2.36 \\times 1.0426 \\approx 2.4606$$\n- Bước 4: Tính hai giới hạn:\n  $$\\text{Lower} = -0.875 - 2.4606 = -3.3356 \\approx -3.34$$\n  $$\\text{Upper} = -0.875 + 2.4606 = +1.5856 \\approx +1.59$$\n\n=> Khoảng tin cậy là (-3.34, 1.59).\n=> Chọn đáp án A.",
     "casio": "Thao tác trên Casio fx-580VN X:\n1. Bấm MENU 6 1 (Thống kê 1 biến).\n2. Nhập dãy sai khác D: `-4 = 1 = -2 = 0 = 1 = -5 = 4 = -2 =`.\n3. Bấm AC -> OPTN 3 -> đọc: `x̄ = -0.875`, `sx = 2.94897`.\n4. Ra màn hình chính: `(-0.875) - 2.36 * (2.94897 / căn(8)) =` -> ra **-3.3356**.\n5. Sửa dấu `-` thành `+` -> ra **1.5856**.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.2: Paired t Test and Confidence Interval):\n- The paired confidence interval is constructed using the mean difference $\\bar{D}$ and the standard deviation of differences $S_D$.",
-    "table_image": "MAS202_SU26_FE_tables/Q39_table.webp",
-    "table_image_png": "MAS202_SU26_FE_tables/Q39_table.png"
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q39_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q39_table.png",
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q39.webp"
   },
   {
     "id": 40,
@@ -1006,7 +1045,8 @@
     "casio": "Thao tác trên Casio fx-580VN X:\nBấm trực tiếp:\n`( (11 / 50) - (19 / 40) ) / căn( (30 / 90) * (60 / 90) * (1 / 50 + 1 / 40) ) =`\nMáy hiện ra kết quả tuyệt đối chính xác: **-2.55**.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.3: Z Test for the Difference Between Two Proportions):\n- Under the null hypothesis $H_0: \\pi_1 = \\pi_2$, the two populations have the same common proportion, which is estimated by pooling the two sample proportions into $\\bar{p}$.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q40.webp"
   },
   {
     "id": 41,
@@ -1030,8 +1070,9 @@
     "ap_dung": "- Đặt phương sai mẫu lớn hơn lên tử số ($S_2^2 = 13.4^2 = 179.56$):\n  $$F_{STAT} = \\frac{S_2^2}{S_1^2} = \\frac{13.4^2}{10.3^2} = \\frac{179.56}{106.09} \\approx 1.6925$$\n- Tra giá trị tới hạn F với $df_1 = 14, df_2 = 14$ ở mức $\\alpha/2 = 0.025$:\n  $$F_{0.025; 14, 14} \\approx 2.979$$\n- So sánh và kết luận:\n  Vì $F_{STAT} = 1.6925 < 2.979$, thống kê kiểm định không rơi vào miền bác bỏ $\\implies$ Chưa đủ bằng chứng để bác bỏ $H_0$.\n  Kết luận: Không có bằng chứng về sự khác biệt giữa các phương sai tổng thể của chất bảo quản I và II (There is no evidence of a difference in the population variances between preservatives I and II).\n\n=> Chọn đáp án A.",
     "casio": "Thao tác trên Casio fx-580VN X:\nBấm `(13.4 ^ 2) / (10.3 ^ 2) =` -> máy hiện `1.6925...`.\nSo sánh với giá trị tới hạn bảng $F_{0.025; 14, 14} = 2.979$.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.4: F Test for the Difference Between Two Variances):\n- If $F_{STAT} < F_{\\alpha/2}$, you do not reject $H_0$ and conclude that there is insufficient evidence of a difference between the two population variances.",
-    "table_image": "MAS202_SU26_FE_tables/Q41_table.webp",
-    "table_image_png": "MAS202_SU26_FE_tables/Q41_table.png"
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q41_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q41_table.png",
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q41.webp"
   },
   {
     "id": 42,
@@ -1055,8 +1096,9 @@
     "ap_dung": "$$df_{\\text{Within}} = 20 - 4 = 16$$\nHoặc từ bảng:\n$$df_{\\text{Within}} = 19 - 3 = 16$$\n\n=> Chọn đáp án C (16).",
     "casio": "Thao tác trên Casio fx-580VN X:\nBấm `20 - 4 =` hoặc `19 - 3 =` ra **16**.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 11 - Mục 11.1: The Completely Randomized Design - One-Way ANOVA):\n- Within-group degrees of freedom equals $n - c$, representing the total sample size minus the number of groups.",
-    "table_image": "MAS202_SU26_FE_tables/Q42_table.webp",
-    "table_image_png": "MAS202_SU26_FE_tables/Q42_table.png"
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q42_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q42_table.png",
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q42.webp"
   },
   {
     "id": 43,
@@ -1081,8 +1123,9 @@
     "ap_dung": "$$F_{\\text{Interaction}} = \\frac{25.06}{12.50} = 2.0048 \\approx 2.00$$\n\n=> Chọn đáp án A (2.00).\n*(Lưu ý: B. 0.144 là p-value; C. 25.06 là MSAB; E. 12.50 là MSE)*.",
     "casio": "Thao tác trên Casio fx-580VN X:\nBấm `25.06 / 12.50 =` -> máy hiện `2.0048`, làm tròn thành **2.00**.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 11 - Mục 11.2: The Two-Factor Factorial Design):\n- To test for the interaction effect of factors A and B, compute $F_{STAT} = \\frac{MSAB}{MSE}$ with degrees of freedom $(r-1)(c-1)$ and $rc(n'-1)$.",
-    "table_image": "MAS202_SU26_FE_tables/Q43_table.webp",
-    "table_image_png": "MAS202_SU26_FE_tables/Q43_table.png"
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q43_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q43_table.png",
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q43.webp"
   },
   {
     "id": 44,
@@ -1106,8 +1149,9 @@
     "ap_dung": "Khi $X = 0$ (tức là sinh viên không dành giờ nào để học bài cho kỳ thi cuối kỳ - does not study for the final exam), điểm thi trung bình dự báo của sinh viên đó là $\\hat{Y} = b_0 = +2.6233$.\n\n=> Khớp hoàn hảo với phương án A.\n*(Lưu ý: Phương án B là giải thích ý nghĩa của hệ số góc $b_1 = +0.6759$)*.\n=> Chọn đáp án A.",
     "casio": "Câu hỏi lý thuyết giải thích ý nghĩa hệ số hồi quy, không cần bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 12 - Mục 12.2: Determining the Simple Linear Regression Equation):\n- The Y-intercept, $b_0$, represents the mean value of $Y$ when $X$ equals 0.",
-    "table_image": "MAS202_SU26_FE_tables/Q44_table.webp",
-    "table_image_png": "MAS202_SU26_FE_tables/Q44_table.png"
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q44_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q44_table.png",
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q44.webp"
   },
   {
     "id": 45,
@@ -1132,7 +1176,8 @@
     "casio": "Câu hỏi lý thuyết khái niệm, không cần bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 12 - Mục 12.2: Interpreting the Y-Intercept):\n- The Y-intercept ($b_0$) is the estimated value of $Y$ when $X = 0$.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q45.webp"
   },
   {
     "id": 46,
@@ -1157,8 +1202,9 @@
     "ap_dung": "$$r^2 = \\frac{18934.93478}{32600.5} \\approx 0.580817$$\n\n=> Làm tròn đến 3 chữ số thập phân là 0.581 (hoặc 58.1%).\n=> Chọn đáp án A (0.581).\n*(Lưu ý: Phương án B là $1 - r^2 = SSE / SST = 0.419$)*.",
     "casio": "Thao tác trên Casio fx-580VN X:\nBấm `18934.93478 / 32600.5 =` -> máy hiện `0.5808173...`, làm tròn thành **0.581**.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 12 - Mục 12.3: Measures of Variation in Regression):\n- The coefficient of determination, $r^2$, measures the proportion of total variation in $Y$ that is explained by variation in the independent variable $X$.",
-    "table_image": "MAS202_SU26_FE_tables/Q46_table.webp",
-    "table_image_png": "MAS202_SU26_FE_tables/Q46_table.png"
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q46_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q46_table.png",
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q46.webp"
   },
   {
     "id": 47,
@@ -1182,8 +1228,9 @@
     "ap_dung": "Hiện tượng đồ thị phần dư xòe ra hình cánh quạt/phễu (funnel shape) là dấu hiệu kinh điển cho thấy phương sai không đồng nhất (heteroscedasticity), tức là vi phạm giả định về Phương sai bằng nhau (Equal variance assumption).\n\n=> Chọn đáp án C (Equal variance).",
     "casio": "Câu hỏi lý thuyết phân tích đồ thị phần dư, không cần bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 12 - Mục 12.5: Residual Analysis):\n- Homoscedasticity (equal variance) requires that the variance of the errors is constant for all values of $X$. A fan or funnel shape in the residual plot indicates a violation of equal variance.",
-    "table_image": "MAS202_SU26_FE_tables/Q47_table.webp",
-    "table_image_png": "MAS202_SU26_FE_tables/Q47_table.png"
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q47_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q47_table.png",
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q47.webp"
   },
   {
     "id": 48,
@@ -1208,7 +1255,8 @@
     "casio": "Câu hỏi lý thuyết tương đương thống kê, không cần bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 12 - Mục 12.7: Inferences About the Slope and Correlation Coefficient):\n- Testing whether the population slope $\\beta_1 = 0$ is equivalent to testing whether the population correlation coefficient $\\rho = 0$.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q48.webp"
   },
   {
     "id": 49,
@@ -1233,8 +1281,9 @@
     "ap_dung": "$$\\hat{Y} = -326.25 + (1.68 \\times 300) - (0.09 \\times 400)$$\n$$\\hat{Y} = -326.25 + 504 - 36 = -326.25 + 468 = 141.75$$\n\n=> Chọn đáp án A (141.75).",
     "casio": "Thao tác trên Casio fx-580VN X:\nBấm trực tiếp: `-326.25 + 1.68 * 300 - 0.09 * 400 =` -> máy hiện chính xác **141.75**.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 13 - Mục 13.1: Developing the Multiple Regression Model):\n- To predict the dependent variable, substitute the given values of the explanatory variables into the estimated multiple regression equation.",
-    "table_image": "MAS202_SU26_FE_tables/Q49_table.webp",
-    "table_image_png": "MAS202_SU26_FE_tables/Q49_table.png"
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q49_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q49_table.png",
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q49.webp"
   },
   {
     "id": 50,
@@ -1258,7 +1307,8 @@
     "ap_dung": "Đọc trực tiếp từ bảng hồi quy tại dòng 'R Square':\n$$R^2 = 0.689 = 68.9\\%$$\n\nNhư vậy, 68.9% sự biến thiên của doanh số bán hàng được giải thích bởi chi tiêu vốn và tiền lương.\n=> Chọn đáp án C (68.9%).\n*(Lưu ý: 83.0% là Multiple R; 66.2% là Adjusted R Square)*.",
     "casio": "Thao tác trên Casio fx-580VN X:\nBấm `0.689 * 100 =` ra **68.9%**.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 13 - Mục 13.1: Coefficient of Multiple Determination):\n- The coefficient of multiple determination, $R^2$, measures the proportion of the variation in $Y$ that is explained by the set of independent variables included in the model.",
-    "table_image": "MAS202_SU26_FE_tables/Q50_table.webp",
-    "table_image_png": "MAS202_SU26_FE_tables/Q50_table.png"
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q50_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q50_table.png",
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q50.webp"
   }
 ]
