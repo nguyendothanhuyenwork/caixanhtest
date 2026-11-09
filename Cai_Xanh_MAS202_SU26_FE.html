@@ -1664,6 +1664,27 @@
         <a href="Cai_Xanh_Hoc_MAS_Ch5_Ch7.html" class="btn btn-secondary">
           📖 Sổ Tay Ch5-Ch9
         </a>
+        <!-- EXAM SWITCHER DROPDOWN -->
+        <div class="dropdown-exam" style="position: relative; display: inline-block;">
+          <button class="btn btn-secondary" onclick="document.getElementById('exam-dropdown-menu').style.display = document.getElementById('exam-dropdown-menu').style.display === 'block' ? 'none' : 'block'; event.stopPropagation();" style="display: flex; align-items: center; gap: 6px; font-weight: 700; background: linear-gradient(135deg, rgba(2, 132, 199, 0.12), rgba(56, 189, 248, 0.12)); border: 1.5px solid #0284c7; color: #0284c7;" title="Chuyển đổi nhanh giữa các Đề thi Final Exam">
+            <span>📚 Bộ Đề Thi (7 Kỳ)</span>
+            <span style="font-size: 0.7rem;">▼</span>
+          </button>
+          <div id="exam-dropdown-menu" style="display: none; position: absolute; left: 0; top: calc(100% + 8px); background: var(--surface); border: 1px solid var(--border); border-radius: 12px; box-shadow: 0 12px 32px rgba(0,0,0,0.2); min-width: 270px; z-index: 2000; padding: 8px; font-size: 0.88rem;" onclick="event.stopPropagation();">
+            <div style="padding: 6px 10px; font-size: 0.72rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">Ngân Hàng Toàn Diện</div>
+            <a href="Cai_Xanh_MAS202_364_Cau_Hoi.html" style="display: flex; align-items: center; gap: 8px; padding: 8px 10px; border-radius: 8px; text-decoration: none; color: var(--primary); font-weight: 700; background: var(--surface-sidebar);">🥬 Ngân hàng 364 câu (Full Bảng)</a>
+            <div style="margin: 6px 0; border-top: 1px solid var(--border);"></div>
+            <div style="padding: 6px 10px; font-size: 0.72rem; font-weight: 800; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px;">Đề Thi 50 Câu Có Lời Giải</div>
+            <a href="Cai_Xanh_MAS202_SU26_FE.html" style="display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: 6px; text-decoration: none; color: var(--text); font-weight: 600;">🎯 SU26 Final Exam (Mới Nhất)</a>
+            <a href="Cai_Xanh_MAS202_SP26_FE.html" style="display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: 6px; text-decoration: none; color: var(--text); font-weight: 600;">🎯 SP26 Final Exam</a>
+            <a href="Cai_Xanh_MAS202_SP26_RE.html" style="display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: 6px; text-decoration: none; color: var(--text); font-weight: 600;">🎯 SP26 Re-Exam</a>
+            <a href="Cai_Xanh_MAS202_FA25_FE.html" style="display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: 6px; text-decoration: none; color: var(--text); font-weight: 600;">🎯 FA25 Final Exam</a>
+            <a href="Cai_Xanh_MAS202_FA25_RE.html" style="display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: 6px; text-decoration: none; color: var(--text); font-weight: 600;">🎯 FA25 Re-Exam</a>
+            <a href="Cai_Xanh_MAS202_SU25_FE.html" style="display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: 6px; text-decoration: none; color: var(--text); font-weight: 600;">🎯 SU25 Final Exam</a>
+            <a href="Cai_Xanh_MAS202_SU25_RE.html" style="display: flex; align-items: center; gap: 8px; padding: 7px 10px; border-radius: 6px; text-decoration: none; color: var(--text); font-weight: 600;">🎯 SU25 Re-Exam</a>
+          </div>
+        </div>
+
         <!-- Notes & Highlights Drawer Button -->
         <button class="btn btn-secondary" id="btn-toggle-notes" onclick="toggleNotesDrawer()" title="Mở Sổ tay Ghi chú & Highlight">
           📝 Ghi chú (<span id="notes-badge">0</span>)
@@ -4067,6 +4088,13 @@ function exportNotes() {
   URL.revokeObjectURL(url);
   showToast("💾 Đã tải file ghi chú thành công!");
 }
+
+window.addEventListener('click', function(e) {
+  var menu = document.getElementById('exam-dropdown-menu');
+  if (menu && menu.style.display === 'block') {
+    menu.style.display = 'none';
+  }
+});
 
   </script>
 

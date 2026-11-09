@@ -44,3 +44,7 @@ MAS202_*_RE/
 MAS202_*_B5FE/
 fe_su26_columns_ocr.json
 fe_su26_full_ocr_dump.txt
+
+# Tables folders (hosted on Supabase Storage)
+MAS202_*_tables/
+temp_ocr/
