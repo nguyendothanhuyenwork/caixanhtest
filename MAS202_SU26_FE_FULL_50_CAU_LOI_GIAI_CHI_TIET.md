@@ -314,6 +314,10 @@ C. 45
 D. 50
 ```
 
+> 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
+>
+> ![Bảng số liệu Câu 6](MAS202_SU26_FE_tables/Q6_table.png)
+
 **Đáp án đúng của đề thi:** **A**
 
 ### 2. Dịch nghĩa đề bài tiếng Việt (Bản dịch chuẩn xác):
@@ -459,6 +463,10 @@ B. Relative frequency histogram
 C. Both of them
 D. None of them
 ```
+
+> 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
+>
+> ![Bảng số liệu Câu 9](MAS202_SU26_FE_tables/Q9_table.png)
 
 **Đáp án đúng của đề thi:** **D**
 
@@ -662,6 +670,10 @@ C. symmetrical
 D. The shape of the distribution is not clearly determined.
 ```
 
+> 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
+>
+> ![Bảng số liệu Câu 13](MAS202_SU26_FE_tables/Q13_table.png)
+
 **Đáp án đúng của đề thi:** **A**
 
 ### 2. Dịch nghĩa đề bài tiếng Việt (Bản dịch chuẩn xác):
@@ -779,6 +791,10 @@ D. 175.5
 E. None of the other choices is correct
 ```
 
+> 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
+>
+> ![Bảng số liệu Câu 15](MAS202_SU26_FE_tables/Q15_table.png)
+
 **Đáp án đúng của đề thi:** **A**
 
 ### 2. Dịch nghĩa đề bài tiếng Việt (Bản dịch chuẩn xác):
@@ -855,6 +871,10 @@ C. 0.4
 D. 0.375
 E. 0.625
 ```
+
+> 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
+>
+> ![Bảng số liệu Câu 16](MAS202_SU26_FE_tables/Q16_table.png)
 
 **Đáp án đúng của đề thi:** **A**
 
@@ -1067,6 +1087,10 @@ D. 2.26
 E. None of the other choices is correct
 ```
 
+> 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
+>
+> ![Bảng số liệu Câu 20](MAS202_SU26_FE_tables/Q20_table.png)
+
 **Đáp án đúng của đề thi:** **A**
 
 ### 2. Dịch nghĩa đề bài tiếng Việt (Bản dịch chuẩn xác):
@@ -1239,6 +1263,10 @@ C. 1327.25
 D. -1327.25
 E. None of the other choices is correct
 ```
+
+> 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
+>
+> ![Bảng số liệu Câu 23](MAS202_SU26_FE_tables/Q23_table.png)
 
 **Đáp án đúng của đề thi:** **A**
 
@@ -1968,6 +1996,10 @@ C. (iii)
 D. (iv)
 ```
 
+> 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
+>
+> ![Bảng số liệu Câu 36](MAS202_SU26_FE_tables/Q36_table.png)
+
 **Đáp án đúng của đề thi:** **C**
 
 ### 2. Dịch nghĩa đề bài tiếng Việt (Bản dịch chuẩn xác):
@@ -2115,6 +2147,10 @@ C. (-2.98, 1.23)
 D. (-3.51, 1.76)
 ```
 
+> 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
+>
+> ![Bảng số liệu Câu 39](MAS202_SU26_FE_tables/Q39_table.png)
+
 **Đáp án đúng của đề thi:** **A**
 
 ### 2. Dịch nghĩa đề bài tiếng Việt (Bản dịch chuẩn xác):
@@ -2253,6 +2289,10 @@ C. There is no evidence that the population variances between preservatives I an
 D. There is evidence that the population variances between preservatives I and II are the same.
 ```
 
+> 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
+>
+> ![Bảng số liệu Câu 41](MAS202_SU26_FE_tables/Q41_table.png)
+
 **Đáp án đúng của đề thi:** **A**
 
 ### 2. Dịch nghĩa đề bài tiếng Việt (Bản dịch chuẩn xác):
@@ -2324,6 +2364,10 @@ C. 16
 D. 19
 ```
 
+> 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
+>
+> ![Bảng số liệu Câu 42](MAS202_SU26_FE_tables/Q42_table.png)
+
 **Đáp án đúng của đề thi:** **C**
 
 ### 2. Dịch nghĩa đề bài tiếng Việt (Bản dịch chuẩn xác):
@@ -2386,6 +2430,10 @@ C. 25.06
 D. None of the other choices is correct
 E. 12.50
 ```
+
+> 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
+>
+> ![Bảng số liệu Câu 43](MAS202_SU26_FE_tables/Q43_table.png)
 
 **Đáp án đúng của đề thi:** **A**
 
@@ -2456,6 +2504,10 @@ B. For each increase of one hour in studying time, the predicted change in the m
 C. For each increase of one hour in studying time, the predicted change in the mean final exam score is +2.6233.
 D. When the student does not study for the final exam, the predicted mean final exam score is +0.6759.
 ```
+
+> 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
+>
+> ![Bảng số liệu Câu 44](MAS202_SU26_FE_tables/Q44_table.png)
 
 **Đáp án đúng của đề thi:** **A**
 
@@ -2560,6 +2612,10 @@ D. 0.91
 E. None of the other choices is correct.
 ```
 
+> 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
+>
+> ![Bảng số liệu Câu 46](MAS202_SU26_FE_tables/Q46_table.png)
+
 **Đáp án đúng của đề thi:** **A**
 
 ### 2. Dịch nghĩa đề bài tiếng Việt (Bản dịch chuẩn xác):
@@ -2616,6 +2672,10 @@ B. Normality of errors
 C. Equal variance
 D. Independence of errors
 ```
+
+> 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
+>
+> ![Bảng số liệu Câu 47](MAS202_SU26_FE_tables/Q47_table.png)
 
 **Đáp án đúng của đề thi:** **C**
 
@@ -2730,6 +2790,10 @@ D. 162.35
 E. None of the other choices is correct.
 ```
 
+> 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
+>
+> ![Bảng số liệu Câu 49](MAS202_SU26_FE_tables/Q49_table.png)
+
 **Đáp án đúng của đề thi:** **A**
 
 ### 2. Dịch nghĩa đề bài tiếng Việt (Bản dịch chuẩn xác):
@@ -2804,6 +2868,10 @@ B. 50.9%
 C. 68.9%
 D. 83.0%
 ```
+
+> 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
+>
+> ![Bảng số liệu Câu 50](MAS202_SU26_FE_tables/Q50_table.png)
 
 **Đáp án đúng của đề thi:** **C**
 
