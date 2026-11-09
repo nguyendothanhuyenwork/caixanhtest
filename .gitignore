@@ -37,3 +37,10 @@ MAS202_SU25_RE/
 MAS202_SU26_FE/
 MAS202_SU26_FE_tables/
 MAS202_SU26_FE_png/
+
+# Other exam photo folders
+MAS202_*_FE/
+MAS202_*_RE/
+MAS202_*_B5FE/
+fe_su26_columns_ocr.json
+fe_su26_full_ocr_dump.txt
