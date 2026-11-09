@@ -14,6 +14,21 @@ Thumbs.db
 slides_ch5_6_7_images/
 slides_ch8_9_images/
 
-# Raw Quiz Photos
+# Raw Quiz Photos & Temp OCR
 Mas quiz3/
 mas_quiz_3_jpg/
+*.zip
+*_png/
+*_ocr_raw.json
+
+# Untracked other semesters (will process on request)
+MAS202_FA24_FE/
+MAS202_FA24_RE/
+MAS202_FA25_FE/
+MAS202_FA25_RE/
+MAS202_SP25_FE/
+MAS202_SP25_RE/
+MAS202_SP26_FE/
+MAS202_SP26_RE/
+MAS202_SU25_FE/
+MAS202_SU25_RE/
