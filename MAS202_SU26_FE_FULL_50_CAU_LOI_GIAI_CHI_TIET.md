@@ -510,12 +510,21 @@ Which measure(s) of central tendency is/are most sensitive to outliers?
 (ii) median
 (iii) mode
 
-A. (i) only
-B. (ii) only
-C. (iii) only
-D. (i) and (ii)
-E. (i) and (iii)
-F. (ii) and (iii)
+A.
+(i) only
+B.
+(ii) only
+C.
+(iii) only
+D.
+(i) and
+(ii)
+E.
+(i) and
+(iii)
+F.
+(ii) and
+(iii)
 ```
 
 **Đáp án đúng của đề thi:** **A**
@@ -536,7 +545,8 @@ F. (ii) and (iii)
 - Mode (Mốt): Giá trị có tần số xuất hiện nhiều nhất. Ngoại lai thường xuất hiện với tần số rất ít nên không ảnh hưởng đến Mode.
 
 ### 5. Lời giải chi tiết và Các bước tính toán (Detailed Calculation Steps):
-Chỉ có duy nhất số trung bình (i) mean là nhạy cảm với các giá trị ngoại lai.
+Chỉ có duy nhất số trung bình
+(i) mean là nhạy cảm với các giá trị ngoại lai.
 
 => Chọn đáp án A ((i) only).
 
@@ -1788,16 +1798,19 @@ Theo Giáo trình Berenson (Chương 9 - Mục 9.1: Fundamentals of Hypothesis-T
 The owner of a local nightclub has recently surveyed a random sample of $n = 250$ customers of the club. She would now like to determine whether or not the mean age of her customers is equal to 30. If so, she plans to alter the entertainment to appeal to an older crowd. If not, no entertainment changes will be made. If she wants to have a level of significance at 0.01, what rejection region should she use?
 
 Let $t_{0.01; 249} = 2.3414; t_{0.005; 249} = 2.5957$
-
 (i) Reject $H_0$ if test statistic $< -2.3414$
 (ii) Reject $H_0$ if test statistic $> -2.5957$
 (iii) Reject $H_0$ if test statistic $> 2.3414$
 (iv) Reject $H_0$ if test statistic $< 2.5957$
 
-A. (i)
-B. (ii)
-C. (iii)
-D. (iv)
+A.
+(i)
+B.
+(ii)
+C.
+(iii)
+D.
+(iv)
 E. None of the other choices is correct.
 ```
 
@@ -1807,7 +1820,6 @@ E. None of the other choices is correct.
 Chủ một hộp đêm địa phương gần đây đã khảo sát một mẫu ngẫu nhiên gồm $n = 250$ khách hàng. Cô ấy muốn xác định xem độ tuổi trung bình của khách hàng có bằng 30 hay không. Nếu có, cô dự định thay đổi chương trình giải trí để thu hút nhóm khách lớn tuổi hơn. Nếu không, sẽ không có thay đổi nào. Nếu cô ấy muốn mức ý nghĩa $\alpha = 0.01$, cô ấy nên sử dụng miền bác bỏ nào?
 
 Cho biết: $t_{0.01; 249} = 2.3414; t_{0.005; 249} = 2.5957$
-
 (i) Bác bỏ $H_0$ nếu giá trị thống kê kiểm định $< -2.3414$
 (ii) Bác bỏ $H_0$ nếu giá trị thống kê kiểm định $> -2.5957$
 (iii) Bác bỏ $H_0$ nếu giá trị thống kê kiểm định $> 2.3414$
@@ -1829,12 +1841,17 @@ Miền bác bỏ chính xác phải là:
 $$\text{Reject } H_0 \text{ if } t_{STAT} < -2.5957 \quad \text{or} \quad t_{STAT} > 2.5957$$
 
 Xét 4 phương án đề bài liệt kê:
-- (i) chỉ có một phía trái với giá trị 2.3414 (sai mức alpha và thiếu phía phải).
-- (ii) 'test statistic > -2.5957' (sai hoàn toàn về dấu bất đẳng thức).
-- (iii) chỉ có một phía phải với 2.3414.
-- (iv) 'test statistic < 2.5957' (sai hoàn toàn).
+-
+(i) chỉ có một phía trái với giá trị 2.3414 (sai mức alpha và thiếu phía phải).
+-
+(ii) 'test statistic > -2.5957' (sai hoàn toàn về dấu bất đẳng thức).
+-
+(iii) chỉ có một phía phải với 2.3414.
+-
+(iv) 'test statistic < 2.5957' (sai hoàn toàn).
 
-Không có phương án nào trong số (i), (ii), (iii), (iv) đưa ra miền bác bỏ chính xác hai phía.
+Không có phương án nào trong số (i), (ii), (iii),
+(iv) đưa ra miền bác bỏ chính xác hai phía.
 => Chọn đáp án E (None of the other choices is correct.).
 
 ### 6. Hướng dẫn bấm máy tính Casio fx-580VN X (Casio Keystrokes):
@@ -1857,16 +1874,19 @@ Theo Giáo trình Berenson (Chương 9 - Mục 9.2: t Test of Hypothesis for the
 How many tissues should the Kimberly Clark Corporation package of Kleenex contain? Researchers determined that 60 tissues is the mean number of tissues used during a cold. Suppose a random sample of 100 Kleenex users yielded the following data on the number of tissues used during a cold: $\bar{X} = 52, S = 22$. Suppose the alternative you wanted to test was $H_1: \mu < 60$. State the correct rejection region for $\alpha = 0.05$.
 
 Let $t_{0.05; 99} = 1.6604; t_{0.025; 99} = 1.9842$
-
 (i) Reject $H_0$ if $t_{STAT} > 1.6604$
 (ii) Reject $H_0$ if $t_{STAT} < -1.6604$
 (iii) Reject $H_0$ if $t_{STAT} > 1.9842$ or $t_{STAT} < -1.9842$
 (iv) Reject $H_0$ if $t_{STAT} < -1.9842$
 
-A. (i)
-B. (ii)
-C. (iii)
-D. (iv)
+A.
+(i)
+B.
+(ii)
+C.
+(iii)
+D.
+(iv)
 ```
 
 **Đáp án đúng của đề thi:** **B**
@@ -1875,7 +1895,6 @@ D. (iv)
 Tập đoàn Kimberly Clark nên đóng gói bao nhiêu khăn giấy trong một hộp Kleenex? Các nhà nghiên cứu xác định rằng 60 chiếc khăn giấy là số lượng trung bình được sử dụng trong một đợt cảm lạnh. Giả sử một mẫu ngẫu nhiên gồm 100 người dùng Kleenex cho thấy: $\bar{X} = 52, S = 22$. Giả sử giả thuyết đối mà bạn muốn kiểm định là $H_1: \mu < 60$. Hãy xác định miền bác bỏ đúng cho mức ý nghĩa $\alpha = 0.05$.
 
 Cho biết: $t_{0.05; 99} = 1.6604; t_{0.025; 99} = 1.9842$
-
 (i) Bác bỏ $H_0$ nếu $t_{STAT} > 1.6604$
 (ii) Bác bỏ $H_0$ nếu $t_{STAT} < -1.6604$
 (iii) Bác bỏ $H_0$ nếu $t_{STAT} > 1.9842$ hoặc $t_{STAT} < -1.9842$
@@ -1897,7 +1916,8 @@ Miền bác bỏ là:
 $$\text{Reject } H_0 \text{ if } t_{STAT} < -1.6604$$
 
 Đối chiếu với 4 mệnh đề:
-- (ii) Reject $H_0$ if $t_{STAT} < -1.6604$ (Chính xác).
+-
+(ii) Reject $H_0$ if $t_{STAT} < -1.6604$ (Chính xác).
 
 => Chọn đáp án B ((ii)).
 
@@ -1990,10 +2010,14 @@ Which of the following represents the relevant hypotheses tested?
 (iii) $H_0: \mu_I - \mu_{II} = 0 \text{ versus } H_1: \mu_I - \mu_{II} \ne 0$
 (iv) $H_0: \mu_I - \mu_{II} \ne 0 \text{ versus } H_1: \mu_I - \mu_{II} = 0$
 
-A. (i)
-B. (ii)
-C. (iii)
-D. (iv)
+A.
+(i)
+B.
+(ii)
+C.
+(iii)
+D.
+(iv)
 ```
 
 > 📸 **Ảnh bảng / biểu đồ số liệu gốc từ đề thi:**
@@ -2721,9 +2745,12 @@ In the simple linear model, the conclusion of testing $H_0: \beta_1 = 0$ is the 
 (ii) $H_0: \rho = 0$
 (iii) $H_0: R = 0$
 
-A. (i)
-B. (ii)
-C. (iii)
+A.
+(i)
+B.
+(ii)
+C.
+(iii)
 D. None of the other choices is correct.
 ```
 
