@@ -3272,11 +3272,11 @@ function createQuestionCard(q) {
     (q.table_image ? '<div class=\"table-img-box\" style=\"margin:12px 0 16px; text-align:center; background:var(--surface-sidebar); border:1px solid var(--border); border-radius:8px; padding:12px; box-shadow:0 2px 8px rgba(0,0,0,0.06);\">' +
       '<div style=\"font-size:0.8rem; font-weight:600; color:var(--text-muted); margin-bottom:8px; display:flex; justify-content:space-between; align-items:center;\">' +
         '<span>📊 BẢNG / BIỂU ĐỒ GỐC TỪ ĐỀ THI (SP26 RE)</span>' +
-        '<a href=\"' + (q.table_image_png || q.table_image) + r'\" target=\"_blank\" style=\"color:var(--primary); text-decoration:none; font-size:0.8rem; font-weight:600;\">🔍 Mở ảnh bảng gốc HD</a>' +
+        '<a href=\"' + (q.table_image_png || q.table_image) + '\" target=\"_blank\" style=\"color:var(--primary); text-decoration:none; font-size:0.8rem; font-weight:600;\">🔍 Mở ảnh bảng gốc HD</a>' +
       '</div>' +
-      '<img src=\"' + q.table_image + r'\" style=\"max-width:100%; height:auto; border-radius:6px; border:1px solid var(--border); display:inline-block;\" loading=\"lazy\" alt=\"Bảng số liệu đề thi câu ' + q.id + r'\">' +
+      '<img src=\"' + q.table_image + '\" style=\"max-width:100%; height:auto; border-radius:6px; border:1px solid var(--border); display:inline-block;\" loading=\"lazy\" alt=\"Bảng số liệu đề thi câu ' + q.id + '\">' +
     '</div>' : '') +
-    '<div style=\"margin:4px 0 12px; text-align:right;\"><a href=\"' + (q.original_exam_image || ('https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q' + q.id + '.webp')) + r'\" target=\"_blank\" style=\"color:var(--text-muted); font-size:0.75rem; text-decoration:underline;\">📸 Xem toàn bộ ảnh chụp đề gốc Q' + q.id + r'</a></div>' +
+    '<div style=\"margin:4px 0 12px; text-align:right;\"><a href=\"' + (q.original_exam_image || ('https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q' + q.id + '.webp')) + '" target="_blank" style="color:var(--text-muted); font-size:0.75rem; text-decoration:underline;">📸 Xem toàn bộ ảnh chụp đề gốc Q' + q.id + '.webp</a></div>' +
     optionsHtml +
     answerStripHtml +
     '<div class="toggle-buttons-bar">' +
