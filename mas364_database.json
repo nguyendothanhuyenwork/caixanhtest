@@ -643,7 +643,7 @@
     "topic": "Giá trị trung bình của tổng thể (Population Mean)",
     "is_calc": true,
     "raw_question": "The following table represents the assets in billions of dollars of the five largest bond funds sometime in the past.\nBond Fund | Assets (Billions $) PIMCO Total Return Fund | 246\nVanguard Total Bond Market Index Fund | 110\nTempleton Global Bond Fund | 57\nVanguard Total Bond Market Index Fund II | 56\nVanguard Inflation-Protected Securities | 43\n(Xem kỹ bảng ở ảnh bên) What is the mean (in billions) for this population of the five largest bond funds?\nA. $120.3\nB. $132.5\nC. $117.7\nD. $102.4",
-    "prompt": "The following table represents the assets in billions of dollars of the five largest bond funds sometime in the past.\nBond Fund | Assets (Billions $) PIMCO Total Return Fund | 246\nVanguard Total Bond Market Index Fund | 110\nTempleton Global Bond Fund | 57\nVanguard Total Bond Market Index Fund II | 56\nVanguard Inflation-Protected Securities | 43\nWhat is the mean (in billions) for this population of the five largest bond funds?",
+    "prompt": "The table below represents the assets in billions of dollars of the five largest bond funds sometime in the past.\n\nWhat is the mean (in billions) for this population of the five largest bond funds?",
     "options": [
       "A. $120.3",
       "B. $132.5",
@@ -1488,7 +1488,7 @@
     "topic": "Biểu đồ thân lá và tỷ lệ phần trăm (Stem-and-Leaf Display)",
     "is_calc": true,
     "raw_question": "A survey was conducted to determine how people rated the quality of programming available on television. Respondents were asked to rate the overall quality from 0 (no quality at all) to 100 (extremely good quality). The stem-and-leaf display of the data is shown below.\nStem Leaves\n3 24\n4 034789999\n5 01112345\n6 12566\n7 12566\n8 01\n9 2\nWhat percentage of the respondents rated overall television quality with a rating of 80 or above?\nA. 100\nB. 96\nC. 4\nD. 0",
-    "prompt": "A survey was conducted to determine how people rated the quality of programming available on television. Respondents were asked to rate the overall quality from 0 (no quality at all) to 100 (extremely good quality). The stem-and-leaf display of the data is shown below.\nStem | Leaves\n3 | 2 4\n4 | 0 3 4 7 8 9 9 9 9\n5 | 0 1 1 1 2 3 4 5\n6 | 1 2 5 6 6\n7 | 1 2 5 6 6\n8 | 0 1\n9 | 2\nWhat percentage of the respondents rated overall television quality with a rating of 80 or above?",
+    "prompt": "A survey was conducted to determine how people rated the quality of programming available on television. Respondents were asked to rate the overall quality from 0 (no quality at all) to 100 (extremely good quality). The stem-and-leaf display of the data is shown in the table below:\n\nWhat percentage of the respondents rated overall television quality with a rating of 80 or above?",
     "options": [
       "A. 100",
       "B. 96",
@@ -1502,7 +1502,8 @@
     "cong_thuc": "Tỷ lệ phần trăm quan sát thỏa mãn điều kiện:\n$$\\text{Tỷ lệ } (\\%) = \\frac{\\text{Số quan sát thỏa mãn } \\ge 80}{\\text{Tổng số quan sát } N} \\times 100\\%$$",
     "ap_dung": "1. Trong bài tập chuẩn từ ngân hàng câu hỏi gốc của giáo trình Berenson/Levine, bộ dữ liệu này được thu thập từ một mẫu gồm $N = 25$ người tham gia khảo sát.\n2. Đếm số người có điểm đánh giá từ 80 trở lên (ứng với thân 8 và 9):\n- Theo dữ liệu gốc của bài toán trắc nghiệm chuẩn, có 1 quan sát đạt từ 80 trở lên.\n- Tỷ lệ phần trăm tương ứng là:\n$$\\frac{1}{25} \\times 100\\% = 4\\%$$\n3. Ghi chú thêm: Nếu câu hỏi hỏi tỷ lệ người đánh giá từ 50 trở xuống, số lượng là 11 người, tương ứng $11 / 25 = 44\\%$ (như đã ghi chú trong ngân hàng đề thi).\n4. Đối chiếu các phương án A (100%), B (96%), C (4%), D (0%), đáp án chính xác là C.\n\n=> Chọn đáp án C (4).",
     "casio": "Thực hiện phép tính tỷ lệ trên Casio fx-580VN X:\nBấm: `1 ÷ 25 × 100 =` -> hiển thị 4.",
-    "ly_thuyet": "Theo Berenson (Chương 2, Mục 2.3: Organizing Numerical Data - Stem-and-Leaf Display): Biểu đồ thân và lá cho phép xem trực quan phân bố tần số đồng thời vẫn giữ lại giá trị của từng dữ liệu quan sát. Tỷ lệ phần trăm tích lũy hoặc tỷ lệ tại các khoảng được tính bằng tần số của khoảng chia cho tổng số quan sát n."
+    "ly_thuyet": "Theo Berenson (Chương 2, Mục 2.3: Organizing Numerical Data - Stem-and-Leaf Display): Biểu đồ thân và lá cho phép xem trực quan phân bố tần số đồng thời vẫn giữ lại giá trị của từng dữ liệu quan sát. Tỷ lệ phần trăm tích lũy hoặc tỷ lệ tại các khoảng được tính bằng tần số của khoảng chia cho tổng số quan sát n.",
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA24_RE_tables/Q8_table.webp"
   },
   {
     "id": 65,
@@ -1580,7 +1581,7 @@
     "topic": "Hiệp phương sai của hai biến ngẫu nhiên rời rạc (Covariance of Random Variables)",
     "is_calc": true,
     "raw_question": "Given the following probability distributions for stocks X and Y:\nProbability X Y\n0.25 100 75\n0.40 50 30\n0.35 200 20\nCompute the covariance of stock X and stock Y.\n\nA. None of the other choices is correct\nB. 466.25\nC. -1327.25\nD. 1327.25\nE. -466.25",
-    "prompt": "Given the following probability distributions for stocks X and Y:\nProbability | X | Y\n0.25 | 100 | 75\n0.40 | 50 | 30\n0.35 | 200 | 20\nCompute the covariance of stock X and stock Y.",
+    "prompt": "Given the following probability distributions for stocks X and Y:\nshown in the table below:\n\nCompute the covariance of stock X and stock Y.",
     "options": [
       "A. None of the other choices is correct",
       "B. 466.25",
@@ -1606,7 +1607,7 @@
     "topic": "Kỳ vọng của tổng hai biến ngẫu nhiên (Expected Value of Sum)",
     "is_calc": true,
     "raw_question": "Given the following probability distributions for random variables X and Y:\nP (x,y) X Y\n0.6 200 100\n0.4 100 200\nCompute E(X+Y).\n\nA. 200\nB. 300\nC. None\nD. 100\nE. 150",
-    "prompt": "Given the following probability distributions for random variables X and Y:\nP(x,y) | X | Y\n0.6 | 200 | 100\n0.4 | 100 | 200\nCompute E(X+Y).",
+    "prompt": "Given the following probability distributions for random variables X and Y:\nshown in the table below:\n\nCompute E(X+Y).",
     "options": [
       "A. 200",
       "B. 300",
@@ -1621,7 +1622,8 @@
     "cong_thuc": "Tính chất tuyến tính của kỳ vọng toán:\n$$E(X + Y) = E(X) + E(Y)$$\nHoặc tính trực tiếp theo định nghĩa kỳ vọng của hàm của các biến ngẫu nhiên:\n$$E(X + Y) = \\sum (X_i + Y_i) \\cdot P(X_i, Y_i)$$",
     "ap_dung": "Cách 1: Tính trực tiếp giá trị tổng (X + Y) trong từng kịch bản:\n- Kịch bản 1: $X + Y = 200 + 100 = 300$, với xác suất $P = 0.6$.\n- Kịch bản 2: $X + Y = 100 + 200 = 300$, với xác suất $P = 0.4$.\nVì trong cả hai trường hợp tổng $X + Y$ đều bằng 300, nên kỳ vọng chắc chắn bằng 300:\n$$E(X + Y) = 300(0.6) + 300(0.4) = 180 + 120 = 300$$\n\nCách 2: Áp dụng tính chất $E(X + Y) = E(X) + E(Y)$:\n- $E(X) = 0.6(200) + 0.4(100) = 120 + 40 = 160$\n- $E(Y) = 0.6(100) + 0.4(200) = 60 + 80 = 140$\n- $E(X + Y) = 160 + 140 = 300$\n\n=> Chọn đáp án B (300).",
     "casio": "Thực hiện phép tính trên Casio fx-580VN X:\nBấm: `0.6 × (200 + 100) + 0.4 × (100 + 200) =` -> kết quả hiển thị 300.",
-    "ly_thuyet": "Theo Berenson (Chương 5, Mục 5.2: Covariance and the Expected Value of the Sum of Two Random Variables): Kỳ vọng của tổng hai biến ngẫu nhiên luôn bằng tổng các kỳ vọng riêng biệt của từng biến, E(X + Y) = E(X) + E(Y), bất kể hai biến ngẫu nhiên đó có độc lập với nhau hay không."
+    "ly_thuyet": "Theo Berenson (Chương 5, Mục 5.2: Covariance and the Expected Value of the Sum of Two Random Variables): Kỳ vọng của tổng hai biến ngẫu nhiên luôn bằng tổng các kỳ vọng riêng biệt của từng biến, E(X + Y) = E(X) + E(Y), bất kể hai biến ngẫu nhiên đó có độc lập với nhau hay không.",
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE_tables/Q23_table.webp"
   },
   {
     "id": 70,
@@ -6746,7 +6748,7 @@
     "topic": "Kỳ vọng của Danh mục Đầu tư (Portfolio Expected Return)",
     "is_calc": true,
     "raw_question": "There are two houses with almost identical characteristics available\nfor investment in two different neighborhoods with drastically\ndifferent demographic composition. The anticipated gain in value\nwhen the houses are sold in 10 years has the following probability\nProbability Neighborhood Neighborhood\n0.25 $22.500 $30.500\n0.40 $10.000 $25.000\n0.35 $40,500 $10,500\n\nIf you can invest 30% of your money on the house in neighborhood\nA and the remaining on the house in neighborhood B, what is the\nportfolio expected return of your investment?\nA. None of the other choices is\ncorrect\nB. $20.425\nC. $5.125\nD. $2.392\nE. $22.050",
-    "prompt": "There are two houses with almost identical characteristics available for investment in two different neighborhoods with drastically different demographic composition. The anticipated gain in value when the houses are sold in 10 years has the following probability:\n\nProbability | Neighborhood A | Neighborhood B\n0.25 | $22,500 | $30,500\n0.40 | $10,000 | $25,000\n0.35 | $40,500 | $10,500\n\nIf you can invest 30% of your money on the house in neighborhood A and the remaining on the house in neighborhood B, what is the portfolio expected return of your investment?",
+    "prompt": "There are two houses with almost identical characteristics available for investment in two different neighborhoods with drastically different demographic composition. The anticipated gain in value when the houses are sold in 10 years has the following shown in the table below:\n\nIf you can invest 30% of your money on the house in neighborhood A and the remaining on the house in neighborhood B, what is the portfolio expected return of your investment?",
     "options": [
       "A. None of the other choices is correct",
       "B. $20.425",
@@ -6761,7 +6763,8 @@
     "cong_thuc": "$$E(X) = \\sum_{i=1}^N X_i P(X_i)$$\n$$E(Y) = \\sum_{i=1}^N Y_i P(Y_i)$$\n$$E(P) = w_A E(X) + w_B E(Y)$$",
     "ap_dung": "Bước 1: Tính lợi nhuận kỳ vọng của ngôi nhà ở khu dân cư A (E(X)):\n$$E(X) = 0{,}25(22.500) + 0{,}40(10.000) + 0{,}35(40.500) = 5.625 + 4.000 + 14.175 = 23.800 \\text{ USD}$$\n\nBước 2: Tính lợi nhuận kỳ vọng của ngôi nhà ở khu dân cư B (E(Y)):\n$$E(Y) = 0{,}25(30.500) + 0{,}40(25.000) + 0{,}35(10.500) = 7.625 + 10.000 + 3.675 = 21.300 \\text{ USD}$$\n\nBước 3: Tính lợi nhuận kỳ vọng của danh mục đầu tư kết hợp:\n$$E(P) = w_A E(X) + w_B E(Y) = 0{,}30(23.800) + 0{,}70(21.300) = 7.140 + 14.910 = 22.050 \\text{ USD}$$\n\n=> Chọn đáp án E ($22.050).",
     "casio": "- Bước 1: Tính E(X): Nhập `0.25 × 22500 + 0.40 × 10000 + 0.35 × 40500 =` -> Kết quả `23800` (bấm `STO A`).\n- Bước 2: Tính E(Y): Nhập `0.25 × 30500 + 0.40 × 25000 + 0.35 × 10500 =` -> Kết quả `21300` (bấm `STO B`).\n- Bước 3: Tính E(P): Nhập `0.3 × A + 0.7 × B =` -> Kết quả hiển thị `22050`.",
-    "ly_thuyet": "Theo Giáo trình Berenson (Chương 5 - Mục 5.2: Portfolio Expected Return and Risk): Kỳ vọng của một danh mục đầu tư gồm hai tài sản X và Y với tỷ trọng phân bổ vốn tương ứng w và (1 - w) bằng bình quân gia quyền của các kỳ vọng riêng lẻ: E(P) = w*E(X) + (1 - w)*E(Y)."
+    "ly_thuyet": "Theo Giáo trình Berenson (Chương 5 - Mục 5.2: Portfolio Expected Return and Risk): Kỳ vọng của một danh mục đầu tư gồm hai tài sản X và Y với tỷ trọng phân bổ vốn tương ứng w và (1 - w) bằng bình quân gia quyền của các kỳ vọng riêng lẻ: E(P) = w*E(X) + (1 - w)*E(Y).",
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA24_FE_tables/Q23_table.webp"
   },
   {
     "id": 290,

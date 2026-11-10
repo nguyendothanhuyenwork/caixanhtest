@@ -576,7 +576,7 @@
     "topic": "Kỳ vọng của tổng hai biến ngẫu nhiên (Expected Value of Sum)",
     "is_calc": true,
     "raw_question": "fuoverflow There are 50 questions, and your progress Of answering is Answer Back Next (Chü)se 1 ansvver) (See picture) A. None B. 150 c 300 D. 200 Given the following probability distributions for random variables X and Y: 0.6 0.4 Compute E(X+Y). x 200 100 E. 100 th xam. FUOUERFLOW.COM 100 200 Q: 23",
-    "prompt": "Given the following probability distributions for random variables X and Y:\nP(x,y) | X | Y\n0.6 | 200 | 100\n0.4 | 100 | 200\nCompute E(X+Y).",
+    "prompt": "Given the following probability distributions for random variables X and Y:\nshown in the table below:\n\nCompute E(X+Y).",
     "options": [
       "A. 200",
       "B. 300",

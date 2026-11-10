@@ -634,7 +634,7 @@
     "topic": "Hiệp phương sai của hai biến ngẫu nhiên rời rạc (Covariance of Random Variables)",
     "is_calc": true,
     "raw_question": "fuoverflow I There are 50 questions, and your progress Of answering is Q: 25 Answer (Choose 1 answer) (See picture) A. None of the other choices is correct a. 466.25 c -1327.25 D_ 1327.25 E. 466.25 xam. Given the following probability distributions for stocks X and Y: Proba bility 0.25 0.40 0.35 x 100 50 200 75 30 20 Compute the covariance ofstock X and stock Y. Back Next FUOVERFLOW.COM",
-    "prompt": "Given the following probability distributions for stocks X and Y:\nProbability | X | Y\n0.25 | 100 | 75\n0.40 | 50 | 30\n0.35 | 200 | 20\nCompute the covariance of stock X and stock Y.",
+    "prompt": "Given the following probability distributions for stocks X and Y:\nshown in the table below:\n\nCompute the covariance of stock X and stock Y.",
     "options": [
       "A. None of the other choices is correct",
       "B. 466.25",
@@ -661,7 +661,7 @@
     "topic": "Biểu đồ thân lá và tỷ lệ phần trăm (Stem-and-Leaf Display)",
     "is_calc": true,
     "raw_question": "fuoverflow There are 50 questions, and your progress Of answering is a. 96 Q: 26 Answer (Choose 1 answer) (See picture) A 100 xam, A survey was conducted to detennine how people rated the quality ofptogramming available on television. Respondents were asked to rate the overall quality from O (no quality at all) to 100 (extremely good quality). The stem-and-leaf display of Back Next the data is shown below. 3 4 5 6 7 9 24 03478999 0112345 12566 01 2 What percentage ofthe respondents rated overall television quality with a rating of SO or above? FUOVERFLOW.COM",
-    "prompt": "A survey was conducted to determine how people rated the quality of programming available on television. Respondents were asked to rate the overall quality from 0 (no quality at all) to 100 (extremely good quality). The stem-and-leaf display of the data is shown below.\nStem | Leaves\n3 | 2 4\n4 | 0 3 4 7 8 9 9 9 9\n5 | 0 1 1 1 2 3 4 5\n6 | 1 2 5 6 6\n7 | 1 2 5 6 6\n8 | 0 1\n9 | 2\nWhat percentage of the respondents rated overall television quality with a rating of 80 or above?",
+    "prompt": "A survey was conducted to determine how people rated the quality of programming available on television. Respondents were asked to rate the overall quality from 0 (no quality at all) to 100 (extremely good quality). The stem-and-leaf display of the data is shown in the table below:\n\nWhat percentage of the respondents rated overall television quality with a rating of 80 or above?",
     "options": [
       "A. 100",
       "B. 96",
