@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>🥬 Cải Xanh Học MAS - Đề Thi & Lời Giải MAS202 SU24 Final Exam (49 Câu Chuẩn Đề Thi & Casio 580)</title>
-  <meta name="description" content="Trọn bộ 49 câu hỏi thi Đề Thi & Lời Giải MAS202 SU24 Final Exam kèm ảnh gốc đề thi, đối chiếu bộ 364 câu, lời giải chi tiết 5 bước kèm Dịch đề, Tóm tắt, Công thức, Lời giải chi tiết, Cách bấm máy tính Casio fx-580VN X và Giảng giải lý thuyết giáo trình Berenson.">
+  <meta name="description" content="Trọn bộ 49 câu hỏi thi Đề Thi & Lời Giải MAS202 SU24 Final Exam kèm ảnh gốc đề thi, đối chiếu bộ 416 câu, lời giải chi tiết 5 bước kèm Dịch đề, Tóm tắt, Công thức, Lời giải chi tiết, Cách bấm máy tính Casio fx-580VN X và Giảng giải lý thuyết giáo trình Berenson.">
   
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥬</text></svg>">
 
@@ -1646,6 +1646,351 @@
       margin-bottom: 10px;
     }
 
+    /* PATTERN RECOGNITION & 1-RA-3 DISCRIMINATION */
+    .btn-rec-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+      background: linear-gradient(135deg, rgba(225, 29, 72, 0.12), rgba(244, 63, 94, 0.10));
+      border: 1.5px solid #E11D48;
+      color: #BE123C;
+    }
+    .btn-rec-header:hover {
+      background: linear-gradient(135deg, rgba(225, 29, 72, 0.2), rgba(244, 63, 94, 0.18));
+    }
+    [data-theme="dark"] .btn-rec-header {
+      color: #FDA4AF;
+      border-color: #FB7185;
+      background: linear-gradient(135deg, rgba(225, 29, 72, 0.22), rgba(244, 63, 94, 0.16));
+    }
+
+    .tgl-meo {
+      border-color: rgba(225, 29, 72, 0.35);
+      color: #BE123C;
+    }
+    .tgl-meo:hover {
+      border-color: #E11D48;
+      background-color: rgba(225, 29, 72, 0.08);
+    }
+    [data-theme="dark"] .tgl-meo {
+      color: #FDA4AF;
+      border-color: rgba(251, 113, 133, 0.35);
+    }
+    .tgl-meo.active {
+      background-color: #E11D48;
+      color: #FFFFFF !important;
+      border-color: transparent !important;
+    }
+
+    .panel-meo {
+      background-color: rgba(225, 29, 72, 0.05);
+      border: 1px solid rgba(225, 29, 72, 0.28);
+      border-left: 4px solid #E11D48;
+      white-space: normal;
+      padding: 14px 16px;
+    }
+    [data-theme="dark"] .panel-meo {
+      background-color: rgba(225, 29, 72, 0.10);
+      border-color: rgba(251, 113, 133, 0.32);
+      border-left-color: #FB7185;
+    }
+    .panel-meo .panel-title {
+      color: #BE123C;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+    [data-theme="dark"] .panel-meo .panel-title {
+      color: #FDA4AF;
+    }
+
+    .meo-inline-actions {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .meo-mini-btn {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 9px;
+      border-radius: 6px;
+      border: 1px solid rgba(225, 29, 72, 0.38);
+      background: var(--surface);
+      color: #BE123C;
+      cursor: pointer;
+      text-transform: none;
+      letter-spacing: 0;
+      transition: all 0.15s ease;
+    }
+    .meo-mini-btn:hover {
+      background: #E11D48;
+      color: #FFFFFF;
+      border-color: #E11D48;
+    }
+    [data-theme="dark"] .meo-mini-btn {
+      color: #FDA4AF;
+      border-color: rgba(251, 113, 133, 0.45);
+    }
+    [data-theme="dark"] .meo-mini-btn:hover {
+      background: #E11D48;
+      color: #FFFFFF;
+    }
+
+    .meo-archetype-head {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 13px;
+      margin-bottom: 10px;
+    }
+    .meo-arch-top {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 4px;
+    }
+    .meo-ch-pill {
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 99px;
+      background: rgba(225, 29, 72, 0.12);
+      color: #BE123C;
+    }
+    [data-theme="dark"] .meo-ch-pill {
+      background: rgba(251, 113, 133, 0.2);
+      color: #FDA4AF;
+    }
+    .meo-arch-title {
+      font-size: 0.94rem;
+      font-weight: 800;
+      color: var(--text);
+    }
+    .meo-arch-tagline {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+
+    .meo-signals-box {
+      background: var(--surface);
+      border: 1px dashed rgba(225, 29, 72, 0.35);
+      border-radius: 8px;
+      padding: 8px 11px;
+      margin-bottom: 10px;
+      font-size: 0.8rem;
+    }
+    .meo-signals-label {
+      font-weight: 800;
+      color: #BE123C;
+      margin-bottom: 5px;
+      font-size: 0.77rem;
+    }
+    [data-theme="dark"] .meo-signals-label {
+      color: #FDA4AF;
+    }
+    .meo-sig-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+    .meo-sig-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(225, 29, 72, 0.08);
+      border: 1px solid rgba(225, 29, 72, 0.22);
+      border-radius: 6px;
+      padding: 3px 8px;
+      font-size: 0.77rem;
+      line-height: 1.35;
+    }
+    .meo-sig-kw {
+      font-weight: 800;
+      color: #BE123C;
+    }
+    [data-theme="dark"] .meo-sig-kw {
+      color: #FDA4AF;
+    }
+    .meo-sig-why {
+      color: var(--text);
+    }
+
+    .meo-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .meo-role-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 10px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      min-width: 0;
+    }
+    .meo-role-card.is-current {
+      border: 2px solid #E11D48;
+      background: linear-gradient(145deg, rgba(225, 29, 72, 0.08), rgba(244, 63, 94, 0.02));
+      box-shadow: 0 3px 10px rgba(225, 29, 72, 0.11);
+    }
+    [data-theme="dark"] .meo-role-card.is-current {
+      border-color: #FB7185;
+      background: rgba(225, 29, 72, 0.16);
+    }
+    .meo-current-badge {
+      display: inline-block;
+      align-self: flex-start;
+      background: #E11D48;
+      color: #FFFFFF;
+      font-size: 0.67rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 99px;
+      letter-spacing: 0.03em;
+    }
+    .meo-role-name {
+      font-weight: 800;
+      font-size: 0.85rem;
+      color: var(--text);
+      line-height: 1.35;
+    }
+    .meo-role-when {
+      font-size: 0.79rem;
+      color: var(--text-muted);
+      line-height: 1.45;
+    }
+    .meo-role-formula {
+      font-size: 0.79rem;
+      background: var(--surface-sidebar);
+      border: 1px dashed var(--border);
+      border-radius: 6px;
+      padding: 5px 8px;
+      color: var(--text);
+      overflow-x: auto;
+      line-height: 1.45;
+    }
+    .meo-role-tip {
+      font-size: 0.78rem;
+      background: rgba(217, 119, 6, 0.10);
+      border-left: 3px solid #D97706;
+      border-radius: 4px;
+      padding: 5px 8px;
+      color: var(--text);
+      line-height: 1.45;
+    }
+    .meo-traps {
+      margin-top: 10px;
+      background: rgba(245, 158, 11, 0.09);
+      border: 1px solid rgba(245, 158, 11, 0.32);
+      border-radius: 8px;
+      padding: 9px 12px;
+      font-size: 0.8rem;
+      line-height: 1.5;
+      color: var(--text);
+    }
+    [data-theme="dark"] .meo-traps {
+      background: rgba(245, 158, 11, 0.14);
+    }
+    .meo-traps-title {
+      font-weight: 800;
+      color: #B45309;
+      margin-bottom: 4px;
+      font-size: 0.78rem;
+    }
+    [data-theme="dark"] .meo-traps-title {
+      color: #FBBF24;
+    }
+    .meo-traps ul {
+      margin: 0;
+      padding-left: 18px;
+    }
+    .meo-traps li {
+      margin-bottom: 3px;
+    }
+    .inline-code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.85em;
+      background: rgba(100, 116, 139, 0.14);
+      padding: 1px 5px;
+      border-radius: 4px;
+    }
+
+    /* PATTERN FILTER BANNER */
+    .pattern-filter-banner {
+      display: none;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin: 0 0 14px;
+      padding: 10px 14px;
+      border-radius: 10px;
+      background: rgba(225, 29, 72, 0.09);
+      border: 1.5px solid #E11D48;
+      font-size: 0.86rem;
+      color: var(--text);
+    }
+    [data-theme="dark"] .pattern-filter-banner {
+      background: rgba(225, 29, 72, 0.16);
+      border-color: #FB7185;
+    }
+
+    /* RECOGNITION GUIDE MODAL */
+    .rec-tab-btn {
+      padding: 5px 10px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      background: var(--surface-sidebar);
+      color: var(--text);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .rec-tab-btn:hover {
+      border-color: #E11D48;
+    }
+    .rec-tab-btn.active {
+      background: #E11D48;
+      color: #FFFFFF;
+      border-color: #E11D48;
+    }
+    .rec-modal-card {
+      background: var(--surface-sidebar);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 14px;
+      margin-bottom: 12px;
+    }
+    .rec-modal-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 6px;
+    }
+
+    @media (max-width: 900px) {
+      .meo-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+    @media (max-width: 768px) {
+      .header-actions {
+        flex-wrap: wrap;
+        gap: 6px;
+        justify-content: flex-end;
+      }
+    }
+
 </style>
 </head>
 <body>
@@ -1668,6 +2013,11 @@
         <button class="btn btn-secondary" onclick="openExamModal()" style="display: flex; align-items: center; gap: 6px; font-weight: 700; background: linear-gradient(135deg, rgba(2, 132, 199, 0.12), rgba(56, 189, 248, 0.12)); border: 1.5px solid #0284c7; color: #0284c7;" title="Mở danh sách 22 đề thi Final Exam">
           <span>📚 Bộ Đề Thi (22 Kỳ)</span>
           <span style="font-size: 0.7rem;">▼</span>
+        </button>
+
+        <!-- PATTERN RECOGNITION HANDBOOK BUTTON -->
+        <button class="btn btn-secondary btn-rec-header" id="btn-open-recognition" onclick="openRecognitionModal()" title="Sổ tay Mẹo Nhận diện Dạng bài & Phân biệt 1 ra 3 (34 dạng MAS202)">
+          <span>🎯 Mẹo Dạng Bài</span>
         </button>
 
         <!-- Notes & Highlights Drawer Button -->
@@ -1721,7 +2071,7 @@
 
       <!-- Scrollable Exam Chips -->
       <div style="display: flex; gap: 8px; overflow-x: auto; padding-bottom: 8px; -webkit-overflow-scrolling: touch;">
-        <a href="Cai_Xanh_MAS202_364_Cau_Hoi.html" class="exam-chip-item" style="white-space:nowrap; padding:6px 14px; border-radius:99px; font-size:0.82rem; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:5px; background:var(--primary); color:white;">🥬 Ngân hàng 364 câu</a>
+        <a href="Cai_Xanh_MAS202_364_Cau_Hoi.html" class="exam-chip-item" style="white-space:nowrap; padding:6px 14px; border-radius:99px; font-size:0.82rem; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:5px; background:var(--primary); color:white;">🥬 Ngân hàng 416 câu</a>
         <a href="Cai_Xanh_MAS202_SU26_FE.html" class="exam-chip-item" style="white-space:nowrap; padding:6px 12px; border-radius:99px; font-size:0.82rem; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:5px; background:rgba(2, 132, 199, 0.12); color:#0284c7; border:1px solid #0284c7;">🎯 SU26 FE</a>
         <a href="Cai_Xanh_MAS202_SP26_FE.html" class="exam-chip-item" style="white-space:nowrap; padding:6px 12px; border-radius:99px; font-size:0.82rem; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:5px; background:var(--surface-sidebar); color:var(--text); border:1px solid var(--border);">🎯 SP26 FE</a>
         <a href="Cai_Xanh_MAS202_SP26_RE.html" class="exam-chip-item" style="white-space:nowrap; padding:6px 12px; border-radius:99px; font-size:0.82rem; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:5px; background:var(--surface-sidebar); color:var(--text); border:1px solid var(--border);">🎯 SP26 RE</a>
@@ -1756,8 +2106,8 @@
         </div>
       </div>
       <div class="stats-pills">
-        <div class="stat-pill" id="stat-total">📚 Tổng: 364 câu</div>
-        <div class="stat-pill" id="stat-visible">🔍 Đang hiện: 364 câu</div>
+        <div class="stat-pill" id="stat-total">📚 Tổng: 416 câu</div>
+        <div class="stat-pill" id="stat-visible">🔍 Đang hiện: 416 câu</div>
         <div class="stat-pill" id="stat-bookmarks">⭐ Đã lưu: 0</div>
       </div>
     </div>
@@ -1773,7 +2123,7 @@
               <span>Tiến Độ Ôn Thi MAS202</span>
               <span class="progress-percent-badge" id="progress-percent-badge">0%</span>
             </div>
-            <div class="progress-sub" id="progress-summary-text">Đã hoàn thành 0 / 364 câu • Chưa làm 364 câu</div>
+            <div class="progress-sub" id="progress-summary-text">Đã hoàn thành 0 / 416 câu • Chưa làm 416 câu</div>
           </div>
         </div>
         <div class="progress-actions">
@@ -1811,7 +2161,7 @@
           <div class="stat-box-label">❌ Cần ôn lại (<span id="stat-pct-wrong">0%</span>)</div>
         </div>
         <div class="stat-box stat-box-unattempted" onclick="setProgressFilter('unattempted')" role="button" title="Bấm để lọc các câu chưa làm">
-          <div class="stat-box-val" id="stat-val-unattempted">364</div>
+          <div class="stat-box-val" id="stat-val-unattempted">416</div>
           <div class="stat-box-label">⏳ Chưa làm</div>
         </div>
         <div class="stat-box stat-box-bookmark" onclick="setTypeFilter('bookmark', document.querySelector('[data-type=bookmark]'))" role="button" title="Bấm để lọc các câu đã đánh dấu sao">
@@ -1832,7 +2182,7 @@
         </div>
         <div class="jump-box">
           <span style="font-size:0.85rem; font-weight:600; color:var(--text-muted);">Đến câu:</span>
-          <input type="number" id="jump-input" class="jump-input" min="1" max="364" placeholder="1-364" onkeydown="if(event.key==='Enter') jumpToQuestion()">
+          <input type="number" id="jump-input" class="jump-input" min="1" max="416" placeholder="1-416" onkeydown="if(event.key==='Enter') jumpToQuestion()">
           <button class="btn btn-secondary" onclick="jumpToQuestion()">Đi</button>
         </div>
       </div>
@@ -1849,7 +2199,7 @@
           </button>
         </div>
         <div class="pills-container" style="display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; -webkit-overflow-scrolling: touch;">
-          <a href="Cai_Xanh_MAS202_364_Cau_Hoi.html" class="exam-chip-item pill" style="text-decoration:none; display:inline-flex; align-items:center; gap:4px; font-weight:700;">🥬 Ngân hàng 364 câu</a>
+          <a href="Cai_Xanh_MAS202_364_Cau_Hoi.html" class="exam-chip-item pill" style="text-decoration:none; display:inline-flex; align-items:center; gap:4px; font-weight:700;">🥬 Ngân hàng 416 câu</a>
           <a href="Cai_Xanh_MAS202_SU26_FE.html" class="exam-chip-item pill" style="text-decoration:none; display:inline-flex; align-items:center; gap:4px; font-weight:600;">🎯 SU26 FE</a>
           <a href="Cai_Xanh_MAS202_SP26_FE.html" class="exam-chip-item pill" style="text-decoration:none; display:inline-flex; align-items:center; gap:4px; font-weight:600;">🎯 SP26 FE</a>
           <a href="Cai_Xanh_MAS202_SP26_RE.html" class="exam-chip-item pill" style="text-decoration:none; display:inline-flex; align-items:center; gap:4px; font-weight:600;">🎯 SP26 RE</a>
@@ -1879,7 +2229,7 @@
       <div class="filter-group">
         <span class="filter-label">Lọc theo chương kiến thức:</span>
         <div class="pills-container" id="chapter-pills">
-          <button class="pill-btn active" data-ch="all" onclick="setChapterFilter('all', this)">Tất cả (364)</button>
+          <button class="pill-btn active" data-ch="all" onclick="setChapterFilter('all', this)">Tất cả (416)</button>
           <button class="pill-btn" data-ch="Ch1-3" onclick="setChapterFilter('Ch1-3', this)">Ch1-3: Thống kê mô tả</button>
           <button class="pill-btn" data-ch="Ch4" onclick="setChapterFilter('Ch4', this)">Ch4: Xác suất & Tổ hợp</button>
           <button class="pill-btn" data-ch="Ch5" onclick="setChapterFilter('Ch5', this)">Ch5: Phân phối rời rạc</button>
@@ -1897,8 +2247,8 @@
       <div class="filter-group">
         <span class="filter-label">Lọc theo tiến độ làm bài:</span>
         <div class="pills-container" id="progress-pills">
-          <button class="pill-btn active" data-progress="all" onclick="setProgressFilter('all', this)">Tất cả (364)</button>
-          <button class="pill-btn" data-progress="unattempted" onclick="setProgressFilter('unattempted', this)">⏳ Chưa làm (<span id="pill-count-unattempted">364</span>)</button>
+          <button class="pill-btn active" data-progress="all" onclick="setProgressFilter('all', this)">Tất cả (416)</button>
+          <button class="pill-btn" data-progress="unattempted" onclick="setProgressFilter('unattempted', this)">⏳ Chưa làm (<span id="pill-count-unattempted">416</span>)</button>
           <button class="pill-btn" data-progress="correct" onclick="setProgressFilter('correct', this)">✅ Đã làm đúng (<span id="pill-count-correct">0</span>)</button>
           <button class="pill-btn" data-progress="wrong" onclick="setProgressFilter('wrong', this)">❌ Cần ôn lại (<span id="pill-count-wrong">0</span>)</button>
         </div>
@@ -1937,6 +2287,7 @@
           <button class="action-chip" onclick="toggleGlobalSection('apdung')">✍️ Hiện/Ẩn Lời giải</button>
           <button class="action-chip" onclick="toggleGlobalSection('casio')">🧮 Hiện/Ẩn Casio</button>
           <button class="action-chip" onclick="toggleGlobalSection('lythuyet')">📚 Hiện/Ẩn Lý thuyết</button>
+          <button class="action-chip" onclick="toggleGlobalSection('meo')">🎯 Hiện/Ẩn Mẹo &amp; Phân biệt</button>
         </div>
 
         <div class="mode-switch">
@@ -1946,6 +2297,9 @@
       </div>
 
     </div>
+
+    <!-- ACTIVE PATTERN FILTER BANNER -->
+    <div id="pattern-filter-banner" class="pattern-filter-banner"></div>
 
     <!-- QUESTIONS LIST -->
     <div class="questions-list" id="questions-container">
@@ -2079,8 +2433,8 @@
     <div id="modal-exams-grid" style="display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:10px;">
         <a href="Cai_Xanh_MAS202_364_Cau_Hoi.html" class="modal-exam-card" data-year="all" style="display:block; padding:12px 14px; background:rgba(34,197,94,0.08); border:1.5px solid var(--primary); border-radius:10px; text-decoration:none; color:inherit;">
           <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:4px;">
-            <strong style="color:var(--primary); font-size:0.92rem;">🥬 Ngân hàng 364 câu</strong>
-            <span style="background:var(--primary); color:white; font-size:0.7rem; font-weight:700; padding:2px 6px; border-radius:99px;">364 Câu</span>
+            <strong style="color:var(--primary); font-size:0.92rem;">🥬 Ngân hàng 416 câu</strong>
+            <span style="background:var(--primary); color:white; font-size:0.7rem; font-weight:700; padding:2px 6px; border-radius:99px;">416 Câu</span>
           </div>
           <div style="font-size:0.78rem; color:var(--text-muted);">Trọn bộ ngân hàng toàn diện có bảng biểu & Casio</div>
         </a>
@@ -2236,9 +2590,33 @@
             <strong style="color:var(--text); font-size:0.92rem;">🎯 FA22 Final Exam</strong>
             <span style="background:var(--border); color:var(--text-muted); font-size:0.7rem; font-weight:700; padding:2px 6px; border-radius:99px;">49 Câu</span>
           </div>
-          <div style="font-size:0.78rem; color:var(--text-muted);">Fall 2022 • Đối chiếu ngân hàng 364 câu</div>
+          <div style="font-size:0.78rem; color:var(--text-muted);">Fall 2022 • Đối chiếu ngân hàng 416 câu</div>
         </a>
     </div>
+  </div>
+
+  <!-- PATTERN RECOGNITION HANDBOOK MODAL ("HOC 1 RA 3") -->
+  <div class="modal-backdrop" id="recognition-modal-backdrop" onclick="closeRecognitionModal()" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.55); z-index:10002; backdrop-filter:blur(2px);"></div>
+  <div class="modal-dialog" id="recognition-modal" style="display:none; flex-direction:column; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); width:94%; max-width:1040px; max-height:88vh; background:var(--surface); border:1.5px solid var(--border); border-radius:16px; box-shadow:0 20px 54px rgba(0,0,0,0.28); z-index:10003; overflow:hidden;">
+    <div style="padding:16px 20px 12px; border-bottom:1px solid var(--border); background:var(--surface);">
+      <div style="display:flex; justify-content:space-between; align-items:flex-start; gap:12px; margin-bottom:10px;">
+        <div>
+          <div style="font-size:1.12rem; font-weight:800; color:var(--text); display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+            <span>🎯 SỔ TAY MẸO NHẬN DIỆN DẠNG BÀI &amp; PHÂN BIỆT 1 RA 3 (MAS202)</span>
+          </div>
+          <div style="font-size:0.81rem; color:var(--text-muted); margin-top:2px;">
+            Học 1 dạng nhớ luôn 3 khái niệm dễ nhầm liền kề • Highlight dấu hiệu trong đề • Lọc nhanh các câu cùng dạng ngay trên đề đang mở.
+          </div>
+        </div>
+        <button onclick="closeRecognitionModal()" style="background:none; border:none; font-size:1.65rem; cursor:pointer; color:var(--text-muted); line-height:1; padding:0 4px;" aria-label="Đóng">&times;</button>
+      </div>
+      <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:10px;">
+        <input id="recognition-search" type="text" oninput="renderRecognitionModalList()" placeholder="🔍 Tìm từ khóa dấu hiệu (VD: Poisson, Bayes, VIF, paired, Type II, Zip code, width...)" style="flex:1; min-width:220px; padding:8px 12px; border-radius:8px; border:1px solid var(--border); background:var(--surface-sidebar); color:var(--text); font-size:0.85rem; outline:none;" />
+        <span id="recognition-count-label" style="font-size:0.79rem; font-weight:700; color:var(--text-muted);"></span>
+      </div>
+      <div id="recognition-tabs" style="display:flex; gap:6px; flex-wrap:wrap;"></div>
+    </div>
+    <div id="recognition-modal-list" style="padding:16px 20px; overflow-y:auto; flex:1;"></div>
   </div>
 
   <script>
@@ -2286,7 +2664,10 @@
   });
 
   window.addEventListener('keydown', function(e) {
-    if (e.key === 'Escape') closeExamModal();
+    if (e.key === 'Escape') {
+      closeExamModal();
+      if (typeof closeRecognitionModal === 'function') closeRecognitionModal();
+    }
   });
 </script>
 
@@ -2348,6 +2729,8 @@ let currentChapter = 'all';
 let currentType = 'all';
 let currentAns = 'all';
 let currentProgressFilter = 'all'; // 'all', 'unattempted', 'correct', 'wrong', 'attempted'
+let currentPattern = 'all';
+let currentRecTab = 'all';
 let searchQuery = '';
 let studyMode = 'study'; // 'study' or 'practice'
 
@@ -2363,12 +2746,12 @@ const PAGE_SIZE = 50;
 let filteredQuestions = [];
 
 function getQuizTotalCount() {
-  return (window.QUIZ_DATA && window.QUIZ_DATA.length) || 364;
+  return (window.QUIZ_DATA && window.QUIZ_DATA.length) || 416;
 }
 
 function getQuizMaxId() {
-  if (!window.QUIZ_DATA || !window.QUIZ_DATA.length) return 364;
-  return window.QUIZ_DATA.reduce(function(mx, x) { return x.id > mx ? x.id : mx; }, 0) || 364;
+  if (!window.QUIZ_DATA || !window.QUIZ_DATA.length) return 416;
+  return window.QUIZ_DATA.reduce(function(mx, x) { return x.id > mx ? x.id : mx; }, 0) || 416;
 }
 
 function syncStaticCountsToQuizData() {
@@ -3213,6 +3596,11 @@ function applyFilters() {
       if (!matchChapterFilter(q.chapter, currentChapter)) return false;
     }
 
+    // Pattern recognition filter
+    if (currentPattern !== 'all') {
+      if (classifyQuestionPattern(q).pattern.id !== currentPattern) return false;
+    }
+
     // Type filter
     if (currentType === 'calc' && !q.is_calc) return false;
     if (currentType === 'theory' && q.is_calc) return false;
@@ -3236,6 +3624,7 @@ function applyFilters() {
     return true;
   });
 
+  updatePatternFilterBanner();
   updateStats();
   renderPagination();
   renderQuestions();
@@ -3258,12 +3647,14 @@ function jumpToQuestion() {
     currentType = 'all';
     currentAns = 'all';
     currentProgressFilter = 'all';
+    currentPattern = 'all';
     searchQuery = '';
     document.getElementById('search-input').value = '';
     document.querySelectorAll('.pill-btn').forEach(function(b) {
       b.classList.toggle('active', b.dataset.ch === 'all' || b.dataset.type === 'all' || b.dataset.ans === 'all' || b.dataset.progress === 'all');
     });
 
+    updatePatternFilterBanner();
     filteredQuestions = data;
     currentPage = Math.floor(targetIdx / PAGE_SIZE) + 1;
     renderPagination();
@@ -3440,7 +3831,8 @@ function createQuestionCard(q) {
     '<button class="tgl-btn tgl-apdung" onclick="toggleSection(' + q.id + ', \'apdung\', this)">✍️ Lời giải</button>' +
     '<button class="tgl-btn tgl-casio" onclick="toggleSection(' + q.id + ', \'casio\', this)">🧮 Casio 580</button>' +
     '<button class="tgl-btn tgl-lythuyet" onclick="toggleSection(' + q.id + ', \'lythuyet\', this)">📚 Sách Berenson</button>' +
-    '<button class="tgl-btn tgl-all-btn" onclick="toggleCardAll(' + q.id + ', this)">Mở tất cả 6 mục</button>' +
+    '<button class="tgl-btn tgl-meo" onclick="toggleSection(' + q.id + ', \'meo\', this)">🎯 Mẹo &amp; Phân biệt</button>' +
+    '<button class="tgl-btn tgl-all-btn" onclick="toggleCardAll(' + q.id + ', this)">Mở tất cả 7 mục</button>' +
     '</div>' +
     '<div class="detail-panel panel-dich" id="panel-dich-' + q.id + '">' +
     '<div class="panel-title">🌐 BẢN DỊCH ĐỀ BÀI (VIETNAMESE TRANSLATION)</div>' +
@@ -3465,6 +3857,9 @@ function createQuestionCard(q) {
     '<div class="detail-panel panel-lythuyet" id="panel-lythuyet-' + q.id + '">' +
     '<div class="panel-title">📚 GIẢNG GIẢI LÝ THUYẾT GIÁO TRÌNH BERENSON (TEXTBOOK RATIONALE)</div>' +
     '<div>' + formatRichText(q.ly_thuyet) + '</div>' +
+    '</div>' +
+    '<div class="detail-panel panel-meo" id="panel-meo-' + q.id + '">' +
+    renderRecognitionPanelHtml(q) +
     '</div>';
 
   return card;
@@ -3582,11 +3977,14 @@ function toggleSection(id, section, btn) {
         throwOnError: false
       });
     }
+    if (isVis && typeof restoreAllHighlights === 'function') {
+      restoreAllHighlights();
+    }
   }
 }
 
 function toggleCardAll(id, btn) {
-  const sections = ['dich', 'tomtat', 'cthuc', 'apdung', 'casio', 'lythuyet'];
+  const sections = ['dich', 'tomtat', 'cthuc', 'apdung', 'casio', 'lythuyet', 'meo'];
   const card = document.getElementById('q-card-' + id);
   const isAnyVisible = sections.some(function(sec) {
     const p = document.getElementById('panel-' + sec + '-' + id);
@@ -3601,7 +3999,7 @@ function toggleCardAll(id, btn) {
     if (b) b.classList.toggle('active', targetState);
   });
 
-  btn.innerText = targetState ? 'Thu gọn thẻ này' : 'Mở tất cả 6 mục';
+  btn.innerText = targetState ? 'Thu gọn thẻ này' : 'Mở tất cả 7 mục';
 
   if (targetState && window.renderMathInElement) {
     renderMathInElement(card, {
@@ -3625,7 +4023,7 @@ function toggleAllDetails(show) {
   const buttons = document.querySelectorAll('.tgl-btn:not(.tgl-all-btn)');
   buttons.forEach(function(b) { b.classList.toggle('active', show); });
   const allBtns = document.querySelectorAll('.tgl-all-btn');
-  allBtns.forEach(function(b) { b.innerText = show ? 'Thu gọn thẻ này' : 'Mở tất cả 6 mục'; });
+  allBtns.forEach(function(b) { b.innerText = show ? 'Thu gọn thẻ này' : 'Mở tất cả 7 mục'; });
 
   if (show && window.renderMathInElement) {
     const container = document.getElementById('questions-container');
@@ -3660,6 +4058,9 @@ function toggleGlobalSection(sec) {
   });
   const buttons = document.querySelectorAll('.tgl-' + sec);
   buttons.forEach(function(b) { b.classList.toggle('active', targetState); });
+  if (targetState && typeof restoreAllHighlights === 'function') {
+    restoreAllHighlights();
+  }
 }
 
 // ---------------------------------------------------------
@@ -3715,6 +4116,1863 @@ function renderPagination() {
   };
   bar.appendChild(nextBtn);
 }
+
+
+// ---------------------------------------------------------
+// 14B. PATTERN RECOGNITION & CONCEPT DISCRIMINATION (1 RA 3)
+// ---------------------------------------------------------
+// MAS202 Pattern Recognition & Concept Discrimination Engine ("Hoc 1 Ra 3")
+// Supports all 416 Bank Questions + all 22 FE/RE Exam Portals
+
+const MAS_RECOGNITION_CHAPTER_TABS = [
+  { id: 'all', label: 'Tất cả (34 dạng)' },
+  { id: 'Ch1-3', label: 'Ch1–3: Dữ liệu & Mô tả' },
+  { id: 'Ch4', label: 'Ch4: Xác suất & Bayes' },
+  { id: 'Ch5', label: 'Ch5: Phân phối Rời rạc' },
+  { id: 'Ch6-7', label: 'Ch6–7: Chuẩn & CLT' },
+  { id: 'Ch8', label: 'Ch8: Khoảng tin cậy' },
+  { id: 'Ch9-10', label: 'Ch9–10: Kiểm định 1–2 mẫu' },
+  { id: 'Ch11-12', label: 'Ch11–12: ANOVA & χ²' },
+  { id: 'Ch13-14', label: 'Ch13–14: Hồi quy' }
+];
+
+const MAS_PATTERNS = [
+  // =========================================================================
+  // CH 1 - 3: DU LIEU, CHON MAU, BIEU DO & THONG KE MO TA SO
+  // =========================================================================
+  {
+    id: 'pop_param',
+    chGroup: 'Ch1-3',
+    badge: 'Ch1 • Khái niệm nền tảng',
+    title: 'Tổng thể vs Mẫu & Tham số (Parameter) vs Thống kê (Statistic)',
+    tagline: 'Phân biệt nhanh: Tổng thể (all/entire) vs Mẫu (selected/portion) & Mô tả vs Suy diễn.',
+    signals: [
+      { rx: /\bparameters?|\bstatistics?\b/i, kw: 'parameter / statistic', why: 'Phân biệt số đo của Tổng thể vs của Mẫu' },
+      { rx: /\b(population|universe|all employees|all students|entire)\b/i, kw: 'population / all / entire', why: 'Dấu hiệu chỉ Tổng thể (Population)' },
+      { rx: /\b(sample|portion of the universe|selected|randomly chosen|surveyed)\b/i, kw: 'sample / selected / portion', why: 'Dấu hiệu chỉ Mẫu (Sample)' },
+      { rx: /\b(descriptive|inferential)\b/i, kw: 'descriptive / inferential', why: 'Phân biệt Thống kê mô tả vs Thống kê suy diễn' }
+    ],
+    roles: [
+      {
+        name: '1. Population & Parameter',
+        when: 'Nói về TOÀN BỘ đối tượng (all, entire) — ký hiệu Hy Lạp $\\mu, \\sigma, \\pi$',
+        formula: 'Parameter = số đo tóm tắt của **Population**',
+        tip: 'Mẹo nhớ chữ cái đầu: **P**opulation $\\leftrightarrow$ **P**arameter.'
+      },
+      {
+        name: '2. Sample & Statistic',
+        when: 'Nói về MỘT PHẦN được rút ra để khảo sát (selected, subset) — ký hiệu Latin $\\bar{X}, S, p$',
+        formula: 'Statistic = số đo tóm tắt của **Sample**',
+        tip: 'Mẹo nhớ chữ cái đầu: **S**ample $\\leftrightarrow$ **S**tatistic.'
+      },
+      {
+        name: '3. Descriptive vs Inferential',
+        when: 'Mô tả bảng/biểu/tính trung bình mẫu vs Dự đoán/ước lượng/kiểm định cho tổng thể',
+        formula: 'Sample $\\xrightarrow{\\text{Inferential}}$ Population',
+        tip: 'Chỉ tóm tắt số liệu hiện có = **Descriptive**. Dùng mẫu suy ra tổng thể (estimate, predict, test) = **Inferential**.'
+      }
+    ],
+    traps: [
+      'Đề cho mẫu $n = 200$ rồi nói *"The average GPA of these 200 students is 3.2"* $\\implies$ `3.2` vẫn là **Statistic** (không phải Parameter) vì chỉ tính trên 200 bạn trong mẫu.',
+      'Thấy các chữ *"based on a sample, researchers estimate / predict / conclude for all customers..."* $\\implies$ chắc chắn là **Inferential Statistics**.'
+    ],
+    roleDetect: function(txt) {
+      if (/\b(descriptive|inferential)\b/i.test(txt)) return 2;
+      if (/\b(statistics?|portion of the universe|sample)\b/i.test(txt) && !/\bparameters?\b/i.test(txt)) return 1;
+      return 0;
+    }
+  },
+  {
+    id: 'var_scale',
+    chGroup: 'Ch1-3',
+    badge: 'Ch1 • Phân loại Biến & Thang đo',
+    title: 'Biến Định tính vs Định lượng & 4 Thang đo (NOIR)',
+    tagline: 'Cảnh giác các con số "giả danh" (Zip code, ID, SĐT) và phân biệt Interval vs Ratio.',
+    signals: [
+      { rx: /\b(categorical|qualitative|numerical|quantitative)\b/i, kw: 'categorical / numerical', why: 'Phân loại biến định tính vs định lượng' },
+      { rx: /\b(discrete|continuous)\b/i, kw: 'discrete / continuous', why: 'Rời rạc (đếm) vs Liên tục (đo)' },
+      { rx: /\b(nominal|ordinal|interval|ratio)\b/i, kw: 'nominal / ordinal / interval / ratio', why: 'Nhận diện 4 mức thang đo (NOIR)' },
+      { rx: /\b(zip code|telephone|student id|ssn|social security|jersey|temperature|celsius)\b/i, kw: 'zip code / ID / temperature', why: 'Bẫy phân loại thang đo kinh điển!' }
+    ],
+    roles: [
+      {
+        name: '1. Categorical (Nominal vs Ordinal)',
+        when: 'Phân loại chữ/nhãn hoặc mã định danh (màu sắc, giới tính, Zip code, SĐT, xếp loại A/B/C)',
+        formula: '**Nominal**: chỉ tên gọi | **Ordinal**: có thứ hạng',
+        tip: '**Zip code, Mã SV, Số áo cầu thủ** tuy viết bằng chữ số nhưng cộng trừ vô nghĩa $\\implies$ **Categorical (Nominal)**!'
+      },
+      {
+        name: '2. Numerical: Discrete vs Continuous',
+        when: '**Discrete** (đếm được, số nguyên: 0, 1, 2...) vs **Continuous** (đo đạc trên khoảng liên tục)',
+        formula: 'Đếm (*number of...*) $\\to$ **Discrete** | Đo (*weight, height, time, age*) $\\to$ **Continuous**',
+        tip: '**Tiền (Price/Salary)** và **Tuổi/Thời gian** trong giáo trình Berenson được xếp vào **Continuous** (dù đôi khi làm tròn).'
+      },
+      {
+        name: '3. Interval vs Ratio Scale',
+        when: '**Interval**: số 0 chỉ là quy ước (Nhiệt độ °C/°F, Năm lịch, IQ) vs **Ratio**: số 0 tuyệt đối = không có gì',
+        formula: 'Nói *"gấp đôi"* có nghĩa $\\implies$ **Ratio** (Tiền, cân nặng, thời gian)',
+        tip: '20°C KHÔNG nóng gấp đôi 10°C $\\implies$ nhiệt độ °C/°F là **Interval**. Độ Kelvin (°K), lương, doanh thu là **Ratio**.'
+      }
+    ],
+    traps: [
+      'Bẫy câu hỏi *"number of..."* (số khách hàng, số lỗi, số con): luôn là **Numerical Discrete**.',
+      'Bẫy **Ordinal vs Interval**: thang đánh giá *Rất hài lòng / Hài lòng / Tệ* (Likert 1–5) chỉ biết thứ tự, khoảng cách giữa mức 1–2 và 4–5 không đo bằng nhau $\\implies$ là **Ordinal**!'
+    ],
+    roleDetect: function(txt) {
+      if (/\b(interval|ratio)\b/i.test(txt)) return 2;
+      if (/\b(discrete|continuous|quantitative|numerical|liên tục|rời rạc)\b/i.test(txt)) return 1;
+      return 0;
+    }
+  },
+  {
+    id: 'sampling_err',
+    chGroup: 'Ch1-3',
+    badge: 'Ch1 • Chọn mẫu & Sai số',
+    title: 'Kỹ thuật Chọn mẫu (Stratified vs Cluster vs Systematic) & 4 Sai số Khảo sát',
+    tagline: 'Phân biệt Stratified (lấy vài người mỗi tầng) vs Cluster (bốc nguyên vài cụm) & 4 Survey Errors.',
+    signals: [
+      { rx: /\b(stratified|cluster|systematic|simple random|convenience|judgment)\b/i, kw: 'stratified / cluster / systematic', why: 'Nhận diện phương pháp lấy mẫu' },
+      { rx: /\b(sampling frame|coverage error|nonresponse|measurement error|sampling error|survey error)\b/i, kw: 'frame / coverage / nonresponse / measurement', why: 'Phân biệt Sampling Frame & 4 loại sai số' },
+      { rx: /\b(strata|stratum|homogeneous|every \d+th|kth|blocks|all members in)\b/i, kw: 'strata / every kth / blocks', why: 'Từ khóa tách bạch Stratified vs Systematic vs Cluster' }
+    ],
+    roles: [
+      {
+        name: '1. Stratified vs Cluster Sampling',
+        when: '**Stratified**: chia nhóm *đồng nhất*, lấy ngẫu nhiên TRONG TẤT CẢ các nhóm. **Cluster**: chia cụm địa lý, chọn vài cụm rồi khảo sát TẤT CẢ trong cụm đó',
+        formula: 'Stratified: **Each** stratum (vài phần tử) | Cluster: **Few** clusters (toàn bộ cụm)',
+        tip: 'Thấy chữ *"divided into groups/majors and randomly select 10 from EACH group"* $\\to$ **Stratified**!'
+      },
+      {
+        name: '2. Systematic & Non-Probability',
+        when: '**Systematic**: sắp danh sách rồi chọn cách đều mỗi người thứ $k$ ($k = N/n$). **Convenience/Judgment**: lấy cho tiện (không ngẫu nhiên)',
+        formula: 'Bước nhảy $k = \\frac{N}{n}$ (chọn ngẫu nhiên điểm đầu $1..k$)',
+        tip: 'Phát phiếu ở cổng trường cho ai đi qua, hoặc bình chọn tự nguyện online $\\to$ **Convenience** (dễ sai lệch chọn mẫu).'
+      },
+      {
+        name: '3. Sampling Frame & 4 Survey Errors',
+        when: '**Coverage error** (khung mẫu thiếu người — Selection bias) | **Nonresponse** (không chịu trả lời) | **Sampling error** (chênh lệch ngẫu nhiên) | **Measurement error** (câu hỏi gài/sai)',
+        formula: 'Lỗi khung mẫu $\\to$ Coverage | Bỏ phiếu trống $\\to$ Nonresponse | Đề hỏi mập mờ $\\to$ Measurement',
+        tip: '**Sampling error** là sai số tất yếu khi dùng mẫu thay tổng thể (giảm khi tăng $n$), KHÔNG phải lỗi quy trình!'
+      }
+    ],
+    traps: [
+      'Cẩn thận phân biệt **Sampling Frame** (danh sách liệt kê tất cả phần tử của tổng thể để bốc mẫu — vd danh bạ điện thoại, danh sách sinh viên) với **Sampling Error**.',
+      'Câu hỏi mang tính dẫn dắt (*leading question*), người phỏng vấn ghi sai hoặc ứng viên nói dối $\\implies$ **Measurement Error**!'
+    ],
+    roleDetect: function(txt) {
+      if (/\b(coverage|nonresponse|measurement|sampling error|sampling frame|ethical|survey error)\b/i.test(txt)) return 2;
+      if (/\b(systematic|convenience|judgment)\b/i.test(txt)) return 1;
+      return 0;
+    }
+  },
+  {
+    id: 'charts_tables',
+    chGroup: 'Ch1-3',
+    badge: 'Ch2 • Biểu đồ & Bảng chéo',
+    title: 'Chọn đúng Biểu đồ (Bar/Pareto vs Histogram/Scatter/Time-Series) & Nguyên tắc vẽ',
+    tagline: 'Chọn biểu đồ theo loại biến (Categorical vs Numerical, 1 biến vs 2 biến) & tránh Chartjunk.',
+    signals: [
+      { rx: /\b(pareto|pie chart|bar chart|histogram|stem[- ]and[- ]leaf|ogive|polygon|scatter plot|line chart|time[- ]series)\b/i, kw: 'Pareto / Histogram / Scatter / Ogive', why: 'Xác định biểu đồ phù hợp với loại dữ liệu' },
+      { rx: /\b(contingency table|cross[- ]tab|bảng tiếp liên|bảng chéo)\b/i, kw: 'contingency table / cross-tab', why: 'Bảng chéo cho 2 biến định tính' },
+      { rx: /\b(chartjunk|tufte|zero point|optical illusion|graphical excellence|bad visual)\b/i, kw: 'chartjunk / zero point', why: 'Nguyên tắc thiết kế đồ thị chuẩn' }
+    ],
+    roles: [
+      {
+        name: '1. Categorical Displays (1 & 2 biến)',
+        when: '1 biến định tính: **Bar / Pie / Pareto** (Pareto xếp cột cao $\\to$ thấp + đường tích lũy %). 2 biến định tính: **Contingency Table / Side-by-side Bar**',
+        formula: 'Pareto = Nguyên tắc **80/20** (*vital few vs trivial many*)',
+        tip: 'Muốn nhấn mạnh nguyên nhân lỗi quan trọng nhất trong QC $\\implies$ **Pareto Chart**!'
+      },
+      {
+        name: '2. Numerical Displays (1 & 2 biến)',
+        when: '1 biến định lượng: **Histogram** (cột dính nhau), **Stem-and-Leaf** (giữ nguyên số gốc), **Polygon/Ogive**. 2 biến: **Scatter Plot**. Theo thời gian: **Time-Series (Line) Plot**',
+        formula: 'Histogram **không có khe hở** giữa các cột (khác Bar chart!)',
+        tip: 'Cần giữ nguyên từng giá trị gốc của dữ liệu nhỏ $\\to$ **Stem-and-Leaf**. Cần thấy xu hướng 2 biến số $\\to$ **Scatter Plot**.'
+      },
+      {
+        name: '3. Nguyên tắc Đồ thị Chuẩn (Graphical Excellence)',
+        when: 'Trục tung **phải bắt đầu từ 0** (nếu không dễ phóng đại chênh lệch), tránh 3D / **chartjunk**, nhãn trục rõ đơn vị',
+        formula: 'No 3D / No distorted scale / Always label axes & start at 0',
+        tip: 'Hình vẽ khối 3D hoặc cắt trục tung $Y$ không bắt đầu từ $0$ thường là dấu hiệu biểu đồ lừa thị giác (**bad visual display**).'
+      }
+    ],
+    traps: [
+      'Đề hỏi *"bảng nào dùng để tổng hợp đồng thời 2 biến định tính (categorical)"* $\\implies$ **Contingency Table (Cross-tabulation)**.',
+      'Histogram dùng cho dữ liệu **Numerical**, các cột đứng **liền sát nhau**; còn Bar chart dùng cho **Categorical**, các cột tách rời nhau.'
+    ],
+    roleDetect: function(txt, q) {
+
+      var top = (q && q.topic) || '';
+      if (/\b(chartjunk|tufte|zero|graphical|illusion|mislead|guideline|principles)\b/i.test(txt)) return 2;
+
+      if (/định tính|categorical|contingency|cross[- ]tab|pareto/i.test(top)) return 0;
+      if (/\b(histogram|stem|ogive|polygon|scatter|line chart|time[- ]series|numerical)\b/i.test(txt)) return 1;
+      return 0;
+    }
+  },
+  {
+    id: 'freq_cum',
+    chGroup: 'Ch1-3',
+    badge: 'Ch2 • Bảng Tần số & Tích lũy',
+    title: 'Tần số (Frequency) vs Tương đối (Relative) vs Tích lũy (Cumulative / Ogive)',
+    tagline: 'Cẩn thận bẫy đọc "less than" (từ trên xuống) vs "at least / or more" (lấy 100% trừ đi).',
+    signals: [
+      { rx: /\b(cumulative|relative frequency|percentage distribution|class boundary|class width|class midpoint)\b/i, kw: 'cumulative / relative frequency / width', why: 'Nhận diện bài toán đọc bảng phân phối tần số' },
+      { rx: /ogive|cumulative percentage/i, kw: 'ogive / cumulative %', why: 'Đồ thị tích lũy dùng cận trên (upper boundary)' }
+    ],
+    roles: [
+      {
+        name: '1. Frequency & Relative Frequency',
+        when: 'Tần số $f_i$ (số đếm) vs Tần suất tương đối $f_i / n$ (tổng bằng $1.0$ hoặc $100\\%$)',
+        formula: '$\\text{Class Width} = \\frac{\\max - \\min}{k}$ (làm tròn đẹp); $\\text{Relative Freq} = \\frac{f_i}{n}$',
+        tip: 'Số lớp $k$ thường chọn từ $5$ đến $15$ sao cho đủ bao quát, các lớp không chồng lấn.'
+      },
+      {
+        name: '2. Cumulative & Ogive ("less than")',
+        when: 'Cộng dồn tần số/tỷ lệ các lớp từ nhỏ đến cận trên (luôn kết thúc ở $n$ hoặc $100\\%$)',
+        formula: 'Điểm trên **Ogive** gắn với **cận trên (Upper Boundary)** của lớp',
+        tip: 'Đọc bảng tích lũy dạng *"less than 30"* $\\implies$ lấy tổng tần số các lớp có giá trị $< 30$.'
+      },
+      {
+        name: '3. Bẫy "at least" vs "between a and b"',
+        when: 'Hỏi *"có ít nhất X"* ($\\ge X$) thì lấy $100\\% - \\% (< X)$; hỏi giữa $a$ và $b$ thì lấy $F(b) - F(a)$',
+        formula: '$P(X \\ge a) = 1 - F(< a)$',
+        tip: 'Đọc kỹ nhãn lớp là `[20, 30)` hay `20 to under 30` để không cộng nhầm biên!'
+      }
+    ],
+    traps: [
+      'Khi đề cho bảng **Cumulative Relative Frequency** (đã cộng dồn sẵn!) mà hỏi *"tỷ lệ rơi riêng vào lớp thứ 3"*, nhớ lấy hiệu `Cum(3) - Cum(2)`, ĐỪNG đọc thẳng số ở dòng 3!',
+      'Biên lớp liên tục không được hở hoặc trùng nhau.'
+    ],
+    roleDetect: function(txt) {
+      if (/\b(at least|or more|between|greater than)\b/i.test(txt)) return 2;
+      if (/\bcumulative|ogive|less than\b/i.test(txt)) return 1;
+      return 0;
+    }
+  },
+  {
+    id: 'center_skew',
+    chGroup: 'Ch1-3',
+    badge: 'Ch3 • Xu hướng trung tâm & Độ lệch',
+    title: 'Mean vs Median vs Geometric Mean & Độ lệch phân phối (Skewness)',
+    tagline: 'Phân biệt Mean (nhạy outlier) vs Median (bền vững) vs Geometric Mean (lãi suất/tăng trưởng).',
+    signals: [
+      { rx: /\b(mean|median|mode|geometric mean|central tendency)\b/i, kw: 'mean / median / mode / geometric', why: 'Các thước đo xu hướng trung tâm' },
+      { rx: /\b(skewed|skewness|right[- ]skewed|left[- ]skewed|symmetrical|outliers?|extreme values?|resistant|sensitive)\b/i, kw: 'skewed / outlier / sensitive', why: 'So sánh Mean và Median khi có ngoại lai' },
+      { rx: /\b(growth rate|compound|annual return|rate of return)\b/i, kw: 'growth rate / return', why: 'Dấu hiệu dùng Geometric Mean (Trung bình nhân)' }
+    ],
+    roles: [
+      {
+        name: '1. Arithmetic Mean vs Median',
+        when: '**Mean** dùng cho dữ liệu đối xứng, tính theo tổng; **Median** đứng giữa sau khi sắp xếp, **không bị kéo bởi outlier**',
+        formula: '$\\bar{X} = \\frac{\\sum X_i}{n}$; $\\text{Pos}(Med) = \\frac{n+1}{2}$',
+        tip: 'Thu nhập/giá nhà có vài người siêu giàu $\\to$ dùng **Median**; đề hỏi *"most sensitive to / affected by extreme values"* $\\to$ **Mean**.'
+      },
+      {
+        name: '2. Độ lệch (Skewness): Mean vs Median',
+        when: 'So sánh tương quan vị trí giữa $\\bar{X}$ và $Med$ để suy ra hình dạng phân phối',
+        formula: '$\\bar{X} > Med \\to$ **Right-skewed (+)** | $\\bar{X} < Med \\to$ **Left-skewed (-)**',
+        tip: 'Mẹo nhớ cực dễ: **Đuôi kéo dài về phía nào, Mean bị kéo về phía đó!** (Right tail $\\implies$ Mean lớn hơn Median).'
+      },
+      {
+        name: '3. Geometric Mean ($\\bar{X}_G$)',
+        when: 'Tính **tốc độ tăng trưởng trung bình / tỷ suất sinh lợi bình quân** qua các kỳ nối tiếp',
+        formula: '$\\bar{X}_G = \\left[\\prod_{i=1}^{n}(1 + R_i)\\right]^{1/n} - 1$',
+        tip: 'Lãi +50% năm 1, -50% năm 2: Mean cộng ra 0% (SAI!), Geometric Mean ra $\\sqrt{1.5 \\times 0.5} - 1 = -13.4\\%$ (ĐÚNG!).'
+      }
+    ],
+    traps: [
+      'Với tập dữ liệu có $n$ chẵn, **Median** là trung bình cộng của 2 phần tử chính giữa ở vị trí $n/2$ và $(n/2)+1$ (nhớ **phải sắp xếp tăng dần** trước!).',
+      'Khi tính **Geometric Mean** với tỷ lệ âm (lỗ $-10\\%$), nhớ đổi thành $1 + (-0.10) = 0.90$ trước khi nhân!'
+    ],
+    roleDetect: function(txt) {
+      if (/\b(geometric|growth rate|compound|annual return|rate of return)\b/i.test(txt)) return 2;
+      if (/\bskew|symmetr\b/i.test(txt)) return 1;
+      return 0;
+    }
+  },
+  {
+    id: 'var_sd_cv',
+    chGroup: 'Ch1-3',
+    badge: 'Ch3 • Phương sai, Độ lệch chuẩn & CV',
+    title: 'Sample ($n-1$) vs Population ($N$) & Hệ số biến thiên (CV)',
+    tagline: 'Bẫy chia $n-1$ vs chia $N$, và khi nào bắt buộc dùng Coefficient of Variation ($CV$).',
+    signals: [
+      { rx: /\b(variances?|standard deviations?|range|variation)\b/i, kw: 'variance / standard deviation', why: 'Đo lường độ phân tán' },
+      { rx: /\b(sample variance|sample standard deviation|population variance|population standard deviation)\b/i, kw: 'sample vs population', why: 'Quyết định chia n-1 hay chia N!' },
+      { rx: /\b(coefficient of variation|\bcv\b)\b/i, kw: 'coefficient of variation (CV)', why: 'So sánh phân tán tương đối (%) giữa các tập dữ liệu' }
+    ],
+    roles: [
+      {
+        name: '1. Sample Variance & SD (Chia $n-1$)',
+        when: 'Đề ghi *"sample data / sample variance / sample SD"* $\\implies$ mẫu số là **$n - 1$**',
+        formula: '$S^2 = \\frac{\\sum (X_i - \\bar{X})^2}{n - 1}, \\quad S = \\sqrt{S^2}$',
+        tip: 'Trên Casio `MENU 6 → OPTN 3`: đọc **`s²x` và `sx`** (KHÔNG đọc `σx`!).'
+      },
+      {
+        name: '2. Population Variance & SD (Chia $N$)',
+        when: 'Đề ghi *"population / entire group / all X"* $\\implies$ mẫu số là **$N$**',
+        formula: '$\\sigma^2 = \\frac{\\sum (X_i - \\mu)^2}{N}, \\quad \\sigma = \\sqrt{\\sigma^2}$',
+        tip: 'Trên Casio `MENU 6 → OPTN 3`: đọc **`σ²x` và `σx`**! Độ lệch chuẩn có CÙNG đơn vị với dữ liệu gốc, còn Phương sai có đơn vị bình phương.'
+      },
+      {
+        name: '3. Coefficient of Variation ($CV$)',
+        when: 'So sánh biến động tương đối của 2 tập dữ liệu **khác đơn vị** (kg vs USD) hoặc **khác hẳn quy mô Mean**',
+        formula: '$CV = \\left(\\frac{S}{\\bar{X}}\\right) \\times 100\\%$',
+        tip: '$CV$ **không có đơn vị** (tính bằng %) và là thước đo **độ phân tán**, KHÔNG phải xu hướng trung tâm!'
+      }
+    ],
+    traps: [
+      'Cạm bẫy đọc đề kinh điển: đề cho *"The population of eight analysts..."* (Câu 406) $\\implies$ tính SD phải chia $N = 8$ (`σx`), KHÔNG chia $7$ (`sx`)!',
+      'Đề hỏi **Variance ($S^2$)** nhưng bấm Casio ra **SD ($S$)** rồi quên bình phương lên — luôn kiểm tra kỹ chữ *variance* hay *standard deviation*.'
+    ],
+    roleDetect: function(txt) {
+      if (/\bcoefficient of variation|\bcv\b/i.test(txt)) return 2;
+      if (/\bpopulation\b/i.test(txt) && !/\bsample\b/i.test(txt)) return 1;
+      return 0;
+    }
+  },
+  {
+    id: 'empirical_chebyshev',
+    chGroup: 'Ch1-3',
+    badge: 'Ch3 • Quy tắc Chuẩn & Chebyshev & Z-score',
+    title: 'Empirical Rule vs Chebyshev Theorem vs Z-score',
+    tagline: 'Empirical Rule chỉ dùng khi "Bell-shaped / Normal", Chebyshev dùng cho MỌI phân phối.',
+    signals: [
+      { rx: /\b(empirical rule|bell[- ]shaped|68%|95%|99\.7%)\b/i, kw: 'empirical rule / bell-shaped', why: 'Phân phối hình chuông: 68% - 95% - 99.7%' },
+      { rx: /\b(chebyshev|at least 1|unknown distribution|any distribution)\b/i, kw: 'Chebyshev / at least', why: 'Mọi phân phối: 1 - 1/k²' },
+      { rx: /\b(z[- ]scores?|z scores?|standard scores?|how many standard deviations)\b/i, kw: 'Z-score / outlier', why: 'Chuẩn hóa vị trí Z = (X - X̄)/S' }
+    ],
+    roles: [
+      {
+        name: '1. Empirical Rule (Hình chuông)',
+        when: 'Đề BẮT BUỘC có chữ *"bell-shaped"* hoặc *"normal distribution"*',
+        formula: '$\\pm 1\\sigma \\approx 68\\%$; $\\pm 2\\sigma \\approx 95\\%$; $\\pm 3\\sigma \\approx 99.7\\%$',
+        tip: 'Vì đối xứng nên ngoài khoảng $\\pm 2\\sigma$ còn $5\\% \\implies$ mỗi đuôi ngoài $\\pm 2\\sigma$ là $2.5\\%$.'
+      },
+      {
+        name: '2. Chebyshev\'s Theorem (Mọi phân phối)',
+        when: 'Đề nói *"any distribution / distribution unknown / regardless of shape / at least..."*',
+        formula: 'Tỷ lệ ít nhất trong $\\mu \\pm k\\sigma$: $1 - \\frac{1}{k^2}$ ($k > 1$)',
+        tip: 'Nhớ nhanh 3 mốc: $k=2 \\implies \\ge 75\\%$; $k=3 \\implies \\ge 88.89\\%$; $k=4 \\implies \\ge 93.75\\%$.'
+      },
+      {
+        name: '3. Z-score & Phát hiện Outlier',
+        when: 'Hỏi giá trị $X$ nằm cách trung bình bao nhiêu lần độ lệch chuẩn',
+        formula: '$Z = \\frac{X - \\bar{X}}{S}$ (hoặc $\\frac{X - \\mu}{\\sigma}$)',
+        tip: 'Theo quy tắc Z-score, quan sát có **$|Z| > 3$** được xem là ngoại lai (**outlier**). $Z$ không có đơn vị.'
+      }
+    ],
+    traps: [
+      'Đừng dùng $68\\%$ hay $95\\%$ nếu đề KHÔNG hề nhắc đến *normal / bell-shaped* mà chỉ hỏi *"at least what percentage..."* $\\implies$ bắt buộc dùng **Chebyshev**!',
+      'Với câu hỏi tính $k$: luôn lấy $k = \\frac{\\text{Cận trên} - \\mu}{\\sigma}$ rồi thay vào $1 - 1/k^2$.'
+    ],
+    roleDetect: function(txt) {
+      if (/\b(z[- ]scores?|z scores?|standard scores?)\b/i.test(txt)) return 2;
+      if (/\bchebyshev\b/i.test(txt) || (/\bat least\b/i.test(txt) && !/empirical/i.test(txt))) return 1;
+      return 0;
+    }
+  },
+  {
+    id: 'quartile_boxplot',
+    chGroup: 'Ch1-3',
+    badge: 'Ch3 • Tứ phân vị, IQR & Boxplot',
+    title: 'Tứ phân vị ($Q_1, Q_2, Q_3$), $IQR$ & Biểu đồ hộp (Boxplot)',
+    tagline: 'Phân biệt công thức vị trí $(n+1)$ kiểu Berenson vs đọc Skewness từ Boxplot.',
+    signals: [
+      { rx: /\b(quartiles?|q_?1|q_?3|interquartile|iqr|percentiles?)\b/i, kw: 'quartile / Q1 / Q3 / IQR', why: 'Tính vị trí tứ phân vị hoặc khoảng IQR' },
+      { rx: /\b(boxplots?|box[- ]and[- ]whisker|five[- ]number summary)\b/i, kw: 'boxplot / five-number summary', why: '5 số tóm tắt và hình dạng phân phối từ Boxplot' }
+    ],
+    roles: [
+      {
+        name: '1. Vị trí $Q_1, Q_2, Q_3$ (Berenson)',
+        when: 'Phải **SẮP XẾP TĂNG DẦN** $n$ số trước khi tìm vị trí',
+        formula: '$\\text{Pos}(Q_1)=\\frac{n+1}{4}$, $\\text{Pos}(Q_2)=\\frac{n+1}{2}$, $\\text{Pos}(Q_3)=\\frac{3(n+1)}{4}$',
+        tip: 'Nếu vị trí là $.5$ (vd $3.5$) $\\to$ lấy TB cộng 2 số thứ 3 & 4. Nếu là $.25$ hay $.75$ trong Berenson: làm tròn về số nguyên gần nhất (hoặc kiểm tra đáp án sát nhất; trên Casio xem `Q1, Med, Q3`).'
+      },
+      {
+        name: '2. Khoảng Tứ phân vị ($IQR$)',
+        when: 'Đo độ phân tán 50% dữ liệu ở giữa, **bền vững trước outlier** (khác với Range $= \\max - \\min$)',
+        formula: '$IQR = Q_3 - Q_1$; Outlier nếu $< Q_1 - 1.5\\cdot IQR$ hoặc $> Q_3 + 1.5\\cdot IQR$',
+        tip: 'Khi dữ liệu có outlier cực lớn/bé, thước đo phân tán tốt nhất là **IQR** (còn trung tâm là **Median**).'
+      },
+      {
+        name: '3. Five-Number Summary & Boxplot',
+        when: 'Gồm 5 số: $\\min, Q_1, Q_2 (Med), Q_3, \\max$. Râu dài bên nào $\\implies$ lệch phía đó',
+        formula: '$Q_3 - Med > Med - Q_1 \\implies$ **Right-skewed**',
+        tip: 'Nếu hộp và hai râu đối xứng qua đường Median ở giữa $\\implies$ **Symmetric**.'
+      }
+    ],
+    traps: [
+      'Lỗi mất điểm ngớ ngẩn nhất: **Quên sắp xếp dãy số từ nhỏ đến lớn** trước khi đọc $Q_1, Q_2, Q_3$!',
+      'Chú ý Casio fx-580VN X tách giữa khi $n$ chẵn khác nhẹ quy tắc làm tròn `.25/.75` của sách Berenson khi $n$ không chia hết, nên kiểm tra lại bằng công thức $\\frac{n+1}{4}$ và $\\frac{3(n+1)}{4}$.'
+    ],
+    roleDetect: function(txt) {
+      if (/\b(boxplot|box[- ]and[- ]whisker|five[- ]number|skew)\b/i.test(txt)) return 2;
+      if (/\b(iqr|interquartile)\b/i.test(txt)) return 1;
+      return 0;
+    }
+  },
+  {
+    id: 'cov_corr',
+    chGroup: 'Ch1-3',
+    badge: 'Ch3 & Ch5 • Hiệp phương sai & Tương quan',
+    title: 'Hiệp phương sai ($S_{XY}, \\sigma_{XY}$) vs Hệ số tương quan ($r$)',
+    tagline: 'Phân biệt Cov (có đơn vị, chia $n-1$) vs Correlation $r \\in [-1, 1]$ (bất biến đơn vị).',
+    signals: [
+      { rx: /\b(covariance|cov\(|s_\{?xy\}?|\\sigma_\{?xy\}?)\b/i, kw: 'covariance', why: 'Hiệp phương sai đo chiều đồng biến' },
+      { rx: /\b(correlation coefficient|pearson|linear relationship)\b/i, kw: 'correlation r', why: 'Hệ số tương quan chuẩn hóa trong [-1, 1]' },
+      { rx: /\b(convert|feet|inches|celsius|unit|scale|multiply.*by|invariance)\b/i, kw: 'unit / scale invariance', why: 'Tính chất bất biến của r khi đổi đơn vị' }
+    ],
+    roles: [
+      {
+        name: '1. Sample Covariance ($S_{XY}$)',
+        when: 'Cho bảng cặp $(X_i, Y_i)$ (thống kê mô tả Ch3) $\\implies$ mẫu số là **$n - 1$**',
+        formula: '$S_{XY} = \\frac{\\sum (X_i - \\bar{X})(Y_i - \\bar{Y})}{n - 1} = \\frac{\\sum X_i Y_i - n\\bar{X}\\bar{Y}}{n - 1}$',
+        tip: 'Chỉ cho biết hướng (+ cùng chiều, - ngược chiều); giá trị phụ thuộc đơn vị nên KHÔNG đo được độ mạnh yếu!'
+      },
+      {
+        name: '2. Correlation Coefficient ($r$)',
+        when: 'Chuẩn hóa hiệp phương sai về đoạn $[-1, 1]$: đo cả **hướng** lẫn **độ mạnh tuyến tính**',
+        formula: '$r = \\frac{S_{XY}}{S_X \\cdot S_Y} \\in [-1, 1]$',
+        tip: '$r$ **BẤT BIẾN** khi nhân/chia cùng hệ số dương hay đổi đơn vị (cm $\\to$ inch, USD $\\to$ VND)! Trên Casio `MENU 6 → 2`: đọc **`r`**.'
+      },
+      {
+        name: '3. Covariance Biến Ngẫu nhiên ($\\sigma_{XY}$, Ch5)',
+        when: 'Cho bảng phân phối xác suất đồng thời $P(X_i, Y_i)$ (KHÔNG phải mẫu dữ liệu thô)',
+        formula: '$\\sigma_{XY} = \\sum (X_i - \\mu_X)(Y_i - \\mu_Y) P(X_i, Y_i)$',
+        tip: 'Ở Ch5 nhân với xác suất $P(X,Y)$ chứ KHÔNG chia $n-1$!'
+      }
+    ],
+    traps: [
+      'Đừng kết luận $r = 0$ nghĩa là $X, Y$ độc lập hoàn toàn — $r = 0$ chỉ nghĩa là **không có quan hệ TUYẾN TÍNH** (vẫn có thể quan hệ phi tuyến kiểu parabol $Y=X^2$!).',
+      'Khi nhân tất cả $X$ với $a > 0$ và $Y$ với $b > 0$: $S_{XY}$ tăng lên $a\\cdot b$ lần, còn $r$ **giữ nguyên không đổi**!'
+    ],
+    roleDetect: function(txt, q) {
+      if (q && q.chapter_num === 5) return 2;
+      if (/\bcorrelation\b/i.test(txt) && !/\bcovariance\b/i.test(txt)) return 1;
+      if (/\bcovariance\b/i.test(txt) && !/\bcorrelation\b/i.test(txt)) return 0;
+      return 1;
+    }
+  },
+
+  // =========================================================================
+  // CH 4: XAC SUAT CO BAN, QUY TAC DEM & BAYES
+  // =========================================================================
+  {
+    id: 'prob_rules',
+    chGroup: 'Ch4',
+    badge: 'Ch4 • Xác suất Hợp, Giao & Điều kiện',
+    title: 'Phân biệt "AND" $P(A \\cap B)$ vs "OR" $P(A \\cup B)$ vs "GIVEN" $P(A \\mid B)$',
+    tagline: 'Đọc đúng liên từ tiếng Anh để tránh lấy nhầm mẫu số hoặc quên trừ giao $P(A \\cap B)$.',
+    signals: [
+      { rx: /\b(given that|if the|knowing that|among those|conditional probability)\b/i, kw: 'given that / if', why: 'Dấu hiệu Xác suất có điều kiện P(A | B)' },
+      { rx: /\b(either .* or|at least one|addition rule|union)\b/i, kw: 'either ... or / addition rule', why: 'Xác suất hợp P(A ∪ B)' },
+      { rx: /\b(both .* and|joint probability|contingency table|randomly selected .* is both)\b/i, kw: 'both ... and / joint', why: 'Xác suất đồng thời P(A ∩ B)' }
+    ],
+    roles: [
+      {
+        name: '1. Joint Probability ("AND / BOTH")',
+        when: 'Thỏa mãn **đồng thời cả A và B** $\\implies$ chia cho **Tổng toàn bảng $N$**',
+        formula: '$P(A \\cap B) = P(A) \\cdot P(B \\mid A)$',
+        tip: 'Trong bảng Contingency $2\\times 2$: lấy giá trị đúng ô giao $(A, B)$ chia cho Tổng góc dưới phải $N$.'
+      },
+      {
+        name: '2. Union Probability ("OR")',
+        when: 'Xảy ra **A hoặc B (hoặc cả hai)** $\\implies$ PHẢI trừ phần giao $P(A \\cap B)$ nếu không xung khắc!',
+        formula: '$P(A \\cup B) = P(A) + P(B) - P(A \\cap B)$',
+        tip: 'Quên trừ $P(A \\cap B)$ là lỗi mất điểm nhiều nhất ở bảng $2\\times 2$!'
+      },
+      {
+        name: '3. Conditional ("GIVEN / IF")',
+        when: 'Đề thu hẹp không gian mẫu vào điều kiện sau chữ *"given that / if..."*',
+        formula: '$P(A \\mid B) = \\frac{P(A \\cap B)}{P(B)}$',
+        tip: 'Mẹo 3 giây: Vế nằm **SAU** chữ `given that / if` chính là **MẪU SỐ $P(B)$**!'
+      }
+    ],
+    traps: [
+      'Đừng nhầm $P(A \\mid B)$ với $P(B \\mid A)$! Luôn gạch chân điều kiện *đã biết* để đặt làm mẫu số.',
+      'Trong bảng $2\\times 2$, xác suất biên (Marginal) là Tổng hàng hoặc Tổng cột chia $N$.'
+    ],
+    roleDetect: function(txt) {
+      if (/\b(given|if |conditional)\b/i.test(txt)) return 2;
+      if (/\b(or |either|addition rule|union)\b/i.test(txt)) return 1;
+      return 0;
+    }
+  },
+  {
+    id: 'me_vs_indep',
+    chGroup: 'Ch4',
+    badge: 'Ch4 • Xung khắc vs Độc lập',
+    title: 'Mutually Exclusive (Xung khắc) vs Independent (Độc lập) vs Exhaustive',
+    tagline: 'Cặp khái niệm lý thuyết bẫy nhiều sinh viên nhất Chương 4!',
+    signals: [
+      { rx: /\b(mutually exclusive|disjoint)\b/i, kw: 'mutually exclusive', why: 'Hai biến cố không thể cùng xảy ra' },
+      { rx: /\b(independent|statistical independence)\b/i, kw: 'independent', why: 'Kiểm tra P(A ∩ B) = P(A)P(B)' },
+      { rx: /\b(collectively exhaustive|complement)\b/i, kw: 'collectively exhaustive', why: 'Tổng xác suất phủ kín không gian mẫu' }
+    ],
+    roles: [
+      {
+        name: '1. Mutually Exclusive (Xung khắc)',
+        when: 'Không thể xảy ra cùng lúc (giao rỗng)',
+        formula: '$P(A \\cap B) = 0 \\implies P(A \\cup B) = P(A) + P(B)$',
+        tip: 'Cẩn thận: $P(A)+P(B)$ chưa chắc $=1$, trừ khi vừa xung khắc vừa *collectively exhaustive*!'
+      },
+      {
+        name: '2. Independent (Độc lập)',
+        when: 'Việc A xảy ra **không làm thay đổi** xác suất của B',
+        formula: '$P(A \\mid B) = P(A) \\iff P(A \\cap B) = P(A) \\cdot P(B)$',
+        tip: 'Muốn kiểm tra A, B có độc lập không: tính $P(A)\\cdot P(B)$ xem có bằng $P(A \\cap B)$ hay không!'
+      },
+      {
+        name: '3. Mối liên hệ SỐNG CÒN giữa 2 cái',
+        when: 'Với $P(A) > 0, P(B) > 0$: **Mutually Exclusive $\\implies$ KHÔNG THỂ Independent!**',
+        formula: 'Xung khắc: $P(A \\cap B)=0 \\ne P(A)P(B) > 0$',
+        tip: 'Cặp câu lý thuyết hay ra thi: *"If A and B are mutually exclusive (nonzero probabilities), are they independent?"* $\\implies$ **NO, always dependent!**'
+      }
+    ],
+    traps: [
+      '**NHỚ LÒNG**: $P(A \\cap B) = 0$ là **Mutually Exclusive**, còn $P(A \\cap B) = P(A)P(B)$ mới là **Independent** — đừng bao giờ đánh đồng hai điều này!',
+      '**Collectively Exhaustive** nghĩa là hợp của các biến cố bao phủ 100% không gian mẫu ($P(A \\cup B \\cup \\dots) = 1$).'
+    ],
+    roleDetect: function(txt) {
+      if (/\bmutually exclusive\b/i.test(txt) && /\bindependent\b/i.test(txt)) return 2;
+      if (/\bindependent|independence\b/i.test(txt)) return 1;
+      return 0;
+    }
+  },
+  {
+    id: 'bayes_theorem',
+    chGroup: 'Ch4',
+    badge: 'Ch4 • Định lý Bayes & Xác suất toàn phần',
+    title: 'Định lý Bayes (Xác suất ngược) vs Công thức Xác suất Toàn phần',
+    tagline: 'Đề cho tỷ lệ lỗi từng máy/bệnh $P(B \\mid A_i)$, rồi hỏi ngược xác suất xuất phát $P(A_i \\mid B)$.',
+    signals: [
+      { rx: /\b(bayes|posterior|prior)\b/i, kw: 'Bayes / posterior / prior', why: 'Từ khóa trực tiếp Định lý Bayes' },
+      { rx: /\b(defective|tested positive|tests? positive|false positive|machine|supplier).*given/i, kw: 'given defective / positive → source?', why: 'Cấu trúc kinh điển hỏi ngược nguyên nhân' }
+    ],
+    roles: [
+      {
+        name: '1. Prior & Likelihood (Cho sẵn xuôi)',
+        when: 'Biết trước tỷ lệ đóng góp $P(A_i)$ (Prior) và tỷ lệ lỗi riêng từng nguồn $P(B \\mid A_i)$',
+        formula: 'Giao: $P(A_i \\cap B) = P(A_i) \\cdot P(B \\mid A_i)$',
+        tip: 'Vẽ nhanh **bảng $2\\times 2$ giả định $1000$ hoặc $10,000$ trường hợp** là giải Bayes trong 30 giây không cần nhớ công thức dài!'
+      },
+      {
+        name: '2. Total Probability (Xác suất Toàn phần)',
+        when: 'Hỏi xác suất tổng quát xảy ra sự kiện $B$ (*"What is the probability an item is defective / tests positive?"*)',
+        formula: '$P(B) = \\sum_{i} P(B \\mid A_i) P(A_i)$',
+        tip: 'Tổng xác suất toàn phần $P(B)$ chính là **mẫu số** của công thức Bayes!'
+      },
+      {
+        name: '3. Bayes\' Theorem (Xác suất Ngược Posterior)',
+        when: 'Biết **đã xảy ra kết quả $B$** (*given defective / positive*), hỏi xác suất thuộc nguồn $A_1$',
+        formula: '$P(A_1 \\mid B) = \\frac{P(B \\mid A_1) P(A_1)}{\\sum_i P(B \\mid A_i) P(A_i)}$',
+        tip: 'Kiểm tra nhanh kết quả: tử số luôn CHÍNH LÀ một trong các số hạng cộng lại ở mẫu số!'
+      }
+    ],
+    traps: [
+      'Đọc kỹ xem đề đang hỏi **Xác suất Toàn phần $P(B)$** (bước 2) hay **Xác suất Ngược Bayes $P(A_1 \\mid B)$** (bước 3)!',
+      'Với bài *Xét nghiệm y tế*: *Sensitivity* $= P(+ \\mid \\text{Bệnh})$, *Specificity* $= P(- \\mid \\text{Không bệnh})$, nên *False Positive* $= 1 - \\text{Specificity} = P(+ \\mid \\text{Không bệnh})$!'
+    ],
+    roleDetect: function(txt) {
+      if (/\b(bayes|posterior|given that|given a |given the|if an .* is selected|if it tests? positive)\b/i.test(txt)) return 2;
+      if (/\boverall|in total|what is the probability.*(defective|tests? positive|improperly)\b/i.test(txt)) return 1;
+      return 2;
+    }
+  },
+  {
+    id: 'counting_rules',
+    chGroup: 'Ch4',
+    badge: 'Ch4 • Quy tắc đếm, Tổ hợp & Chỉnh hợp',
+    title: 'Quy tắc Nhân vs Chỉnh hợp ($_nP_r$) vs Tổ hợp ($_nC_r$) & Hình học',
+    tagline: 'Câu hỏi sống còn: Thứ tự có quan trọng không? (Có $\\to$ `nPr`, Không $\\to$ `nCr`).',
+    signals: [
+      { rx: /\b(combinations?|committee|choose|select .* from|how many ways .* group)\b/i, kw: 'combination / committee', why: 'Chọn nhóm không phân thứ tự → nCr' },
+      { rx: /\b(permutations?|order matters|arrange|president|vice president|ranking|sequence|chỉnh hợp|hoán vị)\b/i, kw: 'permutation / arrange / order', why: 'Có thứ tự / chức vụ riêng → nPr' },
+      { rx: /\b(menu|outfit|license plate|digits|how many different|quy tắc nhân)\b/i, kw: 'counting rule / n^k', why: 'Quy tắc nhân các bước độc lập' }
+    ],
+    roles: [
+      {
+        name: '1. Multiplication Rule (Quy tắc Nhân)',
+        when: 'Mỗi vị trí/giai đoạn chọn từ **một tập độc lập** (áo $\\times$ quần $\\times$ giày, mật khẩu lặp lại được)',
+        formula: '$k_1 \\times k_2 \\times \\dots \\times k_m$',
+        tip: 'Nếu các chữ số/chữ cái được phép lặp lại: dùng $n^r$, KHÔNG dùng $nPr$.'
+      },
+      {
+        name: '2. Permutation $_nP_r$ (Chỉnh hợp — CÓ thứ tự)',
+        when: 'Chọn $r$ từ $n$ vật mà **đổi chỗ tạo ra kết quả mới** (xếp hàng, bầu Chủ tịch–Phó–Thư ký, giải Nhất–Nhì–Ba)',
+        formula: '$_nP_r = \\frac{n!}{(n-r)!}$ (Casio: `n` `SHIFT` `×` `r`)',
+        tip: 'Xếp hết $n$ người thành 1 hàng $\\implies n!$.'
+      },
+      {
+        name: '3. Combination $_nC_r$ (Tổ hợp — KHÔNG thứ tự)',
+        when: 'Chọn $r$ người vào một **hội đồng/nhóm bình đẳng** hoặc bốc $r$ sản phẩm kiểm tra không phân trước sau',
+        formula: '$_nC_r = \\frac{n!}{r!(n-r)!}$ (Casio: `n` `SHIFT` `÷` `r`)',
+        tip: 'Đề tính xác suất với Tổ hợp: $P = \\frac{_aC_x \\cdot _bC_{n-x}}{_NC_n}$ (chính là quy luật Siêu bội).'
+      }
+    ],
+    traps: [
+      'Thấy chữ **committee / team / sample of k items** (không chia chức danh) $\\implies$ chắc chắn dùng **$_nC_r$**.',
+      'Thấy **president, vice president, treasurer** hoặc **arrange in order / assigned to unique rooms** $\\implies$ chắc chắn dùng **$_nP_r$**.'
+    ],
+    roleDetect: function(txt) {
+      if (/\b(permutations?|arrange|president|ranking|order matters|unique|chỉnh hợp|hoán vị)\b/i.test(txt)) return 1;
+      if (/\b(combinations?|committee|team of|subset|tổ hợp)\b/i.test(txt)) return 2;
+      return 0;
+    }
+  },
+
+  // =========================================================================
+  // CH 5: PHAN PHOI XAC SUAT ROI RAC
+  // =========================================================================
+  {
+    id: 'discrete_rv_port',
+    chGroup: 'Ch5',
+    badge: 'Ch5 • Biến Ngẫu nhiên Rời rạc & Danh mục',
+    title: 'Kỳ vọng $E(X)$, Độ lệch chuẩn $\\sigma_X$ & Danh mục Đầu tư ($E(P), \\sigma_P$)',
+    tagline: 'Phân biệt $E(aX+b)$ vs $\\text{Var}(aX+b)$, và bẫy dữ kiện nhiễu $\\sigma_X^2, \\sigma_{XY}$ trong bài Portfolio.',
+    signals: [
+      { rx: /\b(portfolio|investment|weight|asset|expected return)\b/i, kw: 'portfolio / weight', why: 'Danh mục đầu tư 2 tài sản X, Y' },
+      { rx: /\b(probability distribution|random variable|expected value|p\(x\))\b/i, kw: 'probability distribution / E(X)', why: 'Tính E(X), Var(X), SD(X) từ bảng phân phối' },
+      { rx: /\b(expected value of sum|linear|covariance)\b/i, kw: 'E(X+Y) / linear transform', why: 'Kỳ vọng & phương sai hàm tuyến tính' }
+    ],
+    roles: [
+      {
+        name: '1. Discrete RV: $E(X)$ & $\\sigma_X$',
+        when: 'Cho bảng giá trị $X_i$ kèm xác suất $P(X_i)$ (chú ý $\\sum P(X_i) = 1$)',
+        formula: '$\\mu = \\sum X_i P(X_i), \\quad \\sigma = \\sqrt{\\sum (X_i - \\mu)^2 P(X_i)}$',
+        tip: 'Trên Casio `MENU 6 → 1` (nhớ bật cột **Frequency = ON**, nhập `P(X)` vào cột Freq để đọc `x̄ = E(X)` và `σx = SD`!).'
+      },
+      {
+        name: '2. Portfolio Expected Return $E(P)$',
+        when: 'Cho tỷ trọng $w_X$ (suy ra $w_Y = 1 - w_X$) và $E(X), E(Y)$',
+        formula: '$E(P) = w_X E(X) + (1 - w_X) E(Y)$',
+        tip: 'Khi đề **chỉ hỏi $E(P)$**, bỏ qua toàn bộ số $\\sigma_X^2, \\sigma_Y^2, \\sigma_{XY}$ cho sẵn (chỉ là nhiễu!).'
+      },
+      {
+        name: '3. Portfolio Risk $\\sigma_P$ & Biến đổi Tuyến tính',
+        when: 'Hỏi độ lệch chuẩn/phương sai danh mục hoặc $E(X \\pm Y), \\text{Var}(aX + bY)$',
+        formula: '$\\sigma_P^2 = w_X^2 \\sigma_X^2 + w_Y^2 \\sigma_Y^2 + 2w_X w_Y \\sigma_{XY}$',
+        tip: '$\\text{Var}(X - Y) = \\sigma_X^2 + \\sigma_Y^2 - 2\\sigma_{XY}$ (chú ý **dấu $+$ ở $\\sigma_Y^2$** chứ KHÔNG bao giờ trừ phương sai!).'
+      }
+    ],
+    traps: [
+      'Trong công thức $\\sigma_P^2$: kiểm tra kỹ đề cho **phương sai $\\sigma_X^2$** hay **độ lệch chuẩn $\\sigma_X$** (nếu cho $\\sigma_X$ nhớ bình phương lên!), và hỏi $\\sigma_P^2$ hay **Portfolio Standard Deviation $\\sigma_P$** (nhớ lấy căn)!',
+      'Khi biến đổi tuyến tính $Y = aX + b$: $E(Y) = aE(X)+b$, nhưng $\\sigma_Y = |a|\\sigma_X$ (hằng số $b$ biến mất).'
+    ],
+    roleDetect: function(txt) {
+      if (/\b(portfolio.*(risk|variance|standard deviation)|\\sigma_P|w_X\^2|expected value of sum|covariance)\b/i.test(txt)) return 2;
+      if (/\b(portfolio|investment|expected return)\b/i.test(txt)) return 1;
+      return 0;
+    }
+  },
+  {
+    id: 'binomial_dist',
+    chGroup: 'Ch5',
+    badge: 'Ch5 • Phân phối Nhị thức (Binomial)',
+    title: 'Nhị thức $B(n, \\pi)$ vs Siêu bội (Hypergeometric) vs Bẫy Bất đẳng thức',
+    tagline: 'Nhận diện $n$ phép thử độc lập, $\\pi$ cố định & dịch chuẩn "at least / more than / fewer than".',
+    signals: [
+      { rx: /\b(binomial|out of \d+.*probability|fixed number of trials|success|defective)\b/i, kw: 'binomial / n trials / π', why: 'Số phép thử cố định n với xác suất π không đổi' },
+      { rx: /\b(at least|more than|fewer than|less than|no more than|at most|exactly)\b/i, kw: 'at least / more than / at most', why: 'Từ khóa quyết định cộng dồn P(X ≤ k) hay 1 - P(X ≤ k-1)' },
+      { rx: /\b(hypergeometric|without replacement|geometric distribution|phân phối hình học)\b/i, kw: 'without replacement / geometric', why: 'Siêu bội (không hoàn lại) hoặc Hình học (thử tới trúng)' }
+    ],
+    roles: [
+      {
+        name: '1. Binomial $B(n, \\pi)$ — Độc lập / Có hoàn lại',
+        when: 'Cho **cỡ mẫu $n$** cố định, xác suất $\\pi$ giữ nguyên qua mọi lần thử',
+        formula: '$P(X=x) = \\binom{n}{x}\\pi^x (1-\\pi)^{n-x}$, $\\mu = n\\pi$, $\\sigma = \\sqrt{n\\pi(1-\\pi)}$',
+        tip: 'Casio fx-580VN X: `MENU 7` → `4: Binomial PD` (tính `= x`) hoặc mũi tên xuống `1: Binomial CD` (tính `≤ x`)!'
+      },
+      {
+        name: '2. Bảng dịch "4 Bẫy Ngôn ngữ" Binomial',
+        when: 'Sai lệch 1 đơn vị là ra ngay đáp án nhiễu B/C trong trắc nghiệm!',
+        formula: 'Xem kỹ dấu $>$ vs $\\ge$, $<$ vs $\\le$',
+        tip: '• **At least $k$** ($\\ge k$) $= 1 - P(X \\le k-1)$\n• **More than $k$** ($> k$) $= 1 - P(X \\le k)$\n• **At most / No more than $k$** ($\\le k$)\n• **Fewer than / Less than $k$** ($< k$) $= P(X \\le k-1)$'
+      },
+      {
+        name: '3. Phân biệt Binomial vs Hypergeometric vs Geometric',
+        when: '**Hypergeometric**: bốc mẫu nhỏ $n$ **không hoàn lại** từ tổng thể hữu hạn $N$ (vd 5 bi từ hộp 12 bi). **Geometric**: thử đến khi gặp thành công ĐẦU TIÊN',
+        formula: 'Hyper: $\\frac{\\binom{A}{x}\\binom{N-A}{n-x}}{\\binom{N}{n}}$ | Geom: $P(X=k)=(1-p)^{k-1}p$',
+        tip: 'Nếu lấy mẫu từ tổng thể rất lớn ($n < 5\\% N$) thì không hoàn lại vẫn xấp xỉ dùng **Binomial** được!'
+      }
+    ],
+    traps: [
+      'Cẩn thận đảo ngược $\\pi$! VD đề cho *"80% pass the exam, sample of 10, find probability that 3 FAIL"* $\\implies \\pi$ của biến cố "Fail" là **$0.20$**, KHÔNG phải $0.80$!',
+      'Với **"At least 1"** ($X \\ge 1$), luôn dùng công thức bù cực nhanh: $1 - P(X = 0) = 1 - (1 - \\pi)^n$.'
+    ],
+    roleDetect: function(txt) {
+      if (/\b(hypergeometric|without replacement|geometric)\b/i.test(txt)) return 2;
+      if (/\b(at least|more than|fewer than|less than|no more than|at most)\b/i.test(txt)) return 1;
+      return 0;
+    }
+  },
+  {
+    id: 'poisson_dist',
+    chGroup: 'Ch5',
+    badge: 'Ch5 • Phân phối Poisson',
+    title: 'Phân phối Poisson $P(\\lambda)$ vs Nhị thức $B(n, \\pi)$',
+    tagline: 'Không cho $n$, chỉ cho trung bình số lần xuất hiện $\\lambda$ theo thời gian / diện tích / đơn vị.',
+    signals: [
+      { rx: /\b(poisson|per hour|per minute|per day|per week|per page|per square|arrivals|on average .* per)\b/i, kw: 'Poisson / per hour / per unit', why: 'Đếm sự kiện trên khoảng liên tục (thời gian/diện tích)' },
+      { rx: /\b(standard deviation|variance)\b/i, kw: 'variance = λ, SD = √λ', why: 'Tính chất đặc biệt của Poisson: μ = σ² = λ' }
+    ],
+    roles: [
+      {
+        name: '1. Nhận diện & Công thức Poisson',
+        when: 'Đếm số biến cố xảy ra trên một **khoảng thời gian, quãng đường, diện tích** (không có tổng số thử $n$)',
+        formula: '$P(X=x) = \\frac{e^{-\\lambda} \\lambda^x}{x!}$ (Casio `MENU 7 → ↓ 2/3: Poisson PD/CD`)',
+        tip: 'Tính chất vàng: ở Poisson, **Trung bình = Phương sai = $\\lambda$**, nên **Độ lệch chuẩn $\\sigma = \\sqrt{\\lambda}$**!'
+      },
+      {
+        name: '2. Bẫy Quy đổi tỷ lệ $\\lambda$ theo đơn vị mới',
+        when: 'Đề cho trung bình theo **1 giờ** nhưng câu hỏi lại hỏi trong **15 phút** hoặc **2 giờ**!',
+        formula: '$\\lambda_{\\text{mới}} = \\lambda_{\\text{gốc}} \\times \\frac{\\text{Đơn vị hỏi}}{\\text{Đơn vị đề}}$',
+        tip: 'VD: TB $4$ khách/giờ $\\implies$ hỏi xác suất trong $30$ phút phải dùng **$\\lambda = 2$**!'
+      },
+      {
+        name: '3. Phân biệt Poisson vs Binomial',
+        when: '**Binomial** luôn biết trần tối đa $n$ phép thử ($0 \\le X \\le n$); **Poisson** không có trần trên ($X = 0, 1, 2, \\dots \\infty$)',
+        formula: 'Poisson dùng khi: cuộc gọi/phút, lỗi/trang, tai nạn/tháng',
+        tip: 'Khi $n$ rất lớn ($n \\ge 20$) và $\\pi$ rất nhỏ ($\\pi \\le 0.05$), Binomial có thể xấp xỉ bằng Poisson với $\\lambda = n\\pi$.'
+      }
+    ],
+    traps: [
+      'Hay nhầm **Variance** với **Standard Deviation** của Poisson: nếu đề cho trung bình $\\lambda = 9$ và hỏi *Standard Deviation*, đáp án là $\\sqrt{9} = 3$ (còn *Variance* mới là $9$)!',
+      'Vẫn áp dụng bẫy bất đẳng thức rời rạc: $P(X \\ge 2) = 1 - P(X \\le 1) = 1 - [P(0) + P(1)]$.'
+    ],
+    roleDetect: function(txt) {
+      if (/\b(standard deviation|variance)\b/i.test(txt)) return 0;
+      if (/\b(minute|hour|day|week|month|square|mile|page)\b/i.test(txt)) return 1;
+      return 0;
+    }
+  },
+
+  // =========================================================================
+  // CH 6 - 7: PHAN PHOI CHUAN, DEU & PHAN PHOI CHON MAU (CLT)
+  // =========================================================================
+  {
+    id: 'normal_dist',
+    chGroup: 'Ch6-7',
+    badge: 'Ch6 • Phân phối Chuẩn (Normal)',
+    title: 'Phân phối Chuẩn $N(\\mu, \\sigma)$: Bài toán Xuôi vs Ngược & Probability Plot',
+    tagline: 'Cho $X$ tìm xác suất $P$ (`Normal CD`) vs Cho $P$ tìm ngưỡng $X$ (`InvNorm`).',
+    signals: [
+      { rx: /\b(normal distribution|normally distributed|standardized normal|standard normal|z < |z > )\b/i, kw: 'normal distribution / Z', why: 'Phân phối chuẩn tắc Z hoặc chuẩn tổng quát' },
+      { rx: /\b(top \d+%|bottom \d+%|percentile|find the score|cutoff|minimum score|highest \d+%)\b/i, kw: 'top % / percentile / cutoff', why: 'Bài toán ngược tìm giá trị X từ xác suất' },
+      { rx: /\b(normal probability plot|q-q plot)\b/i, kw: 'normal probability plot', why: 'Kiểm tra tính chuẩn bằng đồ thị' }
+    ],
+    roles: [
+      {
+        name: '1. Bài toán Xuôi (Cho $X \\to$ tìm Xác suất $P$)',
+        when: 'Hỏi $P(X < a)$, $P(X > b)$, hoặc $P(a < X < b)$',
+        formula: '$Z = \\frac{X - \\mu}{\\sigma}$ (Casio `MENU 7 → 2: Normal CD`)',
+        tip: 'Với phân phối liên tục, $P(X = c) = 0$ nên dấu $<$ và $\le$ cho **kết quả y hệt nhau**!'
+      },
+      {
+        name: '2. Bài toán Ngược (Cho Xác suất $P \\to$ tìm $X$)',
+        when: 'Đề cho tỷ lệ phần trăm (top 5%, 90th percentile, bottom 10%) và hỏi giá trị $X$',
+        formula: '$X = \\mu + Z \\cdot \\sigma$ (Casio `MENU 7 → 3: Inverse Normal` với **Area tính từ TRÁI sang!**)',
+        tip: '**Top $5\\%$** nghĩa là diện tích bên TRÁI là **$0.95$** ($Z = +1.645$); **Bottom $5\\%$** thì Area $= 0.05$ ($Z = -1.645$).'
+      },
+      {
+        name: '3. Normal Probability Plot',
+        when: 'Đồ thị kiểm tra xem mẫu dữ liệu có đến từ tổng thể phân phối chuẩn không',
+        formula: 'Các điểm nằm xấp xỉ **đường thẳng** $\\implies$ Normal',
+        tip: 'Nếu đồ thị cong lên hoặc cong xuống (dạng chữ U / S) $\\implies$ dữ liệu **bị lệch (Skewed)**, không chuẩn.'
+      }
+    ],
+    traps: [
+      'Trong `Inverse Normal` trên Casio hay bảng $Z$: luôn kiểm tra kỹ bạn đang cầm xác suất **đuôi trái ($<$)** hay **đuôi phải ($>$)** để không bị ngược dấu $\\pm Z$!',
+      'Đừng nhầm câu $X$ đơn lẻ (Ch6: chia $\\sigma$) với câu **trung bình mẫu của $n$ phần tử $\\bar{X}$** (Ch7: phải chia $\\sigma/\\sqrt{n}$)!'
+    ],
+    roleDetect: function(txt) {
+      if (/\bnormal probability plot\b/i.test(txt)) return 2;
+      if (/\b(top \d+|bottom \d+|percentile|cutoff|what value|minimum score|minimum weight|inverse|tìm phân vị)\b/i.test(txt)) return 1;
+      return 0;
+    }
+  },
+  {
+    id: 'normal_approx_uniform',
+    chGroup: 'Ch6-7',
+    badge: 'Ch6 • Phân phối Đều (Uniform) & Xấp xỉ Nhị thức',
+    title: 'Phân phối Đều $U(a, b)$ vs Mũ vs Xấp xỉ Chuẩn cho Nhị thức',
+    tagline: 'Nhận diện xác suất hình chữ nhật đều $U(a, b)$ & điều kiện $n\\pi \\ge 5, n(1-\\pi) \\ge 5$.',
+    signals: [
+      { rx: /\b(uniform distribution|uniformly distributed|equally likely between)\b/i, kw: 'uniform distribution', why: 'Phân phối đều trên đoạn [a, b]' },
+      { rx: /\b(normal approximation|approximate the binomial|continuity correction|xấp xỉ)\b/i, kw: 'normal approximation to binomial', why: 'Kiểm tra điều kiện xấp xỉ chuẩn hoặc tính gần đúng' },
+      { rx: /\b(exponential distribution)\b/i, kw: 'exponential distribution', why: 'Phân phối mũ cho thời gian chờ' }
+    ],
+    roles: [
+      {
+        name: '1. Continuous Uniform $U(a, b)$',
+        when: 'Xác suất trải đều trên đoạn $[a, b]$ (*uniformly distributed between a and b*)',
+        formula: '$P(c \\le X \\le d) = \\frac{d-c}{b-a}$, $\\mu = \\frac{a+b}{2}$, $\\sigma = \\frac{b-a}{\\sqrt{12}}$',
+        tip: 'Mọi khoảng con nằm ngoài $[a, b]$ đều bị cắt gọn vào $[a, b]$ trước khi trừ!'
+      },
+      {
+        name: '2. Xấp xỉ Chuẩn cho Nhị thức',
+        when: 'Điều kiện sử dụng: **$n\\pi \\ge 5$ VÀ $n(1-\\pi) \\ge 5$** (hoặc $n\\pi(1-\\pi) \\ge 5$ tùy câu)',
+        formula: '$\\mu = n\\pi, \\quad \\sigma = \\sqrt{n\\pi(1-\\pi)}$, $Z = \\frac{X \\pm 0.5 - n\\pi}{\\sigma}$',
+        tip: 'Nhớ hiệu chỉnh liên tục (**Continuity Correction $\\pm 0.5$**): $P(X \\ge k) \\to X > k - 0.5$; $P(X \\le k) \\to X < k + 0.5$.'
+      },
+      {
+        name: '3. Phép biến đổi tuyến tính & Exponential',
+        when: 'Đổi đơn vị trên Uniform ($Y = cX + d \\implies [ca+d, cb+d]$) hoặc thời gian chờ Exponential',
+        formula: 'Exp: $P(X > x) = e^{-\\lambda x}, \\quad \\mu = \\sigma = \\frac{1}{\\lambda}$',
+        tip: 'Với $U(a,b)$, Mean = Median = $\\frac{a+b}{2}$ vì phân phối đối xứng hoàn hảo.'
+      }
+    ],
+    traps: [
+      'Bẫy Uniform: đề cho $X \\sim U(10, 30)$ và hỏi $P(X > 25)$ $\\implies$ khoảng cần lấy là $[25, 30]$, chiều dài là $5/(30-10) = 0.25$ (chứ không phải $(30-25)/30$!).',
+      'Khi đề hỏi điều kiện để xấp xỉ chuẩn phân phối nhị thức: luôn kiểm tra CẢ HAI vế $n\\pi \\ge 5$ và $n(1-\\pi) \\ge 5$.'
+    ],
+    roleDetect: function(txt) {
+      if (/\b(normal approx|continuity correction|binomial.*normal|xấp xỉ)\b/i.test(txt)) return 1;
+      if (/\bexponential|linear transformation\b/i.test(txt)) return 2;
+      return 0;
+    }
+  },
+  {
+    id: 'sampling_mean_prop',
+    chGroup: 'Ch6-7',
+    badge: 'Ch7 • Phân phối chọn mẫu & CLT',
+    title: 'Phân biệt Cá thể $X$ ($\\sigma$) vs Trung bình mẫu $\\bar{X}$ ($\\sigma/\\sqrt{n}$) vs Tỷ lệ mẫu $p$',
+    tagline: 'Cạm bẫy #1 Chương 7: Đọc chữ "one item" hay "sample mean of n items" trước khi chia $\\sqrt{n}$!',
+    signals: [
+      { rx: /\b(sampling distribution|sample mean|central limit theorem|\bclt\b|standard error)\b/i, kw: 'sampling distribution / sample mean / CLT', why: 'Phân phối của thống kê mẫu (X̄ hoặc p)' },
+      { rx: /\b(sample proportion|standard error of the proportion)\b/i, kw: 'sample proportion p', why: 'Dùng σ_p = √(π(1-π)/n)' },
+      { rx: /\b(sampling error|finite population|without replacement.*n\s*>\s*0\.05|fpc)\b/i, kw: 'sampling error / FPC', why: 'Sai số mẫu X̄ - μ hoặc hệ số hiệu chỉnh tổng thể hữu hạn' }
+    ],
+    roles: [
+      {
+        name: '1. Trung bình mẫu $\\bar{X}$ (CHIA $\\sqrt{n}$)',
+        when: 'Hỏi xác suất của **TRUNG BÌNH MẪU** (*mean of a sample of $n$...*) hoặc Định lý Giới hạn Trung tâm (CLT)',
+        formula: '$\\mu_{\\bar{X}} = \\mu$, $\\sigma_{\\bar{X}} = \\frac{\\sigma}{\\sqrt{n}}$, $Z = \\frac{\\bar{X} - \\mu}{\\sigma / \\sqrt{n}}$',
+        tip: '**CLT**: Dù tổng thể gốc bị lệch/không chuẩn, khi **$n \\ge 30$**, $\\bar{X}$ vẫn phân phối xấp xỉ chuẩn!'
+      },
+      {
+        name: '2. Tỷ lệ mẫu $p$ (Dùng $\\pi$ tổng thể)',
+        when: 'Hỏi xác suất của tỷ lệ mẫu $p = X/n$ khi biết tỷ lệ tổng thể $\\pi$',
+        formula: '$\\mu_p = \\pi$, $\\sigma_p = \\sqrt{\\frac{\\pi(1-\\pi)}{n}}$, $Z = \\frac{p - \\pi}{\\sqrt{\\pi(1-\\pi)/n}}$',
+        tip: 'Điều kiện chuẩn cho tỷ lệ mẫu: **$n\\pi \\ge 5$** và **$n(1-\\pi) \\ge 5$**.'
+      },
+      {
+        name: '3. Sampling Error & FPC (Tổng thể hữu hạn)',
+        when: '**Sampling Error** = $|\\bar{X} - \\mu|$ (chênh lệch ngẫu nhiên). **FPC** dùng khi tổng thể hữu hạn $N$ và $n > 0.05 N$',
+        formula: '$\\text{FPC} = \\sqrt{\\frac{N - n}{N - 1}}$ (nhân vào $\\sigma_{\\bar{X}}$ hoặc $\\sigma_p$)',
+        tip: 'Khi đề chỉ hỏi *"What is the sampling error?"*, đơn giản lấy **$\\bar{X} - \\mu$**!'
+      }
+    ],
+    traps: [
+      '**QUÊN CHIA $\\sqrt{n}$** là lỗi số 1 của sinh viên khi thi Ch7! Hễ thấy câu hỏi có cụm *"average/mean of a sample of 100 items"* thì mẫu số BẮT BUỘC là $\\sigma/\\sqrt{n}$, tuyệt đối không dùng $\\sigma$ trần!',
+      'Đề cho tổng thể chuẩn sẵn $\\implies \\bar{X}$ chuẩn với **MỌI cỡ mẫu $n$** (không cần đợi $n \\ge 30$!).'
+    ],
+    roleDetect: function(txt) {
+      if (/\b(sampling error|finite population|\bfpc\b)\b/i.test(txt)) return 2;
+      if (/\b(proportions?|\\pi|standard error of.*proportion|tỷ lệ)\b/i.test(txt)) return 1;
+      return 0;
+    }
+  },
+
+  // =========================================================================
+  // CH 8: UOC LUONG KHOANG TIN CAY & CO MAU
+  // =========================================================================
+  {
+    id: 'ci_z_vs_t',
+    chGroup: 'Ch8',
+    badge: 'Ch8 • Khoảng tin cậy Trung bình',
+    title: 'Khoảng tin cậy Trung bình: $Z$-interval vs $t$-interval vs Diễn giải CI',
+    tagline: 'Đọc chữ Population SD ($\\sigma$) hay Sample SD ($S$) để không chọn nhầm bảng $Z$ và $t$!',
+    signals: [
+      { rx: /\b(population standard deviation|known to be|\\sigma)\b/i, kw: 'population SD (σ) known', why: 'Biết σ tổng thể → bắt buộc dùng Z' },
+      { rx: /\b(sample standard deviation|degrees of freedom|t-distribution|student|listed below|following sample)\b/i, kw: 'sample SD / raw data / t', why: 'Chưa biết σ tổng thể → dùng t với df = n - 1' },
+      { rx: /\b(confidence interval.*mean|estimate the mean|true mean)\b/i, kw: 'confidence interval for mean', why: 'Ước lượng khoảng tin cậy cho μ' },
+      { rx: /\b(interpret|confident|meaning|width.*increases|narrower|wider)\b/i, kw: 'interpret / wider / narrower', why: 'Diễn giải & các yếu tố làm rộng/hẹp CI' }
+    ],
+    roles: [
+      {
+        name: '1. Z-interval ($\\mu$, ĐÃ BIẾT $\\sigma$)',
+        when: 'Đề ghi rõ **population standard deviation** ($\\sigma$ known)',
+        formula: '$\\bar{X} \\pm Z_{\\alpha/2} \\cdot \\frac{\\sigma}{\\sqrt{n}}$',
+        tip: 'Mốc $Z_{\\alpha/2}$ thuộc lòng: 90% $\\to 1.645$; 95% $\\to 1.96$; 99% $\\to 2.576$ (hoặc dùng đúng số đề cho).'
+      },
+      {
+        name: '2. t-interval ($\\mu$, CHƯA BIẾT $\\sigma$)',
+        when: 'Chỉ biết **sample standard deviation $S$** hoặc đề liệt kê dãy số liệu mẫu thô',
+        formula: '$\\bar{X} \\pm t_{\\alpha/2;\\, n-1} \\cdot \\frac{S}{\\sqrt{n}}$',
+        tip: 'Khi tính từ dãy số thô trên Casio `MENU 6`, đọc $s_x$ rồi tra **$t_{\\alpha/2;\\, n-1}$**.'
+      },
+      {
+        name: '3. Diễn giải đúng & Độ rộng CI',
+        when: 'Độ tin cậy tăng $\\implies$ CI **rộng hơn**; Cỡ mẫu $n$ tăng $\\implies$ CI **hẹp hơn** (chính xác hơn)',
+        formula: 'Tâm CI $= \\frac{L + U}{2}$, Sai số biên $e = \\frac{U - L}{2}$',
+        tip: 'Luôn nói *"95% confident..."*, TUYỆT ĐỐI tránh câu *"95% probability that $\\mu$ is in $(a,b)$"*!'
+      }
+    ],
+    traps: [
+      'Đề thi hay gài sẵn **cả $z$ lẫn $t$** ở đầu bài (vd: *"z0.025 = 1.96; t0.025;15 = 2.131"*). Chỉ cần nhìn 2 chữ trước standard deviation: **population** $\\to z$, **sample** $\\to t$!',
+      'Đừng dùng $n$ làm bậc tự do cho phân phối $t$ — phải là **$df = n - 1$**!'
+    ],
+    roleDetect: function(txt) {
+      if (/\b(interpret|meaning|correct statement|true statement|narrower|wider|increases|decreases|student\'s t|diễn giải)\b/i.test(txt)) return 2;
+      if (/\b(population standard deviation|known variance|variance is known|\\sigma|sigma is known|assumed that.*standard deviation.*all|known to be)\b|biết phương sai/i.test(txt) && !/\bsample standard deviation\b/i.test(txt)) return 0;
+      return 1;
+    }
+  },
+  {
+    id: 'ci_prop_width',
+    chGroup: 'Ch8',
+    badge: 'Ch8 • CI Tỷ lệ & Độ rộng / Biên sai số',
+    title: 'CI cho Tỷ lệ ($\\pi$) vs Sai số biên ($e$) vs Độ rộng khoảng ($W = 2e$)',
+    tagline: 'CI tỷ lệ luôn dùng $Z$, và đừng bao giờ nhầm Margin of Error ($e$) với Width ($2e$)!',
+    signals: [
+      { rx: /\b(proportions?|percentage|out of \d+|said yes|favor|support|agree)\b/i, kw: 'proportion / out of n', why: 'Ước lượng khoảng cho tỷ lệ π' },
+      { rx: /\b(width|margin of error|point estimate|upper|lower)\b/i, kw: 'width / margin of error / point estimate', why: 'Tìm sai số biên e, độ rộng 2e hoặc ước lượng điểm' }
+    ],
+    roles: [
+      {
+        name: '1. CI cho Tỷ lệ tổng thể $\\pi$',
+        when: 'Có $X$ người trả lời "Yes/Đạt" trong $n$ người khảo sát $\\implies p = X/n$',
+        formula: '$p \\pm Z_{\\alpha/2} \\sqrt{\\frac{p(1 - p)}{n}}$',
+        tip: 'CI cho tỷ lệ **LUÔN dùng $Z$** (không bao giờ dùng $t$), và mẫu số trong căn dùng tỷ lệ mẫu **$p$**.'
+      },
+      {
+        name: '2. Sai số biên ($e$) vs Độ rộng ($W = 2e$)',
+        when: '**Margin of Error ($e$)** là nửa khoảng ($\\pm e$). **Total Width ($W$)** là cả bề rộng $(U - L)$',
+        formula: '$W = U - L = 2e \\implies e = \\frac{U - L}{2}$',
+        tip: 'Câu hỏi hay lừa: *"What is the WIDTH of the confidence interval?"* $\\implies$ tính ra $e$ rồi phải **nhân $2$** lên!'
+      },
+      {
+        name: '3. Khôi phục $\\bar{X}$ hoặc $p$ từ $(L, U)$',
+        when: 'Biết trước 2 cận khoảng tin cậy $(L; U)$ và hỏi ước lượng điểm (point estimate)',
+        formula: '$\\text{Point Estimate} = \\frac{L + U}{2}$',
+        tip: 'Vì khoảng tin cậy cho $\\mu$ hay $\\pi$ luôn đối xứng qua tâm nên $\\frac{L+U}{2}$ ra ngay đáp án trong 5 giây!'
+      }
+    ],
+    traps: [
+      'Đọc kỹ câu hỏi muốn tỷ lệ nhóm **"Yes"** hay nhóm **"No"**! (VD: 40 Yes / 90 mẫu nhưng đề hỏi *"do NOT own"* $\\implies$ dùng $p = 50/90$, KHÔNG phải $40/90$!).',
+      'Khi tăng độ tin cậy từ 90% lên 99%, độ rộng $W$ tăng; muốn giảm một nửa độ rộng $W$ thì cỡ mẫu $n$ phải tăng **gấp $4$ lần**!'
+    ],
+    roleDetect: function(txt) {
+      if (/\b(point estimate|from the confidence interval)\b/i.test(txt)) return 2;
+      if (/\b(width|margin of error|độ rộng|sai số biên)\b/i.test(txt)) return 1;
+      return 0;
+    }
+  },
+  {
+    id: 'sample_size_n',
+    chGroup: 'Ch8',
+    badge: 'Ch8 • Xác định Cỡ mẫu tối thiểu n',
+    title: 'Tính Cỡ mẫu tối thiểu $n$: Cho Mean $\\mu$ vs Tỷ lệ (biết $\\pi$ vs $\\pi=0.5$)',
+    tagline: 'Luôn làm tròn LÊN số nguyên kế tiếp (ceil) và lấy $\\pi = 0.5$ nếu đề không cho tỷ lệ trước!',
+    signals: [
+      { rx: /\b(sample size|how large a sample|minimum sample|within\s*±?|plus or minus)\b/i, kw: 'sample size / how large / within', why: 'Bài toán tìm cỡ mẫu tối thiểu n' },
+      { rx: /\b(no prior|unknown|conservative|no estimate|without prior)\b/i, kw: 'no prior estimate (π = 0.5)', why: 'Trường hợp xấu nhất lấy π = 0.5' }
+    ],
+    roles: [
+      {
+        name: '1. Cỡ mẫu ước lượng Trung bình $\\mu$',
+        when: 'Đề cho $\\sigma$ (hoặc ước lượng $\\sigma$) và sai số cho phép *within $\\pm e$*',
+        formula: '$n = \\left(\\frac{Z_{\\alpha/2} \\cdot \\sigma}{e}\\right)^2$',
+        tip: 'Nếu đề cho **total width $W$** thay vì *"within $\\pm e$"*, nhớ chia $e = W/2$ trước khi thế vào!'
+      },
+      {
+        name: '2. Cỡ mẫu cho Tỷ lệ (ĐÃ CÓ $\\pi$ trước)',
+        when: 'Đề cho tỷ lệ dự kiến / nghiên cứu trước đó (*past survey found 30%...*) và sai số $e$',
+        formula: '$n = \\frac{Z_{\\alpha/2}^2 \\cdot \\pi (1 - \\pi)}{e^2}$',
+        tip: 'Luôn luôn làm tròn **LÊN** (vd `240.04` vẫn lên **`241`**, KHÔNG làm tròn xuống `240`!).'
+      },
+      {
+        name: '3. Cỡ mẫu cho Tỷ lệ (CHƯA BIẾT $\\pi$)',
+        when: 'Đề **không cho tỷ lệ $\\pi$** (hoặc ghi *no prior information / conservative estimate*)',
+        formula: 'Đặt **$\\pi = 0.5 \\implies \\pi(1-\\pi) = 0.25$**, $n = \\frac{Z_{\\alpha/2}^2 \\cdot 0.25}{e^2}$',
+        tip: '$\\pi = 0.5$ tối đa hóa tích $\\pi(1-\\pi)$, đảm bảo cỡ mẫu đủ an toàn trong mọi trường hợp!'
+      }
+    ],
+    traps: [
+      '**QUÊN LÀM TRÒN LÊN** là lỗi kinh điển nhất! $n = 96.04$ $\\implies$ đáp án đúng là **`97`**, không phải `96` (vì `96` không đạt sai số yêu cầu!).',
+      'Sai số đề cho kiểu phần trăm *"within 3 percentage points"* $\\implies e = 0.03$, KHÔNG thế số $3$!'
+    ],
+    roleDetect: function(txt) {
+      if (/\b(proportion|percentage|tỷ lệ|no prior|unknown|conservative)\b/i.test(txt)) {
+        if (/\b(no prior|unknown|not known|no estimate|without.*information|conservative|chưa biết p)\b/i.test(txt) || !/(0\.\d+|\d+%)\s*(had|own|favor|previous|past|estimate|proportion)/i.test(txt)) {
+          return 2;
+        }
+        return 1;
+      }
+      return 0;
+    }
+  },
+
+  // =========================================================================
+  // CH 9 - 10: KIEM DINH GIA THUYET 1 MAU & 2 MAU
+  // =========================================================================
+  {
+    id: 'ht_setup_errors',
+    chGroup: 'Ch9-10',
+    badge: 'Ch9 • Thiết lập Giả thuyết & Sai lầm Loại I / II',
+    title: 'Giả thuyết $H_0 / H_1$, Sai lầm Loại I ($\\alpha$) vs Loại II ($\\beta$) & Power ($1-\\beta$)',
+    tagline: '$H_0$ luôn mang dấu $=$, $H_1$ không bao giờ có dấu $=$. Type I = bác bỏ đúng; Type II = giữ sai.',
+    signals: [
+      { rx: /\b(null hypothesis|alternative hypothesis|h_?0|h_?1|formulat|claim)\b/i, kw: 'H0 / H1 / hypothesis setup', why: 'Cách viết đúng cặp giả thuyết kiểm định' },
+      { rx: /\b(type i error|type ii error|type 1|type 2|power of|probability of rejecting.*true)\b/i, kw: 'Type I / Type II / Power', why: 'Phân biệt α, β và lực kiểm định 1 - β' }
+    ],
+    roles: [
+      {
+        name: '1. Thiết lập $H_0$ và $H_1$ (1-tail vs 2-tail)',
+        when: '**$H_0$** luôn dùng tham số tổng thể ($\\mu, \\pi$) và **luôn có dấu $=$** ($=, \\le, \\ge$). **$H_1$** chứa tuyên bố nghiên cứu ($\\ne, >, <$)',
+        formula: '*differs / changed* $\\to \\ne$ | *greater / exceeded* $\\to >$ | *less / lower* $\\to <$',
+        tip: 'TUYỆT ĐỐI không viết thống kê mẫu ($\\bar{X}, p$) trong $H_0, H_1$! Đáp án nào ghi $H_0: \\bar{X} = 50$ là **SAI NGAY**.'
+      },
+      {
+        name: '2. Type I Error ($\\alpha$) vs Type II Error ($\\beta$)',
+        when: '**Type I ($\\alpha$)**: Bác bỏ $H_0$ khi $H_0$ ĐÚNG (kết tội oan). **Type II ($\\beta$)**: Không bác bỏ $H_0$ khi $H_0$ SAI (bỏ lọt)',
+        formula: '$\\alpha = P(\\text{Reject } H_0 \\mid H_0 \\text{ true})$; $\\beta = P(\\text{Fail to reject } H_0 \\mid H_0 \\text{ false})$',
+        tip: 'Với $n$ cố định, giảm $\\alpha$ sẽ làm tăng $\\beta$ (và ngược lại!). Muốn giảm cả hai thì phải **tăng cỡ mẫu $n$**.'
+      },
+      {
+        name: '3. Power ($1 - \\beta$) & Confidence Level ($1 - \\alpha$)',
+        when: '**Power ($1 - \\beta$)** là xác suất bác bỏ ĐÚNG một $H_0$ sai (phát hiện thành công hiệu ứng thực)',
+        formula: '$\\text{Power} = 1 - \\beta$ (tăng khi $\\alpha$ tăng hoặc $n$ tăng)',
+        tip: 'Khi tăng cỡ mẫu $n$ từ $30$ lên $100$: $\\alpha$ giữ nguyên mức ý nghĩa chọn trước, còn **Power tăng mạnh**!'
+      }
+    ],
+    traps: [
+      'Cạm bẫy kinh điển: Trong tòa án giả định $H_0$: *"Bị cáo vô tội"*. Kết án người vô tội là **Type I**; thả người có tội là **Type II**.',
+      'Nếu đề cho *"claim that mean is AT LEAST 100"* hay muốn chứng minh *"less than 100"*: điều ta muốn chứng minh ($< 100$) vào $H_1$, phần ngược lại ($\\ge 100$) vào $H_0$!'
+    ],
+    roleDetect: function(txt) {
+      if (/\b(power|1\s*-\s*\\beta|1\s*-\s*beta)\b/i.test(txt)) return 2;
+      if (/\b(type i|type ii|type 1|type 2|false positive|sai lầm loại)\b/i.test(txt)) return 1;
+      return 0;
+    }
+  },
+  {
+    id: 'ht_pvalue_crit',
+    chGroup: 'Ch9-10',
+    badge: 'Ch9 • p-value, Miền bác bỏ & Kết luận',
+    title: 'Quy tắc $p$-value vs Giá trị tới hạn (1 phía $\\alpha$ vs 2 phía $\\alpha/2$)',
+    tagline: '"If p is low ($p < \\alpha$), $H_0$ must go!" & Không bao giờ nói "Accept / Prove $H_0$".',
+    signals: [
+      { rx: /\b(p-value|p value|rejection region|critical values?|conclusions?|fail to reject)\b/i, kw: 'p-value / critical value / reject', why: 'Quy tắc ra quyết định kiểm định' },
+      { rx: /\b(two[- ]tail|one[- ]tail|left[- ]tail|right[- ]tail)\b/i, kw: 'one-tail vs two-tail', why: 'Phân biệt lấy α hay α/2' }
+    ],
+    roles: [
+      {
+        name: '1. Quy tắc $p$-value',
+        when: 'So sánh trực tiếp $p$-value với mức ý nghĩa $\\alpha$',
+        formula: '**$p$-value $< \\alpha \\implies$ Reject $H_0$** (*có đủ bằng chứng cho $H_1$*)',
+        tip: 'Kiểm định **2 phía** ($\\ne$) có $p$-value $= 2 \\times P(\\text{1 đuôi})$! Đừng quên nhân đôi nếu bấm ra xác suất 1 đuôi.'
+      },
+      {
+        name: '2. Critical Value & Miền bác bỏ',
+        when: '**1 phía** dùng toàn bộ $\\alpha$ ($Z_\\alpha$ hoặc $t_\\alpha$); **2 phía** chia đôi $\\alpha/2$ ($\\pm Z_{\\alpha/2}, \\pm t_{\\alpha/2}$)',
+        formula: 'Bác bỏ $H_0$ nếu $|\\text{STAT}| > \\text{Crit}$ (2 phía) hoặc nằm trong đuôi bác bỏ',
+        tip: 'Kiểm định **đuôi trái ($<$)** có giá trị tới hạn **mang dấu ÂM** (vd $-t_{0.05; 19} = -1.729$)!'
+      },
+      {
+        name: '3. Cách phát biểu Kết luận chuẩn',
+        when: 'Khi $p \\ge \\alpha$ (chưa bác bỏ được $H_0$), phát biểu thế nào mới đúng?',
+        formula: 'Nói **"Fail to reject $H_0$ / Do not reject $H_0$ / No sufficient evidence for $H_1$"**',
+        tip: 'CẤM chọn đáp án chứa cụm **"Accept $H_0$"** hoặc **"Proved $H_0$ is true"** (chuẩn Berenson là *fail to reject $H_0$*)!'
+      }
+    ],
+    traps: [
+      'Đề cho $p$-value $= 0.032$ ở $\\alpha = 0.05$: $0.032 < 0.05 \\to$ Bác bỏ $H_0$. Nhưng cũng số đó ở $\\alpha = 0.01$: $0.032 > 0.01 \\to$ Không bác bỏ $H_0$!',
+      'Ở kiểm định 1 phía đuôi phải ($H_1: \\mu > 50$) mà bạn tính ra $t_{STAT} = -2.5$ (dấu âm ngược hướng $H_1$!) $\\implies$ **KHÔNG BAO GIỜ bác bỏ $H_0$** (vì $p > 0.5$).'
+    ],
+    roleDetect: function(txt) {
+      if (/\b(accept|conclusion|sufficient evidence|evidence that|fail to reject|statement.*true|kết luận)\b/i.test(txt) && !/\bcritical value/i.test(txt)) return 2;
+      if (/\b(critical values?|rejection region|one[- ]tail|two[- ]tail|left[- ]tail|right[- ]tail|miền bác bỏ|giá trị tới hạn)\b/i.test(txt)) return 1;
+      return 0;
+    }
+  },
+  {
+    id: 'ht_one_sample_stat',
+    chGroup: 'Ch9-10',
+    badge: 'Ch9 • Thống kê kiểm định 1 mẫu ($Z$ vs $t$ vs Tỷ lệ)',
+    title: 'Kiểm định 1 Mẫu: $Z$-test ($\\mu$) vs $t$-test ($\\mu$) vs $Z$-test Tỷ lệ ($\\pi_0$)',
+    tagline: 'CẠM BẪY VÀNG: Kiểm định Tỷ lệ Ch9 mẫu số BẮT BUỘC dùng $\\pi_0$ (khác với $p$ trong CI Ch8)!',
+    signals: [
+      { rx: /\b(test statistic|z_?stat|t_?stat|one-sample.*test)\b/i, kw: 'test statistic (Z_STAT / t_STAT)', why: 'Tính giá trị thống kê kiểm định 1 mẫu' },
+      { rx: /\b(population proportion|proportion.*test|hypothesized proportion|\\pi_0)\b/i, kw: 'proportion test (π0)', why: 'Kiểm định 1 tỷ lệ dùng mẫu số π0(1-π0)' }
+    ],
+    roles: [
+      {
+        name: '1. $Z$-test Trung bình (Biết $\\sigma$)',
+        when: 'Kiểm định $\\mu = \\mu_0$ khi **biết $\\sigma$ tổng thể**',
+        formula: '$Z_{STAT} = \\frac{\\bar{X} - \\mu_0}{\\sigma / \\sqrt{n}}$',
+        tip: 'Kiểm định $Z$ ít dùng thực tế hơn $t$, chỉ dùng khi đề ghi rõ *"population SD is known"*.'
+      },
+      {
+        name: '2. $t$-test Trung bình (Chưa biết $\\sigma$)',
+        when: 'Kiểm định $\\mu = \\mu_0$ khi chỉ biết **$S$ mẫu** hoặc dữ liệu thô ($df = n - 1$)',
+        formula: '$t_{STAT} = \\frac{\\bar{X} - \\mu_0}{S / \\sqrt{n}}$',
+        tip: 'Nhớ điều kiện để dùng $t$-test khi $n < 30$: tổng thể phải xấp xỉ phân phối chuẩn!'
+      },
+      {
+        name: '3. $Z$-test Tỷ lệ $\\pi = \\pi_0$ (DÙNG $\\pi_0$!)',
+        when: 'Kiểm định giả thuyết $H_0: \\pi = \\pi_0$ dựa trên tỷ lệ mẫu $p = X/n$',
+        formula: '$Z_{STAT} = \\frac{p - \\pi_0}{\\sqrt{\\frac{\\pi_0(1 - \\pi_0)}{n}}}$',
+        tip: '**ĐỪNG NHẦM CH8 VÀ CH9**: CI Ch8 dùng $\\sqrt{\\frac{p(1-p)}{n}}$; còn Kiểm định Ch9 phải dùng **$\\sqrt{\\frac{\\pi_0(1-\\pi_0)}{n}}$** dưới $H_0$!'
+      }
+    ],
+    traps: [
+      'Thế nhầm $p$ vào mẫu số thay cho $\\pi_0$ luôn cho ra một phương án nhiễu gần đúng trong trắc nghiệm — hãy luôn kiểm tra lại mẫu số $\\pi_0(1-\\pi_0)$!',
+      'Đọc kỹ câu hỏi đang xin **$t_{STAT}$ (thống kê kiểm định)** hay **giá trị tới hạn $t_{\\alpha}$**!'
+    ],
+    roleDetect: function(txt) {
+      if (/\b(proportions?|\\pi_0|pi_0|tỷ lệ|defect rate)\b/i.test(txt)) return 2;
+      if (/\b(population standard deviation|\\sigma|sigma is known)\b/i.test(txt) && !/\bsample standard deviation\b/i.test(txt)) return 0;
+      return 1;
+    }
+  },
+  {
+    id: 'two_sample_mean',
+    chGroup: 'Ch9-10',
+    badge: 'Ch10 • So sánh 2 Trung bình Độc lập',
+    title: 'So sánh 2 Trung bình Độc lập: Pooled $t$ vs Separate $t$ vs $Z$-test',
+    tagline: 'Phân biệt $\\sigma_1^2 = \\sigma_2^2$ (Pooled, $df = n_1+n_2-2$) vs $\\sigma_1^2 \\ne \\sigma_2^2$ (Separate).',
+    signals: [
+      { rx: /\b(pooled|equal variances?|assumed equal|s_p\^?2)\b/i, kw: 'pooled / equal variances', why: 'Giả định 2 phương sai bằng nhau → Pooled t' },
+      { rx: /\b(unequal variances?|separate[- ]variance|not assumed equal|welch)\b/i, kw: 'unequal / separate-variance', why: 'Hai phương sai khác nhau → Separate-variance t' },
+      { rx: /\b(two independent|two populations|mean difference|mu_1\s*-\s*mu_2|\\mu_1\s*[-=]\s*\\mu_2)\b/i, kw: 'two independent samples', why: 'So sánh 2 nhóm độc lập hoàn toàn' }
+    ],
+    roles: [
+      {
+        name: '1. Pooled-variance $t$-test ($\\sigma_1^2 = \\sigma_2^2$)',
+        when: '2 mẫu độc lập, giả định **phương sai 2 tổng thể bằng nhau**',
+        formula: '$S_p^2 = \\frac{(n_1-1)S_1^2 + (n_2-1)S_2^2}{n_1 + n_2 - 2}$, $df = n_1 + n_2 - 2$',
+        tip: 'Thống kê kiểm định: $t_{STAT} = \\frac{(\\bar{X}_1 - \\bar{X}_2) - D_0}{\\sqrt{S_p^2(\\frac{1}{n_1} + \\frac{1}{n_2})}}$. Nếu $n_1 = n_2$ thì $S_p^2 = \\frac{S_1^2 + S_2^2}{2}$!'
+      },
+      {
+        name: '2. Separate-variance $t$-test ($\\sigma_1^2 \\ne \\sigma_2^2$)',
+        when: '2 mẫu độc lập, **không giả định phương sai bằng nhau** (Welch)',
+        formula: '$t_{STAT} = \\frac{\\bar{X}_1 - \\bar{X}_2}{\\sqrt{\\frac{S_1^2}{n_1} + \\frac{S_2^2}{n_2}}}$',
+        tip: 'Lưu ý bảng $S_p^2$ **KHÔNG dùng** ở đây; mỗi nhóm tự giữ nguyên $S_1^2/n_1$ và $S_2^2/n_2$.'
+      },
+      {
+        name: '3. Two-sample $Z$-test / Điều kiện kiểm định',
+        when: 'Chỉ dùng $Z$ khi **biết trước $\\sigma_1, \\sigma_2$**. Điều kiện chung $t$-test 2 mẫu: độc lập + chuẩn (hoặc $n_1, n_2$ lớn)',
+        formula: '$SE_Z = \\sqrt{\\frac{\\sigma_1^2}{n_1} + \\frac{\\sigma_2^2}{n_2}}$',
+        tip: 'Kiểm định giả định $\\sigma_1^2 = \\sigma_2^2$ trước khi chạy Pooled $t$-test chính là bước làm của **$F$-test**!'
+      }
+    ],
+    traps: [
+      'Đọc kỹ đề cho **Variance ($S^2$)** hay **Standard Deviation ($S$)** trước khi thế vào công thức $S_p^2$ — rất nhiều bạn quên bình phương $S$ hoặc bình phương nhầm $S^2$ thêm lần nữa!',
+      'Bậc tự do của Pooled $t$-test là **$n_1 + n_2 - 2$** (trừ 2!), còn của Paired $t$-test chỉ là **$n - 1$**!'
+    ],
+    roleDetect: function(txt) {
+      if (/\b(separate[- ]variance|unequal variances?|not assumed equal|welch|không bằng nhau)\b/i.test(txt)) return 1;
+      if (/\b(assumptions?|conditions?|population standard deviations? are known|điều kiện)\b/i.test(txt) && !/pooled/i.test(txt)) return 2;
+      return 0;
+    }
+  },
+  {
+    id: 'paired_t_test',
+    chGroup: 'Ch9-10',
+    badge: 'Ch10 • Kiểm định Mẫu ghép cặp (Paired t-test)',
+    title: 'Mẫu Ghép Cặp (Paired / Related) vs 2 Mẫu Độc lập (Independent)',
+    tagline: 'Cùng 1 đối tượng đo Before–After hoặc từng cặp song đôi $\\implies$ tính hiệu $D_i = X_{1i} - X_{2i}$, $df = n-1$!',
+    signals: [
+      { rx: /\b(paired|dependent samples|related populations|related samples|matched|before and after|same (person|student|subject|employee|car))\b/i, kw: 'paired / before-after / same subject', why: 'Nhận diện mẫu phụ thuộc / ghép cặp' },
+      { rx: /\b(\\mu_d|\\bar\{?d\}?|mean difference|s_d)\b/i, kw: 'μ_D / D̄ / S_D', why: 'Bài toán quy về t-test 1 mẫu trên hiệu D' }
+    ],
+    roles: [
+      {
+        name: '1. Dấu hiệu nhận diện Paired Samples',
+        when: 'Đo *Trước – Sau* trên cùng 1 nhóm người, đánh giá 2 sản phẩm bởi cùng 1 người, hoặc ghép cặp $1–1$ (vợ–chồng, anh–em)',
+        formula: 'Tạo cột hiệu: $D_i = X_{1i} - X_{2i}$ ($i = 1\\dots n$)',
+        tip: 'Thấy $n$ cặp số ($10$ người, mỗi người có $2$ số điểm) $\\implies$ KHÔNG phải 2 mẫu $n_1=n_2=10$ độc lập mà là **1 mẫu $n=10$ hiệu $D_i$**!'
+      },
+      {
+        name: '2. Công thức & Bậc tự do ($df = n - 1$)',
+        when: 'Sau khi lấy hiệu $D_i$, dùng đúng công thức $t$-test 1 mẫu cho $\\bar{D}$ và $S_D$',
+        formula: '$t_{STAT} = \\frac{\\bar{D} - \\mu_D}{S_D / \\sqrt{n}}, \\qquad df = n - 1$',
+        tip: 'Bậc tự do là **$n - 1$** (với $n$ là số **CẶP**, tuyệt đối KHÔNG phải $2n - 2$!).'
+      },
+      {
+        name: '3. Phân biệt nhanh Paired vs Independent',
+        when: 'So sánh lương nam vs nữ chọn ngẫu nhiên riêng $\\to$ **Independent**; So sánh cân nặng *trước & sau ăn kiêng* của cùng 15 người $\\to$ **Paired**',
+        formula: 'Paired ($df=n-1$) $\\ne$ Pooled Independent ($df=n_1+n_2-2$)',
+        tip: 'Khoảng tin cậy cho $\\mu_D$: $\\bar{D} \\pm t_{\\alpha/2;\\, n-1} \\frac{S_D}{\\sqrt{n}}$.'
+      }
+    ],
+    traps: [
+      'Cạm bẫy kinh điển: Câu hỏi chỉ cho bảng $2$ cột dữ liệu và hỏi *"Degrees of freedom?"* — nhìn xem $2$ cột có ghép từng đối tượng ($1..n$) không! Nếu ghép cặp $\\implies df = n - 1$, đừng chọn $2n - 2$!',
+      'Đặt $D = \\text{Before} - \\text{After}$ hay $\\text{After} - \\text{Before}$ phải đồng nhất chiều dấu với giả thuyết $H_1$ (ví dụ *giảm cân*: $\\text{After} - \\text{Before} < 0$ hoặc $\\text{Before} - \\text{After} > 0$).'
+    ],
+    roleDetect: function(txt) {
+      if (/\b(degrees of freedom|\bdf\b|bậc tự do)\b/i.test(txt)) return 1;
+      if (/\b(choose|appropriate test|which test|assumptions?|chọn phép)\b/i.test(txt)) return 2;
+      return 0;
+    }
+  },
+  {
+    id: 'two_prop_f_var',
+    chGroup: 'Ch9-10',
+    badge: 'Ch10 • So sánh 2 Tỷ lệ & Kiểm định F Phương sai',
+    title: 'So sánh 2 Tỷ lệ (Pooled $\\bar{p}$ vs Unpooled) & Kiểm định $F$ cho 2 Phương sai',
+    tagline: 'Kiểm định 2 tỷ lệ dùng $\\bar{p}$ gộp; CI 2 tỷ lệ KHÔNG gộp! Còn $F$-test đặt $S_{\\max}^2$ lên tử.',
+    signals: [
+      { rx: /\b(two proportions|difference between.*proportions|\\pi_1\s*[-=]\s*\\pi_2|p_1\s*-\s*p_2|pooled proportion)\b/i, kw: 'two proportions (π1 - π2)', why: 'So sánh hai tỷ lệ tổng thể' },
+      { rx: /\b(two variances|ratio of two variances|f-test|f_?stat|f-distribution|\\sigma_1\^2\s*[/=]\s*\\sigma_2\^2)\b/i, kw: 'F-test / two variances', why: 'Kiểm định so sánh hai phương sai' }
+    ],
+    roles: [
+      {
+        name: '1. Kiểm định 2 Tỷ lệ ($H_0: \\pi_1 = \\pi_2$ — GỘP $\\bar{p}$)',
+        when: 'Kiểm định giả thuyết so sánh 2 tỷ lệ độc lập',
+        formula: '$\\bar{p} = \\frac{X_1+X_2}{n_1+n_2}$, $Z_{STAT} = \\frac{p_1 - p_2}{\\sqrt{\\bar{p}(1-\\bar{p})(\\frac{1}{n_1}+\\frac{1}{n_2})}}$',
+        tip: 'Vì giả định $\\pi_1 = \\pi_2$ dưới $H_0$, ta **BẮT BUỘC gộp $\\bar{p}$** ở mẫu số!'
+      },
+      {
+        name: '2. Khoảng tin cậy $\\pi_1 - \\pi_2$ (KHÔNG GỘP)',
+        when: 'Ước lượng khoảng tin cậy cho hiệu 2 tỷ lệ (không có $H_0: \\pi_1 = \\pi_2$)',
+        formula: '$(p_1 - p_2) \\pm Z_{\\alpha/2} \\sqrt{\\frac{p_1(1-p_1)}{n_1} + \\frac{p_2(1-p_2)}{n_2}}$',
+        tip: 'Nhớ sự khác nhau giữa bước 1 (Test $\\to$ dùng $\\bar{p}$) và bước 2 (CI $\\to$ giữ nguyên $p_1, p_2$)!'
+      },
+      {
+        name: '3. Kiểm định $F$ cho 2 Phương sai ($\\sigma_1^2$ vs $\\sigma_2^2$)',
+        when: 'Kiểm định $H_0: \\sigma_1^2 = \\sigma_2^2$ (thường dùng để check điều kiện trước Pooled $t$-test)',
+        formula: '$F_{STAT} = \\frac{S_{\\max}^2}{S_{\\min}^2} \\ge 1$, so với $F_{\\alpha/2;\\, df_{\\text{tử}}, df_{\\text{mẫu}}}$',
+        tip: '**Tính chất phân phối $F$**: Luôn dương ($F \\ge 0$), lệch phải, KHÔNG đối xứng, và $F$-test cực kỳ **nhạy với giả định chuẩn**!'
+      }
+    ],
+    traps: [
+      'Trong **F-test 2 phía** với $\\alpha = 0.05$, khi đặt phương sai mẫu lớn hơn lên tử số, phải tra **$F_{0.025}$** (tức $\\alpha/2$), KHÔNG phải $F_{0.05}$!',
+      'Phân biệt kỹ $F$-test yêu cầu mạnh tính **Normality** của cả hai tổng thể (khác $t$-test bền vững hơn khi mẫu lớn).'
+    ],
+    roleDetect: function(txt) {
+      if (/\b(f[- ]test|f[- ]dist|variances?|sigma\^2|phương sai)\b/i.test(txt)) return 2;
+      if (/\bconfidence interval\b/i.test(txt)) return 1;
+      return 0;
+    }
+  },
+
+  // =========================================================================
+  // CH 11 - 12: ANOVA & CHI-SQUARE
+  // =========================================================================
+  {
+    id: 'anova_one_two',
+    chGroup: 'Ch11-12',
+    badge: 'Ch11–12 • ANOVA (1 & 2 Nhân tố) & Chi-Square',
+    title: 'One-Way ANOVA vs Two-Way ANOVA & Kiểm định Hậu kiểm / Chi-Square ($\\chi^2$)',
+    tagline: 'Phân biệt $H_1$ ANOVA ("ít nhất 1 nhóm khác"), bảng $df$ ($c-1$ vs $n-c$), và xét Interaction $A\\times B$ trước!',
+    signals: [
+      { rx: /\b(one[- ]way anova|among groups|within groups|tukey|levene|\bssa\b|\bssw\b|\bmsa\b|\bmsw\b)\b/i, kw: 'One-Way ANOVA / SSA / SSW', why: 'Phân tích phương sai một nhân tố so sánh ≥ 3 nhóm' },
+      { rx: /\b(two[- ]way|interaction|factor a|factor b|replicates)\b/i, kw: 'Two-Way ANOVA / interaction', why: 'Phân tích phương sai hai nhân tố có tương tác' },
+      { rx: /\b(chi[- ]square|goodness[- ]of[- ]fit|test of independence|expected frequency)\b/i, kw: 'Chi-Square / contingency', why: 'Kiểm định χ² cho biến định tính / bảng chéo' }
+    ],
+    roles: [
+      {
+        name: '1. One-Way ANOVA (So sánh $\\ge 3$ Trung bình)',
+        when: '$H_0: \\mu_1 = \\mu_2 = \\dots = \\mu_c$; $H_1$: **Ít nhất 1 cặp trung bình khác nhau** (KHÔNG phải tất cả khác!)',
+        formula: '$df_A = c-1$, $df_W = n-c$, $F_{STAT} = \\frac{SSA/(c-1)}{SSW/(n-c)} = \\frac{MSA}{MSW}$',
+        tip: 'Nếu bác bỏ $H_0$, dùng **Tukey-Kramer** tìm cặp khác biệt; dùng **Levene test** kiểm tra phương sai bằng nhau.'
+      },
+      {
+        name: '2. Two-Way ANOVA (2 Nhân tố A, B & Tương tác)',
+        when: 'Có $r$ mức A, $c$ mức B, mỗi ô lặp $n\'$ lần (tổng $n = r c n\'$)',
+        formula: '$df_A=r-1$, $df_B=c-1$, $df_{AB}=(r-1)(c-1)$, $df_E=rc(n\'-1)$',
+        tip: 'LUÔN kiểm định **Interaction ($A\\times B$)** trước! Nếu tương tác có ý nghĩa ($p < \\alpha$) thì ảnh hưởng của A phụ thuộc vào mức của B.'
+      },
+      {
+        name: '3. Chi-Square ($\\chi^2$) cho Độc lập / Tốt khớp',
+        when: 'So sánh bảng tần số đếm giữa 2 biến **Categorical** ($r\\times c$)',
+        formula: '$\\chi^2_{STAT} = \\sum \\frac{(f_o - f_e)^2}{f_e}$, $df = (r-1)(c-1)$, $f_e = \\frac{\\text{Row}\\cdot\\text{Col}}{n}$',
+        tip: 'Với bảng $2\\times 2$ kiểm định 2 phía: **$\\chi^2_{STAT} = Z_{STAT}^2$** và $df = 1$!'
+      }
+    ],
+    traps: [
+      'Cạm bẫy $H_1$ kinh điển ở One-Way ANOVA: Chọn **"At least one mean is different from the others"**, TUYỆT ĐỐI tránh đáp án ghi *"All means are different from each other"*!',
+      'Đừng nhầm **$c$ (số nhóm)** với **$n$ (tổng số quan sát tất cả các nhóm)** khi tính $df_{\\text{Within}} = n - c$.'
+    ],
+    roleDetect: function(txt) {
+      if (/\b(chi[- ]square|goodness|expected frequency)\b/i.test(txt)) return 2;
+      if (/\b(two[- ]way|interaction|factor a|factor b|replicates|hai nhân tố|hai yếu tố)\b/i.test(txt)) return 1;
+      return 0;
+    }
+  },
+
+  // =========================================================================
+  // CH 13 - 14: HOI QUY TUYEN TINH DON & BOI
+  // =========================================================================
+  {
+    id: 'reg_eq_interp',
+    chGroup: 'Ch13-14',
+    badge: 'Ch13–14 • Phương trình Hồi quy & Diễn giải b0, b1',
+    title: 'Hệ số góc $b_1$ (Slope), Hệ số chặn $b_0$ (Intercept) & Cấm Ngoại suy (Extrapolation)',
+    tagline: 'Tìm $(b_0, b_1)$ đúng thứ tự, hiểu đúng ý nghĩa kinh tế của $b_0$ và cảnh giác ngoài vùng dữ liệu.',
+    signals: [
+      { rx: /\b(y[- ]intercept|slope|regression equation|least[- ]squares|predict.*when|forecast)\b/i, kw: 'slope b1 / intercept b0 / equation', why: 'Ước lượng hoặc diễn giải b0, b1' },
+      { rx: /\b(interpret|holding .* constant|extrapolat)\b/i, kw: 'interpret slope/intercept / extrapolation', why: 'Ý nghĩa thống kê & cảnh báo ngoại suy' }
+    ],
+    roles: [
+      {
+        name: '1. Tính $(b_0, b_1)$ & Dự báo $\\hat{Y}$',
+        when: 'Đặt biến độc lập là $X$, phụ thuộc cần dự báo là $Y$',
+        formula: '$b_1 = \\frac{SS_{XY}}{SS_X} = r\\frac{S_Y}{S_X}, \\quad b_0 = \\bar{Y} - b_1\\bar{X}, \\quad \\hat{Y} = b_0 + b_1 X$',
+        tip: 'Casio fx-580VN X (`MENU 6 → 2`): máy hiển thị `a = b0` (intercept) và `b = b1` (slope) — nhớ viết ĐÚNG THỨ TỰ `b0 + b1*X`!'
+      },
+      {
+        name: '2. Ý nghĩa $b_0$ vs $b_1$ (Đơn & Bội)',
+        when: '**$b_1$**: khi $X$ tăng 1 đơn vị (các biến khác giữ nguyên ở hồi quy bội), $Y$ **dự đoán trung bình** tăng/giảm $b_1$ đv. **$b_0$**: giá trị dự báo $Y$ khi $X=0$',
+        formula: '$b_0$ CHỈ có ý nghĩa thực tế nếu $X=0$ nằm trong miền dữ liệu hợp lý',
+        tip: 'VD: dự báo lương theo chiều cao/diện tích nhà ($X=0$ không tồn tại) $\\implies b_0$ **không có nghĩa thực tế (meaningless)**, chỉ là điểm neo toán học!'
+      },
+      {
+        name: '3. Bẫy Ngoại suy (Extrapolation)',
+        when: 'Dùng phương trình hồi quy dự báo tại giá trị $X$ nằm ngoài khoảng $[X_{\\min}, X_{\\max}]$ đã quan sát',
+        formula: 'Dữ liệu $X \\in [10, 50] \\implies$ KHÔNG tin cậy khi dự báo tại $X = 120$',
+        tip: 'Cũng KHÔNG hoán đổi vai trò $X$ và $Y$ trong cùng phương trình $\\hat{Y} = b_0 + b_1 X$ để tìm ngược $X$ từ $Y$!'
+      }
+    ],
+    traps: [
+      'Cạm bẫy trắc nghiệm ĐÚNG THỨ TỰ: câu hỏi yêu cầu *"determine $b_0$ and $b_1$"* luôn có cặp đáp án đảo ngược `(b1, b0)` để bẫy (VD Câu 396: `4.769 and 0.615` vs `0.615 and 4.769`)!',
+      'Trong diễn giải, luôn phải có chữ **"predicted / estimated / on average"** (dự đoán trung bình), tránh khẳng định thay đổi *chắc chắn tuyệt đối*.'
+    ],
+    roleDetect: function(txt) {
+      if (/\bextrapolat|outside the range\b/i.test(txt)) return 2;
+      if (/\b(interpret|meaning|holding|partial|ý nghĩa)\b/i.test(txt)) return 1;
+      return 0;
+    }
+  },
+  {
+    id: 'reg_r2_adj_syx',
+    chGroup: 'Ch13-14',
+    badge: 'Ch13–14 • R², Correlation r, Adjusted R² & Syx',
+    title: 'Phân biệt $R^2$ vs $r$ (Bẫy Dấu $\\pm$!) vs Adjusted $R^2$ vs $S_{YX}$',
+    tagline: 'Lấy dấu của $r$ theo $b_1$, dùng $R^2_{adj}$ để so sánh mô hình khác số biến, và phân biệt $S_{YX}$!',
+    signals: [
+      { rx: /\b(r\^?2|r-squared|coefficient of determination|adjusted r|variation in y|explained by)\b/i, kw: 'R² / Adjusted R² / variation in Y', why: 'Hệ số xác định & diễn giải % biến thiên' },
+      { rx: /\b(standard error of the estimate|s_?yx|syx)\b/i, kw: 'S_YX (Standard Error of Estimate)', why: 'Sai số chuẩn của ước lượng' },
+      { rx: /\bcorrelation\b/i, kw: 'correlation r = ±√R²', why: 'Suy ra r từ R² và dấu của b1' }
+    ],
+    roles: [
+      {
+        name: '1. $R^2$ vs Correlation $r$ (Bẫy Dấu!)',
+        when: '$R^2 = \\frac{SSR}{SST} = 1 - \\frac{SSE}{SST} \\in [0, 1]$: **% biến thiên của $Y$ được giải thích bởi $X$**',
+        formula: '$r = \\pm\\sqrt{R^2}$ (**Lấy dấu của hệ số góc $b_1$!**)',
+        tip: 'Nếu $b_1 < 0$ và $R^2 = 0.64$ $\\implies r = -0.80$, **KHÔNG PHẢI $+0.80$**! (Đề thi rất hay bẫy câu này!).'
+      },
+      {
+        name: '2. $R^2$ vs Adjusted $R^2$ (Hồi quy bội)',
+        when: 'So sánh các mô hình có **SỐ BIẾN ĐỘC LẬP $k$ KHÁC NHAU**',
+        formula: '$R^2_{adj} = 1 - \\left[(1 - R^2)\\frac{n - 1}{n - k - 1}\\right]$',
+        tip: 'Thêm biến mới $R^2$ LUÔN tăng (hoặc giữ nguyên) dù biến đó vô dụng; còn **$R^2_{adj}$ phạt thêm biến** nên có thể giảm — dùng $R^2_{adj}$ chọn mô hình tối ưu!'
+      },
+      {
+        name: '3. Standard Error of Estimate ($S_{YX}$)',
+        when: 'Đo độ phân tán thực tế của điểm quan sát $Y$ quanh đường hồi quy (cùng đơn vị với $Y$)',
+        formula: '$S_{YX} = \\sqrt{MSE} = \\sqrt{\\frac{SSE}{n - k - 1}}$ (đơn biến $k=1 \\implies n-2$)',
+        tip: 'Trên bảng Excel Output, dòng **`Standard Error`** ở mục Regression Statistics chính là **$S_{YX}$** (nhỏ hơn $\\implies$ dự báo càng khít!).'
+      }
+    ],
+    traps: [
+      'Cạm bẫy diễn giải $R^2$: luôn là *"% biến thiên của **$Y$** (biến phụ thuộc) được giải thích bởi $X$"*, TUYỆT ĐỐI tránh đáp án đảo thành *"$X$ giải thích bởi $Y$"*!',
+      'Đề cho $R^2$ và phương trình $\\hat{Y} = 50 - 2.5 X$: đừng quên hệ số góc âm $-2.5$ làm **$r = -\\sqrt{R^2}$**!'
+    ],
+    roleDetect: function(txt) {
+      if (/\b(standard error of the estimate|s_?yx|syx)\b/i.test(txt)) return 2;
+      if (/\badjusted\b/i.test(txt)) return 1;
+      return 0;
+    }
+  },
+  {
+    id: 'reg_anova_test',
+    chGroup: 'Ch13-14',
+    badge: 'Ch13–14 • Bảng ANOVA Hồi quy & Kiểm định $\\beta$',
+    title: 'Bảng ANOVA Hồi quy ($SST=SSR+SSE$) & Kiểm định $t_{STAT}$ vs $F_{STAT}$',
+    tagline: 'Ở hồi quy đơn: $F_{STAT} = t_{STAT}^2$, $df_{Reg}=1, df_{Res}=n-2$. Ở hồi quy bội: $F$ kiểm tổng thể, $t$ kiểm từng biến!',
+    signals: [
+      { rx: /\b(anova|ssr|sse|sst|msr|mse|sum of squares|regression output)\b/i, kw: 'ANOVA / SSR / SSE / SST', why: 'Hoàn thiện bảng ANOVA hồi quy' },
+      { rx: /\b(slope.*test|test.*slope|beta_1|t_?stat|f_?stat|significant predictor|significant linear relationship)\b/i, kw: 't-test for β_j / F-test model', why: 'Kiểm định ý nghĩa hệ số góc hoặc toàn mô hình' }
+    ],
+    roles: [
+      {
+        name: '1. Hoàn thiện Bảng ANOVA ($SST = SSR + SSE$)',
+        when: 'Dùng các đẳng thức hàng/cột trên bảng Excel Regression ANOVA',
+        formula: '$SST=SSR+SSE$; $df_{Total}=n-1$, $df_{Reg}=k$, $df_{Res}=n-k-1$; $F = \\frac{MSR}{MSE}$',
+        tip: 'Nhanh gọn: biết $SST$ và $R^2 \\implies SSR = R^2 \\cdot SST$ và **$SSE = (1 - R^2) \\cdot SST$**!'
+      },
+      {
+        name: '2. Kiểm định Hệ số góc $t$-test ($H_0: \\beta_j = 0$)',
+        when: 'Kiểm định xem **một biến $X_j$ cụ thể** có đóng góp ý nghĩa tuyến tính cho mô hình hay không',
+        formula: '$t_{STAT} = \\frac{b_j - \\beta_{j0}}{S_{b_j}}$ ($df = n - k - 1$)',
+        tip: 'Mối liên hệ vàng ở Hồi quy đơn ($k=1$): **$t_{STAT}$ cho $b_1$ bằng ĐÚNG $t_{STAT}$ kiểm định tương quan $r$**, và **$F_{STAT} = t_{STAT}^2$**!'
+      },
+      {
+        name: '3. $F$-test Tổng thể vs $t$-test Từng biến (Hồi quy bội)',
+        when: '$F$-test kiểm đồng thời $H_0: \\beta_1 = \\beta_2 = \\dots = \\beta_k = 0$ (cả mô hình có ích không?)',
+        formula: 'Cẩn thận nếu $F$ có ý nghĩa nhưng từng $t_j$ không ý nghĩa $\\implies$ dấu hiệu **Multicollinearity**!',
+        tip: 'Trong bảng Excel, đọc **$P$-value** từng biến để bỏ dần biến có $p$-value lớn nhất ($> \\alpha$).'
+      }
+    ],
+    traps: [
+      'Đừng nhầm **$df$** trong Hồi quy đơn (**$n - 2$**) với $t$-test 1 mẫu (**$n - 1$**) hoặc Hồi quy bội với $k$ biến (**$n - k - 1$**)!',
+      'Khi đề hỏi *"Overall significance of the multiple regression model"*: dùng **$F$-test** (với $df_1 = k, df_2 = n - k - 1$), KHÔNG dùng $t$-test!'
+    ],
+    roleDetect: function(txt) {
+      if (/\b(overall|f-test|multiple regression|significant predictor)\b/i.test(txt) && !/\b(sse|ssr|sst)\b/i.test(txt)) return 2;
+      if (/\b(t[- ]test|t_?stat|slope|beta|s_?b1|standard error of the slope|correlation)\b|\\rho|tương quan|hệ số góc/i.test(txt)) return 1;
+      return 0;
+    }
+  },
+  {
+    id: 'reg_line_durbin',
+    chGroup: 'Ch13-14',
+    badge: 'Ch13–14 • Giả định LINE, Residual, Durbin-Watson, CI/PI & VIF',
+    title: 'Giả định LINE, Biểu đồ Phần dư, Durbin-Watson, CI vs PI & Đa cộng tuyến ($VIF$)',
+    tagline: 'Residual plot hình phễu = vi phạm Equal Variance; PI luôn rộng hơn CI; $VIF > 5$ = Đa cộng tuyến.',
+    signals: [
+      { rx: /\b(residuals?|homoscedasticity|heteroscedasticity|equal variance|linearity|durbin[- ]watson|autocorrelation|independence of error|assumptions?)\b/i, kw: 'LINE / residual / Durbin-Watson', why: 'Kiểm tra 4 giả định hồi quy LINE' },
+      { rx: /\b(prediction interval|confidence interval for.*mean.*response|individual response)\b/i, kw: 'CI for mean vs PI for individual', why: 'Khoảng tin cậy trung bình vs Khoảng dự báo cá thể' },
+      { rx: /\b(multicollinearity|\bvif\b|variance inflation|dummy variables?|indicator variables?)\b/i, kw: 'VIF / multicollinearity / dummy', why: 'Đa cộng tuyến & Biến giả trong Hồi quy bội' }
+    ],
+    roles: [
+      {
+        name: '1. 4 Giả định LINE & Biểu đồ Phần dư',
+        when: '**L**inearity, **I**ndependence (cần cho *time-series* $\\to$ **Durbin-Watson $D \\approx 2$**), **N**ormality of errors, **E**qual Variance (Homoscedasticity)',
+        formula: 'Phần dư chuẩn: rải ngẫu nhiên quanh $0$ thành dải ngang; **hình phễu** $\\to$ vi phạm Equal Variance; **hình cong** $\\to$ vi phạm Linearity',
+        tip: 'Chú ý: Tính độc lập của sai số (**Independence**) đặc biệt quan trọng khi dữ liệu thu thập **theo chuỗi thời gian**, kiểm bằng **Durbin-Watson** ($D < d_L \\to$ tự tương quan dương).'
+      },
+      {
+        name: '2. CI (Mean Response) vs PI (Individual)',
+        when: '**CI**: ước lượng *giá trị trung bình* $\\mu_{Y|X_i}$; **PI**: dự báo cho *1 cá thể riêng lẻ* $Y_{X_i}$',
+        formula: 'PI thêm số $1 +$ dưới dấu căn $\\implies$ **PI LUÔN RỘNG HƠN CI**!',
+        tip: 'Độ chính xác dự báo tốt nhất (khoảng hẹp nhất) khi dự báo tại đúng tâm **$X_i = \\bar{X}$**.'
+      },
+      {
+        name: '3. Multicollinearity ($VIF$) & Dummy Variables',
+        when: '**Multicollinearity**: các biến $X$ tương quan cao với nhau; **Dummy**: biến phân loại có $c$ nhóm cần **$c - 1$** biến giả 0/1',
+        formula: '$VIF_j = \\frac{1}{1 - R_j^2}$ (nghiêm trọng nếu $VIF > 5$ hoặc $> 10$)',
+        tip: 'Hậu quả của Multicollinearity: $R^2$ tổng vẫn cao nhưng $S_{b_j}$ bị phình to, làm các biến có vẻ không có ý nghĩa ($t$ nhỏ, $p$ lớn), thậm chí đảo dấu $b_j$!'
+      }
+    ],
+    traps: [
+      'Đừng quên câu hỏi kinh điển về **Dummy Variables**: Biến phân loại có $4$ quý (Q1, Q2, Q3, Q4) hoặc $3$ khu vực $\\implies$ CHỈ đưa vào **$c - 1 = 3$** (hoặc $2$) biến giả; đưa đủ $c$ biến gây **đa cộng tuyến hoàn hảo (Dummy Variable Trap)**!',
+      'Đề hỏi *"Width of Prediction Interval vs Confidence Interval at the same X"* $\\implies$ **Prediction Interval luôn rộng hơn**.'
+    ],
+    roleDetect: function(txt) {
+      if (/\b(multicollinearity|\bvif\b|dummy|indicator)\b/i.test(txt)) return 2;
+      if (/\b(prediction interval|individual response|mean response)\b/i.test(txt)) return 1;
+      return 0;
+    }
+  }
+];
+
+const MAS_PATTERNS_BY_ID = {};
+MAS_PATTERNS.forEach(function(p) { MAS_PATTERNS_BY_ID[p.id] = p; });
+
+function classifyQuestionPattern(q) {
+  if (!q) return { pattern: MAS_PATTERNS[0], roleIdx: 0, matchedSignals: [] };
+  if (q._recCache) return q._recCache;
+
+  var promptTxt = q.prompt || '';
+  var topicTxt = q.topic || '';
+  var dichTxt = q.dich_de || '';
+  var formulaTxt = q.cong_thuc || '';
+  var theoryTxt = q.ly_thuyet || '';
+  var ch = Number(q.chapter_num) || 0;
+
+  var headTxt = (topicTxt + '\n' + promptTxt).toLowerCase();
+  var combined = (promptTxt + '\n' + topicTxt + '\n' + dichTxt + '\n' + formulaTxt).toLowerCase();
+  var patId = null;
+
+  // --- PRIORITY 0: Curated topic signatures & unambiguous chapter/prompt signatures ---
+  if (/phân loại biến|types of variables|thang đo/i.test(topicTxt)) {
+    patId = 'var_scale';
+  } else if (/sensitivity to outliers|giá trị ngoại lai|xu hướng trung tâm/i.test(topicTxt) && ch <= 3) {
+    patId = 'center_skew';
+  } else if (/\b(boxplot|quartiles?|interquartile)\b|tứ phân vị|biểu đồ hộp/i.test(topicTxt)) {
+    patId = 'quartile_boxplot';
+  } else if (/(covariance|correlation|hiệp phương sai|tương quan)/i.test(topicTxt) && ch <= 3) {
+    patId = 'cov_corr';
+  } else if (/(trình bày dữ liệu|tổ chức dữ liệu|biểu đồ cho dữ liệu|cross-tabulation|contingency tables?|categorical data displays)/i.test(topicTxt) && ch <= 2) {
+    patId = 'charts_tables';
+  } else if (/(sai số khảo sát|sai số chọn mẫu|coverage error|nonresponse|measurement error|sampling frame|phương pháp (chọn|lấy) mẫu|sampling method|ethical issues.*sampling|đạo đức.*chọn mẫu)/i.test(topicTxt) || /khung (chọn )?mẫu/i.test(topicTxt) || (ch <= 1 && /\b(ethical.*sampling|sampling.*ethical|coverage error|nonresponse error|measurement error|eliminate sampling error)\b/i.test(headTxt))) {
+    patId = 'sampling_err';
+  } else if (ch === 7 || /phân phối chọn mẫu|sampling distribution|sai số chuẩn của (trung bình|tỷ lệ)/i.test(topicTxt)) {
+    patId = 'sampling_mean_prop';
+  } else if (ch === 4 && /quy tắc nhân|multiplication rule/i.test(topicTxt) && !/\bbinomial\b/i.test(promptTxt)) {
+    patId = 'prob_rules';
+  } else if (ch === 5 && /bảng phân phối|probability distribution/i.test(topicTxt)) {
+    patId = 'discrete_rv_port';
+  } else if (/geometric distribution|phân phối hình học/i.test(headTxt)) {
+    patId = 'binomial_dist';
+  } else if (ch === 8 && /(confidence interval|khoảng tin cậy|critical value z)/i.test(headTxt)) {
+    if (/cỡ mẫu|kích thước mẫu|sample size/i.test(topicTxt) || /\b(how large a sample|minimum sample size|what sample size|sample size.*required|determine.*sample size|how many .* must be (surveyed|sampled|selected))\b/i.test(promptTxt)) {
+      patId = 'sample_size_n';
+    } else if (/\b(proportions?|percentage|out of \d+|width|margin of error)\b|tỷ lệ|độ rộng|sai số biên/i.test(topicTxt + ' ' + dichTxt)) {
+      patId = 'ci_prop_width';
+    } else {
+      patId = 'ci_z_vs_t';
+    }
+  } else if (ch === 10 && /(two variances|hai phương sai|f-test.*variance)/i.test(topicTxt + ' ' + promptTxt)) {
+    patId = 'two_prop_f_var';
+  } else if ((ch >= 11 || ch === 0 || /chi[- ]square|goodness[- ]of[- ]fit|expected frequency/i.test(headTxt)) && /chi[- ]square|goodness[- ]of[- ]fit|expected frequency/i.test(combined)) {
+    patId = 'anova_one_two';
+  } else if ((ch >= 12 || ch === 0 || /\b(multicollinearity|\bvif\b|dummy variables?|durbin[- ]watson|autocorrelation|homoscedasticity|heteroscedasticity|residual plot|residual analysis|prediction interval|mean response)\b/i.test(combined)) && /\b(multicollinearity|\bvif\b|variance inflation|dummy variables?|indicator variables?|durbin[- ]watson|autocorrelation|homoscedasticity|heteroscedasticity|residual plot|residual analysis|prediction interval|mean response|equal variance.*regression|regression.*equal variance|\bline\b.*assumption|assumptions? of.*regression)\b/i.test(combined)) {
+    patId = 'reg_line_durbin';
+  } else if (/\b(adjusted r|r[- ]?squared|r\^2|coefficient of determination|coefficient of multiple determination|standard error of the estimate|s_?yx|syx)\b/i.test(combined) && (ch >= 12 || /regression|slope|sse|ssr|sst|hồi quy/i.test(combined))) {
+    patId = 'reg_r2_adj_syx';
+  } else if (/\b(sse|ssr|sst|msr|mse|anova)\b/i.test(combined) && /\b(regression|slope|predictors?|b_0|b_1|\\beta|y[- ]intercept|hat\{?y\}?)\b|hồi quy/i.test(combined)) {
+    patId = 'reg_anova_test';
+  } else if (/\b(testing.*slope|t[- ]test.*slope|t[- ]test.*correlation|slope.*t[- ]stat|test for.*slope|\\beta_1|h_0:\s*\\beta|h_0:\s*\\rho|regression output.*p-value)\b/i.test(combined) || (ch >= 12 && /(tương quan tổng thể|population correlation.*hypothesis|test.*correlation)/i.test(headTxt)) || (/\bt_?stat\b/i.test(formulaTxt) && /regression|hồi quy|slope/i.test(combined))) {
+    patId = 'reg_anova_test';
+  } else if (/\b(regression equation|least[- ]squares|y[- ]intercept|slope coefficient|extrapolat|multiple regression|partial regression)\b/i.test(combined) || (ch >= 12 && (/\b(predict|forecast|b_0|b_1|slope|intercept)\b|hồi quy/i.test(combined)) && !/chi[- ]square|contingency|anova/i.test(topicTxt))) {
+    patId = 'reg_eq_interp';
+  } else if (/\b(one[- ]way|two[- ]way|anova|tukey|levene|within[- ]groups|among[- ]groups|interaction effect|\bssw\b|\bssa\b|\bmsw\b|\bmsa\b)\b/i.test(combined)) {
+    patId = 'anova_one_two';
+  } else if (!/correlation|covariance/i.test(topicTxt) && (/\b(related populations|related samples|matched pairs)\b|mẫu ghép cặp|mẫu phụ thuộc/i.test(combined) || ((ch === 0 || ch >= 9) && /\b(paired[- ]?(sample|observations?|data)?\s*t[- ]?test|paired[- ]samples?\b|paired differences?|before and after|mean difference.*d_i|s_d|dbar|\\bar\{d\})\b/i.test(combined)))) {
+    patId = 'paired_t_test';
+  } else if (/\b(f[- ]test|f[- ]distribution|ratio of two variances|two.*variances|equality of two variances|\\sigma_1\^2\s*[=/]\s*\\sigma_2\^2|two proportions|two[- ]sample.*proportion|\\pi_1\s*[-=]\s*\\pi_2)\b|hiệu hai tỷ lệ/i.test(combined)) {
+    patId = 'two_prop_f_var';
+  } else if (/\b(pooled[- ]variance|separate[- ]variance|two independent|two[- ]sample.*mean|\\mu_1\s*[-=]\s*\\mu_2|s_p\^?2|two populations.*mean)\b/i.test(combined) || (ch === 10 && !/paired|ghép cặp|proportion|tỷ lệ|f[- ]|variances?|phương sai/i.test(combined))) {
+    patId = 'two_sample_mean';
+  } else if (ch === 4 && /\b(bayes|posterior|prior|given.*defective|given.*tests? positive|came from|was made by|machine a.*machine b)\b/i.test(headTxt + ' ' + dichTxt)) {
+    patId = 'bayes_theorem';
+  } else if (/\b(type i error|type ii error|type 1 error|type 2 error|null hypothesis|alternative hypothesis|power of.*test|formulat.*hypothes)\b|sai lầm loại|giả thuyết không/i.test(combined)) {
+    patId = 'ht_setup_errors';
+  } else if (/cỡ mẫu|kích thước mẫu|sample size/i.test(topicTxt) || /\b(how large a sample|minimum sample size|what sample size|sample size.*required|how many .* must be (surveyed|sampled|selected|taken|included))\b/i.test(promptTxt)) {
+    patId = 'sample_size_n';
+  } else if (/\b(confidence interval.*proportion|proportion.*confidence interval|width of.*confidence interval|margin of error|point estimate.*interval)\b|tỷ lệ.*khoảng tin cậy|độ rộng.*khoảng tin cậy/i.test(combined)) {
+    patId = 'ci_prop_width';
+  } else if (/\b(confidence interval|t-interval|z-interval|confident that|95%.*interval|90%.*interval|99%.*interval)\b|khoảng tin cậy/i.test(combined) || ch === 8) {
+    if (/\b(proportions?|percentage|out of \d+|said yes|do not own|own an apple)\b|tỷ lệ/i.test(topicTxt + ' ' + dichTxt)) {
+      patId = 'ci_prop_width';
+    } else {
+      patId = 'ci_z_vs_t';
+    }
+  } else if (/\b(p-value|p value|critical values?|rejection region|fail to reject|level of significance.*conclu)\b|miền bác bỏ|giá trị tới hạn kiểm định|quy tắc ra quyết định/i.test(combined)) {
+    patId = 'ht_pvalue_crit';
+  } else if (/\b(test statistic|one[- ]sample [zt][- ]test|z_?stat|t_?stat|hypothesized mean)\b|kiểm định [zt]|kiểm định giả thuyết/i.test(combined) || ch === 9) {
+    patId = 'ht_one_sample_stat';
+  } else if (/\b(sampling frame|stratified|cluster|systematic|convenience|judgment|coverage error|nonresponse|measurement error|ethical)\b|khung mẫu|sai số khảo sát|sai số đo lường/i.test(combined)) {
+    patId = 'sampling_err';
+  } else if (/\b(sampling distribution|central limit theorem|\bclt\b|sampling error|finite population correction|standard error of the (mean|proportion))\b|phân phối (chọn|lấy) mẫu/i.test(combined)) {
+    patId = 'sampling_mean_prop';
+  } else if (/\b(normal approximation|approximate the binomial|continuity correction|uniform distribution|uniformly distributed|exponential distribution)\b|xấp xỉ.*chuẩn|phân phối đều/i.test(combined)) {
+    patId = 'normal_approx_uniform';
+  } else if (/\b(normal distribution|normally distributed|standard normal|standardized normal|normal probability plot|percentile|top \d+%|bottom \d+%)\b|phân phối chuẩn/i.test(combined) || ch === 6) {
+    patId = 'normal_dist';
+  } else if (/\b(poisson)\b/i.test(combined)) {
+    patId = 'poisson_dist';
+  } else if (/\b(binomial|hypergeometric|without replacement.*probability)\b|nhị thức/i.test(combined)) {
+    patId = 'binomial_dist';
+  } else if (/\b(portfolio|expected return)\b|danh mục đầu tư/i.test(combined) || (ch === 5 && (/\b(discrete|random variable|expected value|p\(x\))\b|rời rạc/i.test(combined)))) {
+    patId = 'discrete_rv_port';
+  } else if (/\b(bayes|posterior|prior probability|tested positive|false positive)\b|định lý bayes/i.test(combined)) {
+    patId = 'bayes_theorem';
+  } else if (/\b(permutations?|combinations?|counting rules?|committee|arrange in|how many ways)\b|chỉnh hợp|tổ hợp|quy tắc đếm|hoán vị/i.test(combined)) {
+    patId = 'counting_rules';
+  } else if (/\b(mutually exclusive|statistical independence|independent events|collectively exhaustive)\b|xung khắc|độc lập|toàn phần/i.test(combined)) {
+    patId = 'me_vs_indep';
+  } else if (/\b(conditional probability|joint probability|addition rule|multiplication rule|given that)\b|xác suất có điều kiện|xác suất đồng thời|quy tắc cộng|quy tắc nhân/i.test(combined) || ch === 4) {
+    patId = 'prob_rules';
+  } else if (/\b(covariance|correlation coefficient|pearson|s_?xy)\b|tương quan|hiệp phương sai/i.test(combined)) {
+    patId = 'cov_corr';
+  } else if (/\b(empirical rule|chebyshev|bell[- ]shaped|z[- ]scores?|z scores?|standard scores?)\b|quy tắc thực nghiệm|quy tắc kinh nghiệm/i.test(combined)) {
+    patId = 'empirical_chebyshev';
+  } else if (/\b(quartiles?|interquartile|\biqr\b|boxplots?|box[- ]and[- ]whisker|five[- ]number)\b|tứ phân vị|biểu đồ hộp/i.test(combined)) {
+    patId = 'quartile_boxplot';
+  } else if (/\b(coefficient of variation|\bcv\b|variances?|standard deviations?|\brange\b)\b|hệ số biến thiên|phương sai|độ lệch chuẩn/i.test(combined)) {
+    patId = 'var_sd_cv';
+  } else if (/\b(contingency tables?|cross[- ]tab(ulation)?s?)\b|bảng tiếp liên|bảng ngẫu nhiên/i.test(topicTxt + ' ' + promptTxt) && !/cumulative|tích lũy/i.test(topicTxt)) {
+    patId = 'charts_tables';
+  } else if (/\b(cumulative|relative frequency|ogive|class boundary|class width|class midpoint)\b|tần số tương đối|tích lũy/i.test(combined)) {
+    patId = 'freq_cum';
+  } else if (/\b(charts?|graphs?|histograms?|pareto|pie chart|bar chart|stem[- ]and[- ]leaf|scatter plot|chartjunk|visual)\b|biểu đồ|bảng tần số/i.test(combined)) {
+    patId = 'charts_tables';
+  } else if (/\b(mean|median|mode|geometric mean|skew|central tendency|outliers?|extreme values?)\b|trung bình|trung vị|xu hướng trung tâm/i.test(combined)) {
+    patId = 'center_skew';
+  } else if (/\b(categorical|qualitative|numerical|quantitative|discrete|continuous|nominal|ordinal|interval|ratio)\b|biến định|biến phân loại|thang đo/i.test(combined)) {
+    patId = 'var_scale';
+  } else if (/\b(parameters?|statistics?|population|sample|descriptive|inferential)\b|tổng thể|tham số/i.test(combined)) {
+    patId = 'pop_param';
+  } else {
+    if (ch === 5) patId = 'discrete_rv_port';
+    else if (ch === 11 || ch === 12) patId = 'anova_one_two';
+    else if (ch >= 13) patId = 'reg_eq_interp';
+    else if (ch === 3) patId = 'center_skew';
+    else if (ch === 2) patId = 'charts_tables';
+    else patId = 'pop_param';
+  }
+
+  var pat = MAS_PATTERNS_BY_ID[patId] || MAS_PATTERNS[0];
+  var matchedSignals = [];
+  var scanText = promptTxt + ' ' + topicTxt;
+  if (pat.signals) {
+    pat.signals.forEach(function(sig) {
+      if (sig.rx.test(scanText) || sig.rx.test(dichTxt)) {
+        matchedSignals.push(sig);
+      }
+    });
+  }
+  var roleCtx = (promptTxt + '\n' + topicTxt + '\n' + dichTxt).toLowerCase();
+  var roleIdx = pat.roleDetect ? pat.roleDetect(roleCtx, q) : 0;
+  var res = { pattern: pat, roleIdx: roleIdx, matchedSignals: matchedSignals };
+  q._recCache = res;
+  return res;
+}
+
+function formatMeoText(str) {
+  if (!str) return '';
+  const g = extractAndGuard(str);
+  let s = escapeHtml(g.masked);
+  const codeToks = [];
+  s = s.replace(/`([^`]+)`/g, function(_, code) {
+    codeToks.push('<code class="inline-code">' + code + '</code>');
+    return '%%%CTOK_' + (codeToks.length - 1) + '%%%';
+  });
+  s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+  s = s.replace(/\*([^*\n]+)\*/g, '<em>$1</em>');
+  s = s.replace(/%%%CTOK_(\d+)%%%/g, function(_, idx) {
+    return codeToks[Number(idx)];
+  });
+  s = s.replace(/\r?\n/g, '<br>');
+  return restoreTokens(s, g.tokens);
+}
+
+function renderMeoGridHtml(pat, highlightRoleIdx) {
+  let html = '<div class="meo-grid">';
+  (pat.roles || []).forEach(function(r, idx) {
+    const isCur = idx === highlightRoleIdx;
+    html += '<div class="meo-role-card' + (isCur ? ' is-current' : '') + '">' +
+      (isCur ? '<span class="meo-current-badge">✓ DẠNG CỦA CÂU NÀY</span>' : '') +
+      '<div class="meo-role-name">' + formatMeoText(r.name) + '</div>' +
+      '<div class="meo-role-when">' + formatMeoText(r.when) + '</div>' +
+      '<div class="meo-role-formula">' + formatMeoText(r.formula) + '</div>' +
+      '<div class="meo-role-tip">💡 ' + formatMeoText(r.tip) + '</div>' +
+      '</div>';
+  });
+  html += '</div>';
+  return html;
+}
+
+function renderRecognitionPanelHtml(q) {
+  const res = classifyQuestionPattern(q);
+  const pat = res.pattern;
+  const sigs = (res.matchedSignals && res.matchedSignals.length > 0)
+    ? res.matchedSignals
+    : (pat.signals || []).slice(0, 3);
+  const sigLabel = (res.matchedSignals && res.matchedSignals.length > 0)
+    ? '🔑 Dấu hiệu nhận diện ngay trong câu này:'
+    : '🔑 Từ khóa đặc trưng thường gặp của dạng này:';
+
+  let sigHtml = '';
+  if (sigs.length > 0) {
+    sigHtml = '<div class="meo-signals-box">' +
+      '<div class="meo-signals-label">' + sigLabel + '</div>' +
+      '<div class="meo-sig-list">' +
+      sigs.map(function(s) {
+        return '<span class="meo-sig-chip"><span class="meo-sig-kw">' + escapeHtml(s.kw) + '</span>' +
+          '<span class="meo-sig-why">— ' + escapeHtml(s.why) + '</span></span>';
+      }).join('') +
+      '</div></div>';
+  }
+
+  let trapHtml = '';
+  if (pat.traps && pat.traps.length > 0) {
+    trapHtml = '<div class="meo-traps">' +
+      '<div class="meo-traps-title">🚨 Bẫy hay gài trong đề thi MAS202:</div><ul>' +
+      pat.traps.map(function(t) { return '<li>' + formatMeoText(t) + '</li>'; }).join('') +
+      '</ul></div>';
+  }
+
+  return '<div class="panel-title">' +
+    '<span>🎯 MẸO NHẬN DIỆN DẠNG BÀI &amp; PHÂN BIỆT 1 RA 3</span>' +
+    '<div class="meo-inline-actions">' +
+      '<button type="button" class="meo-mini-btn" onclick="filterByPattern(\'' + pat.id + '\')">🔍 Lọc các câu cùng dạng</button>' +
+      '<button type="button" class="meo-mini-btn" onclick="openRecognitionModal(\'' + pat.chGroup + '\')">📖 Sổ tay 34 dạng</button>' +
+    '</div></div>' +
+    '<div class="meo-archetype-head">' +
+      '<div class="meo-arch-top">' +
+        '<span class="meo-ch-pill">' + escapeHtml(pat.badge) + '</span>' +
+        '<span class="meo-arch-title">' + formatMeoText(pat.title) + '</span>' +
+      '</div>' +
+      '<div class="meo-arch-tagline">' + formatMeoText(pat.tagline) + '</div>' +
+    '</div>' +
+    sigHtml +
+    renderMeoGridHtml(pat, res.roleIdx) +
+    trapHtml;
+}
+
+function updatePatternFilterBanner() {
+  const banner = document.getElementById('pattern-filter-banner');
+  if (!banner) return;
+  if (currentPattern === 'all' || !MAS_PATTERNS_BY_ID[currentPattern]) {
+    banner.style.display = 'none';
+    banner.innerHTML = '';
+    return;
+  }
+  const pat = MAS_PATTERNS_BY_ID[currentPattern];
+  banner.style.display = 'flex';
+  banner.innerHTML =
+    '<div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">' +
+      '<span class="meo-ch-pill">' + escapeHtml(pat.badge) + '</span>' +
+      '<span>🎯 Đang lọc theo dạng: <strong>' + formatMeoText(pat.title) + '</strong> (' + filteredQuestions.length + ' câu)</span>' +
+    '</div>' +
+    '<div style="display:flex; gap:6px; flex-wrap:wrap;">' +
+      '<button type="button" class="meo-mini-btn" onclick="openRecognitionModal(\'' + pat.chGroup + '\')">📖 Mở Sổ tay dạng này</button>' +
+      '<button type="button" class="meo-mini-btn" onclick="clearPatternFilter()">✕ Bỏ lọc dạng bài</button>' +
+    '</div>';
+  if (window.renderMathInElement) {
+    renderMathInElement(banner, {
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false }
+      ],
+      throwOnError: false
+    });
+  }
+}
+
+function filterByPattern(patId) {
+  if (!MAS_PATTERNS_BY_ID[patId]) return;
+  currentPattern = patId;
+  currentChapter = 'all';
+  currentType = 'all';
+  currentAns = 'all';
+  currentProgressFilter = 'all';
+  searchQuery = '';
+  const searchEl = document.getElementById('search-input');
+  if (searchEl) searchEl.value = '';
+  document.querySelectorAll('.pill-btn').forEach(function(b) {
+    b.classList.toggle('active', b.dataset.ch === 'all' || b.dataset.type === 'all' || b.dataset.ans === 'all' || b.dataset.progress === 'all');
+  });
+  currentPage = 1;
+  closeRecognitionModal();
+  applyFilters();
+  const banner = document.getElementById('pattern-filter-banner');
+  if (banner) {
+    banner.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+}
+
+function clearPatternFilter() {
+  currentPattern = 'all';
+  currentPage = 1;
+  applyFilters();
+}
+
+function openRecognitionModal(initialTab) {
+  const m = document.getElementById('recognition-modal');
+  const b = document.getElementById('recognition-modal-backdrop');
+  if (!m || !b) return;
+  currentRecTab = initialTab || 'all';
+  b.style.display = 'block';
+  m.style.display = 'flex';
+  renderRecognitionTabs();
+  renderRecognitionModalList();
+}
+
+function closeRecognitionModal() {
+  const m = document.getElementById('recognition-modal');
+  const b = document.getElementById('recognition-modal-backdrop');
+  if (m && b) {
+    m.style.display = 'none';
+    b.style.display = 'none';
+  }
+}
+
+function renderRecognitionTabs() {
+  const tabsEl = document.getElementById('recognition-tabs');
+  if (!tabsEl) return;
+  tabsEl.innerHTML = MAS_RECOGNITION_CHAPTER_TABS.map(function(t) {
+    const isAct = t.id === currentRecTab ? ' active' : '';
+    return '<button type="button" class="rec-tab-btn' + isAct + '" onclick="setRecognitionTab(\'' + t.id + '\')">' + escapeHtml(t.label) + '</button>';
+  }).join('');
+}
+
+function setRecognitionTab(tabId) {
+  currentRecTab = tabId;
+  renderRecognitionTabs();
+  renderRecognitionModalList();
+}
+
+function renderRecognitionModalList() {
+  const listEl = document.getElementById('recognition-modal-list');
+  const countEl = document.getElementById('recognition-count-label');
+  const searchEl = document.getElementById('recognition-search');
+  if (!listEl) return;
+
+  const qRaw = searchEl ? searchEl.value.trim().toLowerCase() : '';
+  const data = window.QUIZ_DATA || [];
+  const counts = {};
+  data.forEach(function(item) {
+    const pid = classifyQuestionPattern(item).pattern.id;
+    counts[pid] = (counts[pid] || 0) + 1;
+  });
+
+  const matched = MAS_PATTERNS.filter(function(pat) {
+    if (currentRecTab !== 'all' && pat.chGroup !== currentRecTab) return false;
+    if (!qRaw) return true;
+    const hay = [
+      pat.badge, pat.title, pat.tagline,
+      ...(pat.signals || []).map(function(s) { return s.kw + ' ' + s.why; }),
+      ...(pat.roles || []).map(function(r) { return r.name + ' ' + r.when + ' ' + r.formula + ' ' + r.tip; }),
+      ...(pat.traps || [])
+    ].join(' ').toLowerCase();
+    return hay.includes(qRaw);
+  });
+
+  if (countEl) {
+    countEl.innerText = 'Hiển thị ' + matched.length + '/' + MAS_PATTERNS.length + ' dạng bài';
+  }
+
+  if (matched.length === 0) {
+    listEl.innerHTML = '<div style="text-align:center; padding:36px 16px; color:var(--text-muted);">Không tìm thấy dạng bài khớp từ khóa "' + escapeHtml(qRaw) + '". Thử chuyển sang tab "Tất cả".</div>';
+    return;
+  }
+
+  listEl.innerHTML = matched.map(function(pat) {
+    const cnt = counts[pat.id] || 0;
+    const btnAttr = cnt > 0
+      ? 'onclick="filterByPattern(\'' + pat.id + '\')"'
+      : 'disabled style="opacity:0.45; cursor:not-allowed;"';
+    const sigHtml = (pat.signals && pat.signals.length)
+      ? '<div class="meo-sig-list" style="margin-bottom:8px;">' + pat.signals.map(function(s) {
+          return '<span class="meo-sig-chip"><span class="meo-sig-kw">' + escapeHtml(s.kw) + '</span>' +
+            '<span class="meo-sig-why">— ' + escapeHtml(s.why) + '</span></span>';
+        }).join('') + '</div>'
+      : '';
+    const trapHtml = (pat.traps && pat.traps.length)
+      ? '<div class="meo-traps"><div class="meo-traps-title">🚨 Bẫy đề thi:</div><ul>' +
+        pat.traps.map(function(t) { return '<li>' + formatMeoText(t) + '</li>'; }).join('') +
+        '</ul></div>'
+      : '';
+    return '<div class="rec-modal-card">' +
+      '<div class="rec-modal-card-head">' +
+        '<div>' +
+          '<div class="meo-arch-top">' +
+            '<span class="meo-ch-pill">' + escapeHtml(pat.badge) + '</span>' +
+            '<span class="meo-arch-title">' + formatMeoText(pat.title) + '</span>' +
+          '</div>' +
+          '<div class="meo-arch-tagline">' + formatMeoText(pat.tagline) + '</div>' +
+        '</div>' +
+        '<button type="button" class="meo-mini-btn" ' + btnAttr + '>🔍 Lọc ' + cnt + ' câu dạng này</button>' +
+      '</div>' +
+      sigHtml +
+      renderMeoGridHtml(pat, -1) +
+      trapHtml +
+    '</div>';
+  }).join('');
+
+  listEl.scrollTop = 0;
+  if (window.renderMathInElement) {
+    renderMathInElement(listEl, {
+      delimiters: [
+        { left: '$$', right: '$$', display: true },
+        { left: '$', right: '$', display: false }
+      ],
+      throwOnError: false
+    });
+  }
+}
+
 
 // ---------------------------------------------------------
 // 15. INITIALIZATION
