@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  <title>🥬 Cải Xanh Học MAS - Trắc Nghiệm 364 Câu MAS202 Toàn Diện (Có Lời Giải & Casio 580)</title>
+  <title>🥬 Cải Xanh Học MAS - Đề Thi & Lời Giải MAS202 SP25 Re-Exam (50 Câu Chuẩn Đề Thi & Casio 580)</title>
   <meta name="description" content="Trọn bộ 50 câu hỏi thi Đề Thi & Lời Giải MAS202 SP25 Re-Exam kèm ảnh gốc đề thi, đối chiếu bộ 364 câu, lời giải chi tiết 5 bước kèm Dịch đề, Tóm tắt, Công thức, Lời giải chi tiết, Cách bấm máy tính Casio fx-580VN X và Giảng giải lý thuyết giáo trình Berenson.">
   
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🥬</text></svg>">
@@ -1657,7 +1657,7 @@
         <span class="logo-badge">🥬</span>
         <div>
           <div class="logo-title">Cải Xanh Học MAS</div>
-          <div class="logo-subtitle">Bộ 364 Câu Hỏi Trắc Nghiệm MAS202 Toàn Diện</div>
+          <div class="logo-subtitle">Đề Thi & Lời Giải MAS202 SP25 Re-Exam (50 Câu Thực Chiến & Ảnh Gốc Đề Thi)</div>
         </div>
       </a>
       <div class="header-actions">
@@ -1750,7 +1750,7 @@
     <!-- HERO BANNER -->
     <div class="hero-banner">
       <div>
-        <div class="hero-title">🥬 Ngân Hàng 364 Câu Hỏi Trắc Nghiệm MAS202</div>
+        <div class="hero-title">🎯 Đề Thi Đề Thi & Lời Giải MAS202 SP25 Re-Exam (50 Câu Đầy Đủ Ảnh Gốc)</div>
         <div class="hero-desc">
           Tích hợp đầy đủ: <strong>Dịch đề tiếng Việt</strong> • <strong>Tóm tắt giả thiết</strong> • <strong>Công thức chuẩn KaTeX</strong> • <strong>Lời giải chi tiết</strong> • <strong>Cách bấm máy Casio fx-580VN X</strong> • <strong>Giảng giải lý thuyết giáo trình Berenson</strong>.
         </div>
@@ -2343,6 +2343,7 @@ function escapeHtml(str) {
 
 // 2. STATE MANAGEMENT & LEARNING PROGRESS
 // ---------------------------------------------------------
+const PORTAL_STORAGE_KEY = 'mas_sp25_re';
 let currentChapter = 'all';
 let currentType = 'all';
 let currentAns = 'all';
@@ -2361,15 +2362,40 @@ let currentPage = 1;
 const PAGE_SIZE = 50;
 let filteredQuestions = [];
 
+function getQuizTotalCount() {
+  return (window.QUIZ_DATA && window.QUIZ_DATA.length) || 364;
+}
+
+function getQuizMaxId() {
+  if (!window.QUIZ_DATA || !window.QUIZ_DATA.length) return 364;
+  return window.QUIZ_DATA.reduce(function(mx, x) { return x.id > mx ? x.id : mx; }, 0) || 364;
+}
+
+function syncStaticCountsToQuizData() {
+  const totalQ = getQuizTotalCount();
+  const maxQ = getQuizMaxId();
+  const statTotal = document.getElementById('stat-total');
+  if (statTotal) statTotal.textContent = '📚 Tổng: ' + totalQ + ' câu';
+  const jumpInp = document.getElementById('jump-input');
+  if (jumpInp) {
+    jumpInp.max = String(maxQ);
+    jumpInp.placeholder = '1-' + maxQ;
+  }
+  const chAll = document.querySelector('#chapter-pills [data-ch="all"]');
+  if (chAll) chAll.textContent = 'Tất cả (' + totalQ + ')';
+  const prAll = document.querySelector('#progress-pills [data-progress="all"]');
+  if (prAll) prAll.textContent = 'Tất cả (' + totalQ + ')';
+}
+
 // Load progress from localStorage
 function loadLocalProgress() {
   try {
-    const saved = localStorage.getItem('mas364_user_progress');
+    const saved = localStorage.getItem(PORTAL_STORAGE_KEY + '_user_progress');
     if (saved) {
       userProgress = JSON.parse(saved);
       if (!userProgress.answered) userProgress.answered = {};
     }
-    const savedBookmarks = localStorage.getItem('mas_sp25_re_bookmarks');
+    const savedBookmarks = localStorage.getItem(PORTAL_STORAGE_KEY + '_bookmarks');
     if (savedBookmarks) {
       const list = JSON.parse(savedBookmarks);
       if (Array.isArray(list)) list.forEach(id => bookmarks.add(id));
@@ -2385,8 +2411,8 @@ function loadLocalProgress() {
 function saveLocalProgress() {
   userProgress.bookmarks = Array.from(bookmarks);
   userProgress.updatedAt = Date.now();
-  localStorage.setItem('mas364_user_progress', JSON.stringify(userProgress));
-  localStorage.setItem('mas_sp25_re_bookmarks', JSON.stringify(userProgress.bookmarks));
+  localStorage.setItem(PORTAL_STORAGE_KEY + '_user_progress', JSON.stringify(userProgress));
+  localStorage.setItem(PORTAL_STORAGE_KEY + '_bookmarks', JSON.stringify(userProgress.bookmarks));
 }
 
 // ---------------------------------------------------------
@@ -2588,7 +2614,7 @@ function syncProgressFromCloud(user) {
   docRef.get().then(function(doc) {
     if (doc.exists) {
       const data = doc.data() || {};
-      const cloudProgress = data.mas364_progress || {};
+      const cloudProgress = data[PORTAL_STORAGE_KEY + '_progress'] || {};
       const cloudAnswered = cloudProgress.answered || {};
       const cloudBookmarks = cloudProgress.bookmarks || [];
 
@@ -2631,7 +2657,7 @@ function syncProgressFromCloud(user) {
         const mergedHls = Array.from(hlMap.values());
         mergedHls.sort(function(a, b) { return (b.createdAt || 0) - (a.createdAt || 0); });
         try {
-          localStorage.setItem('mas_sp25_re_highlights', JSON.stringify(mergedHls));
+          localStorage.setItem(PORTAL_STORAGE_KEY + '_highlights', JSON.stringify(mergedHls));
         } catch (e) {}
       }
 
@@ -2667,19 +2693,20 @@ function syncProgressToCloud() {
   updateCloudStatus('syncing', 'Đang lưu Cloud...');
 
   const docRef = firebaseDb.collection('users').doc(currentUser.uid);
-  docRef.set({
+  const cloudPayload = {
     email: currentUser.email,
     displayName: currentUser.displayName,
     photoURL: currentUser.photoURL,
-    lastActive: new Date().toISOString(),
-    mas364_progress: {
-      answered: userProgress.answered,
-      bookmarks: Array.from(bookmarks),
-      highlights: getStoredHighlights(),
-      totalAnswered: Object.keys(userProgress.answered).length,
-      updatedAt: new Date().toISOString()
-    }
-  }, { merge: true }).then(function() {
+    lastActive: new Date().toISOString()
+  };
+  cloudPayload[PORTAL_STORAGE_KEY + '_progress'] = {
+    answered: userProgress.answered,
+    bookmarks: Array.from(bookmarks),
+    highlights: getStoredHighlights(),
+    totalAnswered: Object.keys(userProgress.answered).length,
+    updatedAt: new Date().toISOString()
+  };
+  docRef.set(cloudPayload, { merge: true }).then(function() {
     const name = currentUser.displayName ? currentUser.displayName.split(' ').pop() : 'Google';
     updateCloudStatus('synced', 'Đã lưu Cloud (' + name + ')');
   }).catch(function(err) {
@@ -2703,7 +2730,7 @@ function debouncedCloudSync() {
 // 6. PROGRESS METRICS & DASHBOARD UI UPDATES
 // ---------------------------------------------------------
 function updateProgressUI() {
-  const totalQ = 364;
+  const totalQ = getQuizTotalCount();
   const answeredKeys = Object.keys(userProgress.answered);
   const totalAnswered = answeredKeys.length;
 
@@ -2771,7 +2798,7 @@ function updateProgressUI() {
 }
 
 function resetProgressConfirm() {
-  const msg = "⚠️ Bạn có chắc chắn muốn đặt lại (xóa) toàn bộ tiến độ làm bài 364 câu không?\n\n(Thao tác này sẽ xóa các câu đã trả lời và điểm số trên máy và trên Cloud)";
+  const msg = "⚠️ Bạn có chắc chắn muốn đặt lại (xóa) toàn bộ tiến độ làm bài " + getQuizTotalCount() + " câu không?\n\n(Thao tác này sẽ xóa các câu đã trả lời và điểm số trên máy và trên Cloud)";
   if (confirm(msg)) {
     userProgress.answered = {};
     saveLocalProgress();
@@ -2864,78 +2891,200 @@ function parseMarkdownTables(text) {
   });
 }
 
-// --- FORMAT PROMPT HTML & CLAUSES ---
-function formatPromptHtml(str) {
+// --- CLAUSE FORMATTER (ROMAN NUMERALS i, ii, iii) ---
+function formatClausesHtml(str) {
   if (!str) return '';
-  const mathTokens = [];
-  let s = str.replace(/(\$\$[\s\S]*?\$\$|\$[^\$\n]+?\$)/g, function(match) {
-    const id = '%%%MATH_' + mathTokens.length + '%%%';
-    mathTokens.push(match);
-    return id;
-  });
+  // Normalize accidental line breaks in inline references like "statements\n(i) and\n(ii)"
+  let s = str
+    .replace(/\b(statements?|both|neither|either|items?|câu|mệnh đề|phát biểu)\s*\r?\n\s*(\((?:i|ii|iii|iv|v|vi)\))/gi, '$1 $2')
+    .replace(/(\((?:i|ii|iii|iv|v|vi)\))\s*\r?\n\s*(and|or|và|hoặc|,)\s*\r?\n?\s*(\((?:i|ii|iii|iv|v|vi)\))/gi, '$1 $2 $3');
 
-  // Check for Roman numeral sequences (i), (ii), etc.
-  if (/\((?:i|I)\)/i.test(s) && /\((?:ii|II)\)/i.test(s)) {
-    s = s.replace(/([^\n])\s*(\((?:i|ii|iii|iv|v|vi|I|II|III|IV|V|VI)\))/g, '$1\n$2');
+  if (/\((?:i|I)\)/.test(s) && /\((?:ii|II)\)/.test(s)) {
+    // Only split inline (i)..(vi) onto new line when starting an actual clause list item
+    s = s.replace(/([^\n])\s+(\((?:i|ii|iii|iv|v|vi|I|II|III|IV|V|VI)\))(?=\s+[^\s])/g, function(full, prev, tok, offset, whole) {
+      const before = whole.slice(Math.max(0, offset - 25), offset + 1);
+      const after = whole.slice(offset + full.length);
+      if (/(?:\band|\bor|\bvà|\bhoặc|\bboth|\bstatements?|\bneither|\beither|\bnor|\bmệnh đề|\bphát biểu|\bcâu|,)\s*$/i.test(before)) {
+        return full;
+      }
+      if (/^\s*(?:and\b|or\b|và\b|hoặc\b|only\b|,)/i.test(after)) {
+        return full;
+      }
+      return prev + '\n' + tok;
+    });
+
     const lines = s.split('\n');
     const out = [];
     let clauseItems = [];
+    const flushClauses = function() {
+      if (clauseItems.length >= 2) {
+        out.push('<div class="clauses-box" style="margin:12px 0 14px; padding:12px 16px; background:var(--surface-sidebar); border-left:4px solid var(--primary); border-radius:8px; font-size:0.95rem; box-shadow:0 1px 4px rgba(0,0,0,0.04);">' +
+          clauseItems.map(function(it) {
+            return '<div style="margin:6px 0; display:flex; align-items:baseline; gap:10px;">' +
+              '<strong style="color:var(--primary); font-size:0.95rem; min-width:28px;">' + it.label + '</strong>' +
+              '<span style="flex:1;">' + it.body + '</span></div>';
+          }).join('') + '</div>');
+      } else if (clauseItems.length === 1) {
+        out.push(clauseItems[0].label + ' ' + clauseItems[0].body);
+      }
+      clauseItems = [];
+    };
+
     for (let i = 0; i < lines.length; i++) {
       const line = lines[i].trim();
       const m = line.match(/^(\((?:i|ii|iii|iv|v|vi|vii|viii|ix|x|I|II|III|IV|V|VI|VII|VIII|IX|X)\))\s*(.*)$/);
-      if (m) {
-        clauseItems.push('<div style="margin:6px 0; display:flex; align-items:baseline; gap:10px;">' +
-          '<strong style="color:var(--primary); font-size:0.95rem; min-width:28px;">' + m[1] + '</strong>' +
-          '<span style="flex:1;">' + m[2] + '</span></div>');
+      if (m && !/^(?:and|or|và|hoặc|only)\b/i.test(m[2])) {
+        clauseItems.push({ label: m[1], body: m[2] });
       } else {
-        if (clauseItems.length > 0) {
-          out.push('<div class="clauses-box" style="margin:12px 0 14px; padding:12px 16px; background:var(--surface-sidebar); border-left:4px solid var(--primary); border-radius:8px; font-size:0.95rem; box-shadow:0 1px 4px rgba(0,0,0,0.04);">' + clauseItems.join('') + '</div>');
-          clauseItems = [];
-        }
+        flushClauses();
         if (line) out.push(line);
       }
     }
-    if (clauseItems.length > 0) {
-      out.push('<div class="clauses-box" style="margin:12px 0 14px; padding:12px 16px; background:var(--surface-sidebar); border-left:4px solid var(--primary); border-radius:8px; font-size:0.95rem; box-shadow:0 1px 4px rgba(0,0,0,0.04);">' + clauseItems.join('') + '</div>');
-    }
+    flushClauses();
     s = out.join('\n');
   }
+  return s;
+}
 
+// --- CURRENCY GUARD + KATEX-SAFE TOKENIZER ---
+function extractAndGuard(str) {
+  if (!str) return { masked: '', tokens: [] };
+  const s = String(str);
+  const tokens = [];
+  let out = '';
+  let i = 0;
+  const n = s.length;
+
+  function pushTok(val) {
+    const idx = tokens.length;
+    tokens.push(val);
+    return '%%%TOK_' + idx + '%%%';
+  }
+
+  while (i < n) {
+    if (s[i] === '\\' && i + 1 < n && s[i + 1] === '$') {
+      out += pushTok('<span class="usd-sym">$</span>');
+      i += 2;
+      continue;
+    }
+    if (s.startsWith('$$', i)) {
+      let j = i + 2;
+      let found = -1;
+      while (j < n - 1) {
+        if (s[j] === '\\') { j += 2; continue; }
+        if (s.startsWith('$$', j)) { found = j; break; }
+        j++;
+      }
+      if (found !== -1) {
+        out += pushTok(s.slice(i, found + 2));
+        i = found + 2;
+        continue;
+      }
+    }
+    if (s[i] === '$') {
+      const nxt = i + 1 < n ? s[i + 1] : '';
+      if (nxt === '' || /[\s),.;:'"!?\]\r\n]/.test(nxt)) {
+        out += pushTok('<span class="usd-sym">$</span>');
+        i++;
+        continue;
+      }
+      let j = i + 1;
+      let found = -1;
+      while (j < n && s[j] !== '\n') {
+        if (s[j] === '\\') { j += 2; continue; }
+        if (s[j] === '$') { found = j; break; }
+        j++;
+      }
+      if (found === -1) {
+        out += pushTok('<span class="usd-sym">$</span>');
+        i++;
+        continue;
+      }
+      const numM = s.slice(i + 1).match(/^(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?/);
+      if (numM) {
+        const rest = s.slice(i + 1 + numM[0].length);
+        if (/^(?:[.,]?(?:\s+(?:[A-Za-zÀ-ỹ$]|-\s*\$\d)|\s*(?:\r?\n|$))|[);:'"!?]|,\s*(?:[A-Za-zÀ-ỹ]|\$\d|\r?\n|$)|\s*-\s*\$\d)/.test(rest)) {
+          out += pushTok('<span class="usd-sym">$</span>');
+          i++;
+          continue;
+        }
+      }
+      out += pushTok(s.slice(i, found + 1));
+      i = found + 1;
+      continue;
+    }
+    out += s[i];
+    i++;
+  }
+  return { masked: out, tokens };
+}
+
+function restoreTokens(masked, tokens) {
+  return masked.replace(/%%%TOK_(\d+)%%%/g, function(_, idx) {
+    return tokens[Number(idx)];
+  });
+}
+
+function formatPlainWithMathAndCurrency(str) {
+  if (!str) return '';
+  const g = extractAndGuard(str);
+  return restoreTokens(g.masked, g.tokens);
+}
+
+function matchChapterFilter(qChapter, currentChapter) {
+  if (currentChapter === 'all') return true;
+  if (!qChapter) return false;
+  const chLower = qChapter.toLowerCase();
+  const target = currentChapter.toLowerCase();
+  if (chLower.includes(target)) return true;
+
+  const m = chLower.match(/^(?:ch|chương)\s*(\d+)(?:\s*-\s*(\d+))?/i);
+  if (!m) return false;
+  const c1 = parseInt(m[1], 10);
+  const c2 = m[2] ? parseInt(m[2], 10) : c1;
+
+  if (target === 'ch1-3') return c1 >= 1 && c2 <= 3;
+  if (target === 'ch4') return c1 === 4;
+  if (target === 'ch5') return c1 === 5;
+  if (target === 'ch6') return c1 === 6;
+  if (target === 'ch7') return c1 === 7;
+  if (target === 'ch8') return c1 === 8;
+  if (target === 'ch9') return c1 === 9;
+  if (target === 'ch10') return c1 === 10;
+  if (target === 'ch11-12') return c1 === 11 || (c1 === 12 && !chLower.includes('hồi quy') && !chLower.includes('regression'));
+  if (target === 'ch13') return c1 === 13 || c1 === 14 || (c1 === 12 && (chLower.includes('hồi quy') || chLower.includes('regression')));
+  return false;
+}
+
+// --- FORMAT PROMPT HTML & CLAUSES ---
+function formatPromptHtml(str) {
+  if (!str) return '';
+  const g = extractAndGuard(str);
+  let s = g.masked;
+
+  s = formatClausesHtml(s);
   s = parseMarkdownTables(s);
   s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-  s = s.replace(/\n\n+/g, '<div style="margin:10px 0;"></div>');
-  s = s.replace(/\n/g, '<br>');
+  s = s.replace(/\r?\n\r?\n+/g, '<div style="margin:10px 0;"></div>');
+  s = s.replace(/\r?\n/g, '<br>');
 
-  mathTokens.forEach(function(token, idx) {
-    s = s.replace('%%%MATH_' + idx + '%%%', token);
-  });
-
-  return s;
+  return restoreTokens(s, g.tokens);
 }
 
 function formatRichText(str) {
   if (!str) return '';
-  str = parseMarkdownTables(str);
-  str = formatClausesHtml(str);
-  const mathTokens = [];
-  let s = str.replace(/(\$\$[\s\S]*?\$\$|\$[^\$\n]+?\$)/g, function(match) {
-    const id = '%%%MATH_' + mathTokens.length + '%%%';
-    mathTokens.push(match);
-    return id;
-  });
+  const g = extractAndGuard(str);
+  let s = g.masked;
 
+  s = formatClausesHtml(s);
   s = parseMarkdownTables(s);
   s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
   s = s.replace(/`([^`]+)`/g, '<code class="inline-code">$1</code>');
-  s = s.replace(/(?:^|\n)-\s+/g, '<br>• ');
-  s = s.replace(/\n\n+/g, '<div style="margin:6px 0;"></div>');
-  s = s.replace(/\n/g, '<br>');
+  s = s.replace(/(?:^|\r?\n)-\s+/g, '<br>• ');
+  s = s.replace(/\r?\n\r?\n+/g, '<div style="margin:6px 0;"></div>');
+  s = s.replace(/\r?\n/g, '<br>');
 
-  mathTokens.forEach(function(token, idx) {
-    s = s.replace('%%%MATH_' + idx + '%%%', token);
-  });
-
-  return s;
+  return restoreTokens(s, g.tokens);
 }
 
 // ---------------------------------------------------------
@@ -3061,7 +3210,7 @@ function applyFilters() {
 
     // Chapter filter
     if (currentChapter !== 'all') {
-      if (!q.chapter.toLowerCase().includes(currentChapter.toLowerCase())) return false;
+      if (!matchChapterFilter(q.chapter, currentChapter)) return false;
     }
 
     // Type filter
@@ -3075,10 +3224,12 @@ function applyFilters() {
     // Search query
     if (searchQuery) {
       const matchId = ('câu ' + q.id).includes(searchQuery) || ('#' + q.id) === searchQuery || ('' + q.id) === searchQuery;
-      const matchText = q.raw_question.toLowerCase().includes(searchQuery) ||
-                        q.dich_de.toLowerCase().includes(searchQuery) ||
-                        q.ap_dung.toLowerCase().includes(searchQuery) ||
-                        q.chapter.toLowerCase().includes(searchQuery);
+      const matchText = (q.raw_question && q.raw_question.toLowerCase().includes(searchQuery)) ||
+                        (q.prompt && q.prompt.toLowerCase().includes(searchQuery)) ||
+                        (q.dich_de && q.dich_de.toLowerCase().includes(searchQuery)) ||
+                        (q.tom_tat && q.tom_tat.toLowerCase().includes(searchQuery)) ||
+                        (q.ap_dung && q.ap_dung.toLowerCase().includes(searchQuery)) ||
+                        (q.chapter && q.chapter.toLowerCase().includes(searchQuery));
       if (!matchId && !matchText) return false;
     }
 
@@ -3098,8 +3249,11 @@ function updateStats() {
 }
 
 function jumpToQuestion() {
-  const val = parseInt(document.getElementById('jump-input').value);
-  if (val >= 1 && val <= 364) {
+  const val = parseInt(document.getElementById('jump-input').value, 10);
+  const data = window.QUIZ_DATA || [];
+  const maxQ = getQuizMaxId();
+  const targetIdx = data.findIndex(function(x) { return x.id === val; });
+  if (targetIdx !== -1) {
     currentChapter = 'all';
     currentType = 'all';
     currentAns = 'all';
@@ -3110,8 +3264,8 @@ function jumpToQuestion() {
       b.classList.toggle('active', b.dataset.ch === 'all' || b.dataset.type === 'all' || b.dataset.ans === 'all' || b.dataset.progress === 'all');
     });
 
-    filteredQuestions = window.QUIZ_DATA;
-    currentPage = Math.ceil(val / PAGE_SIZE);
+    filteredQuestions = data;
+    currentPage = Math.floor(targetIdx / PAGE_SIZE) + 1;
     renderPagination();
     renderQuestions();
 
@@ -3128,7 +3282,7 @@ function jumpToQuestion() {
       }
     }, 200);
   } else {
-    alert('Vui lòng nhập số câu từ 1 đến 364.');
+    alert('Không tìm thấy câu số ' + (isNaN(val) ? '(trống)' : val) + ' trong bộ đề (phạm vi 1-' + maxQ + ').');
   }
 }
 
@@ -3143,7 +3297,7 @@ function renderQuestions() {
     container.innerHTML = '<div style="text-align:center; padding:50px 20px; background:var(--surface); border-radius:12px; border:1px solid var(--border);">' +
       '<div style="font-size:3rem; margin-bottom:10px;">🔍</div>' +
       '<div style="font-size:1.15rem; font-weight:700; color:var(--text);">Không tìm thấy câu hỏi phù hợp</div>' +
-      '<p style="color:var(--text-muted); font-size:0.9rem; margin-top:6px;">Hãy thử tìm với từ khóa khác hoặc bấm nút \"Tất cả\" để xem toàn bộ 364 câu.</p>' +
+      '<p style="color:var(--text-muted); font-size:0.9rem; margin-top:6px;">Hãy thử tìm với từ khóa khác hoặc bấm nút \"Tất cả\" để xem toàn bộ ' + getQuizTotalCount() + ' câu.</p>' +
       '</div>';
     return;
   }
@@ -3199,7 +3353,7 @@ function createQuestionCard(q) {
   if (q.options && q.options.length > 0) {
     optionsHtml = '<div class="options-grid">';
     q.options.forEach(function(opt) {
-      const optLetterMatch = opt.match(/^([A-Ea-e])[\.\)]/);
+      const optLetterMatch = opt.match(/^([A-Fa-f])[\.\)]/);
       const optLetter = optLetterMatch ? optLetterMatch[1].toUpperCase() : '';
 
       let optClass = 'option-item';
@@ -3220,7 +3374,7 @@ function createQuestionCard(q) {
 
       optionsHtml += '<div class="' + optClass + '" onclick="selectOption(' + q.id + ', \'' + optLetter + '\', this)">' +
         '<div style="font-weight:700; min-width:24px;">' + (optLetter ? optLetter + '.' : '•') + '</div>' +
-        '<div>' + opt.replace(/^[A-Ea-e][\.\)]\s*/, '') + '</div>' +
+        '<div>' + formatPlainWithMathAndCurrency(opt.replace(/^[A-Fa-f][\.\)]\s*/, '')) + '</div>' +
         '</div>';
     });
     optionsHtml += '</div>';
@@ -3237,7 +3391,7 @@ function createQuestionCard(q) {
       '<span>✔ ĐÁP ÁN ĐÚNG:</span>' +
       '<span style="font-size:1.15rem; background:var(--primary); color:#FFF; padding:2px 8px; border-radius:5px;">' + q.correct_answer + '</span>' +
       '</div>' +
-      (q.author_note ? '<div class="author-note">💡 ' + q.author_note + '</div>' : '') +
+      (q.author_note ? '<div class="author-note">💡 ' + formatPlainWithMathAndCurrency(q.author_note) + '</div>' : '') +
       '</div>';
   } else {
     answerStripHtml = '<div class="answer-strip" style="background:var(--surface-sidebar); border-style:solid; border-color:var(--border);">' +
@@ -3254,7 +3408,7 @@ function createQuestionCard(q) {
 
   card.innerHTML = '<div class="q-header">' +
     '<div class="q-badges">' +
-    '<span class="badge-id">[CÂU ' + q.id + ' / 50]</span>' +
+    '<span class="badge-id">[CÂU ' + q.id + ' / ' + getQuizMaxId() + ']</span>' +
     '<span class="badge-ch">' + q.chapter + '</span>' +
     '<span class="badge-type">' + (q.is_calc ? '🧮 Tính toán' : '📚 Lý thuyết') + '</span>' +
     statusBadgeHtml +
@@ -3276,7 +3430,7 @@ function createQuestionCard(q) {
       '</div>' +
       '<img src=\"' + q.table_image + '\" style=\"max-width:100%; height:auto; border-radius:6px; border:1px solid var(--border); display:inline-block;\" loading=\"lazy\" alt=\"Bảng số liệu đề thi câu ' + q.id + '\">' +
     '</div>' : '') +
-    '<div style=\"margin:4px 0 12px; text-align:right;\"><a href=\"' + (q.original_exam_image || ('https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_RE/Q' + q.id + '.webp')) + '" target="_blank" style="color:var(--text-muted); font-size:0.75rem; text-decoration:underline;">📸 Xem toàn bộ ảnh chụp đề gốc Q' + q.id + '.webp</a></div>' +
+    '<div style=\"margin:4px 0 12px; text-align:right;\"><a href=\"' + (q.original_exam_image || ('https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_RE/Q' + q.id + '.webp')) + '" target="_blank" style="color:var(--text-muted); font-size:0.75rem; text-decoration:underline;">📸 Xem toàn bộ ảnh chụp đề gốc ' + ((q.original_exam_image || '').split('/').pop() || ('Q' + q.id + '.webp')) + '</a></div>' +
     optionsHtml +
     answerStripHtml +
     '<div class="toggle-buttons-bar">' +
@@ -3378,7 +3532,7 @@ function selectOption(id, letter, el) {
       '<span>✔ ĐÁP ÁN ĐÚNG:</span>' +
       '<span style="font-size:1.15rem; background:var(--primary); color:#FFF; padding:2px 8px; border-radius:5px;">' + q.correct_answer + '</span>' +
       '</div>' +
-      (q.author_note ? '<div class="author-note">💡 ' + q.author_note + '</div>' : '');
+      (q.author_note ? '<div class="author-note">💡 ' + formatPlainWithMathAndCurrency(q.author_note) + '</div>' : '');
     strip.style.backgroundColor = isCorrect ? 'rgba(34, 197, 94, 0.08)' : 'rgba(239, 68, 68, 0.08)';
     strip.style.borderColor = isCorrect ? 'var(--primary)' : 'var(--danger)';
   }
@@ -3404,7 +3558,7 @@ function revealAnswer(id) {
       '<span>✔ ĐÁP ÁN ĐÚNG:</span>' +
       '<span style="font-size:1.15rem; background:var(--primary); color:#FFF; padding:2px 8px; border-radius:5px;">' + q.correct_answer + '</span>' +
       '</div>' +
-      (q.author_note ? '<div class="author-note">💡 ' + q.author_note + '</div>' : '');
+      (q.author_note ? '<div class="author-note">💡 ' + formatPlainWithMathAndCurrency(q.author_note) + '</div>' : '');
     strip.style.backgroundColor = 'rgba(34, 197, 94, 0.08)';
     strip.style.borderColor = 'var(--primary)';
   }
@@ -3567,6 +3721,7 @@ function renderPagination() {
 // ---------------------------------------------------------
 loadLocalProgress();
 filteredQuestions = window.QUIZ_DATA || [];
+syncStaticCountsToQuizData();
 updateProgressUI();
 applyFilters();
 initAuthSystem();
@@ -3605,7 +3760,7 @@ let hideTooltipTimer = null;
 
 function getStoredHighlights() {
   try {
-    const raw = localStorage.getItem('mas_sp25_re_highlights');
+    const raw = localStorage.getItem(PORTAL_STORAGE_KEY + '_highlights');
     return raw ? JSON.parse(raw) : [];
   } catch (e) {
     return [];
@@ -3614,7 +3769,7 @@ function getStoredHighlights() {
 
 function setStoredHighlights(list) {
   try {
-    localStorage.setItem('mas_sp25_re_highlights', JSON.stringify(list));
+    localStorage.setItem(PORTAL_STORAGE_KEY + '_highlights', JSON.stringify(list));
     updateHighlightBadges();
     if (currentUser) {
       debouncedCloudSync();
@@ -4308,7 +4463,7 @@ function jumpToHighlight(hlId) {
       currentProgressFilter = 'all';
       currentChapter = 'all';
       currentType = 'all';
-      currentAnswer = 'all';
+      currentAns = 'all';
       const searchInp = document.getElementById('search-input');
       if (searchInp) searchInp.value = '';
       applyFilters();
@@ -4362,7 +4517,7 @@ function exportNotes() {
   }
 
   let content = "========================================================================\n";
-  content += "🥬 CẢI XANH HỌC MAS - SỔ TAY GHI CHÚ & HIGHLIGHT 364 CÂU HỎI MAS202\n";
+  content += "🥬 CẢI XANH HỌC MAS - SỔ TAY GHI CHÚ & HIGHLIGHT " + getQuizTotalCount() + " CÂU HỎI MAS202\n";
   content += "Thời gian xuất: " + new Date().toLocaleString('vi-VN') + "\n";
   content += "Tổng số ghi chú: " + highlights.length + "\n";
   content += "========================================================================\n\n";
@@ -4380,7 +4535,8 @@ function exportNotes() {
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  a.download = 'Cai_Xanh_MAS202_364_Ghi_Chu_' + new Date().toISOString().slice(0, 10) + '.txt';
+  const exportPrefix = PORTAL_STORAGE_KEY === 'mas364' ? 'Cai_Xanh_MAS202_364' : ('Cai_Xanh_MAS202_' + PORTAL_STORAGE_KEY.replace(/^mas_/, '').toUpperCase());
+  a.download = exportPrefix + '_Ghi_Chu_' + new Date().toISOString().slice(0, 10) + '.txt';
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
@@ -4393,61 +4549,7 @@ window.addEventListener('click', function(e) {
   if (menu && menu.style.display === 'block') {
     menu.style.display = 'none';
   }
-});// --- CLAUSE FORMATTER (ROMAN NUMERALS i, ii, iii) ---
-function formatClausesHtml(s) {
-  if (!s) return '';
-  if (/\((?:i|I)\)/.test(s) && /\((?:ii|II)\)/.test(s)) {
-    s = s.replace(/([^\n])\s*(\((?:i|ii|iii|iv|v|vi|vii|viii|ix|x|I|II|III|IV|V|VI|VII|VIII|IX|X)\))/g, '$1\n$2');
-    const lines = s.split('\n');
-    const out = [];
-    let clauseItems = [];
-    for (let i = 0; i < lines.length; i++) {
-      const line = lines[i].trim();
-      const m = line.match(/^(\((?:i|ii|iii|iv|v|vi|vii|viii|ix|x|I|II|III|IV|V|VI|VII|VIII|IX|X)\))\s*(.*)$/);
-      if (m) {
-        clauseItems.push('<div style="margin:6px 0; display:flex; align-items:baseline; gap:10px;">' +
-          '<strong style="color:var(--primary); font-size:0.95rem; min-width:28px;">' + m[1] + '</strong>' +
-          '<span style="flex:1;">' + m[2] + '</span></div>');
-      } else {
-        if (clauseItems.length > 0) {
-          out.push('<div class="clauses-box" style="margin:12px 0 14px; padding:12px 16px; background:var(--surface-sidebar); border-left:4px solid var(--primary); border-radius:8px; font-size:0.95rem; box-shadow:0 1px 4px rgba(0,0,0,0.04);">' + clauseItems.join('') + '</div>');
-          clauseItems = [];
-        }
-        if (line) out.push(line);
-      }
-    }
-    if (clauseItems.length > 0) {
-      out.push('<div class="clauses-box" style="margin:12px 0 14px; padding:12px 16px; background:var(--surface-sidebar); border-left:4px solid var(--primary); border-radius:8px; font-size:0.95rem; box-shadow:0 1px 4px rgba(0,0,0,0.04);">' + clauseItems.join('') + '</div>');
-    }
-    s = out.join('\n');
-  }
-  return s;
-}
-
-// --- PROMPT FORMATTER ---
-function formatPromptHtml(str) {
-  if (!str) return '';
-  const mathTokens = [];
-  let s = str.replace(/(\$\$[\s\S]*?\$\$|\$[^\$\n]+?\$)/g, function(match) {
-    const id = '%%%MATH_' + mathTokens.length + '%%%';
-    mathTokens.push(match);
-    return id;
-  });
-
-  s = formatClausesHtml(s);
-  s = parseMarkdownTables(s);
-  s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-  s = s.replace(/\n\n+/g, '<div style="margin:10px 0;"></div>');
-  s = s.replace(/\n/g, '<br>');
-
-  mathTokens.forEach(function(token, idx) {
-    s = s.replace('%%%MATH_' + idx + '%%%', token);
-  });
-
-  return s;
-}
-
-
+});
 
   </script>
 
