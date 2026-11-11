@@ -52,28 +52,28 @@
     }
 
     [data-theme="dark"] {
-      --primary: #22C55E;
-      --primary-light: #4ADE80;
-      --primary-soft: #064E3B;
-      --accent: #60A5FA;
-      --accent-soft: #1E3A8A;
+      --primary: #15803D;
+      --primary-light: #34D399;
+      --primary-soft: rgba(16, 185, 129, 0.14);
+      --accent: #7DD3FC;
+      --accent-soft: rgba(56, 189, 248, 0.12);
       --warning: #FBBF24;
-      --warning-soft: #78350F;
-      --danger: #F87171;
-      --danger-soft: #7F1D1D;
-      --purple: #A78BFA;
-      --purple-soft: #4C1D95;
-      --bg: #0B0F19;
-      --surface: #111827;
-      --surface-sidebar: #1F2937;
-      --text: #F3F4F6;
-      --text-muted: #9CA3AF;
-      --border: #374151;
-      --card-bg: #111827;
-      --card-border: #1F2937;
-      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.5);
-      --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.5);
-      --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.5);
+      --warning-soft: rgba(245, 158, 11, 0.14);
+      --danger: #FCA5A5;
+      --danger-soft: rgba(239, 68, 68, 0.14);
+      --purple: #C4B5FD;
+      --purple-soft: rgba(139, 92, 246, 0.14);
+      --bg: #0F172A;
+      --surface: #1E293B;
+      --surface-sidebar: #273449;
+      --text: #E2E8F0;
+      --text-muted: #94A3B8;
+      --border: #334155;
+      --card-bg: #182234;
+      --card-border: #2B394F;
+      --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.35);
+      --shadow-md: 0 4px 10px -1px rgb(0 0 0 / 0.4);
+      --shadow-lg: 0 10px 20px -3px rgb(0 0 0 / 0.45);
     }
 
     * {
@@ -1646,6 +1646,171 @@
       margin-bottom: 10px;
     }
 
+    /* HEADER EXAM SWITCHER & QUICK EXAM BAR (LIGHT + DARK) */
+    .btn-exam-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+      background: linear-gradient(135deg, rgba(2, 132, 199, 0.10), rgba(56, 189, 248, 0.08));
+      border: 1px solid rgba(2, 132, 199, 0.5);
+      color: #0369A1;
+    }
+    .btn-exam-header:hover {
+      background: rgba(2, 132, 199, 0.16);
+    }
+    [data-theme="dark"] .btn-exam-header {
+      background: rgba(56, 189, 248, 0.10);
+      border-color: rgba(125, 211, 252, 0.35);
+      color: #7DD3FC;
+    }
+    [data-theme="dark"] .btn-exam-header:hover {
+      background: rgba(56, 189, 248, 0.18);
+    }
+
+    .exam-chip-item {
+      text-decoration: none;
+    }
+    .exam-chip-item.pill {
+      white-space: nowrap;
+      padding: 5px 11px;
+      border-radius: 99px;
+      font-size: 0.78rem;
+      font-weight: 600;
+      background-color: var(--surface);
+      color: var(--text) !important;
+      border: 1px solid var(--border);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: all 0.15s ease;
+    }
+    .exam-chip-item.pill:hover {
+      border-color: var(--primary-light);
+      background-color: var(--surface-sidebar);
+    }
+    .exam-chip-featured {
+      white-space: nowrap;
+      padding: 6px 12px;
+      border-radius: 99px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      background: rgba(2, 132, 199, 0.10);
+      color: #0369A1;
+      border: 1px solid rgba(2, 132, 199, 0.45);
+    }
+    [data-theme="dark"] .exam-chip-featured {
+      background: rgba(56, 189, 248, 0.12);
+      color: #7DD3FC;
+      border-color: rgba(125, 211, 252, 0.35);
+    }
+
+    .exam-quick-box {
+      background: linear-gradient(135deg, rgba(2, 132, 199, 0.06), rgba(56, 189, 248, 0.03));
+      border: 1px solid rgba(2, 132, 199, 0.35);
+      border-radius: 12px;
+      padding: 12px 14px;
+      margin-bottom: 14px;
+    }
+    [data-theme="dark"] .exam-quick-box {
+      background: rgba(30, 41, 59, 0.65);
+      border-color: #334155;
+    }
+    .exam-quick-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+    .exam-quick-label {
+      color: #0369A1;
+      font-weight: 800;
+      font-size: 0.88rem;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      margin-bottom: 0;
+    }
+    [data-theme="dark"] .exam-quick-label {
+      color: #7DD3FC;
+    }
+    .exam-quick-modal-btn {
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      cursor: pointer;
+      border-radius: 6px;
+    }
+    .exam-quick-modal-btn:hover {
+      border-color: var(--accent);
+      background: var(--surface-sidebar);
+    }
+
+    /* GLOBAL DARK MODE CONTRAST & EYE-COMFORT OVERRIDES */
+    [data-theme="dark"] .logo-title,
+    [data-theme="dark"] .hero-title,
+    [data-theme="dark"] .ans-badge,
+    [data-theme="dark"] .mode-btn.active,
+    [data-theme="dark"] .option-item.correct,
+    [data-theme="dark"] .progress-percent-badge {
+      color: var(--primary-light);
+    }
+    [data-theme="dark"] .pill-btn:hover,
+    [data-theme="dark"] .btn-retry-q:hover {
+      border-color: var(--primary-light);
+      color: var(--primary-light);
+    }
+    [data-theme="dark"] .pill-btn.active {
+      color: #FFFFFF;
+      background-color: var(--primary);
+      border-color: #16A34A;
+    }
+    [data-theme="dark"] .hero-banner {
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(56, 189, 248, 0.05) 100%);
+      border-left-color: var(--primary-light);
+    }
+    [data-theme="dark"] .q-card:hover {
+      border-color: #475569;
+    }
+    [data-theme="dark"] .badge-ch {
+      border: 1px solid rgba(125, 211, 252, 0.22);
+    }
+    [data-theme="dark"] .answer-strip {
+      background-color: rgba(16, 185, 129, 0.09);
+      border-color: rgba(52, 211, 153, 0.45);
+    }
+    [data-theme="dark"] .stat-box-correct .stat-box-val { color: #4ADE80; }
+    [data-theme="dark"] .stat-box-wrong .stat-box-val { color: #FCA5A5; }
+    [data-theme="dark"] .stat-box-bookmark .stat-box-val { color: #FCD34D; }
+    [data-theme="dark"] .tgl-dich.active { background-color: #1D4ED8; }
+    [data-theme="dark"] .tgl-tomtat.active { background-color: #475569; }
+    [data-theme="dark"] .tgl-cthuc.active { background-color: #6D28D9; }
+    [data-theme="dark"] .tgl-apdung.active { background-color: #059669; }
+    [data-theme="dark"] .tgl-casio.active { background-color: #0E7490; }
+    [data-theme="dark"] .tgl-lythuyet.active { background-color: #B45309; }
+    [data-theme="dark"] .tgl-meo.active { background-color: #BE123C; }
+    [data-theme="dark"] .panel-dich { background-color: rgba(59, 130, 246, 0.09); border-left-color: #60A5FA; }
+    [data-theme="dark"] .panel-tomtat { background-color: rgba(148, 163, 184, 0.09); border-left-color: #94A3B8; }
+    [data-theme="dark"] .panel-cthuc { background-color: rgba(139, 92, 246, 0.10); border-left-color: #A78BFA; }
+    [data-theme="dark"] .panel-apdung { background-color: rgba(16, 185, 129, 0.09); border-left-color: #34D399; }
+    [data-theme="dark"] .panel-casio { background-color: rgba(6, 182, 212, 0.09); border-color: rgba(34, 211, 238, 0.24); border-left-color: #22D3EE; }
+    [data-theme="dark"] .panel-lythuyet { background-color: rgba(245, 158, 11, 0.09); border-color: rgba(251, 191, 36, 0.24); border-left-color: #FBBF24; }
+    [data-theme="dark"] .panel-dich .panel-title { color: #93C5FD; }
+    [data-theme="dark"] .panel-tomtat .panel-title { color: #CBD5E1; }
+    [data-theme="dark"] .panel-cthuc .panel-title { color: #C4B5FD; }
+    [data-theme="dark"] .panel-apdung .panel-title { color: #6EE7B7; }
+    [data-theme="dark"] .panel-casio .panel-title { color: #67E8F9; }
+    [data-theme="dark"] .panel-lythuyet .panel-title { color: #FCD34D; }
+
     /* PATTERN RECOGNITION & 1-RA-3 DISCRIMINATION */
     .btn-rec-header {
       display: flex;
@@ -1661,8 +1826,8 @@
     }
     [data-theme="dark"] .btn-rec-header {
       color: #FDA4AF;
-      border-color: #FB7185;
-      background: linear-gradient(135deg, rgba(225, 29, 72, 0.22), rgba(244, 63, 94, 0.16));
+      border: 1px solid rgba(251, 113, 133, 0.35);
+      background: rgba(244, 63, 94, 0.10);
     }
 
     .tgl-meo {
@@ -1675,7 +1840,7 @@
     }
     [data-theme="dark"] .tgl-meo {
       color: #FDA4AF;
-      border-color: rgba(251, 113, 133, 0.35);
+      border-color: rgba(251, 113, 133, 0.26);
     }
     .tgl-meo.active {
       background-color: #E11D48;
@@ -1691,8 +1856,8 @@
       padding: 14px 16px;
     }
     [data-theme="dark"] .panel-meo {
-      background-color: rgba(225, 29, 72, 0.10);
-      border-color: rgba(251, 113, 133, 0.32);
+      background-color: rgba(244, 63, 94, 0.07);
+      border-color: rgba(251, 113, 133, 0.24);
       border-left-color: #FB7185;
     }
     .panel-meo .panel-title {
@@ -1841,8 +2006,11 @@
       box-shadow: 0 3px 10px rgba(225, 29, 72, 0.11);
     }
     [data-theme="dark"] .meo-role-card.is-current {
-      border-color: #FB7185;
-      background: rgba(225, 29, 72, 0.16);
+      border-color: #F43F5E;
+      background: rgba(244, 63, 94, 0.11);
+    }
+    [data-theme="dark"] .meo-current-badge {
+      background: #BE123C;
     }
     .meo-current-badge {
       display: inline-block;
@@ -2010,7 +2178,7 @@
           📖 Sổ Tay Ch5-Ch9
         </a>
                 <!-- EXAM SWITCHER BUTTON -->
-        <button class="btn btn-secondary" onclick="openExamModal()" style="display: flex; align-items: center; gap: 6px; font-weight: 700; background: linear-gradient(135deg, rgba(2, 132, 199, 0.12), rgba(56, 189, 248, 0.12)); border: 1.5px solid #0284c7; color: #0284c7;" title="Mở danh sách 22 đề thi Final Exam">
+        <button class="btn btn-secondary btn-exam-header" onclick="openExamModal()" title="Mở danh sách 22 đề thi Final Exam">
           <span>📚 Bộ Đề Thi (22 Kỳ)</span>
           <span style="font-size: 0.7rem;">▼</span>
         </button>
@@ -2072,7 +2240,7 @@
       <!-- Scrollable Exam Chips -->
       <div style="display: flex; gap: 8px; overflow-x: auto; padding-bottom: 8px; -webkit-overflow-scrolling: touch;">
         <a href="Cai_Xanh_MAS202_364_Cau_Hoi.html" class="exam-chip-item" style="white-space:nowrap; padding:6px 14px; border-radius:99px; font-size:0.82rem; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:5px; background:var(--primary); color:white;">🥬 Ngân hàng 416 câu</a>
-        <a href="Cai_Xanh_MAS202_SU26_FE.html" class="exam-chip-item" style="white-space:nowrap; padding:6px 12px; border-radius:99px; font-size:0.82rem; font-weight:700; text-decoration:none; display:inline-flex; align-items:center; gap:5px; background:rgba(2, 132, 199, 0.12); color:#0284c7; border:1px solid #0284c7;">🎯 SU26 FE</a>
+        <a href="Cai_Xanh_MAS202_SU26_FE.html" class="exam-chip-item exam-chip-featured">🎯 SU26 FE</a>
         <a href="Cai_Xanh_MAS202_SP26_FE.html" class="exam-chip-item" style="white-space:nowrap; padding:6px 12px; border-radius:99px; font-size:0.82rem; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:5px; background:var(--surface-sidebar); color:var(--text); border:1px solid var(--border);">🎯 SP26 FE</a>
         <a href="Cai_Xanh_MAS202_SP26_RE.html" class="exam-chip-item" style="white-space:nowrap; padding:6px 12px; border-radius:99px; font-size:0.82rem; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:5px; background:var(--surface-sidebar); color:var(--text); border:1px solid var(--border);">🎯 SP26 RE</a>
         <a href="Cai_Xanh_MAS202_FA25_FE.html" class="exam-chip-item" style="white-space:nowrap; padding:6px 12px; border-radius:99px; font-size:0.82rem; font-weight:600; text-decoration:none; display:inline-flex; align-items:center; gap:5px; background:var(--surface-sidebar); color:var(--text); border:1px solid var(--border);">🎯 FA25 FE</a>
@@ -2188,17 +2356,17 @@
       </div>
 
             <!-- 22 EXAMS FILTER & SWITCHER GROUP (ALWAYS VISIBLE IN FILTER PANEL) -->
-      <div class="filter-group" style="background: linear-gradient(135deg, rgba(2, 132, 199, 0.08), rgba(56, 189, 248, 0.04)); border: 1.5px solid #0284c7; border-radius: 12px; padding: 12px 14px; margin-bottom: 14px;">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;">
-          <span class="filter-label" style="color: #0284c7; font-weight: 800; font-size: 0.9rem; display: flex; align-items: center; gap: 6px;">
-            <span style="font-size: 1.1rem;">📚</span>
+      <div class="filter-group exam-quick-box">
+        <div class="exam-quick-head">
+          <span class="filter-label exam-quick-label">
+            <span style="font-size: 1.05rem;">📚</span>
             <span>CHUYỂN NHANH ĐỀ THI FINAL EXAM (22 BỘ ĐỀ ĐÃ GIẢI):</span>
           </span>
-          <button class="btn btn-secondary" onclick="openExamModal()" style="font-size: 0.8rem; font-weight: 700; padding: 3px 12px; background: white; border: 1px solid #0284c7; color: #0284c7; cursor: pointer; border-radius: 6px;">
+          <button class="btn btn-secondary exam-quick-modal-btn" onclick="openExamModal()">
             📋 Xem Bảng 22 Đề ▾
           </button>
         </div>
-        <div class="pills-container" style="display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; -webkit-overflow-scrolling: touch;">
+        <div class="pills-container" style="display: flex; gap: 6px; overflow-x: auto; padding-bottom: 4px; margin-bottom: 0; -webkit-overflow-scrolling: touch;">
           <a href="Cai_Xanh_MAS202_364_Cau_Hoi.html" class="exam-chip-item pill" style="text-decoration:none; display:inline-flex; align-items:center; gap:4px; font-weight:700;">🥬 Ngân hàng 416 câu</a>
           <a href="Cai_Xanh_MAS202_SU26_FE.html" class="exam-chip-item pill" style="text-decoration:none; display:inline-flex; align-items:center; gap:4px; font-weight:600;">🎯 SU26 FE</a>
           <a href="Cai_Xanh_MAS202_SP26_FE.html" class="exam-chip-item pill" style="text-decoration:none; display:inline-flex; align-items:center; gap:4px; font-weight:600;">🎯 SP26 FE</a>
