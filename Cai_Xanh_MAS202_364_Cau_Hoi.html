@@ -2146,6 +2146,211 @@
       margin-bottom: 6px;
     }
 
+    /* GEMINI AI QA BUTTON & MODAL */
+    .btn-gemini-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 700;
+      border-color: rgba(99, 102, 241, 0.35);
+      color: #4F46E5;
+    }
+    .btn-gemini-header:hover {
+      border-color: #6366F1;
+      background: rgba(99, 102, 241, 0.08);
+    }
+    [data-theme="dark"] .btn-gemini-header {
+      color: #A5B4FC;
+      border-color: rgba(129, 140, 248, 0.35);
+    }
+    [data-theme="dark"] .btn-gemini-header:hover {
+      background: rgba(99, 102, 241, 0.16);
+      border-color: #818CF8;
+    }
+    .gemini-key-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #94A3B8;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    .gemini-key-dot.ready {
+      background: #22C55E;
+      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.22);
+    }
+    .tgl-btn.tgl-ai {
+      color: #4F46E5;
+      border-color: rgba(99, 102, 241, 0.35);
+      background: rgba(99, 102, 241, 0.06);
+      font-weight: 700;
+    }
+    .tgl-btn.tgl-ai:hover {
+      background: #4F46E5;
+      color: #FFFFFF;
+      border-color: #4F46E5;
+    }
+    [data-theme="dark"] .tgl-btn.tgl-ai {
+      color: #A5B4FC;
+      background: rgba(99, 102, 241, 0.14);
+      border-color: rgba(129, 140, 248, 0.35);
+    }
+    [data-theme="dark"] .tgl-btn.tgl-ai:hover {
+      background: #4F46E5;
+      color: #FFFFFF;
+      border-color: #6366F1;
+    }
+    .gemini-key-box {
+      padding: 12px 16px;
+      background: var(--surface-sidebar);
+      border-bottom: 1px solid var(--border);
+      font-size: 0.82rem;
+    }
+    .gemini-q-preview {
+      padding: 8px 18px;
+      background: rgba(99, 102, 241, 0.06);
+      border-bottom: 1px solid var(--border);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    [data-theme="dark"] .gemini-q-preview {
+      background: rgba(99, 102, 241, 0.11);
+    }
+    .gemini-quick-chips {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      padding: 8px 18px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .gemini-quick-chip {
+      padding: 4px 10px;
+      border-radius: 99px;
+      border: 1px solid var(--border);
+      background: var(--surface-sidebar);
+      color: var(--text);
+      font-size: 0.76rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .gemini-quick-chip:hover {
+      border-color: #6366F1;
+      color: #4F46E5;
+    }
+    [data-theme="dark"] .gemini-quick-chip:hover {
+      color: #A5B4FC;
+      border-color: #818CF8;
+    }
+    .gemini-chat-messages {
+      flex: 1;
+      overflow-y: auto;
+      padding: 14px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      background: var(--bg);
+      min-height: 240px;
+    }
+    .gemini-msg {
+      max-width: 90%;
+      border-radius: 12px;
+      padding: 10px 14px;
+      font-size: 0.88rem;
+      line-height: 1.6;
+      word-break: break-word;
+    }
+    .gemini-msg-user {
+      align-self: flex-end;
+      background: #4F46E5;
+      color: #FFFFFF;
+      border-bottom-right-radius: 4px;
+    }
+    .gemini-msg-ai {
+      align-self: flex-start;
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+      border-bottom-left-radius: 4px;
+      width: 100%;
+      max-width: 96%;
+    }
+    .gemini-msg-err {
+      border-color: rgba(220, 38, 38, 0.45);
+      background: rgba(220, 38, 38, 0.08);
+    }
+    .gemini-msg-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+      font-size: 0.74rem;
+      font-weight: 700;
+      color: var(--text-muted);
+    }
+    .gemini-msg-body p {
+      margin: 0 0 8px 0;
+    }
+    .gemini-msg-body p:last-child {
+      margin-bottom: 0;
+    }
+    .gemini-msg-body ul, .gemini-msg-body ol {
+      margin: 4px 0 8px 20px;
+      padding: 0;
+    }
+    .gemini-msg-body li {
+      margin-bottom: 3px;
+    }
+    .gemini-msg-body code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.82em;
+      padding: 1px 5px;
+      border-radius: 4px;
+      background: var(--surface-sidebar);
+      border: 1px solid var(--border);
+    }
+    .gemini-msg-body pre {
+      background: var(--surface-sidebar);
+      border: 1px solid var(--border);
+      padding: 8px 10px;
+      border-radius: 8px;
+      overflow-x: auto;
+      margin: 6px 0;
+      font-size: 0.8rem;
+    }
+    .gemini-input-bar {
+      display: flex;
+      gap: 8px;
+      align-items: flex-end;
+      padding: 12px 16px;
+      border-top: 1px solid var(--border);
+      background: var(--surface);
+    }
+    .gemini-input-bar textarea {
+      flex: 1;
+      resize: none;
+      padding: 9px 12px;
+      border-radius: 10px;
+      border: 1.5px solid var(--border);
+      background: var(--surface-sidebar);
+      color: var(--text);
+      font-family: inherit;
+      font-size: 0.87rem;
+      line-height: 1.45;
+      outline: none;
+      max-height: 120px;
+    }
+    .gemini-input-bar textarea:focus {
+      border-color: #6366F1;
+    }
+
     @media (max-width: 900px) {
       .meo-grid {
         grid-template-columns: 1fr;
@@ -2212,6 +2417,11 @@
           <span id="cloud-sync-status-icon" class="cloud-status-icon" title="Đã đồng bộ với Cloud (Bấm để đồng bộ lại)" onclick="syncProgressWithCloud()">☁️</span>
           <button class="btn-logout" onclick="logoutGoogle()" title="Đăng xuất tài khoản Google">🚪</button>
         </div>
+
+        <button class="btn btn-secondary btn-gemini-header" id="btn-open-gemini-settings" onclick="openGeminiKeyModal()" title="Cài đặt Gemini API Key cá nhân để hỏi đáp AI">
+          <span class="gemini-key-dot" id="gemini-key-dot"></span>
+          <span>✨ Gemini AI</span>
+        </button>
 
         <button class="btn-theme" id="theme-toggle" onclick="toggleTheme()" title="Đổi giao diện Sáng / Tối">
           🌓
@@ -2787,6 +2997,61 @@
     <div id="recognition-modal-list" style="padding:16px 20px; overflow-y:auto; flex:1;"></div>
   </div>
 
+  <!-- GEMINI AI Q&A MODAL (BYOK - CLIENT SIDE) -->
+  <div class="modal-backdrop" id="gemini-modal-backdrop" onclick="closeGeminiModal()" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.55); z-index:10004; backdrop-filter:blur(2px);"></div>
+  <div class="modal-dialog" id="gemini-modal" style="display:none; flex-direction:column; position:fixed; top:50%; left:50%; transform:translate(-50%, -50%); width:95%; max-width:780px; height:86vh; max-height:86vh; background:var(--surface); border:1.5px solid var(--border); border-radius:16px; box-shadow:0 22px 60px rgba(0,0,0,0.32); z-index:10005; overflow:hidden; padding:0;">
+    <div style="padding:14px 18px; border-bottom:1px solid var(--border); background:var(--surface); display:flex; justify-content:space-between; align-items:center; gap:10px; flex-wrap:wrap;">
+      <div>
+        <div id="gemini-modal-title" style="font-size:1.05rem; font-weight:800; color:var(--text);">✨ Hỏi đáp với Gemini AI</div>
+        <div id="gemini-modal-qmeta" style="font-size:0.78rem; color:var(--text-muted); margin-top:2px;">Gia sư MAS202 cá nhân • Nhập API Key riêng của bạn để sử dụng miễn phí</div>
+      </div>
+      <div style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
+        <select id="gemini-model-select" onchange="saveGeminiModelPref()" title="Chọn model Gemini" style="padding:5px 8px; border-radius:8px; border:1px solid var(--border); background:var(--surface-sidebar); color:var(--text); font-size:0.78rem; font-weight:600; outline:none;">
+          <option value="gemini-3.8-flash">⚡ Gemini 3.8 Flash (Khuyên dùng)</option>
+          <option value="gemini-3.5-flash-lite">🚀 Gemini 3.5 Flash-Lite (Siêu nhanh)</option>
+          <option value="gemini-4-argon">🧠 Gemini 4 Argon (Suy luận sâu)</option>
+        </select>
+        <button type="button" class="btn btn-secondary" onclick="toggleGeminiKeyPanel()" style="padding:5px 10px; font-size:0.78rem; font-weight:700;" title="Cài đặt / Đổi Gemini API Key">🔑 API Key</button>
+        <button type="button" class="btn btn-secondary" id="gemini-reset-chat-btn" onclick="resetCurrentGeminiChat()" style="padding:5px 10px; font-size:0.78rem; font-weight:700;" title="Làm mới cuộc trò chuyện cho câu này">🗑️ Mới</button>
+        <button type="button" onclick="closeGeminiModal()" style="background:none; border:none; font-size:1.65rem; cursor:pointer; color:var(--text-muted); line-height:1; padding:0 4px;" aria-label="Đóng">&times;</button>
+      </div>
+    </div>
+
+    <div id="gemini-key-panel" class="gemini-key-box" style="display:none;">
+      <div style="font-weight:700; color:var(--text); margin-bottom:4px;">🔐 Cài đặt Gemini API Key cá nhân (lưu cục bộ trên trình duyệt)</div>
+      <div style="color:var(--text-muted); margin-bottom:8px; line-height:1.45;">
+        1. Mở <a href="https://aistudio.google.com/apikey" target="_blank" rel="noopener" style="color:#4F46E5; font-weight:700; text-decoration:underline;">Google AI Studio (aistudio.google.com/apikey)</a> &rarr; bấm <strong>Create API key</strong>.<br>
+        2. Dán key (dạng <code>AIza...</code>) vào ô dưới đây &rarr; bấm <strong>Lưu Key</strong>. Key chỉ lưu trong <code>localStorage</code> máy bạn và gọi thẳng tới Google Gemini API, không qua server trung gian.
+      </div>
+      <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+        <div style="flex:1; min-width:220px; display:flex; align-items:center; border:1px solid var(--border); border-radius:8px; background:var(--surface); overflow:hidden;">
+          <input id="gemini-api-key-input" type="password" placeholder="Dán Gemini API Key (AIza...) của bạn..." autocomplete="off" style="flex:1; padding:7px 10px; border:none; background:transparent; color:var(--text); font-family:'JetBrains Mono', monospace; font-size:0.8rem; outline:none;">
+          <button type="button" onclick="toggleGeminiKeyVisibility()" title="Hiện / Ẩn API Key" style="padding:6px 9px; border:none; background:transparent; color:var(--text-muted); cursor:pointer; font-size:0.85rem;">👁️</button>
+        </div>
+        <button type="button" class="btn btn-primary" onclick="saveGeminiApiKey()" style="padding:7px 12px; font-size:0.8rem;">💾 Lưu Key</button>
+        <button type="button" class="btn btn-secondary" onclick="clearGeminiApiKey()" style="padding:7px 10px; font-size:0.8rem;">Xóa</button>
+      </div>
+      <div id="gemini-key-status" style="margin-top:6px; font-size:0.76rem; color:var(--text-muted);"></div>
+    </div>
+
+    <div id="gemini-q-preview" class="gemini-q-preview" style="display:none;"></div>
+
+    <div id="gemini-quick-chips" class="gemini-quick-chips">
+      <button type="button" class="gemini-quick-chip" onclick="sendGeminiQuickPrompt('Giải thích từng bước bài này thật dễ hiểu và chỉ rõ công thức cần dùng.')">💡 Giải thích từng bước</button>
+      <button type="button" class="gemini-quick-chip" onclick="sendGeminiQuickPrompt('Giải thích rõ tại sao các phương án còn lại sai và tránh bẫy gì?')">❌ Vì sao câu khác sai?</button>
+      <button type="button" class="gemini-quick-chip" onclick="sendGeminiQuickPrompt('Hướng dẫn chi tiết cách bấm máy Casio fx-580VN X cho bài này (nếu bấm được).')">🧮 Bấm Casio 580</button>
+      <button type="button" class="gemini-quick-chip" onclick="sendGeminiQuickPrompt('Chỉ dấu hiệu nhận biết dạng bài này trong đề thi và phân biệt với các khái niệm dễ nhầm.')">🎯 Mẹo nhận diện</button>
+      <button type="button" class="gemini-quick-chip" onclick="sendGeminiQuickPrompt('Cho mình 1 câu hỏi trắc nghiệm tương tự (kèm đáp án ẩn ở cuối để tự thử sức).')">📝 Bài tương tự</button>
+    </div>
+
+    <div id="gemini-chat-messages" class="gemini-chat-messages"></div>
+
+    <div class="gemini-input-bar">
+      <textarea id="gemini-user-input" rows="2" placeholder="Nhập câu hỏi về bài này (Enter để gửi, Shift+Enter xuống dòng)..." onkeydown="handleGeminiInputKeydown(event)"></textarea>
+      <button type="button" class="btn btn-primary" id="gemini-send-btn" onclick="sendGeminiQuestion()" style="padding:9px 16px; font-weight:700; white-space:nowrap;">Gửi ✨</button>
+    </div>
+  </div>
+
   <script>
   function openExamModal() {
     var m = document.getElementById('exam-modal');
@@ -2835,6 +3100,7 @@
     if (e.key === 'Escape') {
       closeExamModal();
       if (typeof closeRecognitionModal === 'function') closeRecognitionModal();
+      if (typeof closeGeminiModal === 'function') closeGeminiModal();
     }
   });
 </script>
@@ -4118,6 +4384,7 @@ function createQuestionCard(q) {
     '<button class="tgl-btn tgl-casio" onclick="toggleSection(' + q.id + ', \'casio\', this)">🧮 Casio 580</button>' +
     '<button class="tgl-btn tgl-lythuyet" onclick="toggleSection(' + q.id + ', \'lythuyet\', this)">📚 Sách Berenson</button>' +
     '<button class="tgl-btn tgl-meo" onclick="toggleSection(' + q.id + ', \'meo\', this)">🎯 Mẹo &amp; Phân biệt</button>' +
+    '<button class="tgl-btn tgl-ai" onclick="openGeminiForQuestion(' + q.id + ')">✨ Hỏi Gemini</button>' +
     '<button class="tgl-btn tgl-all-btn" onclick="toggleCardAll(' + q.id + ', this)">Mở tất cả 7 mục</button>' +
     '</div>' +
     '<div class="detail-panel panel-dich" id="panel-dich-' + q.id + '" data-sec="dich" data-qid="' + q.id + '"></div>' +
@@ -7086,6 +7353,581 @@ window.addEventListener('click', function(e) {
     menu.style.display = 'none';
   }
 });
+
+// ---------------------------------------------------------
+// 16. GEMINI AI Q&A ASSISTANT (BYOK - INTERACTIONS API)
+// ---------------------------------------------------------
+const GEMINI_KEY_STORAGE = 'cai_xanh_gemini_api_key';
+const GEMINI_MODEL_STORAGE = 'cai_xanh_gemini_model';
+const GEMINI_DEFAULT_MODEL = 'gemini-3.8-flash';
+const GEMINI_ALLOWED_MODELS = ['gemini-3.8-flash', 'gemini-3.5-flash-lite', 'gemini-4-argon'];
+const GEMINI_INTERACTIONS_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/interactions';
+
+let activeGeminiQId = null;
+let isGeminiBusy = false;
+const geminiThreadsByKey = {}; // { [threadKey]: { lastInteractionId, messages: [], sentContext } }
+
+function getGeminiThreadKey(qid) {
+  return PORTAL_STORAGE_KEY + '_' + qid;
+}
+
+function getGeminiApiKey() {
+  try {
+    return (localStorage.getItem(GEMINI_KEY_STORAGE) || '').trim();
+  } catch (e) {
+    return '';
+  }
+}
+
+function getGeminiModel() {
+  try {
+    const m = localStorage.getItem(GEMINI_MODEL_STORAGE);
+    return GEMINI_ALLOWED_MODELS.indexOf(m) !== -1 ? m : GEMINI_DEFAULT_MODEL;
+  } catch (e) {
+    return GEMINI_DEFAULT_MODEL;
+  }
+}
+
+function updateGeminiHeaderIndicator() {
+  const dot = document.getElementById('gemini-key-dot');
+  const statusEl = document.getElementById('gemini-key-status');
+  const hasKey = !!getGeminiApiKey();
+  if (dot && dot.classList) {
+    dot.classList.toggle('ready', hasKey);
+  }
+  if (statusEl) {
+    statusEl.innerText = hasKey
+      ? '✅ Đã lưu API Key cá nhân trên trình duyệt này (dùng chung cho tất cả 23 trang).'
+      : '⚠️ Chưa có API Key. Hãy tạo key miễn phí tại Google AI Studio rồi dán vào trên.';
+    statusEl.style.color = hasKey ? 'var(--primary)' : 'var(--text-muted)';
+  }
+}
+
+function initGeminiAssistant() {
+  const sel = document.getElementById('gemini-model-select');
+  if (sel) sel.value = getGeminiModel();
+  updateGeminiHeaderIndicator();
+}
+
+function saveGeminiModelPref() {
+  const sel = document.getElementById('gemini-model-select');
+  if (!sel) return;
+  try {
+    localStorage.setItem(GEMINI_MODEL_STORAGE, sel.value);
+  } catch (e) {}
+}
+
+function toggleGeminiKeyPanel(forceShow) {
+  const panel = document.getElementById('gemini-key-panel');
+  const inp = document.getElementById('gemini-api-key-input');
+  if (!panel) return;
+  const nextShow = typeof forceShow === 'boolean' ? forceShow : (panel.style.display === 'none' || !panel.style.display);
+  panel.style.display = nextShow ? 'block' : 'none';
+  if (nextShow && inp) {
+    inp.value = getGeminiApiKey();
+    setTimeout(function() { inp.focus(); }, 60);
+  }
+  updateGeminiHeaderIndicator();
+}
+
+function toggleGeminiKeyVisibility() {
+  const inp = document.getElementById('gemini-api-key-input');
+  if (!inp) return;
+  inp.type = inp.type === 'password' ? 'text' : 'password';
+}
+
+function saveGeminiApiKey() {
+  const inp = document.getElementById('gemini-api-key-input');
+  if (!inp) return;
+  const key = inp.value.trim();
+  if (!key) {
+    showToast('⚠️ Vui lòng dán Gemini API Key trước khi lưu!', 'warning');
+    return;
+  }
+  try {
+    localStorage.setItem(GEMINI_KEY_STORAGE, key);
+  } catch (e) {
+    showToast('⚠️ Không thể lưu vào localStorage trình duyệt.', 'warning');
+    return;
+  }
+  updateGeminiHeaderIndicator();
+  const panel = document.getElementById('gemini-key-panel');
+  if (panel) panel.style.display = 'none';
+  showToast('🔑 Đã lưu Gemini API Key cá nhân!');
+}
+
+function clearGeminiApiKey() {
+  try {
+    localStorage.removeItem(GEMINI_KEY_STORAGE);
+  } catch (e) {}
+  const inp = document.getElementById('gemini-api-key-input');
+  if (inp) inp.value = '';
+  updateGeminiHeaderIndicator();
+  showToast('🗑️ Đã xóa Gemini API Key khỏi trình duyệt.', 'info');
+}
+
+function openGeminiKeyModal() {
+  if (activeGeminiQId) {
+    openGeminiForQuestion(activeGeminiQId, true);
+    return;
+  }
+  const m = document.getElementById('gemini-modal');
+  const b = document.getElementById('gemini-modal-backdrop');
+  if (!m || !b) return;
+  b.style.display = 'block';
+  m.style.display = 'flex';
+  const titleEl = document.getElementById('gemini-modal-title');
+  const metaEl = document.getElementById('gemini-modal-qmeta');
+  const previewEl = document.getElementById('gemini-q-preview');
+  const chipsEl = document.getElementById('gemini-quick-chips');
+  if (titleEl) titleEl.innerText = '✨ Hỏi đáp với Gemini AI — Cài đặt';
+  if (metaEl) metaEl.innerText = 'Nhập API Key cá nhân 1 lần để dùng trên tất cả 23 bộ đề MAS202';
+  if (previewEl) previewEl.style.display = 'none';
+  if (chipsEl) chipsEl.style.display = 'none';
+  toggleGeminiKeyPanel(true);
+  renderGeminiMessages([]);
+}
+
+function openGeminiForQuestion(qid, showKeyPanel) {
+  const q = getQuestionById(qid);
+  if (!q) return;
+  activeGeminiQId = q.id;
+
+  const m = document.getElementById('gemini-modal');
+  const b = document.getElementById('gemini-modal-backdrop');
+  if (!m || !b) return;
+  b.style.display = 'block';
+  m.style.display = 'flex';
+
+  const titleEl = document.getElementById('gemini-modal-title');
+  const metaEl = document.getElementById('gemini-modal-qmeta');
+  const previewEl = document.getElementById('gemini-q-preview');
+  const chipsEl = document.getElementById('gemini-quick-chips');
+  const resetBtn = document.getElementById('gemini-reset-chat-btn');
+  const sel = document.getElementById('gemini-model-select');
+  if (sel) sel.value = getGeminiModel();
+
+  const rec = classifyQuestionPattern(q);
+  if (titleEl) titleEl.innerText = '✨ Hỏi Gemini AI — Câu ' + q.id + ' / ' + getQuizMaxId();
+  if (metaEl) {
+    metaEl.innerText = (q.chapter || '') + (rec && rec.pattern ? (' • Dạng: ' + rec.pattern.title) : '');
+  }
+  if (chipsEl) chipsEl.style.display = 'flex';
+  if (resetBtn) resetBtn.style.display = 'inline-flex';
+
+  if (previewEl) {
+    const shortPrompt = (q.prompt || '').replace(/\s+/g, ' ').trim();
+    const snippet = shortPrompt.length > 155 ? shortPrompt.slice(0, 155) + '…' : shortPrompt;
+    const isPracticeLocked = studyMode === 'practice' && !userProgress.answered[q.id];
+    const ansLabel = isPracticeLocked ? 'Chế độ tự luyện (chưa mở đáp án)' : ('Đáp án: ' + q.correct_answer);
+    previewEl.style.display = 'flex';
+    previewEl.innerHTML = '<span style="flex:1; min-width:200px;"><strong>Đề:</strong> ' + escapeHtml(snippet) + '</span>' +
+      '<span style="display:flex; gap:6px; align-items:center; flex-wrap:wrap;">' +
+      (q.table_image ? '<span style="background:rgba(16,185,129,0.14); color:var(--primary); padding:2px 8px; border-radius:99px; font-weight:700;">📊 Kèm ảnh bảng</span>' : '') +
+      '<span style="background:var(--surface); border:1px solid var(--border); padding:2px 8px; border-radius:99px; font-weight:700; color:var(--text);">' + escapeHtml(ansLabel) + '</span>' +
+      '</span>';
+  }
+
+  const needsKey = !getGeminiApiKey();
+  toggleGeminiKeyPanel(!!showKeyPanel || needsKey);
+
+  const key = getGeminiThreadKey(q.id);
+  const thread = geminiThreadsByKey[key] || { lastInteractionId: null, messages: [], sentContext: false };
+  geminiThreadsByKey[key] = thread;
+  renderGeminiMessages(thread.messages);
+
+  if (!needsKey) {
+    const inp = document.getElementById('gemini-user-input');
+    if (inp) setTimeout(function() { inp.focus(); }, 60);
+  }
+}
+
+function closeGeminiModal() {
+  const m = document.getElementById('gemini-modal');
+  const b = document.getElementById('gemini-modal-backdrop');
+  if (m && b) {
+    m.style.display = 'none';
+    b.style.display = 'none';
+  }
+}
+
+function resetCurrentGeminiChat() {
+  if (!activeGeminiQId) return;
+  const key = getGeminiThreadKey(activeGeminiQId);
+  geminiThreadsByKey[key] = { lastInteractionId: null, messages: [], sentContext: false };
+  renderGeminiMessages([]);
+  showToast('🔄 Đã làm mới cuộc trò chuyện cho Câu ' + activeGeminiQId);
+}
+
+function formatGeminiMarkdownHtml(raw) {
+  if (!raw) return '';
+  const kept = [];
+  let text = String(raw).replace(/\r\n/g, '\n');
+
+  // Protect fenced code blocks first
+  text = text.replace(/```([a-zA-Z0-9_-]*)\n([\s\S]*?)```/g, function(_, lang, code) {
+    const idx = kept.length;
+    kept.push('<pre><code>' + escapeHtml(code.trimEnd()) + '</code></pre>');
+    return '@@GM_KEEP_' + idx + '@@';
+  });
+
+  // Protect display & inline LaTeX math for KaTeX auto-render
+  text = text.replace(/\$\$([\s\S]+?)\$\$/g, function(full) {
+    const idx = kept.length;
+    kept.push(escapeHtml(full));
+    return '@@GM_KEEP_' + idx + '@@';
+  });
+  text = text.replace(/\$([^\n$]+?)\$/g, function(full) {
+    const idx = kept.length;
+    kept.push(escapeHtml(full));
+    return '@@GM_KEEP_' + idx + '@@';
+  });
+
+  text = escapeHtml(text);
+
+  // Inline code, bold, italic
+  text = text.replace(/`([^`\n]+)`/g, '<code>$1</code>');
+  text = text.replace(/\*\*([^*\n]+)\*\*/g, '<strong>$1</strong>');
+  text = text.replace(/\*([^*\n]+)\*/g, '<em>$1</em>');
+
+  // Lines -> headings, lists, paragraphs
+  const lines = text.split('\n');
+  const out = [];
+  let inUl = false;
+  let inOl = false;
+
+  function closeLists() {
+    if (inUl) { out.push('</ul>'); inUl = false; }
+    if (inOl) { out.push('</ol>'); inOl = false; }
+  }
+
+  for (let i = 0; i < lines.length; i++) {
+    const line = lines[i].trim();
+    if (!line) {
+      closeLists();
+      continue;
+    }
+    const hMatch = line.match(/^#{1,4}\s+(.+)$/);
+    if (hMatch) {
+      closeLists();
+      out.push('<p style="font-weight:800; color:var(--text); margin-top:6px;">' + hMatch[1] + '</p>');
+      continue;
+    }
+    const ulMatch = line.match(/^[-*•]\s+(.+)$/);
+    if (ulMatch) {
+      if (inOl) { out.push('</ol>'); inOl = false; }
+      if (!inUl) { out.push('<ul>'); inUl = true; }
+      out.push('<li>' + ulMatch[1] + '</li>');
+      continue;
+    }
+    const olMatch = line.match(/^\d+\.\s+(.+)$/);
+    if (olMatch) {
+      if (inUl) { out.push('</ul>'); inUl = false; }
+      if (!inOl) { out.push('<ol>'); inOl = true; }
+      out.push('<li>' + olMatch[1] + '</li>');
+      continue;
+    }
+    closeLists();
+    out.push('<p>' + line + '</p>');
+  }
+  closeLists();
+
+  let html = out.join('');
+  html = html.replace(/@@GM_KEEP_(\d+)@@/g, function(_, idxStr) {
+    return kept[Number(idxStr)] || '';
+  });
+  return html;
+}
+
+function copyGeminiReply(btn, encodedRaw) {
+  const txt = decodeURIComponent(encodedRaw || '');
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(txt).then(function() {
+      const old = btn.innerText;
+      btn.innerText = '✅ Đã chép';
+      setTimeout(function() { btn.innerText = old; }, 1400);
+    }).catch(function() {});
+  }
+}
+
+function renderGeminiMessages(messages, isLoading) {
+  const box = document.getElementById('gemini-chat-messages');
+  if (!box) return;
+
+  if (!messages || messages.length === 0) {
+    const guideMsg = activeGeminiQId
+      ? 'Bấm một gợi ý nhanh bên trên hoặc nhập bất kỳ thắc mắc nào về <strong>Câu ' + activeGeminiQId + '</strong> để hỏi Gemini!'
+      : 'Nhập và lưu Gemini API Key cá nhân ở khung phía trên, sau đó bấm nút <strong>✨ Hỏi Gemini</strong> trên bất kỳ câu hỏi nào để bắt đầu.';
+    box.innerHTML = '<div style="margin:auto; text-align:center; max-width:460px; color:var(--text-muted); font-size:0.86rem; line-height:1.6; padding:24px 12px;">' +
+      '<div style="font-size:2.1rem; margin-bottom:8px;">✨</div>' +
+      '<div style="font-weight:700; color:var(--text); margin-bottom:4px;">Gia sư Gemini AI sẵn sàng hỗ trợ MAS202</div>' +
+      '<div>' + guideMsg + '</div>' +
+      '</div>';
+    return;
+  }
+
+  let html = '';
+  messages.forEach(function(msg) {
+    if (msg.role === 'user') {
+      html += '<div class="gemini-msg gemini-msg-user">' + escapeHtml(msg.text).replace(/\n/g, '<br>') + '</div>';
+    } else if (msg.role === 'error') {
+      html += '<div class="gemini-msg gemini-msg-ai gemini-msg-err">' +
+        '<div class="gemini-msg-head"><span>⚠️ Lỗi kết nối Gemini</span></div>' +
+        '<div class="gemini-msg-body">' + escapeHtml(msg.text).replace(/\n/g, '<br>') + '</div>' +
+        '</div>';
+    } else {
+      const encoded = encodeURIComponent(msg.text || '');
+      html += '<div class="gemini-msg gemini-msg-ai">' +
+        '<div class="gemini-msg-head">' +
+          '<span>✨ Gemini (' + escapeHtml(msg.model || getGeminiModel()) + ')</span>' +
+          '<button type="button" class="meo-mini-btn" onclick="copyGeminiReply(this, \'' + encoded + '\')">📋 Chép</button>' +
+        '</div>' +
+        '<div class="gemini-msg-body">' + formatGeminiMarkdownHtml(msg.text) + '</div>' +
+        '</div>';
+    }
+  });
+
+  if (isLoading) {
+    html += '<div class="gemini-msg gemini-msg-ai">' +
+      '<div class="gemini-msg-head"><span>✨ Gemini (' + escapeHtml(getGeminiModel()) + ')</span></div>' +
+      '<div class="gemini-msg-body" style="color:var(--text-muted);">⏳ Đang suy nghĩ và giải chi tiết cho bạn...</div>' +
+      '</div>';
+  }
+
+  box.innerHTML = html;
+  if (window.renderMathInElement) {
+    renderMathInElement(box, {
+      delimiters: KATEX_DELIMITERS,
+      throwOnError: false
+    });
+  }
+  box.scrollTop = box.scrollHeight;
+}
+
+function buildQuestionContextForGemini(q) {
+  const lines = [];
+  lines.push('=== NGỮ CẢNH CÂU HỎI MAS202 ĐANG HỌC ===');
+  lines.push('Câu số: ' + q.id + ' | Chương: ' + (q.chapter || '') + ' | Loại: ' + (q.is_calc ? 'Tính toán' : 'Lý thuyết'));
+  if (q.topic) lines.push('Chủ đề: ' + q.topic);
+  const rec = classifyQuestionPattern(q);
+  if (rec && rec.pattern) {
+    lines.push('Dạng bài phân loại: ' + rec.pattern.title + ' (' + rec.pattern.badge + ')');
+  }
+  lines.push('\n[Đề bài tiếng Anh]\n' + (q.prompt || q.raw_question || ''));
+  if (q.options && q.options.length) {
+    lines.push('\n[Các phương án]\n' + q.options.join('\n'));
+  }
+  lines.push('\n[Đáp án đúng tham khảo của hệ thống]: ' + (q.correct_answer || ''));
+  if (q.author_note) lines.push('[Ghi chú đáp án]: ' + q.author_note);
+  if (q.dich_de) lines.push('\n[Bản dịch tiếng Việt có sẵn]\n' + q.dich_de);
+  if (q.tom_tat) lines.push('\n[Tóm tắt dữ kiện]\n' + q.tom_tat);
+  if (q.cong_thuc) lines.push('\n[Công thức]\n' + q.cong_thuc);
+  if (q.ap_dung) lines.push('\n[Lời giải chi tiết]\n' + q.ap_dung);
+  if (q.casio) lines.push('\n[Hướng dẫn Casio fx-580VN X]\n' + q.casio);
+  if (studyMode === 'practice' && !userProgress.answered[q.id]) {
+    lines.push('\n[Lưu ý chế độ học]: Học sinh đang ở chế độ Tự luyện thi và chưa chọn đáp án. Hãy giải thích tư duy/công thức trước nếu học sinh chỉ hỏi gợi ý, và nêu rõ đáp án khi học sinh yêu cầu giải hoàn chỉnh.');
+  }
+  return lines.join('\n');
+}
+
+function fetchImageAsBase64(url) {
+  return new Promise(function(resolve) {
+    if (!url || typeof fetch !== 'function' || typeof FileReader === 'undefined') {
+      resolve(null);
+      return;
+    }
+    fetch(url).then(function(res) {
+      if (!res.ok) throw new Error('img fetch failed');
+      return res.blob();
+    }).then(function(blob) {
+      const reader = new FileReader();
+      reader.onloadend = function() {
+        const result = String(reader.result || '');
+        const commaIdx = result.indexOf(',');
+        if (commaIdx === -1) return resolve(null);
+        const base64 = result.slice(commaIdx + 1);
+        const mimeMatch = result.match(/^data:([^;]+);base64,/);
+        resolve({
+          data: base64,
+          mime_type: mimeMatch ? mimeMatch[1] : (blob.type || 'image/png')
+        });
+      };
+      reader.onerror = function() { resolve(null); };
+      reader.readAsDataURL(blob);
+    }).catch(function() {
+      resolve(null);
+    });
+  });
+}
+
+function extractGeminiInteractionText(resJson) {
+  if (!resJson) return '';
+  if (typeof resJson.output_text === 'string' && resJson.output_text) {
+    return resJson.output_text;
+  }
+  const chunks = [];
+  if (Array.isArray(resJson.steps)) {
+    resJson.steps.forEach(function(step) {
+      if (step && step.type === 'model_output' && Array.isArray(step.content)) {
+        step.content.forEach(function(c) {
+          if (c && c.type === 'text' && c.text) chunks.push(c.text);
+        });
+      }
+    });
+  }
+  if (chunks.length > 0) return chunks.join('\n\n');
+  if (Array.isArray(resJson.outputs)) {
+    resJson.outputs.forEach(function(out) {
+      if (out && out.type === 'text' && out.text) chunks.push(out.text);
+      else if (out && typeof out.text === 'string') chunks.push(out.text);
+    });
+  }
+  return chunks.join('\n\n');
+}
+
+function getGeminiSystemInstruction() {
+  return 'Bạn là gia sư môn MAS202 (Xác suất thống kê ứng dụng / giáo trình Berenson, trường ĐH FPT). ' +
+    'Trả lời bằng tiếng Việt rõ ràng, mạch lạc, thân thiện với sinh viên; giữ các thuật ngữ tiếng Anh chuyên ngành quan trọng kèm nghĩa ngắn gọn. ' +
+    'Mọi công thức toán học phải bọc bằng LaTeX chuẩn: dùng $...$ cho công thức cùng dòng và $$...$$ cho công thức tách dòng để trình duyệt render KaTeX chính xác. ' +
+    'Không bịa đặt số liệu ngoài đề bài hoặc ảnh bảng đính kèm. Khi học sinh hỏi mẹo hoặc vì sao sai, hãy chỉ thẳng bẫy đề thi và đối chiếu với các phương án gây nhiễu.';
+}
+
+function handleGeminiInputKeydown(e) {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    sendGeminiQuestion();
+  }
+}
+
+function sendGeminiQuickPrompt(promptText) {
+  const inp = document.getElementById('gemini-user-input');
+  if (inp) inp.value = promptText;
+  sendGeminiQuestion();
+}
+
+async function sendGeminiQuestion() {
+  if (isGeminiBusy) return;
+  if (!activeGeminiQId) {
+    showToast('⚠️ Hãy bấm nút "✨ Hỏi Gemini" trên một câu hỏi cụ thể trước.', 'warning');
+    return;
+  }
+  const apiKey = getGeminiApiKey();
+  if (!apiKey) {
+    toggleGeminiKeyPanel(true);
+    showToast('🔑 Bạn cần nhập và lưu Gemini API Key cá nhân trước!', 'warning');
+    return;
+  }
+
+  const q = getQuestionById(activeGeminiQId);
+  if (!q) return;
+
+  const inp = document.getElementById('gemini-user-input');
+  const sendBtn = document.getElementById('gemini-send-btn');
+  const userText = inp ? inp.value.trim() : '';
+  if (!userText) return;
+
+  const key = getGeminiThreadKey(q.id);
+  const thread = geminiThreadsByKey[key] || { lastInteractionId: null, messages: [], sentContext: false };
+  geminiThreadsByKey[key] = thread;
+
+  thread.messages.push({ role: 'user', text: userText });
+  if (inp) inp.value = '';
+  isGeminiBusy = true;
+  if (sendBtn) sendBtn.disabled = true;
+  renderGeminiMessages(thread.messages, true);
+
+  const modelName = getGeminiModel();
+  const sysInstr = getGeminiSystemInstruction();
+
+  async function callInteractionsApi(usePrevId, includeFullHistoryFallback) {
+    let inputPayload;
+    if (usePrevId && thread.lastInteractionId && !includeFullHistoryFallback) {
+      inputPayload = userText;
+    } else {
+      let fullText = buildQuestionContextForGemini(q);
+      if (includeFullHistoryFallback && thread.messages.length > 1) {
+        const hist = thread.messages.slice(0, -1).map(function(m) {
+          return (m.role === 'user' ? 'Học sinh: ' : 'Gia sư: ') + m.text;
+        }).join('\n');
+        fullText += '\n\n=== LỊCH SỬ HỎI ĐÁP TRƯỚC ĐÓ ===\n' + hist;
+      }
+      fullText += '\n\n=== CÂU HỎI HIỆN TẠI CỦA HỌC SINH ===\n' + userText;
+
+      const imgObj = q.table_image ? await fetchImageAsBase64(q.table_image_png || q.table_image) : null;
+      if (imgObj && imgObj.data) {
+        inputPayload = [
+          { type: 'text', text: fullText },
+          { type: 'image', data: imgObj.data, mime_type: imgObj.mime_type }
+        ];
+      } else {
+        inputPayload = fullText;
+      }
+    }
+
+    const body = {
+      model: modelName,
+      system_instruction: sysInstr,
+      input: inputPayload
+    };
+    if (usePrevId && thread.lastInteractionId && !includeFullHistoryFallback) {
+      body.previous_interaction_id = thread.lastInteractionId;
+    }
+
+    const resp = await fetch(GEMINI_INTERACTIONS_ENDPOINT, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'x-goog-api-key': apiKey
+      },
+      body: JSON.stringify(body)
+    });
+
+    const data = await resp.json().catch(function() { return {}; });
+    if (!resp.ok) {
+      const msg = (data && data.error && data.error.message) ? data.error.message : ('HTTP ' + resp.status);
+      const err = new Error(msg);
+      err.status = resp.status;
+      throw err;
+    }
+    return data;
+  }
+
+  try {
+    let data;
+    try {
+      data = await callInteractionsApi(true, false);
+    } catch (firstErr) {
+      if (thread.lastInteractionId && (firstErr.status === 400 || firstErr.status === 404)) {
+        thread.lastInteractionId = null;
+        data = await callInteractionsApi(false, true);
+      } else {
+        throw firstErr;
+      }
+    }
+
+    const replyText = extractGeminiInteractionText(data).trim();
+    if (!replyText) {
+      throw new Error('Gemini không trả về nội dung văn bản (có thể do hết lượt hoặc bị chặn bộ lọc).');
+    }
+    if (data && data.id) thread.lastInteractionId = data.id;
+    thread.sentContext = true;
+    thread.messages.push({ role: 'model', text: replyText, model: modelName });
+  } catch (err) {
+    let friendly = err && err.message ? err.message : 'Lỗi không xác định.';
+    if (/API key not valid|PERMISSION_DENIED|401|403/i.test(friendly)) {
+      friendly += '\n👉 Hãy bấm "🔑 API Key" ở góc trên để kiểm tra lại key Google AI Studio của bạn.';
+    } else if (/RESOURCE_EXHAUSTED|quota|429/i.test(friendly)) {
+      friendly += '\n👉 Key của bạn đang chạm giới hạn tần suất (rate limit). Hãy thử chuyển sang model "Gemini 3.5 Flash-Lite" hoặc đợi vài giây rồi gửi lại.';
+    }
+    thread.messages.push({ role: 'error', text: friendly });
+  } finally {
+    isGeminiBusy = false;
+    if (sendBtn) sendBtn.disabled = false;
+    renderGeminiMessages(thread.messages, false);
+  }
+}
+
+initGeminiAssistant();
 
   </script>
 
