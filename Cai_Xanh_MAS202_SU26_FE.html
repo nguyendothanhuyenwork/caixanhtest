@@ -2346,7 +2346,7 @@
       <div class="search-row">
         <div class="search-box">
           <span class="search-icon">🔍</span>
-          <input type="text" id="search-input" class="search-input" placeholder="Tìm theo từ khóa tiếng Anh, tiếng Việt, công thức hoặc nhập số câu (vd: 15, binomial, p-value)..." oninput="applyFilters()">
+          <input type="text" id="search-input" class="search-input" placeholder="Tìm theo từ khóa tiếng Anh, tiếng Việt, công thức hoặc nhập số câu (vd: 15, binomial, p-value)..." oninput="debouncedApplyFilters()" onkeydown="if(event.key==='Enter'){if(typeof flushSearchFilters==='function')flushSearchFilters();}">
         </div>
         <div class="jump-box">
           <span style="font-size:0.85rem; font-weight:600; color:var(--text-muted);">Đến câu:</span>
@@ -2779,7 +2779,7 @@
         <button onclick="closeRecognitionModal()" style="background:none; border:none; font-size:1.65rem; cursor:pointer; color:var(--text-muted); line-height:1; padding:0 4px;" aria-label="Đóng">&times;</button>
       </div>
       <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap; margin-bottom:10px;">
-        <input id="recognition-search" type="text" oninput="renderRecognitionModalList()" placeholder="🔍 Tìm từ khóa dấu hiệu (VD: Poisson, Bayes, VIF, paired, Type II, Zip code, width...)" style="flex:1; min-width:220px; padding:8px 12px; border-radius:8px; border:1px solid var(--border); background:var(--surface-sidebar); color:var(--text); font-size:0.85rem; outline:none;" />
+        <input id="recognition-search" type="text" oninput="debouncedRenderRecognitionModalList()" placeholder="🔍 Tìm từ khóa dấu hiệu (VD: Poisson, Bayes, VIF, paired, Type II, Zip code, width...)" style="flex:1; min-width:220px; padding:8px 12px; border-radius:8px; border:1px solid var(--border); background:var(--surface-sidebar); color:var(--text); font-size:0.85rem; outline:none;" />
         <span id="recognition-count-label" style="font-size:0.79rem; font-weight:700; color:var(--text-muted);"></span>
       </div>
       <div id="recognition-tabs" style="display:flex; gap:6px; flex-wrap:wrap;"></div>
@@ -3742,6 +3742,26 @@ function setStudyMode(mode) {
   renderQuestions();
 }
 
+let _searchDebounceTimer = null;
+
+function debouncedApplyFilters() {
+  if (_searchDebounceTimer) clearTimeout(_searchDebounceTimer);
+  _searchDebounceTimer = setTimeout(function() {
+    _searchDebounceTimer = null;
+    currentPage = 1;
+    applyFilters();
+  }, 160);
+}
+
+function flushSearchFilters() {
+  if (_searchDebounceTimer) {
+    clearTimeout(_searchDebounceTimer);
+    _searchDebounceTimer = null;
+  }
+  currentPage = 1;
+  applyFilters();
+}
+
 function applyFilters() {
   searchQuery = document.getElementById('search-input').value.trim().toLowerCase();
 
@@ -3848,7 +3868,112 @@ function jumpToQuestion() {
 // ---------------------------------------------------------
 // 11. RENDERING QUESTIONS & CARDS
 // ---------------------------------------------------------
+let _quizByIdCache = null;
+let _quizByIdSourceLen = -1;
+let _chunkedPanelRaf = 0;
+
+function getQuestionById(id) {
+  const data = window.QUIZ_DATA || [];
+  if (!_quizByIdCache || _quizByIdSourceLen !== data.length) {
+    _quizByIdCache = new Map();
+    data.forEach(function(item) { _quizByIdCache.set(Number(item.id), item); });
+    _quizByIdSourceLen = data.length;
+  }
+  return _quizByIdCache.get(Number(id)) || null;
+}
+
+const KATEX_DELIMITERS = [
+  { left: '$$', right: '$$', display: true },
+  { left: '$', right: '$', display: false }
+];
+
+function renderMathSafe(el) {
+  if (!el || !window.renderMathInElement) return;
+  if (el.getAttribute && el.getAttribute('data-katex-done') === '1') return;
+  renderMathInElement(el, {
+    delimiters: KATEX_DELIMITERS,
+    throwOnError: false
+  });
+  if (el.setAttribute) el.setAttribute('data-katex-done', '1');
+}
+
+function renderVisibleMathInContainer(container) {
+  if (!container || !window.renderMathInElement || !container.querySelectorAll) return;
+  container.querySelectorAll('.q-prompt, .options-grid, .answer-strip, .detail-panel.visible').forEach(function(el) {
+    renderMathSafe(el);
+  });
+}
+
+function cancelChunkedPanelRender() {
+  if (_chunkedPanelRaf && typeof cancelAnimationFrame === 'function') {
+    cancelAnimationFrame(_chunkedPanelRaf);
+  }
+  _chunkedPanelRaf = 0;
+}
+
+function scheduleChunkedMathRender(panels, onlyQId) {
+  cancelChunkedPanelRender();
+  const list = Array.prototype.slice.call(panels || []);
+  if (!list.length) return;
+  const syncCount = Math.min(4, list.length);
+  for (let i = 0; i < syncCount; i++) {
+    renderMathSafe(list[i]);
+  }
+  if (typeof restoreAllHighlights === 'function') {
+    restoreAllHighlights(onlyQId);
+  }
+  if (syncCount >= list.length || typeof requestAnimationFrame !== 'function') {
+    for (let i = syncCount; i < list.length; i++) renderMathSafe(list[i]);
+    if (typeof restoreAllHighlights === 'function' && syncCount < list.length) restoreAllHighlights(onlyQId);
+    return;
+  }
+  let idx = syncCount;
+  function step() {
+    const end = Math.min(idx + 5, list.length);
+    for (; idx < end; idx++) {
+      renderMathSafe(list[idx]);
+    }
+    if (typeof restoreAllHighlights === 'function') {
+      restoreAllHighlights(onlyQId);
+    }
+    if (idx < list.length) {
+      _chunkedPanelRaf = requestAnimationFrame(step);
+    } else {
+      _chunkedPanelRaf = 0;
+    }
+  }
+  _chunkedPanelRaf = requestAnimationFrame(step);
+}
+
+const DETAIL_PANEL_META = {
+  dich: { title: '🌐 BẢN DỊCH ĐỀ BÀI (VIETNAMESE TRANSLATION)', field: 'dich_de' },
+  tomtat: { title: '📋 TÓM TẮT DỮ KIỆN & THAM SỐ (DATA SUMMARY)', field: 'tom_tat' },
+  cthuc: { title: '📐 CÔNG THỨC ÁP DỤNG (FORMULAS)', field: 'cong_thuc' },
+  apdung: { title: '✍️ ÁP DỤNG CÔNG THỨC & LỜI GIẢI CHI TIẾT (STEP-BY-STEP SOLUTION)', field: 'ap_dung' },
+  casio: { title: '🧮 HƯỚNG DẪN BẤM MÁY TÍNH CASIO FX-580VN X', field: 'casio' },
+  lythuyet: { title: '📚 GIẢNG GIẢI LÝ THUYẾT GIÁO TRÌNH BERENSON (TEXTBOOK RATIONALE)', field: 'ly_thuyet' }
+};
+
+function ensureDetailPanelRendered(panel) {
+  if (!panel || !panel.getAttribute) return false;
+  if (panel.getAttribute('data-loaded') === '1') return false;
+  const sec = panel.getAttribute('data-sec');
+  const qid = Number(panel.getAttribute('data-qid'));
+  const q = getQuestionById(qid);
+  if (q && sec) {
+    if (sec === 'meo') {
+      panel.innerHTML = renderRecognitionPanelHtml(q);
+    } else if (DETAIL_PANEL_META[sec]) {
+      const meta = DETAIL_PANEL_META[sec];
+      panel.innerHTML = '<div class="panel-title">' + meta.title + '</div><div>' + formatRichText(q[meta.field]) + '</div>';
+    }
+  }
+  panel.setAttribute('data-loaded', '1');
+  return true;
+}
+
 function renderQuestions() {
+  cancelChunkedPanelRender();
   const container = document.getElementById('questions-container');
   container.innerHTML = '';
 
@@ -3863,21 +3988,16 @@ function renderQuestions() {
 
   const startIndex = (currentPage - 1) * PAGE_SIZE;
   const pageItems = filteredQuestions.slice(startIndex, startIndex + PAGE_SIZE);
+  const frag = typeof document.createDocumentFragment === 'function' ? document.createDocumentFragment() : null;
 
   pageItems.forEach(function(q) {
     const card = createQuestionCard(q);
-    container.appendChild(card);
+    if (frag) frag.appendChild(card);
+    else container.appendChild(card);
   });
+  if (frag) container.appendChild(frag);
 
-  if (window.renderMathInElement) {
-    renderMathInElement(container, {
-      delimiters: [
-        { left: '$$', right: '$$', display: true },
-        { left: '$', right: '$', display: false }
-      ],
-      throwOnError: false
-    });
-  }
+  renderVisibleMathInContainer(container);
 
   // Restore user highlights on the current page
   if (typeof restoreAllHighlights === 'function') {
@@ -4009,33 +4129,13 @@ function createQuestionCard(q) {
     '<button class="tgl-btn tgl-meo" onclick="toggleSection(' + q.id + ', \'meo\', this)">🎯 Mẹo &amp; Phân biệt</button>' +
     '<button class="tgl-btn tgl-all-btn" onclick="toggleCardAll(' + q.id + ', this)">Mở tất cả 7 mục</button>' +
     '</div>' +
-    '<div class="detail-panel panel-dich" id="panel-dich-' + q.id + '">' +
-    '<div class="panel-title">🌐 BẢN DỊCH ĐỀ BÀI (VIETNAMESE TRANSLATION)</div>' +
-    '<div>' + formatRichText(q.dich_de) + '</div>' +
-    '</div>' +
-    '<div class="detail-panel panel-tomtat" id="panel-tomtat-' + q.id + '">' +
-    '<div class="panel-title">📋 TÓM TẮT DỮ KIỆN & THAM SỐ (DATA SUMMARY)</div>' +
-    '<div>' + formatRichText(q.tom_tat) + '</div>' +
-    '</div>' +
-    '<div class="detail-panel panel-cthuc" id="panel-cthuc-' + q.id + '">' +
-    '<div class="panel-title">📐 CÔNG THỨC ÁP DỤNG (FORMULAS)</div>' +
-    '<div>' + formatRichText(q.cong_thuc) + '</div>' +
-    '</div>' +
-    '<div class="detail-panel panel-apdung" id="panel-apdung-' + q.id + '">' +
-    '<div class="panel-title">✍️ ÁP DỤNG CÔNG THỨC & LỜI GIẢI CHI TIẾT (STEP-BY-STEP SOLUTION)</div>' +
-    '<div>' + formatRichText(q.ap_dung) + '</div>' +
-    '</div>' +
-    '<div class="detail-panel panel-casio" id="panel-casio-' + q.id + '">' +
-    '<div class="panel-title">🧮 HƯỚNG DẪN BẤM MÁY TÍNH CASIO FX-580VN X</div>' +
-    '<div>' + formatRichText(q.casio) + '</div>' +
-    '</div>' +
-    '<div class="detail-panel panel-lythuyet" id="panel-lythuyet-' + q.id + '">' +
-    '<div class="panel-title">📚 GIẢNG GIẢI LÝ THUYẾT GIÁO TRÌNH BERENSON (TEXTBOOK RATIONALE)</div>' +
-    '<div>' + formatRichText(q.ly_thuyet) + '</div>' +
-    '</div>' +
-    '<div class="detail-panel panel-meo" id="panel-meo-' + q.id + '">' +
-    renderRecognitionPanelHtml(q) +
-    '</div>';
+    '<div class="detail-panel panel-dich" id="panel-dich-' + q.id + '" data-sec="dich" data-qid="' + q.id + '"></div>' +
+    '<div class="detail-panel panel-tomtat" id="panel-tomtat-' + q.id + '" data-sec="tomtat" data-qid="' + q.id + '"></div>' +
+    '<div class="detail-panel panel-cthuc" id="panel-cthuc-' + q.id + '" data-sec="cthuc" data-qid="' + q.id + '"></div>' +
+    '<div class="detail-panel panel-apdung" id="panel-apdung-' + q.id + '" data-sec="apdung" data-qid="' + q.id + '"></div>' +
+    '<div class="detail-panel panel-casio" id="panel-casio-' + q.id + '" data-sec="casio" data-qid="' + q.id + '"></div>' +
+    '<div class="detail-panel panel-lythuyet" id="panel-lythuyet-' + q.id + '" data-sec="lythuyet" data-qid="' + q.id + '"></div>' +
+    '<div class="detail-panel panel-meo" id="panel-meo-' + q.id + '" data-sec="meo" data-qid="' + q.id + '"></div>';
 
   return card;
 }
@@ -4143,17 +4243,12 @@ function toggleSection(id, section, btn) {
     panel.classList.toggle('visible');
     const isVis = panel.classList.contains('visible');
     if (btn) btn.classList.toggle('active', isVis);
-    if (isVis && window.renderMathInElement) {
-      renderMathInElement(panel, {
-        delimiters: [
-          { left: '$$', right: '$$', display: true },
-          { left: '$', right: '$', display: false }
-        ],
-        throwOnError: false
-      });
-    }
-    if (isVis && typeof restoreAllHighlights === 'function') {
-      restoreAllHighlights();
+    if (isVis) {
+      ensureDetailPanelRendered(panel);
+      renderMathSafe(panel);
+      if (typeof restoreAllHighlights === 'function') {
+        restoreAllHighlights(id);
+      }
     }
   }
 }
@@ -4167,74 +4262,61 @@ function toggleCardAll(id, btn) {
   });
 
   const targetState = !isAnyVisible;
+  const openedPanels = [];
   sections.forEach(function(sec) {
     const p = document.getElementById('panel-' + sec + '-' + id);
-    if (p) p.classList.toggle('visible', targetState);
-    const b = card.querySelector('.tgl-' + sec);
+    if (p) {
+      p.classList.toggle('visible', targetState);
+      if (targetState) {
+        ensureDetailPanelRendered(p);
+        openedPanels.push(p);
+      }
+    }
+    const b = card ? card.querySelector('.tgl-' + sec) : null;
     if (b) b.classList.toggle('active', targetState);
   });
 
   btn.innerText = targetState ? 'Thu gọn thẻ này' : 'Mở tất cả 7 mục';
 
-  if (targetState && window.renderMathInElement) {
-    renderMathInElement(card, {
-      delimiters: [
-        { left: '$$', right: '$$', display: true },
-        { left: '$', right: '$', display: false }
-      ],
-      throwOnError: false
-    });
-  }
-
-  // Restore user highlights on the current page
-  if (typeof restoreAllHighlights === 'function') {
-    restoreAllHighlights();
+  if (targetState && openedPanels.length) {
+    openedPanels.forEach(function(p) { renderMathSafe(p); });
+    if (typeof restoreAllHighlights === 'function') {
+      restoreAllHighlights(id);
+    }
   }
 }
 
 function toggleAllDetails(show) {
+  cancelChunkedPanelRender();
   const panels = document.querySelectorAll('.detail-panel');
-  panels.forEach(function(p) { p.classList.toggle('visible', show); });
+  panels.forEach(function(p) {
+    if (show) ensureDetailPanelRendered(p);
+    p.classList.toggle('visible', show);
+  });
   const buttons = document.querySelectorAll('.tgl-btn:not(.tgl-all-btn)');
   buttons.forEach(function(b) { b.classList.toggle('active', show); });
   const allBtns = document.querySelectorAll('.tgl-all-btn');
   allBtns.forEach(function(b) { b.innerText = show ? 'Thu gọn thẻ này' : 'Mở tất cả 7 mục'; });
 
-  if (show && window.renderMathInElement) {
-    const container = document.getElementById('questions-container');
-    if (container) {
-      renderMathInElement(container, {
-        delimiters: [
-          { left: '$$', right: '$$', display: true },
-          { left: '$', right: '$', display: false }
-        ],
-        throwOnError: false
-      });
-    }
+  if (show) {
+    scheduleChunkedMathRender(panels);
   }
 }
 
 function toggleGlobalSection(sec) {
+  cancelChunkedPanelRender();
   const panels = document.querySelectorAll('.panel-' + sec);
   const isAnyOpen = Array.from(panels).some(function(p) { return p.classList.contains('visible'); });
   const targetState = !isAnyOpen;
 
   panels.forEach(function(p) {
+    if (targetState) ensureDetailPanelRendered(p);
     p.classList.toggle('visible', targetState);
-    if (targetState && window.renderMathInElement) {
-      renderMathInElement(p, {
-        delimiters: [
-          { left: '$$', right: '$$', display: true },
-          { left: '$', right: '$', display: false }
-        ],
-        throwOnError: false
-      });
-    }
   });
   const buttons = document.querySelectorAll('.tgl-' + sec);
   buttons.forEach(function(b) { b.classList.toggle('active', targetState); });
-  if (targetState && typeof restoreAllHighlights === 'function') {
-    restoreAllHighlights();
+  if (targetState) {
+    scheduleChunkedMathRender(panels);
   }
 }
 
@@ -6044,7 +6126,26 @@ function openRecognitionModal(initialTab) {
   renderRecognitionModalList();
 }
 
+let _recSearchDebounceTimer = null;
+let _modalMathRaf = 0;
+
+function cancelModalMathRender() {
+  if (_modalMathRaf && typeof cancelAnimationFrame === 'function') {
+    cancelAnimationFrame(_modalMathRaf);
+  }
+  _modalMathRaf = 0;
+}
+
+function debouncedRenderRecognitionModalList() {
+  if (_recSearchDebounceTimer) clearTimeout(_recSearchDebounceTimer);
+  _recSearchDebounceTimer = setTimeout(function() {
+    _recSearchDebounceTimer = null;
+    renderRecognitionModalList();
+  }, 140);
+}
+
 function closeRecognitionModal() {
+  cancelModalMathRender();
   const m = document.getElementById('recognition-modal');
   const b = document.getElementById('recognition-modal-backdrop');
   if (m && b) {
@@ -6137,14 +6238,30 @@ function renderRecognitionModalList() {
   }).join('');
 
   listEl.scrollTop = 0;
-  if (window.renderMathInElement) {
-    renderMathInElement(listEl, {
-      delimiters: [
-        { left: '$$', right: '$$', display: true },
-        { left: '$', right: '$', display: false }
-      ],
-      throwOnError: false
-    });
+  cancelModalMathRender();
+  if (window.renderMathInElement && listEl.querySelectorAll) {
+    const cards = Array.prototype.slice.call(listEl.querySelectorAll('.rec-modal-card'));
+    const syncCount = Math.min(4, cards.length);
+    for (let i = 0; i < syncCount; i++) {
+      renderMathSafe(cards[i]);
+    }
+    if (syncCount < cards.length) {
+      if (typeof requestAnimationFrame === 'function') {
+        let idx = syncCount;
+        function stepModal() {
+          const end = Math.min(idx + 5, cards.length);
+          for (; idx < end; idx++) renderMathSafe(cards[idx]);
+          if (idx < cards.length) {
+            _modalMathRaf = requestAnimationFrame(stepModal);
+          } else {
+            _modalMathRaf = 0;
+          }
+        }
+        _modalMathRaf = requestAnimationFrame(stepModal);
+      } else {
+        for (let i = syncCount; i < cards.length; i++) renderMathSafe(cards[i]);
+      }
+    }
   }
 }
 
@@ -6162,15 +6279,7 @@ initHighlightSystem();
 
 window.addEventListener('load', function() {
   const container = document.getElementById('questions-container');
-  if (window.renderMathInElement && container) {
-    renderMathInElement(container, {
-      delimiters: [
-        { left: '$$', right: '$$', display: true },
-        { left: '$', right: '$', display: false }
-      ],
-      throwOnError: false
-    });
-  }
+  renderVisibleMathInContainer(container);
 
   // Restore user highlights on the current page
   if (typeof restoreAllHighlights === 'function') {
@@ -6537,8 +6646,8 @@ function applyHighlightInDOM(hl) {
   let root = null;
   if (hl.qId) {
     root = document.getElementById('q-card-' + hl.qId);
-  }
-  if (!root) {
+    if (!root) return false; // Card is on another page or filtered out
+  } else {
     root = document.getElementById('questions-container');
   }
   if (!root) return false;
@@ -6649,9 +6758,12 @@ function applyHighlightInDOM(hl) {
   return true;
 }
 
-function restoreAllHighlights() {
+function restoreAllHighlights(onlyQId) {
   const highlights = getStoredHighlights();
+  if (!highlights || highlights.length === 0) return;
+  const hasFilter = typeof onlyQId !== 'undefined' && onlyQId !== null;
   highlights.forEach(function(hl) {
+    if (hasFilter && hl.qId && Number(hl.qId) !== Number(onlyQId)) return;
     applyHighlightInDOM(hl);
   });
 }
