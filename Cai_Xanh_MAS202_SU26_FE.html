@@ -3009,6 +3009,7 @@
         <select id="gemini-model-select" onchange="saveGeminiModelPref()" title="Chọn model Gemini" style="padding:5px 8px; border-radius:8px; border:1px solid var(--border); background:var(--surface-sidebar); color:var(--text); font-size:0.78rem; font-weight:600; outline:none;">
           <option value="gemini-3.8-flash">⚡ Gemini 3.8 Flash (Khuyên dùng)</option>
           <option value="gemini-3.5-flash-lite">🚀 Gemini 3.5 Flash-Lite (Siêu nhanh)</option>
+          <option value="gemini-3.1-flash-lite">💨 Gemini 3.1 Flash-Lite (Dự phòng nhanh)</option>
           <option value="gemini-4-argon">🧠 Gemini 4 Argon (Suy luận sâu)</option>
         </select>
         <button type="button" class="btn btn-secondary" onclick="toggleGeminiKeyPanel()" style="padding:5px 10px; font-size:0.78rem; font-weight:700;" title="Cài đặt / Đổi Gemini API Key">🔑 API Key</button>
@@ -7369,7 +7370,7 @@ window.addEventListener('click', function(e) {
 const GEMINI_KEY_STORAGE = 'cai_xanh_gemini_api_key';
 const GEMINI_MODEL_STORAGE = 'cai_xanh_gemini_model';
 const GEMINI_DEFAULT_MODEL = 'gemini-3.8-flash';
-const GEMINI_ALLOWED_MODELS = ['gemini-3.8-flash', 'gemini-3.5-flash-lite', 'gemini-4-argon'];
+const GEMINI_ALLOWED_MODELS = ['gemini-3.8-flash', 'gemini-3.5-flash-lite', 'gemini-3.1-flash-lite', 'gemini-4-argon'];
 const GEMINI_INTERACTIONS_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/interactions';
 
 let activeGeminiQId = null;
@@ -7520,6 +7521,9 @@ function openGeminiForQuestion(qid, showKeyPanel) {
   if (titleEl) titleEl.innerText = '✨ Hỏi Gemini AI — Câu ' + q.id + ' / ' + getQuizMaxId();
   if (metaEl) {
     metaEl.innerText = (q.chapter || '') + (rec && rec.pattern ? (' • Dạng: ' + rec.pattern.title) : '');
+    if (window.renderMathInElement) {
+      renderMathInElement(metaEl, { delimiters: KATEX_DELIMITERS, throwOnError: false });
+    }
   }
   if (chipsEl) chipsEl.style.display = 'flex';
   if (resetBtn) resetBtn.style.display = 'inline-flex';
@@ -7535,6 +7539,9 @@ function openGeminiForQuestion(qid, showKeyPanel) {
       (q.table_image ? '<span style="background:rgba(16,185,129,0.14); color:var(--primary); padding:2px 8px; border-radius:99px; font-weight:700;">📊 Kèm ảnh bảng</span>' : '') +
       '<span style="background:var(--surface); border:1px solid var(--border); padding:2px 8px; border-radius:99px; font-weight:700; color:var(--text);">' + escapeHtml(ansLabel) + '</span>' +
       '</span>';
+    if (window.renderMathInElement) {
+      renderMathInElement(previewEl, { delimiters: KATEX_DELIMITERS, throwOnError: false });
+    }
   }
 
   const needsKey = !getGeminiApiKey();
@@ -7659,7 +7666,7 @@ function copyGeminiReply(btn, encodedRaw) {
   }
 }
 
-function renderGeminiMessages(messages, isLoading) {
+function renderGeminiMessages(messages, isLoading, loadingText) {
   const box = document.getElementById('gemini-chat-messages');
   if (!box) return;
 
@@ -7681,14 +7688,18 @@ function renderGeminiMessages(messages, isLoading) {
       html += '<div class="gemini-msg gemini-msg-user">' + escapeHtml(msg.text).replace(/\n/g, '<br>') + '</div>';
     } else if (msg.role === 'error') {
       html += '<div class="gemini-msg gemini-msg-ai gemini-msg-err">' +
-        '<div class="gemini-msg-head"><span>⚠️ Lỗi kết nối Gemini</span></div>' +
+        '<div class="gemini-msg-head">' +
+          '<span>⚠️ Lỗi kết nối Gemini</span>' +
+          '<button type="button" class="meo-mini-btn" onclick="retryLastGeminiPrompt()">🔄 Thử lại</button>' +
+        '</div>' +
         '<div class="gemini-msg-body">' + escapeHtml(msg.text).replace(/\n/g, '<br>') + '</div>' +
         '</div>';
     } else {
       const encoded = encodeURIComponent(msg.text || '');
+      const note = msg.fallbackNote ? (' <span style="opacity:0.75; font-weight:500;">(' + escapeHtml(msg.fallbackNote) + ')</span>') : '';
       html += '<div class="gemini-msg gemini-msg-ai">' +
         '<div class="gemini-msg-head">' +
-          '<span>✨ Gemini (' + escapeHtml(msg.model || getGeminiModel()) + ')</span>' +
+          '<span>✨ Gemini (' + escapeHtml(msg.model || getGeminiModel()) + ')' + note + '</span>' +
           '<button type="button" class="meo-mini-btn" onclick="copyGeminiReply(this, \'' + encoded + '\')">📋 Chép</button>' +
         '</div>' +
         '<div class="gemini-msg-body">' + formatGeminiMarkdownHtml(msg.text) + '</div>' +
@@ -7699,7 +7710,7 @@ function renderGeminiMessages(messages, isLoading) {
   if (isLoading) {
     html += '<div class="gemini-msg gemini-msg-ai">' +
       '<div class="gemini-msg-head"><span>✨ Gemini (' + escapeHtml(getGeminiModel()) + ')</span></div>' +
-      '<div class="gemini-msg-body" style="color:var(--text-muted);">⏳ Đang suy nghĩ và giải chi tiết cho bạn...</div>' +
+      '<div class="gemini-msg-body" style="color:var(--text-muted);">' + escapeHtml(loadingText || '⏳ Đang suy nghĩ và giải chi tiết cho bạn...') + '</div>' +
       '</div>';
   }
 
@@ -7814,7 +7825,30 @@ function sendGeminiQuickPrompt(promptText) {
   sendGeminiQuestion();
 }
 
-async function sendGeminiQuestion() {
+function isGeminiOverloadError(err) {
+  if (!err) return false;
+  if (err.status === 503 || err.status === 429) return true;
+  return /high demand|overloaded|unavailable|try again later|temporarily|resource_exhausted|quota/i.test(err.message || '');
+}
+
+function retryLastGeminiPrompt() {
+  if (isGeminiBusy || !activeGeminiQId) return;
+  const key = getGeminiThreadKey(activeGeminiQId);
+  const thread = geminiThreadsByKey[key];
+  if (!thread || !thread.messages || thread.messages.length === 0) return;
+  while (thread.messages.length && thread.messages[thread.messages.length - 1].role === 'error') {
+    thread.messages.pop();
+  }
+  let lastUserText = '';
+  if (thread.messages.length && thread.messages[thread.messages.length - 1].role === 'user') {
+    lastUserText = thread.messages.pop().text;
+  }
+  if (lastUserText) {
+    sendGeminiQuestion(lastUserText);
+  }
+}
+
+async function sendGeminiQuestion(overridePrompt) {
   if (isGeminiBusy) return;
   if (!activeGeminiQId) {
     showToast('⚠️ Hãy bấm nút "✨ Hỏi Gemini" trên một câu hỏi cụ thể trước.', 'warning');
@@ -7832,7 +7866,7 @@ async function sendGeminiQuestion() {
 
   const inp = document.getElementById('gemini-user-input');
   const sendBtn = document.getElementById('gemini-send-btn');
-  const userText = inp ? inp.value.trim() : '';
+  const userText = (typeof overridePrompt === 'string' ? overridePrompt : (inp ? inp.value : '')).trim();
   if (!userText) return;
 
   const key = getGeminiThreadKey(q.id);
@@ -7840,25 +7874,27 @@ async function sendGeminiQuestion() {
   geminiThreadsByKey[key] = thread;
 
   thread.messages.push({ role: 'user', text: userText });
-  if (inp) inp.value = '';
+  if (inp && typeof overridePrompt !== 'string') inp.value = '';
   isGeminiBusy = true;
   if (sendBtn) sendBtn.disabled = true;
-  renderGeminiMessages(thread.messages, true);
 
-  const modelName = getGeminiModel();
+  const primaryModel = getGeminiModel();
+  const modelQueue = [primaryModel].concat(GEMINI_ALLOWED_MODELS.filter(function(m) { return m !== primaryModel; }));
+  renderGeminiMessages(thread.messages, true, '⏳ Đang gửi tới ' + primaryModel + '...');
+
   const sysInstr = getGeminiSystemInstruction();
 
-  async function callInteractionsApi(usePrevId, includeFullHistoryFallback) {
+  async function callInteractionsApi(modelToUse, usePrevId, includeFullHistoryFallback) {
     let inputPayload;
     if (usePrevId && thread.lastInteractionId && !includeFullHistoryFallback) {
       inputPayload = userText;
     } else {
       let fullText = buildQuestionContextForGemini(q);
       if (includeFullHistoryFallback && thread.messages.length > 1) {
-        const hist = thread.messages.slice(0, -1).map(function(m) {
+        const hist = thread.messages.slice(0, -1).filter(function(m) { return m.role !== 'error'; }).map(function(m) {
           return (m.role === 'user' ? 'Học sinh: ' : 'Gia sư: ') + m.text;
         }).join('\n');
-        fullText += '\n\n=== LỊCH SỬ HỎI ĐÁP TRƯỚC ĐÓ ===\n' + hist;
+        if (hist) fullText += '\n\n=== LỊCH SỬ HỎI ĐÁP TRƯỚC ĐÓ ===\n' + hist;
       }
       fullText += '\n\n=== CÂU HỎI HIỆN TẠI CỦA HỌC SINH ===\n' + userText;
 
@@ -7874,7 +7910,7 @@ async function sendGeminiQuestion() {
     }
 
     const body = {
-      model: modelName,
+      model: modelToUse,
       system_instruction: sysInstr,
       input: inputPayload
     };
@@ -7902,17 +7938,40 @@ async function sendGeminiQuestion() {
   }
 
   try {
-    let data;
-    try {
-      data = await callInteractionsApi(true, false);
-    } catch (firstErr) {
-      if (thread.lastInteractionId && (firstErr.status === 400 || firstErr.status === 404)) {
-        thread.lastInteractionId = null;
-        data = await callInteractionsApi(false, true);
-      } else {
-        throw firstErr;
+    let data = null;
+    let usedModel = primaryModel;
+    let lastErr = null;
+
+    for (let i = 0; i < modelQueue.length; i++) {
+      const m = modelQueue[i];
+      if (i > 0) {
+        renderGeminiMessages(thread.messages, true, '⏳ ' + modelQueue[i - 1] + ' đang quá tải, đang tự chuyển sang ' + m + '...');
+        await new Promise(function(r) { setTimeout(r, 400); });
+      }
+      try {
+        const canReusePrev = (i === 0 && !!thread.lastInteractionId);
+        data = await callInteractionsApi(m, canReusePrev, i > 0);
+        usedModel = m;
+        break;
+      } catch (attemptErr) {
+        if (i === 0 && thread.lastInteractionId && (attemptErr.status === 400 || attemptErr.status === 404)) {
+          try {
+            thread.lastInteractionId = null;
+            data = await callInteractionsApi(m, false, true);
+            usedModel = m;
+            break;
+          } catch (retryErr) {
+            attemptErr = retryErr;
+          }
+        }
+        lastErr = attemptErr;
+        if (!isGeminiOverloadError(attemptErr)) {
+          throw attemptErr;
+        }
       }
     }
+
+    if (!data) throw lastErr || new Error('Không kết nối được tới máy chủ Gemini.');
 
     const replyText = extractGeminiInteractionText(data).trim();
     if (!replyText) {
@@ -7920,13 +7979,18 @@ async function sendGeminiQuestion() {
     }
     if (data && data.id) thread.lastInteractionId = data.id;
     thread.sentContext = true;
-    thread.messages.push({ role: 'model', text: replyText, model: modelName });
+    thread.messages.push({
+      role: 'model',
+      text: replyText,
+      model: usedModel,
+      fallbackNote: usedModel !== primaryModel ? ('tự chuyển từ ' + primaryModel + ' do quá tải') : ''
+    });
   } catch (err) {
     let friendly = err && err.message ? err.message : 'Lỗi không xác định.';
     if (/API key not valid|PERMISSION_DENIED|401|403/i.test(friendly)) {
-      friendly += '\n👉 Hãy bấm "🔑 API Key" ở góc trên để kiểm tra lại key Google AI Studio của bạn.';
-    } else if (/RESOURCE_EXHAUSTED|quota|429/i.test(friendly)) {
-      friendly += '\n👉 Key của bạn đang chạm giới hạn tần suất (rate limit). Hãy thử chuyển sang model "Gemini 3.5 Flash-Lite" hoặc đợi vài giây rồi gửi lại.';
+      friendly = 'API Key không hợp lệ hoặc chưa được cấp quyền.\n(' + friendly + ')\n👉 Hãy bấm "🔑 API Key" ở góc trên để kiểm tra lại key Google AI Studio.';
+    } else if (isGeminiOverloadError(err)) {
+      friendly = 'Máy chủ Google Gemini đang quá tải tạm thời (503 / High Demand). Đã thử tự chuyển qua các model dự phòng (' + modelQueue.join(' → ') + ') nhưng đều đang bận.\n👉 Bạn đợi vài giây rồi bấm "🔄 Thử lại" ở góc trên khung này nhé.';
     }
     thread.messages.push({ role: 'error', text: friendly });
   } finally {
