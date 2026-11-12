@@ -2428,6 +2428,7 @@
     }
     .gemini-input-bar textarea {
       flex: 1;
+      min-width: 0;
       resize: none;
       padding: 7px 10px;
       border-radius: 9px;
@@ -3161,7 +3162,7 @@
 
     <div class="gemini-input-bar">
       <textarea id="gemini-user-input" rows="2" placeholder="Nhập câu hỏi về bài này (Enter để gửi, Shift+Enter xuống dòng)..." onkeydown="handleGeminiInputKeydown(event)"></textarea>
-      <button type="button" class="btn btn-primary" id="gemini-send-btn" onclick="sendGeminiQuestion()" style="padding:9px 16px; font-weight:700; white-space:nowrap;">Gửi ✨</button>
+      <button type="button" class="btn btn-primary" id="gemini-send-btn" onclick="handleGeminiSendOrStop()" style="padding:8px 13px; font-weight:700; white-space:nowrap; flex-shrink:0;">Gửi ✨</button>
     </div>
   </div>
 
@@ -7477,10 +7478,13 @@ const GEMINI_MODEL_STORAGE = 'cai_xanh_gemini_model';
 const GEMINI_DEFAULT_MODEL = 'gemini-3.8-flash';
 const GEMINI_ALLOWED_MODELS = ['gemini-3.8-flash', 'gemini-3.5-flash-lite', 'gemini-3.1-flash-lite', 'gemini-4-argon'];
 const GEMINI_INTERACTIONS_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/interactions';
+const GEMINI_INTERACTIONS_SSE_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/interactions?alt=sse';
 
 let activeGeminiQId = null;
 let isGeminiBusy = false;
-const geminiThreadsByKey = {}; // { [threadKey]: { lastInteractionId, messages: [], sentContext } }
+let activeGeminiAbort = null;
+let geminiUserAborted = false;
+const geminiThreadsByKey = {}; // { [threadKey]: { lastInteractionId, lastModel, messages: [], sentContext } }
 
 function getGeminiThreadKey(qid) {
   return PORTAL_STORAGE_KEY + '_' + qid;
@@ -7839,9 +7843,9 @@ function renderGeminiMessages(messages, isLoading, loadingText) {
   });
 
   if (isLoading) {
-    html += '<div class="gemini-msg gemini-msg-ai">' +
-      '<div class="gemini-msg-head"><span>✨ Gemini (' + escapeHtml(getGeminiModel()) + ')</span></div>' +
-      '<div class="gemini-msg-body" style="color:var(--text-muted);">' + escapeHtml(loadingText || '⏳ Đang suy nghĩ và giải chi tiết cho bạn...') + '</div>' +
+    html += '<div class="gemini-msg gemini-msg-ai" id="gemini-stream-live-card">' +
+      '<div class="gemini-msg-head" id="gemini-stream-live-head"><span>✨ Gemini (' + escapeHtml(getGeminiModel()) + ')</span></div>' +
+      '<div class="gemini-msg-body" id="gemini-stream-live-body" style="color:var(--text-muted);">' + escapeHtml(loadingText || '⏳ Đang suy nghĩ và giải chi tiết cho bạn...') + '</div>' +
       '</div>';
   }
 
@@ -7938,19 +7942,55 @@ function extractGeminiInteractionText(resJson) {
 
 function getGeminiSystemInstruction() {
   return 'Bạn là gia sư môn MAS202 (Xác suất thống kê ứng dụng / giáo trình Berenson, trường ĐH FPT). ' +
-    'Trả lời bằng tiếng Việt rõ ràng, mạch lạc, thân thiện với sinh viên; giữ các thuật ngữ tiếng Anh chuyên ngành quan trọng kèm nghĩa ngắn gọn. ' +
+    'Trả lời bằng tiếng Việt rõ ràng, mạch lạc, súc tích với sinh viên; giữ các thuật ngữ tiếng Anh chuyên ngành quan trọng kèm nghĩa ngắn gọn. ' +
     'Mọi công thức toán học phải bọc bằng LaTeX chuẩn: dùng $...$ cho công thức cùng dòng và $$...$$ cho công thức tách dòng để trình duyệt render KaTeX chính xác. ' +
-    'Không bịa đặt số liệu ngoài đề bài hoặc ảnh bảng đính kèm. Khi học sinh hỏi mẹo hoặc vì sao sai, hãy chỉ thẳng bẫy đề thi và đối chiếu với các phương án gây nhiễu.';
+    'Không bịa đặt số liệu ngoài đề bài hoặc ảnh bảng đính kèm. Khi học sinh hỏi mẹo hoặc vì sao sai, hãy chỉ thẳng bẫy đề thi và đối chiếu với các phương án gây nhiễu. ' +
+    'Nếu học sinh xin hình ảnh hoặc biểu đồ minh họa (như residual plot hình phễu/cong, đường cong phân phối chuẩn, boxplot), hãy vẽ sơ đồ minh họa trực quan bằng ký tự ASCII/Unicode rõ nét trong khối ```text ... ``` thay vì trả về link ảnh giả.';
+}
+
+function setGeminiSendButtonState(busy) {
+  const sendBtn = document.getElementById('gemini-send-btn');
+  if (!sendBtn) return;
+  if (busy) {
+    sendBtn.innerText = '⏹️ Dừng';
+    sendBtn.style.background = '#DC2626';
+    sendBtn.style.borderColor = '#DC2626';
+    sendBtn.style.color = '#FFFFFF';
+    sendBtn.title = 'Dừng phản hồi đang chạy';
+  } else {
+    sendBtn.innerText = 'Gửi ✨';
+    sendBtn.style.background = '';
+    sendBtn.style.borderColor = '';
+    sendBtn.style.color = '';
+    sendBtn.title = 'Gửi câu hỏi tới Gemini';
+  }
+}
+
+function abortActiveGeminiRequest() {
+  if (!isGeminiBusy) return;
+  geminiUserAborted = true;
+  if (activeGeminiAbort) {
+    try { activeGeminiAbort.abort(); } catch (e) {}
+  }
+}
+
+function handleGeminiSendOrStop() {
+  if (isGeminiBusy) {
+    abortActiveGeminiRequest();
+  } else {
+    sendGeminiQuestion();
+  }
 }
 
 function handleGeminiInputKeydown(e) {
   if (e.key === 'Enter' && !e.shiftKey) {
     e.preventDefault();
-    sendGeminiQuestion();
+    if (!isGeminiBusy) sendGeminiQuestion();
   }
 }
 
 function sendGeminiQuickPrompt(promptText) {
+  if (isGeminiBusy) return;
   const inp = document.getElementById('gemini-user-input');
   if (inp) inp.value = promptText;
   sendGeminiQuestion();
@@ -7958,8 +7998,9 @@ function sendGeminiQuickPrompt(promptText) {
 
 function isGeminiOverloadError(err) {
   if (!err) return false;
+  if (err.isTimeout) return true;
   if (err.status === 503 || err.status === 429) return true;
-  return /high demand|overloaded|unavailable|try again later|temporarily|resource_exhausted|quota/i.test(err.message || '');
+  return /high demand|overloaded|unavailable|try again later|temporarily|resource_exhausted|quota|gateway_timeout|timed out/i.test(err.message || '');
 }
 
 function retryLastGeminiPrompt() {
@@ -7976,6 +8017,31 @@ function retryLastGeminiPrompt() {
   }
   if (lastUserText) {
     sendGeminiQuestion(lastUserText);
+  }
+}
+
+function updateLiveGeminiBubble(modelName, bodyHtmlOrText, isRawHtml) {
+  const head = document.getElementById('gemini-stream-live-head');
+  const body = document.getElementById('gemini-stream-live-body');
+  const box = document.getElementById('gemini-chat-messages');
+  if (head) {
+    head.innerHTML = '<span>✨ Gemini (' + escapeHtml(modelName) + ')</span>';
+  }
+  if (body) {
+    if (isRawHtml) {
+      body.style.color = 'var(--text)';
+      body.innerHTML = bodyHtmlOrText;
+      if (window.renderMathInElement) {
+        renderMathInElement(body, { delimiters: KATEX_DELIMITERS, throwOnError: false });
+      }
+    } else {
+      body.style.color = 'var(--text-muted)';
+      body.innerText = bodyHtmlOrText;
+    }
+  }
+  if (box) {
+    const nearBottom = (box.scrollHeight - box.scrollTop - box.clientHeight) < 120;
+    if (nearBottom) box.scrollTop = box.scrollHeight;
   }
 }
 
@@ -7996,18 +8062,18 @@ async function sendGeminiQuestion(overridePrompt) {
   if (!q) return;
 
   const inp = document.getElementById('gemini-user-input');
-  const sendBtn = document.getElementById('gemini-send-btn');
   const userText = (typeof overridePrompt === 'string' ? overridePrompt : (inp ? inp.value : '')).trim();
   if (!userText) return;
 
   const key = getGeminiThreadKey(q.id);
-  const thread = geminiThreadsByKey[key] || { lastInteractionId: null, messages: [], sentContext: false };
+  const thread = geminiThreadsByKey[key] || { lastInteractionId: null, lastModel: null, messages: [], sentContext: false };
   geminiThreadsByKey[key] = thread;
 
   thread.messages.push({ role: 'user', text: userText });
   if (inp && typeof overridePrompt !== 'string') inp.value = '';
   isGeminiBusy = true;
-  if (sendBtn) sendBtn.disabled = true;
+  geminiUserAborted = false;
+  setGeminiSendButtonState(true);
 
   const primaryModel = getGeminiModel();
   const modelQueue = [primaryModel].concat(GEMINI_ALLOWED_MODELS.filter(function(m) { return m !== primaryModel; }));
@@ -8040,32 +8106,164 @@ async function sendGeminiQuestion(overridePrompt) {
       }
     }
 
+    const genCfg = modelToUse === 'gemini-4-argon'
+      ? { thinking_level: 'low', max_output_tokens: 2048 }
+      : { max_output_tokens: 2048 };
+
     const body = {
       model: modelToUse,
       system_instruction: sysInstr,
-      input: inputPayload
+      input: inputPayload,
+      stream: true,
+      generation_config: genCfg
     };
     if (usePrevId && thread.lastInteractionId && !includeFullHistoryFallback) {
       body.previous_interaction_id = thread.lastInteractionId;
     }
 
-    const resp = await fetch(GEMINI_INTERACTIONS_ENDPOINT, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'x-goog-api-key': apiKey
-      },
-      body: JSON.stringify(body)
-    });
+    const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    activeGeminiAbort = controller;
+    let timedOut = false;
+    let waitSec = 0;
+    let gotFirstDelta = false;
+    let streamedText = '';
+    let streamedInteractionId = null;
 
-    const data = await resp.json().catch(function() { return {}; });
-    if (!resp.ok) {
-      const msg = (data && data.error && data.error.message) ? data.error.message : ('HTTP ' + resp.status);
-      const err = new Error(msg);
-      err.status = resp.status;
-      throw err;
+    const firstByteMs = modelToUse === 'gemini-4-argon' ? 30000 : 22000;
+    const totalMs = 55000;
+    const tickerId = setInterval(function() {
+      waitSec += 1;
+      if (!gotFirstDelta && !geminiUserAborted) {
+        const hint = modelToUse === 'gemini-4-argon'
+          ? '⏳ ' + modelToUse + ' đang suy luận (' + waitSec + 's)... Bấm "⏹️ Dừng" nếu muốn đổi model nhanh hơn.'
+          : '⏳ Đang chờ ' + modelToUse + ' (' + waitSec + 's)...';
+        updateLiveGeminiBubble(modelToUse, hint, false);
+      }
+    }, 1000);
+
+    const firstByteTimer = setTimeout(function() {
+      if (!gotFirstDelta && controller) {
+        timedOut = true;
+        try { controller.abort(); } catch (e) {}
+      }
+    }, firstByteMs);
+
+    const totalTimer = setTimeout(function() {
+      if (controller) {
+        timedOut = true;
+        try { controller.abort(); } catch (e) {}
+      }
+    }, totalMs);
+
+    try {
+      const fetchOpts = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-goog-api-key': apiKey
+        },
+        body: JSON.stringify(body)
+      };
+      if (controller) fetchOpts.signal = controller.signal;
+
+      const resp = await fetch(GEMINI_INTERACTIONS_SSE_ENDPOINT, fetchOpts);
+      const ctype = (resp.headers && typeof resp.headers.get === 'function')
+        ? (resp.headers.get('content-type') || '').toLowerCase()
+        : '';
+
+      if (!resp.ok) {
+        const errData = await resp.json().catch(function() { return {}; });
+        const msg = (errData && errData.error && errData.error.message) ? errData.error.message : ('HTTP ' + resp.status);
+        const err = new Error(msg);
+        err.status = resp.status;
+        throw err;
+      }
+
+      if (ctype.indexOf('text/event-stream') !== -1 && resp.body && typeof resp.body.getReader === 'function') {
+        const reader = resp.body.getReader();
+        const decoder = new TextDecoder('utf-8');
+        let sseBuffer = '';
+        let lastRenderTs = 0;
+
+        while (true) {
+          const chunk = await reader.read();
+          if (chunk.done) break;
+          sseBuffer += decoder.decode(chunk.value, { stream: true });
+
+          let sepIdx;
+          while ((sepIdx = sseBuffer.search(/\r?\n\r?\n/)) !== -1) {
+            const rawEvent = sseBuffer.slice(0, sepIdx);
+            const sepMatch = sseBuffer.slice(sepIdx).match(/^\r?\n\r?\n/);
+            sseBuffer = sseBuffer.slice(sepIdx + (sepMatch ? sepMatch[0].length : 2));
+
+            const dataLines = [];
+            rawEvent.split(/\r?\n/).forEach(function(ln) {
+              if (ln.indexOf('data:') === 0) {
+                dataLines.push(ln.slice(5).trim());
+              }
+            });
+            if (!dataLines.length) continue;
+            const jsonStr = dataLines.join('\n');
+            if (!jsonStr || jsonStr === '[DONE]') continue;
+
+            let ev;
+            try { ev = JSON.parse(jsonStr); } catch (e) { continue; }
+
+            if (ev.event_type === 'interaction.created' && ev.interaction && ev.interaction.id) {
+              streamedInteractionId = ev.interaction.id;
+            } else if (ev.event_type === 'interaction.completed' && ev.interaction && ev.interaction.id) {
+              streamedInteractionId = ev.interaction.id;
+            } else if (ev.event_type === 'error' && ev.error) {
+              const streamErr = new Error(ev.error.message || 'Streaming error');
+              streamErr.status = ev.error.code === 'gateway_timeout' ? 503 : 500;
+              throw streamErr;
+            } else if (ev.event_type === 'step.delta' && ev.delta) {
+              if (ev.delta.type === 'text' && ev.delta.text) {
+                gotFirstDelta = true;
+                clearTimeout(firstByteTimer);
+                streamedText += ev.delta.text;
+                const now = Date.now();
+                if (now - lastRenderTs > 90) {
+                  lastRenderTs = now;
+                  updateLiveGeminiBubble(modelToUse, formatGeminiMarkdownHtml(streamedText), true);
+                }
+              } else if (ev.delta.type === 'thought_summary' && !gotFirstDelta) {
+                updateLiveGeminiBubble(modelToUse, '🧠 ' + modelToUse + ' đang suy luận bước giải (' + waitSec + 's)...', false);
+              }
+            }
+          }
+        }
+        return {
+          id: streamedInteractionId,
+          output_text: streamedText
+        };
+      }
+
+      // Standard JSON fallback (non-streaming responses or mock tests)
+      const data = await resp.json().catch(function() { return {}; });
+      gotFirstDelta = true;
+      return data;
+    } catch (e) {
+      if (e && e.name === 'AbortError') {
+        if (geminiUserAborted) {
+          const abortErr = new Error('USER_ABORTED');
+          abortErr.isUserAborted = true;
+          abortErr.partialText = streamedText;
+          throw abortErr;
+        }
+        if (timedOut) {
+          const toErr = new Error('Quá thời gian chờ phản hồi từ ' + modelToUse + '.');
+          toErr.isTimeout = true;
+          throw toErr;
+        }
+      }
+      throw e;
+    } finally {
+      clearInterval(tickerId);
+      clearTimeout(firstByteTimer);
+      clearTimeout(totalTimer);
+      if (activeGeminiAbort === controller) activeGeminiAbort = null;
     }
-    return data;
   }
 
   try {
@@ -8074,25 +8272,32 @@ async function sendGeminiQuestion(overridePrompt) {
     let lastErr = null;
 
     for (let i = 0; i < modelQueue.length; i++) {
+      if (geminiUserAborted) break;
       const m = modelQueue[i];
       if (i > 0) {
-        renderGeminiMessages(thread.messages, true, '⏳ ' + modelQueue[i - 1] + ' đang quá tải, đang tự chuyển sang ' + m + '...');
-        await new Promise(function(r) { setTimeout(r, 400); });
+        renderGeminiMessages(thread.messages, true, '⏳ ' + modelQueue[i - 1] + ' đang bận/chậm, đang tự chuyển sang ' + m + '...');
+        await new Promise(function(r) { setTimeout(r, 350); });
+        if (geminiUserAborted) break;
       }
       try {
-        const canReusePrev = (i === 0 && !!thread.lastInteractionId);
-        data = await callInteractionsApi(m, canReusePrev, i > 0);
+        const sameModelPrev = !!thread.lastInteractionId && thread.lastModel === m && i === 0;
+        data = await callInteractionsApi(m, sameModelPrev, !sameModelPrev && thread.messages.length > 1);
         usedModel = m;
         break;
       } catch (attemptErr) {
-        if (i === 0 && thread.lastInteractionId && (attemptErr.status === 400 || attemptErr.status === 404)) {
+        if (attemptErr && attemptErr.isUserAborted) {
+          throw attemptErr;
+        }
+        if (i === 0 && thread.lastInteractionId && thread.lastModel === m && (attemptErr.status === 400 || attemptErr.status === 404)) {
           try {
             thread.lastInteractionId = null;
+            thread.lastModel = null;
             data = await callInteractionsApi(m, false, true);
             usedModel = m;
             break;
           } catch (retryErr) {
             attemptErr = retryErr;
+            if (attemptErr && attemptErr.isUserAborted) throw attemptErr;
           }
         }
         lastErr = attemptErr;
@@ -8108,25 +8313,42 @@ async function sendGeminiQuestion(overridePrompt) {
     if (!replyText) {
       throw new Error('Gemini không trả về nội dung văn bản (có thể do hết lượt hoặc bị chặn bộ lọc).');
     }
-    if (data && data.id) thread.lastInteractionId = data.id;
+    if (data && data.id) {
+      thread.lastInteractionId = data.id;
+      thread.lastModel = usedModel;
+    }
     thread.sentContext = true;
     thread.messages.push({
       role: 'model',
       text: replyText,
       model: usedModel,
-      fallbackNote: usedModel !== primaryModel ? ('tự chuyển từ ' + primaryModel + ' do quá tải') : ''
+      fallbackNote: usedModel !== primaryModel ? ('tự chuyển từ ' + primaryModel + ' do bận/quá thời gian') : ''
     });
   } catch (err) {
-    let friendly = err && err.message ? err.message : 'Lỗi không xác định.';
-    if (/API key not valid|PERMISSION_DENIED|401|403/i.test(friendly)) {
-      friendly = 'API Key không hợp lệ hoặc chưa được cấp quyền.\n(' + friendly + ')\n👉 Hãy bấm "🔑 API Key" ở góc trên để kiểm tra lại key Google AI Studio.';
-    } else if (isGeminiOverloadError(err)) {
-      friendly = 'Máy chủ Google Gemini đang quá tải tạm thời (503 / High Demand). Đã thử tự chuyển qua các model dự phòng (' + modelQueue.join(' → ') + ') nhưng đều đang bận.\n👉 Bạn đợi vài giây rồi bấm "🔄 Thử lại" ở góc trên khung này nhé.';
+    if (err && err.isUserAborted) {
+      if (err.partialText && err.partialText.trim()) {
+        thread.messages.push({
+          role: 'model',
+          text: err.partialText.trim() + '\n\n*(⏹️ Đã dừng theo yêu cầu của bạn)*',
+          model: primaryModel
+        });
+      } else {
+        thread.messages.push({ role: 'error', text: '⏹️ Đã dừng yêu cầu trước đó. Bạn có thể đổi sang Gemini 3.5 Flash-Lite hoặc bấm "🔄 Thử lại" bất cứ lúc nào.' });
+      }
+    } else {
+      let friendly = err && err.message ? err.message : 'Lỗi không xác định.';
+      if (/API key not valid|PERMISSION_DENIED|401|403/i.test(friendly)) {
+        friendly = 'API Key không hợp lệ hoặc chưa được cấp quyền.\n(' + friendly + ')\n👉 Hãy bấm "🔑 Key" ở góc trên để kiểm tra lại key Google AI Studio.';
+      } else if (isGeminiOverloadError(err)) {
+        friendly = 'Máy chủ Google Gemini đang quá tải hoặc phản hồi quá chậm (' + modelQueue.join(' → ') + ').\n👉 Bạn thử chọn 🚀 Gemini 3.5 Flash-Lite hoặc bấm "🔄 Thử lại" nhé.';
+      }
+      thread.messages.push({ role: 'error', text: friendly });
     }
-    thread.messages.push({ role: 'error', text: friendly });
   } finally {
     isGeminiBusy = false;
-    if (sendBtn) sendBtn.disabled = false;
+    geminiUserAborted = false;
+    activeGeminiAbort = null;
+    setGeminiSendButtonState(false);
     renderGeminiMessages(thread.messages, false);
   }
 }
