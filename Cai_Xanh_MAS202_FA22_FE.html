@@ -101,16 +101,18 @@
       top: 0;
       z-index: 100;
       box-shadow: var(--shadow-sm);
+      padding-top: max(0px, env(safe-area-inset-top, 0px));
+      transition: background-color 0.2s ease, border-color 0.2s ease;
     }
 
     .header-content {
       max-width: 1400px;
       margin: 0 auto;
-      padding: 12px 20px;
+      padding: 10px 20px;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      gap: 16px;
+      gap: 14px;
     }
 
     .logo-area {
@@ -119,24 +121,53 @@
       gap: 12px;
       text-decoration: none;
       color: inherit;
+      flex-shrink: 0;
+      order: 1;
     }
 
     .logo-badge {
       font-size: 26px;
       line-height: 1;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .logo-text-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
     }
 
     .logo-title {
       font-weight: 800;
-      font-size: 1.25rem;
+      font-size: 1.22rem;
       color: var(--primary);
       letter-spacing: -0.02em;
+      white-space: nowrap;
     }
 
     .logo-subtitle {
-      font-size: 0.78rem;
+      font-size: 0.76rem;
       color: var(--text-muted);
       font-weight: 500;
+      white-space: nowrap;
+    }
+
+    .header-nav-scroll {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      order: 2;
+      margin-left: auto;
+    }
+
+    .header-user-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      order: 3;
+      flex-shrink: 0;
     }
 
     .header-actions {
@@ -790,13 +821,414 @@
       margin-top: 40px;
     }
 
-    /* RESPONSIVE */
+    /* =========================================================
+       COMPREHENSIVE MOBILE RESPONSIVE ENGINE (PHONE & TABLET)
+       ========================================================= */
     @media (max-width: 768px) {
-      .header-content { padding: 10px 14px; }
-      .container { padding: 12px; }
-      .q-card { padding: 16px; }
-      .hero-banner { flex-direction: column; align-items: flex-start; }
-      .tgl-all-btn { margin-left: 0; width: 100%; justify-content: center; }
+      header {
+        padding-top: max(4px, env(safe-area-inset-top, 0px));
+        box-shadow: 0 2px 10px rgba(0,0,0,0.06);
+      }
+
+      /* 2-TIER CLEAN MOBILE HEADER: Brand + User Top, Swipeable Pills Bottom */
+      .header-content {
+        display: grid !important;
+        grid-template-columns: 1fr auto !important;
+        grid-template-rows: auto auto !important;
+        padding: 8px 12px 6px !important;
+        gap: 6px 8px !important;
+        align-items: center !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+
+      .logo-area {
+        grid-column: 1 / 2 !important;
+        grid-row: 1 / 2 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        min-width: 0 !important;
+        order: unset !important;
+      }
+
+      .logo-badge {
+        font-size: 22px !important;
+        line-height: 1 !important;
+        flex-shrink: 0 !important;
+      }
+
+      .logo-title {
+        font-size: 1.02rem !important;
+        font-weight: 800 !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        color: var(--primary) !important;
+      }
+
+      /* Hide subtitle on mobile so it NEVER collapses into vertical text */
+      .logo-subtitle {
+        display: none !important;
+      }
+
+      .header-user-actions {
+        grid-column: 2 / 3 !important;
+        grid-row: 1 / 2 !important;
+        display: flex !important;
+        align-items: center !important;
+        gap: 6px !important;
+        justify-content: flex-end !important;
+        order: unset !important;
+      }
+
+      .btn-google {
+        padding: 5px 8px !important;
+        font-size: 0.78rem !important;
+        gap: 5px !important;
+        border-radius: 8px !important;
+      }
+
+      .btn-google-text {
+        display: none !important;
+      }
+
+      .user-badge-capsule {
+        padding: 2px 8px 2px 3px !important;
+        font-size: 0.74rem !important;
+        gap: 5px !important;
+      }
+
+      .user-avatar {
+        width: 22px !important;
+        height: 22px !important;
+      }
+
+      .user-name {
+        max-width: 65px !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+        white-space: nowrap !important;
+      }
+
+      .btn-theme {
+        width: 32px !important;
+        height: 32px !important;
+        font-size: 0.95rem !important;
+        padding: 0 !important;
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        border-radius: 8px !important;
+        flex-shrink: 0 !important;
+      }
+
+      /* TIER 2: SMOOTH HORIZONTAL SCROLLABLE ACTION STRIP */
+      .header-nav-scroll {
+        grid-column: 1 / 3 !important;
+        grid-row: 2 / 3 !important;
+        display: flex !important;
+        gap: 6px !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+        padding: 2px 2px 4px !important;
+        margin: 0 -4px !important;
+        width: calc(100% + 8px) !important;
+        box-sizing: border-box !important;
+        order: unset !important;
+      }
+
+      .header-nav-scroll::-webkit-scrollbar {
+        display: none !important;
+      }
+
+      .header-nav-scroll .btn {
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
+        padding: 5px 11px !important;
+        font-size: 0.76rem !important;
+        border-radius: 9999px !important;
+      }
+
+      /* MAIN CONTAINER */
+      .container {
+        padding: 10px 10px 40px !important;
+      }
+
+      /* 22 EXAM QUICK NAVIGATOR BAR */
+      .exam-navigator-bar {
+        padding: 10px 12px !important;
+        border-radius: 12px !important;
+        margin-bottom: 12px !important;
+      }
+      .exam-navigator-bar strong {
+        font-size: 0.88rem !important;
+      }
+      .exam-chip-item {
+        padding: 5px 10px !important;
+        font-size: 0.76rem !important;
+      }
+
+      /* HERO BANNER */
+      .hero-banner {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding: 12px 14px !important;
+        border-radius: 12px !important;
+        gap: 10px !important;
+      }
+      .hero-title {
+        font-size: 1.12rem !important;
+        line-height: 1.35 !important;
+      }
+      .hero-desc {
+        font-size: 0.8rem !important;
+        line-height: 1.45 !important;
+      }
+      .stats-pills {
+        gap: 6px !important;
+        width: 100% !important;
+        overflow-x: auto !important;
+        scrollbar-width: none !important;
+        padding-bottom: 2px !important;
+      }
+      .stats-pills::-webkit-scrollbar {
+        display: none !important;
+      }
+      .stat-pill {
+        font-size: 0.74rem !important;
+        padding: 3px 8px !important;
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
+      }
+
+      /* LEARNING PROGRESS DASHBOARD */
+      .progress-card {
+        padding: 12px !important;
+        border-radius: 12px !important;
+        margin-bottom: 12px !important;
+      }
+      .progress-card-header {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 8px !important;
+      }
+      .progress-heading {
+        font-size: 0.98rem !important;
+      }
+      .progress-sub {
+        font-size: 0.74rem !important;
+      }
+      .progress-actions {
+        width: 100% !important;
+        display: flex !important;
+        gap: 6px !important;
+        flex-wrap: wrap !important;
+      }
+      .progress-actions .btn {
+        flex: 1 !important;
+        padding: 5px 8px !important;
+        font-size: 0.74rem !important;
+        justify-content: center !important;
+      }
+      .cloud-sync-chip {
+        width: 100% !important;
+        justify-content: center !important;
+        font-size: 0.72rem !important;
+        padding: 3px 8px !important;
+      }
+      .progress-stats-row {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 6px !important;
+      }
+      .stat-box {
+        padding: 8px 4px !important;
+        border-radius: 8px !important;
+      }
+      .stat-box-val {
+        font-size: 1.12rem !important;
+      }
+      .stat-box-label {
+        font-size: 0.68rem !important;
+        line-height: 1.2 !important;
+      }
+
+      /* CONTROLS & FILTER SECTION */
+      .controls-card {
+        padding: 12px !important;
+        border-radius: 12px !important;
+        margin-bottom: 12px !important;
+      }
+      .search-row {
+        flex-direction: column !important;
+        gap: 8px !important;
+      }
+      .jump-box {
+        width: 100% !important;
+        justify-content: space-between !important;
+      }
+      .jump-input {
+        width: 80px !important;
+        flex-grow: 1 !important;
+        max-width: 120px !important;
+      }
+      .filter-label {
+        font-size: 0.76rem !important;
+        margin-bottom: 5px !important;
+      }
+      .pill-btn {
+        padding: 5px 10px !important;
+        font-size: 0.74rem !important;
+        border-radius: 9999px !important;
+      }
+      .quick-actions-bar {
+        flex-direction: column !important;
+        gap: 8px !important;
+      }
+      .action-chips {
+        overflow-x: auto !important;
+        flex-wrap: nowrap !important;
+        scrollbar-width: none !important;
+        padding-bottom: 4px !important;
+        width: 100% !important;
+      }
+      .action-chips::-webkit-scrollbar {
+        display: none !important;
+      }
+      .action-chip {
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
+        padding: 5px 9px !important;
+        font-size: 0.74rem !important;
+      }
+      .mode-switch {
+        width: 100% !important;
+        display: flex !important;
+      }
+      .mode-btn {
+        flex: 1 !important;
+        text-align: center !important;
+        justify-content: center !important;
+        padding: 6px 10px !important;
+        font-size: 0.78rem !important;
+      }
+
+      /* QUESTION CARDS */
+      .q-card {
+        padding: 12px 14px !important;
+        border-radius: 12px !important;
+        margin-bottom: 12px !important;
+      }
+      .q-header {
+        gap: 6px !important;
+        margin-bottom: 10px !important;
+      }
+      .badge-id {
+        font-size: 0.78rem !important;
+        padding: 2px 7px !important;
+      }
+      .badge-ch, .badge-type,
+      .badge-status-correct, .badge-status-wrong, .badge-status-unattempted {
+        font-size: 0.7rem !important;
+        padding: 2px 6px !important;
+      }
+      .btn-retry-q, .btn-copy {
+        padding: 3px 7px !important;
+        font-size: 0.72rem !important;
+      }
+      .btn-star {
+        font-size: 1.15rem !important;
+      }
+      .q-prompt {
+        font-size: 0.94rem !important;
+        line-height: 1.52 !important;
+        margin-bottom: 12px !important;
+      }
+      .options-grid {
+        gap: 8px !important;
+        margin-bottom: 12px !important;
+      }
+      .option-item {
+        padding: 10px 12px !important;
+        font-size: 0.88rem !important;
+        border-radius: 8px !important;
+        min-height: 44px !important;
+        align-items: center !important;
+      }
+      .answer-strip {
+        padding: 8px 12px !important;
+        border-radius: 8px !important;
+        margin-bottom: 10px !important;
+        font-size: 0.82rem !important;
+        gap: 6px !important;
+      }
+      .ans-badge {
+        font-size: 0.84rem !important;
+        gap: 5px !important;
+      }
+
+      /* HORIZONTAL SWIPEABLE DETAIL TABS (ELIMINATES 4-ROW VERTICAL STACKING) */
+      .toggle-buttons-bar {
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        scrollbar-width: none !important;
+        gap: 6px !important;
+        padding: 3px 2px 6px !important;
+        margin-bottom: 8px !important;
+        width: 100% !important;
+      }
+      .toggle-buttons-bar::-webkit-scrollbar {
+        display: none !important;
+      }
+      .tgl-btn {
+        flex-shrink: 0 !important;
+        white-space: nowrap !important;
+        padding: 6px 11px !important;
+        font-size: 0.76rem !important;
+        border-radius: 8px !important;
+      }
+      .tgl-all-btn {
+        margin-left: 0 !important;
+      }
+
+      /* DETAIL PANELS & KATEX OVERFLOW GUARD */
+      .detail-panel {
+        padding: 12px 14px !important;
+        font-size: 0.86rem !important;
+        line-height: 1.55 !important;
+        border-radius: 8px !important;
+      }
+      .detail-panel .katex-display {
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        padding: 4px 0 !important;
+        margin: 8px 0 !important;
+        max-width: 100% !important;
+      }
+      .detail-panel table {
+        display: block !important;
+        overflow-x: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        max-width: 100% !important;
+      }
+
+      /* MODALS & DRAWERS */
+      .modal-dialog {
+        width: 95vw !important;
+        max-width: 95vw !important;
+        max-height: 88vh !important;
+        margin: 12px auto !important;
+        border-radius: 14px !important;
+        padding: 14px !important;
+      }
+      .notes-drawer {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        border-radius: 0 !important;
+      }
     }
 
     /* GOOGLE AUTH & USER BADGE */
@@ -2463,13 +2895,7 @@
         grid-template-columns: 1fr;
       }
     }
-    @media (max-width: 768px) {
-      .header-actions {
-        flex-wrap: wrap;
-        gap: 6px;
-        justify-content: flex-end;
-      }
-    }
+
 
 </style>
 </head>
@@ -2480,16 +2906,41 @@
     <div class="header-content">
       <a href="Cai_Xanh_Hoc_MAS_Ch5_Ch7.html" class="logo-area" title="Về trang tổng hợp Cải Xanh">
         <span class="logo-badge">🥬</span>
-        <div>
+        <div class="logo-text-wrap">
           <div class="logo-title">Cải Xanh Học MAS</div>
           <div class="logo-subtitle">Đề Thi & Lời Giải MAS202 FA22 Final Exam (49 Câu Thực Chiến & Ảnh Gốc Đề Thi)</div>
         </div>
       </a>
-      <div class="header-actions">
-        <a href="Cai_Xanh_Hoc_MAS_Ch5_Ch7.html" class="btn btn-secondary">
-          📖 Sổ Tay Ch5-Ch9
-        </a>
-                <!-- EXAM SWITCHER BUTTON -->
+
+      <!-- USER & THEME ACTIONS (ROW 1 RIGHT ON MOBILE, FAR RIGHT ON DESKTOP) -->
+      <div class="header-user-actions">
+        <!-- Google Login Button -->
+        <button class="btn btn-google" id="btn-google-login" onclick="loginWithGoogle()" title="Đăng nhập tài khoản Google để lưu tiến độ ôn thi lên Cloud">
+          <svg viewBox="0 0 24 24" width="16" height="16">
+            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
+            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
+          </svg>
+          <span class="btn-google-text">Đăng nhập</span>
+        </button>
+
+        <!-- Logged-in User Capsule -->
+        <div class="user-badge-capsule" id="user-badge" style="display:none;">
+          <img id="user-avatar" class="user-avatar" src="" alt="Avatar">
+          <span id="user-name" class="user-name">User</span>
+          <span id="cloud-sync-status-icon" class="cloud-status-icon" title="Đã đồng bộ với Cloud (Bấm để đồng bộ lại)" onclick="syncProgressWithCloud()">☁️</span>
+          <button class="btn-logout" onclick="logoutGoogle()" title="Đăng xuất tài khoản Google">🚪</button>
+        </div>
+
+        <button class="btn-theme" id="theme-toggle" onclick="toggleTheme()" title="Đổi giao diện Sáng / Tối">
+          🌓
+        </button>
+      </div>
+
+      <!-- HORIZONTAL SCROLLABLE ACTION STRIP (ROW 2 ON MOBILE, MIDDLE/RIGHT ON DESKTOP) -->
+      <div class="header-nav-scroll">
+        <!-- EXAM SWITCHER BUTTON -->
         <button class="btn btn-secondary btn-exam-header" onclick="openExamModal()" title="Mở danh sách 22 đề thi Final Exam">
           <span>📚 Bộ Đề Thi (22 Kỳ)</span>
           <span style="font-size: 0.7rem;">▼</span>
@@ -2505,38 +2956,17 @@
           📝 Ghi chú (<span id="notes-badge">0</span>)
         </button>
 
-
-        <!-- Google Login Button -->
-        <button class="btn btn-google" id="btn-google-login" onclick="loginWithGoogle()" title="Đăng nhập tài khoản Google để lưu tiến độ ôn thi lên Cloud">
-          <svg viewBox="0 0 24 24" width="16" height="16">
-            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
-            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
-            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/>
-            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/>
-          </svg>
-          <span>Đăng nhập Google</span>
-        </button>
-
-        <!-- Logged-in User Capsule -->
-        <div class="user-badge-capsule" id="user-badge" style="display:none;">
-          <img id="user-avatar" class="user-avatar" src="" alt="Avatar">
-          <span id="user-name" class="user-name">User</span>
-          <span id="cloud-sync-status-icon" class="cloud-status-icon" title="Đã đồng bộ với Cloud (Bấm để đồng bộ lại)" onclick="syncProgressWithCloud()">☁️</span>
-          <button class="btn-logout" onclick="logoutGoogle()" title="Đăng xuất tài khoản Google">🚪</button>
-        </div>
-
         <button class="btn btn-secondary btn-gemini-header" id="btn-open-gemini-settings" onclick="openGeminiKeyModal()" title="Cài đặt Gemini API Key cá nhân để hỏi đáp AI">
           <span class="gemini-key-dot" id="gemini-key-dot"></span>
           <span>✨ Gemini AI</span>
         </button>
 
-        <button class="btn-theme" id="theme-toggle" onclick="toggleTheme()" title="Đổi giao diện Sáng / Tối">
-          🌓
-        </button>
+        <a href="Cai_Xanh_Hoc_MAS_Ch5_Ch7.html" class="btn btn-secondary">
+          📖 Sổ Tay Ch5-Ch9
+        </a>
       </div>
     </div>
-
-        </header>
+  </header>
 
   <main class="container">
 
