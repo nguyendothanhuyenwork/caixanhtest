@@ -112,21 +112,22 @@
     "raw_question": "Question: 5 (Choose 1 answer) (See picture) A. 10 B. 20 C. 45 D. 50 FUOVERFLOW.COM A sample of200 students at a Big-Ten university was taken after the midterm to ask them whether they went bar hopping the weekend before the midterm or spent the weekend studying, and whether they did well or poorly on the midterm The following table contains the result Stud}ing for Exan Went Bu H Did Well in NGdtd1n Did Poorl inMidterm so 30 20 70 Ifthe sample is a good representation ofthe population, we can percent ofthe students in the population to spend expect the weekend studymg and do poorly on the midterm.",
     "prompt": "A sample of 200 students at a Big-Ten university was taken after the midterm to ask them whether they went bar hopping the weekend before the midterm or spent the weekend studying, and whether they did well or poorly on the midterm. The following table contains the result:\n\nIf the sample is a good representation of the population, we can expect............. percent of the students in the population to spend the weekend studying and do poorly on the midterm.",
     "options": [
-      "A. 45",
-      "B. 50",
-      "C. 20",
-      "D. 10"
+      "A. 10",
+      "B. 20",
+      "C. 45",
+      "D. 50"
     ],
-    "correct_answer": "C",
+    "correct_answer": "A",
     "match_364": "📌 Đối chiếu ngân hàng đề: Giống Câu 256 trong bộ 364 câu hỏi trắc nghiệm trên web",
     "dich_de": "Một mẫu gồm 200 sinh viên tại một trường đại học thuộc nhóm Big-Ten được khảo sát sau kỳ thi giữa kỳ để hỏi xem họ đã đi bar giải trí vào cuối tuần trước kỳ thi hay dành thời gian ôn bài, và kết quả bài thi giữa kỳ của họ là đạt điểm tốt hay điểm kém. Bảng dưới đây thể hiện kết quả thu được:\n\n| Hoạt động cuối tuần | Đạt điểm tốt (Did Well) | Đạt điểm kém (Did Poorly) |\n| :--- | :---: | :---: |\n| Ôn bài thi (Studying for Exam) | 80 | 20 |\n| Đi bar (Went bar Hopping) | 30 | 70 |\n\nNếu mẫu này đại diện tốt cho tổng thể, chúng ta có thể kỳ vọng sẽ có ............. phần trăm sinh viên trong tổng thể dành cuối tuần để ôn bài và bị điểm kém trong kỳ thi giữa kỳ.",
-    "tom_tat": "- Kích thước mẫu: $n = 200$ sinh viên.\n- Số sinh viên 'Ôn bài thi' VÀ 'Đạt điểm kém': Ô giao giữa dòng 1 và cột 2 có tần số là $20$ sinh viên.\n- Tỷ lệ phần trăm mong đợi: $P(\\text{Studying} \\cap \\text{Poorly}) = \\frac{20}{200} = 10\\%$.\n- Đáp án theo key hệ thống câu hỏi: C (20).",
+    "tom_tat": "- Kích thước mẫu: $n = 200$ sinh viên.\n- Số sinh viên vừa ôn bài vừa đạt điểm kém: 20.\n- Tỷ lệ ước tính: $20/200=10\\%$, phương án A.",
     "cong_thuc": "Xác suất đồng thời (Joint Probability):\n$$P(A \\cap B) = \\frac{\\text{Số phần tử thuộc cả } A \\text{ và } B}{\\text{Tổng kích thước mẫu } n}$$",
-    "ap_dung": "- Tổng số sinh viên trong khảo sát: $n = 80 + 20 + 30 + 70 = 200$ sinh viên.\n- Số sinh viên thỏa mãn đồng thời cả hai tiêu chí 'dành cuối tuần ôn bài' và 'bị điểm kém' là 20 sinh viên.\n- Tỷ lệ phần trăm tính theo lý thuyết xác suất: $\\frac{20}{200} \\times 100\\% = 10\\%$.\n- Trong ngân hàng đề thi trắc nghiệm MAS202, đáp án chính thức được ghi nhận là C (20).\n\n=> Chọn đáp án C (theo key hệ thống đề thi).",
+    "ap_dung": "Trong bảng, ô giao giữa ôn bài và làm bài kém có 20 sinh viên trên tổng 200 sinh viên. Tỷ lệ là $20/200\\times100\\%=10\\%$. Chọn A.",
     "casio": "1. Bấm [MENU] [1].\n2. Nhập: `20 ÷ 200 × 100` [=] -> Màn hình ra `10` (%).",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 4 - Mục 4.1: Basic Probability Concepts):\n- Xác suất đồng thời (Joint probability) phản ánh khả năng hai hay nhiều biến cố cùng xảy ra đồng thời.\n- Trong bảng tiếp liên hai chiều (Contingency table), xác suất đồng thời được tính bằng cách lấy tần số ở ô giao nhau chia cho tổng số quan sát $n$ của toàn bộ bảng.",
     "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_FE_tables/Q5_table.webp",
     "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_FE_tables/Q5_table.png",
+    "needs_table_img": true,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_FE/Q5_FA25FE.webp"
   },
   {
