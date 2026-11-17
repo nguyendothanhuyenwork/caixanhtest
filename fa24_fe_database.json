@@ -447,7 +447,7 @@
       "D. 0.240"
     ],
     "correct_answer": "A",
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA24_FE/Q18.webp",
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA24_FE/Q18_FA24FE.webp",
     "dich_de": "Cho P(A) = 0.3, P(B|A) = 0.8 và P(B|A') = 0.5. Hãy tính xác suất có điều kiện P(A|B).",
     "tom_tat": "- P(A) = 0.3 => P(A') = 1 - 0.3 = 0.7\n- P(B|A) = 0.8 => P(B ∩ A) = 0.3 × 0.8 = 0.24\n- P(B|A') = 0.5 => P(B ∩ A') = 0.7 × 0.5 = 0.35",
     "cong_thuc": "$$P(A \\mid B) = \\frac{P(B \\cap A)}{P(B)} = \\frac{P(A) P(B \\mid A)}{P(A) P(B \\mid A) + P(A') P(B \\mid A')}$$",

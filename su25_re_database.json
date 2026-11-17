@@ -948,7 +948,7 @@
       "D. 4.00"
     ],
     "correct_answer": "C",
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU25_RE/Q37.webp",
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU25_RE/Q37_SU25RE.webp",
     "dich_de": "Cho các thông tin sau: s₁² = 4, s₂² = 6, n₁ = 16, n₂ = 25. Hãy tính phương sai gộp sp² được sử dụng trong kiểm định t hai mẫu phương sai bằng nhau.",
     "tom_tat": "- Mẫu 1: n₁ = 16, s₁² = 4\n- Mẫu 2: n₂ = 25, s₂² = 6\n- Cần tính sp².",
     "cong_thuc": "$$s_p^2 = \\frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{(n_1 - 1) + (n_2 - 1)}$$",

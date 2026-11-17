@@ -23,7 +23,7 @@
     "ly_thuyet": "Theo Giáo trình Berenson Ch1 (Foundations for Data Analysis) - Mục 'Classifying Variables': Biến số số học được chia làm hai loại: biến rời rạc (phát sinh từ quá trình đếm - counting) và biến liên tục (phát sinh từ quá trình đo lường - measuring).",
     "table_image": null,
     "table_image_png": null,
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q1.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q1.jpg"
   },
   {
     "id": 2,
@@ -50,7 +50,7 @@
     "table_image": null,
     "table_image_png": null,
     "needs_table_img": false,
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q2.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q2.jpg"
   },
   {
     "id": 3,
@@ -76,7 +76,7 @@
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 1 - Mục 1.3 & 1.4: Selecting Samples and Survey Errors): Khung chọn mẫu (Frame) cần phải tương thích chặt chẽ với tổng thể mục tiêu để tránh sai số phạm vi (Coverage Error).",
     "table_image": null,
     "table_image_png": null,
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q3.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q3.jpg"
   },
   {
     "id": 4,
@@ -102,7 +102,7 @@
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 1 - Mục 1.3: Data Sources and Sampling Methods):\n- Khung chọn mẫu (Sampling Frame) không hoàn hảo có thể dẫn đến sai số độ bao phủ (Coverage error) nếu có những đối tượng trong tổng thể mục tiêu bị bỏ sót khỏi danh sách.",
     "table_image": null,
     "table_image_png": null,
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q4.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q4.jpg"
   },
   {
     "id": 5,
@@ -128,7 +128,7 @@
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 2 - Mục 2.2: Organizing Numerical Data):\nTần số tích lũy (Cumulative frequency) hoặc tổng tần số tương đối của các khoảng mong muốn nhân với kích thước mẫu $n$ cho ra số lượng quan sát tương ứng.",
     "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q5_table.webp",
     "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q5_table.png",
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q5.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q5.jpg"
   },
   {
     "id": 6,
@@ -154,7 +154,7 @@
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 2 - Mục 2.2: Organizing Numerical Data): Phân phối tần số tích lũy.",
     "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q6_table.webp",
     "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q6_table.png",
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q6.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q6.jpg"
   },
   {
     "id": 7,
@@ -180,7 +180,7 @@
     "ly_thuyet": "Theo Berenson (Chương 2, Mục 2.3: Organizing Numerical Data - Stem-and-Leaf Display): Biểu đồ thân và lá cho phép xem trực quan phân bố tần số đồng thời vẫn giữ lại giá trị của từng dữ liệu quan sát. Tỷ lệ phần trăm tích lũy hoặc tỷ lệ tại các khoảng được tính bằng tần số của khoảng chia cho tổng số quan sát n.",
     "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q7_table.webp",
     "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q7_table.png",
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q7.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q7.jpg"
   },
   {
     "id": 8,
@@ -206,7 +206,7 @@
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 2 - Mục 2.3: Tables and Charts for Numerical Data):\n- Để biểu diễn dữ liệu định lượng đã phân nhóm (Grouped numerical data), ta sử dụng biểu đồ tần số (Histogram) hoặc đa giác tỷ lệ phần trăm (Percentage Polygon).\n- Percentage Polygon đặc biệt thích hợp khi muốn quan sát hình dạng đường cong phân phối hoặc so sánh nhiều nhóm dữ liệu số trên cùng một hệ trục.",
     "table_image": null,
     "table_image_png": null,
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q8.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q8.jpg"
   },
   {
     "id": 9,
@@ -232,7 +232,7 @@
     "ly_thuyet": "Theo Berenson (Chương 2: Organizing and Visualizing Variables - Mục 2.6 Misusing Graphs and Ethical Issues):\n- Đồ thị tốt phải truyền tải ý nghĩa một cách rõ ràng, trung thực và trực diện.\n- Chart junk gây phân tâm người xem và có thể vi phạm tính liêm chính thống kê (ethical issues).",
     "table_image": null,
     "table_image_png": null,
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q9.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q9.jpg"
   },
   {
     "id": 10,
@@ -258,7 +258,7 @@
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 3 - Mục 3.1: Measures of Central Tendency):\n- Số trung bình mẫu $\\bar{X}$ được tính bằng tổng toàn bộ các quan sát trong mẫu chia cho kích thước mẫu $n$.\n- Số trung bình đóng vai trò là điểm cân bằng (balance point) của phân phối dữ liệu.",
     "table_image": null,
     "table_image_png": null,
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q10.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q10.jpg"
   },
   {
     "id": 11,
@@ -282,7 +282,7 @@
     "ly_thuyet": "Theo Berenson (Chương 3, Mục 3.2: Shape and the Boxplot / Z-scores): Điểm Z đo lường khoảng cách từ một giá trị đến giá trị trung bình tính theo đơn vị độ lệch chuẩn. Theo quy tắc kinh nghiệm, một điểm dữ liệu có giá trị Z nhỏ hơn -3 hoặc lớn hơn +3 được coi là điểm ngoại lai (outlier/extreme value).",
     "table_image": null,
     "table_image_png": null,
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q11.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q11.jpg"
   },
   {
     "id": 12,
@@ -308,7 +308,7 @@
     "ly_thuyet": "Giáo trình Berenson Ch3: Coefficient of Variation (CV) measures relative variation.",
     "table_image": null,
     "table_image_png": null,
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q12.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q12.jpg"
   },
   {
     "id": 13,
@@ -335,7 +335,7 @@
     "ly_thuyet": "Theo Berenson (Chương 3, Mục 3.2: Measures of Variation and Shape - Quartiles): Vị trí của tứ phân vị thứ nhất Q1 trong dãy n quan sát đã sắp xếp được xác định bởi công thức (n + 1) / 4. Khi kết quả là số thập phân dạng .5, Q1 bằng trung bình cộng của hai giá trị kề cạnh.",
     "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q13_table.webp",
     "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q13_table.png",
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q13.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q13.jpg"
   },
   {
     "id": 14,
@@ -362,7 +362,7 @@
     "ly_thuyet": "Theo Berenson (Chương 3, Mục 3.5: Numerical Descriptive Measures for a Population): Phương sai tổng thể ký hiệu là σ² và được tính bằng cách chia tổng bình phương các độ lệch quanh trung bình cho N (kích thước tổng thể). Điều này phân biệt với phương sai mẫu S² được chia cho n - 1.",
     "table_image": null,
     "table_image_png": null,
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q14.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q14.jpg"
   },
   {
     "id": 15,
@@ -389,7 +389,7 @@
     "ly_thuyet": "Theo Berenson (Chương 13, Mục 13.2: Determining the Simple Linear Regression Equation): Phương pháp bình phương nhỏ nhất (Ordinary Least Squares - OLS) tìm ra các hệ số b0 và b1 sao cho tổng bình phương sai số giữa các giá trị quan sát và giá trị dự báo là nhỏ nhất.",
     "table_image": null,
     "table_image_png": null,
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q15.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q15.jpg"
   },
   {
     "id": 16,
@@ -414,7 +414,7 @@
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 4 - Mục 4.3: Independence of Events):\n- Hai biến cố được định nghĩa là độc lập nếu và chỉ nếu xác suất xảy ra của biến cố này không bị ảnh hưởng bởi sự xảy ra của biến cố kia ($P(A \\mid B) = P(A)$ hoặc $P(A \\cap B) = P(A)P(B)$).\n- Bất kỳ sự chênh lệch nào giữa $P(A \\cap B)$ và $P(A)P(B)$ đều chứng minh hai biến cố là phụ thuộc lẫn nhau.",
     "table_image": null,
     "table_image_png": null,
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q16.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q16.jpg"
   },
   {
     "id": 17,
@@ -439,7 +439,7 @@
     "ly_thuyet": "Theo Berenson (Chương 4, Mục 4.3: Conditional Probability and Independence): Hai biến cố A và B được gọi là độc lập nếu xác suất xảy ra biến cố A không bị ảnh hưởng bởi việc biến cố B đã xảy ra hay chưa, nghĩa là P(A|B) = P(A), điều này tương đương với quy tắc nhân xác suất độc lập: P(A ∩ B) = P(A)·P(B).",
     "table_image": null,
     "table_image_png": null,
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q17.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q17.jpg"
   },
   {
     "id": 18,
@@ -454,7 +454,7 @@
       "D. 0.511"
     ],
     "correct_answer": "D",
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q18.webp",
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q18.jpg",
     "dich_de": "Một công ty có 2 máy sản xuất linh kiện. Máy cũ sản xuất ra 23% phế phẩm, trong khi máy mới chỉ tạo ra 8% phế phẩm. Ngoài ra, máy mới sản xuất số lượng linh kiện gấp 3 lần máy cũ. Lấy ngẫu nhiên một linh kiện thấy bị lỗi (phế phẩm), tính xác suất linh kiện này do máy mới sản xuất.",
     "tom_tat": "- Máy mới (N) sản xuất gấp 3 lần máy cũ (O) => Tỷ lệ: P(O) = 1/4 = 0.25, P(N) = 3/4 = 0.75.\n- Xác suất lỗi: P(D|O) = 0.23, P(D|N) = 0.08.\n- Cần tính: P(N|D).",
     "cong_thuc": "$$P(N \\mid D) = \\frac{P(N) P(D \\mid N)}{P(O) P(D \\mid O) + P(N) P(D \\mid N)}$$",
@@ -486,7 +486,7 @@
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 4 - Mục 4.5: Counting Rules): Quy tắc tổ hợp áp dụng khi chọn một tập con gồm k phần tử từ n phần tử mà thứ tự các phần tử không đóng vai trò phân biệt.",
     "table_image": null,
     "table_image_png": null,
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q19.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q19.jpg"
   },
   {
     "id": 20,
@@ -512,7 +512,7 @@
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 5 - Mục 5.2: Covariance and Its Application in Finance / Portfolio Expected Return):\n- Lợi nhuận kỳ vọng của danh mục đầu tư kết hợp hai tài sản là bình quân gia quyền của các lợi nhuận kỳ vọng thành phần với quyền số là tỷ trọng vốn đầu tư: $E(P) = w_X E(X) + w_Y E(Y)$. Tính chất này đúng cho mọi trường hợp, không phụ thuộc vào mức độ tương quan giữa hai tài sản.",
     "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q20_table.webp",
     "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q20_table.png",
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q20.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q20.jpg"
   },
   {
     "id": 21,
@@ -538,7 +538,7 @@
     "ly_thuyet": "Theo Berenson (Chương 5: Some Important Discrete Probability Distributions - Mục 5.3 Binomial Distribution):\n- Phân phối nhị thức là một trong những phân phối rời rạc quan trọng nhất trong thống kê kinh doanh.\n- Biến ngẫu nhiên $X$ đại diện cho phép đếm (số lần biến cố xuất hiện), luôn thuộc tập số nguyên không âm rời rạc $\\{0, 1, \\dots, n\\}$.",
     "table_image": null,
     "table_image_png": null,
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q21.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q21.jpg"
   },
   {
     "id": 22,
@@ -565,7 +565,7 @@
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 5 - Mục 5.4: The Poisson Distribution):\n- Phân phối Poisson được ứng dụng để tính xác suất số lần xảy ra của một sự kiện trong một đơn vị khoảng đo lường xác định (ở đây là khoảng 1.000 khách hàng).\n- Xác suất có ít nhất 1 sự kiện luôn được tính hiệu quả nhất qua biến cố đối bù của 0 sự kiện: $P(X \\ge 1) = 1 - P(0) = 1 - e^{-\\lambda}$.",
     "table_image": null,
     "table_image_png": null,
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q22.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q22.jpg"
   },
   {
     "id": 23,
@@ -581,7 +581,7 @@
       "E. None"
     ],
     "correct_answer": "A",
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q23.webp",
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q23.jpg",
     "needs_table_img": true,
     "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q23_table.webp",
     "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q23_table.png",
@@ -617,7 +617,7 @@
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 6 - Mục 6.2: The Normal Distribution):\n- Phân phối chuẩn $N(\\mu, \\sigma^2)$ đối xứng hoàn hảo qua giá trị trung bình $\\mu$.\n- Diện tích dưới đường cong mật độ chuẩn từ tâm $\\mu$ đến giá trị $\\mu + 1.5\\sigma$ chính bằng $P(0 \\le Z \\le 1.5) = 0.9332 - 0.5 = 0.4332$.",
     "table_image": null,
     "table_image_png": null,
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q24.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q24.jpg"
   },
   {
     "id": 25,
@@ -632,7 +632,7 @@
       "D. 0.6125"
     ],
     "correct_answer": "A",
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q25.webp",
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q25.jpg",
     "dich_de": "Tỷ lệ người khuyết tật ở Mỹ năm 2000 là 19.3%. Lấy mẫu ngẫu nhiên gồm 1000 người. Sử dụng phân phối chuẩn xấp xỉ phân phối nhị thức để tìm xác suất có nhiều hơn 200 người trong mẫu bị khuyết tật. Biết P(Z < 0.60) = 0.7257.",
     "tom_tat": "- Cỡ mẫu n = 1000, p = 0.193\n- Trung bình: μ = np = 1000 × 0.193 = 193\n- Độ lệch chuẩn: σ = √(np(1-p)) = √(1000 × 0.193 × 0.807) = √155.751 ≈ 12.48\n- Cần tính: P(X > 200) dùng hiệu chỉnh liên tục P(Y ≥ 200.5).",
     "cong_thuc": "$$Z = \\frac{X + 0.5 - \\mu}{\\sigma} = \\frac{200.5 - 193}{12.48} \\approx 0.60$$",
@@ -664,7 +664,7 @@
     "ly_thuyet": "Theo Berenson (Chương 6: The Normal Distribution and Other Continuous Distributions - Mục 6.3 The Uniform Distribution):\n- Phân phối đều liên tục có hàm mật độ không đổi trên đoạn $[a, b]$, kỳ vọng là trung điểm $(a+b)/2$, phương sai bằng bình phương chiều dài đoạn chia cho 12: $(b-a)^2/12$.\n- Chú ý quy tắc nhân với hằng số: $\\sigma(cX+d) = |c|\\sigma(X)$.",
     "table_image": null,
     "table_image_png": null,
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q26.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q26.jpg"
   },
   {
     "id": 27,
@@ -691,7 +691,7 @@
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 7 - Mục 7.2: Sampling Distribution of the Mean):\n- Do tổng thể có phân phối chuẩn nên phân phối chọn mẫu của trung bình mẫu $\\bar{X}$ tuân theo phân phối chuẩn với trung bình $\\mu$ và sai số chuẩn $\\sigma_{\\bar{X}} = \\sigma / \\sqrt{n}$. Xác suất để $\\bar{X}$ vượt quá một ngưỡng nhất định được tính qua diện tích phần đuôi của phân phối chuẩn tắc Z.",
     "table_image": null,
     "table_image_png": null,
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q27.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q27.jpg"
   },
   {
     "id": 28,
@@ -717,7 +717,7 @@
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 5 - Mục 5.3: Binomial Distribution):\n- Phân phối nhị thức được áp dụng khi một phép thử Bernoulli gồm $n$ lần thử độc lập, mỗi lần chỉ có 2 kết quả khả dĩ (thành công hoặc thất bại) với xác suất thành công $p$ không đổi. Giá trị kỳ vọng trung bình của phân phối được tính bằng tích của cỡ mẫu và xác suất thành công: $\\mu = n p$.",
     "table_image": null,
     "table_image_png": null,
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q28.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q28.jpg"
   },
   {
     "id": 29,
@@ -744,7 +744,7 @@
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 8 - Mục 8.1: Confidence Interval for the Mean - $\\sigma$ Known):\n- Bất cứ khi nào độ lệch chuẩn của tổng thể $\\sigma$ đã biết và dữ liệu có phân phối chuẩn, khoảng tin cậy cho số trung bình luôn được xây dựng dựa trên phân phối chuẩn $Z$: $\\bar{X} \\pm Z_{\\alpha/2} \\frac{\\sigma}{\\sqrt{n}}$.\n- Độ rộng của khoảng tin cậy (Width) bằng 2 lần biên độ sai số: $\\text{Width} = 2 \\times ME$.",
     "table_image": null,
     "table_image_png": null,
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q29.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q29.jpg"
   },
   {
     "id": 30,
@@ -770,7 +770,7 @@
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 8 - Mục 8.3: Confidence Interval Estimation for the Proportion):\n- Độ rộng khoảng tin cậy của tỷ lệ đạt cực đại khi tỷ lệ mẫu $p = 0.50$ (vì hàm số bậc hai $f(p) = p - p^2$ có đỉnh tại $p = 0.5$).\n- Càng rời xa điểm $0.50$ (tiến dần về $0$ hoặc $1$), tích $p(1-p)$ càng giảm, khiến khoảng tin cậy trở nên hẹp hơn.",
     "table_image": null,
     "table_image_png": null,
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q30.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q30.jpg"
   },
   {
     "id": 31,
@@ -797,7 +797,7 @@
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 8 - Mục 8.4: Determining Sample Size for the Proportion):\n- Khi nhà nghiên cứu không có bất kỳ ước lượng ban đầu nào về tỷ lệ tổng thể $\\pi$, nguyên tắc thận trọng bắt buộc là giả định $\\pi = 0.5$.\n- Giá trị $\\pi = 0.5$ mang lại phương sai lớn nhất $\\pi(1-\\pi) = 0.25$, đảm bảo rằng cỡ mẫu tính ra luôn đủ lớn để đáp ứng sai số biên mong muốn trong mọi tình huống thực tế.",
     "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q31_table.webp",
     "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q31_table.png",
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q31.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q31.jpg"
   },
   {
     "id": 32,
@@ -822,7 +822,7 @@
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 9 - Mục 9.1: Fundamentals of Hypothesis-Testing Methodology):\n- Giả thuyết không $H_0$ luôn là giả thuyết về tham số tổng thể thể hiện trạng thái không có sự khác biệt (status quo), luôn chứa toán tử dấu bằng.",
     "table_image": null,
     "table_image_png": null,
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q32.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q32.jpg"
   },
   {
     "id": 33,
@@ -849,7 +849,7 @@
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 9 - Mục 9.2: t Test of Hypothesis for the Mean (σ Unknown)):\n- Khi kiểm định giả thuyết hai phía ($H_1: \\mu \\ne \\mu_0$), miền bác bỏ được chia đều sang hai đuôi của phân phối Student $t$ với $df = n - 1 = 34$ bậc tự do.",
     "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q33_table.webp",
     "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q33_table.png",
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q33.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q33.jpg"
   },
   {
     "id": 34,
@@ -876,7 +876,7 @@
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 9 - Mục 9.2: t Test of Hypothesis for the Mean (σ Unknown)):\n- Thống kê kiểm định t đo lường khoảng cách giữa trung bình mẫu $\\bar{X}$ và trung bình giả thuyết $\\mu_0$ theo đơn vị sai số chuẩn $S/\\sqrt{n}$.\n- Vì $\\bar{X} = 44.25 < 50$, giá trị kiểm định mang dấu âm.",
     "table_image": null,
     "table_image_png": null,
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q34.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q34.jpg"
   },
   {
     "id": 35,
@@ -903,7 +903,7 @@
     "ly_thuyet": "Theo Berenson (Chương 9, Mục 9.4: Z Test of Hypothesis for the Proportion): Khi kiểm định giả thuyết về tỷ lệ tổng thể với giả định n·π ≥ 5 và n·(1-π) ≥ 5, phân phối của tỷ lệ mẫu p xấp xỉ phân phối chuẩn và thống kê kiểm định Z được tính bằng độ lệch giữa tỷ lệ mẫu và tỷ lệ theo giả thiết chia cho sai số chuẩn.",
     "table_image": null,
     "table_image_png": null,
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q35.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q35.jpg"
   },
   {
     "id": 36,
@@ -929,7 +929,7 @@
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.1: Comparing the Means of Two Independent Populations):\n- Kiểm định t hai mẫu độc lập được thiết kế đặc biệt cho trường hợp $\\sigma_1$ và $\\sigma_2$ chưa biết.\n- Giả định cốt lõi gồm: dữ liệu là các mẫu ngẫu nhiên độc lập, biến nghiên cứu có phân phối chuẩn ở cả hai tổng thể (hoặc mẫu đủ lớn để kiểm định có tính vững - robustness).",
     "table_image": null,
     "table_image_png": null,
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q36.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q36.jpg"
   },
   {
     "id": 37,
@@ -956,7 +956,7 @@
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.1: Comparing Two Independent Samples - Separate-Variance t Test for Differences in Two Means):\n- Khi giả định phương sai của hai tổng thể không bằng nhau (Unequal Variances), ta áp dụng kiểm định Separate-variance t test.\n- Bảng Excel ToolPak cung cấp đầy đủ: $t_{STAT}$ tại dòng 't Stat', p-value hai phía tại 'P(T<=t) two-tail', và giá trị tới hạn tại 't Critical two-tail'.",
     "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q37_table.webp",
     "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q37_table.png",
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q37.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q37.jpg"
   },
   {
     "id": 38,
@@ -982,7 +982,7 @@
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.1: Comparing the Means of Two Independent Populations):\n- Giả thuyết không $H_0$ luôn phát biểu rằng không có sự khác biệt giữa hai trung bình tổng thể: $H_0: \\mu_1 - \\mu_2 = 0$ (tức $\\mu_1 = \\mu_2$).\n- Dấu bằng luôn luôn nằm ở giả thuyết không $H_0$, trong khi giả thuyết đối $H_1$ thể hiện kỳ vọng có sự chênh lệch (khác biệt, lớn hơn hoặc nhỏ hơn).",
     "table_image": null,
     "table_image_png": null,
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q38.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q38.jpg"
   },
   {
     "id": 39,
@@ -1007,7 +1007,7 @@
     "ly_thuyet": "Theo Berenson (Chương 4, Mục 4.3: Conditional Probability and Independence): Hai biến cố A và B được gọi là độc lập nếu xác suất xảy ra biến cố A không bị ảnh hưởng bởi việc biến cố B đã xảy ra hay chưa, nghĩa là P(A|B) = P(A), điều này tương đương với quy tắc nhân xác suất độc lập: P(A ∩ B) = P(A)·P(B).",
     "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q39_table.webp",
     "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q39_table.png",
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q39.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q39.jpg"
   },
   {
     "id": 40,
@@ -1034,7 +1034,7 @@
     "ly_thuyet": "Theo Giáo trình Berenson Ch10 (Two-Sample Tests) - Mục 'Z Test for the Difference Between Two Proportions': Dạng của giả thuyết đối H1 quyết định kiểm định một phía hay hai phía. Khi H1: p1 > p2, miền bác bỏ là Z_STAT > Z_alpha (với Z_0.01 = 2.33).",
     "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q40_table.webp",
     "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q40_table.png",
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q40.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q40.jpg"
   },
   {
     "id": 41,
@@ -1059,7 +1059,7 @@
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 9 & Chương 10 - Mục 10.1: Comparing Two Independent Samples):\n- Khi thống kê kiểm định $|t_{STAT}| \\le t_{crit}$ hoặc $p\\text{-value} \\ge \\alpha$, kết luận thống kê chính xác là 'Không bác bỏ giả thuyết không' (Do not reject $H_0$ / Fail to reject $H_0$), nghĩa là chưa có đủ bằng chứng thực nghiệm để khẳng định có sự khác biệt giữa hai tổng thể.",
     "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q41_table.webp",
     "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q41_table.png",
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q41.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q41.jpg"
   },
   {
     "id": 42,
@@ -1085,7 +1085,7 @@
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 11 - Mục 11.1: The Completely Randomized Design: One-Way ANOVA):\n- Giả thuyết không $H_0$ trong ANOVA luôn là sự đồng nhất của tất cả các trung bình tổng thể: $\\mu_1 = \\mu_2 = \\dots = \\mu_c$.\n- Tránh nhầm lẫn với giả thuyết đối $H_1$: $H_1$ chỉ khẳng định không phải tất cả đều bằng nhau, chứ không khẳng định tất cả các trung bình đều khác nhau.",
     "table_image": null,
     "table_image_png": null,
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q42.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q42.jpg"
   },
   {
     "id": 43,
@@ -1110,7 +1110,7 @@
     "ly_thuyet": "Theo Berenson (Chương 4, Mục 4.3: Conditional Probability and Independence): Hai biến cố A và B được gọi là độc lập nếu xác suất xảy ra biến cố A không bị ảnh hưởng bởi việc biến cố B đã xảy ra hay chưa, nghĩa là P(A|B) = P(A), điều này tương đương với quy tắc nhân xác suất độc lập: P(A ∩ B) = P(A)·P(B).",
     "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q43_table.webp",
     "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q43_table.png",
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q43.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q43.jpg"
   },
   {
     "id": 44,
@@ -1126,7 +1126,7 @@
       "E. None of the other choices is correct"
     ],
     "correct_answer": "A",
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q44.webp",
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q44.jpg",
     "needs_table_img": true,
     "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q44_table.webp",
     "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q44_table.png",
@@ -1161,7 +1161,7 @@
     "ly_thuyet": "Theo Giáo trình Berenson Ch13 (Simple Linear Regression) - Mục 'Coefficient of Determination (r^2)': Hệ số r^2 đo lường tỷ lệ tổng độ biến thiên trong biến phản hồi Y được giải thích bởi sự biến thiên trong biến giải thích X. Phải luôn chú ý chiều tác động: biến độc lập X giải thích cho biến phụ thuộc Y.",
     "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q45_table.webp",
     "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q45_table.png",
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q45.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q45.jpg"
   },
   {
     "id": 46,
@@ -1187,7 +1187,7 @@
     "ly_thuyet": "Theo Giáo trình Berenson Ch13 (Simple Linear Regression) - Mục 'Coefficient of Determination (r^2)': Hệ số r^2 đo lường tỷ lệ tổng độ biến thiên trong biến phản hồi Y được giải thích bởi sự biến thiên trong biến giải thích X. Phải luôn chú ý chiều tác động: biến độc lập X giải thích cho biến phụ thuộc Y.",
     "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q46_table.webp",
     "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q46_table.png",
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q46.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q46.jpg"
   },
   {
     "id": 47,
@@ -1213,7 +1213,7 @@
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 13 - Mục 13.4: Assumptions of Regression):\n- Bốn giả định cốt lõi viết tắt là **LINE**: Linearity, Independence of errors, Normality of error, Equal variance (Homoscedasticity).\n- Homoscedasticity đòi hỏi phương sai của phân phối có điều kiện của $Y$ (và sai số $\\epsilon$) tại mỗi giá trị của $X$ phải hoàn toàn đồng nhất, không được tăng hay giảm theo $X$.",
     "table_image": null,
     "table_image_png": null,
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q47.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q47.jpg"
   },
   {
     "id": 48,
@@ -1239,7 +1239,7 @@
     "ly_thuyet": "Theo Berenson (Chương 13: Simple Linear Regression - Mục 13.2 Determining the Simple Linear Regression Equation):\n- Diễn giải $b_1$: 'For each increase of 1 unit in X, the estimated mean value of Y changes by $b_1$ units'.",
     "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q48_table.webp",
     "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q48_table.png",
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q48.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q48.jpg"
   },
   {
     "id": 49,
@@ -1265,7 +1265,7 @@
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 13 & 14: Multiple Regression Model): Hệ số b_j phản ánh sự thay đổi ước tính trong giá trị trung bình của Y tương ứng với 1 đơn vị thay đổi của X_j khi giữ nguyên giá trị của tất cả các biến độc lập khác trong mô hình.",
     "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q49_table.webp",
     "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q49_table.png",
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q49.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q49.jpg"
   },
   {
     "id": 50,
@@ -1291,6 +1291,6 @@
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 13 & 14 - Mục: Predicting the Dependent Variable in Multiple Regression):\n- Để dự báo giá trị của biến phụ thuộc $Y$, ta thay trực tiếp các giá trị của các biến độc lập $X_j$ vào phương trình đường hồi quy mẫu.\n- Cần lưu ý đơn vị đo của các biến: GDP tính bằng tỷ USD nên thay số 2, CPI là chỉ số nên thay số 90.",
     "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q50_table.webp",
     "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q50_table.png",
-    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q50.webp"
+    "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q50.jpg"
   }
 ]
