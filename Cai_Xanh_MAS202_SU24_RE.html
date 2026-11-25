@@ -1634,26 +1634,24 @@
       position: absolute;
       display: none;
       align-items: center;
-      gap: 6px;
-      padding: 6px 14px;
-      background: linear-gradient(135deg, #15803D 0%, #166534 100%);
+      gap: 0;
+      padding: 3px;
+      background: rgba(15, 23, 42, 0.94);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       color: #FFFFFF;
       border-radius: 9999px;
-      font-size: 0.82rem;
-      font-weight: 700;
-      box-shadow: 0 8px 24px rgba(21, 128, 61, 0.4);
-      cursor: pointer;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
       z-index: 1250;
       transform: translateY(-6px);
-      transition: transform 0.15s ease, background 0.15s ease, box-shadow 0.15s ease;
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
       user-select: none;
-      border: 1px solid rgba(255, 255, 255, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.2);
       white-space: nowrap;
     }
     .selection-highlight-pill:hover {
-      transform: translateY(-8px) scale(1.05);
-      background: linear-gradient(135deg, #16A34A 0%, #15803D 100%);
-      box-shadow: 0 12px 28px rgba(22, 163, 74, 0.45);
+      transform: translateY(-8px) scale(1.02);
+      box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
     }
     .selection-highlight-pill::after {
       content: '';
@@ -1663,7 +1661,44 @@
       transform: translateX(-50%);
       border-width: 6px 6px 0 6px;
       border-style: solid;
-      border-color: #166534 transparent transparent transparent;
+      border-color: rgba(15, 23, 42, 0.94) transparent transparent transparent;
+    }
+    .hl-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 11px;
+      border: none;
+      border-radius: 9999px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      cursor: pointer;
+      color: #FFFFFF;
+      background: transparent;
+      transition: background 0.15s ease, transform 0.1s ease;
+      white-space: nowrap;
+    }
+    .hl-pill-btn-quick {
+      background: linear-gradient(135deg, #10B981 0%, #059669 100%);
+      color: #FFFFFF;
+      box-shadow: 0 2px 8px rgba(16, 185, 129, 0.4);
+    }
+    .hl-pill-btn-quick:hover {
+      background: linear-gradient(135deg, #34D399 0%, #10B981 100%);
+      transform: scale(1.04);
+    }
+    .hl-pill-btn-note {
+      color: #E2E8F0;
+    }
+    .hl-pill-btn-note:hover {
+      background: rgba(255, 255, 255, 0.15);
+      color: #FFFFFF;
+    }
+    .hl-pill-divider {
+      width: 1px;
+      height: 18px;
+      background: rgba(255, 255, 255, 0.25);
+      margin: 0 2px;
     }
 
     /* Hover Tooltip for Highlights */
@@ -3236,8 +3271,14 @@
   </footer>
 
   <!-- FLOATING SELECTION HIGHLIGHT PILL -->
-  <div id="selection-highlight-pill" class="selection-highlight-pill" onclick="openHighlightModalFromSelection()">
-    <span>🖍️</span> <span>Ghi chú highlight</span>
+  <div id="selection-highlight-pill" class="selection-highlight-pill">
+    <button type="button" class="hl-pill-btn hl-pill-btn-quick" onclick="quickHighlightDirect('#FEF08A')" title="Highlight vàng tức thì không cần nhập từ">
+      <span>🖍️</span> <span>Highlight ngay</span>
+    </button>
+    <div class="hl-pill-divider"></div>
+    <button type="button" class="hl-pill-btn hl-pill-btn-note" onclick="openHighlightModalFromSelection()" title="Thêm ghi chú cá nhân">
+      <span>✍️</span> <span>Ghi chú</span>
+    </button>
   </div>
 
   <!-- HIGHLIGHT HOVER TOOLTIP -->
@@ -3275,14 +3316,14 @@
       </div>
 
       <div>
-        <textarea id="hl-note-textarea" class="hl-textarea" placeholder="✍️ Nhập lời dịch, công thức biện luận hoặc lưu ý cho câu hỏi này..."></textarea>
+        <textarea id="hl-note-textarea" class="hl-textarea" placeholder="✍️ (Tùy chọn) Nhập lời dịch, công thức hoặc lưu ý... Để trống vẫn highlight bình thường!"></textarea>
       </div>
     </div>
     <div class="hl-modal-footer">
       <span class="hl-modal-tip">💡 Nhấn <kbd>Ctrl</kbd> + <kbd>Enter</kbd> để lưu nhanh</span>
       <div style="display:flex; gap:8px;">
         <button type="button" class="btn btn-sm btn-ghost" onclick="closeHighlightModal()">Hủy</button>
-        <button type="button" class="btn btn-primary btn-sm" onclick="saveHighlightNote()">💾 Lưu Highlight</button>
+        <button type="button" class="btn btn-primary btn-sm" onclick="saveHighlightNote()">💾 Lưu</button>
       </div>
     </div>
   </div>
@@ -4926,7 +4967,7 @@ function createQuestionCard(q) {
         '<span>📊 BẢNG / BIỂU ĐỒ GỐC TỪ ĐỀ THI (SU24 RE)</span>' +
         '<a href=\"' + (q.table_image_png || q.table_image) + '\" target=\"_blank\" style=\"color:var(--primary); text-decoration:none; font-size:0.8rem; font-weight:600;\">🔍 Mở ảnh bảng gốc HD</a>' +
       '</div>' +
-      '<img src=\"' + q.table_image + '\" style=\"max-width:100%; height:auto; border-radius:6px; border:1px solid var(--border); display:inline-block;\" loading=\"lazy\" alt=\"Bảng số liệu đề thi câu ' + q.id + '\">' +
+      '<img src=\"' + q.table_image + '\" data-png=\"' + (q.table_image_png || '') + '\" onerror=\"if(this.dataset.png && this.src!==this.dataset.png){this.src=this.dataset.png;}\" style=\"max-width:100%; height:auto; border-radius:6px; border:1px solid var(--border); display:inline-block;\" loading=\"lazy\" alt=\"Bảng số liệu đề thi câu ' + q.id + '\">' +
     '</div>' : '') +
     '<div style=\"margin:4px 0 12px; text-align:right;\"><a href=\"' + (q.original_exam_image || ('https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_RE/Q' + q.id + '.webp')) + '" target="_blank" style="color:var(--text-muted); font-size:0.75rem; text-decoration:underline;">📸 Xem toàn bộ ảnh chụp đề gốc ' + ((q.original_exam_image || '').split('/').pop() || ('Q' + q.id + '.webp')) + '</a></div>' +
     optionsHtml +
@@ -7265,6 +7306,53 @@ function handleMouseUpSelection(e) {
   }, 15);
 }
 
+function quickHighlightDirect(color) {
+  const pill = document.getElementById('selection-highlight-pill');
+  if (pill) pill.style.display = 'none';
+
+  if (!currentSelectedText) {
+    const sel = window.getSelection();
+    if (sel) currentSelectedText = sel.toString().trim();
+  }
+  if (!currentSelectedText) return;
+
+  const hlColor = color || currentActiveColor || '#FEF08A';
+  const highlights = getStoredHighlights();
+
+  const newHl = {
+    id: 'hl_' + Date.now() + '_' + Math.random().toString(36).substr(2, 6),
+    text: currentSelectedText,
+    prefix: currentSelectedPrefix || '',
+    suffix: currentSelectedSuffix || '',
+    note: '',
+    color: hlColor,
+    qId: activeSelectedQId,
+    createdAt: Date.now()
+  };
+
+  highlights.unshift(newHl);
+  setStoredHighlights(highlights);
+
+  let applied = false;
+  if (activeSelectionRange) {
+    try {
+      applied = wrapRangeWithHighlight(activeSelectionRange, newHl);
+    } catch (e) {
+      console.warn("Range wrap fallback:", e);
+    }
+  }
+  if (!applied) {
+    applyHighlightInDOM(newHl);
+  }
+
+  showToast("🖍️ Đã highlight thành công!");
+
+  activeSelectionRange = null;
+  if (window.getSelection()) {
+    try { window.getSelection().removeAllRanges(); } catch (e) {}
+  }
+}
+
 function openHighlightModalFromSelection() {
   const pill = document.getElementById('selection-highlight-pill');
   if (pill) pill.style.display = 'none';
@@ -7298,12 +7386,7 @@ function closeHighlightModal() {
 
 function saveHighlightNote() {
   const noteInput = document.getElementById('hl-note-textarea');
-  const noteContent = noteInput.value.trim();
-  if (!noteContent) {
-    showToast("⚠️ Vui lòng nhập nội dung ghi chú cho đoạn highlight!", "warning");
-    noteInput.focus();
-    return;
-  }
+  const noteContent = noteInput ? noteInput.value.trim() : '';
 
   const highlights = getStoredHighlights();
 
@@ -7349,7 +7432,11 @@ function saveHighlightNote() {
       applyHighlightInDOM(newHl);
     }
 
-    showToast("🖍️ Đã tạo highlight & ghi chú thành công!");
+    if (noteContent) {
+      showToast("🖍️ Đã tạo highlight và lưu ghi chú!");
+    } else {
+      showToast("🖍️ Đã lưu highlight thành công!");
+    }
   }
 
   closeHighlightModal();
@@ -7608,7 +7695,7 @@ function showHighlightTooltip(mark, hlId) {
   const btnEdit = document.getElementById('btn-tooltip-edit');
   const btnDel = document.getElementById('btn-tooltip-delete');
 
-  contentEl.textContent = hl.note;
+  contentEl.textContent = hl.note || '🖍️ Đoạn được highlight (chưa thêm ghi chú). Bấm Sửa để viết thêm!'; contentEl.style.fontStyle = hl.note ? 'normal' : 'italic'; contentEl.style.color = hl.note ? '#F8FAFC' : '#94A3B8';
   btnEdit.onclick = function() { openEditHighlightModal(hlId); };
   btnDel.onclick = function() { deleteHighlight(hlId); };
 
@@ -7794,7 +7881,7 @@ function renderHighlightsDrawerList() {
         '<div class="hl-drawer-quote" style="border-left-color: ' + (hl.color || '#FEF08A') + ';">' +
           '“' + escapeHtml(hl.text) + '”' +
         '</div>' +
-        '<div class="hl-drawer-note">' + escapeHtml(hl.note) + '</div>' +
+        '<div class="hl-drawer-note" style="' + (hl.note ? '' : 'font-style:italic; color:var(--text-muted); opacity:0.8;') + '">' + (hl.note ? escapeHtml(hl.note) : '🖍️ Highlight nhanh (chưa thêm ghi chú)') + '</div>' +
         '<div class="hl-drawer-footer">' +
           '<div>' + qBadge + '<span>🕒 ' + dateStr + '</span></div>' +
           '<div class="hl-drawer-actions">' +
