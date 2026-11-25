@@ -1,0 +1,6 @@
+Source: https://www.facebook.com/share/p/18qtWvERrj/
+Exam: MAS202_FA26_FE_109831
+Downloaded: 50 JPEG images; no duplicate SHA256 hashes.
+Filenames 001.jpg through 050.jpg match the question numbers visible in the images.
+Facebook source order was questions 14-50 followed by questions 1-13.
+Answers are preserved as displayed in the source, not independently verified.
