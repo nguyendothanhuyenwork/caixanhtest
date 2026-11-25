@@ -2,12 +2,12 @@
   {
     "id": 1,
     "question": "Which of the following is a continuous quantitative (numerical) variable?",
-    "options": {
-      "A": "The color of a student's eyes",
-      "B": "The number of employees of an insurance company",
-      "C": "The amount of milk in a 2-liter carton",
-      "D": "The number of gallons of milk sold at the local grocery store yesterday"
-    },
+    "options": [
+      "A. The color of a student's eyes",
+      "B. The number of employees of an insurance company",
+      "C. The amount of milk in a 2-liter carton",
+      "D. The number of gallons of milk sold at the local grocery store yesterday"
+    ],
     "chapter": "Ch1: Xác định & Thu thập dữ liệu",
     "chapter_num": 1,
     "topic": "Phân loại biến (Categorical vs. Discrete vs. Continuous)",
@@ -23,20 +23,21 @@
     "answer_verified_note": "Verified OK — khớp với đáp án trong ảnh.",
     "has_table_or_figure": false,
     "original_exam_image": "MAS202-FA26-FE-109831/001.jpg",
-    "match_364": null,
-    "raw_question": "",
+    "match_364": "📌 Đối chiếu ngân hàng đề: Giống Câu 79 trong bộ 364 câu hỏi trắc nghiệm trên web",
+    "raw_question": "Which of the following is a continuous quantitative (numerical) variable?",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "prompt": "Which of the following is a continuous quantitative (numerical) variable?"
   },
   {
     "id": 2,
     "question": "Most analysts focus on the cost of tuition as the way to measure the cost of a college education. But incidentals, such as textbook costs, are rarely considered. A researcher at Drummond University wishes to estimate the textbook costs of first-year students at Drummond. To do so, she monitored the textbook cost of 250 first-year students and found that their average textbook cost was $600 per semester. Identify the population of interest to the researcher.",
-    "options": {
-      "A": "All Drummond University students.",
-      "B": "All college students",
-      "C": "All first-year Drummond University students.",
-      "D": "The 250 students that were monitored."
-    },
+    "options": [
+      "A. All Drummond University students.",
+      "B. All college students",
+      "C. All first-year Drummond University students.",
+      "D. The 250 students that were monitored."
+    ],
     "chapter": "Ch1: Xác định & Thu thập dữ liệu",
     "chapter_num": 1,
     "topic": "Tổng thể (Population) và Mẫu (Sample)",
@@ -52,20 +53,21 @@
     "answer_verified_note": "Verified OK — khớp với đáp án trong ảnh.",
     "has_table_or_figure": false,
     "original_exam_image": "MAS202-FA26-FE-109831/002.jpg",
-    "match_364": null,
-    "raw_question": "",
+    "match_364": "📌 Đối chiếu ngân hàng đề: Giống Câu 147 trong bộ 364 câu hỏi trắc nghiệm trên web",
+    "raw_question": "Most analysts focus on the cost of tuition as the way to measure the cost of a college education. But incidentals, such as textbook costs, are rarely considered. A researcher at Drummond University wishes to estimate the textbook costs of first-year students at Drummond. To do so, she monitored the textbook cost of 250 first-year students and found that their average textbook cost was $600 per semester. Identify the population of interest to the researcher.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "prompt": "Most analysts focus on the cost of tuition as the way to measure the cost of a college education. But incidentals, such as textbook costs, are rarely considered. A researcher at Drummond University wishes to estimate the textbook costs of first-year students at Drummond. To do so, she monitored the textbook cost of 250 first-year students and found that their average textbook cost was $600 per semester. Identify the population of interest to the researcher."
   },
   {
     "id": 3,
     "question": "Jared was working on a project to look at global warming and accessed an Internet site where he captured average global surface temperatures from 1866. Which of the four methods of data collection was he using?",
-    "options": {
-      "A": "Published sources",
-      "B": "Experimentation",
-      "C": "Surveying",
-      "D": "Observation"
-    },
+    "options": [
+      "A. Published sources",
+      "B. Experimentation",
+      "C. Surveying",
+      "D. Observation"
+    ],
     "chapter": "Ch1: Xác định & Thu thập dữ liệu",
     "chapter_num": 1,
     "topic": "Các phương pháp thu thập dữ liệu (Data Collection Methods)",
@@ -81,20 +83,21 @@
     "answer_verified_note": "Verified OK — khớp với đáp án trong ảnh.",
     "has_table_or_figure": false,
     "original_exam_image": "MAS202-FA26-FE-109831/003.jpg",
-    "match_364": null,
-    "raw_question": "",
+    "match_364": "📌 Đối chiếu ngân hàng đề: Giống Câu 357 trong bộ 364 câu hỏi trắc nghiệm trên web",
+    "raw_question": "Jared was working on a project to look at global warming and accessed an Internet site where he captured average global surface temperatures from 1866. Which of the four methods of data collection was he using?",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "prompt": "Jared was working on a project to look at global warming and accessed an Internet site where he captured average global surface temperatures from 1866. Which of the four methods of data collection was he using?"
   },
   {
     "id": 4,
     "question": "A marketing research firm, in conducting a comparative taste test, provided three types of peanut butter to a sample of households randomly selected within the state. Which of the 4 methods of data collection is involved when people are asked to compare the three types of peanut butter?",
-    "options": {
-      "A": "Published sources",
-      "B": "Experimentation",
-      "C": "Surveying",
-      "D": "Observation"
-    },
+    "options": [
+      "A. Published sources",
+      "B. Experimentation",
+      "C. Surveying",
+      "D. Observation"
+    ],
     "chapter": "Ch1: Xác định & Thu thập dữ liệu",
     "chapter_num": 1,
     "topic": "Các phương pháp thu thập dữ liệu (Experimentation vs. Surveying)",
@@ -110,21 +113,22 @@
     "answer_verified_note": "Verified OK — khớp với đáp án trong ảnh.",
     "has_table_or_figure": false,
     "original_exam_image": "MAS202-FA26-FE-109831/004.jpg",
-    "match_364": null,
-    "raw_question": "",
+    "match_364": "📌 Đối chiếu ngân hàng đề: Giống Câu 223 trong bộ 364 câu hỏi trắc nghiệm trên web",
+    "raw_question": "A marketing research firm, in conducting a comparative taste test, provided three types of peanut butter to a sample of households randomly selected within the state. Which of the 4 methods of data collection is involved when people are asked to compare the three types of peanut butter?",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "prompt": "A marketing research firm, in conducting a comparative taste test, provided three types of peanut butter to a sample of households randomly selected within the state. Which of the 4 methods of data collection is involved when people are asked to compare the three types of peanut butter?"
   },
   {
     "id": 5,
     "question": "The following are the duration in minutes of a sample of long-distance phone calls made within the continental United States reported by one long-distance carrier.\n\nTime (in Minutes) | Relative Frequency\n0 but less than 5 | 0.37\n5 but less than 10 | 0.22\n10 but less than 15 | 0.15\n15 but less than 20 | 0.10\n20 but less than 25 | 0.07\n25 but less than 30 | 0.07\n30 or more | 0.02\n\nIf 100 calls were randomly sampled, _______ of them would have lasted 20 minutes or more.",
-    "options": {
-      "A": "26",
-      "B": "16",
-      "C": "74",
-      "D": "9",
-      "E": "41"
-    },
+    "options": [
+      "A. 26",
+      "B. 16",
+      "C. 74",
+      "D. 9",
+      "E. 41"
+    ],
     "chapter": "Ch2: Tổ chức & Trực quan hóa dữ liệu",
     "chapter_num": 2,
     "topic": "Bảng phân phối tần suất tương đối (Relative Frequency Distribution)",
@@ -140,20 +144,21 @@
     "answer_verified_note": "Verified OK — tính toán (0.07+0.07+0.02)*100 = 16, khớp đáp án B.",
     "has_table_or_figure": true,
     "original_exam_image": "MAS202-FA26-FE-109831/005.jpg",
-    "match_364": null,
-    "raw_question": "",
+    "match_364": "📌 Đối chiếu ngân hàng đề: Giống Câu 133 trong bộ 364 câu hỏi trắc nghiệm trên web",
+    "raw_question": "The following are the duration in minutes of a sample of long-distance phone calls made within the continental United States reported by one long-distance carrier.\n\nTime (in Minutes) | Relative Frequency\n0 but less than 5 | 0.37\n5 but less than 10 | 0.22\n10 but less than 15 | 0.15\n15 but less than 20 | 0.10\n20 but less than 25 | 0.07\n25 but less than 30 | 0.07\n30 or more | 0.02\n\nIf 100 calls were randomly sampled, _______ of them would have lasted 20 minutes or more.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "prompt": "The following are the duration in minutes of a sample of long-distance phone calls made within the continental United States reported by one long-distance carrier.\n\nTime (in Minutes) | Relative Frequency\n0 but less than 5 | 0.37\n5 but less than 10 | 0.22\n10 but less than 15 | 0.15\n15 but less than 20 | 0.10\n20 but less than 25 | 0.07\n25 but less than 30 | 0.07\n30 or more | 0.02\n\nIf 100 calls were randomly sampled, _______ of them would have lasted 20 minutes or more."
   },
   {
     "id": 6,
     "question": "When studying the simultaneous responses to two categorical questions, you should set up a _______",
-    "options": {
-      "A": "contingency table",
-      "B": "frequency distribution table",
-      "C": "cumulative percentage distribution table",
-      "D": "histogram"
-    },
+    "options": [
+      "A. contingency table",
+      "B. frequency distribution table",
+      "C. cumulative percentage distribution table",
+      "D. histogram"
+    ],
     "chapter": "Ch2: Tổ chức & Trực quan hóa dữ liệu",
     "chapter_num": 2,
     "topic": "Bảng chéo (Contingency Table)",
@@ -169,20 +174,21 @@
     "answer_verified_note": "Verified OK — khớp với đáp án trong ảnh.",
     "has_table_or_figure": false,
     "original_exam_image": "MAS202-FA26-FE-109831/006.jpg",
-    "match_364": null,
-    "raw_question": "",
+    "match_364": "📌 Đối chiếu ngân hàng đề: Giống Câu 89 trong bộ 364 câu hỏi trắc nghiệm trên web",
+    "raw_question": "When studying the simultaneous responses to two categorical questions, you should set up a _______",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "prompt": "When studying the simultaneous responses to two categorical questions, you should set up a _______"
   },
   {
     "id": 7,
     "question": "The width of each bar in a histogram corresponds to the _______",
-    "options": {
-      "A": "differences between the boundaries of the class.",
-      "B": "number of observations in each class",
-      "C": "midpoint of each class",
-      "D": "percentage of observations in each class"
-    },
+    "options": [
+      "A. differences between the boundaries of the class.",
+      "B. number of observations in each class",
+      "C. midpoint of each class",
+      "D. percentage of observations in each class"
+    ],
     "chapter": "Ch2: Tổ chức & Trực quan hóa dữ liệu",
     "chapter_num": 2,
     "topic": "Biểu đồ tần suất (Histogram)",
@@ -198,20 +204,21 @@
     "answer_verified_note": "Verified OK — khớp với đáp án trong ảnh.",
     "has_table_or_figure": false,
     "original_exam_image": "MAS202-FA26-FE-109831/007.jpg",
-    "match_364": null,
-    "raw_question": "",
+    "match_364": "📌 Đối chiếu ngân hàng đề: Giống Câu 278 trong bộ 364 câu hỏi trắc nghiệm trên web",
+    "raw_question": "The width of each bar in a histogram corresponds to the _______",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "prompt": "The width of each bar in a histogram corresponds to the _______"
   },
   {
     "id": 8,
     "question": "Every spring semester, the School of Business coordinates a luncheon with local business leaders for graduating seniors, their families, and friends. Corporate sponsorship pays for the lunches of each of the seniors, but students must purchase tickets to cover the cost of lunches served to guests they bring with them. The following histogram represents the attendance at the senior luncheon, where X is the number of guests each graduating senior invited to the luncheon and f is the number of graduating seniors in each category.\n\nIf all the tickets purchased were used, how many guests attended the luncheon?",
-    "options": {
-      "A": "4",
-      "B": "152",
-      "C": "275",
-      "D": "388"
-    },
+    "options": [
+      "A. 4",
+      "B. 152",
+      "C. 275",
+      "D. 388"
+    ],
     "chapter": "Ch2: Tổ chức & Trực quan hóa dữ liệu",
     "chapter_num": 2,
     "topic": "Đọc biểu đồ Histogram & Tính tổng từ bảng tần số",
@@ -227,18 +234,19 @@
     "answer_verified_note": "Verified OK — tính tổng Σ(X*f) = 388, khớp đáp án D.",
     "has_table_or_figure": true,
     "original_exam_image": "MAS202-FA26-FE-109831/008.jpg",
-    "match_364": null,
-    "raw_question": "",
+    "match_364": "📌 Đối chiếu ngân hàng đề: Giống Câu 259 trong bộ 364 câu hỏi trắc nghiệm trên web",
+    "raw_question": "Every spring semester, the School of Business coordinates a luncheon with local business leaders for graduating seniors, their families, and friends. Corporate sponsorship pays for the lunches of each of the seniors, but students must purchase tickets to cover the cost of lunches served to guests they bring with them. The following histogram represents the attendance at the senior luncheon, where X is the number of guests each graduating senior invited to the luncheon and f is the number of graduating seniors in each category.\n\nIf all the tickets purchased were used, how many guests attended the luncheon?",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "prompt": "Every spring semester, the School of Business coordinates a luncheon with local business leaders for graduating seniors, their families, and friends. Corporate sponsorship pays for the lunches of each of the seniors, but students must purchase tickets to cover the cost of lunches served to guests they bring with them. The following histogram represents the attendance at the senior luncheon, where X is the number of guests each graduating senior invited to the luncheon and f is the number of graduating seniors in each category.\n\nIf all the tickets purchased were used, how many guests attended the luncheon?"
   },
   {
     "id": 9,
     "question": "True or False:\n\nWhen you work with many variables, you must be mindful of the limits of the information technology as well as the limits of the ability of your readers to perceive and comprehend your results.",
-    "options": {
-      "A": "True",
-      "B": "False"
-    },
+    "options": [
+      "A. True",
+      "B. False"
+    ],
     "chapter": "Ch2: Tổ chức & Trực quan hóa dữ liệu",
     "chapter_num": 2,
     "topic": "Trực quan hóa nhiều biến (Visualizing Many Variables)",
@@ -254,20 +262,21 @@
     "answer_verified_note": "Verified OK — khớp với đáp án trong ảnh.",
     "has_table_or_figure": false,
     "original_exam_image": "MAS202-FA26-FE-109831/009.jpg",
-    "match_364": null,
-    "raw_question": "",
+    "match_364": "📌 Đối chiếu ngân hàng đề: Giống Câu 300 trong bộ 364 câu hỏi trắc nghiệm trên web",
+    "raw_question": "True or False:\n\nWhen you work with many variables, you must be mindful of the limits of the information technology as well as the limits of the ability of your readers to perceive and comprehend your results.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "prompt": "True or False:\n\nWhen you work with many variables, you must be mindful of the limits of the information technology as well as the limits of the ability of your readers to perceive and comprehend your results."
   },
   {
     "id": 10,
     "question": "A bank branch located in a commercial district of a city has the business objective of developing an improved process for serving customers during the noon-to-1:00 p.m. lunch period. The waiting time, in minutes, is defined as the time the customer enters the line to when he or she reaches the teller window. Data collected from a sample of 15 customers is as follows\n\n4.21  5.55  3.02  5.13  4.77  2.34  3.54  3.20\n4.50  6.10  0.38  5.12  6.46  6.19  3.79\n\nFind the sample mean.",
-    "options": {
-      "A": "4.29",
-      "B": "3.79",
-      "C": "5.10",
-      "D": "4.55"
-    },
+    "options": [
+      "A. 4.29",
+      "B. 3.79",
+      "C. 5.10",
+      "D. 4.55"
+    ],
     "chapter": "Ch3: Các thước đo mô tả bằng số",
     "chapter_num": 3,
     "topic": "Trung bình mẫu (Sample Mean)",
@@ -283,21 +292,22 @@
     "answer_verified_note": "Verified OK — 64.30 / 15 = 4.2867 ≈ 4.29, khớp đáp án A.",
     "has_table_or_figure": false,
     "original_exam_image": "MAS202-FA26-FE-109831/010.jpg",
-    "match_364": null,
-    "raw_question": "",
+    "match_364": "📌 Đối chiếu ngân hàng đề: Giống Câu 36 trong bộ 364 câu hỏi trắc nghiệm trên web",
+    "raw_question": "A bank branch located in a commercial district of a city has the business objective of developing an improved process for serving customers during the noon-to-1:00 p.m. lunch period. The waiting time, in minutes, is defined as the time the customer enters the line to when he or she reaches the teller window. Data collected from a sample of 15 customers is as follows\n\n4.21  5.55  3.02  5.13  4.77  2.34  3.54  3.20\n4.50  6.10  0.38  5.12  6.46  6.19  3.79\n\nFind the sample mean.",
     "table_image": null,
-    "table_image_png": null
+    "table_image_png": null,
+    "prompt": "A bank branch located in a commercial district of a city has the business objective of developing an improved process for serving customers during the noon-to-1:00 p.m. lunch period. The waiting time, in minutes, is defined as the time the customer enters the line to when he or she reaches the teller window. Data collected from a sample of 15 customers is as follows\n\n4.21  5.55  3.02  5.13  4.77  2.34  3.54  3.20\n4.50  6.10  0.38  5.12  6.46  6.19  3.79\n\nFind the sample mean."
   },
   {
     "id": 11,
     "prompt": "The weights (in ounces) of 3 cookies are shown.\n0.71  0.69  0.92\nCompute the sample variance. Round your answer to one more decimal place than the original data.",
-    "options": {
-      "A": "0.077",
-      "B": "0.087",
-      "C": "0.064",
-      "D": "0.016",
-      "E": "None of the other choices is correct"
-    },
+    "options": [
+      "A. 0.077",
+      "B. 0.087",
+      "C. 0.064",
+      "D. 0.016",
+      "E. None of the other choices is correct"
+    ],
     "chapter": "Ch3: Các thước đo mô tả bằng số",
     "chapter_num": 3,
     "topic": "Sample Variance",
@@ -321,12 +331,12 @@
   {
     "id": 12,
     "prompt": "Suppose the mean math SAT score is 530, with a standard deviation of 110. Compute the Z-score for a test score of 650.",
-    "options": {
-      "A": "1.09",
-      "B": "1.3",
-      "C": "-1.09",
-      "D": "-1.3"
-    },
+    "options": [
+      "A. 1.09",
+      "B. 1.3",
+      "C. -1.09",
+      "D. -1.3"
+    ],
     "chapter": "Ch3: Các thước đo mô tả bằng số",
     "chapter_num": 3,
     "topic": "Z-score (Standardized Value)",
@@ -350,12 +360,12 @@
   {
     "id": 13,
     "prompt": "Determine the first quartile Q1 of the following data:\n4, 6, 12, 14, 15, 15, 23, 25, 25, 32, 35, 41, 45, 51, 55",
-    "options": {
-      "A": "14",
-      "B": "15",
-      "C": "25",
-      "D": "12"
-    },
+    "options": [
+      "A. 14",
+      "B. 15",
+      "C. 25",
+      "D. 12"
+    ],
     "chapter": "Ch3: Các thước đo mô tả bằng số",
     "chapter_num": 3,
     "topic": "Quartiles (Q1)",
@@ -379,12 +389,12 @@
   {
     "id": 14,
     "prompt": "Calculate the population mean\n25, 22, 19, 8, 13, 6, 15",
-    "options": {
-      "A": "15",
-      "B": "15.43",
-      "C": "18",
-      "D": "13.5"
-    },
+    "options": [
+      "A. 15",
+      "B. 15.43",
+      "C. 18",
+      "D. 13.5"
+    ],
     "chapter": "Ch3: Các thước đo mô tả bằng số",
     "chapter_num": 3,
     "topic": "Population Mean",
@@ -408,12 +418,12 @@
   {
     "id": 15,
     "prompt": "Suppose you have a dataset containing two variables, X and Y. The sample covariance between X and Y is calculated to be 50. Which of the following statements is true?",
-    "options": {
-      "A": "A positive covariance indicates that as X increases, Y tends to decrease.",
-      "B": "A covariance of 50 means that X and Y are perfectly positively correlated.",
-      "C": "A positive covariance indicates that X and Y tend to increase or decrease together.",
-      "D": "Covariance is always between -1 and 1."
-    },
+    "options": [
+      "A. A positive covariance indicates that as X increases, Y tends to decrease.",
+      "B. A covariance of 50 means that X and Y are perfectly positively correlated.",
+      "C. A positive covariance indicates that X and Y tend to increase or decrease together.",
+      "D. Covariance is always between -1 and 1."
+    ],
     "chapter": "Ch3: Các thước đo mô tả bằng số",
     "chapter_num": 3,
     "topic": "Covariance Interpretation",
@@ -437,14 +447,13 @@
   {
     "id": 16,
     "prompt": "Consider the following contingency table:\n[Table: Rows C, C'; Columns D, D' | (C, D)=12, (C, D')=18, (C', D)=24, (C', D')=26]\nWhat is the probability of event D' or C?",
-    "options": {
-      "A": "0.7",
-      "B": "0.33",
-      "C": "0.775",
-      "D": "0.375",
-      "E": "0.625",
-      "F": "0.675"
-    },
+    "options": [
+      "A. 0.7",
+      "B. 0.33",
+      "C. 0.775",
+      "D. 0.375",
+      "E. 0.625"
+    ],
     "chapter": "Ch4: Xác suất cơ bản",
     "chapter_num": 4,
     "topic": "General Addition Rule & Contingency Table",
@@ -468,11 +477,11 @@
   {
     "id": 17,
     "prompt": "Consider the following contingency table:\n[Table: Rows C, C'; Columns D, D' | (C, D)=12, (C, D')=18, (C', D)=28, (C', D')=42]\nAre events C and D independent?",
-    "options": {
-      "A": "Yes.",
-      "B": "No.",
-      "C": "Not enough information to determine."
-    },
+    "options": [
+      "A. Yes.",
+      "B. No.",
+      "C. Not enough information to determine."
+    ],
     "chapter": "Ch4: Xác suất cơ bản",
     "chapter_num": 4,
     "topic": "Statistical Independence",
@@ -496,12 +505,12 @@
   {
     "id": 18,
     "prompt": "If P(B) = 0.05, P(A|B) = 0.80, P(B') = 0.95, and P(A|B') = 0.40, find P(B|A).",
-    "options": {
-      "A": "0.095",
-      "B": "0.092",
-      "C": "0.420",
-      "D": "0.952"
-    },
+    "options": [
+      "A. 0.095",
+      "B. 0.092",
+      "C. 0.420",
+      "D. 0.952"
+    ],
     "chapter": "Ch4: Xác suất cơ bản",
     "chapter_num": 4,
     "topic": "Bayes' Theorem",
@@ -525,12 +534,12 @@
   {
     "id": 19,
     "prompt": "There are only 4 empty rooms available in a student dormitory for eleven new freshmen. Each room is considered unique so that it matters who is being assigned to which room. How many different ways can those 4 empty rooms be filled one student per room?",
-    "options": {
-      "A": "7,920",
-      "B": "5,690",
-      "C": "8,230",
-      "D": "6,630"
-    },
+    "options": [
+      "A. 7,920",
+      "B. 5,690",
+      "C. 8,230",
+      "D. 6,630"
+    ],
     "chapter": "Ch4: Xác suất cơ bản",
     "chapter_num": 4,
     "topic": "Counting Rules (Permutations)",
@@ -554,13 +563,13 @@
   {
     "id": 20,
     "prompt": "A lab orders 100 rats a week for each of the 52 weeks in the year for experiments that the lab conducts. Prices for 100 rats follow the following distribution:\nPrice: $10.00 (0.35), $12.50 (0.40), $15.00 (0.25)\nHow much should the lab budget for next year's rat orders be, assuming this distribution does not change?",
-    "options": {
-      "A": "$520",
-      "B": "$637",
-      "C": "$650",
-      "D": "$780",
-      "E": "None of the other choices is correct"
-    },
+    "options": [
+      "A. $520",
+      "B. $637",
+      "C. $650",
+      "D. $780",
+      "E. None of the other choices is correct"
+    ],
     "chapter": "Ch5: Phân phối xác suất rời rạc",
     "chapter_num": 5,
     "topic": "Expected Value of a Discrete Random Variable",
