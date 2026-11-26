@@ -708,11 +708,12 @@
     /* EXPANDED SECTIONS */
     .detail-panel {
       display: none;
-      border-radius: 8px;
-      padding: 12px 16px;
-      margin-top: 8px;
-      font-size: 0.9rem;
-      line-height: 1.6;
+      border-radius: 10px;
+      padding: 14px 18px;
+      margin-top: 10px;
+      font-size: 0.92rem;
+      line-height: 1.65;
+      text-align: left;
       animation: fadeIn 0.2s ease;
     }
 
@@ -734,35 +735,61 @@
     .panel-tomtat {
       background-color: rgba(71, 85, 105, 0.08);
       border-left: 4px solid #475569;
-      white-space: pre-line;
     }
 
     .panel-cthuc {
       background-color: rgba(124, 58, 237, 0.08);
       border-left: 4px solid #7C3AED;
+      text-align: left;
+      font-size: 0.96rem;
+      padding: 14px 18px;
+    }
+    .panel-cthuc .katex-display {
       text-align: center;
-      font-size: 1.05rem;
-      padding: 14px;
+      margin: 10px 0;
     }
 
     .panel-apdung {
       background-color: rgba(21, 128, 61, 0.08);
       border-left: 4px solid #15803D;
-      white-space: pre-line;
     }
 
     .panel-casio {
       background-color: rgba(8, 145, 178, 0.08);
       border: 1px solid rgba(8, 145, 178, 0.3);
       border-left: 4px solid #0891B2;
-      white-space: pre-line;
     }
 
     .panel-lythuyet {
       background-color: rgba(217, 119, 6, 0.08);
       border: 1px solid rgba(217, 119, 6, 0.3);
       border-left: 4px solid #D97706;
-      white-space: pre-line;
+    }
+
+    .rich-bullet-line {
+      position: relative;
+      padding-left: 16px;
+      margin: 4px 0;
+    }
+    .rich-bullet-line::before {
+      content: "•";
+      position: absolute;
+      left: 2px;
+      top: 0;
+      color: var(--primary);
+      font-weight: 800;
+    }
+    .rich-step-line {
+      margin: 5px 0;
+      padding-left: 4px;
+    }
+    .rich-arrow-line {
+      margin-top: 8px;
+      padding: 6px 10px;
+      border-radius: 6px;
+      background: rgba(16, 185, 129, 0.1);
+      font-weight: 700;
+      color: var(--primary);
     }
 
     .panel-title {
@@ -2646,6 +2673,111 @@
       background: #22C55E;
       box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.22);
     }
+
+    /* FLOATING EXAM TIMER WIDGET (ALWAYS FOLLOWS SCROLL) */
+    .exam-timer-pill {
+      position: fixed;
+      bottom: max(18px, env(safe-area-inset-bottom, 0px));
+      left: 18px;
+      z-index: 950;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 12px;
+      border-radius: 14px;
+      border: 1.5px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      font-size: 0.84rem;
+      font-weight: 700;
+      box-shadow: 0 8px 28px rgba(0, 0, 0, 0.16);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      transition: border-color 0.2s, background 0.2s, color 0.2s, transform 0.15s;
+    }
+    .exam-timer-pill.minimized {
+      padding: 6px 11px;
+      border-radius: 99px;
+      cursor: pointer;
+    }
+    .exam-timer-pill.minimized .exam-timer-select,
+    .exam-timer-pill.minimized #exam-timer-reset-btn,
+    .exam-timer-pill.minimized #exam-timer-min-btn {
+      display: none;
+    }
+    .exam-timer-pill.running {
+      border-color: var(--primary);
+      background: var(--surface);
+      box-shadow: 0 8px 28px rgba(16, 185, 129, 0.22);
+    }
+    .exam-timer-pill.running .exam-timer-display {
+      color: var(--primary);
+    }
+    .exam-timer-pill.warning {
+      border-color: #F59E0B;
+      background: rgba(245, 158, 11, 0.16);
+      color: #D97706;
+    }
+    .exam-timer-pill.danger {
+      border-color: #EF4444;
+      background: rgba(239, 68, 68, 0.16);
+      color: #DC2626;
+      animation: timerPulse 1s ease-in-out infinite;
+    }
+    [data-theme="dark"] .exam-timer-pill.warning { color: #FBBF24; }
+    [data-theme="dark"] .exam-timer-pill.danger { color: #F87171; }
+    @media (max-width: 640px) {
+      .exam-timer-pill {
+        left: 10px;
+        bottom: max(12px, env(safe-area-inset-bottom, 0px));
+        padding: 6px 9px;
+        gap: 5px;
+        font-size: 0.78rem;
+      }
+    }
+    @keyframes timerPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.25); }
+      50% { box-shadow: 0 0 0 4px rgba(239, 68, 68, 0.08); }
+    }
+    .exam-timer-display {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.88rem;
+      font-weight: 800;
+      min-width: 48px;
+      text-align: center;
+      letter-spacing: 0.02em;
+    }
+    .exam-timer-select {
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--text);
+      border-radius: 6px;
+      padding: 2px 4px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      outline: none;
+      cursor: pointer;
+    }
+    .exam-timer-btn {
+      border: none;
+      background: var(--surface);
+      color: var(--text);
+      border-radius: 6px;
+      padding: 3px 7px;
+      font-size: 0.76rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      transition: transform 0.1s, background 0.15s;
+    }
+    .exam-timer-btn:hover {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
     .tgl-btn.tgl-ai {
       color: #4F46E5;
       border-color: rgba(99, 102, 241, 0.35);
@@ -3002,6 +3134,21 @@
       </div>
     </div>
   </header>
+
+  <!-- FLOATING EXAM TIMER / STOPWATCH (ALWAYS FOLLOWS SCROLL) -->
+  <div class="exam-timer-pill" id="exam-timer-pill" onclick="if(this.classList.contains('minimized')) toggleExamTimerMinimize();" title="Bấm giờ làm bài thi MAS202 (luôn đi theo khi cuộn trang)">
+    <span>⏱️</span>
+    <span class="exam-timer-display" id="exam-timer-display">60:00</span>
+    <select id="exam-timer-mode" class="exam-timer-select" onchange="changeExamTimerMode()" onclick="event.stopPropagation();" title="Chọn thời gian thi">
+      <option value="3600">60p (FE)</option>
+      <option value="5400">90p</option>
+      <option value="2700">45p</option>
+      <option value="0">Đếm xuôi</option>
+    </select>
+    <button type="button" class="exam-timer-btn" id="exam-timer-toggle-btn" onclick="event.stopPropagation(); toggleExamTimer();" title="Bắt đầu / Tạm dừng bấm giờ">▶️</button>
+    <button type="button" class="exam-timer-btn" id="exam-timer-reset-btn" onclick="event.stopPropagation(); resetExamTimer();" title="Đặt lại đồng hồ">🔄</button>
+    <button type="button" class="exam-timer-btn" id="exam-timer-min-btn" onclick="event.stopPropagation(); toggleExamTimerMinimize();" title="Thu gọn / Mở rộng đồng hồ">➖</button>
+  </div>
 
   <main class="container">
 
@@ -3604,6 +3751,7 @@
           <option value="gemini-3.8-flash">⚡ Gemini 3.8 Flash</option>
           <option value="gemini-3.5-flash-lite">🚀 Gemini 3.5 Flash-Lite</option>
           <option value="gemini-3.1-flash-lite">💨 Gemini 3.1 Flash-Lite</option>
+          <option value="gemini-2.5-flash">🛡️ Gemini 2.5 Flash (Ổn định)</option>
           <option value="gemini-4-argon">🧠 Gemini 4 Argon</option>
         </select>
         <button type="button" class="gemini-icon-btn" onclick="toggleGeminiKeyPanel()" title="Cài đặt / Đổi Gemini API Key">🔑 Key</button>
@@ -4491,11 +4639,31 @@ function formatRichText(str) {
   s = parseMarkdownTables(s);
   s = s.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
   s = s.replace(/`([^`]+)`/g, '<code class="inline-code">$1</code>');
-  s = s.replace(/(?:^|\r?\n)-\s+/g, '<br>• ');
-  s = s.replace(/\r?\n\r?\n+/g, '<div style="margin:6px 0;"></div>');
-  s = s.replace(/\r?\n/g, '<br>');
 
-  return restoreTokens(s, g.tokens);
+  const lines = s.split(/\r?\n/);
+  const htmlParts = [];
+  for (let i = 0; i < lines.length; i++) {
+    const ln = lines[i].trim();
+    if (!ln) {
+      if (htmlParts.length > 0) {
+        htmlParts.push('<div style="height:6px;"></div>');
+      }
+      continue;
+    }
+    if (/^[-•]\s+/.test(ln)) {
+      htmlParts.push('<div class="rich-bullet-line">' + ln.replace(/^[-•]\s+/, '') + '</div>');
+    } else if (/^→\s*/.test(ln) || /^=>\s*/.test(ln)) {
+      htmlParts.push('<div class="rich-arrow-line">→ ' + ln.replace(/^(?:→|=>)\s*/, '') + '</div>');
+    } else if (/^\d+\.\s+/.test(ln)) {
+      htmlParts.push('<div class="rich-step-line">' + ln + '</div>');
+    } else if (/^<div\b/i.test(ln)) {
+      htmlParts.push(ln);
+    } else {
+      htmlParts.push('<div style="margin:2px 0;">' + ln + '</div>');
+    }
+  }
+
+  return restoreTokens(htmlParts.join(''), g.tokens);
 }
 
 // ---------------------------------------------------------
@@ -8000,7 +8168,7 @@ window.addEventListener('click', function(e) {
 const GEMINI_KEY_STORAGE = 'cai_xanh_gemini_api_key';
 const GEMINI_MODEL_STORAGE = 'cai_xanh_gemini_model';
 const GEMINI_DEFAULT_MODEL = 'gemini-3.8-flash';
-const GEMINI_ALLOWED_MODELS = ['gemini-3.8-flash', 'gemini-3.5-flash-lite', 'gemini-3.1-flash-lite', 'gemini-4-argon'];
+const GEMINI_ALLOWED_MODELS = ['gemini-3.8-flash', 'gemini-3.5-flash-lite', 'gemini-3.1-flash-lite', 'gemini-2.5-flash', 'gemini-4-argon'];
 const GEMINI_INTERACTIONS_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/interactions';
 const GEMINI_INTERACTIONS_SSE_ENDPOINT = 'https://generativelanguage.googleapis.com/v1beta/interactions?alt=sse';
 
@@ -8415,10 +8583,13 @@ function fetchImageAsBase64(url) {
       resolve(null);
       return;
     }
-    fetch(url).then(function(res) {
+    const ctrl = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    const timer = ctrl ? setTimeout(function() { try { ctrl.abort(); } catch (e) {} }, 10000) : null;
+    fetch(url, ctrl ? { signal: ctrl.signal } : {}).then(function(res) {
       if (!res.ok) throw new Error('img fetch failed');
       return res.blob();
     }).then(function(blob) {
+      if (timer) clearTimeout(timer);
       const reader = new FileReader();
       reader.onloadend = function() {
         const result = String(reader.result || '');
@@ -8434,6 +8605,7 @@ function fetchImageAsBase64(url) {
       reader.onerror = function() { resolve(null); };
       reader.readAsDataURL(blob);
     }).catch(function() {
+      if (timer) clearTimeout(timer);
       resolve(null);
     });
   });
@@ -8630,7 +8802,8 @@ async function sendGeminiQuestion(overridePrompt) {
       }
     }
 
-    const genCfg = modelToUse === 'gemini-4-argon'
+    const isThinkingModel = modelToUse === 'gemini-4-argon' || modelToUse === 'gemini-3.8-flash';
+    const genCfg = isThinkingModel
       ? { thinking_level: 'low', max_output_tokens: 2048 }
       : { max_output_tokens: 2048 };
 
@@ -8653,12 +8826,12 @@ async function sendGeminiQuestion(overridePrompt) {
     let streamedText = '';
     let streamedInteractionId = null;
 
-    const firstByteMs = modelToUse === 'gemini-4-argon' ? 30000 : 22000;
-    const totalMs = 55000;
+    const firstByteMs = isThinkingModel ? 30000 : 25000;
+    const totalMs = 65000;
     const tickerId = setInterval(function() {
       waitSec += 1;
       if (!gotFirstDelta && !geminiUserAborted) {
-        const hint = modelToUse === 'gemini-4-argon'
+        const hint = isThinkingModel
           ? '⏳ ' + modelToUse + ' đang suy luận (' + waitSec + 's)... Bấm "⏹️ Dừng" nếu muốn đổi model nhanh hơn.'
           : '⏳ Đang chờ ' + modelToUse + ' (' + waitSec + 's)...';
         updateLiveGeminiBubble(modelToUse, hint, false);
@@ -8735,8 +8908,11 @@ async function sendGeminiQuestion(overridePrompt) {
 
             if (ev.event_type === 'interaction.created' && ev.interaction && ev.interaction.id) {
               streamedInteractionId = ev.interaction.id;
+              clearTimeout(firstByteTimer);
             } else if (ev.event_type === 'interaction.completed' && ev.interaction && ev.interaction.id) {
               streamedInteractionId = ev.interaction.id;
+            } else if (ev.event_type === 'step.start') {
+              clearTimeout(firstByteTimer);
             } else if (ev.event_type === 'error' && ev.error) {
               const streamErr = new Error(ev.error.message || 'Streaming error');
               streamErr.status = ev.error.code === 'gateway_timeout' ? 503 : 500;
@@ -8752,6 +8928,7 @@ async function sendGeminiQuestion(overridePrompt) {
                   updateLiveGeminiBubble(modelToUse, formatGeminiMarkdownHtml(streamedText), true);
                 }
               } else if (ev.delta.type === 'thought_summary' && !gotFirstDelta) {
+                clearTimeout(firstByteTimer);
                 updateLiveGeminiBubble(modelToUse, '🧠 ' + modelToUse + ' đang suy luận bước giải (' + waitSec + 's)...', false);
               }
             }
@@ -8790,6 +8967,61 @@ async function sendGeminiQuestion(overridePrompt) {
     }
   }
 
+  async function callGenerateContentFallback(modelToUse) {
+    let fullText = buildQuestionContextForGemini(q);
+    if (thread.messages.length > 1) {
+      const hist = thread.messages.slice(0, -1).filter(function(m) { return m.role !== 'error'; }).map(function(m) {
+        return (m.role === 'user' ? 'Học sinh: ' : 'Gia sư: ') + m.text;
+      }).join('\n');
+      if (hist) fullText += '\n\n=== LỊCH SỬ HỎI ĐÁP TRƯỚC ĐÓ ===\n' + hist;
+    }
+    fullText += '\n\n=== CÂU HỎI HIỆN TẠI CỦA HỌC SINH ===\n' + userText;
+
+    const parts = [{ text: fullText }];
+    const imgObj = q.table_image ? await fetchImageAsBase64(q.table_image_png || q.table_image) : null;
+    if (imgObj && imgObj.data) {
+      parts.push({ inline_data: { mime_type: imgObj.mime_type, data: imgObj.data } });
+    }
+
+    const endpoint = 'https://generativelanguage.googleapis.com/v1beta/models/' + encodeURIComponent(modelToUse) + ':generateContent';
+    const controller = typeof AbortController !== 'undefined' ? new AbortController() : null;
+    activeGeminiAbort = controller;
+    const timer = controller ? setTimeout(function() { try { controller.abort(); } catch (e) {} }, 35000) : null;
+
+    try {
+      const fetchOpts = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'x-goog-api-key': apiKey
+        },
+        body: JSON.stringify({
+          system_instruction: { parts: [{ text: sysInstr }] },
+          contents: [{ role: 'user', parts: parts }],
+          generationConfig: { maxOutputTokens: 2048 }
+        })
+      };
+      if (controller) fetchOpts.signal = controller.signal;
+      const resp = await fetch(endpoint, fetchOpts);
+      if (!resp.ok) {
+        const errData = await resp.json().catch(function() { return {}; });
+        const msg = (errData && errData.error && errData.error.message) ? errData.error.message : ('HTTP ' + resp.status);
+        const err = new Error(msg);
+        err.status = resp.status;
+        throw err;
+      }
+      const json = await resp.json();
+      const cand = json && Array.isArray(json.candidates) && json.candidates[0];
+      const outParts = cand && cand.content && Array.isArray(cand.content.parts) ? cand.content.parts : [];
+      const text = outParts.map(function(p) { return p && p.text ? p.text : ''; }).join('');
+      return { id: null, output_text: text };
+    } finally {
+      if (timer) clearTimeout(timer);
+      if (activeGeminiAbort === controller) activeGeminiAbort = null;
+    }
+  }
+
+  const attemptErrors = [];
   try {
     let data = null;
     let usedModel = primaryModel;
@@ -8800,7 +9032,7 @@ async function sendGeminiQuestion(overridePrompt) {
       const m = modelQueue[i];
       if (i > 0) {
         renderGeminiMessages(thread.messages, true, '⏳ ' + modelQueue[i - 1] + ' đang bận/chậm, đang tự chuyển sang ' + m + '...');
-        await new Promise(function(r) { setTimeout(r, 350); });
+        await new Promise(function(r) { setTimeout(r, 400); });
         if (geminiUserAborted) break;
       }
       try {
@@ -8825,8 +9057,34 @@ async function sendGeminiQuestion(overridePrompt) {
           }
         }
         lastErr = attemptErr;
-        if (!isGeminiOverloadError(attemptErr)) {
+        attemptErrors.push(m + ': ' + (attemptErr.status ? ('HTTP ' + attemptErr.status + ' - ') : '') + (attemptErr.message || 'Error'));
+        if (!isGeminiOverloadError(attemptErr) && attemptErr.status !== 404) {
           throw attemptErr;
+        }
+      }
+    }
+
+    if (!data && !geminiUserAborted) {
+      // Fallback sang generateContent REST API với gemini-2.5-flash hoặc primaryModel
+      const fallbackModels = ['gemini-2.5-flash', primaryModel].filter(function(v, idx, arr) { return arr.indexOf(v) === idx; });
+      for (let j = 0; j < fallbackModels.length; j++) {
+        if (geminiUserAborted) break;
+        const fm = fallbackModels[j];
+        try {
+          renderGeminiMessages(thread.messages, true, '🔄 Đang thử kết nối dự phòng (' + fm + ')...');
+          data = await callGenerateContentFallback(fm);
+          if (data && extractGeminiInteractionText(data).trim()) {
+            usedModel = fm;
+            break;
+          }
+        } catch (fbErr) {
+          if (fbErr && fbErr.name === 'AbortError' && geminiUserAborted) {
+            const abortErr = new Error('USER_ABORTED');
+            abortErr.isUserAborted = true;
+            throw abortErr;
+          }
+          lastErr = fbErr;
+          attemptErrors.push(fm + ' (fallback): ' + (fbErr.status ? ('HTTP ' + fbErr.status + ' - ') : '') + (fbErr.message || 'Error'));
         }
       }
     }
@@ -8857,14 +9115,18 @@ async function sendGeminiQuestion(overridePrompt) {
           model: primaryModel
         });
       } else {
-        thread.messages.push({ role: 'error', text: '⏹️ Đã dừng yêu cầu trước đó. Bạn có thể đổi sang Gemini 3.5 Flash-Lite hoặc bấm "🔄 Thử lại" bất cứ lúc nào.' });
+        thread.messages.push({ role: 'error', text: '⏹️ Đã dừng yêu cầu trước đó. Bạn có thể đổi sang model khác hoặc bấm "🔄 Thử lại" bất cứ lúc nào.' });
       }
     } else {
       let friendly = err && err.message ? err.message : 'Lỗi không xác định.';
+      const detailText = attemptErrors.length ? ('\nChi tiết: ' + attemptErrors[0]) : '';
+      const is429 = (err && err.status === 429) || /429|quota|rate|resource_exhausted/i.test(friendly + detailText);
       if (/API key not valid|PERMISSION_DENIED|401|403/i.test(friendly)) {
         friendly = 'API Key không hợp lệ hoặc chưa được cấp quyền.\n(' + friendly + ')\n👉 Hãy bấm "🔑 Key" ở góc trên để kiểm tra lại key Google AI Studio.';
+      } else if (is429) {
+        friendly = '⏳ API Key tạm chạm giới hạn tốc độ / quota (HTTP 429).\n👉 Bạn đợi khoảng 30–60 giây rồi bấm "🔄 Thử lại" (hoặc chuyển sang 🛡️ Gemini 2.5 Flash).' + detailText;
       } else if (isGeminiOverloadError(err)) {
-        friendly = 'Máy chủ Google Gemini đang quá tải hoặc phản hồi quá chậm (' + modelQueue.join(' → ') + ').\n👉 Bạn thử chọn 🚀 Gemini 3.5 Flash-Lite hoặc bấm "🔄 Thử lại" nhé.';
+        friendly = 'Máy chủ Google Gemini đang quá tải hoặc phản hồi quá chậm (' + modelQueue.join(' → ') + ').\n👉 Bạn thử đổi sang 🛡️ Gemini 2.5 Flash hoặc bấm "🔄 Thử lại" nhé.' + detailText;
       }
       thread.messages.push({ role: 'error', text: friendly });
     }
@@ -8878,6 +9140,209 @@ async function sendGeminiQuestion(overridePrompt) {
 }
 
 initGeminiAssistant();
+
+// ---------------------------------------------------------
+// 17. EXAM TIMER / STOPWATCH (BẤM GIỜ LÀM BÀI THI)
+// ---------------------------------------------------------
+const EXAM_TIMER_STORAGE_KEY = PORTAL_STORAGE_KEY + '_exam_timer';
+let examTimerState = {
+  modeSec: 3600,     // 3600 = 60p FE, 5400 = 90p, 2700 = 45p, 0 = Stopwatch
+  currentSec: 3600,  // remaining (if modeSec > 0) or elapsed (if modeSec === 0)
+  running: false,
+  lastTickTs: null,
+  warned5m: false,
+  warned1m: false
+};
+let examTimerIntervalId = null;
+
+function playExamTimerBeep() {
+  try {
+    const AudioCtx = window.AudioContext || window.webkitAudioContext;
+    if (!AudioCtx) return;
+    const ctx = new AudioCtx();
+    [880, 1046.5].forEach(function(freq, idx) {
+      const osc = ctx.createOscillator();
+      const gain = ctx.createGain();
+      osc.type = 'sine';
+      osc.frequency.value = freq;
+      gain.gain.setValueAtTime(0.08, ctx.currentTime + idx * 0.22);
+      gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + idx * 0.22 + 0.35);
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+      osc.start(ctx.currentTime + idx * 0.22);
+      osc.stop(ctx.currentTime + idx * 0.22 + 0.36);
+    });
+  } catch (e) {}
+}
+
+function formatExamTimerSec(totalSec) {
+  const s = Math.max(0, Math.floor(totalSec));
+  const mins = Math.floor(s / 60);
+  const secs = s % 60;
+  return (mins < 10 ? '0' : '') + mins + ':' + (secs < 10 ? '0' : '') + secs;
+}
+
+function saveExamTimerState() {
+  try {
+    localStorage.setItem(EXAM_TIMER_STORAGE_KEY, JSON.stringify(examTimerState));
+  } catch (e) {}
+}
+
+function renderExamTimerUI() {
+  const pill = document.getElementById('exam-timer-pill');
+  const disp = document.getElementById('exam-timer-display');
+  const sel = document.getElementById('exam-timer-mode');
+  const btn = document.getElementById('exam-timer-toggle-btn');
+  if (!pill || !disp || !btn) return;
+
+  disp.innerText = formatExamTimerSec(examTimerState.currentSec);
+  if (sel && String(sel.value) !== String(examTimerState.modeSec)) {
+    sel.value = String(examTimerState.modeSec);
+  }
+  btn.innerText = examTimerState.running ? '⏸️' : '▶️';
+  btn.title = examTimerState.running ? 'Tạm dừng bấm giờ' : 'Bắt đầu bấm giờ';
+
+  pill.classList.remove('running', 'warning', 'danger');
+  if (examTimerState.modeSec > 0) {
+    if (examTimerState.currentSec <= 60 && (examTimerState.running || examTimerState.currentSec === 0)) {
+      pill.classList.add('danger');
+    } else if (examTimerState.currentSec <= 300 && examTimerState.running) {
+      pill.classList.add('warning');
+    } else if (examTimerState.running) {
+      pill.classList.add('running');
+    }
+  } else if (examTimerState.running) {
+    pill.classList.add('running');
+  }
+}
+
+function tickExamTimer() {
+  if (!examTimerState.running) return;
+  const now = Date.now();
+  const prevTs = examTimerState.lastTickTs || now;
+  const deltaSec = Math.floor((now - prevTs) / 1000);
+  if (deltaSec <= 0) return;
+
+  examTimerState.lastTickTs = prevTs + deltaSec * 1000;
+
+  if (examTimerState.modeSec > 0) {
+    examTimerState.currentSec = Math.max(0, examTimerState.currentSec - deltaSec);
+    if (examTimerState.currentSec <= 300 && examTimerState.currentSec > 60 && !examTimerState.warned5m) {
+      examTimerState.warned5m = true;
+      showToast('⏰ Chỉ còn 5 phút làm bài thi!', 'warning');
+    }
+    if (examTimerState.currentSec <= 60 && examTimerState.currentSec > 0 && !examTimerState.warned1m) {
+      examTimerState.warned1m = true;
+      showToast('🚨 Chỉ còn 1 phút cuối! Hãy rà soát đáp án.', 'warning');
+    }
+    if (examTimerState.currentSec === 0) {
+      examTimerState.running = false;
+      examTimerState.lastTickTs = null;
+      stopExamTimerInterval();
+      playExamTimerBeep();
+      showToast('🔔 Hết giờ làm bài! Hãy kiểm tra lại kết quả của bạn.', 'warning');
+    }
+  } else {
+    examTimerState.currentSec += deltaSec;
+  }
+
+  saveExamTimerState();
+  renderExamTimerUI();
+}
+
+function startExamTimerInterval() {
+  stopExamTimerInterval();
+  examTimerIntervalId = setInterval(tickExamTimer, 500);
+}
+
+function stopExamTimerInterval() {
+  if (examTimerIntervalId) {
+    clearInterval(examTimerIntervalId);
+    examTimerIntervalId = null;
+  }
+}
+
+function toggleExamTimer() {
+  if (examTimerState.modeSec > 0 && examTimerState.currentSec === 0) {
+    examTimerState.currentSec = examTimerState.modeSec;
+    examTimerState.warned5m = false;
+    examTimerState.warned1m = false;
+  }
+  examTimerState.running = !examTimerState.running;
+  examTimerState.lastTickTs = examTimerState.running ? Date.now() : null;
+  if (examTimerState.running) {
+    startExamTimerInterval();
+    showToast(examTimerState.modeSec > 0
+      ? ('⏱️ Bắt đầu tính giờ làm bài (' + Math.round(examTimerState.modeSec / 60) + ' phút)!')
+      : '⏱️ Bắt đầu bấm giờ đếm xuôi!');
+  } else {
+    stopExamTimerInterval();
+    showToast('⏸️ Đã tạm dừng đồng hồ.', 'info');
+  }
+  saveExamTimerState();
+  renderExamTimerUI();
+}
+
+function resetExamTimer() {
+  stopExamTimerInterval();
+  examTimerState.running = false;
+  examTimerState.lastTickTs = null;
+  examTimerState.currentSec = examTimerState.modeSec;
+  examTimerState.warned5m = false;
+  examTimerState.warned1m = false;
+  saveExamTimerState();
+  renderExamTimerUI();
+  showToast('🔄 Đã đặt lại đồng hồ bấm giờ.', 'info');
+}
+
+function changeExamTimerMode() {
+  const sel = document.getElementById('exam-timer-mode');
+  if (!sel) return;
+  const newMode = parseInt(sel.value, 10);
+  if (isNaN(newMode)) return;
+  stopExamTimerInterval();
+  examTimerState.modeSec = newMode;
+  examTimerState.currentSec = newMode;
+  examTimerState.running = false;
+  examTimerState.lastTickTs = null;
+  examTimerState.warned5m = false;
+  examTimerState.warned1m = false;
+  saveExamTimerState();
+  renderExamTimerUI();
+}
+
+function toggleExamTimerMinimize() {
+  const pill = document.getElementById('exam-timer-pill');
+  if (!pill) return;
+  pill.classList.toggle('minimized');
+}
+
+function initExamTimer() {
+  try {
+    const raw = localStorage.getItem(EXAM_TIMER_STORAGE_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw);
+      if (parsed && typeof parsed.modeSec === 'number' && typeof parsed.currentSec === 'number') {
+        examTimerState.modeSec = parsed.modeSec;
+        examTimerState.currentSec = parsed.currentSec;
+        examTimerState.running = !!parsed.running;
+        examTimerState.lastTickTs = parsed.lastTickTs || null;
+        examTimerState.warned5m = !!parsed.warned5m;
+        examTimerState.warned1m = !!parsed.warned1m;
+      }
+    }
+  } catch (e) {}
+
+  if (examTimerState.running) {
+    tickExamTimer();
+    if (examTimerState.running) {
+      startExamTimerInterval();
+    }
+  }
+  renderExamTimerUI();
+}
+
+initExamTimer();
 
   </script>
 
