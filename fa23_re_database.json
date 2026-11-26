@@ -177,8 +177,8 @@
     "ap_dung": "- Tỷ lệ ngưỡng quan tâm của chuỗi pizza là:\n  $$\\pi_0 = \\frac{5.000}{20.000} = 0.25$$\n- Vì cửa hàng chỉ mở nếu có bằng chứng cho thấy tỷ lệ thực tế 'nhiều hơn' (more than) 25%, kiểm định là kiểm định một phía đuôi phải:\n  $$H_0: \\pi \\le 0.25 \\quad \\text{so với} \\quad H_1: \\pi > 0.25$$\n- Biểu thức này tương ứng với khẳng định (ii).\n- Phương án B chọn khẳng định (ii).\n\n=> Chọn đáp án B ((ii)).",
     "casio": "1. Bấm [MENU] [1].\n2. Tính tỷ lệ ngưỡng: `5000 ÷ 20000` [=] -> Hiện 0.25.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 9 - Mục 9.1: Fundamentals of Hypothesis-Testing Methodology & Mục 9.4: Z Test of Hypothesis for the Proportion):\n- Giả thuyết thống kê luôn được thiết lập dựa trên tham số của tổng thể (ở đây là tỷ lệ tổng thể $\\pi$), tuyệt đối không sử dụng thống kê mẫu ($p = 0.32$) hay số đếm tuyệt đối.\n- Khẳng định của người ra quyết định muốn chứng minh ('hơn 25%') luôn được đặt ở giả thuyết đối $H_1$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_RE_tables/Q7_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_RE_tables/Q7_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_RE/Q7_FA23RE.webp"
   },
   {
@@ -410,8 +410,8 @@
     "ap_dung": "1. Thay các giá trị vào công thức tính cỡ mẫu:\n   n = [(1.96)^2 * 0.60 * (1 - 0.60)] / (0.05)^2\n   n = [3.8416 * 0.24] / 0.0025 = 0.921984 / 0.0025 = 368.7936.\n2. Theo nguyên tắc xác định cỡ mẫu trong thống kê, luôn làm tròn lên số nguyên tiếp theo gần nhất:\n   n = ceil(368.7936) = 369.\n=> Chọn đáp án B.",
     "casio": "Bấm máy tính Casio fx-580VN X:\n1.96 ^ 2 * 0.60 * 0.40 / ( 0.05 ^ 2 ) =\nMàn hình hiển thị: 368.7936. Luôn làm tròn lên: 369.",
     "ly_thuyet": "Theo Giáo trình Berenson Ch8 (Confidence Intervals) - Mục 'Determining Sample Size for the Proportion': Cỡ mẫu n tỷ lệ thuận với bình phương giá trị tới hạn Z và độ biến thiên p(1-p), tỷ lệ nghịch với bình phương sai số biên e^2. Kết quả tính toán phải luôn làm tròn lên số nguyên kế tiếp để đảm bảo sai số không vượt quá e.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_RE_tables/Q16_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_RE_tables/Q16_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_RE/Q16_FA23RE.webp"
   },
   {
@@ -594,8 +594,8 @@
     "ap_dung": "Thay số n1 = 20 và n2 = 20 vào công thức tính bậc tự do:\n$$df = 20 + 20 - 2 = 38$$\n\n=> Chọn đáp án D (38).",
     "casio": "Phép tính đơn giản: `20 + 20 - 2 = 38`.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.1: Comparing the Means of Two Independent Populations - Pooled-Variance t Test): Khi kiểm định hiệu hai trung bình độc lập với giả định phương sai bằng nhau, ta dùng phương sai gộp Sp^2 và thống kê kiểm định có phân phối Student t với bậc tự do là n1 + n2 - 2.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_RE_tables/Q23_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_RE_tables/Q23_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_RE/Q23_FA23RE.webp"
   },
   {
@@ -700,8 +700,8 @@
     "ap_dung": "Bậc tự do của thành phần tương tác giữa hai yếu tố A và B trong ANOVA hai chiều có lặp lại luôn bằng tích của hai bậc tự do của từng yếu tố riêng rẽ:\n$$df_{\\text{Interaction}} = (r - 1)(c - 1)$$\n\n=> Chọn đáp án A.",
     "casio": "Câu hỏi lý thuyết công thức bảng phân tích phương sai ANOVA, không dùng máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 11 - Mục 11.2: The Two-Way ANOVA with Replication): Số hạng tương tác phản ánh hiệu ứng kết hợp của hai yếu tố và có bậc tự do là df = (r - 1)(c - 1).",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_RE_tables/Q27_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_RE_tables/Q27_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_RE/Q27_FA23RE.webp"
   },
   {
@@ -753,8 +753,8 @@
     "ap_dung": "1. Trong kiểm định tỷ số hai phương sai (F-test for the ratio of two variances), theo quy ước của Berenson, mẫu có phương sai lớn hơn được gán là mẫu 1 và đặt trên tử số của thống kê $F_{STAT}$.\n2. Do mẫu có $n_1 = 15$ có phương sai lớn hơn, bậc tự do ở tử số là:\n$$df_1 = n_1 - 1 = 15 - 1 = 14$$\n3. Mẫu có $n_2 = 20$ được đặt ở mẫu số, do đó bậc tự do ở mẫu số là:\n$$df_2 = n_2 - 1 = 20 - 1 = 19$$\n4. Do đó, cặp bậc tự do của phân phối F là 14 và 19.\n\n=> Chọn đáp án E (14 and 19).",
     "casio": "Câu hỏi lý thuyết xác định bậc tự do của kiểm định F hai phương sai, không cần bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.4: F Test for the Difference Between Two Variances):\n- Phân phối Fisher-Snedecor (F distribution) được xác định bởi hai tham số bậc tự do: bậc tự do ở tử số $df_1 = n_1 - 1$ và bậc tự do ở mẫu số $df_2 = n_2 - 1$. Thống kê kiểm định được thiết lập theo tỷ số $F_{STAT} = S_1^2 / S_2^2$ với quy ước $S_1^2 \\ge S_2^2$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_RE_tables/Q29_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_RE_tables/Q29_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_RE/Q29_FA23RE.webp"
   },
   {
@@ -1121,8 +1121,8 @@
     "ap_dung": "- Khi $F_{STAT} > F_{crit}$, ta bác bỏ giả thuyết không $H_0$ và chấp nhận giả thuyết đối $H_1$.\n- Ý nghĩa chính xác của việc bác bỏ $H_0$ là: Có bằng chứng thống kê cho thấy 'không phải tất cả các giá trị trung bình đều bằng nhau' (có ít nhất một cặp trung bình có sự khác biệt có ý nghĩa thống kê).\n- BẪY PHỔ BIẾN: Mệnh đề (i) khẳng định 'tất cả các trung bình đều khác nhau' (all the means differ) là SAI, vì chỉ cần 1 nhóm khác biệt với các nhóm còn lại thì $H_0$ đã bị bác bỏ, không nhất thiết mọi nhóm đều phải đôi một khác nhau.\n- Do đó, chỉ có phát biểu (ii) là hoàn toàn chính xác.\n\n=> Chọn đáp án B (tương ứng phát biểu ii).",
     "casio": "Câu hỏi lý thuyết bản chất về quy tắc quyết định và kết luận trong kiểm định ANOVA, không sử dụng máy tính bỏ túi.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 11 - Mục 11.1: The Completely Randomized Design: One-Way ANOVA):\n- Giả thuyết đối $H_1$ trong ANOVA một yếu tố luôn được phát biểu là 'Not all population means are equal' (Không phải tất cả các trung bình tổng thể đều bằng nhau) hoặc 'At least two of the population means are different'.\n- Để xác định chính xác cặp trung bình nào khác nhau sau khi bác bỏ $H_0$, cần thực hiện thêm phân tích so sánh bội (Post-hoc), chẳng hạn như quy trình Tukey-Kramer.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_RE_tables/Q43_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_RE_tables/Q43_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_RE/Q43_FA23RE.webp"
   },
   {
@@ -1254,8 +1254,8 @@
     "ap_dung": "Từ dữ liệu bảng điểm trước và sau của 8 học viên:\n- Tổng các độ chênh lệch điểm số sau khóa học trừ trước khóa học: $\\sum D = 400$.\n- Số học viên: $n = 8$.\n- Giá trị trung bình của hiệu số điểm là:\n  $$\\bar{D} = \\frac{400}{8} = 50$$\n\n=> Chọn đáp án A (50).\n\n*(Bảng số liệu gốc bổ sung chuẩn 100% từ Đề thi Final Exam kỳ SU25 FE Q38)*",
     "casio": "Thao tác trên Casio fx-580VN X:\n1. Bấm MENU 1.\n2. Nhập: `400 / 8 =`.\n3. Kết quả hiển thị: `50`.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.2: Comparing the Means of Two Related Populations - Paired t Test):\n- Trong thiết kế nghiên cứu lặp lại trước - sau (repeated measures / before-and-after), hai mẫu không độc lập mà tạo thành các cặp phụ thuộc.\n- Ta quy bài toán 2 mẫu về bài toán 1 mẫu duy nhất trên biến chênh lệch $D = X_1 - X_2$ với trung bình mẫu $\\bar{D} = \\sum D_i / n$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_RE_tables/Q48_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_RE_tables/Q48_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_RE/Q48_FA23RE.webp"
   },
   {

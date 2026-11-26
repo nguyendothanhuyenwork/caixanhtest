@@ -587,8 +587,8 @@
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA26_FE/Q20.jpg",
     "match_364": "📌 Đối chiếu ngân hàng đề: Giống Câu 180 trong bộ 364 câu hỏi trắc nghiệm trên web",
     "raw_question": "A lab orders 100 rats a week for each of the 52 weeks in the year for experiments that the lab conducts. Prices for 100 rats follow the following distribution:\n\nHow much should the lab budget for next year's rat orders be, assuming this distribution does not change?",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA26_FE_tables/Q20_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA26_FE_tables/Q20_table.png"
+    "table_image": null,
+    "table_image_png": null
   },
   {
     "id": 21,

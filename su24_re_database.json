@@ -880,8 +880,8 @@
     "ap_dung": "1. Tính sai số chuẩn của trung bình mẫu:\n$$SE = \\frac{S}{\\sqrt{n}} = \\frac{14.2}{\\sqrt{40}} \\approx \\frac{14.2}{6.324555} \\approx 2.245217$$\n\n2. Tính giá trị thống kê kiểm định $t_{STAT}$:\n$$t_{STAT} = \\frac{137 - 132}{2.245217} = \\frac{5}{2.245217} \\approx 2.22695 \\approx 2.23$$\n\n3. Xác định giá trị tới hạn:\nVì kiểm định một phía đuôi phải với $\\alpha = 0.05$, toàn bộ diện tích $\\alpha$ nằm ở đuôi trên:\n$$t_{crit} = t_{0.05, 39} = 1.685$$\n\nCặp kết quả cần tìm là $2.23$ và $1.685$.\n\n=> Chọn đáp án A (2.23 and 1.685).",
     "casio": "1. Bấm [MENU] [1].\n2. Nhập phân số: `[(■/□)]` `137 - 132` [▼] `14.2 ÷ [√] 40` [=].\n3. Màn hình hiển thị: 2.226956...\n4. Làm tròn 2 chữ số thập phân: 2.23.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 9 - Mục 9.2: t Test of Hypothesis for the Mean (σ Unknown)):\n- Trong kiểm định một phía đuôi phải ($H_1: \\mu > \\mu_0$), toàn bộ mức ý nghĩa $\\alpha = 0.05$ được dồn về đuôi phải, do đó giá trị tới hạn là $+t_{\\alpha, df} = 1.685$ (không chia đôi $\\alpha$).\n- Miền bác bỏ là $t_{STAT} > 1.685$. Do $2.23 > 1.685$, ta bác bỏ $H_0$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_RE_tables/Q34_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_RE_tables/Q34_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_RE/Q34_SU24RE.webp"
   },
   {
@@ -1037,8 +1037,8 @@
     "ap_dung": "1. Tính số thành công trong từng mẫu:\n- Phụ nữ: $X_1 = 150 \\times 0.62 = 93$\n- Nam giới: $X_2 = 200 \\times 0.24 = 48$\n2. Tính tỷ lệ mẫu gộp:\n$$\\bar{p} = \\frac{93 + 48}{150 + 200} = \\frac{141}{350} \\approx 0.402857$$\n$$\\implies 1 - \\bar{p} = 1 - 0.402857 = 0.597143$$\n3. Tính sai số chuẩn gộp của hiệu hai tỷ lệ:\n$$SE = \\sqrt{0.402857 \\times 0.597143 \\times \\left(\\frac{1}{150} + \\frac{1}{200}\\right)} = \\sqrt{0.240563 \\times 0.0116667} \\approx \\sqrt{0.00280657} \\approx 0.052977$$\n4. Tính giá trị thống kê kiểm định Z:\n$$Z_{STAT} = \\frac{0.62 - 0.24}{0.052977} = \\frac{0.38}{0.052977} \\approx 7.1729 \\approx 7.17$$\n\n=> Chọn đáp án A (7.17).",
     "casio": "Bấm MENU 1 (chế độ tính toán cơ bản):\n1. Tính tỷ lệ gộp: nhập `(93 + 48) / (150 + 200)` -> ấn STO A (A = 141/350 ≈ 0.402857).\n2. Tính sai số chuẩn: nhập `sqrt(A * (1 - A) * (1/150 + 1/200))` -> ấn STO B (B ≈ 0.052977).\n3. Tính Z: nhập `(0.62 - 0.24) / B` -> ấn '=' màn hình ra 7.1729 (làm tròn 7.17).",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.3: Comparing the Proportions of Two Independent Populations):\n- Khi kiểm định sự khác biệt giữa hai tỷ lệ tổng thể độc lập với giả thuyết không $H_0: \\pi_1 = \\pi_2$, ta sử dụng tỷ lệ gộp $\\bar{p} = (X_1 + X_2)/(n_1 + n_2)$ để ước lượng sai số chuẩn chung, từ đó tính tiêu chuẩn kiểm định $Z_{STAT}$ tuân theo phân phối chuẩn tắc.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_RE_tables/Q40_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_RE_tables/Q40_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_RE/Q40_SU24RE.webp"
   },
   {
@@ -1090,8 +1090,8 @@
     "ap_dung": "- Trong One-Way ANOVA, mục đích nghiên cứu là xem xét liệu có sự khác biệt giữa giá trị trung bình của $c$ tổng thể hay không.\n- Giả thuyết không $H_0$ luôn phát biểu trạng thái mặc định không có tác động xử lý hay không có sự khác biệt: 'There is no difference in the population means' (Tất cả các giá trị trung bình tổng thể đều bằng nhau).\n- Giả thuyết đối $H_1$ mới là 'có sự khác biệt' (ít nhất hai trung bình khác nhau).\n\n=> Chọn đáp án A.",
     "casio": "Câu hỏi lý thuyết nền tảng về thiết lập giả thuyết kiểm định ANOVA, không sử dụng máy tính bỏ túi.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 11 - Mục 11.1: The Completely Randomized Design: One-Way ANOVA):\n- Giả thuyết không $H_0$ trong ANOVA luôn là sự đồng nhất của tất cả các trung bình tổng thể: $\\mu_1 = \\mu_2 = \\dots = \\mu_c$.\n- Tránh nhầm lẫn với giả thuyết đối $H_1$: $H_1$ chỉ khẳng định không phải tất cả đều bằng nhau, chứ không khẳng định tất cả các trung bình đều khác nhau.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_RE_tables/Q42_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_RE_tables/Q42_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_RE/Q42_SU24RE.webp"
   },
   {
@@ -1169,8 +1169,8 @@
     "ap_dung": "1. Tính trung bình của X và Y:\n- $\\bar{X} = \\frac{23 + 25 + 28 + 21}{4} = \\frac{97}{4} = 24.25$\n- $\\bar{Y} = \\frac{49 + 53 + 59 + 42}{4} = \\frac{203}{4} = 50.75$\n2. Tính các độ lệch và bình phương độ lệch:\n- $(X - \\bar{X})$: $-1.25; +0.75; +3.75; -3.25$\n- $(Y - \\bar{Y})$: $-1.75; +2.25; +8.25; -8.75$\n- $\\sum (X - \\bar{X})^2 = (-1.25)^2 + 0.75^2 + 3.75^2 + (-3.25)^2 = 1.5625 + 0.5625 + 14.0625 + 10.5625 = 26.75$\n- $\\sum (X - \\bar{X})(Y - \\bar{Y}) = (-1.25)(-1.75) + (0.75)(2.25) + (3.75)(8.25) + (-3.25)(-8.75) = 2.1875 + 1.6875 + 30.9375 + 28.4375 = 63.25$\n3. Tính hệ số góc $b_1$:\n$$b_1 = \\frac{63.25}{26.75} \\approx 2.364486... \\approx 2.36$$\n4. Tính tung độ gốc $b_0$:\n$$b_0 = \\bar{Y} - b_1\\bar{X} = 50.75 - 2.364486 \\times 24.25 = 50.75 - 57.33878 = -6.58878... \\approx -6.59$$\n5. Phương trình hồi quy là:\n$$\\hat{y} = -6.59 + 2.36x$$\n\n=> Chọn đáp án C (-6.59 + 2.36x).",
     "casio": "Thực hiện trên máy tính Casio fx-580VN X:\n1. Bấm MENU 6 2 (Thống kê 2 biến y = a + bx).\n2. Nhập số liệu:\n   - Cột X: 23 = 25 = 28 = 21 =\n   - Cột Y: 49 = 53 = 59 = 42 =\n3. Bấm AC để lưu.\n4. Bấm OPTN 3 (Regression Calc):\n   - Máy hiển thị `a = -6.588785...` (tung độ gốc $b_0$)\n   - Máy hiển thị `b = 2.3644859...` (hệ số góc $b_1$)\n-> Phương trình là $\\hat{y} = -6.59 + 2.36x$.",
     "ly_thuyet": "Theo Berenson (Chương 13, Mục 13.2: Determining the Simple Linear Regression Equation): Phương pháp bình phương nhỏ nhất (Ordinary Least Squares - OLS) tìm ra các hệ số b0 và b1 sao cho tổng bình phương sai số giữa các giá trị quan sát và giá trị dự báo là nhỏ nhất.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_RE_tables/Q45_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_RE_tables/Q45_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_RE/Q45_SU24RE.webp"
   },
   {
@@ -1275,8 +1275,8 @@
     "ap_dung": "1. Xét phát biểu (i): 'Holding remote engineering hours (X2) constant, for each additional people-day in weekly staff count (X1), the mean standby hours are estimated to change by b₁ hours' -> Đây là định nghĩa và cách diễn giải chuẩn mực của hệ số góc riêng phần $b_1$. Do đó phát biểu (i) hoàn toàn chính xác.\n2. Xét phát biểu (ii): 'Holding weekly staff count (X1) constant, for each additional remote engineering hour (X2), the mean standby hours are estimated to change by b₂ hours' -> Đây là định nghĩa và cách diễn giải chuẩn mực của hệ số góc riêng phần $b_2$. Do đó phát biểu (ii) hoàn toàn chính xác.\n3. Do cả hai mệnh đề (i) và (ii) đều là các nhận định chuẩn xác về mặt thống kê, phát biểu (iii) ('Cả hai phát biểu (i) và (ii) đều đúng') là phương án lựa chọn tối ưu và đầy đủ nhất.\n- Khẳng định (iii) tương ứng với phương án C.\n\n=> Chọn đáp án C ((iii)).",
     "casio": "Câu hỏi lý thuyết phân tích và diễn giải ý nghĩa của các hệ số hồi quy riêng phần trong giáo trình Berenson, không cần bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 14 - Mục 14.1: Developing the Multiple Regression Model & Case Study Standby Hours):\n- Trong mô hình hồi quy đa biến $\\hat{Y} = b_0 + b_1X_1 + b_2X_2$, điều kiện 'ceteris paribus' (giữ các biến khác không đổi) là bắt buộc khi diễn giải các hệ số góc riêng phần $b_1$ và $b_2$. Mỗi hệ số thể hiện sự thay đổi biên của $\\hat{Y}$ khi biến giải thích tương ứng tăng 1 đơn vị trong khi cố định tất cả các biến độc lập khác.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_RE_tables/Q49_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_RE_tables/Q49_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_RE/Q49_SU24RE.webp"
   },
   {
@@ -1301,8 +1301,8 @@
     "ap_dung": "Trong công thức tính r^2_adj, hệ số phạt (n - 1)/(n - k - 1) luôn lớn hơn 1 khi k >= 1. Nếu hệ số xác định r^2 rất nhỏ (gần 0) và số lượng biến độc lập k lớn so với cỡ mẫu n, phần trừ đi có thể lớn hơn 1, dẫn đến r^2_adj nhận giá trị âm. Vì vậy r^2 hiệu chỉnh **có thể âm (can be negative)**.\n\n=> Chọn đáp án C.",
     "casio": "Câu hỏi lý thuyết về tính chất của hệ số xác định hiệu chỉnh, không dùng máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 13 & 14: Multiple Regression Model): Khác với r^2 luôn nằm trong đoạn [0, 1], hệ số hiệu chỉnh r^2_adj điều chỉnh theo bậc tự do để tránh tăng ảo khi thêm biến và hoàn toàn có thể mang giá trị âm nếu mô hình quá kém.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_RE_tables/Q50_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_RE_tables/Q50_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_RE/Q50_SU24RE.webp"
   }
 ]

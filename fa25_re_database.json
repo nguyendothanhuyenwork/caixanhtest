@@ -754,8 +754,8 @@
     "ap_dung": "- Khoảng tin cậy 95% là một khoảng đối xứng quanh trung bình mẫu, do đó phần diện tích còn lại $\\alpha = 0.05$ phải được chia đều cho 2 phần đuôi (mỗi đuôi chiếm diện tích $\\alpha/2 = 0.025$).\n- Giá trị tới hạn chuẩn tắc tương ứng với diện tích đuôi trên 0.025 là $Z_{0.025} = 1.96$.\n\n=> Chọn đáp án B (1.96).",
     "casio": "Thao tác kiểm tra trên Casio fx-580VN X:\nBấm MENU 7 3 (Inverse Normal):\nNhập: Area = 0.025, $\\sigma = 1, \\mu = 0$ rồi bấm `=` $\\implies x = -1.95996$.\nLấy giá trị tới hạn đối xứng dương là **1.96**.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 8 - Mục 8.1: Confidence Interval for the Mean (sigma Known)):\n- Đối với khoảng tin cậy đối xứng, ta luôn phân chia rủi ro $\\alpha$ sang hai đuôi của phân phối chuẩn tắc, sử dụng giá trị tới hạn $Z_{\\alpha/2}$. Với độ tin cậy 95%, $Z_{0.025} = 1.96$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_RE_tables/Q29_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_RE_tables/Q29_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_RE/Q29_FA25RE.webp"
   },
   {
@@ -808,8 +808,8 @@
     "ap_dung": "1. Tính $n$:\n$$n = \\frac{1.96^2 \\times 0.25}{0.05^2} = \\frac{0.9604}{0.0025} = 384.16$$\n\n2. Làm tròn lên:\n$$n = 385$$\n\n=> Chọn đáp án D.",
     "casio": "- Bấm `(1.96^2 * 0.25) / 0.05^2 = 384.16`, làm tròn lên thành `385`.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 8 - Mục 8.4): Luôn làm tròn lên số nguyên tiếp theo khi xác định cỡ mẫu tối thiểu.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_RE_tables/Q31_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_RE_tables/Q31_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_RE/Q31_FA25RE.webp"
   },
   {
@@ -860,8 +860,8 @@
     "ap_dung": "- Tính sai số chuẩn của trung bình mẫu:\n  $$SE = \\frac{S}{\\sqrt{n}} = \\frac{2.2}{\\sqrt{12}} \\approx \\frac{2.2}{3.464102} \\approx 0.635085$$\n- Tính giá trị thống kê kiểm định $t_{STAT}$:\n  $$t_{STAT} = \\frac{30.2 - 29}{0.635085} = \\frac{1.2}{0.635085} \\approx 1.88951 \\approx 1.890$$\n\n=> Chọn đáp án A (1.890).",
     "casio": "1. Bấm [MENU] [1].\n2. Nhập phân số: `[(■/□)]` `30.2 - 29` [▼] `2.2 ÷ [√] 12` [=].\n3. Màn hình hiển thị: 1.889510526...\n4. Làm tròn 3 chữ số thập phân: 1.890.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 9 - Mục 9.2: t Test of Hypothesis for the Mean (σ Unknown)):\n- Khi độ lệch chuẩn tổng thể $\\sigma$ chưa biết, kiểm định giả thuyết về giá trị trung bình tổng thể $\\mu$ dựa trên thống kê Student $t$ với $df = n - 1$ bậc tự do.\n- Giá trị tới hạn cho trước trong đề bài ($t_{0.005, 11} = 3.106$) dùng để so sánh xác định miền bác bỏ nếu đề yêu cầu đưa ra kết luận bác bỏ/không bác bỏ.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_RE_tables/Q33_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_RE_tables/Q33_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_RE/Q33_FA25RE.webp"
   },
   {
@@ -886,8 +886,8 @@
     "ap_dung": "1. Tính sai số chuẩn của trung bình mẫu:\n$$SE = \\frac{S}{\\sqrt{n}} = \\frac{14.2}{\\sqrt{40}} \\approx \\frac{14.2}{6.324555} \\approx 2.245217$$\n\n2. Tính giá trị thống kê kiểm định $t_{STAT}$:\n$$t_{STAT} = \\frac{137 - 132}{2.245217} = \\frac{5}{2.245217} \\approx 2.22695 \\approx 2.23$$\n\n3. Xác định giá trị tới hạn:\nVì kiểm định một phía đuôi phải với $\\alpha = 0.05$, toàn bộ diện tích $\\alpha$ nằm ở đuôi trên:\n$$t_{crit} = t_{0.05, 39} = 1.685$$\n\nCặp kết quả cần tìm là $2.23$ và $1.685$.\n\n=> Chọn đáp án A (2.23 and 1.685).",
     "casio": "1. Bấm [MENU] [1].\n2. Nhập phân số: `[(■/□)]` `137 - 132` [▼] `14.2 ÷ [√] 40` [=].\n3. Màn hình hiển thị: 2.226956...\n4. Làm tròn 2 chữ số thập phân: 2.23.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 9 - Mục 9.2: t Test of Hypothesis for the Mean (σ Unknown)):\n- Trong kiểm định một phía đuôi phải ($H_1: \\mu > \\mu_0$), toàn bộ mức ý nghĩa $\\alpha = 0.05$ được dồn về đuôi phải, do đó giá trị tới hạn là $+t_{\\alpha, df} = 1.685$ (không chia đôi $\\alpha$).\n- Miền bác bỏ là $t_{STAT} > 1.685$. Do $2.23 > 1.685$, ta bác bỏ $H_0$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_RE_tables/Q34_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_RE_tables/Q34_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_RE/Q34_FA25RE.webp"
   },
   {
@@ -911,8 +911,8 @@
     "ap_dung": "- So sánh giá trị $p\\text{-value}$ với mức ý nghĩa $\\alpha$:\n  $$p\\text{-value} = 0.0026 < \\alpha = 0.05$$\n- Do $p\\text{-value}$ nhỏ hơn $\\alpha$, ta có đủ bằng chứng thống kê để bác bỏ giả thuyết không $H_0$ (Reject $H_0$).\n- Quyết định này tương ứng với khẳng định (i).\n- Phương án B chọn khẳng định (i).\n\n=> Chọn đáp án B ((i)).",
     "casio": "So sánh trực tiếp hai số thập phân: $0.0026 < 0.05$.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 9 - Mục 9.1: The p-Value Approach to Hypothesis Testing):\n- Giá trị $p$-value là xác suất nhỏ nhất của việc phạm sai lầm loại I nếu ta quyết định bác bỏ $H_0$ dựa trên dữ liệu mẫu thu được.\n- Khi $p\\text{-value} < \\alpha$, bằng chứng chống lại $H_0$ là rất mạnh, dẫn đến quyết định bác bỏ $H_0$ để ủng hộ giả thuyết nghiên cứu $H_1$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_RE_tables/Q35_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_RE_tables/Q35_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_RE/Q35_FA25RE.webp"
   },
   {
@@ -962,8 +962,8 @@
     "ap_dung": "Dựa vào các số liệu mẫu đã cho trong bài toán:\n- Chênh lệch trung bình mẫu: $\\bar{X}_1 - \\bar{X}_2 = 3.20$\n- Sai số biên tính được: $e = t_{0.025, 35} \\cdot S_p \\sqrt{\\frac{1}{20} + \\frac{1}{17}} = 2.03 \\times 1.128 = 2.29$\n- Cận dưới khoảng tin cậy: $L = 3.20 - 2.29 = 0.91$\n- Cận trên khoảng tin cậy: $U = 3.20 + 2.29 = 5.49$\nKhoảng tin cậy 95% là $(0.91, 5.49)$.\n\n=> Chọn đáp án A.\n\n*(Bảng số liệu gốc bổ sung chuẩn 100% từ Đề thi Final Exam kỳ FA25 RE Q37)*",
     "casio": "Thao tác trên Casio fx-580VN X:\n1. Bấm MENU 1 (chế độ tính cơ bản).\n2. Tính cận dưới: Nhập `3.20 - 2.29 =` -> màn hình ra 0.91.\n3. Tính cận trên: Bấm mũi tên lùi, sửa dấu `-` thành `+` rồi bấm `=` -> màn hình ra 5.49.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.1: Comparing the Means of Two Independent Populations):\n- Khi hai mẫu độc lập được lấy từ các tổng thể phân phối chuẩn có phương sai bằng nhau chưa biết, ta sử dụng ước lượng phương sai gộp $S_p^2$ (Pooled-Variance t-Test).\n- Bậc tự do luôn là $df = n_1 + n_2 - 2$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_RE_tables/Q37_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_RE_tables/Q37_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_RE/Q37_FA25RE.webp"
   },
   {
@@ -1041,8 +1041,8 @@
     "ap_dung": "1. Tính số thành công trong từng mẫu:\n- Phụ nữ: $X_1 = 150 \\times 0.62 = 93$\n- Nam giới: $X_2 = 200 \\times 0.24 = 48$\n2. Tính tỷ lệ mẫu gộp:\n$$\\bar{p} = \\frac{93 + 48}{150 + 200} = \\frac{141}{350} \\approx 0.402857$$\n$$\\implies 1 - \\bar{p} = 1 - 0.402857 = 0.597143$$\n3. Tính sai số chuẩn gộp của hiệu hai tỷ lệ:\n$$SE = \\sqrt{0.402857 \\times 0.597143 \\times \\left(\\frac{1}{150} + \\frac{1}{200}\\right)} = \\sqrt{0.240563 \\times 0.0116667} \\approx \\sqrt{0.00280657} \\approx 0.052977$$\n4. Tính giá trị thống kê kiểm định Z:\n$$Z_{STAT} = \\frac{0.62 - 0.24}{0.052977} = \\frac{0.38}{0.052977} \\approx 7.1729 \\approx 7.17$$\n\n=> Chọn đáp án A (7.17).",
     "casio": "Bấm MENU 1 (chế độ tính toán cơ bản):\n1. Tính tỷ lệ gộp: nhập `(93 + 48) / (150 + 200)` -> ấn STO A (A = 141/350 ≈ 0.402857).\n2. Tính sai số chuẩn: nhập `sqrt(A * (1 - A) * (1/150 + 1/200))` -> ấn STO B (B ≈ 0.052977).\n3. Tính Z: nhập `(0.62 - 0.24) / B` -> ấn '=' màn hình ra 7.1729 (làm tròn 7.17).",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.3: Comparing the Proportions of Two Independent Populations):\n- Khi kiểm định sự khác biệt giữa hai tỷ lệ tổng thể độc lập với giả thuyết không $H_0: \\pi_1 = \\pi_2$, ta sử dụng tỷ lệ gộp $\\bar{p} = (X_1 + X_2)/(n_1 + n_2)$ để ước lượng sai số chuẩn chung, từ đó tính tiêu chuẩn kiểm định $Z_{STAT}$ tuân theo phân phối chuẩn tắc.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_RE_tables/Q40_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_RE_tables/Q40_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_RE/Q40_FA25RE.webp"
   },
   {
@@ -1094,8 +1094,8 @@
     "ap_dung": "- Trong One-Way ANOVA, mục đích nghiên cứu là xem xét liệu có sự khác biệt giữa giá trị trung bình của $c$ tổng thể hay không.\n- Giả thuyết không $H_0$ luôn phát biểu trạng thái mặc định không có tác động xử lý hay không có sự khác biệt: 'There is no difference in the population means' (Tất cả các giá trị trung bình tổng thể đều bằng nhau).\n- Giả thuyết đối $H_1$ mới là 'có sự khác biệt' (ít nhất hai trung bình khác nhau).\n\n=> Chọn đáp án A.",
     "casio": "Câu hỏi lý thuyết nền tảng về thiết lập giả thuyết kiểm định ANOVA, không sử dụng máy tính bỏ túi.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 11 - Mục 11.1: The Completely Randomized Design: One-Way ANOVA):\n- Giả thuyết không $H_0$ trong ANOVA luôn là sự đồng nhất của tất cả các trung bình tổng thể: $\\mu_1 = \\mu_2 = \\dots = \\mu_c$.\n- Tránh nhầm lẫn với giả thuyết đối $H_1$: $H_1$ chỉ khẳng định không phải tất cả đều bằng nhau, chứ không khẳng định tất cả các trung bình đều khác nhau.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_RE_tables/Q42_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_RE_tables/Q42_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_RE/Q42_FA25RE.webp"
   },
   {

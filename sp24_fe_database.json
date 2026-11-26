@@ -336,8 +336,8 @@
     "ap_dung": "1. Trong mô hình hồi quy tuyến tính cổ điển với 2 biến giải thích, phương trình hồi quy mẫu dự báo luôn có dạng chuẩn tắc gồm hệ số chặn $b_0$ cộng với tích của từng biến độc lập với hệ số hồi quy riêng phần tương ứng:\n$$\\hat{Y} = b_0 + b_1 X_1 + b_2 X_2$$\n2. Đối chiếu các phương án cấu trúc:\n- Biểu thức (i) bị gán dấu trừ sai mặc định cho hệ số $b_1$.\n- Biểu thức (iii) thiếu hoàn toàn hệ số chặn $b_0$ (mô hình không có intercept).\n- Biểu thức (ii) $\\hat{Y} = b_0 + b_1 X_1 + b_2 X_2$ là dạng phương trình chuẩn tắc tổng quát nhất.\n3. Do đó, khẳng định (ii) là biểu diễn chính xác, tương ứng với phương án B.\n\n=> Chọn đáp án B ((ii)).",
     "casio": "Câu hỏi lý thuyết về cấu trúc phương trình hồi quy đa biến tổng quát trong giáo trình Berenson, không yêu cầu bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 13/14 - Mục: Developing the Multiple Regression Model):\n- Phương trình hồi quy tuyến tính bội dự báo biến phản hồi $Y$ dựa trên $k$ biến độc lập $X_1, X_2, ..., X_k$ có dạng tổng quát: $\\hat{Y}_i = b_0 + b_1X_{1i} + b_2X_{2i} + ... + b_kX_{ki}$. Trong đó $b_0$ là hệ số chặn mẫu và các $b_j$ là các hệ số hồi quy mẫu riêng phần.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_FE_tables/Q13_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_FE_tables/Q13_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_FE/Q13_SP24FE.webp"
   },
   {
@@ -493,8 +493,8 @@
     "ap_dung": "1. Do giả thuyết đối là $H_1: \\mu > \\mu_0$, đây là kiểm định đuôi phải (upper-tail test). Toàn bộ mức ý nghĩa $\\alpha$ tập trung ở phần đuôi bên phải của phân phối.\n2. Vì chưa biết độ lệch chuẩn tổng thể $\\sigma$, ta sử dụng phân phối t Student với số bậc tự do $df = n - 1$.\n3. Giá trị tới hạn nằm ở phía dương bên phải, tương ứng với hoành độ điểm mà diện tích bên phải bằng $\\alpha$, ký hiệu là $+t_{\\alpha, n-1}$.\n4. Khẳng định (ii) $t_{\\alpha, n-1}$ là khẳng định chính xác, tương ứng với phương án D.\n\n=> Chọn đáp án D ((ii)).",
     "casio": "Câu hỏi lý thuyết xác định ký hiệu giá trị tới hạn chuẩn tắc của phân phối t trong giáo trình Berenson, không yêu cầu bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 9 - Mục 9.2: t Test of Hypothesis for the Mean (σ Unknown)):\n- Trong kiểm định một phía đuôi phải đối với trung bình tổng thể khi $\\sigma$ chưa biết, miền bác bỏ là $t_{STAT} > t_{\\alpha, n-1}$, trong đó giá trị tới hạn $t_{\\alpha, n-1}$ là giá trị trên thang phân phối Student với $n-1$ bậc tự do mà diện tích phần đuôi trên bằng đúng mức ý nghĩa $\\alpha$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_FE_tables/Q19_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_FE_tables/Q19_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_FE/Q19_SP24FE.webp"
   },
   {
@@ -520,8 +520,8 @@
     "ap_dung": "1. Xác định phân vị tới hạn:\n- Do giả thuyết đối là $H_1: \\beta_1 \\ne 0$, đây là kiểm định hai phía.\n- Với mức ý nghĩa $\\alpha = 0.05$, diện tích ở mỗi phía đuôi của phân phối Student $t$ là $\\alpha/2 = 0.025$.\n- Đề bài cung cấp sẵn giá trị $t_{0.025, 2} = 4.303$.\n- Hai giá trị tới hạn đối xứng hai bên trục số là $-4.303$ và $+4.303$.\n- Đối chiếu với các phương án lựa chọn, chỉ có phương án A khớp chính xác với cặp giá trị tới hạn hai phía $\\pm 4.303$.\n\n2. Mở rộng (các câu hỏi biến thể từ cùng bộ dữ liệu trong tài liệu ôn thi FPT):\n- Nếu đề hỏi: 'What is the coefficient of correlation for these data?' $\\implies$ Hệ số tương quan $r = -0.824$.\n- Nếu đề hỏi: 'What is the estimated slope for the candy bar price and sales data?' $\\implies$ Độ dốc ước lượng $b_1 = -74.77$.\n\n=> Chọn đáp án A.\n\n*(Bảng số liệu gốc bổ sung chuẩn 100% từ Đề thi Final Exam kỳ SP26 FE Q48)*",
     "casio": "- Kiểm định hai phía với $\\alpha = 0.05 \\implies$ diện tích mỗi đuôi là $0.025$.\n- Cặp giá trị tới hạn tương ứng với $t_{0.025, 2} = 4.303$ là $\\pm 4.303$.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 13 - Mục 13.7: Inferences About the Slope and Correlation Coefficient):\n- Để kiểm định xem biến độc lập $X$ có tác động tuyến tính thực sự lên biến phụ thuộc $Y$ hay không, ta kiểm định $H_0: \\beta_1 = 0$ đối với $H_1: \\beta_1 \\ne 0$.\n- Thống kê kiểm định có bậc tự do là $df = n - 2$. Trong kiểm định hai phía, các giá trị tới hạn là $\\pm t_{\\alpha/2, n-2}$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_FE_tables/Q20_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_FE_tables/Q20_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_FE/Q20_SP24FE.webp"
   },
   {
@@ -598,8 +598,8 @@
     "ap_dung": "Mỗi trưởng phòng hệ thống thông tin đại diện cho một văn phòng khu vực độc lập. Do đó, tổng số văn phòng khu vực có mặt trong khảo sát chính bằng tổng tất cả các tần số $f$:\n$$n = \\sum f = 7 + 5 + 11 + 8 + 9 = 40$$\n\n=> Có 40 văn phòng khu vực được đại diện.\n\n=> Chọn đáp án A.",
     "casio": "- Bấm máy tính cơ bản: `7 + 5 + 11 + 8 + 9 = 40`.\n- Hoặc dùng chế độ 1-Variable Statistics: `MENU` `6` `1`, bật tần số (`SHIFT` `MENU` -> cuộn xuống `3: Statistics` -> `1: On`), nhập các cặp $(X, f)$, bấm `AC`, `OPTN` `2` đọc $n = 40$.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 2 - Mục 2.2: Organizing Numerical Data):\n- Bảng phân phối tần số (Frequency Distribution) nhóm các quan sát thành các nhóm giá trị và ghi lại số lần xuất hiện (tần số $f$) của mỗi nhóm.\n- Tổng các tần số $\\sum f$ luôn bằng tổng kích thước mẫu $n$ của cuộc điều tra.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_FE_tables/Q23_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_FE_tables/Q23_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_FE/Q23_SP24FE.webp"
   },
   {
@@ -832,8 +832,8 @@
     "ap_dung": "- Khẳng định của công ty là xe đạt mức tiêu hao nhiên liệu trung bình tốt hơn 30 dặm/gallon ('better than 30 mpg'). Khẳng định này mang tính đột phá cần chứng minh nên được đưa vào giả thuyết đối $H_1: \\mu > 30$.\n- Giả thuyết không $H_0$ thể hiện trạng thái mốc chuẩn: $H_0: \\mu = 30$.\n- Cặp giả thuyết này trùng khớp với biểu thức (iii):\n  $$H_0: \\mu = 30, \\quad H_1: \\mu > 30$$\n- Phương án C chọn khẳng định (iii).\n\n=> Chọn đáp án C ((iii)).",
     "casio": "Đây là câu hỏi lý thuyết thiết lập giả thuyết, không dùng máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 9 - Mục 9.1: Fundamentals of Hypothesis-Testing Methodology):\n- Giáo trình Berenson áp dụng quy ước chuẩn: Giả thuyết không $H_0$ luôn chứa dấu bằng '=' đối với cả kiểm định hai phía và một phía ($H_0: \\mu = \\mu_0$).\n- Chiều của bất đẳng thức trong giả thuyết đối $H_1$ phản ánh trực tiếp hướng của khẳng định nghiên cứu ('greater than' $\\implies H_1: \\mu > \\mu_0$).",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_FE_tables/Q32_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_FE_tables/Q32_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_FE/Q32_SP24FE.webp"
   },
   {
@@ -1147,8 +1147,8 @@
     "ap_dung": "$$n = \\left(\\frac{1.96 \\times 12}{2}\\right)^2 = (11.76)^2 = 138.2976$$\nLàm tròn lên số nguyên: $n = 139$.\n\n=> Chọn đáp án B (139).",
     "casio": "Bấm `(1.96 × 12 ÷ 2)^2 =` ra `138.2976`, làm tròn lên thành `139`.",
     "ly_thuyet": "Cỡ mẫu tối thiểu cho ước lượng trung bình luôn được làm tròn lên số nguyên lớn hơn gần nhất.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_FE_tables/Q44_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_FE_tables/Q44_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_FE/Q44_SP24FE.webp"
   },
   {
@@ -1251,8 +1251,8 @@
     "ap_dung": "1. Nhân từng mức yêu cầu bồi thường X với số tài xế f tương ứng rồi tính tổng:\n   Total = (1 * 14) + (2 * 18) + (3 * 12) + (4 * 5) + (5 * 1)\n   Total = 14 + 36 + 36 + 20 + 5 = 111 yêu cầu bồi thường.\n2. Chú ý: Nếu câu hỏi hỏi tổng số tài xế (drivers), đáp án sẽ là sum(f) = 14 + 18 + 12 + 5 + 1 = 50. Câu hỏi hỏi tổng số yêu cầu bồi thường (total claims), do đó đáp án là 111.\n=> Chọn đáp án C.",
     "casio": "Bấm máy tính Casio fx-580VN X:\n1 * 14 + 2 * 18 + 3 * 12 + 4 * 5 + 5 * 1 =\nMàn hình hiển thị: 111.",
     "ly_thuyet": "Theo Giáo trình Berenson Ch2 & Ch3 - Mục 'Frequency Distributions': Khi dữ liệu đã được gom nhóm theo bảng phân phối tần số, tổng tích sum(X * f) phản ánh tổng độ lớn của biến định lượng được đại diện trong toàn bộ mẫu.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_FE_tables/Q48_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_FE_tables/Q48_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_FE/Q48_SP24FE.webp"
   },
   {

@@ -123,8 +123,8 @@
     "ap_dung": "Mỗi trưởng phòng hệ thống thông tin đại diện cho một văn phòng khu vực độc lập. Do đó, tổng số văn phòng khu vực có mặt trong khảo sát chính bằng tổng tất cả các tần số $f$:\n$$n = \\sum f = 7 + 5 + 11 + 8 + 9 = 40$$\n\n=> Có 40 văn phòng khu vực được đại diện.\n\n=> Chọn đáp án D.",
     "casio": "- Bấm máy tính cơ bản: `7 + 5 + 11 + 8 + 9 = 40`.\n- Hoặc dùng chế độ 1-Variable Statistics: `MENU` `6` `1`, bật tần số (`SHIFT` `MENU` -> cuộn xuống `3: Statistics` -> `1: On`), nhập các cặp $(X, f)$, bấm `AC`, `OPTN` `2` đọc $n = 40$.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 2 - Mục 2.2: Organizing Numerical Data):\n- Bảng phân phối tần số (Frequency Distribution) nhóm các quan sát thành các nhóm giá trị và ghi lại số lần xuất hiện (tần số $f$) của mỗi nhóm.\n- Tổng các tần số $\\sum f$ luôn bằng tổng kích thước mẫu $n$ của cuộc điều tra.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU25_RE_tables/Q5_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU25_RE_tables/Q5_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU25_RE/Q5_SU25RE.webp"
   },
   {
@@ -799,8 +799,8 @@
     "ap_dung": "Thay các giá trị vào công thức:\n$$n = \\left( \\frac{1.96 \\times 20}{10} \\right)^2 = (1.96 \\times 2)^2 = (3.92)^2 = 15.3664$$\nTheo nguyên tắc làm tròn cỡ mẫu trong thống kê, luôn làm tròn LÊN số nguyên tiếp theo gần nhất (round up) để sai số thực tế không vượt quá mức cho phép:\n$$n = 16$$\n\n=> Chọn đáp án D (16).",
     "casio": "Thao tác trên Casio fx-580VN X:\n1. Bấm MENU 1 (chế độ tính cơ bản).\n2. Nhập biểu thức: `((1.96 * 20) / 10)^2` rồi bấm `=`.\n3. Kết quả hiển thị: `15.3664`.\n4. Thực hiện làm tròn LÊN số nguyên kế tiếp: $n = 16$.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 8 - Mục 8.4: Determining Sample Size for the Mean):\n- Cỡ mẫu tỷ lệ thuận với bình phương độ lệch chuẩn $\\sigma^2$ và bình phương giá trị tới hạn $Z^2$, nhưng tỷ lệ nghịch với bình phương sai số lấy mẫu $e^2$.\n- Quy tắc bắt buộc: Phải luôn làm tròn lên (Round up to the next integer) bất kể phần thập phân lớn hay nhỏ, nhằm đảm bảo sai số biên thực tế không bao giờ vượt quá $e$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU25_RE_tables/Q31_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU25_RE_tables/Q31_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU25_RE/Q31_SU25RE.webp"
   },
   {
@@ -878,8 +878,8 @@
     "ap_dung": "1. Tính sai số chuẩn của trung bình mẫu:\n$$SE = \\frac{S}{\\sqrt{n}} = \\frac{14.2}{\\sqrt{40}} \\approx \\frac{14.2}{6.324555} \\approx 2.245217$$\n\n2. Tính giá trị thống kê kiểm định $t_{STAT}$:\n$$t_{STAT} = \\frac{137 - 132}{2.245217} = \\frac{5}{2.245217} \\approx 2.22695 \\approx 2.23$$\n\n3. Xác định giá trị tới hạn:\nVì kiểm định một phía đuôi phải với $\\alpha = 0.05$, toàn bộ diện tích $\\alpha$ nằm ở đuôi trên:\n$$t_{crit} = t_{0.05, 39} = 1.685$$\n\nCặp kết quả cần tìm là $2.23$ và $1.685$.\n\n=> Chọn đáp án A (2.23 and 1.685).",
     "casio": "1. Bấm [MENU] [1].\n2. Nhập phân số: `[(■/□)]` `137 - 132` [▼] `14.2 ÷ [√] 40` [=].\n3. Màn hình hiển thị: 2.226956...\n4. Làm tròn 2 chữ số thập phân: 2.23.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 9 - Mục 9.2: t Test of Hypothesis for the Mean (σ Unknown)):\n- Trong kiểm định một phía đuôi phải ($H_1: \\mu > \\mu_0$), toàn bộ mức ý nghĩa $\\alpha = 0.05$ được dồn về đuôi phải, do đó giá trị tới hạn là $+t_{\\alpha, df} = 1.685$ (không chia đôi $\\alpha$).\n- Miền bác bỏ là $t_{STAT} > 1.685$. Do $2.23 > 1.685$, ta bác bỏ $H_0$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU25_RE_tables/Q34_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU25_RE_tables/Q34_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU25_RE/Q34_SU25RE.webp"
   },
   {
@@ -1085,8 +1085,8 @@
     "ap_dung": "- Trong One-Way ANOVA, mục đích nghiên cứu là xem xét liệu có sự khác biệt giữa giá trị trung bình của $c$ tổng thể hay không.\n- Giả thuyết không $H_0$ luôn phát biểu trạng thái mặc định không có tác động xử lý hay không có sự khác biệt: 'There is no difference in the population means' (Tất cả các giá trị trung bình tổng thể đều bằng nhau).\n- Giả thuyết đối $H_1$ mới là 'có sự khác biệt' (ít nhất hai trung bình khác nhau).\n\n=> Chọn đáp án A.",
     "casio": "Câu hỏi lý thuyết nền tảng về thiết lập giả thuyết kiểm định ANOVA, không sử dụng máy tính bỏ túi.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 11 - Mục 11.1: The Completely Randomized Design: One-Way ANOVA):\n- Giả thuyết không $H_0$ trong ANOVA luôn là sự đồng nhất của tất cả các trung bình tổng thể: $\\mu_1 = \\mu_2 = \\dots = \\mu_c$.\n- Tránh nhầm lẫn với giả thuyết đối $H_1$: $H_1$ chỉ khẳng định không phải tất cả đều bằng nhau, chứ không khẳng định tất cả các trung bình đều khác nhau.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU25_RE_tables/Q42_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU25_RE_tables/Q42_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU25_RE/Q42_SU25RE.webp"
   },
   {
@@ -1164,8 +1164,8 @@
     "ap_dung": "1. Tính trung bình của X và Y:\n- $\\bar{X} = \\frac{23 + 25 + 28 + 21}{4} = \\frac{97}{4} = 24.25$\n- $\\bar{Y} = \\frac{49 + 53 + 59 + 42}{4} = \\frac{203}{4} = 50.75$\n2. Tính các độ lệch và bình phương độ lệch:\n- $(X - \\bar{X})$: $-1.25; +0.75; +3.75; -3.25$\n- $(Y - \\bar{Y})$: $-1.75; +2.25; +8.25; -8.75$\n- $\\sum (X - \\bar{X})^2 = (-1.25)^2 + 0.75^2 + 3.75^2 + (-3.25)^2 = 1.5625 + 0.5625 + 14.0625 + 10.5625 = 26.75$\n- $\\sum (X - \\bar{X})(Y - \\bar{Y}) = (-1.25)(-1.75) + (0.75)(2.25) + (3.75)(8.25) + (-3.25)(-8.75) = 2.1875 + 1.6875 + 30.9375 + 28.4375 = 63.25$\n3. Tính hệ số góc $b_1$:\n$$b_1 = \\frac{63.25}{26.75} \\approx 2.364486... \\approx 2.36$$\n4. Tính tung độ gốc $b_0$:\n$$b_0 = \\bar{Y} - b_1\\bar{X} = 50.75 - 2.364486 \\times 24.25 = 50.75 - 57.33878 = -6.58878... \\approx -6.59$$\n5. Phương trình hồi quy là:\n$$\\hat{y} = -6.59 + 2.36x$$\n\n=> Chọn đáp án C (-6.59 + 2.36x).",
     "casio": "Thực hiện trên máy tính Casio fx-580VN X:\n1. Bấm MENU 6 2 (Thống kê 2 biến y = a + bx).\n2. Nhập số liệu:\n   - Cột X: 23 = 25 = 28 = 21 =\n   - Cột Y: 49 = 53 = 59 = 42 =\n3. Bấm AC để lưu.\n4. Bấm OPTN 3 (Regression Calc):\n   - Máy hiển thị `a = -6.588785...` (tung độ gốc $b_0$)\n   - Máy hiển thị `b = 2.3644859...` (hệ số góc $b_1$)\n-> Phương trình là $\\hat{y} = -6.59 + 2.36x$.",
     "ly_thuyet": "Theo Berenson (Chương 13, Mục 13.2: Determining the Simple Linear Regression Equation): Phương pháp bình phương nhỏ nhất (Ordinary Least Squares - OLS) tìm ra các hệ số b0 và b1 sao cho tổng bình phương sai số giữa các giá trị quan sát và giá trị dự báo là nhỏ nhất.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU25_RE_tables/Q45_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU25_RE_tables/Q45_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU25_RE/Q45_SU25RE.webp"
   },
   {
@@ -1244,8 +1244,8 @@
     "ap_dung": "1. Xác định các đại lượng từ đề bài:\n- Hệ số góc ước lượng: $b_1 = -2.14$.\n- Sai số chuẩn của hệ số góc: $S_{b_1} = 1.5$.\n- Giá trị theo giả thuyết không: $\\beta_1 = 0$.\n2. Thay vào công thức tính thống kê kiểm định t:\n$$t_{STAT} = \\frac{-2.14 - 0}{1.5} = \\frac{-2.14}{1.5} = -1.42667... \\approx -1.43$$\n\n=> Chọn đáp án A (-1.43).",
     "casio": "Thực hiện phép tính trên Casio fx-580VN X:\nBấm: `-2.14 ÷ 1.5 =` -> kết quả hiển thị `-1.426666...` làm tròn đến 2 chữ số thập phân là `-1.43`.",
     "ly_thuyet": "Theo Berenson (Chương 13, Mục 13.5: Testing for the Significance of the Slope): Để kiểm định xem biến giải thích X có tác động tuyến tính đến biến phụ thuộc Y hay không, ta sử dụng thống kê kiểm định t với bậc tự do df = n - 2: t_STAT = (b1 - β1) / S_b1. Giá trị này đo lường khoảng cách từ hệ số góc mẫu đến 0 tính theo đơn vị sai số chuẩn.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU25_RE_tables/Q48_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU25_RE_tables/Q48_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU25_RE/Q48_SU25RE.webp"
   },
   {
@@ -1270,8 +1270,8 @@
     "ap_dung": "1. Xét phát biểu (i): 'Holding remote engineering hours (X2) constant, for each additional people-day in weekly staff count (X1), the mean standby hours are estimated to change by b₁ hours' -> Đây là định nghĩa và cách diễn giải chuẩn mực của hệ số góc riêng phần $b_1$. Do đó phát biểu (i) hoàn toàn chính xác.\n2. Xét phát biểu (ii): 'Holding weekly staff count (X1) constant, for each additional remote engineering hour (X2), the mean standby hours are estimated to change by b₂ hours' -> Đây là định nghĩa và cách diễn giải chuẩn mực của hệ số góc riêng phần $b_2$. Do đó phát biểu (ii) hoàn toàn chính xác.\n3. Do cả hai mệnh đề (i) và (ii) đều là các nhận định chuẩn xác về mặt thống kê, phát biểu (iii) ('Cả hai phát biểu (i) và (ii) đều đúng') là phương án lựa chọn tối ưu và đầy đủ nhất.\n- Khẳng định (iii) tương ứng với phương án C.\n\n=> Chọn đáp án C ((iii)).",
     "casio": "Câu hỏi lý thuyết phân tích và diễn giải ý nghĩa của các hệ số hồi quy riêng phần trong giáo trình Berenson, không cần bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 14 - Mục 14.1: Developing the Multiple Regression Model & Case Study Standby Hours):\n- Trong mô hình hồi quy đa biến $\\hat{Y} = b_0 + b_1X_1 + b_2X_2$, điều kiện 'ceteris paribus' (giữ các biến khác không đổi) là bắt buộc khi diễn giải các hệ số góc riêng phần $b_1$ và $b_2$. Mỗi hệ số thể hiện sự thay đổi biên của $\\hat{Y}$ khi biến giải thích tương ứng tăng 1 đơn vị trong khi cố định tất cả các biến độc lập khác.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU25_RE_tables/Q49_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU25_RE_tables/Q49_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU25_RE/Q49_SU25RE.webp"
   },
   {

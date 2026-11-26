@@ -179,8 +179,8 @@
     "ap_dung": "- BẪY KINH ĐIỂN CẦN TRÁNH:\n  + Nếu là 2 mẫu ĐỘC LẬP (Independent populations): $df = n_1 + n_2 - 2 = 20 + 20 - 2 = 38$.\n  + Nhưng ở đây đề bài nhấn mạnh rõ là '2 related populations' (hai tổng thể phụ thuộc / liên quan, ví dụ đo lường trước - sau trên cùng 20 đối tượng).\n- Trong kiểm định ghép cặp, ta tính sai khác từng cặp $D_i = X_{1i} - X_{2i}$ để quy về bài toán 1 mẫu duy nhất của biến hiệu $D$ với cỡ mẫu $n = 20$ cặp.\n- Bậc tự do của kiểm định t mẫu phụ thuộc do đó là:\n$$df = n - 1 = 20 - 1 = 19$$\n\n=> Chọn đáp án C (19).",
     "casio": "Bấm MENU 1: `20 - 1 = 19`.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.2: Comparing the Means of Two Related Populations - Paired t-Test):\n- Khi các đơn vị quan sát được ghép cặp hoặc đo lường lặp lại (repeated measures), bản chất ta đang kiểm định giả thuyết 1 mẫu về trung bình sai khác $\\mu_D$.\n- Do đó, bậc tự do luôn là $n - 1$, trong đó $n$ là số cặp dữ liệu.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_FE_tables/Q7_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_FE_tables/Q7_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_FE/Q7_FA23FE.webp"
   },
   {
@@ -442,8 +442,8 @@
     "ap_dung": "Từ dữ liệu bảng điểm trước và sau của 8 học viên:\n- Tổng các độ chênh lệch điểm số sau khóa học trừ trước khóa học: $\\sum D = 400$.\n- Số học viên: $n = 8$.\n- Giá trị trung bình của hiệu số điểm là:\n  $$\\bar{D} = \\frac{400}{8} = 50$$\n\n=> Chọn đáp án A (50).\n\n*(Bảng số liệu gốc bổ sung chuẩn 100% từ Đề thi Final Exam kỳ SU25 FE Q38)*",
     "casio": "Thao tác trên Casio fx-580VN X:\n1. Bấm MENU 1.\n2. Nhập: `400 / 8 =`.\n3. Kết quả hiển thị: `50`.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.2: Comparing the Means of Two Related Populations - Paired t Test):\n- Trong thiết kế nghiên cứu lặp lại trước - sau (repeated measures / before-and-after), hai mẫu không độc lập mà tạo thành các cặp phụ thuộc.\n- Ta quy bài toán 2 mẫu về bài toán 1 mẫu duy nhất trên biến chênh lệch $D = X_1 - X_2$ với trung bình mẫu $\\bar{D} = \\sum D_i / n$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_FE_tables/Q17_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_FE_tables/Q17_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_FE/Q17_FA23FE.webp"
   },
   {
@@ -576,8 +576,8 @@
     "ap_dung": "1. Tính tỷ lệ gộp chung (Pooled sample proportion $\\bar{p}$):\n   $$\\bar{p} = \\frac{240 + 160}{260 + 240} = \\frac{400}{500} = 0{,}80$$\n   $$1 - \\bar{p} = 0{,}20$$\n2. Tính sai số chuẩn gộp (Standard Error):\n   $$SE = \\sqrt{0{,}80 \\times 0{,}20 \\times \\left(\\frac{1}{260} + \\frac{1}{240}\\right)} = \\sqrt{0{,}16 \\times \\left(0{,}003846 + 0{,}004167\\right)} = \\sqrt{0{,}16 \\times 0{,}0080128} = \\sqrt{0{,}00128205} \\approx 0{,}035806$$\n3. Tính thống kê kiểm định $Z_{STAT}$:\n   $$p_1 - p_2 = \\frac{240}{260} - \\frac{160}{240} = 0{,}923077 - 0{,}666667 = 0{,}256410$$\n   $$Z_{STAT} = \\frac{0{,}256410}{0{,}035806} \\approx 7{,}1611 \\approx 7{,}16$$\n=> Chọn đáp án C.",
     "casio": "Thao tác trên Casio fx-580VN X:\n1. Bấm `MENU 1`.\n2. Tính tỷ lệ gộp: `(240 + 160) ÷ 500 =` -> ra `0.8`, lưu `STO P`.\n3. Tính sai số chuẩn: `√( ALPHA P × (1 - ALPHA P) × (1 ÷ 260 + 1 ÷ 240) )` -> ra `0.0358057...`, lưu `STO M`.\n4. Tính Z: `(240 ÷ 260 - 160 ÷ 240) ÷ ALPHA M =` -> ra `7.1611...` (làm tròn `7.16`).",
     "ly_thuyet": "Theo Berenson (Chương 10: Two-Sample Tests - Mục 10.3 Comparing the Proportions of Two Independent Populations):\n- Dưới giả thuyết không $H_0: \\pi_1 = \\pi_2$, ta buộc phải gộp hai mẫu để tính tỷ lệ gộp chung $\\bar{p}$ nhằm ước lượng độ lệch chuẩn chung của hai tổng thể.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_FE_tables/Q22_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_FE_tables/Q22_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_FE/Q22_FA23FE.webp"
   },
   {
@@ -786,8 +786,8 @@
     "ap_dung": "1. Nhân từng mức yêu cầu bồi thường X với số tài xế f tương ứng rồi tính tổng:\n   Total = (1 * 14) + (2 * 18) + (3 * 12) + (4 * 5) + (5 * 1)\n   Total = 14 + 36 + 36 + 20 + 5 = 111 yêu cầu bồi thường.\n2. Chú ý: Nếu câu hỏi hỏi tổng số tài xế (drivers), đáp án sẽ là sum(f) = 14 + 18 + 12 + 5 + 1 = 50. Câu hỏi hỏi tổng số yêu cầu bồi thường (total claims), do đó đáp án là 111.\n=> Chọn đáp án C.",
     "casio": "Bấm máy tính Casio fx-580VN X:\n1 * 14 + 2 * 18 + 3 * 12 + 4 * 5 + 5 * 1 =\nMàn hình hiển thị: 111.",
     "ly_thuyet": "Theo Giáo trình Berenson Ch2 & Ch3 - Mục 'Frequency Distributions': Khi dữ liệu đã được gom nhóm theo bảng phân phối tần số, tổng tích sum(X * f) phản ánh tổng độ lớn của biến định lượng được đại diện trong toàn bộ mẫu.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_FE_tables/Q30_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_FE_tables/Q30_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_FE/Q30_FA23FE.webp"
   },
   {
@@ -973,8 +973,8 @@
     "ap_dung": "- Tính sai số chuẩn của trung bình mẫu:\n  $$SE = \\frac{S}{\\sqrt{n}} = \\frac{2.2}{\\sqrt{12}} \\approx \\frac{2.2}{3.464102} \\approx 0.635085$$\n- Tính giá trị thống kê kiểm định $t_{STAT}$:\n  $$t_{STAT} = \\frac{30.2 - 29}{0.635085} = \\frac{1.2}{0.635085} \\approx 1.88951 \\approx 1.890$$\n\n=> Chọn đáp án A (1.890).",
     "casio": "1. Bấm [MENU] [1].\n2. Nhập phân số: `[(■/□)]` `30.2 - 29` [▼] `2.2 ÷ [√] 12` [=].\n3. Màn hình hiển thị: 1.889510526...\n4. Làm tròn 3 chữ số thập phân: 1.890.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 9 - Mục 9.2: t Test of Hypothesis for the Mean (σ Unknown)):\n- Khi độ lệch chuẩn tổng thể $\\sigma$ chưa biết, kiểm định giả thuyết về giá trị trung bình tổng thể $\\mu$ dựa trên thống kê Student $t$ với $df = n - 1$ bậc tự do.\n- Giá trị tới hạn cho trước trong đề bài ($t_{0.005, 11} = 3.106$) dùng để so sánh xác định miền bác bỏ nếu đề yêu cầu đưa ra kết luận bác bỏ/không bác bỏ.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_FE_tables/Q37_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_FE_tables/Q37_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_FE/Q37_FA23FE.webp"
   },
   {
@@ -1156,8 +1156,8 @@
     "ap_dung": "Trong công thức tính r^2_adj, hệ số phạt (n - 1)/(n - k - 1) luôn lớn hơn 1 khi k >= 1. Nếu hệ số xác định r^2 rất nhỏ (gần 0) và số lượng biến độc lập k lớn so với cỡ mẫu n, phần trừ đi có thể lớn hơn 1, dẫn đến r^2_adj nhận giá trị âm. Vì vậy r^2 hiệu chỉnh **có thể âm (can be negative)**.\n\n=> Chọn đáp án C.",
     "casio": "Câu hỏi lý thuyết về tính chất của hệ số xác định hiệu chỉnh, không dùng máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 13 & 14: Multiple Regression Model): Khác với r^2 luôn nằm trong đoạn [0, 1], hệ số hiệu chỉnh r^2_adj điều chỉnh theo bậc tự do để tránh tăng ảo khi thêm biến và hoàn toàn có thể mang giá trị âm nếu mô hình quá kém.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_FE_tables/Q44_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_FE_tables/Q44_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_FE/Q44_FA23FE.webp"
   },
   {
@@ -1285,8 +1285,8 @@
     "ap_dung": "$$s_p^2 = \\frac{15(4) + 24(6)}{39} = 5.23$$\nTrong đề này, 5.23 là phương án D.\n=> Chọn đáp án D (5.23).",
     "casio": "Bấm: `(15 × 4 + 24 × 6) ÷ 39 = 5.23`.",
     "ly_thuyet": "Giáo trình Berenson Ch10: Pooled-variance t test.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_FE_tables/Q49_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_FE_tables/Q49_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_FE/Q49_FA23FE.webp"
   },
   {

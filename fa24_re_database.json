@@ -123,8 +123,8 @@
     "ap_dung": "Mỗi trưởng phòng hệ thống thông tin đại diện cho một văn phòng khu vực độc lập. Do đó, tổng số văn phòng khu vực có mặt trong khảo sát chính bằng tổng tất cả các tần số $f$:\n$$n = \\sum f = 7 + 5 + 11 + 8 + 9 = 40$$\n\n=> Có 40 văn phòng khu vực được đại diện.\n\n=> Chọn đáp án D.",
     "casio": "- Bấm máy tính cơ bản: `7 + 5 + 11 + 8 + 9 = 40`.\n- Hoặc dùng chế độ 1-Variable Statistics: `MENU` `6` `1`, bật tần số (`SHIFT` `MENU` -> cuộn xuống `3: Statistics` -> `1: On`), nhập các cặp $(X, f)$, bấm `AC`, `OPTN` `2` đọc $n = 40$.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 2 - Mục 2.2: Organizing Numerical Data):\n- Bảng phân phối tần số (Frequency Distribution) nhóm các quan sát thành các nhóm giá trị và ghi lại số lần xuất hiện (tần số $f$) của mỗi nhóm.\n- Tổng các tần số $\\sum f$ luôn bằng tổng kích thước mẫu $n$ của cuộc điều tra.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA24_RE_tables/Q5_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA24_RE_tables/Q5_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA24_RE/Q5_FA24RE.webp"
   },
   {
@@ -862,8 +862,8 @@
     "ap_dung": "1. Xác định miền bác bỏ của kiểm định:\n- Dấu của giả thuyết đối là khác ($\\ne$), do đó đây là kiểm định hai phía (Two-tail test).\n- Mức ý nghĩa $\\alpha = 0.1$ được chia đều cho hai đuôi của phân phối chuẩn tắc, mỗi đuôi có diện tích:\n  $$\\frac{\\alpha}{2} = \\frac{0.1}{2} = 0.05$$\n\n2. Tra giá trị tới hạn tương ứng với đuôi $0.05$:\n- Theo số liệu đề bài cho: $z_{0.05} = 1.645$.\n- Do đó, hai giá trị tới hạn đối xứng là $\\pm 1.645$.\n\n3. Quy tắc bác bỏ $H_0$:\n- Bác bỏ $H_0$ nếu thống kê kiểm định lớn hơn $1.645$ hoặc nhỏ hơn $-1.645$ (Reject $H_0$ if test statistic $> 1.645$ or $< -1.645$).\n\n*Phân tích bẫy:* Giá trị 1,28 ($z_{0.1}$) chỉ dùng cho kiểm định một phía. Với kiểm định hai phía ở mức ý nghĩa 0,1, bắt buộc phải dùng $z_{0.05} = 1.645$.\n\n=> Chọn đáp án C.",
     "casio": "- Kiểm định hai phía với $\\alpha = 0.1 \\implies \\alpha/2 = 0.05$.\n- Bấm `MENU` `7` `3` (Inverse Normal): Area = `0.05`, $\\sigma = 1, \\mu = 0$ ra $x = -1.6448... \\approx -1.645$. Do tính đối xứng nên giá trị tới hạn là $\\pm 1.645$.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 9 - Mục 9.2: Z Test of Hypothesis for the Mean - $\\sigma$ Known):\n- Khi $\\sigma$ đã biết, ta sử dụng thống kê kiểm định $Z_{STAT} = \\frac{\\bar{X} - \\mu_0}{\\sigma / \\sqrt{n}}$.\n- Trong kiểm định hai phía, mức ý nghĩa $\\alpha$ được chia đều cho hai bên, vùng bác bỏ nằm ở hai cực với các điểm giới hạn tới hạn là $\\pm Z_{\\alpha/2}$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA24_RE_tables/Q33_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA24_RE_tables/Q33_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA24_RE/Q33_FA24RE.webp"
   },
   {
@@ -889,8 +889,8 @@
     "ap_dung": "1. Nhận diện loại kiểm định:\n- Dấu của giả thuyết đối $H_1$ là '<' (nhỏ hơn), do đó đây là kiểm định một phía bên trái (Left-tailed test).\n- Toàn bộ miền bác bỏ có diện tích $\\alpha = 0.01$ nằm hoàn toàn ở đuôi bên trái của phân phối Student $t$.\n\n2. Bậc tự do:\n   $$df = n - 1 = 100 - 1 = 99$$\n\n3. Xác định giá trị tới hạn:\n- Đề bài cho giá trị phân vị $t_{0.01, 99} = 2.3646$.\n- Vì miền bác bỏ nằm ở phía bên trái (phía âm) của gốc tọa độ 0, giá trị tới hạn tương ứng phải mang dấu âm:\n  $$t_{crit} = -t_{0.01, 99} = -2.3646$$\n  (Quy tắc bác bỏ: Bác bỏ $H_0$ nếu $t_{STAT} < -2.3646$).\n\n=> Chọn đáp án A.",
     "casio": "- Kiểm định một phía đuôi trái nên đổi dấu giá trị $t$ cho trước: $-2.3646$.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 9 - Mục 9.2: t Test of Hypothesis for the Mean - $\\sigma$ Unknown):\n- Khi độ lệch chuẩn tổng thể $\\sigma$ chưa biết, ta sử dụng kiểm định Student $t$ với $df = n - 1$.\n- Trong kiểm định một phía bên trái ($H_1: \\mu < \\mu_0$), toàn bộ mức ý nghĩa $\\alpha$ dồn vào đuôi dưới của phân phối, do đó điểm giới hạn miền bác bỏ (giá trị tới hạn) mang dấu âm: $-t_{\\alpha, df}$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA24_RE_tables/Q34_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA24_RE_tables/Q34_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA24_RE/Q34_FA24RE.webp"
   },
   {
@@ -914,8 +914,8 @@
     "ap_dung": "So sánh $p\\text{-value}$ với mức ý nghĩa $\\alpha$:\n$$p\\text{-value} = 0.0026 < \\alpha = 0.05$$\nDo đó, ta **bác bỏ $H_0$** (`Reject H_0`), tức phương án **(i)**.\n=> Chọn đáp án A ((i)).",
     "casio": "So sánh trực tiếp `0.0026 < 0.05`, không cần bấm máy.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 9 - p-Value Approach to Hypothesis Testing): Khi $p\\text{-value}$ nhỏ hơn mức ý nghĩa $\\alpha$, kết quả có ý nghĩa thống kê và ta bác bỏ giả thuyết không $H_0$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA24_RE_tables/Q35_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA24_RE_tables/Q35_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA24_RE/Q35_FA24RE.webp"
   },
   {
@@ -992,8 +992,8 @@
     "ap_dung": "1. Từ bảng kết quả kiểm tra của 8 học viên, độ lệch chuẩn của các điểm chênh lệch là S_D = 65.027.\n2. Sai số chuẩn của điểm chênh lệch trung bình (standard error of the difference scores) được tính bằng:\n   S_Dbar = S_D / sqrt(n) = 65.027 / sqrt(8) = 65.027 / 2.828427 xấp xỉ 22.9905 xấp xỉ 22.991.\n=> Chọn đáp án B.\n\n*(Bảng số liệu gốc bổ sung chuẩn 100% từ Đề thi Final Exam kỳ SU25 FE Q38)*",
     "casio": "Bấm máy tính Casio fx-580VN X:\n65.027 / căn(8) =\nMàn hình hiển thị: 22.99046... xấp xỉ 22.991.",
     "ly_thuyet": "Theo Giáo trình Berenson Ch10 (Two-Sample Tests) - Mục 'Comparing Two Related Samples: The Paired t Test': Trong bài toán kiểm định mẫu cặp phụ thuộc, sai số chuẩn của hiệu trung bình là S_Dbar = S_D / sqrt(n). Tránh nhầm lẫn giữa độ lệch chuẩn S_D (65.027) và sai số chuẩn S_Dbar (22.991).",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA24_RE_tables/Q38_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA24_RE_tables/Q38_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA24_RE/Q38_FA24RE.webp"
   },
   {
@@ -1097,8 +1097,8 @@
     "ap_dung": "- Trong One-Way ANOVA, mục đích nghiên cứu là xem xét liệu có sự khác biệt giữa giá trị trung bình của $c$ tổng thể hay không.\n- Giả thuyết không $H_0$ luôn phát biểu trạng thái mặc định không có tác động xử lý hay không có sự khác biệt: 'There is no difference in the population means' (Tất cả các giá trị trung bình tổng thể đều bằng nhau).\n- Giả thuyết đối $H_1$ mới là 'có sự khác biệt' (ít nhất hai trung bình khác nhau).\n\n=> Chọn đáp án A.",
     "casio": "Câu hỏi lý thuyết nền tảng về thiết lập giả thuyết kiểm định ANOVA, không sử dụng máy tính bỏ túi.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 11 - Mục 11.1: The Completely Randomized Design: One-Way ANOVA):\n- Giả thuyết không $H_0$ trong ANOVA luôn là sự đồng nhất của tất cả các trung bình tổng thể: $\\mu_1 = \\mu_2 = \\dots = \\mu_c$.\n- Tránh nhầm lẫn với giả thuyết đối $H_1$: $H_1$ chỉ khẳng định không phải tất cả đều bằng nhau, chứ không khẳng định tất cả các trung bình đều khác nhau.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA24_RE_tables/Q42_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA24_RE_tables/Q42_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA24_RE/Q42_FA24RE.webp"
   },
   {
@@ -1255,8 +1255,8 @@
     "ap_dung": "1. Mối quan hệ tuyến tính giữa 2 biến trong tổng thể tồn tại khi và chỉ khi hệ số góc của tổng thể $\\beta_1$ khác 0.\n   - Nếu $\\beta_1 = 0$, $Y$ hoàn toàn không phụ thuộc tuyến tính vào $X$.\n   - Do đó, giả thuyết đối $H_1$ khẳng định có quan hệ tuyến tính phải là: $H_1: \\beta_1 \\ne 0$.\n2. Phân biệt ký hiệu:\n   - Giả thuyết thống kê luôn phải phát biểu về **tham số tổng thể** (chữ Hy Lạp $\\beta_1$), không bao giờ dùng thống kê mẫu $b_1$.\n   - (i) và (ii) sai vì dùng $b_1$.\n   - (iii) là giả thuyết không $H_0$, không phải giả thuyết đối $H_1$.\n   - (iv) $H_1: \\beta_1 \\ne 0$ là phương án đúng duy nhất.\n3. Đối chiếu với các đáp án trắc nghiệm: Lựa chọn A chỉ định mệnh đề (iv).\n=> Chọn đáp án A.",
     "casio": "Câu hỏi lý thuyết về xây dựng giả thuyết thống kê cho mô hình OLS, không dùng máy tính.",
     "ly_thuyet": "Theo Berenson (Chương 13: Simple Linear Regression - Mục 13.5 Testing for the Significance of the Slope):\n- Kiểm định hệ số góc là kiểm định hai phía với $H_0: \\beta_1 = 0$ và $H_1: \\beta_1 \\ne 0$.\n- Thống kê kiểm định $t_{STAT} = (b_1 - 0)/S_{b_1}$ có phân phối $t$ với $n - 2$ bậc tự do.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA24_RE_tables/Q48_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA24_RE_tables/Q48_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA24_RE/Q48_FA24RE.webp"
   },
   {

@@ -204,8 +204,8 @@
     "ap_dung": "1. Vì câu hỏi là xác định liệu độ tuổi trung bình có 'bằng 30 hay không' (equal to 30), đây là kiểm định hai phía (two-tailed test) với $H_0: \\mu = 30$ và $H_1: \\mu \\ne 30$.\n2. Với mức ý nghĩa $\\alpha = 0.01$, diện tích mỗi đuôi của phân phối t là $\\alpha/2 = 0.005$. Bậc tự do là $df = 250 - 1 = 249$.\n3. Giá trị tới hạn tương ứng là $\\pm t_{0.005, 249} = \\pm 2.5957$.\n4. Miền bác bỏ chuẩn xác phải bao gồm cả hai phía đuôi:\n$$\\text{Bác bỏ } H_0 \\text{ nếu } t_{STAT} < -2.5957 \\quad \\text{hoặc} \\quad t_{STAT} > 2.5957$$\n5. Phân tích các lựa chọn:\n- (i) chỉ là đuôi trái với mức ý nghĩa 0.01 một phía ($t < -2.3414$).\n- (ii) và (iv) viết sai hoàn toàn điều kiện miền tới hạn.\n- (iii) chỉ là đuôi phải với mức ý nghĩa 0.01 một phía ($t > 2.3414$).\n- Không có khẳng định nào trong (i), (ii), (iii), (iv) mô tả đúng miền bác bỏ hai phía.\nDo đó, phương án đúng là E ('None of the other choices is correct').\n\n=> Chọn đáp án E.",
     "casio": "Câu hỏi lý thuyết xác định miền bác bỏ trong kiểm định giả thuyết hai đuôi phân phối t Student, không cần tính toán.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 9 - Mục 9.2: t Test of Hypothesis for the Mean (σ Unknown)):\n- Trong kiểm định giả thuyết hai đuôi đối với trung bình khi chưa biết phương sai tổng thể, mức ý nghĩa $\\alpha$ được chia đều cho hai đuôi (mỗi đuôi có diện tích $\\alpha/2$). Giả thuyết không bị bác bỏ nếu giá trị thống kê mẫu $t_{STAT}$ rơi vào một trong hai vùng cực đoan: $t_{STAT} < -t_{\\alpha/2, n-1}$ hoặc $t_{STAT} > t_{\\alpha/2, n-1}$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP23_FE_tables/Q8_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP23_FE_tables/Q8_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP23_FE/Q8_SP23FE.webp"
   },
   {
@@ -416,8 +416,8 @@
     "ap_dung": "1. Tính chi phí kỳ vọng cho đơn hàng 100 con chuột trong một tuần:\n$$E(X) = (10.00 \\times 0.35) + (12.50 \\times 0.40) + (15.00 \\times 0.25)$$\n$$= 3.50 + 5.00 + 3.75 = 12.25 \\text{ USD/tuần}$$\n2. Nhân với số tuần trong năm (52 tuần) để tìm tổng ngân sách dự kiến cả năm:\n$$\\text{Ngân sách năm} = 52 \\times 12.25 = 637 \\text{ USD}$$\n\n=> Chọn đáp án A ($637).",
     "casio": "Bấm MENU 1 (chế độ tính toán cơ bản):\n1. Tính chi phí trung bình 1 tuần: nhập `10 * 0.35 + 12.5 * 0.4 + 15 * 0.25` -> màn hình ra `12.25`.\n2. Nhân với 52: bấm `Ans * 52` -> màn hình hiển thị `637`.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 5 - Mục 5.1: The Probability Distribution for a Discrete Variable):\n- Giá trị kỳ vọng $E(X) = \\mu = \\sum X P(X)$ đại diện cho giá trị trung bình dài hạn của một biến ngẫu nhiên rời rạc qua nhiều lần lặp lại. Đối với chuỗi $N$ kỳ hoạt động độc lập có cùng phân phối, tổng chi phí dự trù trung bình bằng $N$ lần giá trị kỳ vọng của một kỳ.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP23_FE_tables/Q16_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP23_FE_tables/Q16_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP23_FE/Q16_SP23FE.webp"
   },
   {
@@ -625,8 +625,8 @@
     "ap_dung": "1. Thay các giá trị đã biết vào công thức:\n$$n = \\left(\\frac{1.96 \\times 12}{2}\\right)^2 = (1.96 \\times 6)^2 = (11.76)^2$$\n2. Tính toán giá trị số học:\n$$n = 138.2976$$\n3. Áp dụng quy tắc làm tròn lên trong thống kê để đảm bảo sai số không vượt quá 2 ở độ tin cậy 95%:\n$$n = 139$$\n\n=> Chọn đáp án A (139).",
     "casio": "Bấm MENU 1 (chế độ tính toán cơ bản):\n- Nhập biểu thức: `((1.96 * 12) / 2)^2` -> bấm phím `=`: Màn hình hiển thị `138.2976`.\n- Theo quy tắc thống kê, làm tròn lên số nguyên tiếp theo được `139`.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 8 - Mục 8.4: Determining Sample Size for the Mean):\n- Cỡ mẫu cần thiết để ước lượng trung bình tổng thể phụ thuộc vào ba yếu tố: độ tin cậy mong muốn (quy định giá trị $Z$), độ lệch chuẩn $\\sigma$ và sai số biên cho phép $e$. Để đảm bảo cận trên của sai số không bị vượt quá, bất kỳ phần thập phân nào của $n$ cũng phải được làm tròn lên số nguyên kế tiếp.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP23_FE_tables/Q24_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP23_FE_tables/Q24_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP23_FE/Q24_SP23FE.webp"
   },
   {
@@ -813,8 +813,8 @@
     "ap_dung": "1. Tính số thành công trong từng mẫu:\n- Phụ nữ: $X_1 = 150 \\times 0.62 = 93$\n- Nam giới: $X_2 = 200 \\times 0.24 = 48$\n2. Tính tỷ lệ mẫu gộp:\n$$\\bar{p} = \\frac{93 + 48}{150 + 200} = \\frac{141}{350} \\approx 0.402857$$\n$$\\implies 1 - \\bar{p} = 1 - 0.402857 = 0.597143$$\n3. Tính sai số chuẩn gộp của hiệu hai tỷ lệ:\n$$SE = \\sqrt{0.402857 \\times 0.597143 \\times \\left(\\frac{1}{150} + \\frac{1}{200}\\right)} = \\sqrt{0.240563 \\times 0.0116667} \\approx \\sqrt{0.00280657} \\approx 0.052977$$\n4. Tính giá trị thống kê kiểm định Z:\n$$Z_{STAT} = \\frac{0.62 - 0.24}{0.052977} = \\frac{0.38}{0.052977} \\approx 7.1729 \\approx 7.17$$\n\n=> Chọn đáp án A (7.17).",
     "casio": "Bấm MENU 1 (chế độ tính toán cơ bản):\n1. Tính tỷ lệ gộp: nhập `(93 + 48) / (150 + 200)` -> ấn STO A (A = 141/350 ≈ 0.402857).\n2. Tính sai số chuẩn: nhập `sqrt(A * (1 - A) * (1/150 + 1/200))` -> ấn STO B (B ≈ 0.052977).\n3. Tính Z: nhập `(0.62 - 0.24) / B` -> ấn '=' màn hình ra 7.1729 (làm tròn 7.17).",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.3: Comparing the Proportions of Two Independent Populations):\n- Khi kiểm định sự khác biệt giữa hai tỷ lệ tổng thể độc lập với giả thuyết không $H_0: \\pi_1 = \\pi_2$, ta sử dụng tỷ lệ gộp $\\bar{p} = (X_1 + X_2)/(n_1 + n_2)$ để ước lượng sai số chuẩn chung, từ đó tính tiêu chuẩn kiểm định $Z_{STAT}$ tuân theo phân phối chuẩn tắc.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP23_FE_tables/Q31_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP23_FE_tables/Q31_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP23_FE/Q31_SP23FE.webp"
   },
   {
@@ -915,8 +915,8 @@
     "ap_dung": "1. Tính tích của hai xác suất riêng phần:\n$$P(A) \\cdot P(B) = 0.5 \\times 0.4 = 0.20$$\n2. So sánh với xác suất đồng thời $P(A \\cap B)$ đã cho:\n$$P(A \\cap B) = 0.2$$\n3. Ta thấy:\n$$P(A \\cap B) = P(A) \\cdot P(B) = 0.2$$\nDo đó, hai biến cố A và B hoàn toàn độc lập với nhau.\n\n=> Chọn đáp án A (Yes).",
     "casio": "Thực hiện phép tính kiểm tra trên Casio fx-580VN X:\nBấm: `0.5 × 0.4 =` -> kết quả hiển thị 0.2. Vì bằng P(A and B) nên chọn Yes.",
     "ly_thuyet": "Theo Berenson (Chương 4, Mục 4.3: Conditional Probability and Independence): Hai biến cố A và B được gọi là độc lập nếu xác suất xảy ra biến cố A không bị ảnh hưởng bởi việc biến cố B đã xảy ra hay chưa, nghĩa là P(A|B) = P(A), điều này tương đương với quy tắc nhân xác suất độc lập: P(A ∩ B) = P(A)·P(B).",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP23_FE_tables/Q35_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP23_FE_tables/Q35_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP23_FE/Q35_SP23FE.webp"
   },
   {
@@ -941,8 +941,8 @@
     "ap_dung": "- BẪY KINH ĐIỂN CẦN TRÁNH:\n  + Nếu là 2 mẫu ĐỘC LẬP (Independent populations): $df = n_1 + n_2 - 2 = 20 + 20 - 2 = 38$.\n  + Nhưng ở đây đề bài nhấn mạnh rõ là '2 related populations' (hai tổng thể phụ thuộc / liên quan, ví dụ đo lường trước - sau trên cùng 20 đối tượng).\n- Trong kiểm định ghép cặp, ta tính sai khác từng cặp $D_i = X_{1i} - X_{2i}$ để quy về bài toán 1 mẫu duy nhất của biến hiệu $D$ với cỡ mẫu $n = 20$ cặp.\n- Bậc tự do của kiểm định t mẫu phụ thuộc do đó là:\n$$df = n - 1 = 20 - 1 = 19$$\n\n=> Chọn đáp án C (19).",
     "casio": "Bấm MENU 1: `20 - 1 = 19`.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.2: Comparing the Means of Two Related Populations - Paired t-Test):\n- Khi các đơn vị quan sát được ghép cặp hoặc đo lường lặp lại (repeated measures), bản chất ta đang kiểm định giả thuyết 1 mẫu về trung bình sai khác $\\mu_D$.\n- Do đó, bậc tự do luôn là $n - 1$, trong đó $n$ là số cặp dữ liệu.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP23_FE_tables/Q36_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP23_FE_tables/Q36_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP23_FE/Q36_SP23FE.webp"
   },
   {

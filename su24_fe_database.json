@@ -175,8 +175,8 @@
     "ap_dung": "1. Từ bảng kết quả kiểm tra của 8 học viên, độ lệch chuẩn của các điểm chênh lệch là S_D = 65.027.\n2. Sai số chuẩn của điểm chênh lệch trung bình (standard error of the difference scores) được tính bằng:\n   S_Dbar = S_D / sqrt(n) = 65.027 / sqrt(8) = 65.027 / 2.828427 xấp xỉ 22.9905 xấp xỉ 22.991.\n=> Chọn đáp án A.\n\n*(Bảng số liệu gốc bổ sung chuẩn 100% từ Đề thi Final Exam kỳ SU25 FE Q38)*",
     "casio": "Bấm máy tính Casio fx-580VN X:\n65.027 / căn(8) =\nMàn hình hiển thị: 22.99046... xấp xỉ 22.991.",
     "ly_thuyet": "Theo Giáo trình Berenson Ch10 (Two-Sample Tests) - Mục 'Comparing Two Related Samples: The Paired t Test': Trong bài toán kiểm định mẫu cặp phụ thuộc, sai số chuẩn của hiệu trung bình là S_Dbar = S_D / sqrt(n). Tránh nhầm lẫn giữa độ lệch chuẩn S_D (65.027) và sai số chuẩn S_Dbar (22.991).",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE_tables/Q7_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE_tables/Q7_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE/Q7_SU24FE.webp"
   },
   {
@@ -733,8 +733,8 @@
     "ap_dung": "1. Do bài báo tuyên bố rằng 'phụ nữ nhận thấy vấn đề này phổ biến hơn nam giới' (women perceived the problem to be much more prevalent than did men), giả thuyết đối mang tính định hướng: H1: p1 > p2.\n2. Đây là bài toán kiểm định một phía bên phải (right-tailed/upper-tail test).\n3. Tại mức ý nghĩa alpha = 0.01, toàn bộ diện tích miền bác bỏ 0.01 dồn vào đuôi trên của phân phối chuẩn tắc Z.\n4. Giá trị tới hạn tương ứng là Z_alpha = Z_0.01 = 2.33.\n=> Chọn đáp án D.",
     "casio": "Câu hỏi xác định giá trị tới hạn lý thuyết từ bảng phân phối chuẩn: Tra trực tiếp Z_alpha = Z_0.01 = 2.33.",
     "ly_thuyet": "Theo Giáo trình Berenson Ch10 (Two-Sample Tests) - Mục 'Z Test for the Difference Between Two Proportions': Dạng của giả thuyết đối H1 quyết định kiểm định một phía hay hai phía. Khi H1: p1 > p2, miền bác bỏ là Z_STAT > Z_alpha (với Z_0.01 = 2.33).",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE_tables/Q28_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE_tables/Q28_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE/Q28_SU24FE.webp"
   },
   {
@@ -812,8 +812,8 @@
     "ap_dung": "Trong công thức tính r^2_adj, hệ số phạt (n - 1)/(n - k - 1) luôn lớn hơn 1 khi k >= 1. Nếu hệ số xác định r^2 rất nhỏ (gần 0) và số lượng biến độc lập k lớn so với cỡ mẫu n, phần trừ đi có thể lớn hơn 1, dẫn đến r^2_adj nhận giá trị âm. Vì vậy r^2 hiệu chỉnh **có thể âm (can be negative)**.\n\n=> Chọn đáp án C.",
     "casio": "Câu hỏi lý thuyết về tính chất của hệ số xác định hiệu chỉnh, không dùng máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 13 & 14: Multiple Regression Model): Khác với r^2 luôn nằm trong đoạn [0, 1], hệ số hiệu chỉnh r^2_adj điều chỉnh theo bậc tự do để tránh tăng ảo khi thêm biến và hoàn toàn có thể mang giá trị âm nếu mô hình quá kém.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE_tables/Q31_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE_tables/Q31_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE/Q31_SU24FE.webp"
   },
   {
@@ -838,8 +838,8 @@
     "ap_dung": "$$n = \\left(\\frac{1.96 \\times 0.01}{0.005}\\right)^2 = (3.92)^2 = 15.3664$$\nLàm tròn lên số nguyên gần nhất: $n = 16$.\n\n=> Chọn đáp án D (16).",
     "casio": "Bấm `(1.96 × 0.01 ÷ 0.005)^2 =` ra `15.3664`, làm tròn lên thành `16`.",
     "ly_thuyet": "Khi xác định cỡ mẫu tối thiểu cho ước lượng trung bình với sai số cho trước, kết quả luôn phải làm tròn lên số nguyên tiếp theo.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE_tables/Q32_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE_tables/Q32_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE/Q32_SU24FE.webp"
   },
   {
@@ -863,8 +863,8 @@
     "ap_dung": "1. Tính tích của hai xác suất riêng phần:\n$$P(A) \\cdot P(B) = 0.5 \\times 0.4 = 0.20$$\n2. So sánh với xác suất đồng thời $P(A \\cap B)$ đã cho:\n$$P(A \\cap B) = 0.2$$\n3. Ta thấy:\n$$P(A \\cap B) = P(A) \\cdot P(B) = 0.2$$\nDo đó, hai biến cố A và B hoàn toàn độc lập với nhau.\n\n=> Chọn đáp án A (Yes).",
     "casio": "Thực hiện phép tính kiểm tra trên Casio fx-580VN X:\nBấm: `0.5 × 0.4 =` -> kết quả hiển thị 0.2. Vì bằng P(A and B) nên chọn Yes.",
     "ly_thuyet": "Theo Berenson (Chương 4, Mục 4.3: Conditional Probability and Independence): Hai biến cố A và B được gọi là độc lập nếu xác suất xảy ra biến cố A không bị ảnh hưởng bởi việc biến cố B đã xảy ra hay chưa, nghĩa là P(A|B) = P(A), điều này tương đương với quy tắc nhân xác suất độc lập: P(A ∩ B) = P(A)·P(B).",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE_tables/Q33_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE_tables/Q33_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE/Q33_SU24FE.webp"
   },
   {
@@ -917,8 +917,8 @@
     "ap_dung": "1. Trong kiểm định tỷ số hai phương sai (F-test for the ratio of two variances), theo quy ước của Berenson, mẫu có phương sai lớn hơn được gán là mẫu 1 và đặt trên tử số của thống kê $F_{STAT}$.\n2. Do mẫu có $n_1 = 15$ có phương sai lớn hơn, bậc tự do ở tử số là:\n$$df_1 = n_1 - 1 = 15 - 1 = 14$$\n3. Mẫu có $n_2 = 20$ được đặt ở mẫu số, do đó bậc tự do ở mẫu số là:\n$$df_2 = n_2 - 1 = 20 - 1 = 19$$\n4. Do đó, cặp bậc tự do của phân phối F là 14 và 19.\n\n=> Chọn đáp án E (14 and 19).",
     "casio": "Câu hỏi lý thuyết xác định bậc tự do của kiểm định F hai phương sai, không cần bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.4: F Test for the Difference Between Two Variances):\n- Phân phối Fisher-Snedecor (F distribution) được xác định bởi hai tham số bậc tự do: bậc tự do ở tử số $df_1 = n_1 - 1$ và bậc tự do ở mẫu số $df_2 = n_2 - 1$. Thống kê kiểm định được thiết lập theo tỷ số $F_{STAT} = S_1^2 / S_2^2$ với quy ước $S_1^2 \\ge S_2^2$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE_tables/Q35_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE_tables/Q35_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE/Q35_SU24FE.webp"
   },
   {
@@ -943,8 +943,8 @@
     "ap_dung": "1. Khi so sánh hai hay nhiều tập dữ liệu có tổng số lượng quan sát khác nhau (ở đây là 4 hiệu sách có quy mô không đồng đều), việc sử dụng biểu đồ tần số tuyệt đối (Frequency histogram) sẽ gây hiểu nhầm nghiêm trọng vì các cột của cửa hàng có quy mô lớn sẽ lấn át hoàn toàn các cửa hàng nhỏ, làm mất đi khả năng so sánh hình dạng và cơ cấu phân phối.\n2. Biểu đồ tần số tương đối (Relative frequency histogram) chuẩn hóa toàn bộ tần số về dạng tỷ lệ phần trăm (tổng diện tích bằng 1 hoặc 100%), đưa các nhóm về cùng một thước đo quy chuẩn.\n3. Nhờ đó, người nghiên cứu có thể so sánh trực quan và khách quan tỷ lệ phân bố sách giữa các phân khúc của 4 cửa hàng bất kể sự chênh lệch về tổng doanh số.\n\n=> Biểu đồ tốt nhất là Relative frequency histogram.\n\n=> Chọn đáp án A.",
     "casio": "Câu hỏi lý thuyết phương pháp trình bày dữ liệu so sánh, không dùng máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 2 - Mục 2.3: Tables and Charts for Numerical Data - Comparing Two or More Numerical Data Sets):\n- Nguyên tắc cơ bản: Khi so sánh hai hay nhiều tập dữ liệu số có quy mô mẫu khác nhau, không được sử dụng tần số tuyệt đối. Bắt buộc phải sử dụng tần số tương đối (relative frequencies) hoặc tỷ lệ phần trăm để tạo cơ sở so sánh chuẩn mực.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE_tables/Q37_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE_tables/Q37_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE/Q37_SU24FE.webp"
   },
   {
@@ -1023,8 +1023,8 @@
     "ap_dung": "Bước 1: Tính sai số chuẩn của tỷ lệ dưới giả thuyết $H_0$:\n$$\\sigma_p = \\sqrt{\\frac{\\pi(1 - \\pi)}{n}} = \\sqrt{\\frac{0.30 \\times (1 - 0.30)}{200}} = \\sqrt{\\frac{0.21}{200}} = \\sqrt{0.00105} \\approx 0.0324037$$\n\nBước 2: Tính giá trị thống kê kiểm định $Z_{STAT}$:\n$$Z_{STAT} = \\frac{0.395 - 0.30}{0.0324037} = \\frac{0.095}{0.0324037} \\approx 2.9318 \\approx 2.93$$\n\n=> Chọn đáp án C (2.93).",
     "casio": "Thao tác trên Casio fx-580VN X:\n1. Bấm MENU 1.\n2. Nhập biểu thức: `(79/200 - 0.3) / sqrt((0.3 * 0.7) / 200)`.\n3. Bấm phím `=`.\n4. Màn hình hiển thị: `2.93176...`, làm tròn thành `2.93`.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 9 - Mục 9.4: Z Test of Hypothesis for the Proportion):\n- Khi $n\\pi \\ge 5$ và $n(1-\\pi) \\ge 5$ (ở đây $200 \\times 0.3 = 60 \\ge 5$ và $200 \\times 0.7 = 140 \\ge 5$), phân phối nhị thức của tỷ lệ mẫu xấp xỉ phân phối chuẩn.\n- Thống kê $Z_{STAT} = 2.93 > Z_{0.025} = 1.96$, do đó ta bác bỏ $H_0$ ở mức ý nghĩa 5%, kết luận tỷ lệ thực tế khác 0.30.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE_tables/Q40_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE_tables/Q40_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE/Q40_SU24FE.webp"
   },
   {
@@ -1074,8 +1074,8 @@
     "ap_dung": "- Tính sai số chuẩn của trung bình mẫu:\n  $$SE = \\frac{S}{\\sqrt{n}} = \\frac{82}{\\sqrt{35}} \\approx \\frac{82}{5.91608} \\approx 13.86053$$\n- Tính giá trị thống kê kiểm định $t_{STAT}$:\n  $$t_{STAT} = \\frac{1170 - 1200}{13.86053} = \\frac{-30}{13.86053} \\approx -2.16442 \\approx -2.16$$\n\n=> Chọn đáp án C (-2.16).",
     "casio": "1. Bấm [MENU] [1].\n2. Nhập phân số: `[(■/□)]` `1170 - 1200` [▼] `82 ÷ [√] 35` [=].\n3. Màn hình hiển thị: -2.164424...\n4. Làm tròn 2 chữ số thập phân: -2.16.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 9 - Mục 9.2: t Test of Hypothesis for the Mean (σ Unknown)):\n- Thống kê $t_{STAT}$ đo lường mức độ chênh lệch giữa giá trị trung bình quan sát được $\\bar{X}$ và giá trị trung bình giả thiết $\\mu_0$ theo đơn vị sai số chuẩn.\n- Dấu âm xuất hiện do trung bình mẫu $\\bar{X} = 1170$ nhỏ hơn giá trị kỳ vọng giả định $\\mu_0 = 1200$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE_tables/Q42_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE_tables/Q42_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE/Q42_SU24FE.webp"
   },
   {
@@ -1152,8 +1152,8 @@
     "ap_dung": "1. Khi thay $X = 0$ vào phương trình đường hồi quy $\\hat{Y} = b_0 + b_1 X$, ta được $\\hat{Y} = b_0$.\n2. Vì vậy, về mặt định nghĩa hình học và thống kê:\n   - Hệ số chặn $b_0$ chính là **giá trị dự báo (hay giá trị trung bình ước tính) của biến phụ thuộc Y khi biến độc lập X nhận giá trị bằng 0**.\n3. Phân tích các lựa chọn gây nhiễu:\n   - A sai vì thiếu điều kiện $X = 0$ (khi $X \\ne 0$, giá trị dự báo là $b_0 + b_1 X$).\n   - B là định nghĩa của hệ số góc $b_1$ (slope).\n   - C là định nghĩa của sai số chuẩn của ước lượng $S_{YX}$ (standard error of the estimate).\n=> Chọn đáp án D.",
     "casio": "Câu hỏi lý thuyết định nghĩa hệ số trong mô hình hồi quy, không dùng máy tính.",
     "ly_thuyet": "Theo Berenson (Chương 13: Simple Linear Regression - Mục 13.2 Determining the Simple Linear Regression Equation):\n- Hệ số chặn $b_0$ biểu diễn điểm cắt của đường hồi quy với trục tung tại $X=0$.\n- Lưu ý thực tiễn: Việc diễn giải $b_0$ chỉ có ý nghĩa kinh tế nếu giá trị $X=0$ nằm trong phạm vi dữ liệu quan sát (relevant range) và mang ý nghĩa thực tế.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE_tables/Q45_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE_tables/Q45_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE/Q45_SU24FE.webp"
   },
   {
@@ -1225,8 +1225,8 @@
     "ap_dung": "Tính trên máy tính bỏ túi hoặc theo công thức:\n- $\\bar{x} = 1.675$, $\\bar{y} = 80$\n- $r \\approx -0.8244 \\approx -0.824$\n\n=> Chọn đáp án A (-0.824).",
     "casio": "Vào `MENU 6` -> `2 (y = a + bx)`, nhập cột `X` và `Y`, bấm `OPTN` -> `3 (Regression Calc)` để đọc giá trị `r = -0.8244`.",
     "ly_thuyet": "Hệ số tương quan $r \\in [-1, 1]$ đo lường độ mạnh và chiều hướng của mối quan hệ tuyến tính giữa hai biến. $r < 0$ cho thấy tương quan nghịch (giá tăng thì doanh số giảm).",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE_tables/Q48_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE_tables/Q48_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE/Q48_SU24FE.webp"
   },
   {

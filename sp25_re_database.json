@@ -806,8 +806,8 @@
     "ap_dung": "1. Thay các giá trị đã biết vào công thức:\n$$n = \\left(\\frac{1.96 \\times 12}{2}\\right)^2 = (1.96 \\times 6)^2 = (11.76)^2$$\n2. Tính toán giá trị số học:\n$$n = 138.2976$$\n3. Áp dụng quy tắc làm tròn lên trong thống kê để đảm bảo sai số không vượt quá 2 ở độ tin cậy 95%:\n$$n = 139$$\n\n=> Chọn đáp án D (139).",
     "casio": "Bấm MENU 1 (chế độ tính toán cơ bản):\n- Nhập biểu thức: `((1.96 * 12) / 2)^2` -> bấm phím `=`: Màn hình hiển thị `138.2976`.\n- Theo quy tắc thống kê, làm tròn lên số nguyên tiếp theo được `139`.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 8 - Mục 8.4: Determining Sample Size for the Mean):\n- Cỡ mẫu cần thiết để ước lượng trung bình tổng thể phụ thuộc vào ba yếu tố: độ tin cậy mong muốn (quy định giá trị $Z$), độ lệch chuẩn $\\sigma$ và sai số biên cho phép $e$. Để đảm bảo cận trên của sai số không bị vượt quá, bất kỳ phần thập phân nào của $n$ cũng phải được làm tròn lên số nguyên kế tiếp.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_RE_tables/Q31_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_RE_tables/Q31_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_RE/Q31_SP25RE.webp"
   },
   {
@@ -833,8 +833,8 @@
     "ap_dung": "1. Nhận định của nhà nghiên cứu đưa ra một con số cụ thể: '62% cử tri ủng hộ', tức $\\pi = 0.62$.\n2. Vì nhận định này chứa dấu bằng, nó được đặt làm giả thuyết không:\n   $$H_0: \\pi = 0.62$$\n3. Giả thuyết đối mang ý nghĩa bác bỏ nhận định trên, tức tỷ lệ khác 62%:\n   $$H_1: \\pi \\ne 0.62$$\n4. Đối chiếu các phương án:\n   - Mệnh đề (ii) viết đúng chuẩn: $H_0: \\pi = 0.62, H_1: \\pi \\ne 0.62$.\n   - Phương án D chỉ định mệnh đề (ii).\n\n=> Chọn đáp án D.",
     "casio": "Câu hỏi lý thuyết thiết lập giả thuyết kiểm định thống kê, không cần máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 9 - Mục 9.1: Fundamentals of Hypothesis-Testing Methodology):\n- Giả thuyết không ($H_0$) luôn luôn chứa dấu bằng ($=$).\n- Giả thuyết đối ($H_1$) không bao giờ chứa dấu bằng và đại diện cho sự thay đổi hoặc khác biệt mà nhà nghiên cứu thu thập dữ liệu mẫu để chứng minh.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_RE_tables/Q32_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_RE_tables/Q32_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_RE/Q32_SP25RE.webp"
   },
   {
@@ -860,8 +860,8 @@
     "ap_dung": "- Tính sai số chuẩn của trung bình mẫu:\n  $$SE = \\frac{S}{\\sqrt{n}} = \\frac{2.7}{\\sqrt{35}} \\approx \\frac{2.7}{5.91608} \\approx 0.456383$$\n- Tính thống kê $t_{STAT}$:\n  $$t_{STAT} = \\frac{16.1 - 17}{0.456383} = \\frac{-0.9}{0.456383} \\approx -1.97203 \\approx -1.97$$\n\n=> Chọn đáp án B (-1.97).",
     "casio": "1. Bấm [MENU] [1].\n2. Nhập phân số: `[(■/□)]` `16.1 - 17` [▼] `2.7 ÷ [√] 35` [=].\n3. Màn hình ra: -1.972027...\n4. Làm tròn 2 chữ số thập phân: -1.97.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 9 - Mục 9.2: t Test of Hypothesis for the Mean (σ Unknown)):\n- Khi kiểm định giả thuyết hai phía ($H_1: \\mu \\ne \\mu_0$), miền bác bỏ được chia đều sang hai đuôi của phân phối Student $t$ với $df = n - 1 = 34$ bậc tự do.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_RE_tables/Q33_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_RE_tables/Q33_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_RE/Q33_SP25RE.webp"
   },
   {
@@ -962,8 +962,8 @@
     "ap_dung": "Thay số n1 = 20 và n2 = 20 vào công thức tính bậc tự do:\n$$df = 20 + 20 - 2 = 38$$\n\n=> Chọn đáp án D (38).",
     "casio": "Phép tính đơn giản: `20 + 20 - 2 = 38`.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.1: Comparing the Means of Two Independent Populations - Pooled-Variance t Test): Khi kiểm định hiệu hai trung bình độc lập với giả định phương sai bằng nhau, ta dùng phương sai gộp Sp^2 và thống kê kiểm định có phân phối Student t với bậc tự do là n1 + n2 - 2.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_RE_tables/Q37_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_RE_tables/Q37_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_RE/Q37_SP25RE.webp"
   },
   {
@@ -1042,8 +1042,8 @@
     "ap_dung": "1. Tính số thành công trong từng mẫu:\n- Phụ nữ: $X_1 = 150 \\times 0.62 = 93$\n- Nam giới: $X_2 = 200 \\times 0.24 = 48$\n2. Tính tỷ lệ mẫu gộp:\n$$\\bar{p} = \\frac{93 + 48}{150 + 200} = \\frac{141}{350} \\approx 0.402857$$\n$$\\implies 1 - \\bar{p} = 1 - 0.402857 = 0.597143$$\n3. Tính sai số chuẩn gộp của hiệu hai tỷ lệ:\n$$SE = \\sqrt{0.402857 \\times 0.597143 \\times \\left(\\frac{1}{150} + \\frac{1}{200}\\right)} = \\sqrt{0.240563 \\times 0.0116667} \\approx \\sqrt{0.00280657} \\approx 0.052977$$\n4. Tính giá trị thống kê kiểm định Z:\n$$Z_{STAT} = \\frac{0.62 - 0.24}{0.052977} = \\frac{0.38}{0.052977} \\approx 7.1729 \\approx 7.17$$\n\n=> Chọn đáp án B (7.17).",
     "casio": "Bấm MENU 1 (chế độ tính toán cơ bản):\n1. Tính tỷ lệ gộp: nhập `(93 + 48) / (150 + 200)` -> ấn STO A (A = 141/350 ≈ 0.402857).\n2. Tính sai số chuẩn: nhập `sqrt(A * (1 - A) * (1/150 + 1/200))` -> ấn STO B (B ≈ 0.052977).\n3. Tính Z: nhập `(0.62 - 0.24) / B` -> ấn '=' màn hình ra 7.1729 (làm tròn 7.17).",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.3: Comparing the Proportions of Two Independent Populations):\n- Khi kiểm định sự khác biệt giữa hai tỷ lệ tổng thể độc lập với giả thuyết không $H_0: \\pi_1 = \\pi_2$, ta sử dụng tỷ lệ gộp $\\bar{p} = (X_1 + X_2)/(n_1 + n_2)$ để ước lượng sai số chuẩn chung, từ đó tính tiêu chuẩn kiểm định $Z_{STAT}$ tuân theo phân phối chuẩn tắc.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_RE_tables/Q40_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_RE_tables/Q40_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_RE/Q40_SP25RE.webp"
   },
   {
@@ -1069,8 +1069,8 @@
     "ap_dung": "1. Trong kiểm định tỷ số hai phương sai (F-test for the ratio of two variances), theo quy ước của Berenson, mẫu có phương sai lớn hơn được gán là mẫu 1 và đặt trên tử số của thống kê $F_{STAT}$.\n2. Do mẫu có $n_1 = 15$ có phương sai lớn hơn, bậc tự do ở tử số là:\n$$df_1 = n_1 - 1 = 15 - 1 = 14$$\n3. Mẫu có $n_2 = 20$ được đặt ở mẫu số, do đó bậc tự do ở mẫu số là:\n$$df_2 = n_2 - 1 = 20 - 1 = 19$$\n4. Do đó, cặp bậc tự do của phân phối F là 14 và 19.\n\n=> Chọn đáp án E (14 and 19).",
     "casio": "Câu hỏi lý thuyết xác định bậc tự do của kiểm định F hai phương sai, không cần bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.4: F Test for the Difference Between Two Variances):\n- Phân phối Fisher-Snedecor (F distribution) được xác định bởi hai tham số bậc tự do: bậc tự do ở tử số $df_1 = n_1 - 1$ và bậc tự do ở mẫu số $df_2 = n_2 - 1$. Thống kê kiểm định được thiết lập theo tỷ số $F_{STAT} = S_1^2 / S_2^2$ với quy ước $S_1^2 \\ge S_2^2$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_RE_tables/Q41_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_RE_tables/Q41_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_RE/Q41_SP25RE.webp"
   },
   {
@@ -1277,8 +1277,8 @@
     "ap_dung": "1. Trong mô hình hồi quy tuyến tính cổ điển với 2 biến giải thích, phương trình hồi quy mẫu dự báo luôn có dạng chuẩn tắc gồm hệ số chặn $b_0$ cộng với tích của từng biến độc lập với hệ số hồi quy riêng phần tương ứng:\n$$\\hat{Y} = b_0 + b_1 X_1 + b_2 X_2$$\n2. Đối chiếu các phương án cấu trúc:\n- Biểu thức (i) bị gán dấu trừ sai mặc định cho hệ số $b_1$.\n- Biểu thức (iii) thiếu hoàn toàn hệ số chặn $b_0$ (mô hình không có intercept).\n- Biểu thức (ii) $\\hat{Y} = b_0 + b_1 X_1 + b_2 X_2$ là dạng phương trình chuẩn tắc tổng quát nhất.\n3. Do đó, khẳng định (ii) là biểu diễn chính xác, tương ứng với phương án B.\n\n=> Chọn đáp án B ((ii)).",
     "casio": "Câu hỏi lý thuyết về cấu trúc phương trình hồi quy đa biến tổng quát trong giáo trình Berenson, không yêu cầu bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 13/14 - Mục: Developing the Multiple Regression Model):\n- Phương trình hồi quy tuyến tính bội dự báo biến phản hồi $Y$ dựa trên $k$ biến độc lập $X_1, X_2, ..., X_k$ có dạng tổng quát: $\\hat{Y}_i = b_0 + b_1X_{1i} + b_2X_{2i} + ... + b_kX_{ki}$. Trong đó $b_0$ là hệ số chặn mẫu và các $b_j$ là các hệ số hồi quy mẫu riêng phần.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_RE_tables/Q49_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_RE_tables/Q49_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_RE/Q49_SP25RE.webp"
   },
   {

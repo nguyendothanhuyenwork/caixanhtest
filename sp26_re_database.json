@@ -794,8 +794,8 @@
     "ap_dung": "1. Thay số vào công thức:\n$$n = \\frac{1.75^2 \\times 0.25}{0.011^2} = \\frac{0.765625}{0.000121} \\approx 6327.479$$\n\n2. Làm tròn lên số nguyên gần nhất:\n$$n = 6328$$\n\n=> Chọn đáp án A.",
     "casio": "- Bấm `(1.75^2 * 0.25) / 0.011^2 = 6327.479...`, làm tròn lên thành `6328`.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 8 - Mục 8.4): Khi chưa biết trước tỷ lệ tổng thể $\\pi$, ta chọn $\\pi = 0.5$ để tối đa hóa tích $\\pi(1-\\pi) = 0.25$ và luôn làm tròn lên số nguyên tiếp theo.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q31_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q31_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q31.jpg"
   },
   {
@@ -846,8 +846,8 @@
     "ap_dung": "- Tính sai số chuẩn của trung bình mẫu:\n  $$SE = \\frac{S}{\\sqrt{n}} = \\frac{2.7}{\\sqrt{35}} \\approx \\frac{2.7}{5.91608} \\approx 0.456383$$\n- Tính thống kê $t_{STAT}$:\n  $$t_{STAT} = \\frac{16.1 - 17}{0.456383} = \\frac{-0.9}{0.456383} \\approx -1.97203 \\approx -1.97$$\n\n=> Chọn đáp án A (-1.97).",
     "casio": "1. Bấm [MENU] [1].\n2. Nhập phân số: `[(■/□)]` `16.1 - 17` [▼] `2.7 ÷ [√] 35` [=].\n3. Màn hình ra: -1.972027...\n4. Làm tròn 2 chữ số thập phân: -1.97.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 9 - Mục 9.2: t Test of Hypothesis for the Mean (σ Unknown)):\n- Khi kiểm định giả thuyết hai phía ($H_1: \\mu \\ne \\mu_0$), miền bác bỏ được chia đều sang hai đuôi của phân phối Student $t$ với $df = n - 1 = 34$ bậc tự do.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q33_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q33_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q33.jpg"
   },
   {
@@ -1004,8 +1004,8 @@
     "ap_dung": "1. Tính các thống kê mẫu của hiệu số $D$:\n   - Tổng các hiệu: $\\sum D = 4 - 1 + 2 + 0 - 1 + 5 - 4 + 2 = 7$\n   - Trung bình: $\\bar{D} = \\frac{7}{8} = 0.875$\n   - Tổng bình phương sai lệch: $\\sum (D_i - \\bar{D})^2 \\approx 60.875$\n   - Độ lệch chuẩn mẫu: $S_D = \\sqrt{\\frac{60.875}{7}} \\approx 2.949$\n   - Sai số chuẩn: $S_{\\bar{D}} = \\frac{S_D}{\\sqrt{8}} = \\frac{2.949}{2.8284} \\approx 1.0426$\n\n2. Tính thống kê kiểm định:\n   $$t_{STAT} = \\frac{0.875}{1.0426} \\approx 0.839$$\n\n3. So sánh với giá trị tới hạn hai phía mức 5% ($df = 7$):\n   Đề bài cho $t_{0.025, 7} = 2.36$.\n   Vì $|t_{STAT}| = 0.839 < 2.36$, giá trị kiểm định nằm trong miền chấp nhận (không rơi vào miền bác bỏ).\n\n4. Quyết định: Không bác bỏ giả thuyết không (Do not reject the null hypothesis).\n\n=> Chọn đáp án B.",
     "casio": "Thực hiện phép tính kiểm tra trên Casio fx-580VN X:\nBấm: `0.5 × 0.4 =` -> kết quả hiển thị 0.2. Vì bằng P(A and B) nên chọn Yes.",
     "ly_thuyet": "Theo Berenson (Chương 4, Mục 4.3: Conditional Probability and Independence): Hai biến cố A và B được gọi là độc lập nếu xác suất xảy ra biến cố A không bị ảnh hưởng bởi việc biến cố B đã xảy ra hay chưa, nghĩa là P(A|B) = P(A), điều này tương đương với quy tắc nhân xác suất độc lập: P(A ∩ B) = P(A)·P(B).",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q39_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q39_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q39.jpg"
   },
   {
@@ -1031,8 +1031,8 @@
     "ap_dung": "1. Do bài báo tuyên bố rằng 'phụ nữ nhận thấy vấn đề này phổ biến hơn nam giới' (women perceived the problem to be much more prevalent than did men), giả thuyết đối mang tính định hướng: H1: p1 > p2.\n2. Đây là bài toán kiểm định một phía bên phải (right-tailed/upper-tail test).\n3. Tại mức ý nghĩa alpha = 0.01, toàn bộ diện tích miền bác bỏ 0.01 dồn vào đuôi trên của phân phối chuẩn tắc Z.\n4. Giá trị tới hạn tương ứng là Z_alpha = Z_0.01 = 2.33.\n=> Chọn đáp án D.",
     "casio": "Câu hỏi xác định giá trị tới hạn lý thuyết từ bảng phân phối chuẩn: Tra trực tiếp Z_alpha = Z_0.01 = 2.33.",
     "ly_thuyet": "Theo Giáo trình Berenson Ch10 (Two-Sample Tests) - Mục 'Z Test for the Difference Between Two Proportions': Dạng của giả thuyết đối H1 quyết định kiểm định một phía hay hai phía. Khi H1: p1 > p2, miền bác bỏ là Z_STAT > Z_alpha (với Z_0.01 = 2.33).",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q40_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q40_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q40.jpg"
   },
   {
@@ -1109,8 +1109,8 @@
     "ap_dung": "Từ bảng kết quả phân tích phương sai hai yếu tố (Analysis of Variance Table):\n- Dòng \"Interaction\":\n  + Bậc tự do $df = 6$\n  + Tổng bình phương $SS = 150.33$\n  + Trung bình bình phương: $MS = \\frac{SS}{df} = \\frac{150.33}{6} \\approx 25.06$\n\n=> Chọn đáp án A (25.06).",
     "casio": "Thực hiện phép tính kiểm tra trên Casio fx-580VN X:\nBấm: `0.5 × 0.4 =` -> kết quả hiển thị 0.2. Vì bằng P(A and B) nên chọn Yes.",
     "ly_thuyet": "Theo Berenson (Chương 4, Mục 4.3: Conditional Probability and Independence): Hai biến cố A và B được gọi là độc lập nếu xác suất xảy ra biến cố A không bị ảnh hưởng bởi việc biến cố B đã xảy ra hay chưa, nghĩa là P(A|B) = P(A), điều này tương đương với quy tắc nhân xác suất độc lập: P(A ∩ B) = P(A)·P(B).",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q43_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q43_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q43.jpg"
   },
   {
@@ -1264,8 +1264,8 @@
     "ap_dung": "Trong hồi quy bội:\n- $b_1 = +2.0$ là hệ số riêng phần của biến $X_1$.\n- Nó thể hiện rằng: Khi $X_1$ tăng thêm 1 đơn vị, giá trị trung bình ước tính của $Y$ sẽ tăng thêm 2 đơn vị, VỚI ĐIỀU KIỆN GIỮ NGUYÊN $X_2$ (holding $X_2$ constant).\n- Phát biểu (ii) diễn đạt hoàn toàn chính xác nguyên lý \"ceteris paribus\" (các yếu tố khác không đổi).\n\n=> Chọn đáp án B (tương ứng với phát biểu ii).",
     "casio": "Câu hỏi lý thuyết giải thích ý nghĩa hệ số hồi quy đa biến, không dùng máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 13 & 14: Multiple Regression Model): Hệ số b_j phản ánh sự thay đổi ước tính trong giá trị trung bình của Y tương ứng với 1 đơn vị thay đổi của X_j khi giữ nguyên giá trị của tất cả các biến độc lập khác trong mô hình.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q49_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q49_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q49.jpg"
   },
   {

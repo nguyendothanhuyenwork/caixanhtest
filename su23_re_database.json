@@ -256,8 +256,8 @@
     "ap_dung": "1. Thay các giá trị vào công thức tính cỡ mẫu:\n   n = [(1.96)^2 * 0.60 * (1 - 0.60)] / (0.05)^2\n   n = [3.8416 * 0.24] / 0.0025 = 0.921984 / 0.0025 = 368.7936.\n2. Theo nguyên tắc xác định cỡ mẫu trong thống kê, luôn làm tròn lên số nguyên tiếp theo gần nhất:\n   n = ceil(368.7936) = 369.\n=> Chọn đáp án B.",
     "casio": "Bấm máy tính Casio fx-580VN X:\n1.96 ^ 2 * 0.60 * 0.40 / ( 0.05 ^ 2 ) =\nMàn hình hiển thị: 368.7936. Luôn làm tròn lên: 369.",
     "ly_thuyet": "Theo Giáo trình Berenson Ch8 (Confidence Intervals) - Mục 'Determining Sample Size for the Proportion': Cỡ mẫu n tỷ lệ thuận với bình phương giá trị tới hạn Z và độ biến thiên p(1-p), tỷ lệ nghịch với bình phương sai số biên e^2. Kết quả tính toán phải luôn làm tròn lên số nguyên kế tiếp để đảm bảo sai số không vượt quá e.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU23_RE_tables/Q10_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU23_RE_tables/Q10_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU23_RE/Q10_SU23RE.webp"
   },
   {
@@ -363,8 +363,8 @@
     "ap_dung": "1. Sai số chuẩn của số trung bình mẫu:\n   SE = S / sqrt(n) = 5 / sqrt(40) xấp xỉ 5 / 6.324555 xấp xỉ 0.790569.\n2. Giá trị của thống kê kiểm định t_STAT:\n   t_STAT = (32 - 31) / 0.790569 = 1 / 0.790569 xấp xỉ 1.2649 xấp xỉ 1.26.\n=> Chọn đáp án C.",
     "casio": "Bấm máy tính Casio fx-580VN X:\n( 32 - 31 ) / ( 5 / căn(40) ) =\nMàn hình hiển thị: 1.264911... xấp xỉ 1.26.",
     "ly_thuyet": "Theo Giáo trình Berenson Ch9 (Fundamentals of Hypothesis Testing: One-Sample Tests) - Mục 't Test of Hypothesis for the Mean (sigma Unknown)': Khi phương sai tổng thể sigma chưa biết, thống kê kiểm định giả thuyết về trung bình tuân theo phân phối t với n - 1 bậc tự do.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU23_RE_tables/Q14_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU23_RE_tables/Q14_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU23_RE/Q14_SU23RE.webp"
   },
   {
@@ -700,8 +700,8 @@
     "ap_dung": "1. Do bài báo tuyên bố rằng 'phụ nữ nhận thấy vấn đề này phổ biến hơn nam giới' (women perceived the problem to be much more prevalent than did men), giả thuyết đối mang tính định hướng: H1: p1 > p2.\n2. Đây là bài toán kiểm định một phía bên phải (right-tailed/upper-tail test).\n3. Tại mức ý nghĩa alpha = 0.01, toàn bộ diện tích miền bác bỏ 0.01 dồn vào đuôi trên của phân phối chuẩn tắc Z.\n4. Giá trị tới hạn tương ứng là Z_alpha = Z_0.01 = 2.33.\n=> Chọn đáp án D.",
     "casio": "Câu hỏi xác định giá trị tới hạn lý thuyết từ bảng phân phối chuẩn: Tra trực tiếp Z_alpha = Z_0.01 = 2.33.",
     "ly_thuyet": "Theo Giáo trình Berenson Ch10 (Two-Sample Tests) - Mục 'Z Test for the Difference Between Two Proportions': Dạng của giả thuyết đối H1 quyết định kiểm định một phía hay hai phía. Khi H1: p1 > p2, miền bác bỏ là Z_STAT > Z_alpha (với Z_0.01 = 2.33).",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU23_RE_tables/Q27_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU23_RE_tables/Q27_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU23_RE/Q27_SU23RE.webp"
   },
   {
@@ -779,8 +779,8 @@
     "ap_dung": "1. Trong mô hình hồi quy tuyến tính cổ điển với 2 biến giải thích, phương trình hồi quy mẫu dự báo luôn có dạng chuẩn tắc gồm hệ số chặn $b_0$ cộng với tích của từng biến độc lập với hệ số hồi quy riêng phần tương ứng:\n$$\\hat{Y} = b_0 + b_1 X_1 + b_2 X_2$$\n2. Đối chiếu các phương án cấu trúc:\n- Biểu thức (i) bị gán dấu trừ sai mặc định cho hệ số $b_1$.\n- Biểu thức (iii) thiếu hoàn toàn hệ số chặn $b_0$ (mô hình không có intercept).\n- Biểu thức (ii) $\\hat{Y} = b_0 + b_1 X_1 + b_2 X_2$ là dạng phương trình chuẩn tắc tổng quát nhất.\n3. Do đó, khẳng định (ii) là biểu diễn chính xác, tương ứng với phương án B.\n\n=> Chọn đáp án B ((ii)).",
     "casio": "Câu hỏi lý thuyết về cấu trúc phương trình hồi quy đa biến tổng quát trong giáo trình Berenson, không yêu cầu bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 13/14 - Mục: Developing the Multiple Regression Model):\n- Phương trình hồi quy tuyến tính bội dự báo biến phản hồi $Y$ dựa trên $k$ biến độc lập $X_1, X_2, ..., X_k$ có dạng tổng quát: $\\hat{Y}_i = b_0 + b_1X_{1i} + b_2X_{2i} + ... + b_kX_{ki}$. Trong đó $b_0$ là hệ số chặn mẫu và các $b_j$ là các hệ số hồi quy mẫu riêng phần.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU23_RE_tables/Q30_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU23_RE_tables/Q30_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU23_RE/Q30_SU23RE.webp"
   },
   {
@@ -1041,8 +1041,8 @@
     "ap_dung": "1. Trung bình mẫu:\n   xbar = (-12 + 6 + 3) / 3 = -1.\n   ybar = (1 - 5 + 10) / 3 = 2.\n2. Các tích sai số (x - xbar)(y - ybar):\n   - Cặp 1: (-12 - (-1))(1 - 2) = (-11)(-1) = 11.\n   - Cặp 2: (6 - (-1))(-5 - 2) = (7)(-7) = -49.\n   - Cặp 3: (3 - (-1))(10 - 2) = (4)(8) = 32.\n   Tong tích = 11 - 49 + 32 = -6.\n3. Tổng bình phương sai số:\n   SS_x = (-11)^2 + 7^2 + 4^2 = 121 + 49 + 16 = 186.\n   SS_y = (-1)^2 + (-7)^2 + 8^2 = 1 + 49 + 64 = 114.\n4. Hệ số tương quan r:\n   r = -6 / sqrt(186 * 114) = -6 / sqrt(21204) = -6 / 145.6159 xấp xỉ -0.0412 xấp xỉ -0.04.\n=> Chọn đáp án E.",
     "casio": "Bấm máy tính Casio fx-580VN X:\n1. MENU 6 2 (y = a + bx).\n2. Nhập tọa độ: X: -12, 6, 3; Y: 1, -5, 10.\n3. Bấm OPTN 4 (Regression Calc).\n4. Đọc màn hình: r = -0.04120... xấp xỉ -0.04.",
     "ly_thuyet": "Theo Giáo trình Berenson Ch3 & Ch13 - Mục 'The Coefficient of Correlation': Hệ số tương quan r dao động trong đoạn [-1, 1], đo lường chiều hướng và độ mạnh của liên hệ tuyến tính giữa hai biến định lượng. Giá trị r = -0.04 cho thấy tương quan tuyến tính nghịch biến vô cùng yếu.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU23_RE_tables/Q40_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU23_RE_tables/Q40_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU23_RE/Q40_SU23RE.webp"
   },
   {
@@ -1304,8 +1304,8 @@
     "ap_dung": "1. Từ bảng kết quả kiểm tra của 8 học viên, độ lệch chuẩn của các điểm chênh lệch là S_D = 65.027.\n2. Sai số chuẩn của điểm chênh lệch trung bình (standard error of the difference scores) được tính bằng:\n   S_Dbar = S_D / sqrt(n) = 65.027 / sqrt(8) = 65.027 / 2.828427 xấp xỉ 22.9905 xấp xỉ 22.991.\n=> Chọn đáp án A.\n\n*(Bảng số liệu gốc bổ sung chuẩn 100% từ Đề thi Final Exam kỳ SU25 FE Q38)*",
     "casio": "Bấm máy tính Casio fx-580VN X:\n65.027 / căn(8) =\nMàn hình hiển thị: 22.99046... xấp xỉ 22.991.",
     "ly_thuyet": "Theo Giáo trình Berenson Ch10 (Two-Sample Tests) - Mục 'Comparing Two Related Samples: The Paired t Test': Trong bài toán kiểm định mẫu cặp phụ thuộc, sai số chuẩn của hiệu trung bình là S_Dbar = S_D / sqrt(n). Tránh nhầm lẫn giữa độ lệch chuẩn S_D (65.027) và sai số chuẩn S_Dbar (22.991).",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU23_RE_tables/Q50_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU23_RE_tables/Q50_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU23_RE/Q50_SU23RE.webp"
   }
 ]

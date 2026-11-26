@@ -204,8 +204,8 @@
     "ap_dung": "1. Từ bảng kết quả kiểm tra của 8 học viên, độ lệch chuẩn của các điểm chênh lệch là S_D = 65.027.\n2. Sai số chuẩn của điểm chênh lệch trung bình (standard error of the difference scores) được tính bằng:\n   S_Dbar = S_D / sqrt(n) = 65.027 / sqrt(8) = 65.027 / 2.828427 xấp xỉ 22.9905 xấp xỉ 22.991.\n=> Chọn đáp án A.\n\n*(Bảng số liệu gốc bổ sung chuẩn 100% từ Đề thi Final Exam kỳ SU25 FE Q38)*",
     "casio": "Bấm máy tính Casio fx-580VN X:\n65.027 / căn(8) =\nMàn hình hiển thị: 22.99046... xấp xỉ 22.991.",
     "ly_thuyet": "Theo Giáo trình Berenson Ch10 (Two-Sample Tests) - Mục 'Comparing Two Related Samples: The Paired t Test': Trong bài toán kiểm định mẫu cặp phụ thuộc, sai số chuẩn của hiệu trung bình là S_Dbar = S_D / sqrt(n). Tránh nhầm lẫn giữa độ lệch chuẩn S_D (65.027) và sai số chuẩn S_Dbar (22.991).",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE_tables/Q8_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE_tables/Q8_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE/Q8_SP24RE.webp"
   },
   {
@@ -490,8 +490,8 @@
     "ap_dung": "- Khi $F_{STAT} > F_{crit}$, ta bác bỏ giả thuyết không $H_0$ và chấp nhận giả thuyết đối $H_1$.\n- Ý nghĩa chính xác của việc bác bỏ $H_0$ là: Có bằng chứng thống kê cho thấy 'không phải tất cả các giá trị trung bình đều bằng nhau' (có ít nhất một cặp trung bình có sự khác biệt có ý nghĩa thống kê).\n- BẪY PHỔ BIẾN: Mệnh đề (i) khẳng định 'tất cả các trung bình đều khác nhau' (all the means differ) là SAI, vì chỉ cần 1 nhóm khác biệt với các nhóm còn lại thì $H_0$ đã bị bác bỏ, không nhất thiết mọi nhóm đều phải đôi một khác nhau.\n- Do đó, chỉ có phát biểu (ii) là hoàn toàn chính xác.\n\n=> Chọn đáp án B (tương ứng phát biểu ii).",
     "casio": "Câu hỏi lý thuyết bản chất về quy tắc quyết định và kết luận trong kiểm định ANOVA, không sử dụng máy tính bỏ túi.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 11 - Mục 11.1: The Completely Randomized Design: One-Way ANOVA):\n- Giả thuyết đối $H_1$ trong ANOVA một yếu tố luôn được phát biểu là 'Not all population means are equal' (Không phải tất cả các trung bình tổng thể đều bằng nhau) hoặc 'At least two of the population means are different'.\n- Để xác định chính xác cặp trung bình nào khác nhau sau khi bác bỏ $H_0$, cần thực hiện thêm phân tích so sánh bội (Post-hoc), chẳng hạn như quy trình Tukey-Kramer.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE_tables/Q19_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE_tables/Q19_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE/Q19_SP24RE.webp"
   },
   {
@@ -570,8 +570,8 @@
     "ap_dung": "- Tính sai số chuẩn của trung bình mẫu:\n  $$SE = \\frac{S}{\\sqrt{n}} = \\frac{82}{\\sqrt{35}} \\approx \\frac{82}{5.91608} \\approx 13.86053$$\n- Tính giá trị thống kê kiểm định $t_{STAT}$:\n  $$t_{STAT} = \\frac{1170 - 1200}{13.86053} = \\frac{-30}{13.86053} \\approx -2.16442 \\approx -2.16$$\n\n=> Chọn đáp án C (-2.16).",
     "casio": "1. Bấm [MENU] [1].\n2. Nhập phân số: `[(■/□)]` `1170 - 1200` [▼] `82 ÷ [√] 35` [=].\n3. Màn hình hiển thị: -2.164424...\n4. Làm tròn 2 chữ số thập phân: -2.16.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 9 - Mục 9.2: t Test of Hypothesis for the Mean (σ Unknown)):\n- Thống kê $t_{STAT}$ đo lường mức độ chênh lệch giữa giá trị trung bình quan sát được $\\bar{X}$ và giá trị trung bình giả thiết $\\mu_0$ theo đơn vị sai số chuẩn.\n- Dấu âm xuất hiện do trung bình mẫu $\\bar{X} = 1170$ nhỏ hơn giá trị kỳ vọng giả định $\\mu_0 = 1200$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE_tables/Q22_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE_tables/Q22_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE/Q22_SP24RE.webp"
   },
   {
@@ -622,8 +622,8 @@
     "ap_dung": "Từ dữ liệu bài tập chuẩn trong giáo trình (khảo sát SSATL so sánh động lực của hai nhóm nhà quản lý):\n- Thay số liệu mẫu của nhóm nhà quản lý Nhật Bản và Mỹ vào công thức tính phương sai gộp $S_p^2$.\n- Tính sai số chuẩn của hiệu hai trung bình: $S_{\\bar{X}_1 - \\bar{X}_2} = \\sqrt{S_p^2 (1/n_1 + 1/n_2)}$.\n- Tính giá trị kiểm định chuẩn hóa:\n  $$t_{STAT} = \\frac{\\bar{X}_1 - \\bar{X}_2}{S_{\\bar{X}_1 - \\bar{X}_2}} = -11.8092$$\n\n=> Chọn đáp án C (-11.8092).",
     "casio": "Thao tác trên Casio fx-580VN X:\n1. Bấm MENU 1.\n2. Tính Sp2 trước rồi lưu vào biến A (bấm `STO A`).\n3. Nhập `(Xbar1 - Xbar2) / sqrt(A * (1/n1 + 1/n2))` rồi bấm `=` ra `-11.8092`.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.1: Pooled-Variance t Test for the Difference Between Two Means):\n- Khi hai mẫu độc lập được rút ra từ các tổng thể có phân phối chuẩn với giả định phương sai bằng nhau ($\\sigma_1^2 = \\sigma_2^2$), phương pháp kiểm định tối ưu nhất là dùng phương sai gộp $S_p^2$.\n- Bậc tự do của kiểm định này là $df = n_1 + n_2 - 2$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE_tables/Q24_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE_tables/Q24_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE/Q24_SP24RE.webp"
   },
   {
@@ -648,8 +648,8 @@
     "ap_dung": "1. Khi so sánh hai hay nhiều tập dữ liệu có tổng số lượng quan sát khác nhau (ở đây là 4 hiệu sách có quy mô không đồng đều), việc sử dụng biểu đồ tần số tuyệt đối (Frequency histogram) sẽ gây hiểu nhầm nghiêm trọng vì các cột của cửa hàng có quy mô lớn sẽ lấn át hoàn toàn các cửa hàng nhỏ, làm mất đi khả năng so sánh hình dạng và cơ cấu phân phối.\n2. Biểu đồ tần số tương đối (Relative frequency histogram) chuẩn hóa toàn bộ tần số về dạng tỷ lệ phần trăm (tổng diện tích bằng 1 hoặc 100%), đưa các nhóm về cùng một thước đo quy chuẩn.\n3. Nhờ đó, người nghiên cứu có thể so sánh trực quan và khách quan tỷ lệ phân bố sách giữa các phân khúc của 4 cửa hàng bất kể sự chênh lệch về tổng doanh số.\n\n=> Biểu đồ tốt nhất là Relative frequency histogram.\n\n=> Chọn đáp án A.",
     "casio": "Câu hỏi lý thuyết phương pháp trình bày dữ liệu so sánh, không dùng máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 2 - Mục 2.3: Tables and Charts for Numerical Data - Comparing Two or More Numerical Data Sets):\n- Nguyên tắc cơ bản: Khi so sánh hai hay nhiều tập dữ liệu số có quy mô mẫu khác nhau, không được sử dụng tần số tuyệt đối. Bắt buộc phải sử dụng tần số tương đối (relative frequencies) hoặc tỷ lệ phần trăm để tạo cơ sở so sánh chuẩn mực.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q9_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q9_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE/Q25_SP24RE.webp"
   },
   {
@@ -675,8 +675,8 @@
     "ap_dung": "1. Nhận định của nhà nghiên cứu đưa ra một con số cụ thể: '62% cử tri ủng hộ', tức $\\pi = 0.62$.\n2. Vì nhận định này chứa dấu bằng, nó được đặt làm giả thuyết không:\n   $$H_0: \\pi = 0.62$$\n3. Giả thuyết đối mang ý nghĩa bác bỏ nhận định trên, tức tỷ lệ khác 62%:\n   $$H_1: \\pi \\ne 0.62$$\n4. Đối chiếu các phương án:\n   - Mệnh đề (ii) viết đúng chuẩn: $H_0: \\pi = 0.62, H_1: \\pi \\ne 0.62$.\n   - Phương án D chỉ định mệnh đề (ii).\n\n=> Chọn đáp án D.",
     "casio": "Câu hỏi lý thuyết thiết lập giả thuyết kiểm định thống kê, không cần máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 9 - Mục 9.1: Fundamentals of Hypothesis-Testing Methodology):\n- Giả thuyết không ($H_0$) luôn luôn chứa dấu bằng ($=$).\n- Giả thuyết đối ($H_1$) không bao giờ chứa dấu bằng và đại diện cho sự thay đổi hoặc khác biệt mà nhà nghiên cứu thu thập dữ liệu mẫu để chứng minh.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE_tables/Q26_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE_tables/Q26_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE/Q26_SP24RE.webp"
   },
   {
@@ -808,8 +808,8 @@
     "ap_dung": "1. Tính tỷ lệ gộp chung (Pooled sample proportion $\\bar{p}$):\n   $$\\bar{p} = \\frac{240 + 160}{260 + 240} = \\frac{400}{500} = 0{,}80$$\n   $$1 - \\bar{p} = 0{,}20$$\n2. Tính sai số chuẩn gộp (Standard Error):\n   $$SE = \\sqrt{0{,}80 \\times 0{,}20 \\times \\left(\\frac{1}{260} + \\frac{1}{240}\\right)} = \\sqrt{0{,}16 \\times \\left(0{,}003846 + 0{,}004167\\right)} = \\sqrt{0{,}16 \\times 0{,}0080128} = \\sqrt{0{,}00128205} \\approx 0{,}035806$$\n3. Tính thống kê kiểm định $Z_{STAT}$:\n   $$p_1 - p_2 = \\frac{240}{260} - \\frac{160}{240} = 0{,}923077 - 0{,}666667 = 0{,}256410$$\n   $$Z_{STAT} = \\frac{0{,}256410}{0{,}035806} \\approx 7{,}1611 \\approx 7{,}16$$\n=> Chọn đáp án C.",
     "casio": "Thao tác trên Casio fx-580VN X:\n1. Bấm `MENU 1`.\n2. Tính tỷ lệ gộp: `(240 + 160) ÷ 500 =` -> ra `0.8`, lưu `STO P`.\n3. Tính sai số chuẩn: `√( ALPHA P × (1 - ALPHA P) × (1 ÷ 260 + 1 ÷ 240) )` -> ra `0.0358057...`, lưu `STO M`.\n4. Tính Z: `(240 ÷ 260 - 160 ÷ 240) ÷ ALPHA M =` -> ra `7.1611...` (làm tròn `7.16`).",
     "ly_thuyet": "Theo Berenson (Chương 10: Two-Sample Tests - Mục 10.3 Comparing the Proportions of Two Independent Populations):\n- Dưới giả thuyết không $H_0: \\pi_1 = \\pi_2$, ta buộc phải gộp hai mẫu để tính tỷ lệ gộp chung $\\bar{p}$ nhằm ước lượng độ lệch chuẩn chung của hai tổng thể.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE_tables/Q31_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE_tables/Q31_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE/Q31_SP24RE.webp"
   },
   {
@@ -833,8 +833,8 @@
     "ap_dung": "Vì $p\\text{-value} = 0.0026 < \\alpha = 0.05$, ta bác bỏ giả thuyết $H_0$ — tức là phương án (i).\n\n=> Chọn đáp án B ((i)).",
     "casio": "So sánh trực tiếp `0.0026 < 0.05` -> Reject $H_0$.",
     "ly_thuyet": "Quy tắc p-value: khi $p\\text{-value} \\le \\alpha$, bác bỏ $H_0$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE_tables/Q32_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE_tables/Q32_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE/Q32_SP24RE.webp"
   },
   {
@@ -859,8 +859,8 @@
     "ap_dung": "1. Thay các giá trị đã biết vào công thức:\n$$n = \\left(\\frac{1.96 \\times 12}{2}\\right)^2 = (1.96 \\times 6)^2 = (11.76)^2$$\n2. Tính toán giá trị số học:\n$$n = 138.2976$$\n3. Áp dụng quy tắc làm tròn lên trong thống kê để đảm bảo sai số không vượt quá 2 ở độ tin cậy 95%:\n$$n = 139$$\n\n=> Chọn đáp án C (139).",
     "casio": "Bấm MENU 1 (chế độ tính toán cơ bản):\n- Nhập biểu thức: `((1.96 * 12) / 2)^2` -> bấm phím `=`: Màn hình hiển thị `138.2976`.\n- Theo quy tắc thống kê, làm tròn lên số nguyên tiếp theo được `139`.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 8 - Mục 8.4: Determining Sample Size for the Mean):\n- Cỡ mẫu cần thiết để ước lượng trung bình tổng thể phụ thuộc vào ba yếu tố: độ tin cậy mong muốn (quy định giá trị $Z$), độ lệch chuẩn $\\sigma$ và sai số biên cho phép $e$. Để đảm bảo cận trên của sai số không bị vượt quá, bất kỳ phần thập phân nào của $n$ cũng phải được làm tròn lên số nguyên kế tiếp.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE_tables/Q33_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE_tables/Q33_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE/Q33_SP24RE.webp"
   },
   {
@@ -911,8 +911,8 @@
     "ap_dung": "Vì cùng 8 sinh viên đó được đo lường trước và sau khóa học, đây là bài toán mẫu cặp (related samples), không phải hai mẫu độc lập.\nSố cặp dữ liệu là $n = 8$.\nBậc tự do tương ứng của phân phối Student $t$ là:\n$$df = n - 1 = 8 - 1 = 7$$\n(Lưu ý: Nếu là hai mẫu độc lập thì $df = n_1 + n_2 - 2 = 8 + 8 - 2 = 14$, nhưng ở đây là mẫu cặp nên $df = 7$).\n\n=> Chọn đáp án A (7).\n\n*(Bảng số liệu gốc bổ sung chuẩn 100% từ Đề thi Final Exam kỳ SU25 FE Q38)*",
     "casio": "Thao tác trên Casio fx-580VN X: Bấm `8 - 1 = 7`.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.2: Paired t Test for the Difference Between Two Means):\n- Khi kiểm định mẫu cặp, biến số thực tế được kiểm định là hiệu $D_i$. Do chỉ có 1 biến chênh lệch với $n$ quan sát, bậc tự do bị mất 1 do ước lượng trung bình $\\bar{D}$, nên bậc tự do luôn là $df = n - 1$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE_tables/Q35_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE_tables/Q35_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE/Q35_SP24RE.webp"
   },
   {
@@ -1069,8 +1069,8 @@
     "ap_dung": "1. Nhân từng mức yêu cầu bồi thường X với số tài xế f tương ứng rồi tính tổng:\n   Total = (1 * 14) + (2 * 18) + (3 * 12) + (4 * 5) + (5 * 1)\n   Total = 14 + 36 + 36 + 20 + 5 = 111 yêu cầu bồi thường.\n2. Chú ý: Nếu câu hỏi hỏi tổng số tài xế (drivers), đáp án sẽ là sum(f) = 14 + 18 + 12 + 5 + 1 = 50. Câu hỏi hỏi tổng số yêu cầu bồi thường (total claims), do đó đáp án là 111.\n=> Chọn đáp án C.",
     "casio": "Bấm máy tính Casio fx-580VN X:\n1 * 14 + 2 * 18 + 3 * 12 + 4 * 5 + 5 * 1 =\nMàn hình hiển thị: 111.",
     "ly_thuyet": "Theo Giáo trình Berenson Ch2 & Ch3 - Mục 'Frequency Distributions': Khi dữ liệu đã được gom nhóm theo bảng phân phối tần số, tổng tích sum(X * f) phản ánh tổng độ lớn của biến định lượng được đại diện trong toàn bộ mẫu.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE_tables/Q41_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE_tables/Q41_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE/Q41_SP24RE.webp"
   },
   {
@@ -1175,8 +1175,8 @@
     "ap_dung": "1. Tính trung bình của X và Y:\n- $\\bar{X} = \\frac{23 + 25 + 28 + 21}{4} = \\frac{97}{4} = 24.25$\n- $\\bar{Y} = \\frac{49 + 53 + 59 + 42}{4} = \\frac{203}{4} = 50.75$\n2. Tính các độ lệch và bình phương độ lệch:\n- $(X - \\bar{X})$: $-1.25; +0.75; +3.75; -3.25$\n- $(Y - \\bar{Y})$: $-1.75; +2.25; +8.25; -8.75$\n- $\\sum (X - \\bar{X})^2 = (-1.25)^2 + 0.75^2 + 3.75^2 + (-3.25)^2 = 1.5625 + 0.5625 + 14.0625 + 10.5625 = 26.75$\n- $\\sum (X - \\bar{X})(Y - \\bar{Y}) = (-1.25)(-1.75) + (0.75)(2.25) + (3.75)(8.25) + (-3.25)(-8.75) = 2.1875 + 1.6875 + 30.9375 + 28.4375 = 63.25$\n3. Tính hệ số góc $b_1$:\n$$b_1 = \\frac{63.25}{26.75} \\approx 2.364486... \\approx 2.36$$\n4. Tính tung độ gốc $b_0$:\n$$b_0 = \\bar{Y} - b_1\\bar{X} = 50.75 - 2.364486 \\times 24.25 = 50.75 - 57.33878 = -6.58878... \\approx -6.59$$\n5. Phương trình hồi quy là:\n$$\\hat{y} = -6.59 + 2.36x$$\n\n=> Chọn đáp án C (-6.59 + 2.36x).",
     "casio": "Thực hiện trên máy tính Casio fx-580VN X:\n1. Bấm MENU 6 2 (Thống kê 2 biến y = a + bx).\n2. Nhập số liệu:\n   - Cột X: 23 = 25 = 28 = 21 =\n   - Cột Y: 49 = 53 = 59 = 42 =\n3. Bấm AC để lưu.\n4. Bấm OPTN 3 (Regression Calc):\n   - Máy hiển thị `a = -6.588785...` (tung độ gốc $b_0$)\n   - Máy hiển thị `b = 2.3644859...` (hệ số góc $b_1$)\n-> Phương trình là $\\hat{y} = -6.59 + 2.36x$.",
     "ly_thuyet": "Theo Berenson (Chương 13, Mục 13.2: Determining the Simple Linear Regression Equation): Phương pháp bình phương nhỏ nhất (Ordinary Least Squares - OLS) tìm ra các hệ số b0 và b1 sao cho tổng bình phương sai số giữa các giá trị quan sát và giá trị dự báo là nhỏ nhất.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE_tables/Q45_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE_tables/Q45_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE/Q45_SP24RE.webp"
   },
   {
@@ -1307,8 +1307,8 @@
     "ap_dung": "1. Tính tổng bình phương phần dư (SSE):\n   $$SSE = SST - SSR = 338{,}7 - 213{,}5 = 125{,}2$$\n2. Tính phương sai phần dư (Mean Square Error - MSE) với $n - 2 = 88$ bậc tự do:\n   $$MSE = \\frac{SSE}{n - 2} = \\frac{125{,}2}{88} \\approx 1{,}422727$$\n   (Lưu ý: $1{,}423$ chính là giá trị $MSE$, phương án E là bẫy thí sinh quên lấy căn bậc hai).\n3. Tính sai số chuẩn của ước lượng $S_{YX}$ bằng căn bậc hai của MSE:\n   $$S_{YX} = \\sqrt{MSE} = \\sqrt{1{,}422727} \\approx 1{,}19278 \\approx 1{,}193$$\n=> Chọn đáp án A (1,193).",
     "casio": "Thao tác trên Casio fx-580VN X:\n- Bấm `MENU 1`\n- Nhập biểu thức căn bậc hai:\n  `√( (338.7 - 213.5) ÷ (90 - 2) ) =`\n- Màn hình hiện `1.192781...` làm tròn 3 chữ số thập phân ra `1.193`.",
     "ly_thuyet": "Theo Berenson (Chương 13: Simple Linear Regression - Mục 13.3 Measures of Variation):\n- Sai số chuẩn của ước lượng $S_{YX} = \\sqrt{SSE/(n-2)}$ đo lường độ phân tán điển hình của các quan sát thực tế xung quanh đường hồi quy mẫu.\n- Mẫu số bắt buộc là $n - 2$ vì mô hình OLS đơn biến ước lượng 2 tham số $\\beta_0$ và $\\beta_1$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE_tables/Q50_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE_tables/Q50_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_RE/Q50_SP24RE.webp"
   }
 ]

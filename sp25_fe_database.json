@@ -123,8 +123,8 @@
     "ap_dung": "1. Nhân từng mức yêu cầu bồi thường X với số tài xế f tương ứng rồi tính tổng:\n   Total = (1 * 14) + (2 * 18) + (3 * 12) + (4 * 5) + (5 * 1)\n   Total = 14 + 36 + 36 + 20 + 5 = 111 yêu cầu bồi thường.\n2. Chú ý: Nếu câu hỏi hỏi tổng số tài xế (drivers), đáp án sẽ là sum(f) = 14 + 18 + 12 + 5 + 1 = 50. Câu hỏi hỏi tổng số yêu cầu bồi thường (total claims), do đó đáp án là 111.\n=> Chọn đáp án A.",
     "casio": "Bấm máy tính Casio fx-580VN X:\n1 * 14 + 2 * 18 + 3 * 12 + 4 * 5 + 5 * 1 =\nMàn hình hiển thị: 111.",
     "ly_thuyet": "Theo Giáo trình Berenson Ch2 & Ch3 - Mục 'Frequency Distributions': Khi dữ liệu đã được gom nhóm theo bảng phân phối tần số, tổng tích sum(X * f) phản ánh tổng độ lớn của biến định lượng được đại diện trong toàn bộ mẫu.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE_tables/Q5_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE_tables/Q5_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE/Q5_SP25FE.webp"
   },
   {
@@ -805,8 +805,8 @@
     "ap_dung": "1. Thay các số liệu đã cho vào công thức:\n$$n = \\frac{(1.96)^2 \\cdot 0.40 \\cdot (1 - 0.40)}{(0.01)^2}$$\n2. Thực hiện tính toán từng bước:\n- $1.96^2 = 3.8416$\n- $0.40 \\times 0.60 = 0.24$\n- Tử số: $3.8416 \\times 0.24 = 0.921984$\n- Mẫu số: $(0.01)^2 = 0.0001$\n- $n = \\frac{0.921984}{0.0001} = 9219.84$\n3. Quy tắc làm tròn trong xác định cỡ mẫu: Luôn làm tròn lên số nguyên kế tiếp (round up) để đảm bảo biên sai số không vượt quá 0.01:\n$$n = 9220$$\n\n=> Chọn đáp án C (9220).",
     "casio": "Thực hiện tính trực tiếp trên Casio fx-580VN X:\n1. Bấm MENU 1 (phép tính thông thường).\n2. Nhập biểu thức: `(1.96)^2 × 0.4 × (1 - 0.4) ÷ (0.01)^2`\n3. Bấm `=` hiển thị: 9219.84. Làm tròn lên số nguyên tiếp theo là 9220.",
     "ly_thuyet": "Theo Berenson (Chương 8, Mục 8.4: Sample Size Determination for the Proportion): Khi xác định cỡ mẫu để ước lượng tỷ lệ tổng thể π, sai số lấy mẫu chấp nhận được e quyết định cỡ mẫu n cần thiết. Nếu có ước lượng trước về tỷ lệ π (ở đây là 0.40), ta sử dụng giá trị đó để tính n; kết quả luôn được làm tròn lên số nguyên gần nhất.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE_tables/Q31_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE_tables/Q31_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE/Q31_SP25FE.webp"
   },
   {
@@ -831,8 +831,8 @@
     "ap_dung": "- Khẳng định của công ty là xe đạt mức tiêu hao nhiên liệu trung bình tốt hơn 30 dặm/gallon ('better than 30 mpg'). Khẳng định này mang tính đột phá cần chứng minh nên được đưa vào giả thuyết đối $H_1: \\mu > 30$.\n- Giả thuyết không $H_0$ thể hiện trạng thái mốc chuẩn: $H_0: \\mu = 30$.\n- Cặp giả thuyết này trùng khớp với biểu thức (iii):\n  $$H_0: \\mu = 30, \\quad H_1: \\mu > 30$$\n- Phương án C chọn khẳng định (iii).\n\n=> Chọn đáp án C ((iii)).",
     "casio": "Đây là câu hỏi lý thuyết thiết lập giả thuyết, không dùng máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 9 - Mục 9.1: Fundamentals of Hypothesis-Testing Methodology):\n- Giáo trình Berenson áp dụng quy ước chuẩn: Giả thuyết không $H_0$ luôn chứa dấu bằng '=' đối với cả kiểm định hai phía và một phía ($H_0: \\mu = \\mu_0$).\n- Chiều của bất đẳng thức trong giả thuyết đối $H_1$ phản ánh trực tiếp hướng của khẳng định nghiên cứu ('greater than' $\\implies H_1: \\mu > \\mu_0$).",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE_tables/Q32_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE_tables/Q32_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE/Q32_SP25FE.webp"
   },
   {
@@ -858,8 +858,8 @@
     "ap_dung": "- Tính sai số chuẩn của trung bình mẫu:\n  $$SE = \\frac{S}{\\sqrt{n}} = \\frac{82}{\\sqrt{35}} \\approx \\frac{82}{5.91608} \\approx 13.86053$$\n- Tính giá trị thống kê kiểm định $t_{STAT}$:\n  $$t_{STAT} = \\frac{1170 - 1200}{13.86053} = \\frac{-30}{13.86053} \\approx -2.16442 \\approx -2.16$$\n\n=> Chọn đáp án C (-2.16).",
     "casio": "1. Bấm [MENU] [1].\n2. Nhập phân số: `[(■/□)]` `1170 - 1200` [▼] `82 ÷ [√] 35` [=].\n3. Màn hình hiển thị: -2.164424...\n4. Làm tròn 2 chữ số thập phân: -2.16.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 9 - Mục 9.2: t Test of Hypothesis for the Mean (σ Unknown)):\n- Thống kê $t_{STAT}$ đo lường mức độ chênh lệch giữa giá trị trung bình quan sát được $\\bar{X}$ và giá trị trung bình giả thiết $\\mu_0$ theo đơn vị sai số chuẩn.\n- Dấu âm xuất hiện do trung bình mẫu $\\bar{X} = 1170$ nhỏ hơn giá trị kỳ vọng giả định $\\mu_0 = 1200$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE_tables/Q33_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE_tables/Q33_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE/Q33_SP25FE.webp"
   },
   {
@@ -912,8 +912,8 @@
     "ap_dung": "1. Xác định dạng kiểm định: Dấu '≠' trong khẳng định $H_1: \\pi \\neq 0.325$ cho biết đây là kiểm định hai phía (two-tail test).\n2. Chia mức ý nghĩa cho hai phía: $\\alpha / 2 = 0.05 / 2 = 0.025$.\n3. Tra bảng giá trị chuẩn tắc tương ứng với diện tích đuôi 0.025: Đề bài đã cho trực tiếp $Z_{0.025} = 1.96$.\n4. Do tính đối xứng của phân phối chuẩn, hai giá trị tới hạn là $-Z_{0.025} = -1.96$ và $+Z_{0.025} = +1.96$.\n\n=> Chọn đáp án D (-1.96 and 1.96).",
     "casio": "Trên máy Casio fx-580VN X để tìm giá trị tới hạn phân phối chuẩn (Inverse Normal):\n1. Bấm MENU -> chọn 7 (Phân phối / Distribution).\n2. Bấm 3 (Phân phối chuẩn ngược / Inverse Normal).\n3. Nhập Area = 0.025 (cho đuôi trái), σ = 1, μ = 0 -> Bấm '=' ra x = -1.95996... ≈ -1.96.\n4. Do tính đối xứng qua 0, giá trị tới hạn đuôi phải là +1.96.",
     "ly_thuyet": "Theo Berenson (Chương 9, Mục 9.4: Z Test of Hypothesis for the Proportion): Khi kiểm định giả thuyết về tỷ lệ tổng thể với giả thuyết hai phía ($H_0: \\pi = \\pi_0$ so với $H_1: \\pi \\neq \\pi_0$), vùng bác bỏ được chia đều sang hai phía: $Z_{STAT} < -Z_{\\alpha/2}$ hoặc $Z_{STAT} > Z_{\\alpha/2}$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE_tables/Q35_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE_tables/Q35_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE/Q35_SP25FE.webp"
   },
   {
@@ -964,8 +964,8 @@
     "ap_dung": "1. Tính phương sai gộp:\n   $$S_p^2 = \\frac{210 \\times 11.07^2 + 99 \\times 6.41^2}{211 + 100 - 2} = \\frac{25725.321 + 4067.7201}{309} = \\frac{29793.0411}{309} \\approx 96.4471$$\n2. Tính sai số chuẩn:\n   $$S_{\\bar{X}_1 - \\bar{X}_2} = \\sqrt{96.4471 \\times \\left(\\frac{1}{211} + \\frac{1}{100}\\right)} = \\sqrt{96.4471 \\times 0.014739} \\approx 1.1923$$\n3. Tính thống kê kiểm định $t_{STAT}$:\n   $$t_{STAT} = \\frac{65.75 - 79.83}{1.1923} = \\frac{-14.08}{1.1923} \\approx -11.8092$$\n\nĐối chiếu 4 phương án:\n+ A: 96.4471 (chính là $S_p^2$)\n+ B: -14.08 (chính là $\\bar{X}_1 - \\bar{X}_2$)\n+ C: -1.9677 (giá trị tới hạn)\n+ D: -11.8092 (thống kê kiểm định $t_{STAT}$)\n\n=> Chọn đáp án D (-11.8092).",
     "casio": "Thao tác trên Casio fx-580VN X:\n1. Bấm MENU 1.\n2. Tính Sp2 trước rồi lưu vào biến A (bấm `STO A`).\n3. Nhập `(Xbar1 - Xbar2) / sqrt(A * (1/n1 + 1/n2))` rồi bấm `=` ra `-11.8092`.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.1: Pooled-Variance t Test for the Difference Between Two Means):\n- Khi hai mẫu độc lập được rút ra từ các tổng thể có phân phối chuẩn với giả định phương sai bằng nhau ($\\sigma_1^2 = \\sigma_2^2$), phương pháp kiểm định tối ưu nhất là dùng phương sai gộp $S_p^2$.\n- Bậc tự do của kiểm định này là $df = n_1 + n_2 - 2$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE_tables/Q37_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE_tables/Q37_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE/Q37_SP25FE.webp"
   },
   {
@@ -1015,8 +1015,8 @@
     "ap_dung": "Từ dữ liệu bảng điểm trước và sau của 8 học viên:\n- Tổng các độ chênh lệch điểm số sau khóa học trừ trước khóa học: $\\sum D = 400$.\n- Số học viên: $n = 8$.\n- Giá trị trung bình của hiệu số điểm là:\n  $$\\bar{D} = \\frac{400}{8} = 50$$\n\n=> Chọn đáp án A (50).\n\n*(Bảng số liệu gốc bổ sung chuẩn 100% từ Đề thi Final Exam kỳ SU25 FE Q38)*",
     "casio": "Thao tác trên Casio fx-580VN X:\n1. Bấm MENU 1.\n2. Nhập: `400 / 8 =`.\n3. Kết quả hiển thị: `50`.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.2: Comparing the Means of Two Related Populations - Paired t Test):\n- Trong thiết kế nghiên cứu lặp lại trước - sau (repeated measures / before-and-after), hai mẫu không độc lập mà tạo thành các cặp phụ thuộc.\n- Ta quy bài toán 2 mẫu về bài toán 1 mẫu duy nhất trên biến chênh lệch $D = X_1 - X_2$ với trung bình mẫu $\\bar{D} = \\sum D_i / n$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE_tables/Q39_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE_tables/Q39_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE/Q39_SP25FE.webp"
   },
   {
@@ -1094,8 +1094,8 @@
     "ap_dung": "- Khi $F_{STAT} > F_{crit}$, ta bác bỏ giả thuyết không $H_0$ và chấp nhận giả thuyết đối $H_1$.\n- Ý nghĩa chính xác của việc bác bỏ $H_0$ là: Có bằng chứng thống kê cho thấy 'không phải tất cả các giá trị trung bình đều bằng nhau' (có ít nhất một cặp trung bình có sự khác biệt có ý nghĩa thống kê).\n- BẪY PHỔ BIẾN: Mệnh đề (i) khẳng định 'tất cả các trung bình đều khác nhau' (all the means differ) là SAI, vì chỉ cần 1 nhóm khác biệt với các nhóm còn lại thì $H_0$ đã bị bác bỏ, không nhất thiết mọi nhóm đều phải đôi một khác nhau.\n- Do đó, chỉ có phát biểu (ii) là hoàn toàn chính xác.\n\n=> Chọn đáp án B (tương ứng phát biểu ii).",
     "casio": "Câu hỏi lý thuyết bản chất về quy tắc quyết định và kết luận trong kiểm định ANOVA, không sử dụng máy tính bỏ túi.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 11 - Mục 11.1: The Completely Randomized Design: One-Way ANOVA):\n- Giả thuyết đối $H_1$ trong ANOVA một yếu tố luôn được phát biểu là 'Not all population means are equal' (Không phải tất cả các trung bình tổng thể đều bằng nhau) hoặc 'At least two of the population means are different'.\n- Để xác định chính xác cặp trung bình nào khác nhau sau khi bác bỏ $H_0$, cần thực hiện thêm phân tích so sánh bội (Post-hoc), chẳng hạn như quy trình Tukey-Kramer.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE_tables/Q42_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE_tables/Q42_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE/Q42_SP25FE.webp"
   },
   {
@@ -1147,8 +1147,8 @@
     "ap_dung": "1. Tính trung bình của X và Y:\n- $\\bar{X} = \\frac{23 + 25 + 28 + 21}{4} = \\frac{97}{4} = 24.25$\n- $\\bar{Y} = \\frac{49 + 53 + 59 + 42}{4} = \\frac{203}{4} = 50.75$\n2. Tính các độ lệch và bình phương độ lệch:\n- $(X - \\bar{X})$: $-1.25; +0.75; +3.75; -3.25$\n- $(Y - \\bar{Y})$: $-1.75; +2.25; +8.25; -8.75$\n- $\\sum (X - \\bar{X})^2 = (-1.25)^2 + 0.75^2 + 3.75^2 + (-3.25)^2 = 1.5625 + 0.5625 + 14.0625 + 10.5625 = 26.75$\n- $\\sum (X - \\bar{X})(Y - \\bar{Y}) = (-1.25)(-1.75) + (0.75)(2.25) + (3.75)(8.25) + (-3.25)(-8.75) = 2.1875 + 1.6875 + 30.9375 + 28.4375 = 63.25$\n3. Tính hệ số góc $b_1$:\n$$b_1 = \\frac{63.25}{26.75} \\approx 2.364486... \\approx 2.36$$\n4. Tính tung độ gốc $b_0$:\n$$b_0 = \\bar{Y} - b_1\\bar{X} = 50.75 - 2.364486 \\times 24.25 = 50.75 - 57.33878 = -6.58878... \\approx -6.59$$\n5. Phương trình hồi quy là:\n$$\\hat{y} = -6.59 + 2.36x$$\n\n=> Chọn đáp án C (-6.59 + 2.36x).",
     "casio": "Thực hiện trên máy tính Casio fx-580VN X:\n1. Bấm MENU 6 2 (Thống kê 2 biến y = a + bx).\n2. Nhập số liệu:\n   - Cột X: 23 = 25 = 28 = 21 =\n   - Cột Y: 49 = 53 = 59 = 42 =\n3. Bấm AC để lưu.\n4. Bấm OPTN 3 (Regression Calc):\n   - Máy hiển thị `a = -6.588785...` (tung độ gốc $b_0$)\n   - Máy hiển thị `b = 2.3644859...` (hệ số góc $b_1$)\n-> Phương trình là $\\hat{y} = -6.59 + 2.36x$.",
     "ly_thuyet": "Theo Berenson (Chương 13, Mục 13.2: Determining the Simple Linear Regression Equation): Phương pháp bình phương nhỏ nhất (Ordinary Least Squares - OLS) tìm ra các hệ số b0 và b1 sao cho tổng bình phương sai số giữa các giá trị quan sát và giá trị dự báo là nhỏ nhất.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE_tables/Q44_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE_tables/Q44_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE/Q44_SP25FE.webp"
   },
   {
@@ -1277,8 +1277,8 @@
     "ap_dung": "1. Tính tích của hai xác suất riêng phần:\n$$P(A) \\cdot P(B) = 0.5 \\times 0.4 = 0.20$$\n2. So sánh với xác suất đồng thời $P(A \\cap B)$ đã cho:\n$$P(A \\cap B) = 0.2$$\n3. Ta thấy:\n$$P(A \\cap B) = P(A) \\cdot P(B) = 0.2$$\nDo đó, hai biến cố A và B hoàn toàn độc lập với nhau.\n\n=> Chọn đáp án A (Yes).",
     "casio": "Thực hiện phép tính kiểm tra trên Casio fx-580VN X:\nBấm: `0.5 × 0.4 =` -> kết quả hiển thị 0.2. Vì bằng P(A and B) nên chọn Yes.",
     "ly_thuyet": "Theo Berenson (Chương 4, Mục 4.3: Conditional Probability and Independence): Hai biến cố A và B được gọi là độc lập nếu xác suất xảy ra biến cố A không bị ảnh hưởng bởi việc biến cố B đã xảy ra hay chưa, nghĩa là P(A|B) = P(A), điều này tương đương với quy tắc nhân xác suất độc lập: P(A ∩ B) = P(A)·P(B).",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE_tables/Q49_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE_tables/Q49_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE/Q49_SP25FE.webp"
   },
   {

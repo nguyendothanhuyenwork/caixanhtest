@@ -1018,8 +1018,8 @@
     "ap_dung": "- Bước 1: Tính trung bình của sai khác $\\bar{D}$:\n  $$\\sum D_i = (-4) + 1 + (-2) + 0 + 1 + (-5) + 4 + (-2) = -7$$\n  $$\\bar{D} = \\frac{-7}{8} = -0.875$$\n- Bước 2: Tính độ lệch chuẩn mẫu của sai khác $S_D$:\n  $$\\sum D_i^2 = (-4)^2 + 1^2 + (-2)^2 + 0^2 + 1^2 + (-5)^2 + 4^2 + (-2)^2 = 16 + 1 + 4 + 0 + 1 + 25 + 16 + 4 = 67$$\n  $$S_D^2 = \\frac{\\sum D_i^2 - \\frac{(\\sum D_i)^2}{n}}{n - 1} = \\frac{67 - \\frac{(-7)^2}{8}}{7} = \\frac{67 - 6.125}{7} = \\frac{60.875}{7} \\approx 8.69643$$\n  $$S_D = \\sqrt{8.69643} \\approx 2.9490$$\n- Bước 3: Tính sai số biên:\n  $$E = t_{0.025; 7} \\times \\frac{S_D}{\\sqrt{n}} = 2.36 \\times \\frac{2.9490}{\\sqrt{8}} = 2.36 \\times 1.0426 \\approx 2.4606$$\n- Bước 4: Tính hai giới hạn:\n  $$\\text{Lower} = -0.875 - 2.4606 = -3.3356 \\approx -3.34$$\n  $$\\text{Upper} = -0.875 + 2.4606 = +1.5856 \\approx +1.59$$\n\n=> Khoảng tin cậy là (-3.34, 1.59).\n=> Chọn đáp án A.",
     "casio": "Thao tác trên Casio fx-580VN X:\n1. Bấm MENU 6 1 (Thống kê 1 biến).\n2. Nhập dãy sai khác D: `-4 = 1 = -2 = 0 = 1 = -5 = 4 = -2 =`.\n3. Bấm AC -> OPTN 3 -> đọc: `x̄ = -0.875`, `sx = 2.94897`.\n4. Ra màn hình chính: `(-0.875) - 2.36 * (2.94897 / căn(8)) =` -> ra **-3.3356**.\n5. Sửa dấu `-` thành `+` -> ra **1.5856**.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.2: Paired t Test and Confidence Interval):\n- The paired confidence interval is constructed using the mean difference $\\bar{D}$ and the standard deviation of differences $S_D$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q39_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q39_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q39.webp"
   },
   {
@@ -1123,8 +1123,8 @@
     "ap_dung": "$$F_{\\text{Interaction}} = \\frac{25.06}{12.50} = 2.0048 \\approx 2.00$$\n\n=> Chọn đáp án A (2.00).\n*(Lưu ý: B. 0.144 là p-value; C. 25.06 là MSAB; E. 12.50 là MSE)*.",
     "casio": "Thao tác trên Casio fx-580VN X:\nBấm `25.06 / 12.50 =` -> máy hiện `2.0048`, làm tròn thành **2.00**.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 11 - Mục 11.2: The Two-Factor Factorial Design):\n- To test for the interaction effect of factors A and B, compute $F_{STAT} = \\frac{MSAB}{MSE}$ with degrees of freedom $(r-1)(c-1)$ and $rc(n'-1)$.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q43_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q43_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q43.webp"
   },
   {
@@ -1149,8 +1149,8 @@
     "ap_dung": "Khi $X = 0$ (tức là sinh viên không dành giờ nào để học bài cho kỳ thi cuối kỳ - does not study for the final exam), điểm thi trung bình dự báo của sinh viên đó là $\\hat{Y} = b_0 = +2.6233$.\n\n=> Khớp hoàn hảo với phương án A.\n*(Lưu ý: Phương án B là giải thích ý nghĩa của hệ số góc $b_1 = +0.6759$)*.\n=> Chọn đáp án A.",
     "casio": "Câu hỏi lý thuyết giải thích ý nghĩa hệ số hồi quy, không cần bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 12 - Mục 12.2: Determining the Simple Linear Regression Equation):\n- The Y-intercept, $b_0$, represents the mean value of $Y$ when $X$ equals 0.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q44_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q44_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q44.webp"
   },
   {
@@ -1281,8 +1281,8 @@
     "ap_dung": "$$\\hat{Y} = -326.25 + (1.68 \\times 300) - (0.09 \\times 400)$$\n$$\\hat{Y} = -326.25 + 504 - 36 = -326.25 + 468 = 141.75$$\n\n=> Chọn đáp án A (141.75).",
     "casio": "Thao tác trên Casio fx-580VN X:\nBấm trực tiếp: `-326.25 + 1.68 * 300 - 0.09 * 400 =` -> máy hiện chính xác **141.75**.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 13 - Mục 13.1: Developing the Multiple Regression Model):\n- To predict the dependent variable, substitute the given values of the explanatory variables into the estimated multiple regression equation.",
-    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q49_table.webp",
-    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE_tables/Q49_table.png",
+    "table_image": null,
+    "table_image_png": null,
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU26_FE/Q49.webp"
   },
   {
