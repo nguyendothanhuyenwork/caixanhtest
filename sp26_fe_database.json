@@ -530,7 +530,8 @@
       "A. 0.4107",
       "B. 0.3370",
       "C. 1.0847",
-      "D. 0.7465"
+      "D. 0.7465",
+      "E. None of the other choices is correct"
     ],
     "correct_answer": "D",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_FE/Q25_FE26.jpg",
@@ -568,19 +569,20 @@
     "chapter": "Ch7: Phân phối mẫu",
     "topic": "Định lý giới hạn trung tâm: Phân phối của Trung bình mẫu (Sampling Distribution of Mean)",
     "is_calc": true,
-    "prompt": "Suppose the mean length of time between submission of a state tax return requesting a refund and the issuance of the refund is 47 days, with standard deviation 6 days. Find the probability that in a sample of 50 returns requesting a refund, the mean such time will be less than 48 days.",
+    "prompt": "Suppose the mean length of time between submission of a state tax return requesting a refund and the issuance of the refund is 47 days, with standard deviation 6 days. Find the probability that in a sample of 50 returns requesting a refund, the mean such time will be less than 48 days.\nLet P(Z < 1.178511) = 0.88070; P(Z < 1.2) = 0.88493",
     "options": [
-      "A. 0.05260",
-      "B. 0.44740",
+      "A. 0.88493",
+      "B. 0.11930",
       "C. 0.88070",
-      "D. 0.47340"
+      "D. 0.11507",
+      "E. None of the other choices is correct"
     ],
     "correct_answer": "C",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_FE/Q27_FE26.jpg",
     "dich_de": "Thời gian trung bình từ khi nộp tờ khai xin hoàn thuế đến khi nhận tiền là 47 ngày, độ lệch chuẩn 6 ngày. Tìm xác suất để trong một mẫu gồm 50 tờ khai, thời gian trung bình sẽ ít hơn 48 ngày.",
     "tom_tat": "- Tổng thể: $\\mu = 47, \\sigma = 6$.\n- Cỡ mẫu $n = 50$.\n- Cần tìm $P(\\bar{X} < 48)$.",
     "cong_thuc": "$$\\sigma_{\\bar{X}} = \\frac{\\sigma}{\\sqrt{n}}, \\quad Z = \\frac{\\bar{X} - \\mu}{\\sigma_{\\bar{X}}}$$",
-    "ap_dung": "1. Sai số chuẩn:\n$$\\sigma_{\\bar{X}} = \\frac{6}{\\sqrt{50}} \\approx 0.848528$$\n2. Điểm Z:\n$$Z = \\frac{48 - 47}{0.848528} = \\frac{1}{0.848528} \\approx 1.1785 \\approx 1.18$$\n3. Tra bảng xác suất chuẩn:\n$$P(Z < 1.18) \\approx 0.88070$$\n=> Chọn đáp án C (0.88070).",
+    "ap_dung": "1. Sai số chuẩn:\n$$\\sigma_{\\bar{X}} = \\frac{6}{\\sqrt{50}} \\approx 0.848528$$\n2. Điểm Z:\n$$Z = \\frac{48 - 47}{0.848528} = \\frac{1}{0.848528} \\approx 1.178511$$\n3. Theo giá trị đề bài cho:\n$$P(Z < 1.178511) = 0.88070$$\n=> Chọn đáp án C (0.88070).",
     "casio": "Bấm `MENU 7 2`, Lower = -9999, Upper = 48, σ = 6/√50, μ = 47 ra `0.8807`.",
     "ly_thuyet": "Giáo trình Berenson Ch7: Central Limit Theorem and Sampling Distribution of the Mean."
   },
@@ -589,12 +591,12 @@
     "chapter": "Ch7: Phân phối mẫu",
     "topic": "Phân phối của Tỷ lệ mẫu (Sampling Distribution of Proportion)",
     "is_calc": true,
-    "prompt": "According to a survey, only 15% of customers who visited the website of a major retail store made a purchase. What is the probability that a random sample of 50 will have at least 30% of customers who will make a purchase after visiting the website?",
+    "prompt": "According to a survey, only 15% of customers who visited the website of a major retail store made a purchase. What is the probability that a random sample of 50 will have at least 30% of customers who will make a purchase after visiting the website?\nLet P(Z < -0.99) = 0.1611, P(Z < 2.97) = 0.9985, P(Z < 0.3) = 0.6179, P(Z < 2.71) = 0.9966.",
     "options": [
       "A. 0.0015",
-      "B. 0.0385",
-      "C. 0.0769",
-      "D. 0.0150"
+      "B. 0.9985",
+      "C. 0.0033",
+      "D. 0.9966"
     ],
     "correct_answer": "A",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_FE/Q28_FE26.jpg",
@@ -632,20 +634,21 @@
     "chapter": "Ch8: Khoảng tin cậy",
     "topic": "Khoảng tin cậy cho Tỷ lệ (Confidence Interval for Proportion)",
     "is_calc": true,
-    "prompt": "A random sample of 100 preschool children in Camperdown revealed that only 60 had been vaccinated. Provide an approximate 99% confidence interval for the proportion vaccinated in that suburb.",
+    "prompt": "A random sample of 100 preschool children in Camperdown revealed that only 60 had been vaccinated. Provide an approximate 99% confidence interval for the proportion vaccinated in that suburb.\n(Let z_0.005 = 2.58)",
     "options": [
       "A. (0.47; 0.73)",
-      "B. (0.47; 0.65)",
-      "C. (0.43; 0.77)",
-      "D. (0.40; 0.80)"
+      "B. (0.47; 0.74)",
+      "C. (0.46; 0.74)",
+      "D. (0.46; 0.73)",
+      "E. None of the other choices is correct"
     ],
     "correct_answer": "A",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_FE/Q30_FE26.jpg",
     "dich_de": "Một mẫu ngẫu nhiên gồm 100 trẻ mẫu giáo ở Camperdown cho thấy có 60 em đã được tiêm chủng. Hãy ước lượng khoảng tin cậy 99% cho tỷ lệ trẻ được tiêm chủng tại vùng ngoại ô đó.",
-    "tom_tat": "- $n = 100, X = 60 \\implies p = 60/100 = 0.60$.\n- Độ tin cậy $99\\% \\implies Z_{\\alpha/2} = Z_{0.005} \\approx 2.576$ (hoặc 2.58).",
+    "tom_tat": "- $n = 100, X = 60 \\implies p = 60/100 = 0.60$.\n- Độ tin cậy $99\\% \\implies z_{0.005} = 2.58$.",
     "cong_thuc": "$$p \\pm Z_{\\alpha/2} \\sqrt{\\frac{p(1 - p)}{n}}$$",
-    "ap_dung": "1. Sai số biên:\n$$E = 2.576 \\times \\sqrt{\\frac{0.60 \\times 0.40}{100}} = 2.576 \\times \\sqrt{0.0024} = 2.576 \\times 0.04899 \\approx 0.1262 \\approx 0.13$$\n2. Cận dưới: $0.60 - 0.1262 \\approx 0.4738 \\approx 0.47$.\n3. Cận trên: $0.60 + 0.1262 \\approx 0.7262 \\approx 0.73$.\n=> Khoảng tin cậy: (0.47; 0.73).\n=> Chọn đáp án A.",
-    "casio": "Bấm: `0.60 - 2.576 × √(0.6×0.4/100) = 0.4738` và `+` ra `0.7262`.",
+    "ap_dung": "1. Sai số biên:\n$$E = 2.58 \\times \\sqrt{\\frac{0.60 \\times 0.40}{100}} = 2.58 \\times \\sqrt{0.0024} = 2.58 \\times 0.04899 \\approx 0.1264$$\n2. Cận dưới: $0.60 - 0.1264 \\approx 0.4736 \\approx 0.47$.\n3. Cận trên: $0.60 + 0.1264 \\approx 0.7264 \\approx 0.73$.\n=> Khoảng tin cậy: (0.47; 0.73).\n=> Chọn đáp án A.",
+    "casio": "Bấm: `0.60 - 2.58 × √(0.6×0.4/100) = 0.4736` và `+` ra `0.7264`.",
     "ly_thuyet": "Giáo trình Berenson Ch8: Confidence Interval Estimation for the Proportion."
   },
   {
@@ -696,19 +699,19 @@
     "chapter": "Ch9: Kiểm định 1 mẫu",
     "topic": "Kiểm định trung bình 1 mẫu: Kết luận kiểm định (Interpreting Test Conclusion)",
     "is_calc": false,
-    "prompt": "A manager of the credit department for an oil company would like to determine whether the mean monthly balance of credit card holders is equal to $75. An auditor selects a random sample of 100 accounts and finds that the mean owed is $73.40 with a sample standard deviation of $9.65. If the test statistic leads to the rejection of the null hypothesis, what is the correct conclusion?",
+    "prompt": "A manager of the credit department for an oil company would like to determine whether the mean monthly balance of credit card holders is equal to $75. An auditor selects a random sample of 100 accounts and finds that the mean owed is $83.40 with a sample standard deviation of $23.65. If you wanted to test whether the mean balance is different from $75 and decided to REJECT the null hypothesis, what conclusion could you reach?",
     "options": [
-      "A. There is sufficient evidence that the mean monthly balance is equal to $75.",
-      "B. There is insufficient evidence that the mean monthly balance is equal to $75.",
-      "C. There is insufficient evidence that the mean monthly balance is not equal to $75.",
-      "D. There is sufficient evidence that the mean monthly balance is not equal to $75."
+      "A. There is not evidence that the mean balance is $75.",
+      "B. There is not evidence that the mean balance is not $75.",
+      "C. There is evidence that the mean balance is $75.",
+      "D. There is evidence that the mean balance is not $75."
     ],
     "correct_answer": "D",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_FE/Q33_FE26.jpg",
-    "dich_de": "Người quản lý muốn kiểm tra xem số dư trung bình hàng tháng có bằng 75$ hay không. Giả sử giá trị kiểm định dẫn đến việc BÁC BỎ giả thuyết không H₀ (rejection of H₀), kết luận nào sau đây là đúng?",
+    "dich_de": "Người quản lý bộ phận tín dụng muốn kiểm tra xem số dư trung bình hàng tháng của chủ thẻ có bằng 75$ hay không. Kiểm toán viên chọn ngẫu nhiên 100 tài khoản và thấy trung bình là 83.40$ với độ lệch chuẩn mẫu 23.65$. Nếu kiểm định xem số dư trung bình có khác 75$ và quyết định BÁC BỎ giả thuyết không H₀, kết luận nào có thể rút ra?",
     "tom_tat": "- Cặp giả thuyết: $H_0: \\mu = 75$ vs $H_1: \\mu \\ne 75$.\n- Quyết định: Bác bỏ $H_0$ (Reject $H_0$).\n- Ý nghĩa: Có đủ bằng chứng thống kê để ủng hộ giả thuyết đối $H_1$, tức là số dư trung bình khác (không bằng) 75$.",
     "cong_thuc": "Khi bác bỏ $H_0$: \"There is sufficient evidence that [H_1 statement]\".",
-    "ap_dung": "Vì bác bỏ $H_0$ nên có đủ bằng chứng kết luận số dư trung bình hàng tháng KHÔNG bằng 75$ (There is sufficient evidence that the mean monthly balance is not equal to $75).\n=> Chọn đáp án D.",
+    "ap_dung": "Vì bác bỏ $H_0$ nên có đủ bằng chứng kết luận số dư trung bình KHÔNG bằng 75$ (There is evidence that the mean balance is not $75).\n=> Chọn đáp án D.",
     "casio": "Câu hỏi lý thuyết suy luận thống kê.",
     "ly_thuyet": "Giáo trình Berenson Ch9: Drawing conclusions in hypothesis testing."
   },
@@ -717,38 +720,39 @@
     "chapter": "Ch9: Kiểm định 1 mẫu",
     "topic": "Kiểm định Trung bình 1 mẫu: Giá trị thống kê kiểm định Z (Z-test statistic for Mean)",
     "is_calc": true,
-    "prompt": "The owner of a local nightclub has recently surveyed a random sample of 250 customers of the club. She would now like to determine whether or not the mean age of her customers is greater than 32. If so, she plans to alter the entertainment to appeal to an older crowd. If the sample mean age is 33.45 and the population standard deviation is 5.0, what is the value of the test statistic?",
+    "prompt": "The owner of a local nightclub has recently surveyed a random sample of 250 customers of the club. She would now like to determine whether or not the mean age of her customers is greater than 32. If so, she plans to alter the entertainment to appeal to an older crowd. If not, no entertainment changes will be made. Suppose she found that the sample mean was 33.45 years and the sample standard deviation was 5 years. What is the test statistic value if we want to test the owner's claim?",
     "options": [
       "A. 4.59",
-      "B. 0.29",
-      "C. 2.50",
-      "D. 1.45",
+      "B. -4.59",
+      "C. 0.29",
+      "D. -0.29",
       "E. None of the other choices is correct"
     ],
     "correct_answer": "A",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_FE/Q34_FE26.jpg",
-    "dich_de": "Chủ quán bar khảo sát 250 khách hàng để kiểm tra xem độ tuổi trung bình có lớn hơn 32 không. Biết trung bình mẫu là 33.45 tuổi, độ lệch chuẩn tổng thể là 5.0. Hãy tính giá trị của thống kê kiểm định.",
-    "tom_tat": "- $n = 250$.\n- $\\mu_0 = 32$.\n- $\\bar{X} = 33.45$.\n- $\\sigma = 5.0$.\n- Cần tính giá trị $Z_{STAT}$.",
-    "cong_thuc": "$$Z_{STAT} = \\frac{\\bar{X} - \\mu_0}{\\frac{\\sigma}{\\sqrt{n}}}$$",
-    "ap_dung": "$$Z_{STAT} = \\frac{33.45 - 32}{\\frac{5.0}{\\sqrt{250}}} = \\frac{1.45}{\\frac{5.0}{15.811388}} = \\frac{1.45}{0.3162277} \\approx 4.5853 \\approx 4.59$$\n=> Chọn đáp án A (4.59).",
+    "dich_de": "Chủ quán bar khảo sát ngẫu nhiên 250 khách hàng để kiểm tra xem độ tuổi trung bình có lớn hơn 32 không. Biết trung bình mẫu là 33.45 tuổi và độ lệch chuẩn mẫu là 5 năm. Tính giá trị thống kê kiểm định.",
+    "tom_tat": "- $n = 250$.\n- $\\mu_0 = 32$.\n- $\\bar{X} = 33.45$.\n- $s = 5$.\n- Cần tính giá trị thống kê kiểm định $t_{STAT}$.",
+    "cong_thuc": "$$t_{STAT} = \\frac{\\bar{X} - \\mu_0}{\\frac{s}{\\sqrt{n}}}$$",
+    "ap_dung": "$$t_{STAT} = \\frac{33.45 - 32}{\\frac{5}{\\sqrt{250}}} = \\frac{1.45}{\\frac{5}{15.811388}} = \\frac{1.45}{0.3162277} \\approx 4.5853 \\approx 4.59$$\n=> Chọn đáp án A (4.59).",
     "casio": "Bấm: `(33.45 - 32) ÷ (5 ÷ √250) =` ra `4.5853... ≈ 4.59`.",
-    "ly_thuyet": "Giáo trình Berenson Ch9: Z-Test of Hypothesis for the Mean (sigma known)."
+    "ly_thuyet": "Giáo trình Berenson Ch9: t-Test of Hypothesis for the Mean (sigma unknown)."
   },
   {
     "id": 35,
     "chapter": "Ch9: Kiểm định 1 mẫu",
     "topic": "Kiểm định Tỷ lệ 1 mẫu: Thống kê kiểm định Z (Z-test for Proportion)",
     "is_calc": true,
-    "prompt": "A pizza chain is considering opening a new store in an area that currently does not have any such stores. The chain will open if there is evidence that more than 5,000 of the 20,000 households in the area have a favorable view of its product. It conducts a survey of 300 households in the area and finds that 96 have a favorable view. What is the value of the test statistic for this hypothesis test?",
+    "prompt": "A pizza chain is considering opening a new store in an area that currently does not have any such stores. The chain will open if there is evidence that more than 5,000 of the 20,000 households in the area have a favorable view of its brand. It conducts a telephone poll of 300 randomly selected households in the area and finds that 96 have a favorable view. The value of the test statistic in this problem is approximately equal to:",
     "options": [
       "A. 2.80",
-      "B. 1.96",
-      "C. 2.58",
-      "D. 3.12"
+      "B. 2.60",
+      "C. 1.94",
+      "D. 1.30",
+      "E. None of the other choices is correct"
     ],
     "correct_answer": "A",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_FE/Q35_FE26.jpg",
-    "dich_de": "Chuỗi pizza dự định mở cửa hàng mới nếu có trên 5.000 trong số 20.000 hộ gia đình có thiện cảm với sản phẩm. Khảo sát 300 hộ thấy 96 hộ ủng hộ. Tính giá trị thống kê kiểm định.",
+    "dich_de": "Chuỗi pizza dự định mở cửa hàng mới nếu có bằng chứng cho thấy hơn 5.000 trong số 20.000 hộ gia đình có thiện cảm với thương hiệu. Khảo sát qua điện thoại 300 hộ thấy 96 hộ ủng hộ. Tính giá trị thống kê kiểm định.",
     "tom_tat": "- Tỷ lệ kiểm định: $\\pi_0 = \\frac{5000}{20000} = 0.25$.\n- Mẫu khảo sát: $n = 300$, số hộ ủng hộ $X = 96 \\implies p = \\frac{96}{300} = 0.32$.\n- Cần tính $Z_{STAT}$.",
     "cong_thuc": "$$Z_{STAT} = \\frac{p - \\pi_0}{\\sqrt{\\frac{\\pi_0(1 - \\pi_0)}{n}}}$$",
     "ap_dung": "1. Độ lệch chuẩn của tỷ lệ dưới $H_0$:\n$$\\sigma_p = \\sqrt{\\frac{0.25 \\times 0.75}{300}} = \\sqrt{\\frac{0.1875}{300}} = \\sqrt{0.000625} = 0.025$$\n2. Thống kê kiểm định:\n$$Z_{STAT} = \\frac{0.32 - 0.25}{0.025} = \\frac{0.07}{0.025} = 2.80$$\n=> Chọn đáp án A (2.80).",

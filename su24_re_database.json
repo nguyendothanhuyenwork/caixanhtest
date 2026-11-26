@@ -786,7 +786,7 @@
     "topic": "Xác định cỡ mẫu ước lượng tỷ lệ (Sample Size for Proportion)",
     "is_calc": true,
     "raw_question": "fuoverflow n Let z 0.02 = 2.05; (Choose 1 answer) Find the minimum sample size you should use to assure that your estimate of proportion p will be within the required margin of error around the population proportion Tt. Margin of error 0.025; confidence level 96%; p is unknown. A. 43 B. 1681 c. 21 D. 1680 None of the other choices is correct E. FUOVERFLOW.COM - 1.75 zo.04 -",
-    "prompt": "Find the minimum sample size you should use to assure that your estimate of proportion p will be within the required margin of error around the population proportion π. Margin of error: 0.025, confidence level 96%, p is unknown.",
+    "prompt": "Find the minimum sample size you should use to assure that your estimate of proportion p will be within the required margin of error around the population proportion π. Margin of error: 0.025; confidence level 96%; p is unknown.\nLet z₀.₀₂ = 2.05; z₀.₀₄ = 1.75",
     "options": [
       "A. 43",
       "B. 1681",
@@ -796,7 +796,7 @@
     ],
     "correct_answer": "B",
     "match_364": "📌 Đối chiếu ngân hàng đề: Giống Câu 364 trong bộ 364 câu hỏi trắc nghiệm trên web",
-    "dich_de": "Tìm kích thước mẫu tối thiểu bạn nên sử dụng để đảm bảo rằng ước lượng tỷ lệ mẫu $p$ sẽ nằm trong phạm vi sai số biên yêu cầu xung quanh tỷ lệ tổng thể $\\pi$. Biết sai số biên: 0.025, độ tin cậy: 96%, và tỷ lệ $p$ chưa được biết trước.",
+    "dich_de": "Tìm kích thước mẫu tối thiểu bạn nên sử dụng để đảm bảo rằng ước lượng tỷ lệ mẫu $p$ sẽ nằm trong phạm vi sai số biên yêu cầu xung quanh tỷ lệ tổng thể $\\pi$. Biết sai số biên: 0.025, độ tin cậy: 96%, và tỷ lệ $p$ chưa được biết trước. Cho biết $z_{0.02} = 2.05; z_{0.04} = 1.75$.",
     "tom_tat": "- Sai số biên cho phép: $e = 0.025$.\n- Độ tin cậy: $96\\% \\implies \\alpha = 0.04 \\implies \\alpha/2 = 0.02 \\implies Z_{\\alpha/2} = Z_{0.02} \\approx 2.05$.\n- Thông tin về tỷ lệ tổng thể: Chưa biết trước ($p$ is unknown) $\\implies$ Sử dụng giả định thận trọng (bảo thủ) $\\pi = 0.5$.\n- Cần tìm: Cỡ mẫu tối thiểu $n$.",
     "cong_thuc": "Công thức xác định kích thước mẫu ước lượng tỷ lệ tổng thể:\n$$n = \\frac{Z_{\\alpha/2}^2 \\cdot \\pi(1 - \\pi)}{e^2}$$\nKhi chưa có thông tin trước về $\\pi$, ta chọn $\\pi = 0.5$ để tích $\\pi(1 - \\pi) = 0.25$ đạt giá trị lớn nhất (ước lượng an toàn nhất).",
     "ap_dung": "Bước 1: Xác định giá trị tới hạn chuẩn tắc $Z$ ở độ tin cậy 96%:\n- Phần diện tích ở giữa là 0.96, hai đuôi mỗi bên là $\\alpha/2 = 0.02$.\n- Diện tích tích lũy: $1 - 0.02 = 0.98 \\implies Z_{0.02} \\approx 2.05$ (tra bảng chuẩn tắc: $P(Z < 2.05) \\approx 0.9798 \\approx 0.98$).\n\nBước 2: Thay số vào công thức cỡ mẫu:\n$$n = \\frac{(2.05)^2 \\times 0.5 \\times (1 - 0.5)}{(0.025)^2} = \\frac{4.2025 \\times 0.25}{0.000625} = \\frac{1.050625}{0.000625} = 1681$$\n(Nếu dùng giá trị chính xác $Z_{0.02} = 2.05375$ thì $n = 1687.16 \\implies 1688$, tuy nhiên với giá trị $Z = 2.05$ chuẩn trong giáo trình thì $n = 1681$).\nPhương án B là 1681.\n\n=> Chọn đáp án B (1681).",
