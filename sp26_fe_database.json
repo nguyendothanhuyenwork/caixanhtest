@@ -370,16 +370,16 @@
     "chapter": "Ch4: Xác suất & Tổ hợp",
     "topic": "Định lý Bayes (Bayes' Theorem)",
     "is_calc": true,
-    "prompt": "Assume there are two common issues with printers: hardware and software problems, with probabilities of 0.4 and 0.6, respectively. When there is a hardware problem, the probability that the printer malfunctions is 0.7. When there is a software problem, the probability that the printer malfunctions is 0.9. If a printer malfunctions, what is the probability that it is a software problem?",
+    "prompt": "Assume there are two common issues with printers: hardware and software problems, with probabilities of 0.4 and 0.6, respectively. When there is a hardware problem, the probability that the printer malfunctions is 0.7. When there is a software problem, the probability that the printer malfunctions is 0.9. Calculate the probability that a malfunctioning printer has a software problem.",
     "options": [
       "A. 0.6585",
-      "B. 0.3415",
-      "C. 0.5400",
-      "D. 0.2800"
+      "B. 0.8200",
+      "C. 0.8565",
+      "D. 0.3200"
     ],
     "correct_answer": "A",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_FE/Q18_FE26.jpg",
-    "dich_de": "Giả sử máy in có 2 vấn đề thường gặp: phần cứng (xác suất 0.4) và phần mềm (xác suất 0.6). Khi có sự cố phần cứng, xác suất máy in bị hỏng (malfunctions) là 0.7. Khi có sự cố phần mềm, xác suất máy in bị hỏng là 0.9. Nếu một máy in bị hỏng, xác suất nguyên nhân là do phần mềm bằng bao nhiêu?",
+    "dich_de": "Giả sử máy in có 2 vấn đề thường gặp: phần cứng (xác suất 0.4) và phần mềm (xác suất 0.6). Khi có sự cố phần cứng, xác suất máy in bị hỏng (malfunctions) là 0.7. Khi có sự cố phần mềm, xác suất máy in bị hỏng là 0.9. Hãy tính xác suất một máy in bị hỏng có nguyên nhân do phần mềm.",
     "tom_tat": "- $P(H) = 0.4, P(M \\mid H) = 0.7$.\n- $P(S) = 0.6, P(M \\mid S) = 0.9$.\n- Cần tính: $P(S \\mid M)$.",
     "cong_thuc": "$$P(S \\mid M) = \\frac{P(S) P(M \\mid S)}{P(H) P(M \\mid H) + P(S) P(M \\mid S)}$$",
     "ap_dung": "1. Xác suất máy in hỏng do phần cứng: $P(H \\cap M) = 0.4 \\times 0.7 = 0.28$.\n2. Xác suất máy in hỏng do phần mềm: $P(S \\cap M) = 0.6 \\times 0.9 = 0.54$.\n3. Tổng xác suất máy in hỏng: $P(M) = 0.28 + 0.54 = 0.82$.\n4. Xác suất hậu nghiệm do phần mềm:\n$$P(S \\mid M) = \\frac{0.54}{0.82} = \\frac{27}{41} \\approx 0.658536 \\approx 0.6585$$\n=> Chọn đáp án A (0.6585).",
@@ -391,12 +391,12 @@
     "chapter": "Ch4: Xác suất & Tổ hợp",
     "topic": "Quy tắc đếm: Chỉnh hợp (Permutations)",
     "is_calc": true,
-    "prompt": "There are only 4 empty rooms available in a student dormitory for eleven new freshmen. Each room is considered unique so that it matters who is being assigned to which room. How many different ways can those 4 empty rooms be filled one student to a room?",
+    "prompt": "There are only 4 empty rooms available in a student dormitory for eleven new freshmen. Each room is considered unique so that it matters who is being assigned to which room. How many different ways can those 4 empty rooms be filled one student per room?",
     "options": [
       "A. 7,920",
-      "B. 330",
-      "C. 44",
-      "D. 24"
+      "B. 5,690",
+      "C. 8,230",
+      "D. 6,630"
     ],
     "correct_answer": "A",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_FE/Q19_FE26.jpg",
