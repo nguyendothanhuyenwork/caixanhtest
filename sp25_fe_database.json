@@ -964,8 +964,8 @@
     "ap_dung": "1. Tính phương sai gộp:\n   $$S_p^2 = \\frac{210 \\times 11.07^2 + 99 \\times 6.41^2}{211 + 100 - 2} = \\frac{25725.321 + 4067.7201}{309} = \\frac{29793.0411}{309} \\approx 96.4471$$\n2. Tính sai số chuẩn:\n   $$S_{\\bar{X}_1 - \\bar{X}_2} = \\sqrt{96.4471 \\times \\left(\\frac{1}{211} + \\frac{1}{100}\\right)} = \\sqrt{96.4471 \\times 0.014739} \\approx 1.1923$$\n3. Tính thống kê kiểm định $t_{STAT}$:\n   $$t_{STAT} = \\frac{65.75 - 79.83}{1.1923} = \\frac{-14.08}{1.1923} \\approx -11.8092$$\n\nĐối chiếu 4 phương án:\n+ A: 96.4471 (chính là $S_p^2$)\n+ B: -14.08 (chính là $\\bar{X}_1 - \\bar{X}_2$)\n+ C: -1.9677 (giá trị tới hạn)\n+ D: -11.8092 (thống kê kiểm định $t_{STAT}$)\n\n=> Chọn đáp án D (-11.8092).",
     "casio": "Thao tác trên Casio fx-580VN X:\n1. Bấm MENU 1.\n2. Tính Sp2 trước rồi lưu vào biến A (bấm `STO A`).\n3. Nhập `(Xbar1 - Xbar2) / sqrt(A * (1/n1 + 1/n2))` rồi bấm `=` ra `-11.8092`.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.1: Pooled-Variance t Test for the Difference Between Two Means):\n- Khi hai mẫu độc lập được rút ra từ các tổng thể có phân phối chuẩn với giả định phương sai bằng nhau ($\\sigma_1^2 = \\sigma_2^2$), phương pháp kiểm định tối ưu nhất là dùng phương sai gộp $S_p^2$.\n- Bậc tự do của kiểm định này là $df = n_1 + n_2 - 2$.",
-    "table_image": null,
-    "table_image_png": null,
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE_tables/Q37_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE_tables/Q37_table.png",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE/Q37_SP25FE.webp"
   },
   {
@@ -1015,8 +1015,8 @@
     "ap_dung": "Từ dữ liệu bảng điểm trước và sau của 8 học viên:\n- Tổng các độ chênh lệch điểm số sau khóa học trừ trước khóa học: $\\sum D = 400$.\n- Số học viên: $n = 8$.\n- Giá trị trung bình của hiệu số điểm là:\n  $$\\bar{D} = \\frac{400}{8} = 50$$\n\n=> Chọn đáp án A (50).\n\n*(Bảng số liệu gốc bổ sung chuẩn 100% từ Đề thi Final Exam kỳ SU25 FE Q38)*",
     "casio": "Thao tác trên Casio fx-580VN X:\n1. Bấm MENU 1.\n2. Nhập: `400 / 8 =`.\n3. Kết quả hiển thị: `50`.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.2: Comparing the Means of Two Related Populations - Paired t Test):\n- Trong thiết kế nghiên cứu lặp lại trước - sau (repeated measures / before-and-after), hai mẫu không độc lập mà tạo thành các cặp phụ thuộc.\n- Ta quy bài toán 2 mẫu về bài toán 1 mẫu duy nhất trên biến chênh lệch $D = X_1 - X_2$ với trung bình mẫu $\\bar{D} = \\sum D_i / n$.",
-    "table_image": null,
-    "table_image_png": null,
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE_tables/Q39_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE_tables/Q39_table.png",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP25_FE/Q39_SP25FE.webp"
   },
   {

@@ -1006,8 +1006,8 @@
     "ap_dung": "1. Tính các thống kê mẫu của hiệu số $D$:\n   - Tổng các hiệu: $\\sum D = 4 - 1 + 2 + 0 - 1 + 5 - 4 + 2 = 7$\n   - Trung bình: $\\bar{D} = \\frac{7}{8} = 0.875$\n   - Tổng bình phương sai lệch: $\\sum (D_i - \\bar{D})^2 \\approx 60.875$\n   - Độ lệch chuẩn mẫu: $S_D = \\sqrt{\\frac{60.875}{7}} \\approx 2.949$\n   - Sai số chuẩn: $S_{\\bar{D}} = \\frac{S_D}{\\sqrt{8}} = \\frac{2.949}{2.8284} \\approx 1.0426$\n\n2. Tính thống kê kiểm định:\n   $$t_{STAT} = \\frac{0.875}{1.0426} \\approx 0.839$$\n\n3. So sánh với giá trị tới hạn hai phía mức 5% ($df = 7$):\n   Đề bài cho $t_{0.025, 7} = 2.36$.\n   Vì $|t_{STAT}| = 0.839 < 2.36$, giá trị kiểm định nằm trong miền chấp nhận (không rơi vào miền bác bỏ).\n\n4. Quyết định: Không bác bỏ giả thuyết không (Do not reject the null hypothesis).\n\n=> Chọn đáp án B.",
     "casio": "Thực hiện phép tính kiểm tra trên Casio fx-580VN X:\nBấm: `0.5 × 0.4 =` -> kết quả hiển thị 0.2. Vì bằng P(A and B) nên chọn Yes.",
     "ly_thuyet": "Theo Berenson (Chương 4, Mục 4.3: Conditional Probability and Independence): Hai biến cố A và B được gọi là độc lập nếu xác suất xảy ra biến cố A không bị ảnh hưởng bởi việc biến cố B đã xảy ra hay chưa, nghĩa là P(A|B) = P(A), điều này tương đương với quy tắc nhân xác suất độc lập: P(A ∩ B) = P(A)·P(B).",
-    "table_image": null,
-    "table_image_png": null,
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q39_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE_tables/Q39_table.png",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP26_RE/Q39.jpg"
   },
   {

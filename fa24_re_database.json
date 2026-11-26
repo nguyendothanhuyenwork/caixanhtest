@@ -992,8 +992,8 @@
     "ap_dung": "1. Từ bảng kết quả kiểm tra của 8 học viên, độ lệch chuẩn của các điểm chênh lệch là S_D = 65.027.\n2. Sai số chuẩn của điểm chênh lệch trung bình (standard error of the difference scores) được tính bằng:\n   S_Dbar = S_D / sqrt(n) = 65.027 / sqrt(8) = 65.027 / 2.828427 xấp xỉ 22.9905 xấp xỉ 22.991.\n=> Chọn đáp án B.\n\n*(Bảng số liệu gốc bổ sung chuẩn 100% từ Đề thi Final Exam kỳ SU25 FE Q38)*",
     "casio": "Bấm máy tính Casio fx-580VN X:\n65.027 / căn(8) =\nMàn hình hiển thị: 22.99046... xấp xỉ 22.991.",
     "ly_thuyet": "Theo Giáo trình Berenson Ch10 (Two-Sample Tests) - Mục 'Comparing Two Related Samples: The Paired t Test': Trong bài toán kiểm định mẫu cặp phụ thuộc, sai số chuẩn của hiệu trung bình là S_Dbar = S_D / sqrt(n). Tránh nhầm lẫn giữa độ lệch chuẩn S_D (65.027) và sai số chuẩn S_Dbar (22.991).",
-    "table_image": null,
-    "table_image_png": null,
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA24_RE_tables/Q38_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA24_RE_tables/Q38_table.png",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA24_RE/Q38_FA24RE.webp"
   },
   {

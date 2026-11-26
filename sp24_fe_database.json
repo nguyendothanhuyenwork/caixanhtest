@@ -336,8 +336,8 @@
     "ap_dung": "1. Trong mô hình hồi quy tuyến tính cổ điển với 2 biến giải thích, phương trình hồi quy mẫu dự báo luôn có dạng chuẩn tắc gồm hệ số chặn $b_0$ cộng với tích của từng biến độc lập với hệ số hồi quy riêng phần tương ứng:\n$$\\hat{Y} = b_0 + b_1 X_1 + b_2 X_2$$\n2. Đối chiếu các phương án cấu trúc:\n- Biểu thức (i) bị gán dấu trừ sai mặc định cho hệ số $b_1$.\n- Biểu thức (iii) thiếu hoàn toàn hệ số chặn $b_0$ (mô hình không có intercept).\n- Biểu thức (ii) $\\hat{Y} = b_0 + b_1 X_1 + b_2 X_2$ là dạng phương trình chuẩn tắc tổng quát nhất.\n3. Do đó, khẳng định (ii) là biểu diễn chính xác, tương ứng với phương án B.\n\n=> Chọn đáp án B ((ii)).",
     "casio": "Câu hỏi lý thuyết về cấu trúc phương trình hồi quy đa biến tổng quát trong giáo trình Berenson, không yêu cầu bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 13/14 - Mục: Developing the Multiple Regression Model):\n- Phương trình hồi quy tuyến tính bội dự báo biến phản hồi $Y$ dựa trên $k$ biến độc lập $X_1, X_2, ..., X_k$ có dạng tổng quát: $\\hat{Y}_i = b_0 + b_1X_{1i} + b_2X_{2i} + ... + b_kX_{ki}$. Trong đó $b_0$ là hệ số chặn mẫu và các $b_j$ là các hệ số hồi quy mẫu riêng phần.",
-    "table_image": null,
-    "table_image_png": null,
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_FE_tables/Q13_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_FE_tables/Q13_table.png",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_FE/Q13_SP24FE.webp"
   },
   {
@@ -520,8 +520,8 @@
     "ap_dung": "1. Đếm số cặp quan sát trong bảng dữ liệu của hình đề thi: có $n = 4$ thành phố (mặc dù phần dẫn ghi '6 small cities', bảng số liệu chỉ liệt kê 4 thành phố và bộ giá trị tới hạn cho sẵn cũng chỉ có $df = 2$ và $df = 3$).\n2. Tính bậc tự do kiểm định $t$ cho hệ số góc hồi quy đơn biến:\n$$df = n - 2 = 4 - 2 = 2$$\n3. Do giả thuyết đối là hai phía ($\\beta_1 \\ne 0$) và $\\alpha = 0.05$, diện tích mỗi đuôi là $\\alpha/2 = 0.025$.\n4. Từ dữ kiện $t_{0.025; 2} = 4.303$, cặp giá trị tới hạn hai phía là **$-4.303$ and $4.303$**.\n\n=> Chọn đáp án A (- 4.303 and 4.303).",
     "casio": "- Kiểm định hai phía với $\\alpha = 0.05 \\implies$ diện tích mỗi đuôi là $0.025$.\n- Cặp giá trị tới hạn tương ứng với $t_{0.025, 2} = 4.303$ là $\\pm 4.303$.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 13 - Mục 13.7: Inferences About the Slope and Correlation Coefficient):\n- Để kiểm định xem biến độc lập $X$ có tác động tuyến tính thực sự lên biến phụ thuộc $Y$ hay không, ta kiểm định $H_0: \\beta_1 = 0$ đối với $H_1: \\beta_1 \\ne 0$.\n- Thống kê kiểm định có bậc tự do là $df = n - 2$. Trong kiểm định hai phía, các giá trị tới hạn là $\\pm t_{\\alpha/2, n-2}$.",
-    "table_image": null,
-    "table_image_png": null,
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_FE_tables/Q20_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_FE_tables/Q20_table.png",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_FE/Q20_SP24FE.webp"
   },
   {

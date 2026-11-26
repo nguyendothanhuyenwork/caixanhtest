@@ -416,8 +416,8 @@
     "ap_dung": "1. Tính chi phí kỳ vọng cho đơn hàng 100 con chuột trong một tuần:\n$$E(X) = (10.00 \\times 0.35) + (12.50 \\times 0.40) + (15.00 \\times 0.25)$$\n$$= 3.50 + 5.00 + 3.75 = 12.25 \\text{ USD/tuần}$$\n2. Nhân với số tuần trong năm (52 tuần) để tìm tổng ngân sách dự kiến cả năm:\n$$\\text{Ngân sách năm} = 52 \\times 12.25 = 637 \\text{ USD}$$\n\n=> Chọn đáp án A ($637).",
     "casio": "Bấm MENU 1 (chế độ tính toán cơ bản):\n1. Tính chi phí trung bình 1 tuần: nhập `10 * 0.35 + 12.5 * 0.4 + 15 * 0.25` -> màn hình ra `12.25`.\n2. Nhân với 52: bấm `Ans * 52` -> màn hình hiển thị `637`.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 5 - Mục 5.1: The Probability Distribution for a Discrete Variable):\n- Giá trị kỳ vọng $E(X) = \\mu = \\sum X P(X)$ đại diện cho giá trị trung bình dài hạn của một biến ngẫu nhiên rời rạc qua nhiều lần lặp lại. Đối với chuỗi $N$ kỳ hoạt động độc lập có cùng phân phối, tổng chi phí dự trù trung bình bằng $N$ lần giá trị kỳ vọng của một kỳ.",
-    "table_image": null,
-    "table_image_png": null,
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP23_FE_tables/Q16_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP23_FE_tables/Q16_table.png",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP23_FE/Q16_SP23FE.webp"
   },
   {

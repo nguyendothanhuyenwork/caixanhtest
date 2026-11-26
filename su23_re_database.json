@@ -778,8 +778,8 @@
     "ap_dung": "1. Trong mô hình hồi quy tuyến tính cổ điển với 2 biến giải thích, phương trình hồi quy mẫu dự báo luôn có dạng chuẩn tắc gồm hệ số chặn $b_0$ cộng với tích của từng biến độc lập với hệ số hồi quy riêng phần tương ứng:\n$$\\hat{Y} = b_0 + b_1 X_1 + b_2 X_2$$\n2. Đối chiếu các phương án cấu trúc:\n- Biểu thức (i) bị gán dấu trừ sai mặc định cho hệ số $b_1$.\n- Biểu thức (iii) thiếu hoàn toàn hệ số chặn $b_0$ (mô hình không có intercept).\n- Biểu thức (ii) $\\hat{Y} = b_0 + b_1 X_1 + b_2 X_2$ là dạng phương trình chuẩn tắc tổng quát nhất.\n3. Do đó, khẳng định (ii) là biểu diễn chính xác, tương ứng với phương án B.\n\n=> Chọn đáp án B ((ii)).",
     "casio": "Câu hỏi lý thuyết về cấu trúc phương trình hồi quy đa biến tổng quát trong giáo trình Berenson, không yêu cầu bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 13/14 - Mục: Developing the Multiple Regression Model):\n- Phương trình hồi quy tuyến tính bội dự báo biến phản hồi $Y$ dựa trên $k$ biến độc lập $X_1, X_2, ..., X_k$ có dạng tổng quát: $\\hat{Y}_i = b_0 + b_1X_{1i} + b_2X_{2i} + ... + b_kX_{ki}$. Trong đó $b_0$ là hệ số chặn mẫu và các $b_j$ là các hệ số hồi quy mẫu riêng phần.",
-    "table_image": null,
-    "table_image_png": null,
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU23_RE_tables/Q30_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU23_RE_tables/Q30_table.png",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU23_RE/Q30_SU23RE.webp"
   },
   {
@@ -1304,8 +1304,8 @@
     "ap_dung": "1. Từ bảng kết quả kiểm tra của 8 học viên, độ lệch chuẩn của các điểm chênh lệch là S_D = 65.027.\n2. Sai số chuẩn của điểm chênh lệch trung bình (standard error of the difference scores) được tính bằng:\n   S_Dbar = S_D / sqrt(n) = 65.027 / sqrt(8) = 65.027 / 2.828427 xấp xỉ 22.9905 xấp xỉ 22.991.\n=> Chọn đáp án A.\n\n*(Bảng số liệu gốc bổ sung chuẩn 100% từ Đề thi Final Exam kỳ SU25 FE Q38)*",
     "casio": "Bấm máy tính Casio fx-580VN X:\n65.027 / căn(8) =\nMàn hình hiển thị: 22.99046... xấp xỉ 22.991.",
     "ly_thuyet": "Theo Giáo trình Berenson Ch10 (Two-Sample Tests) - Mục 'Comparing Two Related Samples: The Paired t Test': Trong bài toán kiểm định mẫu cặp phụ thuộc, sai số chuẩn của hiệu trung bình là S_Dbar = S_D / sqrt(n). Tránh nhầm lẫn giữa độ lệch chuẩn S_D (65.027) và sai số chuẩn S_Dbar (22.991).",
-    "table_image": null,
-    "table_image_png": null,
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU23_RE_tables/Q50_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU23_RE_tables/Q50_table.png",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU23_RE/Q50_SU23RE.webp"
   }
 ]

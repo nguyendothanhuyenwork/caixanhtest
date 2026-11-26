@@ -1146,8 +1146,8 @@
     "ap_dung": "1. Tính trung bình:\n$$\\bar{X} = \\frac{1.3+1.6+1.8+2.0}{4} = 1.675, \\quad \\bar{Y} = \\frac{100+90+90+40}{4} = 80$$\n\n2. Tính $SS_{XY}$ và $SS_{XX}$:\n- $SS_{XY} = (-0.375)(20) + (-0.075)(10) + (0.125)(10) + (0.325)(-40) = -20.0$\n- $SS_{XX} = (-0.375)^2 + (-0.075)^2 + (0.125)^2 + (0.325)^2 = 0.2675$\n\n3. Tính hệ số góc $b_1$:\n$$b_1 = \\frac{-20.0}{0.2675} \\approx -74.77$$\n\n=> Chọn đáp án A.",
     "casio": "- Vào `MENU` `6` `2`, nhập 4 cặp $(X, Y)$, bấm `AC`, `OPTN` `4`, đọc `b = -74.7663... ≈ -74.77`.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 13 - Mục 13.2): Hệ số góc $b_1$ biểu thị mức thay đổi trung bình của biến phụ thuộc $Y$ khi biến độc lập $X$ tăng thêm 1 đơn vị.",
-    "table_image": null,
-    "table_image_png": null,
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_FE_tables/Q44_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_FE_tables/Q44_table.png",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_FE/Q44_FA25FE.webp"
   },
   {
@@ -1199,8 +1199,8 @@
     "ap_dung": "1. Tính $SS_{YY}$ với $\\bar{Y} = 80$:\n$$SS_{YY} = (100-80)^2 + (90-80)^2 + (90-80)^2 + (40-80)^2 = 400 + 100 + 100 + 1600 = 2200$$\n\n2. Tính $r$:\n$$r = \\frac{-20.0}{\\sqrt{0.2675 \\times 2200}} = \\frac{-20.0}{\\sqrt{588.5}} \\approx -0.8244$$\n\n=> Chọn đáp án A.",
     "casio": "- Vào `MENU` `6` `2`, nhập 4 cặp $(X, Y)$, bấm `AC`, `OPTN` `4`, đọc `r = -0.8244... ≈ -0.824`.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 13): Dấu của hệ số tương quan $r$ luôn cùng dấu với hệ số góc $b_1$ của đường hồi quy.",
-    "table_image": null,
-    "table_image_png": null,
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_FE_tables/Q46_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_FE_tables/Q46_table.png",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_FE/Q46_FA25FE.webp"
   },
   {

@@ -175,8 +175,8 @@
     "ap_dung": "1. Từ bảng kết quả kiểm tra của 8 học viên, độ lệch chuẩn của các điểm chênh lệch là S_D = 65.027.\n2. Sai số chuẩn của điểm chênh lệch trung bình (standard error of the difference scores) được tính bằng:\n   S_Dbar = S_D / sqrt(n) = 65.027 / sqrt(8) = 65.027 / 2.828427 xấp xỉ 22.9905 xấp xỉ 22.991.\n=> Chọn đáp án A.\n\n*(Bảng số liệu gốc bổ sung chuẩn 100% từ Đề thi Final Exam kỳ SU25 FE Q38)*",
     "casio": "Bấm máy tính Casio fx-580VN X:\n65.027 / căn(8) =\nMàn hình hiển thị: 22.99046... xấp xỉ 22.991.",
     "ly_thuyet": "Theo Giáo trình Berenson Ch10 (Two-Sample Tests) - Mục 'Comparing Two Related Samples: The Paired t Test': Trong bài toán kiểm định mẫu cặp phụ thuộc, sai số chuẩn của hiệu trung bình là S_Dbar = S_D / sqrt(n). Tránh nhầm lẫn giữa độ lệch chuẩn S_D (65.027) và sai số chuẩn S_Dbar (22.991).",
-    "table_image": null,
-    "table_image_png": null,
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE_tables/Q7_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE_tables/Q7_table.png",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE/Q7_SU24FE.webp"
   },
   {
@@ -943,8 +943,8 @@
     "ap_dung": "1. Khi so sánh hai hay nhiều tập dữ liệu có tổng số lượng quan sát khác nhau (ở đây là 4 hiệu sách có quy mô không đồng đều), việc sử dụng biểu đồ tần số tuyệt đối (Frequency histogram) sẽ gây hiểu nhầm nghiêm trọng vì các cột của cửa hàng có quy mô lớn sẽ lấn át hoàn toàn các cửa hàng nhỏ, làm mất đi khả năng so sánh hình dạng và cơ cấu phân phối.\n2. Biểu đồ tần số tương đối (Relative frequency histogram) chuẩn hóa toàn bộ tần số về dạng tỷ lệ phần trăm (tổng diện tích bằng 1 hoặc 100%), đưa các nhóm về cùng một thước đo quy chuẩn.\n3. Nhờ đó, người nghiên cứu có thể so sánh trực quan và khách quan tỷ lệ phân bố sách giữa các phân khúc của 4 cửa hàng bất kể sự chênh lệch về tổng doanh số.\n\n=> Biểu đồ tốt nhất là Relative frequency histogram.\n\n=> Chọn đáp án A.",
     "casio": "Câu hỏi lý thuyết phương pháp trình bày dữ liệu so sánh, không dùng máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 2 - Mục 2.3: Tables and Charts for Numerical Data - Comparing Two or More Numerical Data Sets):\n- Nguyên tắc cơ bản: Khi so sánh hai hay nhiều tập dữ liệu số có quy mô mẫu khác nhau, không được sử dụng tần số tuyệt đối. Bắt buộc phải sử dụng tần số tương đối (relative frequencies) hoặc tỷ lệ phần trăm để tạo cơ sở so sánh chuẩn mực.",
-    "table_image": null,
-    "table_image_png": null,
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE_tables/Q37_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE_tables/Q37_table.png",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE/Q37_SU24FE.webp"
   },
   {
@@ -1225,8 +1225,8 @@
     "ap_dung": "Tính trên máy tính bỏ túi hoặc theo công thức:\n- $\\bar{x} = 1.675$, $\\bar{y} = 80$\n- $r \\approx -0.8244 \\approx -0.824$\n\n=> Chọn đáp án A (-0.824).",
     "casio": "Vào `MENU 6` -> `2 (y = a + bx)`, nhập cột `X` và `Y`, bấm `OPTN` -> `3 (Regression Calc)` để đọc giá trị `r = -0.8244`.",
     "ly_thuyet": "Hệ số tương quan $r \\in [-1, 1]$ đo lường độ mạnh và chiều hướng của mối quan hệ tuyến tính giữa hai biến. $r < 0$ cho thấy tương quan nghịch (giá tăng thì doanh số giảm).",
-    "table_image": null,
-    "table_image_png": null,
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE_tables/Q48_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE_tables/Q48_table.png",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_FE/Q48_SU24FE.webp"
   },
   {

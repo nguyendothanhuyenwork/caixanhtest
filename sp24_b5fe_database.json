@@ -1022,8 +1022,8 @@
     "ap_dung": "- Tổng các hiệu số: $\\sum d_i = 140 + 80 + 90 + 10 + 100 + 50 - 50 - 20 = 400$\n- Trung bình hiệu số: $\\bar{d} = \\frac{400}{8} = 50$\n\n=> Chọn đáp án A (50).",
     "casio": "Bấm `(140 + 80 + 90 + 10 + 100 + 50 - 50 - 20) ÷ 8 =` hiển thị `50`.",
     "ly_thuyet": "Trong kiểm định mẫu ghép cặp (Paired t-test), $\\bar{d}$ là trung bình cộng của các hiệu số $d_i$ từng cặp.",
-    "table_image": null,
-    "table_image_png": null,
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_B5FE_tables/Q41_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_B5FE_tables/Q41_table.png",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SP24_B5FE/Q41_SP24_B5FE.webp"
   },
   {

@@ -727,8 +727,8 @@
     "ap_dung": "1. Tính giá trị dự báo $\\hat{Y}$:\n$$\\hat{Y} = -0.0861 + 0.7654(3.5) - 0.0006(125) = -0.0861 + 2.6789 - 0.075 = 2.5178$$\n2. Tính phần dư:\n$$e = Y - \\hat{Y} = 3 - 2.5178 = 0.4822 \\approx \\$0.48\\text{ billion}$$\n\n=> Chọn đáp án A ($0.48 billion).",
     "casio": "Nhập `3 - (-0.0861 + 0.7654*3.5 - 0.0006*125) =` -> ra **0.4822**.",
     "ly_thuyet": "Phần dư (Residual) bằng giá trị quan sát thực tế $Y$ trừ đi giá trị dự báo $\\hat{Y}$ từ mô hình hồi quy.",
-    "table_image": null,
-    "table_image_png": null,
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_RE_tables/Q28_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_RE_tables/Q28_table.png",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_RE/Q28_FA23RE.webp"
   },
   {
@@ -833,8 +833,8 @@
     "ap_dung": "1. Trong mô hình hồi quy tuyến tính đơn biến Y = beta_0 + beta_1*X, hệ số xác định r^2 (coefficient of determination) đo lường tỷ lệ (hoặc phần trăm) tổng biến thiên của biến phụ thuộc Y được giải thích bởi biến độc lập X.\n2. Chiều quan hệ giải thích là biến độc lập X giải thích cho biến phụ thuộc Y (sự biến thiên của chuyên cần giải thích biến thiên của điểm thi), KHÔNG PHẢI ngược lại. Do đó, các phương án B và C ('variability in percentage attendance can be explained by score received') là sai hoàn toàn về bản chất hồi quy.\n3. Từ bảng Excel hồi quy của bài toán, r^2 = 0.02 = 2%. Như vậy: '2% of the total variability in score received can be explained by percentage attendance' (2% tổng biến thiên của điểm thi được giải thích bởi tỷ lệ chuyên cần) là nhận định chính xác duy nhất.\n=> Chọn đáp án D.",
     "casio": "Câu hỏi phân tích và đọc hiểu bản chất ý nghĩa hệ số xác định r^2 từ bảng kết quả hồi quy Excel, không yêu cầu bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson Ch13 (Simple Linear Regression) - Mục 'Coefficient of Determination (r^2)': Hệ số r^2 đo lường tỷ lệ tổng độ biến thiên trong biến phản hồi Y được giải thích bởi sự biến thiên trong biến giải thích X. Phải luôn chú ý chiều tác động: biến độc lập X giải thích cho biến phụ thuộc Y.",
-    "table_image": null,
-    "table_image_png": null,
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_RE_tables/Q32_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_RE_tables/Q32_table.png",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_RE/Q32_FA23RE.webp"
   },
   {
@@ -1255,8 +1255,8 @@
     "ap_dung": "Từ dữ liệu bảng điểm trước và sau của 8 học viên:\n- Tổng các độ chênh lệch điểm số sau khóa học trừ trước khóa học: $\\sum D = 400$.\n- Số học viên: $n = 8$.\n- Giá trị trung bình của hiệu số điểm là:\n  $$\\bar{D} = \\frac{400}{8} = 50$$\n\n=> Chọn đáp án A (50).\n\n*(Bảng số liệu gốc bổ sung chuẩn 100% từ Đề thi Final Exam kỳ SU25 FE Q38)*",
     "casio": "Thao tác trên Casio fx-580VN X:\n1. Bấm MENU 1.\n2. Nhập: `400 / 8 =`.\n3. Kết quả hiển thị: `50`.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.2: Comparing the Means of Two Related Populations - Paired t Test):\n- Trong thiết kế nghiên cứu lặp lại trước - sau (repeated measures / before-and-after), hai mẫu không độc lập mà tạo thành các cặp phụ thuộc.\n- Ta quy bài toán 2 mẫu về bài toán 1 mẫu duy nhất trên biến chênh lệch $D = X_1 - X_2$ với trung bình mẫu $\\bar{D} = \\sum D_i / n$.",
-    "table_image": null,
-    "table_image_png": null,
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_RE_tables/Q48_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_RE_tables/Q48_table.png",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA23_RE/Q48_FA23RE.webp"
   },
   {

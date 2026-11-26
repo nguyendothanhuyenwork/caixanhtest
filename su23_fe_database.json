@@ -471,8 +471,8 @@
     "ap_dung": "Từ dữ liệu bảng điểm trước và sau của 8 học viên:\n- Tổng các độ chênh lệch điểm số sau khóa học trừ trước khóa học: $\\sum D = 400$.\n- Số học viên: $n = 8$.\n- Giá trị trung bình của hiệu số điểm là:\n  $$\\bar{D} = \\frac{400}{8} = 50$$\n\n=> Chọn đáp án A (50).\n\n*(Bảng số liệu gốc bổ sung chuẩn 100% từ Đề thi Final Exam kỳ SU25 FE Q38)*",
     "casio": "Thao tác trên Casio fx-580VN X:\n1. Bấm MENU 1.\n2. Nhập: `400 / 8 =`.\n3. Kết quả hiển thị: `50`.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.2: Comparing the Means of Two Related Populations - Paired t Test):\n- Trong thiết kế nghiên cứu lặp lại trước - sau (repeated measures / before-and-after), hai mẫu không độc lập mà tạo thành các cặp phụ thuộc.\n- Ta quy bài toán 2 mẫu về bài toán 1 mẫu duy nhất trên biến chênh lệch $D = X_1 - X_2$ với trung bình mẫu $\\bar{D} = \\sum D_i / n$.",
-    "table_image": null,
-    "table_image_png": null,
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU23_FE_tables/Q18_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU23_FE_tables/Q18_table.png",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU23_FE/Q18_SU23FE.webp"
   },
   {
@@ -1308,8 +1308,8 @@
     "ap_dung": "Từ dữ liệu bài tập chuẩn trong giáo trình (khảo sát SSATL so sánh động lực của hai nhóm nhà quản lý):\n- Thay số liệu mẫu của nhóm nhà quản lý Nhật Bản và Mỹ vào công thức tính phương sai gộp $S_p^2$.\n- Tính sai số chuẩn của hiệu hai trung bình: $S_{\\bar{X}_1 - \\bar{X}_2} = \\sqrt{S_p^2 (1/n_1 + 1/n_2)}$.\n- Tính giá trị kiểm định chuẩn hóa:\n  $$t_{STAT} = \\frac{\\bar{X}_1 - \\bar{X}_2}{S_{\\bar{X}_1 - \\bar{X}_2}} = -11.8092$$\n\n=> Chọn đáp án C (-11.8092).",
     "casio": "Thao tác trên Casio fx-580VN X:\n1. Bấm MENU 1.\n2. Tính Sp2 trước rồi lưu vào biến A (bấm `STO A`).\n3. Nhập `(Xbar1 - Xbar2) / sqrt(A * (1/n1 + 1/n2))` rồi bấm `=` ra `-11.8092`.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.1: Pooled-Variance t Test for the Difference Between Two Means):\n- Khi hai mẫu độc lập được rút ra từ các tổng thể có phân phối chuẩn với giả định phương sai bằng nhau ($\\sigma_1^2 = \\sigma_2^2$), phương pháp kiểm định tối ưu nhất là dùng phương sai gộp $S_p^2$.\n- Bậc tự do của kiểm định này là $df = n_1 + n_2 - 2$.",
-    "table_image": null,
-    "table_image_png": null,
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU23_FE_tables/Q50_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU23_FE_tables/Q50_table.png",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU23_FE/Q50_SU23FE.webp"
   }
 ]

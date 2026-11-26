@@ -1276,8 +1276,8 @@
     "ap_dung": "1. Xét phát biểu (i): 'Holding remote engineering hours (X2) constant, for each additional people-day in weekly staff count (X1), the mean standby hours are estimated to change by b₁ hours' -> Đây là định nghĩa và cách diễn giải chuẩn mực của hệ số góc riêng phần $b_1$. Do đó phát biểu (i) hoàn toàn chính xác.\n2. Xét phát biểu (ii): 'Holding weekly staff count (X1) constant, for each additional remote engineering hour (X2), the mean standby hours are estimated to change by b₂ hours' -> Đây là định nghĩa và cách diễn giải chuẩn mực của hệ số góc riêng phần $b_2$. Do đó phát biểu (ii) hoàn toàn chính xác.\n3. Do cả hai mệnh đề (i) và (ii) đều là các nhận định chuẩn xác về mặt thống kê, phát biểu (iii) ('Cả hai phát biểu (i) và (ii) đều đúng') là phương án lựa chọn tối ưu và đầy đủ nhất.\n- Khẳng định (iii) tương ứng với phương án C.\n\n=> Chọn đáp án C ((iii)).",
     "casio": "Câu hỏi lý thuyết phân tích và diễn giải ý nghĩa của các hệ số hồi quy riêng phần trong giáo trình Berenson, không cần bấm máy tính.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 14 - Mục 14.1: Developing the Multiple Regression Model & Case Study Standby Hours):\n- Trong mô hình hồi quy đa biến $\\hat{Y} = b_0 + b_1X_1 + b_2X_2$, điều kiện 'ceteris paribus' (giữ các biến khác không đổi) là bắt buộc khi diễn giải các hệ số góc riêng phần $b_1$ và $b_2$. Mỗi hệ số thể hiện sự thay đổi biên của $\\hat{Y}$ khi biến giải thích tương ứng tăng 1 đơn vị trong khi cố định tất cả các biến độc lập khác.",
-    "table_image": null,
-    "table_image_png": null,
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_RE_tables/Q49_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_RE_tables/Q49_table.png",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_SU24_RE/Q49_SU24RE.webp"
   },
   {

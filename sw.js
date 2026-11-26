@@ -6,7 +6,7 @@
    - CDN (KaTeX, fonts, Firebase SDK, Google Fonts): Stale-while-revalidate
    ============================================================ */
 
-const CACHE_NAME = "cai-xanh-hoc-mas-v39";
+const CACHE_NAME = "cai-xanh-hoc-mas-v40";
 const OFFLINE_URL = "./index.html";
 
 const PRECACHE_URLS = [

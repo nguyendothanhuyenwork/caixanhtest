@@ -965,8 +965,8 @@
     "ap_dung": "Dựa vào các số liệu mẫu đã cho trong bài toán:\n- Chênh lệch trung bình mẫu: $\\bar{X}_1 - \\bar{X}_2 = 3.20$\n- Sai số biên tính được: $e = t_{0.025, 35} \\cdot S_p \\sqrt{\\frac{1}{20} + \\frac{1}{17}} = 2.03 \\times 1.128 = 2.29$\n- Cận dưới khoảng tin cậy: $L = 3.20 - 2.29 = 0.91$\n- Cận trên khoảng tin cậy: $U = 3.20 + 2.29 = 5.49$\nKhoảng tin cậy 95% là $(0.91, 5.49)$.\n\n=> Chọn đáp án A.\n\n*(Bảng số liệu gốc bổ sung chuẩn 100% từ Đề thi Final Exam kỳ FA25 RE Q37)*",
     "casio": "Thao tác trên Casio fx-580VN X:\n1. Bấm MENU 1 (chế độ tính cơ bản).\n2. Tính cận dưới: Nhập `3.20 - 2.29 =` -> màn hình ra 0.91.\n3. Tính cận trên: Bấm mũi tên lùi, sửa dấu `-` thành `+` rồi bấm `=` -> màn hình ra 5.49.",
     "ly_thuyet": "Theo Giáo trình Berenson (Chương 10 - Mục 10.1: Comparing the Means of Two Independent Populations):\n- Khi hai mẫu độc lập được lấy từ các tổng thể phân phối chuẩn có phương sai bằng nhau chưa biết, ta sử dụng ước lượng phương sai gộp $S_p^2$ (Pooled-Variance t-Test).\n- Bậc tự do luôn là $df = n_1 + n_2 - 2$.",
-    "table_image": null,
-    "table_image_png": null,
+    "table_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_RE_tables/Q37_table.webp",
+    "table_image_png": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_RE_tables/Q37_table.png",
     "original_exam_image": "https://ovrcspisnxsvosxdynxd.supabase.co/storage/v1/object/public/mas202/MAS202_FA25_RE/Q37_FA25RE.webp"
   },
   {
