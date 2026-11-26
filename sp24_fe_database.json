@@ -373,7 +373,7 @@
     "topic": "Bảng ngẫu nhiên và Xác suất giao (Contingency Table & Joint Probability)",
     "is_calc": true,
     "raw_question": "fuoverflow I There are 50 questions, and your progress Of answering is Q: 15 Answer Back Nen (Choose 1 answer) (See picture) A. 04 a. 0.3 c 0675 0225 0.375 E 0825 Consider the following contingency table: c C' 12 24 D' 18 26 What is the probabilityof event D' and C? th FUOVERFLOW.COM xam.",
-    "prompt": "Consider the following contingency table:\n    D   D'\nC   12  18\nC'  24  26\nWhat is the probability of event D' and C?",
+    "prompt": "Consider the following contingency table:\n\n| | D | D' |\n|---|---|---|\n| **C** | 12 | 18 |\n| **C'** | 24 | 26 |\n\nWhat is the probability of event D' and C?",
     "options": [
       "A. 0.4",
       "B. 0.3",

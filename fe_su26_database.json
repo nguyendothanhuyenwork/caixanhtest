@@ -395,7 +395,7 @@
     "topic": "Quy tắc cộng xác suất (Addition Rule of Probability)",
     "is_calc": true,
     "raw_question": "Consider the following contingency table:\n\n| | D | D' | Total |\n|---|---|---|---|\n| C | 12 | 18 | 30 |\n| C' | 24 | 26 | 50 |\n| Total | 36 | 44 | 80 |\n\nWhat is the probability of event D or C?\nA. 0.675\nB. 0.33\nC. 0.4\nD. 0.375\nE. 0.625",
-    "prompt": "Consider the following contingency table:\n\nWhat is the probability of event $D$ or $C$?",
+    "prompt": "Consider the following contingency table:\n\n| | D | D' |\n|---|---|---|\n| **C** | 12 | 18 |\n| **C'** | 24 | 26 |\n\nWhat is the probability of event $D$ or $C$?",
     "options": [
       "A. 0.675",
       "B. 0.33",

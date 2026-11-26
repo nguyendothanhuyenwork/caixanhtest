@@ -446,7 +446,7 @@
   },
   {
     "id": 16,
-    "prompt": "Consider the following contingency table:\n\nWhat is the probability of event D' or C?",
+    "prompt": "Consider the following contingency table:\n\n| | D | D' |\n|---|---|---|\n| **C** | 12 | 18 |\n| **C'** | 24 | 26 |\n\nWhat is the probability of event D' or C?",
     "options": [
       "A. 0.7",
       "B. 0.33",
@@ -476,7 +476,7 @@
   },
   {
     "id": 17,
-    "prompt": "Consider the following contingency table:\n\nAre events C and D independent?",
+    "prompt": "Consider the following contingency table:\n\n| | D | D' |\n|---|---|---|\n| **C** | 12 | 18 |\n| **C'** | 28 | 42 |\n\nAre events C and D independent?",
     "options": [
       "A. Yes.",
       "B. No.",

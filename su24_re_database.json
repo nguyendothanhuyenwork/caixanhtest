@@ -387,7 +387,7 @@
     "topic": "Xác suất cơ bản, Định lý Bayes & Quy tắc đếm tổ hợp",
     "is_calc": true,
     "raw_question": "fuoverflow 6 (Choose 1 answer) (See picture) A. 0.775 B. 0.85 c. 0.3 D. 0.375 0.625 F. 0.225 FUOVERFLOW.COM Consider the following contingency table: c C' 12 24 D' 18 26 Whatis the probabilityofevent C' or D?",
-    "prompt": "Consider the following contingency table:\nD D'\nC 12 18\nC' 24 26\nWhat is the probability of event C' or D?",
+    "prompt": "Consider the following contingency table:\n\n| | D | D' |\n|---|---|---|\n| **C** | 12 | 18 |\n| **C'** | 24 | 26 |\n\nWhat is the probability of event C' or D?",
     "options": [
       "A. 0.775",
       "B. 0.625",

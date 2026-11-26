@@ -387,7 +387,7 @@
     "topic": "Bảng ngẫu nhiên (Contingency Table) & Xác suất giao (Joint Probability)",
     "is_calc": true,
     "raw_question": "fuoverflow There are 50 questions, and your progress Of answering is Q: 16 Answer Back Next (Choose 1 answer) (See picture) x 0675 a. 0.375 c 0225 D. 03 E. 0.4 F. 0825 Consider the following contingency table: c C' 12 D' 18 26 What is the probabilityof event D' and C? th FUOVERFLOW.COM xam.",
-    "prompt": "Consider the following contingency table:\nD D'\nC 12 18\nC' 24 26\nWhat is the probability of event D' and C?",
+    "prompt": "Consider the following contingency table:\n\n| | D | D' |\n|---|---|---|\n| **C** | 12 | 18 |\n| **C'** | 24 | 26 |\n\nWhat is the probability of event D' and C?",
     "options": [
       "A. 0.675",
       "B. 0.375",
@@ -415,7 +415,7 @@
     "topic": "Bảng ngẫu nhiên (Contingency Table) & Xác suất có điều kiện (Conditional Probability)",
     "is_calc": true,
     "raw_question": "fuoverflow There are 50 questions, and your progress Of answering is Q: 17 Answer Back Next (Choose 1 answer) (See picture) A. 0.33 a. 0.45 c. 0.375 D_ 0.4 E. 06 F. 015 the xam. Consider the following contingency table: c C' 12 24 18 26 What is the probability of DIC ? FUOVERFLOW.COM",
-    "prompt": "Consider the following contingency table:\nD D'\nC 12 18\nC' 24 26\nWhat is the probability of D|C ?",
+    "prompt": "Consider the following contingency table:\n\n| | D | D' |\n|---|---|---|\n| **C** | 12 | 18 |\n| **C'** | 24 | 26 |\n\nWhat is the probability of D|C ?",
     "options": [
       "A. 0.33",
       "B. 0.45",

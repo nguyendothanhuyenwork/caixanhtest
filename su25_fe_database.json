@@ -394,7 +394,7 @@
     "topic": "Xác suất cơ bản, Định lý Bayes & Quy tắc đếm tổ hợp",
     "is_calc": true,
     "raw_question": "Answer Kizspy. me There are 50 questions, and your progress Of answering is Q: 16 (Choose 1 answer) (See picture) A. 0375 a. 0.625 c. 033 0.4 E. 0675 the xam. Consider the following contingency table: c C' 12 24 18 26 What is the probability of event D or C? Back Next FUOVERFLOW.COM",
-    "prompt": "Consider the following contingency table:\nD D'\nC 12 18\nC' 24 26\nWhat is the probability of event C' or D?",
+    "prompt": "Consider the following contingency table:\n\n| | D | D' |\n|---|---|---|\n| **C** | 12 | 18 |\n| **C'** | 24 | 26 |\n\nWhat is the probability of event C' or D?",
     "options": [
       "A. 0.625",
       "B. 0.775",

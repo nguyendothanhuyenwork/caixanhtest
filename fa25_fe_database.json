@@ -421,7 +421,7 @@
     "topic": "Tính độc lập của biến cố (Independence of Events)",
     "is_calc": true,
     "raw_question": "Question: 17 (Choose 1 answer) (See picture) A. NO. B. yes. C. Not enough information to determine. FUOVERFLOW.COM Consider the following contingency table: c C' 12 24 D' 18 26 Are events C and D independent?",
-    "prompt": "Consider the following contingency table:\nD D'\nC 12 18\nC' 24 26\nAre events C and D independent?",
+    "prompt": "Consider the following contingency table:\n\n| | D | D' |\n|---|---|---|\n| **C** | 12 | 18 |\n| **C'** | 24 | 26 |\n\nAre events C and D independent?",
     "options": [
       "A. No.",
       "B. Yes.",
